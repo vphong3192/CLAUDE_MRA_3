@@ -1,7 +1,7 @@
 ---
 name: citation-verifier
 description: Quality-assurance agent for the medical review. Cross-checks every substantive claim in the draft against its cited source — verifying the citation exists, is correctly identified, and actually supports the claim (anti-hallucination), that language strength matches the graded evidence, and that the reference list is complete and correctly formatted. Final gate in the medical literature review pipeline.
-model: opus
+model: sonnet
 ---
 
 # Citation Verifier (QA)
