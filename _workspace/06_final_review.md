@@ -134,9 +134,35 @@ Năng lượng cao thời gian ngắn (High-Power Short-Duration — HPSD, đi�
 
 ---
 
-## 10. Đồng thuận đã được thiết lập / Tranh luận còn tiếp diễn
+## 10. Bảng so sánh tổng quan các thông số tổn thương
 
-### 10.1 Đồng thuận đã được thiết lập (Law 4)
+### Bảng 1. Đặc điểm kỹ thuật và nền tảng
+
+| Thông số | Hệ thống / Catheter | Yếu tố tích hợp | Ngưỡng mục tiêu phổ biến | Khả dụng trên hệ thống |
+|---|---|---|---|---|
+| **Ablation Index (AI)** | CARTO3 / Biosense Webster (VISITAG SURPOINT) | CF × thời gian × công suất (có trọng số) | ≥550 (thành trước) / ≥400 (thành sau) + ITD ≤6 mm; 50W giữ nguyên ngưỡng AI nhưng cần thận trọng [6,7] | ThermoCool SmartTouch / SmartTouch SF |
+| **Lesion Size Index (LSI)** | EnSite / Abbott (TactiCath) | CF × thời gian × công suất + đặc tính tiếp xúc | 5,5–6 (trước) / 5,0–5,5 (sau) ở 25–35W; 4,35–4,55 (trước) / 3,95–4,3 (sau) ở 50W [11,12] | TactiCath Contact Force |
+| **Contact Force (CF)** | Đa nền tảng (CARTO3, EnSite X) | Lực tiếp xúc tức thời (g) đơn thuần | Mục tiêu thực tế 10–40 g; ≥10 g tối thiểu; ≥80% thời gian trong khoảng mục tiêu [16] | ThermoCool SF, TactiCath, TactiFlex SE |
+| **Local Impedance Drop (LID)** | DirectSense (Boston Scientific) / STABLEPOINT (Biosense Webster) | Trở kháng tại chỗ đo qua điện cực đầu catheter (Ω) | ≥21 Ω (thành trước) / ≥18 Ω (thành sau); >13,4 Ω tổng thể [20,22,24] | IntellaNav MIFI OI, STABLEPOINT |
+| **AID (Averaged Impedance Drop)** | EnSite X / Abbott (TactiFlex SE) | Giảm trở kháng toàn cục đã lọc nhiễu hô hấp + nhịp tim (%) | %AID ≥9% (ngưỡng ROC 9,33%) [26] | TactiFlex SE |
+
+### Bảng 2. Kết cục lâm sàng và chất lượng bằng chứng (GRADE)
+
+| Thông số | Cô lập lần đầu (first-pass) | Kết nối lại cấp (PVR acute) | Tự do loạn nhịp 12 tháng | Thiết kế chứng cứ mạnh nhất | GRADE (tự do 12 tháng) | Hạn chế chủ yếu |
+|---|---|---|---|---|---|---|
+| **AI** | 93,4% vs 62,9% (không-AI) — OR thất bại 0,09 [3] | 18,0% vs 35,0% (OR 0,37) [3] | 41–94% (biến thiên cao; CLOSE pilot 92,3% [1]; Dhillon 78% ns [7]) | Meta-analysis 11 đoàn hệ, n=2.306 [3] | **THẤP** | Không có RCT; nhóm chứng lịch sử; nhiễu đường cong học tập |
+| **LSI** | Phân tích ngưỡng (Kanamori: LSI <5,25 → độ nhạy 97,6% cho khe) [8] | Không tổng hợp được | 65,6–95,7% (biến thiên do ngưỡng khác nhau) | Đoàn hệ đơn nhánh đa quốc gia, n=143 [13] | **THẤP** | Ngưỡng chưa chuẩn hóa (3,95–6,5); không có RCT; không có so sánh đầu-đối-đầu với AI |
+| **CF (sẵn có đơn thuần)** | Tương đương catheter không-CF (TOCCASTAR) [17] | CF-on giảm PVR cấp: 22% vs 32% (P=0,03) [18] | Tương đương không-CF: 67,8% vs 69,4% [17]; 49% vs 52% (P=0,9) [18] | **2 RCT** (TOCCASTAR n=300; Ullah n=160) | **TRUNG BÌNH (kết quả âm tính)** | Sẵn có CF ≠ tận dụng CF; sử dụng CF chất lượng cao (ổn định) có thể có lợi nhưng bằng chứng hậu kiểm |
+| **LID** | Điểm không khe có LID cao hơn rõ rệt: 22,1 vs 14,4 Ω (P<0,0001) [24] | Mỗi 5 Ω tăng LID → OR 3,13 cho thành công cấp [21] | >88% (CHARISMA 1 năm, n=153) [21]; LID vs LSI (Lian): 34,3% tái phát [15] | Đoàn hệ đa trung tâm n=212 [24]; CHARISMA n=153 [21] | **RẤT THẤP** | Hầu hết dữ liệu là kết cục cấp thay thế; so sánh LID vs LSI bị nhiễu (nhánh LID thiếu CF); ngưỡng chưa đồng nhất |
+| **AID (TactiFlex SE)** | %AID ≥9%: FPI 90%; AUC 0,761 vs 0,627 (toàn cục chưa lọc) [26] | %AID thấp hơn ở điểm khe: 7,2% vs 9,6% (P<0,0001) [26] | 82% pilot (n=30, 1 năm) [26]; TactiFlex IDE 72,9% (n=334) [27] | Pilot đơn nhánh n=30 [26] + RCT thiết bị n=334 [27] | **RẤT THẤP** | Bằng chứng pilot; đơn trung tâm; thiếu so sánh đối đầu với AI/LSI; AutoMark chưa peer-reviewed |
+
+> **Ghi chú đọc bảng:** GRADE áp dụng cho kết cục chính "tự do loạn nhịp 12 tháng." CF (sẵn có) là thông số **duy nhất có RCT**, và kết quả là âm tính (không ưu việt so với catheter không-CF). Các thông số tổng hợp (AI/LSI/LID/AID) không có RCT nào; bằng chứng là đoàn hệ. "THẤP" không có nghĩa là vô hiệu — mà có nghĩa là bằng chứng **chưa đủ mạnh để loại trừ sai lệch hệ thống**, và kết luận có thể thay đổi khi RCT xuất hiện.
+
+---
+
+## 11. Đồng thuận đã được thiết lập / Tranh luận còn tiếp diễn
+
+### 11.1 Đồng thuận đã được thiết lập (Law 4)
 
 > Các tuyên bố đồng thuận dưới đây phù hợp với hướng dẫn/đồng thuận của các hiệp hội lớn về ablation rung nhĩ: 2024 ESC/EACTS [32], 2023 ACC/AHA/ACCP/HRS [33] và đồng thuận chuyên gia HRS/EHRA/ECAS 2017 [34] — vốn xác lập cô lập tĩnh mạch phổi bền vững là đích đến kỹ thuật và đề cập vai trò của lực tiếp xúc / chỉ số tổn thương.
 
@@ -145,7 +171,7 @@ Năng lượng cao thời gian ngắn (High-Power Short-Duration — HPSD, đi�
 - **Chỉ số tổng hợp (AI/LSI/LID) ưu việt hơn lực tiếp xúc đơn thuần hoặc thời gian cố định** ở các kết cục cấp; giảm trở kháng lớn hơn / tiếp xúc đủ *về mặt cấp tính* tạo tổn thương bền hơn (đồng thuận cơ chế xuyên suốt [1,2,20,21,24]).
 - **HPSD làm thay đổi ngưỡng metric**, cần hiệu chỉnh theo cài đặt công suất [6,11,12].
 
-### 10.2 Tranh luận còn tiếp diễn (Law 4)
+### 11.2 Tranh luận còn tiếp diễn (Law 4)
 
 - **Sự sẵn có so với sự tận dụng lực tiếp xúc:** RCT âm tính cho sự sẵn có [17,18] đối lập đoàn hệ dương tính cho độ ổn định [16] (xem Mục 6.3).
 - **Ngưỡng LSI tối ưu chưa chuẩn hóa** (~3,95–6,5), phần do khác biệt vùng miền và độ dày mô [9,10,11,13].
@@ -154,13 +180,13 @@ Năng lượng cao thời gian ngắn (High-Power Short-Duration — HPSD, đi�
 
 ---
 
-## 11. Giới hạn của tổng quan này
+## 12. Giới hạn của tổng quan này
 
 Tổng quan này có các giới hạn quan trọng (Law 5). Thứ nhất, corpus chỉ có **2 RCT, và cả hai đều về lực tiếp xúc** [17,18]; **không có RCT nào cho AI, LSI hay LID** — toàn bộ luận điểm "metric-guided tốt hơn" dựa trên chứng cứ đoàn hệ. Thứ hai, **không có so sánh đối đầu trực tiếp AI so với LSI** ở bất kỳ thiết kế nào; so sánh đối đầu duy nhất (LID so với LSI) bị nhiễu do thiếu cảm biến lực ở một nhánh. Thứ ba, **25/35 hồ sơ dựa trên abstract (tạm tính)**, cần trích lại CI/N từ toàn văn trước khi gộp; hai hồ sơ (Segreti và Pedersen 2020) chưa xác nhận PMID nên không được trích dẫn. Thứ tư, **ngưỡng metric không đồng nhất** giữa các nghiên cứu (AI 400–550; LSI 3,95–6,5; LID ~9,7–21,8 Ω; AID ~9%) khiến việc gộp dữ liệu khó khăn. Thứ năm, **không có dữ liệu đặc hiệu cho quần thể Việt Nam hay Đông Nam Á** (dù có các đoàn hệ châu Á — Nhật, Trung Quốc); khả năng áp dụng cho dân số rung nhĩ dai dẳng Việt Nam là một giả định, không phải bằng chứng. Cuối cùng, quá trình thu thập tiền in chưa hoàn tất do giới hạn công cụ, và toàn văn chỉ có với 10/35 hồ sơ; vai trò của metric RF trong kỷ nguyên triệt đốt điện trường xung (PFA) không được corpus đề cập trực tiếp và chỉ là suy luận bối cảnh.
 
 ---
 
-## 12. Kết luận và gợi ý nghiên cứu tương lai
+## 13. Kết luận và gợi ý nghiên cứu tương lai
 
 Hướng dẫn bằng thông số tổn thương tổng hợp **dường như liên quan đến** cô lập lần đầu cao hơn, ít kết nối lại cấp hơn và có thể tái phát 12 tháng thấp hơn so với ablation quy ước — nhưng toàn bộ kết luận này ở mức chắc chắn **THẤP** (AI, LSI) đến **RẤT THẤP** (LID, AID), do thiếu vắng RCT. Kết luận chắc chắn nhất (GRADE TRUNG BÌNH) lại là một kết luận *âm tính*: hai RCT chứng minh rõ rằng *sự sẵn có* của lực tiếp xúc đơn thuần không cải thiện tự do loạn nhịp 12 tháng, dù làm giảm kết nối lại cấp [17,18]. Trên thực hành, AI (CLOSE) có nền chứng cứ đoàn hệ lớn nhất và nhất quán nhất; LSI cần hiệu chỉnh ngưỡng theo công suất và vùng miền; LID hữu ích để phân biệt chất lượng tổn thương cấp nhưng còn thiếu dữ liệu lâm sàng dài hạn.
 
