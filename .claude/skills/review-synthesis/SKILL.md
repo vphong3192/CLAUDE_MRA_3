@@ -25,6 +25,12 @@ Cite **only** from `reference/<topic>.md`. Before writing any sentence with a nu
 re-read its line in that file. The conversation and any context summary are NOT citation sources — if
 it isn't in the reference store, it isn't citable (this severs citations from fallible memory).
 
+**Landmark reviews are no exception.** A landmark review article read for orientation is citable only
+if it was promoted into `reference/<topic>.md` as a Level III (expert-opinion) record. If you draw a
+direct opinion/claim from a landmark, it must have an entry there with a stable ID; if it has no entry,
+do not cite it — request the appraiser/retriever add it, or drop the claim. Landmark-sourced sentences
+get hedged expert-opinion language (Level III), never quantitative-finding language.
+
 ## Document structure
 1. **Title + structured abstract/summary** (background, methods, key findings, conclusion).
 2. **Background** — why the question matters, what's at stake clinically.
