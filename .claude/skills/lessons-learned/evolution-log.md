@@ -92,3 +92,45 @@ process was flawed before).
 **Status:** clean positive evidence that the gate corrections hold. **NOT the canonical Test Case 1 baseline**
 (that needs the fixed ~1,500-word prompt); EASY baseline still to be established with a properly-gated fixed run.
 ═══════════════════════════════════════════════
+
+═══════════════════════════════════════════════
+### Entry #4 — 2026-06-14 — Ablation metrics in RF-PVI for AF (AI/LSI/LID/CF/AID, TactiFlex SE)
+**Task:** So sánh các chỉ số tổn thương trong triệt đốt RF-PVI điều trị rung nhĩ (AI, LSI, LID, CF,
+AID/TactiFlex SE). Mục đích: nghiên cứu/học thuật. Đối tượng: BS điện sinh lý can thiệp. Ngôn ngữ:
+tiếng Việt. Độ sâu: ~3000+ từ.
+**Rubric total:** 0.98 → EXCELLENT (≥0.90)
+**Per-criterion:** C1 1.0 · C2 1.0 · C3 1.0 · C4 1.0 · C5 1.0 · C6 1.0 · C7 1.0 · C8 1.0 · C9 1.0 · C10 0.9
+**Process:** protocol → retrieval (source/ checked — L-012; 10 user PDFs/HTML used) → Research Map
+**GATE CLEARED** — user answered all map questions + uploaded 10 PDFs + "tiếp tục quy trình nghiên cứu"
+(2026-06-14 08:28 UTC, received after the map was shown — satisfies L-014, no self-clear) → appraisal
+(GRADE + RoB) → Vietnamese draft → QA + rubric + audit. Law-compliance 6/6 PASS.
+**Records:** 35 PMID-verified (2 UNCONFIRMED — Segreti A022, Pedersen — excluded per L-009);
+10 load-bearing records full-text-confirmed via user-supplied HTML+PDF in source/af-ablation-metrics/.
+**Process notes (non-law):**
+- Full-text retrieval BLOCKED — PubMed metadata/full-text MCP + NCBI E-utilities permission-denied →
+  user uploaded 10 HTML+PDF files → resolved. QA could not re-resolve PMIDs independently (same egress
+  block); mitigated by retriever title-confirmation + verifier full-text re-read of 10 highest-stakes records.
+- bioRxiv/medRxiv sweep permission-denied → 0 preprints → flagged in §11 Limitations (L-004 in intent).
+- Synthesis writer hit Consensus API session limit → file was already complete (204 lines), no data loss.
+- AutoMark Index: 0 PubMed results → reported as "not peer-reviewed, future direction only" (Law 1).
+**Violations found:** none blocking; no fabricated citation; both human gates honoured.
+**Defects:** LOW (writer) — orphan reference entries [29–34] listed but uncited inline; L-011 society
+guidelines (ESC/AHA/HRS) retrieved but not embedded in consensus section → QA FIX applied (added
+[29,30,31] to §6.4 and [32,33,34] to §10.1). Non-blocking.
+**Key scientific findings (method knowledge for future cardiac-EP reviews):**
+- No RCT for ANY lesion-quality index (AI/LSI/LID/AID) — efficacy thesis rests on cohort/historical-control
+  data (GRADE LOW for AI/LSI; VERY LOW for LID/AID).
+- Both CF RCTs (TOCCASTAR, Ullah) NEGATIVE for 12-mo clinical benefit — strongest conclusion in the review
+  is this MODERATE-certainty negative; cohort-positive CF data must NOT override it (Law 3).
+- A028 (Lian, LID-vs-LSI head-to-head) fatally confounded: LID arm had NO CF sensing; internal stat
+  inconsistency (KM P=0.037 vs Table-2 P=0.09).
+- AID/TactiFlex SE: emerging paradigm, pilot-level evidence only (single-arm n=30).
+**Lessons applied:** L-001/002/003/006/007/009/010/011/012/014/015 — all fired correctly.
+**Lessons approved → saved:** L-016 (inline-vs-list reconciliation before handoff), L-017 (embed L-011
+guideline citations in consensus section).
+**Actions taken:** built `reference/af-ablation-metrics-pvi-rf.md` (35 verified records, 10 full-text);
+delivered `_workspace/06_final_review.md` (clean, post-FIX); 9 Vietnamese EP terms saved to glossary.
+**Status:** EXCELLENT run. First run to clear the gate via PDF-upload + explicit Vietnamese approval and to
+operate fully on user-supplied full text under an egress block — positive evidence gate + provenance
+disciplines hold under degraded retrieval conditions.
+═══════════════════════════════════════════════
