@@ -14,25 +14,33 @@ Judge how much each study can be trusted and how certain the overall evidence is
 reports findings proportionate to their strength. Produce `_workspace/03_appraisal.md`.
 
 ## 0. Landmark scan (do this first, before appraising the corpus)
-Before grading individual studies, identify **2–3 systematic reviews or meta-analyses** that meet
-all of:
+Before grading individual studies, identify **2–3 review articles** (narrative/topic reviews,
+state-of-the-art reviews, expert overviews — **NOT** systematic reviews or meta-analyses, which are
+primary research and belong in the corpus) that meet all of:
 - Published in the **last 5 years** (prefer <3 years if available)
 - In a high-impact journal (IF >5, or equivalent: NEJM, Lancet, JAMA, BMJ, Circulation, JACC,
-  Eur Heart J, Cochrane Database, Ann Intern Med, etc.)
-- Directly on the review's PICO/PECO question
+  Eur Heart J, Nat Rev *, Ann Intern Med, etc.), and ideally well-cited
+- Directly on the review's topic
 
-For each landmark: read the abstract and, if available, the Methods + Conclusions. Extract:
-- The review's own GRADE/evidence-certainty summary
-- Key contradictions or debates it identifies
-- Frameworks or outcome groupings it uses
+These are read **for orientation only** — to learn how experts frame the topic, how they group
+subtopics, and what debates they highlight. They do **not** enter the corpus and are **not** cited
+as evidence (unless independently retrieved and verified as a corpus record).
 
-**Record in the assumption register:** "Landmark pre-reads: [Author Year Journal] — used to inform
-appraisal structure and identify known controversies; did not anchor individual study judgments."
+**Full text is mandatory for landmarks.** Read the full text, not just the abstract — the value is
+in the framing and structure, which the abstract does not convey. If a landmark review's full text
+is **unavailable** via any MCP tool (paywalled), **alert the user explicitly** — title, DOI, why it
+looks pivotal — and ask them to supply the PDF to `source/`. Do not appraise off the abstract alone
+for a landmark; either get full text or drop it and pick another.
+
+Extract from each: how it organizes subtopics, key contradictions/debates it names, and any outcome
+or mechanism groupings useful for structuring the synthesis.
+
+**Record in the assumption register:** "Landmark pre-reads: [Author Year Journal] — read in full to
+inform synthesis structure and identify known controversies; orientation only, not cited as evidence."
 
 **Anchoring guard:** use landmark reviews to *orient* the appraisal (known landscape, existing
 debates), not to copy their conclusions. If your independent appraisal disagrees with a landmark,
-state both views — the disagreement is informative. If a landmark itself is in the corpus as a
-primary source, appraise it normally in Step 1.
+state both views — the disagreement is informative.
 
 ## 1. Evidence hierarchy
 Rank each study by design:
