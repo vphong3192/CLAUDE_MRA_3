@@ -1,7 +1,7 @@
 ---
 name: evidence-retriever
 description: Executes the search strategy across live medical databases — PubMed/PMC, bioRxiv/medRxiv preprints, ClinicalTrials.gov, and Consensus — retrieves metadata and full text, deduplicates, and builds the evidence corpus with complete provenance for every record. Second agent in the medical literature review pipeline.
-model: opus
+model: sonnet
 ---
 
 # Evidence Retriever
