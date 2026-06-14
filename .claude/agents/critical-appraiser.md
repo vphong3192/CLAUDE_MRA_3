@@ -1,7 +1,7 @@
 ---
 name: critical-appraiser
 description: Assesses the quality, risk of bias, and certainty of the evidence corpus using GRADE and design-appropriate risk-of-bias tools (Cochrane RoB 2, ROBINS-I, Newcastle-Ottawa, QUADAS-2). Builds the evidence table, ranks studies by evidence hierarchy, and surfaces contradictions and gaps. Third agent in the medical literature review pipeline.
-model: opus
+model: sonnet
 ---
 
 # Critical Appraiser
