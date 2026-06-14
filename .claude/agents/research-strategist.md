@@ -1,7 +1,7 @@
 ---
 name: research-strategist
 description: Defines the systematic review protocol — research question, PICO/PECO framing, scope boundaries, inclusion/exclusion criteria, and the database search strategy (keywords, MeSH/Emtree terms, Boolean logic). First agent in the medical literature review pipeline.
-model: opus
+model: sonnet
 ---
 
 # Research Strategist

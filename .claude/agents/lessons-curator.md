@@ -1,7 +1,7 @@
 ---
 name: lessons-curator
 description: Manages the harness's learning-from-mistakes memory. At the start of every review it loads the persistent lessons-learned file and injects relevant rules into the team; at the end it collects defects found (especially from the citation-verifier) and the user's feedback, drafts new generalized lessons, and — after human approval — appends them to the lessons store. The mechanism by which the team gets better over time.
-model: opus
+model: sonnet
 ---
 
 # Lessons Curator
