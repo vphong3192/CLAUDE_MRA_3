@@ -1,0 +1,53 @@
+# audit.md — Pre-delivery self-audit checklist
+
+The verifier runs this audit and produces a structured report **before** the lead reports "done." The
+audit is structured accounting, not a vibe check. Ported from v1, adapted to the team workflow.
+
+> Load this only at the audit step (verifier), alongside rubric.md.
+
+## Part A — Process audit
+Mark PASS / FAIL / SKIPPED with evidence per phase:
+- **Protocol** — research question + PICO + inclusion/exclusion + search strategy written? (evidence: quote scope)
+- **Retrieval** — ≥2 independent sources? curiosity-budget gap search run? `source/` folder checked and user asked?
+- **Research Map (HARD GATE)** — map presented with gaps + Vietnam/local picture? **Quote the user's explicit approval message received after the map was shown.** No quotable approval → gate is **NOT cleared** (fail closed) → **not deliverable**, regardless of how clear the scope seemed. Inferred/"standing"/"fixed-scope" approval does not count. Also confirm a Phase-0 scope confirmation (purpose + depth) was obtained before searching.
+- **Appraisal** — Assumption Register written? RoB tool + GRADE applied?
+- **Synthesis** — grouped by sub-theme (not listing)? consensus vs. controversy counted?
+- **Draft** — full standard structure? every claim cited inline from `reference/<topic>.md`?
+
+## Part B — Law-compliance audit
+Check the 6 Laws (see `.claude/constitution.md`):
+- **Law 1** — spot-check 3–5 citations: author+year+journal real? PMID/DOI/NCT resolves? no unsourced numbers?
+- **Law 2** — output matches the requested scope (not widened/narrowed)? audience matches technical level?
+- **Law 3** — high-tier sources prioritized? conflicts stated?
+- **Law 4** — separate "consensus" and "controversy" sections? no controversy presented as consensus?
+- **Law 5** — "Limitations" section present with search scope, language, bias?
+- **Law 6** — evolution-log entry prepared? reusable knowledge captured?
+
+## Part C — Scope integrity
+Compare output to the Phase-0 scope: right topic? right depth/length? right audience? no unrequested
+additions/removals? *(self-changed scope = serious violation — report it.)*
+
+## Part D — Audit report format
+```
+═══════════════════════════════════════
+AUDIT REPORT — <task>
+RUBRIC TOTAL: <0.XX> → <band>
+  T1 Search <0.X> — <reason>      T4 Appraisal <0.X> — <reason>
+  T2 Quality <0.X> — <reason>     T5 Citation <0.X> — <reason>
+  T3 Synthesis <0.X> — <reason>   T6 Applicability <0.X> — <reason>
+PROCESS: <X phases PASS>   LAWS: <Y/6 PASS>   SCOPE: <PASS/FAIL>
+RESEARCH MAP GATE: <CLEARED / NOT CLEARED>
+VIOLATIONS: <list>
+SELF-UPDATE PROPOSALS: <evolution-log entry · lessons to propose · skill/constitution change>
+DECISION:
+  [ ] Deliver — no violations
+  [ ] Deliver — violations present, await user decision
+  [ ] DO NOT deliver — fabricated citation or uncleared gate → fix first
+═══════════════════════════════════════
+```
+
+## Supreme rules
+- **Fabricated citation (Law 1) → do NOT deliver.** Stop, report, redo that part.
+- **Output meets rubric but process violated → still deliver** (delivery is sacred), with the violation
+  report attached — *unless* the Research Map gate was never cleared.
+- **Never self-justify.** Finding a violation means reporting it, not excusing it.
