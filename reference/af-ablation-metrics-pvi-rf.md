@@ -292,6 +292,40 @@
 
 ---
 
+---
+
+## F. TactiFlex SE — AID (Averaged Impedance Drop) & catheter-specific data
+
+> **Context note:** TactiFlex SE (Abbott) does NOT natively include AI (CARTO3) or LSI (EnSite). It uses
+> contact force + time-based delivery; the EnSite X platform provides "AID" (Averaged Impedance Drop —
+> filtered/oscillation-corrected generator impedance signal) as a surrogate lesion estimator. See A033.
+
+### [A033] Harada 2026 — AID-guided PVI with TactiFlex SE
+- **Source:** PubMed | PMID: 41517933 | DOI: 10.1111/jce.70246
+- **Design:** Prospective lesion-level analysis + clinical cohort (n=20 lesion-level; n=30 clinical)
+- **N / Follow-up:** 1687 lesions (gap prediction); 30 patients (1-year clinical)
+- **Key finding:** %AID ≥9% predicted successful lesion (AUC 0.761 vs 0.627 for unfiltered drop; P<0.05); %AID-guided PVI with TFSE → 90% FPI bilaterally; 82% 1-year event-free. TactiFlex SE has **no native lesion-estimating parameter** (AI/LSI absent).
+- **Relevance:** HIGH (critical context: TactiFlex SE uses AID not AI/LSI; most recent catheter paradigm)
+- **Notes:** Japanese centre; abstract-derived. DOI confirmed via PubMed. Published Jan 2026.
+
+### [A034] Nair 2023 — TactiFlex AF Pivotal Trial (IDE Study)
+- **Source:** PubMed | PMID: 38204461 | DOI: 10.1016/j.hroo.2023.10.006
+- **Design:** Prospective non-randomized multicentre IDE (n=334 treated, 37 sites)
+- **N / Follow-up:** 334 paroxysmal AF / 12 months
+- **Key finding:** KM 12-mo freedom from AF/AFL/AT 72.9% (95% CI 67.2–77.8%); clinical success 83.6%. HP subgroup (40–50W, n=222): 76.4% vs LP (<40W, n=97): 66.8%; primary safety AE rate 4.3%.
+- **Relevance:** HIGH (TactiFlex SE safety/efficacy benchmark; no AI/LSI metric — CF + time only)
+- **Notes:** Published Heart Rhythm O2 2023; abstract-derived.
+
+### [A035] Arai 2024 — Real-world safety of latest RF catheters (n=3957, registry)
+- **Source:** PubMed | PMID: 39188036 | DOI: 10.1111/jce.16408
+- **Design:** Retrospective multicentre registry (20 centres, 2022–2023)
+- **N / Follow-up:** 3957 procedures (QDM 343, SmartTouch SF 1793, TactiFlex 1121, TactiCath 700)
+- **Key finding:** Cardiac tamponade: TF/TC (EnSite) 1.1% vs QDM/STSF (CARTO) 0.2% (P=.008); TactiFlex highest tamponade rate; multivariate OR 4.8 for TF/TC vs CARTO systems. Acute PVI success 99.5% all groups.
+- **Relevance:** HIGH (comparative safety across catheter platforms — safety context for TactiFlex)
+- **Notes:** Does not directly address AI/LSI; relevant for safety comparison. Abstract-derived.
+
+---
+
 ## UNCONFIRMED — DO NOT CITE (failed PMID confirmation this run; L-009)
 
 - **Pedersen 2020** — "Pulmonary vein isolation using Ablation Index improves outcome in patients with
