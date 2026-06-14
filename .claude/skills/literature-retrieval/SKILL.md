@@ -43,10 +43,18 @@ Web search is **supplementary only** — run it after PubMed/Consensus to fill g
 | `study_id` | logical study key (group preprint+publication+registration as one) |
 | `stable_id` | PMID / DOI / PMCID / NCT — **mandatory**; no ID → re-find or drop |
 | `title`, `authors`, `year`, `source` | journal or server name |
-| `source_type` | `peer-reviewed` \| `preprint` \| `trial-registry` |
+| `source_type` | `peer-reviewed` \| `preprint` \| `trial-registry` \| `review-article` (landmark, Level III) |
 | `abstract` | captured text |
 | `fulltext` | `retrieved` \| `available` \| `unavailable` |
+| `relevance_tier` | **`HIGH` \| `MEDIUM` \| `LOW`** — importance to the review question; drives full-text priority and is shown to the user at the gate |
 | `relevance_note` | one line: why it's in scope |
+| `study_limitations` | the study's **own** stated limitations (from full text). Abstract-only → write `not captured (abstract-only)` |
+| `author_suggestions` | future-research directions the **authors** propose (from full text). Abstract-only → write `not captured (abstract-only)` |
+
+`study_limitations` and `author_suggestions` let the writer report each study's IMRAD faithfully —
+its own limitations and the authors' suggested next steps — instead of only a corpus-level summary.
+They are populated only from full text; mark them `not captured (abstract-only)` until the record is
+upgraded, never invent them.
 
 ## Deduplication
 The same study can surface as a preprint, a journal article, and a trial registration. Use
@@ -82,9 +90,24 @@ Run the strategist's ≥1–2 gap-directed searches (evidence/contradiction/meth
 implementation). If PubMed returns <3 RCTs/SRs, expand to case reports/series, check
 ClinicalTrials.gov for running trials, and flag the thin evidence base — don't let scarcity pass silently.
 
-## Full text
-Pull full text (`get_full_text_article`) for the highest-priority records so the appraiser reads
-primary methods/results, not just abstracts. Note copyright status where the tool reports it.
+## Full text — prioritize HIGH-relevance records (do before the gate)
+Every `relevance_tier: HIGH` record **must** be upgraded to full text before appraisal/writing, so
+the appraiser reads primary methods/results (and can fill `study_limitations` + `author_suggestions`)
+rather than an abstract. Order of attempts for each HIGH record:
+1. `get_full_text_article` (PubMed/PMC).
+2. The `source/` folder (user-supplied PDFs).
+3. If still unavailable (paywalled): **alert the user** — title, ID, why it's HIGH — and ask them to
+   supply the PDF. Do not let a HIGH record stay abstract-only silently.
+MEDIUM/LOW records may remain abstract-derived; mark them `provisional`. Track in the search log how
+many HIGH records are full-text vs still abstract-only. Note copyright status where the tool reports it.
+
+## Source-approval handoff (the corpus is presented at the Research Map gate)
+The retriever does **not** hand the corpus straight to the appraiser. The full record list — each
+with its `relevance_tier` (HIGH/MEDIUM/LOW) and `fulltext` status — is surfaced to the **user at the
+Phase 3 Research Map gate**. Appraisal (summarizing) and synthesis (writing) **do not begin until the
+user approves which sources are in scope**. The user may drop sources, re-tier importance, or request
+more searching/full-text before the team proceeds. This keeps the human in control of what becomes
+evidence (see orchestrator Phase 3).
 
 ## Currency rule
 Preprints and trial registries are where the newest evidence lives — always include them, tag them

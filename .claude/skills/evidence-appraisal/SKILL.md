@@ -13,6 +13,11 @@ description: >
 Judge how much each study can be trusted and how certain the overall evidence is, so the writer
 reports findings proportionate to their strength. Produce `_workspace/03_appraisal.md`.
 
+**Appraise only user-approved sources.** The Phase 3 Research Map gate ends with the user approving
+the source list (with HIGH/MEDIUM/LOW tiers). Summarize and grade only those approved records — do
+not pull in sources the user dropped, and respect any re-tiering. If you need a source that wasn't
+approved, ask the lead to re-open the gate, don't smuggle it in.
+
 ## 0. Landmark scan (do this first, before appraising the corpus)
 Before grading individual studies, identify **2–3 review articles** (narrative/topic reviews,
 state-of-the-art reviews, expert overviews — **NOT** systematic reviews or meta-analyses, which are
@@ -80,6 +85,11 @@ State the reason for every up/downgrade.
 One row per study: design, N, population, key effect estimate **with CI**, risk-of-bias judgment,
 notes. Capture effect sizes, CIs, sample sizes, follow-up duration — never invent a number; if it
 isn't in the source, write "not reported."
+
+Carry each study's **own `study_limitations` and `author_suggestions`** (from the reference store)
+into the appraisal so the writer can report per-study limitations and the authors' proposed next
+steps faithfully — not only a corpus-level summary. Where a record is still abstract-only and these
+read `not captured`, note it and (for HIGH-relevance records) flag for full-text upgrade.
 
 ## 5. Contradictions & gaps (do this actively)
 - **Contradictions:** list every place studies disagree, with both sides cited and a methodological
