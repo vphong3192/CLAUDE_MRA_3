@@ -22,9 +22,8 @@ primary research and belong in the corpus) that meet all of:
   Eur Heart J, Nat Rev *, Ann Intern Med, etc.), and ideally well-cited
 - Directly on the review's topic
 
-These are read **for orientation only** — to learn how experts frame the topic, how they group
-subtopics, and what debates they highlight. They do **not** enter the corpus and are **not** cited
-as evidence (unless independently retrieved and verified as a corpus record).
+These are read primarily **for orientation** — to learn how experts frame the topic, how they group
+subtopics, and what debates they highlight.
 
 **Full text is mandatory for landmarks.** Read the full text, not just the abstract — the value is
 in the framing and structure, which the abstract does not convey. If a landmark review's full text
@@ -35,8 +34,16 @@ for a landmark; either get full text or drop it and pick another.
 Extract from each: how it organizes subtopics, key contradictions/debates it names, and any outcome
 or mechanism groupings useful for structuring the synthesis.
 
+**If the writer will quote or paraphrase a direct opinion/claim from a landmark**, that landmark
+**must enter the corpus** as a verified record (stable ID + metadata) and be appraised as
+**Level III evidence — expert opinion** (lowest tier of the hierarchy below). It is then cited
+normally with its `[n]`. The rule is absolute: **no sentence carrying an idea taken from a landmark
+may be written without a citation to it.** Reserve landmark-sourced claims for framing, expert
+interpretation, or context — never for quantitative findings, which must come from primary studies.
+
 **Record in the assumption register:** "Landmark pre-reads: [Author Year Journal] — read in full to
-inform synthesis structure and identify known controversies; orientation only, not cited as evidence."
+inform synthesis structure; cited as Level III (expert opinion) only where a direct claim is drawn,
+otherwise orientation only."
 
 **Anchoring guard:** use landmark reviews to *orient* the appraisal (known landscape, existing
 debates), not to copy their conclusions. If your independent appraisal disagrees with a landmark,
