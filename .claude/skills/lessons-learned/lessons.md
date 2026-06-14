@@ -113,3 +113,17 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Rule:** Explicitly ask the user for the review's **purpose** (clinical / research / education), **depth/length**, audience, and output language, and STOP for the answer. Do not infer these from the request or from a fixed test-case prompt. Confirm scope in the user's own words before proceeding.
 - **Why:** Depth and purpose change the whole review (a 1500-word clinical aid ≠ a 3000-word research gap-analysis). Guessing them violates Law 2 (serve the purpose, not the process) and produces the wrong artifact confidently.
 - **Origin:** user feedback, 2026-06-14 — both test runs assumed scope instead of confirming it.
+
+### L-016: Reconcile inline citations against the reference list before handoff
+- **Role:** writer
+- **Trigger:** finishing any draft that has a numbered reference list
+- **Rule:** Before handing the draft to QA, run a two-way reconciliation: every reference-list entry [n] must appear at least once inline, and every inline [n] must have a list entry. Resolve orphans (listed-but-uncited) by either citing them in the relevant section or removing them from the list. Do not rely on QA to catch this.
+- **Why:** Entry #4 left refs [29–34] (3 CF-catheter benchmarks + 3 society guidelines) listed but uncited inline — orphan references that QA had to fix. An orphan reference signals retrieved-but-unused evidence and looks like sloppy scholarship to an expert reader; catching it pre-handoff keeps the writer accountable for completeness.
+- **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
+
+### L-017: Embed L-011 guideline citations in the consensus section, not just the reference list
+- **Role:** writer
+- **Trigger:** the strategy ran an L-011 guideline-body search (ESC / AHA / ACC / ADA / NICE / HRS) and those guidelines are in the store
+- **Rule:** When society guidelines were retrieved per L-011, cite them explicitly in the "Established consensus" section to anchor each consensus statement — do not leave them sitting only in the reference list. The guideline must do interpretive work in the text (what it recommends and at what strength), not merely appear as a number.
+- **Why:** L-011 exists to make reviews read as complete to clinicians; that value is lost if the guidelines are retrieved then forgotten at the writing stage. Entry #4 retrieved ESC 2024, ACC/AHA 2023, HRS 2017 but did not embed them until QA's FIX.
+- **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)

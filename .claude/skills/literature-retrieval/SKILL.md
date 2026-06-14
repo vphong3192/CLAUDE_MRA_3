@@ -23,9 +23,19 @@ strong enough that every later claim is traceable. Produce `_workspace/01_search
 | **ClinicalTrials.gov** | `search_trials`, `get_trial_details`, `analyze_endpoints`, `search_by_sponsor` | Registered/ongoing/completed trials, unpublished results, endpoint design |
 | **Consensus** | `search` | AI-ranked evidence + fast coverage check across the field |
 | **ChEMBL / Open Targets** | `compound_search`, `drug_search`, `get_mechanism`, `get_bioactivity`, target tools | Drug/compound/target-specific reviews: mechanism, activity, target–disease links |
+| **Google Scholar** *(web)* | `WebSearch` — query: `site:scholar.google.com OR "Google Scholar" <terms>` | Supplementary: catch papers not indexed in PubMed (conference, non-English, very recent); results must be PMID/DOI-verified before entering corpus |
+| **ScienceDirect** *(web)* | `WebSearch` — query: `site:sciencedirect.com <terms>` | Supplementary: Elsevier journals sometimes lag PubMed indexing; full text usually paywalled — use for metadata/DOI only |
 
 Run the protocol's per-source query strings. Honor each server's usage rules (e.g., Consensus
 requires inline numbered citations and its sign-up message preserved verbatim).
+
+### Web search protocol (Google Scholar & ScienceDirect)
+Web search is **supplementary only** — run it after PubMed/Consensus to fill gaps, not as a primary source.
+
+1. Run the protocol's key query strings through `WebSearch` targeting each domain.
+2. For each result: extract the DOI or PMID and **verify in PubMed** before adding to corpus. If PubMed confirms it → add normally. If PubMed has no record → treat as unverified, do not cite.
+3. If a web-found paper appears important (high citations, directly on-topic, pivotal design) but full text is **paywalled and unavailable** via any MCP tool: **alert the user explicitly** — state the title, DOI, and why it looks important — and ask if they can supply the PDF to `source/`. Do not silently skip it.
+4. Log web-found additions in the search log with source noted as `(web-supplementary)`.
 
 ## Provenance schema (every corpus row)
 | Field | Notes |
@@ -33,10 +43,21 @@ requires inline numbered citations and its sign-up message preserved verbatim).
 | `study_id` | logical study key (group preprint+publication+registration as one) |
 | `stable_id` | PMID / DOI / PMCID / NCT — **mandatory**; no ID → re-find or drop |
 | `title`, `authors`, `year`, `source` | journal or server name |
-| `source_type` | `peer-reviewed` \| `preprint` \| `trial-registry` |
+| `source_type` | `peer-reviewed` \| `preprint` \| `trial-registry` \| `review-article` (landmark, Level III) |
 | `abstract` | captured text |
 | `fulltext` | `retrieved` \| `available` \| `unavailable` |
+| `relevance_tier` | **`HIGH` \| `MEDIUM` \| `LOW`** — importance to the review question; drives full-text priority and is shown to the user at the gate |
 | `relevance_note` | one line: why it's in scope |
+| `study_context` | from the study's **Introduction**: its research background, the rationale/question it set out to answer, and the authors' approach/framing of the topic (from full text). Abstract-only → write `not captured (abstract-only)` |
+| `study_limitations` | the study's **own** stated limitations (from full text). Abstract-only → write `not captured (abstract-only)` |
+| `author_suggestions` | future-research directions the **authors** propose (from full text). Abstract-only → write `not captured (abstract-only)` |
+
+`study_context`, `study_limitations`, and `author_suggestions` let the writer reflect each study's
+IMRAD faithfully — why the authors did the study and how they framed the topic (Introduction), the
+study's own limitations (Discussion), and the next steps they propose — instead of only a corpus-level
+summary. Read the **Introduction** of every full-text record for `study_context`, not just methods/
+results. All three are populated only from full text; mark them `not captured (abstract-only)` until
+the record is upgraded, never invent them.
 
 ## Deduplication
 The same study can surface as a preprint, a journal article, and a trial registration. Use
@@ -72,9 +93,24 @@ Run the strategist's ≥1–2 gap-directed searches (evidence/contradiction/meth
 implementation). If PubMed returns <3 RCTs/SRs, expand to case reports/series, check
 ClinicalTrials.gov for running trials, and flag the thin evidence base — don't let scarcity pass silently.
 
-## Full text
-Pull full text (`get_full_text_article`) for the highest-priority records so the appraiser reads
-primary methods/results, not just abstracts. Note copyright status where the tool reports it.
+## Full text — prioritize HIGH-relevance records (do before the gate)
+Every `relevance_tier: HIGH` record **must** be upgraded to full text before appraisal/writing, so
+the appraiser reads primary methods/results (and can fill `study_limitations` + `author_suggestions`)
+rather than an abstract. Order of attempts for each HIGH record:
+1. `get_full_text_article` (PubMed/PMC).
+2. The `source/` folder (user-supplied PDFs).
+3. If still unavailable (paywalled): **alert the user** — title, ID, why it's HIGH — and ask them to
+   supply the PDF. Do not let a HIGH record stay abstract-only silently.
+MEDIUM/LOW records may remain abstract-derived; mark them `provisional`. Track in the search log how
+many HIGH records are full-text vs still abstract-only. Note copyright status where the tool reports it.
+
+## Source-approval handoff (the corpus is presented at the Research Map gate)
+The retriever does **not** hand the corpus straight to the appraiser. The full record list — each
+with its `relevance_tier` (HIGH/MEDIUM/LOW) and `fulltext` status — is surfaced to the **user at the
+Phase 3 Research Map gate**. Appraisal (summarizing) and synthesis (writing) **do not begin until the
+user approves which sources are in scope**. The user may drop sources, re-tier importance, or request
+more searching/full-text before the team proceeds. This keeps the human in control of what becomes
+evidence (see orchestrator Phase 3).
 
 ## Currency rule
 Preprints and trial registries are where the newest evidence lives — always include them, tag them

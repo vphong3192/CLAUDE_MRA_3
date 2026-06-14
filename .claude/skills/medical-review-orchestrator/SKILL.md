@@ -99,11 +99,19 @@ presents a **Research Map** and STOPS for the user. The Map has 7 parts:
      implementation gap. Never fabricate local studies (Law 1).
   4. Research gaps — by the 5 types, each with evidence for *why* it's a gap.
   5. Next directions — each tied to a specific gap.
-  6. Sources scanned so far — list + reliability; flag abstract-only records.
-  7. Closing questions — "Which gaps to dig into? Keep/drop which axes? Add which searches?"
-  **The team does NOT proceed to deep appraisal/writing until the user approves.** The user's comments
-  may loop back to Phase 1/2 for more searching. Before Phase 4, re-confirm one line: "Per your comments
-  I'll dig into [gaps], drop [axis], add [search]. Correct?"
+  6. **Source approval list (must be approved before appraisal/writing)** — every record the team
+     would feed to the appraiser, each with: `relevance_tier` (HIGH/MEDIUM/LOW), full-text vs
+     abstract-only status, and source type (peer-reviewed / preprint / trial-registry / landmark
+     review = Level III). HIGH records that are still abstract-only must be called out (the team
+     should have attempted full-text upgrade first; flag any paywalled HIGH record for the user to
+     supply). The user **approves, drops, or re-tiers** sources here.
+  7. Closing questions — "Which sources are in scope (approve the list)? Which gaps to dig into?
+     Keep/drop which axes? Add which searches?"
+  **The team does NOT proceed to deep appraisal/writing until the user approves the source list.**
+  The appraiser summarizes and the writer writes **only from user-approved sources**. The user's
+  comments may loop back to Phase 1/2 for more searching or full-text fetching. Before Phase 4,
+  re-confirm one line: "Per your comments I'll use sources [...], drop [...], re-tier [...], dig into
+  [gaps], add [search]. Correct?"
   ***"Gate cleared" requires an explicit user approval message received AFTER the map was shown.*** It is
   NOT "small scope," NOT "unambiguous/fixed test-case scope," NOT "standing approval inferred from the
   request." **Presenting the map and proceeding to draft in the same turn is a violation** (v1 Entry #9,

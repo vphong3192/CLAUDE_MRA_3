@@ -25,6 +25,12 @@ Cite **only** from `reference/<topic>.md`. Before writing any sentence with a nu
 re-read its line in that file. The conversation and any context summary are NOT citation sources — if
 it isn't in the reference store, it isn't citable (this severs citations from fallible memory).
 
+**Landmark reviews are no exception.** A landmark review article read for orientation is citable only
+if it was promoted into `reference/<topic>.md` as a Level III (expert-opinion) record. If you draw a
+direct opinion/claim from a landmark, it must have an entry there with a stable ID; if it has no entry,
+do not cite it — request the appraiser/retriever add it, or drop the claim. Landmark-sourced sentences
+get hedged expert-opinion language (Level III), never quantitative-finding language.
+
 ## Document structure
 1. **Title + structured abstract/summary** (background, methods, key findings, conclusion).
 2. **Background** — why the question matters, what's at stake clinically.
@@ -34,6 +40,15 @@ it isn't in the reference store, it isn't citable (this severs citations from fa
 6. **Conclusions** — proportionate to the evidence; no overreach.
 7. **Summary-of-findings / evidence table** (from the appraisal).
 8. **References** — numbered Vancouver list, each hyperlinked to its DOI/PMID/NCT URL.
+
+## Depth calibration — word count as soft guide, not floor
+Any word-count target agreed in Phase 0 is a **soft suggestion**, not a minimum to pad toward.
+Write to the depth the evidence supports:
+- Sparse corpus (few studies, thin data) → a tighter, honest review beats a bloated one.
+- Rich corpus (many studies, nuanced debates) → expand as needed; do not truncate real analysis to
+  hit an upper limit.
+- If your draft is significantly shorter than the Phase-0 target, note why (e.g., "corpus has only
+  4 relevant studies; expanding would require repetition") rather than padding.
 
 ## Synthesis, not summary
 A review integrates studies into an argument: where they converge, where they diverge, and *why*
