@@ -21,21 +21,39 @@
 
 ## A. Ablation Index (AI) — guided vs conventional / threshold studies
 
-### [A001] Taghji 2017 — Contiguous optimized RF lesions ("CLOSE"-precursor pilot)
-- **Source:** PubMed | PMID: 29600792
-- **Design:** Prospective single-arm pilot cohort
-- **N / Follow-up:** 130 paroxysmal AF / 12 months
-- **Key finding:** AI ≥400 posterior / ≥550 anterior + interlesion distance ≤6 mm gave first-pass isolation 98% and adenosine-proof isolation 98%; single-procedure freedom from AF/AT/AFL 91.3% off AADs at 12 mo.
-- **Relevance:** HIGH (defines the AI target convention; foundational threshold paper)
-- **Notes:** Source of the canonical AI 400/550 targets (A1 in assumption register). Abstract-derived numbers.
+### [A001] Taghji 2017 — Contiguous optimized RF lesions ("CLOSE" pilot)
+- **Source:** PubMed | PMID: 29600792 | DOI: 10.1016/j.jacep.2017.06.023 (JACC Clin EP 2018;4:99–108)
+- **Design:** Prospective single-arm pilot cohort (monocentric, 4 operators)
+- **N / Follow-up:** [CONFIRMED from full text] 130 paroxysmal AF / 12 months (104 off ADT; 26 on ADT)
+- **Key finding:** [FULL-TEXT CONFIRMED] AI ≥400 posterior/roof, ≥550 anterior + interlesion distance (ILD) ≤6 mm → first-pass isolation 98% and adenosine-proof isolation 98%. KM single-procedure 12-mo freedom from AF/AT/AFL = 92.3% overall; 91.3% in the 104 patients OFF ADT; 96.2% in the 26 patients ON ADT. Freedom from BOTH recurrence and ADT = 73.1%.
+- **Full-text data:**
+  - Primary endpoint: 12-mo KM single-procedure freedom from AF/AT/AFL 92.3% overall (Figure 4); off-ADT 91.3% (n=104), on-ADT 96.2% (n=26); free of both arrhythmia + ADT 73.1%
+  - First-pass isolation: 98% (right circles 130/130 = 100%; left circles 126/130 = 97%) (Table 2)
+  - Acute reconnection: adenosine/waiting-time-proof isolation 98% (right 128/130 = 99%; left 128/130 = 99%); 16 patients (12%) had early recurrence in blanking period
+  - 12-mo recurrence: 10/130 recurred → all 10 underwent repeat; 6/10 (60%) had permanent isolation of all veins; 4 had reconnection (5 gaps in 4/8 circles), 4 gaps explained by ILD >6 mm
+  - Procedure time: 155 ± 28 min; total — RF time per circle 17 ± 5 min (right 16±4, left 18±6); general anesthesia 147±22 vs conscious sedation 164±31 min (p=0.001)
+  - Complications: 1 short-lived TIA (day 8); no steam pop, no PV stenosis, no perforation, no permanent stroke, no atrioesophageal fistula, no death. Mean hospitalization 39±12 h
+  - Metric thresholds: AI target ≥400 posterior/roof, ≥550 anterior; ILD ≤6 mm; in 40% of circles (105/260) AI 400 not reached at posterior wall (chest pain / esophageal T° rise → reduced to AI 300). Median achieved: AI 456 AU; ILD 4.1 mm; D-Imp 12.7 Ω; CF 15.0 g; FTI 375 g·s; ALCI 163
+  - Key tables: Table 1 (baseline), Table 2 (procedure), Figures 2,4,5
+- **Relevance:** HIGH (defines the AI 400/550 target convention; foundational threshold paper; A1 in assumption register)
+- **Notes:** Full-text confirmed 2026-06-14 — prior abstract figure 91.3% was the off-ADT subgroup; the overall KM rate is 92.3%. Numbers now full-text confirmed.
 
 ### [A002] Phlips 2018 — "CLOSE" protocol vs conventional CF-guided PVI
-- **Source:** PubMed | PMID: 29315411
-- **Design:** Prospective cohort with retrospective control (CLOSE n=50 vs CONV-CF n=50)
-- **N / Follow-up:** 100 paroxysmal AF / 12 months
-- **Key finding:** CLOSE (AI 400/550 + ILD ≤6 mm) vs conventional CF: adenosine-proof isolation 97% vs 82% (P<0.001); 12-mo freedom from ATA 94% vs 80% (P<0.05); shorter procedure/RF time. Improvement not explained by CF variability.
+- **Source:** PubMed | PMID: 29315411 | DOI: 10.1093/europace/eux376 (Europace 2018;20:f419–f427)
+- **Design:** Prospective parallel cohort, monocentric: CLOSE n=50 vs last-consecutive conventional CF (CONV-CF) n=50 (10 CF cases unavailable for offline analysis)
+- **N / Follow-up:** [CONFIRMED from full text] 100 paroxysmal AF / 12 months
+- **Key finding:** [FULL-TEXT CONFIRMED] CLOSE (AI ≥400 post / ≥550 ant + ILD ≤6 mm) vs CONV-CF: adenosine/waiting-time-proof isolation 97% vs 82% (P<0.001); first-pass isolation markedly higher (98% vs 54% overall; right 100% vs 50%, left 96% vs 58%, P<0.001); KM single-procedure 12-mo freedom from AF/AT/AFL 94% vs 80% (P<0.05). CLOSE = independent predictor of SR maintenance (OR 3.917, 95% CI 1.008–15.220). CF variability identical (intermittent contact 2% vs 1%, P=0.67).
+- **Full-text data:**
+  - Primary endpoint: 12-mo single-procedure freedom from AF/AT/AFL 94% (CLOSE) vs 80% (CONV-CF), P<0.05 (KM, Figure 5)
+  - First-pass isolation: 98% vs 54% overall (right circle 50/50=100% vs 25/50=50%, P<0.001; left 48/50=96% vs 29/50=58%, P<0.001)
+  - Acute reconnection / adenosine-proof: 97% vs 82% (P<0.001) overall; right 49/50=98% vs 41/50=82% (P=0.008); left 48/50=96% vs 41/50=82% (P=0.025)
+  - 12-mo recurrence: 13/100 recurred (CLOSE 3, CONV-CF ~10); at repeat — reconnections associated with ILD>6 mm and/or AI<400/550 in 7/7 (100%) CLOSE vs 19/23 (83%) CONV-CF (P=0.99)
+  - Procedure time: 149 ± 33 (CLOSE) vs 192 ± 42 min (CONV-CF), P<0.001 (~30% reduction); total RF time 36 ± 7 vs 56 ± 11 min, P<0.001 (~50% reduction); RF time/circle right 17±3 vs 29±8, left 19±4 vs 26±6 (all P<0.001)
+  - Complications: 0 symptomatic in CLOSE; 1 tamponade (transseptal puncture) in CONV-CF. No clinically relevant esophageal injury in CLOSE
+  - Metric thresholds: AI ≥400 post/roof, ≥550 ant; ILD ≤6 mm; posterior applications 23±6 s (13±4 s if esophageal concern); 42% of CLOSE circles had ≥1 lesion with AI target reduced to 300 at posterior wall. CONV-CF: 25 W/30 s post, 35 W/60 s ant, CF target >10 g, AI blinded
+  - Key tables: Table 1 (baseline), Table 2 (procedure), Figures 4–6
 - **Relevance:** HIGH (direct AI-guided vs non-AI comparison)
-- **Notes:** Authors note an RCT is needed (learning-curve confounder). Abstract-derived.
+- **Notes:** Non-randomized (historical control); authors flag learning-curve confounder and call for an RCT. Numbers now full-text confirmed 2026-06-14.
 
 ### [A003] Hussein 2017 — Prospective AI targets vs CF-guided
 - **Source:** PubMed | PMID: 28639728
