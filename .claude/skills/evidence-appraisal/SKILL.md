@@ -86,10 +86,12 @@ One row per study: design, N, population, key effect estimate **with CI**, risk-
 notes. Capture effect sizes, CIs, sample sizes, follow-up duration — never invent a number; if it
 isn't in the source, write "not reported."
 
-Carry each study's **own `study_limitations` and `author_suggestions`** (from the reference store)
-into the appraisal so the writer can report per-study limitations and the authors' proposed next
-steps faithfully — not only a corpus-level summary. Where a record is still abstract-only and these
-read `not captured`, note it and (for HIGH-relevance records) flag for full-text upgrade.
+Carry each study's **own `study_context`, `study_limitations`, and `author_suggestions`** (from the
+reference store) into the appraisal so the writer can reflect per-study IMRAD faithfully — the
+authors' background/rationale and framing of the topic (Introduction), the study's own limitations
+(Discussion), and the next steps they propose. This is the per-study counterpart to the corpus-level
+summary, not a replacement for it. Where a record is still abstract-only and these read
+`not captured`, note it and (for HIGH-relevance records) flag for full-text upgrade.
 
 ## 5. Contradictions & gaps (do this actively)
 - **Contradictions:** list every place studies disagree, with both sides cited and a methodological

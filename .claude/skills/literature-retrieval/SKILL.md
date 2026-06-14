@@ -48,13 +48,16 @@ Web search is **supplementary only** — run it after PubMed/Consensus to fill g
 | `fulltext` | `retrieved` \| `available` \| `unavailable` |
 | `relevance_tier` | **`HIGH` \| `MEDIUM` \| `LOW`** — importance to the review question; drives full-text priority and is shown to the user at the gate |
 | `relevance_note` | one line: why it's in scope |
+| `study_context` | from the study's **Introduction**: its research background, the rationale/question it set out to answer, and the authors' approach/framing of the topic (from full text). Abstract-only → write `not captured (abstract-only)` |
 | `study_limitations` | the study's **own** stated limitations (from full text). Abstract-only → write `not captured (abstract-only)` |
 | `author_suggestions` | future-research directions the **authors** propose (from full text). Abstract-only → write `not captured (abstract-only)` |
 
-`study_limitations` and `author_suggestions` let the writer report each study's IMRAD faithfully —
-its own limitations and the authors' suggested next steps — instead of only a corpus-level summary.
-They are populated only from full text; mark them `not captured (abstract-only)` until the record is
-upgraded, never invent them.
+`study_context`, `study_limitations`, and `author_suggestions` let the writer reflect each study's
+IMRAD faithfully — why the authors did the study and how they framed the topic (Introduction), the
+study's own limitations (Discussion), and the next steps they propose — instead of only a corpus-level
+summary. Read the **Introduction** of every full-text record for `study_context`, not just methods/
+results. All three are populated only from full text; mark them `not captured (abstract-only)` until
+the record is upgraded, never invent them.
 
 ## Deduplication
 The same study can surface as a preprint, a journal article, and a trial registration. Use
