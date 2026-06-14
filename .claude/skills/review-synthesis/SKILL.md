@@ -35,6 +35,15 @@ it isn't in the reference store, it isn't citable (this severs citations from fa
 7. **Summary-of-findings / evidence table** (from the appraisal).
 8. **References** — numbered Vancouver list, each hyperlinked to its DOI/PMID/NCT URL.
 
+## Depth calibration — word count as soft guide, not floor
+Any word-count target agreed in Phase 0 is a **soft suggestion**, not a minimum to pad toward.
+Write to the depth the evidence supports:
+- Sparse corpus (few studies, thin data) → a tighter, honest review beats a bloated one.
+- Rich corpus (many studies, nuanced debates) → expand as needed; do not truncate real analysis to
+  hit an upper limit.
+- If your draft is significantly shorter than the Phase-0 target, note why (e.g., "corpus has only
+  4 relevant studies; expanding would require repetition") rather than padding.
+
 ## Synthesis, not summary
 A review integrates studies into an argument: where they converge, where they diverge, and *why*
 (methodological reasons). If you find yourself writing "Study A found X. Study B found Y. Study C

@@ -23,9 +23,19 @@ strong enough that every later claim is traceable. Produce `_workspace/01_search
 | **ClinicalTrials.gov** | `search_trials`, `get_trial_details`, `analyze_endpoints`, `search_by_sponsor` | Registered/ongoing/completed trials, unpublished results, endpoint design |
 | **Consensus** | `search` | AI-ranked evidence + fast coverage check across the field |
 | **ChEMBL / Open Targets** | `compound_search`, `drug_search`, `get_mechanism`, `get_bioactivity`, target tools | Drug/compound/target-specific reviews: mechanism, activity, target–disease links |
+| **Google Scholar** *(web)* | `WebSearch` — query: `site:scholar.google.com OR "Google Scholar" <terms>` | Supplementary: catch papers not indexed in PubMed (conference, non-English, very recent); results must be PMID/DOI-verified before entering corpus |
+| **ScienceDirect** *(web)* | `WebSearch` — query: `site:sciencedirect.com <terms>` | Supplementary: Elsevier journals sometimes lag PubMed indexing; full text usually paywalled — use for metadata/DOI only |
 
 Run the protocol's per-source query strings. Honor each server's usage rules (e.g., Consensus
 requires inline numbered citations and its sign-up message preserved verbatim).
+
+### Web search protocol (Google Scholar & ScienceDirect)
+Web search is **supplementary only** — run it after PubMed/Consensus to fill gaps, not as a primary source.
+
+1. Run the protocol's key query strings through `WebSearch` targeting each domain.
+2. For each result: extract the DOI or PMID and **verify in PubMed** before adding to corpus. If PubMed confirms it → add normally. If PubMed has no record → treat as unverified, do not cite.
+3. If a web-found paper appears important (high citations, directly on-topic, pivotal design) but full text is **paywalled and unavailable** via any MCP tool: **alert the user explicitly** — state the title, DOI, and why it looks important — and ask if they can supply the PDF to `source/`. Do not silently skip it.
+4. Log web-found additions in the search log with source noted as `(web-supplementary)`.
 
 ## Provenance schema (every corpus row)
 | Field | Notes |

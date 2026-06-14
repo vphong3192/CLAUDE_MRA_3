@@ -13,6 +13,27 @@ description: >
 Judge how much each study can be trusted and how certain the overall evidence is, so the writer
 reports findings proportionate to their strength. Produce `_workspace/03_appraisal.md`.
 
+## 0. Landmark scan (do this first, before appraising the corpus)
+Before grading individual studies, identify **2–3 systematic reviews or meta-analyses** that meet
+all of:
+- Published in the **last 5 years** (prefer <3 years if available)
+- In a high-impact journal (IF >5, or equivalent: NEJM, Lancet, JAMA, BMJ, Circulation, JACC,
+  Eur Heart J, Cochrane Database, Ann Intern Med, etc.)
+- Directly on the review's PICO/PECO question
+
+For each landmark: read the abstract and, if available, the Methods + Conclusions. Extract:
+- The review's own GRADE/evidence-certainty summary
+- Key contradictions or debates it identifies
+- Frameworks or outcome groupings it uses
+
+**Record in the assumption register:** "Landmark pre-reads: [Author Year Journal] — used to inform
+appraisal structure and identify known controversies; did not anchor individual study judgments."
+
+**Anchoring guard:** use landmark reviews to *orient* the appraisal (known landscape, existing
+debates), not to copy their conclusions. If your independent appraisal disagrees with a landmark,
+state both views — the disagreement is informative. If a landmark itself is in the corpus as a
+primary source, appraise it normally in Step 1.
+
 ## 1. Evidence hierarchy
 Rank each study by design:
 `systematic review / meta-analysis > RCT > prospective cohort > case-control > case series > expert opinion`.
