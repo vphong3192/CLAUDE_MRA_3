@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>So sánh Ablation Metrics trong RF-PVI điều trị Rung nhĩ</title>
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent: #2e7d9f;
+    --light: #f0f5f9;
+    --border: #cdd9e5;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --grade-low: #f59e0b;
+    --grade-vlow: #ef4444;
+    --grade-mod: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans', Arial, sans-serif;
+    font-size: 16px; line-height: 1.75;
+    color: var(--text); background: #fff;
+  }
+  header {
+    background: var(--primary); color: #fff;
+    padding: 2.5rem 2rem 2rem; text-align: center;
+  }
+  header h1 {
+    font-size: 1.55rem; font-weight: 700; line-height: 1.4;
+    max-width: 900px; margin: 0 auto 0.75rem;
+  }
+  header .meta {
+    font-size: 0.85rem; opacity: 0.8; line-height: 1.6;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* Abstract box */
+  .abstract {
+    background: var(--light); border-left: 4px solid var(--accent);
+    padding: 1.5rem 1.75rem; border-radius: 4px; margin: 2rem 0;
+  }
+  .abstract h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 1rem; }
+  .abstract p { margin-bottom: 0.6rem; }
+  .abstract strong { color: var(--primary); }
+
+  /* Sections */
+  h2 {
+    font-size: 1.25rem; color: var(--primary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.4rem; margin: 2.5rem 0 1rem;
+  }
+  h3 {
+    font-size: 1.05rem; color: var(--accent);
+    margin: 1.6rem 0 0.6rem;
+  }
+  p { margin-bottom: 0.9rem; }
+  strong { color: var(--primary); }
+  em { font-style: italic; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.88rem; min-width: 600px;
+  }
+  th {
+    background: var(--primary); color: #fff;
+    padding: 0.6rem 0.75rem; text-align: left;
+    font-weight: 600; white-space: nowrap;
+  }
+  td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--light); }
+  tr:hover td { background: #dbeafe33; }
+  .table-note {
+    font-size: 0.83rem; color: var(--muted);
+    background: #fffbeb; border: 1px solid #fde68a;
+    border-radius: 4px; padding: 0.75rem 1rem; margin-top: 0.5rem;
+  }
+
+  /* GRADE badges */
+  .grade {
+    display: inline-block; padding: 0.15rem 0.55rem;
+    border-radius: 999px; font-size: 0.78rem; font-weight: 700;
+    white-space: nowrap;
+  }
+  .grade-low  { background: #fef3c7; color: #92400e; }
+  .grade-vlow { background: #fee2e2; color: #7f1d1d; }
+  .grade-mod  { background: #dbeafe; color: #1e3a8a; }
+  .grade-neg  { background: #e0e7ff; color: #3730a3; }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 0.6rem 1rem; margin: 1rem 0;
+    background: var(--light); color: var(--muted);
+    font-size: 0.93rem; font-style: italic;
+  }
+
+  /* Lists */
+  ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.4rem; }
+
+  /* Horizontal rule */
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* References */
+  .references ol { font-size: 0.85rem; color: var(--muted); }
+  .references li { margin-bottom: 0.4rem; }
+
+  /* TOC */
+  .toc {
+    background: var(--light); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0 2rem;
+    font-size: 0.9rem;
+  }
+  .toc h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1rem; }
+  .toc ol { padding-left: 1.25rem; }
+  .toc li { margin-bottom: 0.3rem; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center; font-size: 0.8rem; color: var(--muted);
+    padding: 2rem; border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.2rem; }
+    h2 { font-size: 1.1rem; }
+    .container { padding: 1rem 1rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>So sánh các thông số tổn thương (Ablation Metrics) trong cô lập tĩnh mạch phổi bằng năng lượng tần số radio (RF-PVI) điều trị rung nhĩ</h1>
+  <div class="meta">
+    Tổng quan hệ thống có tính phê phán &nbsp;·&nbsp; PRISMA + GRADE &nbsp;·&nbsp;
+    Đối tượng: BS can thiệp điện sinh lý &nbsp;·&nbsp; 2015–2026 &nbsp;·&nbsp; 35 tài liệu xác minh PMID
+  </div>
+</header>
+
+<div class="container">
+
+<nav class="toc">
+  <h3>Mục lục</h3>
+  <ol>
+    <li><a href="#s1">Tóm tắt</a></li>
+    <li><a href="#s2">Đặt vấn đề</a></li>
+    <li><a href="#s3">Cơ sở sinh lý và cơ chế tạo tổn thương RF</a></li>
+    <li><a href="#s4">Ablation Index (AI)</a></li>
+    <li><a href="#s5">Lesion Size Index (LSI)</a></li>
+    <li><a href="#s6">Lực tiếp xúc (Contact Force — CF)</a></li>
+    <li><a href="#s7">Giảm trở kháng tại chỗ (Local Impedance Drop — LID)</a></li>
+    <li><a href="#s8">AID và TactiFlex SE — Paradigm mới nổi</a></li>
+    <li><a href="#s9">Ablation Metrics trong bối cảnh HPSD 50W</a></li>
+    <li><a href="#s10">Bảng so sánh tổng quan</a></li>
+    <li><a href="#s11">Đồng thuận / Tranh luận</a></li>
+    <li><a href="#s12">Giới hạn</a></li>
+    <li><a href="#s13">Kết luận và nghiên cứu tương lai</a></li>
+    <li><a href="#refs">Tài liệu tham khảo</a></li>
+  </ol>
+</nav>
+
+<!-- ABSTRACT -->
+<section id="s1" class="abstract">
+  <h2>1. Tóm tắt (Abstract)</h2>
+  <p><strong>Bối cảnh:</strong> Tạo tổn thương xuyên thấu qua thành (transmurality) và liên tục là điều kiện then chốt để cô lập tĩnh mạch phổi (Pulmonary Vein Isolation — PVI) bền vững trong điều trị rung nhĩ (Atrial Fibrillation — AF). Các thông số tổn thương định lượng đã ra đời nhằm thay thế các tiêu chí truyền thống (thời gian, công suất, nhiệt độ) bằng các chỉ số tổng hợp phản ánh chất lượng tổn thương theo thời gian thực.</p>
+  <p><strong>Mục tiêu:</strong> Tổng hợp và phê phán bằng chứng so sánh bốn nhóm thông số — Chỉ số ablation (Ablation Index — AI), Chỉ số kích thước tổn thương (Lesion Size Index — LSI), Lực tiếp xúc (Contact Force — CF) và Giảm trở kháng tại chỗ (Local Impedance Drop — LID) — cùng paradigm mới nổi AID/TactiFlex SE, đối với hiệu quả, an toàn và hiệu suất thủ thuật.</p>
+  <p><strong>Phương pháp:</strong> Tìm kiếm có hệ thống PubMed, Consensus, ClinicalTrials.gov và kho tiền in (2015–2026); 35 hồ sơ được thu thập, xác minh PMID độc lập, đánh giá nguy cơ sai lệch (RoB 2, ROBINS-I) và phân loại độ chắc chắn theo GRADE cho từng kết cục.</p>
+  <p><strong>Kết quả chính:</strong> <strong>Không có thử nghiệm ngẫu nhiên có đối chứng (RCT) nào của bất kỳ chỉ số tổn thương nào (AI/LSI/LID/AID) so với ablation quy ước.</strong> Hai RCT duy nhất kiểm tra <em>sự sẵn có</em> của lực tiếp xúc và đều âm tính cho lợi ích lâm sàng 12 tháng. AI và LSI <em>dường như liên quan đến</em> cô lập lần đầu cao hơn và tái phát thấp hơn ở mức chắc chắn THẤP; LID <em>liên quan đến</em> tổn thương cấp bền hơn nhưng dữ liệu lâm sàng RẤT THẤP.</p>
+  <p><strong>Kết luận:</strong> Hướng dẫn bằng thông số tổng hợp ưu việt hơn CF đơn thuần ở các kết cục cấp, nhưng lợi ích lâm sàng 12 tháng yếu và kém nhất quán; chưa có chứng cứ RCT chứng minh tính ưu việt lâm sàng của bất kỳ chỉ số nào.</p>
+</section>
+
+<hr>
+
+<!-- S2 -->
+<section id="s2">
+  <h2>2. Đặt vấn đề</h2>
+  <p>Cô lập tĩnh mạch phổi là nền tảng của ablation rung nhĩ. Nguyên nhân hàng đầu của tái phát sau thủ thuật là kết nối lại tĩnh mạch phổi (Pulmonary Vein Reconnection — PVR) do tổn thương không xuyên thấu qua thành hoặc không liên tục. Vì vậy, mục tiêu kỹ thuật cốt lõi không chỉ là cô lập về điện học ngay tức thời, mà là tạo một vòng tổn thương <strong>bền vững</strong> — đủ sâu để xuyên thành nhĩ và đủ liên tục để không còn khe dẫn truyền.</p>
+  <p>Các tiêu chí truyền thống — công suất đặt, thời gian phóng năng lượng, nhiệt độ đầu điện cực — phản ánh kém chất lượng tổn thương thực tế, vì chúng không tính đến mức độ áp sát của đầu điện cực vào mô. Sự bất định này tạo ra nhu cầu về <strong>thông số tổn thương</strong> (ablation metrics): các chỉ số định lượng, hiển thị theo thời gian thực, tích hợp nhiều biến số sinh lý để dự đoán độ bền của tổn thương.</p>
+</section>
+
+<hr>
+
+<!-- S3 -->
+<section id="s3">
+  <h2>3. Cơ sở sinh lý và cơ chế tạo tổn thương RF</h2>
+  <p>Tổn thương RF hình thành qua đốt nóng do điện trở (resistive heating) tại lớp mô tiếp xúc trực tiếp với đầu điện cực, sau đó dẫn nhiệt thụ động vào sâu hơn. Thể tích tổn thương phụ thuộc đồng thời vào: <strong>lực tiếp xúc</strong>, <strong>thời gian</strong> phóng năng lượng và <strong>công suất</strong>. Mối liên hệ này không tuyến tính: lực tiếp xúc tăng làm tăng truyền nhiệt vào mô và đồng thời làm tăng nguy cơ tổn thương quá mức (steam pop, thủng).</p>
+  <p>Có ba dấu hiệu phản ánh quá trình tạo tổn thương: (i) giảm trở kháng; (ii) tăng nhiệt độ mô; và (iii) giảm biên độ điện đồ tại chỗ và mất dẫn truyền điện. Trong các nghiên cứu lesion-level, phần trăm AID tương quan với phần trăm giảm biên độ điện thế (R²=0,785) và với thể tích tổn thương trên mô lợn ex vivo (R²=0,711) [26].</p>
+  <p>Khái niệm sớm nhất tích hợp các biến số này là <strong>Tích phân lực-thời gian (Force-Time Integral — FTI)</strong>. Tuy nhiên AUC của FTI so với LSI không khác biệt có ý nghĩa (0,774 so với 0,724; P=0,21) [8] — hạn chế này dẫn đến các <strong>chỉ số tổng hợp (composite metrics)</strong> thế hệ mới: AI và LSI.</p>
+</section>
+
+<hr>
+
+<!-- S4 -->
+<section id="s4">
+  <h2>4. Ablation Index (AI)</h2>
+  <h3>4.1 Định nghĩa và ngưỡng mục tiêu</h3>
+  <p>Ablation Index là chỉ số tổng hợp có trọng số từ lực tiếp xúc, thời gian phóng năng lượng và công suất, hiển thị thời gian thực trên CARTO3 (mô-đun VISITAG SURPOINT, Biosense Webster). Ngưỡng mục tiêu từ nghiên cứu pilot CLOSE của Taghji: <strong>AI ≥400 ở vùng sau/mái và ≥550 ở vùng trước</strong>, kết hợp ITD ≤6 mm [1]. Nghiên cứu pilot đơn nhánh (n=130) đạt cô lập lần đầu 98%, cô lập kháng adenosine 98%; tự do khỏi AF/AT/AFL 12 tháng là 92,3% [1].</p>
+
+  <h3>4.2 Giao thức CLOSE và so sánh với hướng dẫn bằng CF</h3>
+  <p>Phlips và cộng sự so sánh CLOSE với ablation CF quy ước (CONV-CF) ở 100 bệnh nhân rung nhĩ kịch phát [2]: cô lập lần đầu 98% so với 54% (P&lt;0,001); tự do loạn nhịp 12 tháng 94% so với 80% (P&lt;0,05); rút ngắn thời gian thủ thuật ~30% và thời gian RF ~50% [2]. Hussein (89 vs 89 ghép cặp): cô lập lần đầu 97% vs 84%, tái phát 17% vs 37% [4].</p>
+
+  <h3>4.3 Phân tích gộp và độ bền trong rung nhĩ dai dẳng</h3>
+  <p>Phân tích gộp Ioannou (11 NC, n=2.306) [3]: AI liên quan đến cô lập lần đầu cao hơn (93,4% so với 62,9%; OR thất bại 0,09; CI 95% 0,04–0,21; I²=58%); PVR cấp ít hơn (OR 0,37; I²=0%); tái phát sau blanking thấp hơn (OR 0,41; NNT 7,6). Toàn bộ 11 nghiên cứu đầu vào đều không phải RCT; chất lượng "thấp đến trung bình" theo các tác giả.</p>
+
+  <h3>4.4 Hạn chế của bằng chứng AI</h3>
+  <p>AI chỉ khả dụng trên CARTO3. <strong>Không có RCT nào</strong>; phần lớn so sánh dùng nhóm chứng lịch sử. Mâu thuẫn nội tại: Dhillon ghi nhận PVR cấp giảm nhưng <strong>hiệu quả 12 tháng KHÔNG có ý nghĩa thống kê (P=0,186)</strong> [7]. GRADE: <span class="grade grade-low">THẤP</span> cho cô lập lần đầu và tự do 12 tháng.</p>
+</section>
+
+<hr>
+
+<!-- S5 -->
+<section id="s5">
+  <h2>5. Lesion Size Index (LSI)</h2>
+  <h3>5.1 Định nghĩa và sự phân tán của ngưỡng mục tiêu</h3>
+  <p>LSI là chỉ số tổng hợp tương tự AI nhưng trên hệ thống EnSite/Abbott (TactiCath). <strong>Ngưỡng LSI tối ưu chưa được chuẩn hóa</strong>: Kanamori 5,2 [8]; Mattia 5,5–6 [9]; Katić 6,5/5,2 [10]; Cai 50W: 4,35–4,55 [11,12]; Prasad (đa quốc gia): EU 4,4 / Nhật 4,5 / Mỹ 5,5 [13]. Khoảng dao động ~3,95–6,5 khiến pooling dữ liệu khó khăn.</p>
+
+  <h3>5.2 Bằng chứng hiệu quả</h3>
+  <p>Mattia (n=60): sống còn không loạn nhịp 89,3% vs 65,6% (P=0,037) [9]. Prasad (n=143): tự do tái phát 95,7% ở 12 tháng [13]. Kuo 2025: HP-LSI vs giới hạn thời gian — tái phát AF 14,9% vs 32,5% (HR 0,36; CI 95% 0,16–0,83) [14].</p>
+
+  <h3>5.3 LSI so với LID — so sánh đối đầu duy nhất, bị nhiễu nặng</h3>
+  <p>Lian/Lyan (2024) [15]: nhánh LSI ưu việt hơn (cô lập lần đầu 87% vs 61%; tái phát KM 16,1% vs 34,3%, P=0,037). <strong>Hạn chế chí mạng: nhánh LID KHÔNG có cảm biến lực tiếp xúc</strong>, trong khi nhánh LSI có — tính ưu việt biểu kiến của LSI có thể phản ánh lợi ích của CF chứ không phải LSI-vs-LID. Ngoài ra có mâu thuẫn thống kê nội tại (KM P=0,037 vs Bảng 2 P=0,09).</p>
+
+  <h3>5.4 Hạn chế</h3>
+  <p>Không có RCT; không có so sánh AI vs LSI; ngưỡng chưa chuẩn hóa. GRADE: <span class="grade grade-low">THẤP</span>.</p>
+</section>
+
+<hr>
+
+<!-- S6 -->
+<section id="s6">
+  <h2>6. Lực tiếp xúc (Contact Force — CF)</h2>
+  <h3>6.1 Điều kiện cần nhưng chưa đủ</h3>
+  <p>CF là biến số sinh lý cơ bản nhất của tạo tổn thương, và là thông số <strong>duy nhất có chứng cứ RCT</strong> trong toàn bộ tổng quan.</p>
+
+  <h3>6.2 Bằng chứng từ hai RCT</h3>
+  <p><strong>TOCCASTAR</strong> (RCT không kém hơn): kết cục chính 67,8% vs 69,4% — <strong>không kém hơn nhưng KHÔNG ưu việt</strong> [17]. Phân nhóm hậu kiểm đạt lực tối ưu (≥90% tổn thương ≥10 g): 75,9% vs 58,1% (P=0,018) — nhưng là post-hoc.</p>
+  <p><strong>Ullah</strong> (CF-on vs CF-off): CF-on giảm PVR cấp (22% vs 32%, P=0,03) nhưng <strong>KHÔNG có khác biệt thành công 12 tháng (49% vs 52%, P=0,9)</strong> [18].</p>
+
+  <h3>6.3 Mâu thuẫn: RCT âm tính vs đoàn hệ dương tính</h3>
+  <p>SMART-AF: duy trì CF trong khoảng mục tiêu ≥80% thời gian → khả năng thành công cao hơn 4,25 lần [16]. Giải thích: <strong>sự sẵn có CF ≠ sự tận dụng CF</strong>. Hai RCT <strong>chứng minh</strong> rằng sự sẵn có đơn thuần không cải thiện tự do loạn nhịp 12 tháng (GRADE <span class="grade grade-mod">TRUNG BÌNH, kết quả âm tính</span>).</p>
+
+  <h3>6.4 Vai trò hiện tại</h3>
+  <p>CF là <strong>đầu vào</strong> của các chỉ số tổng hợp (AI/LSI/AID), không phải thông số nguyên phát. Szegedi: CF/FTI không phân biệt được điểm thành công vs thất bại, nhưng LID thì có [22].</p>
+</section>
+
+<hr>
+
+<!-- S7 -->
+<section id="s7">
+  <h2>7. Giảm trở kháng tại chỗ (Local Impedance Drop — LID)</h2>
+  <h3>7.1 Công nghệ và phân biệt với trở kháng toàn cục</h3>
+  <p>LID đo qua các điện cực nhỏ tích hợp ở đầu catheter (DirectSense — Boston Scientific; STABLEPOINT — Biosense Webster), đo trở kháng <em>cục bộ</em> ngay tại mô tiếp xúc, khác biệt với global impedance drop (GID) đo qua mạch generator. Martin (first-in-human): mức giảm LI trung vị ở tổn thương thành công 14,6 Ω vs 6,8 Ω ở tổn thương thất bại (P=0,049) [19].</p>
+
+  <h3>7.2 Bằng chứng về khả năng phân biệt tổn thương</h3>
+  <p>Masuda: điểm khe có LID bằng nửa điểm không khe (12±7 vs 23±12 Ω, P&lt;0,001); GID KHÔNG khác biệt; ngưỡng 13,4 Ω [20]. Szegedi: CF/FTI KHÔNG phân biệt được; LID thì có (ngưỡng 21,8 Ω trước / 18,3 Ω sau) [22]. Lepillier (n=212, 16 trung tâm): cô lập lần đầu 93,3%; LID ở điểm thành công 22,1±9 vs 14,4±5 Ω (P&lt;0,0001) [24].</p>
+
+  <h3>7.3 Bằng chứng lâm sàng</h3>
+  <p>CHARISMA 1 năm (Solimene, n=153): cô lập cấp 100%; tái phát sau blanking 11,8%; AUC LID 0,806 vs GID 0,582; mỗi 5 Ω tăng LID → OR 3,13 cho thành công [21].</p>
+
+  <h3>7.4 Hạn chế</h3>
+  <p>Ngưỡng dao động rộng (13,4–21,8 Ω); hầu hết dữ liệu là kết cục cấp thay thế; chỉ 2 nghiên cứu có dữ liệu ≥12 tháng. GRADE: <span class="grade grade-vlow">RẤT THẤP</span> — <strong>bằng chứng không đủ để kết luận</strong> lợi ích lâm sàng dài hạn.</p>
+</section>
+
+<hr>
+
+<!-- S8 -->
+<section id="s8">
+  <h2>8. AID và TactiFlex SE — Paradigm mới nổi</h2>
+  <p>TactiFlex SE (Abbott) có cảm biến CF và đầu điện cực dạng linh hoạt (flexible tip), nhưng <strong>KHÔNG có AI (CARTO3) hay LSI (EnSite) native</strong> [26,27]. Nền tảng EnSite X cung cấp <strong>AID (Averaged Impedance Drop)</strong> — tín hiệu giảm trở kháng toàn cục đã được lọc nhiễu hô hấp + nhịp tim.</p>
+  <p>Harada (2026): điểm khe có %AID thấp hơn (7,2±1,7% vs 9,6±3,1%, P&lt;0,0001); ngưỡng %AID ≥9% → FPI 90%; AUC 0,761 vs 0,627 (GID chưa lọc, P&lt;0,05) [26]. Nhánh lâm sàng (n=30): tự do loạn nhịp 1 năm 82% [26]. TactiFlex AF IDE (n=334): tự do 12 tháng 72,9%; phân nhóm 40–50W: 76,4% vs 66,8% [27].</p>
+  <p><strong>AutoMark Index:</strong> tính đến 2026 chưa có tài liệu peer-reviewed — hướng phát triển tương lai, không thể trích dẫn. GRADE AID: <span class="grade grade-vlow">RẤT THẤP</span>.</p>
+</section>
+
+<hr>
+
+<!-- S9 -->
+<section id="s9">
+  <h2>9. Ablation Metrics trong bối cảnh High-Power Short-Duration (HPSD 50W)</h2>
+  <p>HPSD (điển hình 50W) làm thay đổi động học tạo tổn thương: ưu tiên đốt nóng do điện trở hơn là dẫn nhiệt thụ động → tổn thương rộng và nông hơn. Hệ quả then chốt: <strong>các ngưỡng AI/LSI cần hiệu chỉnh khi dùng 50W</strong>.</p>
+  <p><strong>AI:</strong> Chen — AI-guided 50W (550/400) đạt FPI 92%, không biến chứng nặng 6 tháng [6]. Dhillon — HPAI rút ngắn thời gian thủ thuật (−22%) và RF (−37%) [7].</p>
+  <p><strong>LSI:</strong> Cai 2022 — ngưỡng 50W: 4,55 (trước) / 3,95 (sau) [11]. Cai 2023 — tự do 2 năm 87,1%; steam pop 1,6% [12]. Kuo — HP-LSI vs giới hạn thời gian: HR 0,36 [14].</p>
+  <p><strong>TactiFlex:</strong> Phân nhóm công suất cao (40–50W) → 76,4% vs 66,8% [27].</p>
+  <p>HPSD đã trở thành đồng thuận vận hành nhưng đòi hỏi tái định cỡ ngưỡng metric — đây là nguyên nhân trực tiếp của phần lớn sự phân tán ngưỡng LSI (Mục 5.1).</p>
+</section>
+
+<hr>
+
+<!-- S10 - TABLES -->
+<section id="s10">
+  <h2>10. Bảng so sánh tổng quan các thông số tổn thương</h2>
+
+  <h3>Bảng 1. Đặc điểm kỹ thuật và nền tảng</h3>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Thông số</th>
+        <th>Hệ thống / Catheter</th>
+        <th>Yếu tố tích hợp</th>
+        <th>Ngưỡng mục tiêu phổ biến</th>
+        <th>Catheter khả dụng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Ablation Index (AI)</strong></td>
+        <td>CARTO3 / Biosense Webster (VISITAG SURPOINT)</td>
+        <td>CF × thời gian × công suất (có trọng số)</td>
+        <td>≥550 (trước) / ≥400 (sau) + ITD ≤6 mm; ngưỡng giữ nguyên ở 50W nhưng cần thận trọng [6,7]</td>
+        <td>ThermoCool SmartTouch / SmartTouch SF</td>
+      </tr>
+      <tr>
+        <td><strong>Lesion Size Index (LSI)</strong></td>
+        <td>EnSite / Abbott (TactiCath)</td>
+        <td>CF × thời gian × công suất + đặc tính tiếp xúc</td>
+        <td>5,5–6 (trước) / 5,0–5,5 (sau) ở 25–35W; 4,35–4,55 (trước) / 3,95–4,3 (sau) ở 50W [11,12]</td>
+        <td>TactiCath Contact Force</td>
+      </tr>
+      <tr>
+        <td><strong>Contact Force (CF)</strong></td>
+        <td>Đa nền tảng (CARTO3, EnSite X)</td>
+        <td>Lực tiếp xúc tức thời (g) đơn thuần</td>
+        <td>10–40 g (mục tiêu thực tế); ≥10 g tối thiểu; ≥80% thời gian trong khoảng mục tiêu [16]</td>
+        <td>ThermoCool SF, TactiCath, TactiFlex SE</td>
+      </tr>
+      <tr>
+        <td><strong>Local Impedance Drop (LID)</strong></td>
+        <td>DirectSense (Boston Scientific) / STABLEPOINT (Biosense Webster)</td>
+        <td>Trở kháng tại chỗ qua điện cực đầu catheter (Ω)</td>
+        <td>≥21 Ω (thành trước) / ≥18 Ω (thành sau); &gt;13,4 Ω tổng thể [20,22,24]</td>
+        <td>IntellaNav MIFI OI, STABLEPOINT</td>
+      </tr>
+      <tr>
+        <td><strong>AID (Averaged Impedance Drop)</strong></td>
+        <td>EnSite X / Abbott (TactiFlex SE)</td>
+        <td>Giảm trở kháng toàn cục đã lọc nhiễu hô hấp + nhịp tim (%)</td>
+        <td>%AID ≥9% (ngưỡng ROC 9,33%) [26]</td>
+        <td>TactiFlex SE</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Bảng 2. Kết cục lâm sàng và chất lượng bằng chứng (GRADE)</h3>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Thông số</th>
+        <th>Cô lập lần đầu (FPI)</th>
+        <th>Kết nối lại cấp (PVR acute)</th>
+        <th>Tự do loạn nhịp 12 tháng</th>
+        <th>Thiết kế tốt nhất</th>
+        <th>GRADE</th>
+        <th>Hạn chế chủ yếu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>AI</strong></td>
+        <td>93,4% vs 62,9% (không-AI); OR thất bại 0,09 [3]</td>
+        <td>18,0% vs 35,0% (OR 0,37) [3]</td>
+        <td>41–94% (biến thiên cao); CLOSE 92,3% [1]; Dhillon 78% ns [7]</td>
+        <td>Meta-analysis 11 đoàn hệ, n=2.306 [3]</td>
+        <td><span class="grade grade-low">THẤP</span></td>
+        <td>Không có RCT; nhóm chứng lịch sử; nhiễu đường cong học tập</td>
+      </tr>
+      <tr>
+        <td><strong>LSI</strong></td>
+        <td>LSI &lt;5,25 → độ nhạy 97,6% cho khe [8]</td>
+        <td>Không tổng hợp được</td>
+        <td>65,6–95,7% (biến thiên theo ngưỡng)</td>
+        <td>Đoàn hệ đa quốc gia, n=143 [13]</td>
+        <td><span class="grade grade-low">THẤP</span></td>
+        <td>Ngưỡng chưa chuẩn hóa (3,95–6,5); không có RCT; không có đầu-đối-đầu với AI</td>
+      </tr>
+      <tr>
+        <td><strong>CF (sẵn có đơn thuần)</strong></td>
+        <td>Tương đương không-CF (TOCCASTAR) [17]</td>
+        <td>CF-on giảm PVR cấp: 22% vs 32% (P=0,03) [18]</td>
+        <td>Tương đương không-CF: 67,8% vs 69,4% [17]; 49% vs 52% (P=0,9) [18]</td>
+        <td><strong>2 RCT</strong> (TOCCASTAR n=300; Ullah n=160)</td>
+        <td><span class="grade grade-neg">TRUNG BÌNH (âm tính)</span></td>
+        <td>Sẵn có CF ≠ tận dụng CF; CF ổn định có thể có lợi nhưng bằng chứng hậu kiểm</td>
+      </tr>
+      <tr>
+        <td><strong>LID</strong></td>
+        <td>LID ở điểm không khe cao hơn rõ: 22,1 vs 14,4 Ω (P&lt;0,0001) [24]</td>
+        <td>Mỗi 5 Ω LID → OR 3,13 cho thành công cấp [21]</td>
+        <td>&gt;88% (CHARISMA 1 năm, n=153) [21]; LID vs LSI: 34,3% tái phát [15]</td>
+        <td>Đoàn hệ đa trung tâm n=212 [24]</td>
+        <td><span class="grade grade-vlow">RẤT THẤP</span></td>
+        <td>Hầu hết dữ liệu là kết cục cấp thay thế; so sánh LID vs LSI bị nhiễu (LID arm thiếu CF)</td>
+      </tr>
+      <tr>
+        <td><strong>AID (TactiFlex SE)</strong></td>
+        <td>%AID ≥9%: FPI 90%; AUC 0,761 vs 0,627 [26]</td>
+        <td>%AID thấp hơn ở điểm khe: 7,2% vs 9,6% (P&lt;0,0001) [26]</td>
+        <td>82% pilot (n=30) [26]; TactiFlex IDE 72,9% (n=334) [27]</td>
+        <td>Pilot đơn nhánh n=30 [26] + RCT thiết bị n=334 [27]</td>
+        <td><span class="grade grade-vlow">RẤT THẤP</span></td>
+        <td>Bằng chứng pilot; đơn trung tâm; thiếu so sánh đối đầu với AI/LSI</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="table-note">
+    <strong>Ghi chú đọc bảng:</strong> GRADE áp dụng cho kết cục chính "tự do loạn nhịp 12 tháng." CF là thông số <strong>duy nhất có RCT</strong>, và kết quả là <em>âm tính</em> (không ưu việt so với catheter không-CF). Các thông số tổng hợp (AI/LSI/LID/AID) không có RCT; bằng chứng là đoàn hệ. "THẤP" không có nghĩa là vô hiệu — mà có nghĩa là bằng chứng <strong>chưa đủ mạnh để loại trừ sai lệch hệ thống</strong>, và kết luận có thể thay đổi khi RCT xuất hiện.
+  </div>
+</section>
+
+<hr>
+
+<!-- S11 -->
+<section id="s11">
+  <h2>11. Đồng thuận đã được thiết lập / Tranh luận còn tiếp diễn</h2>
+
+  <h3>11.1 Đồng thuận đã được thiết lập</h3>
+  <blockquote>Phù hợp với: 2024 ESC/EACTS [32], 2023 ACC/AHA/ACCP/HRS [33] và đồng thuận chuyên gia HRS/EHRA/ECAS 2017 [34].</blockquote>
+  <ul>
+    <li><strong>Lực tiếp xúc là điều kiện cần</strong> (mục tiêu ≥10–20 g) nhưng không tự bảo đảm tổn thương tốt [17,18,22].</li>
+    <li><strong>Tổn thương liên tục (ITD ≤6 mm) quan trọng ngang với chất lượng từng điểm</strong>; ngưỡng AI CLOSE là quy chuẩn quy chiếu [1,2,3].</li>
+    <li><strong>Chỉ số tổng hợp (AI/LSI/LID) ưu việt hơn CF đơn thuần hoặc thời gian cố định</strong> ở kết cục cấp [1,2,20,21,24].</li>
+    <li><strong>HPSD làm thay đổi ngưỡng metric</strong>, cần hiệu chỉnh theo cài đặt công suất [6,11,12].</li>
+  </ul>
+
+  <h3>11.2 Tranh luận còn tiếp diễn</h3>
+  <ul>
+    <li><strong>Sự sẵn có vs sự tận dụng CF:</strong> RCT âm tính [17,18] đối lập đoàn hệ dương tính cho độ ổn định [16].</li>
+    <li><strong>Ngưỡng LSI tối ưu chưa chuẩn hóa</strong> (~3,95–6,5), một phần do khác biệt vùng miền và độ dày mô [9–13].</li>
+    <li><strong>LID vs LSI:</strong> so sánh đối đầu duy nhất [15] bị nhiễu nặng → chưa thể kết luận.</li>
+    <li><strong>AID/TactiFlex SE:</strong> thiếu dữ liệu dài hạn và đối chứng [26,27].</li>
+  </ul>
+</section>
+
+<hr>
+
+<!-- S12 -->
+<section id="s12">
+  <h2>12. Giới hạn của tổng quan này</h2>
+  <ul>
+    <li>Chỉ có <strong>2 RCT, và cả hai đều về CF</strong> [17,18] — không có RCT nào cho AI, LSI hay LID.</li>
+    <li>Không có so sánh đối đầu trực tiếp <strong>AI vs LSI</strong> ở bất kỳ thiết kế nào.</li>
+    <li>25/35 hồ sơ dựa trên abstract; hai hồ sơ (Segreti, Pedersen 2020) chưa xác nhận PMID → không được trích dẫn.</li>
+    <li>Ngưỡng metric không đồng nhất giữa các nghiên cứu → gộp dữ liệu khó khăn.</li>
+    <li>Không có dữ liệu đặc hiệu cho quần thể Việt Nam hay Đông Nam Á.</li>
+    <li>Quá trình thu thập tiền in chưa hoàn tất; toàn văn chỉ có với 10/35 hồ sơ.</li>
+    <li>Vai trò của metric RF trong kỷ nguyên PFA (triệt đốt điện trường xung) không được corpus đề cập trực tiếp.</li>
+  </ul>
+</section>
+
+<hr>
+
+<!-- S13 -->
+<section id="s13">
+  <h2>13. Kết luận và gợi ý nghiên cứu tương lai</h2>
+  <p>Hướng dẫn bằng thông số tổn thương tổng hợp <strong>dường như liên quan đến</strong> cô lập lần đầu cao hơn, ít kết nối lại cấp hơn và có thể tái phát 12 tháng thấp hơn so với ablation quy ước — nhưng toàn bộ kết luận này ở mức chắc chắn <strong>THẤP</strong> (AI, LSI) đến <strong>RẤT THẤP</strong> (LID, AID), do thiếu vắng RCT.</p>
+  <p>Kết luận chắc chắn nhất (GRADE <strong>TRUNG BÌNH</strong>) lại là một kết luận <em>âm tính</em>: hai RCT chứng minh rõ rằng <em>sự sẵn có</em> của lực tiếp xúc đơn thuần không cải thiện tự do loạn nhịp 12 tháng, dù làm giảm kết nối lại cấp [17,18].</p>
+  <p>Trên thực hành: AI (CLOSE) có nền chứng cứ đoàn hệ lớn nhất và nhất quán nhất; LSI cần hiệu chỉnh ngưỡng theo công suất và vùng miền; LID hữu ích để phân biệt chất lượng tổn thương cấp nhưng còn thiếu dữ liệu lâm sàng dài hạn.</p>
+  <p><strong>Khoảng trống nghiên cứu ưu tiên:</strong></p>
+  <ol>
+    <li>RCT của ablation hướng dẫn bằng AI (và LSI/LID) so với quy ước</li>
+    <li>So sánh đối đầu trực tiếp AI vs LSI với CF đầy đủ ở cả hai nhánh</li>
+    <li>Dữ liệu cho quần thể châu Á/Việt Nam và rung nhĩ dai dẳng</li>
+    <li>Chuẩn hóa ngưỡng LSI/LID theo cài đặt công suất (đặc biệt HPSD)</li>
+    <li>Đánh giá LID trong thiết kế có CF đầy đủ và kết cục lâm sàng dài hạn</li>
+  </ol>
+</section>
+
+<hr>
+
+<!-- REFERENCES -->
+<section id="refs" class="references">
+  <h2>Tài liệu tham khảo</h2>
+  <ol>
+    <li>Taghji P, et al. Evaluation of a strategy aiming to enclose the pulmonary veins with contiguous and optimized radiofrequency lesions in paroxysmal AF: a pilot study. <em>JACC Clin Electrophysiol.</em> 2018;4:99–108. PMID: 29600792.</li>
+    <li>Phlips T, et al. Improving procedural and one-year outcome after contact force-guided PVI: the role of ILD, ablation index, and CF variability in the 'CLOSE'-protocol. <em>Europace.</em> 2018;20:f419–f427. PMID: 29315411.</li>
+    <li>Ioannou A, et al. Efficacy and safety of ablation index-guided catheter ablation for AF: a meta-analysis. <em>Europace.</em> 2020. PMID: 32862230.</li>
+    <li>Hussein A, et al. Prospective use of Ablation Index targets improves clinical outcomes following ablation for AF. <em>J Cardiovasc Electrophysiol.</em> 2017. PMID: 28639728.</li>
+    <li>Hussein A, et al. Use of Ablation Index-guided ablation results in high rates of durable PVI and freedom from arrhythmia in persistent AF: the PRAISE study. <em>Circ Arrhythm Electrophysiol.</em> 2018. PMID: 30354288.</li>
+    <li>Chen S, et al. Ablation index-guided 50 W ablation for PVI: FAFA AI High Power Study. <em>J Cardiovasc Electrophysiol.</em> 2019. PMID: 31588620.</li>
+    <li>Dhillon G, et al. A multicentered evaluation of ablation at higher power guided by ablation index: establishing targets for PVI. <em>J Cardiovasc Electrophysiol.</em> 2019. PMID: 30556609.</li>
+    <li>Kanamori N, et al. Optimal lesion size index to prevent conduction gap during PVI. <em>J Cardiovasc Electrophysiol.</em> 2018. PMID: 30176083.</li>
+    <li>Mattia L, et al. Prospective evaluation of lesion index-guided PVI in paroxysmal AF. <em>J Atr Fibrillation.</em> 2018. PMID: 29988268.</li>
+    <li>Katić J, et al. Targeting higher than recommended lesion size index values during PVI. <em>J Interv Card Electrophysiol.</em> 2021. PMID: 34453647.</li>
+    <li>Cai C, et al. Optimal lesion size index to predict conduction gaps during high-power PVI. <em>J Cardiovasc Electrophysiol.</em> 2022. PMID: 35463774.</li>
+    <li>Cai C, et al. Lesion size index-guided high-power PVI: two-year follow-up. <em>J Cardiovasc Electrophysiol.</em> 2023. PMID: 36640429.</li>
+    <li>Prasad P, et al. Lesion size index workflow study: a prospective, multinational evaluation. <em>J Cardiovasc Electrophysiol.</em> 2022. PMID: 36340486.</li>
+    <li>Kuo L, et al. Long-term outcomes of LSI-guided high-power ablation with high-density mapping for paroxysmal AF. <em>J Cardiovasc Electrophysiol.</em> 2025. PMID: 40599722.</li>
+    <li>Lian E (Lyan E), et al. Local impedance drop-guided versus lesion size index-guided PVI. <em>J Interv Card Electrophysiol.</em> 2024;67:2051–2058. PMID: 38995604.</li>
+    <li>Natale A, et al. Paroxysmal AF catheter ablation with a CF sensing catheter: SMART-AF trial. <em>J Am Coll Cardiol.</em> 2014. PMID: 25125294.</li>
+    <li>Reddy VY, et al. Randomized, controlled trial of a CF-sensing irrigated catheter for ablation of paroxysmal AF: TOCCASTAR study. <em>Circulation.</em> 2015;132:907–915. PMID: 26260733.</li>
+    <li>Ullah W, et al. Randomized trial comparing PVI using SmartTouch catheter with or without real-time CF data. <em>Heart Rhythm.</em> 2016;13:1761–1767. PMID: 27173976.</li>
+    <li>Martin CA, et al. First clinical use of novel ablation catheter incorporating local impedance data. <em>J Cardiovasc Electrophysiol.</em> 2018. PMID: 29858882.</li>
+    <li>Masuda M, et al. Clinical utility of local impedance monitoring during PVI. <em>J Cardiovasc Electrophysiol.</em> 2020. PMID: 32671932.</li>
+    <li>Solimene F, et al. Course of local impedance-guided PVI: one-year outcome from the CHARISMA registry. <em>J Cardiovasc Electrophysiol.</em> 2021;32:1540–1548. PMID: 33851484.</li>
+    <li>Szegedi N, et al. The role of local impedance drop in the acute lesion efficacy during PVI. <em>J Interv Card Electrophysiol.</em> 2021. PMID: 34529678.</li>
+    <li>Fukaya H, et al. Optimal local impedance parameters for successful PVI using a novel CF and LI-sensing catheter. <em>J Cardiovasc Electrophysiol.</em> 2022. PMID: 36378816.</li>
+    <li>Lepillier A, et al. Contact force and local impedance to guide PVI: CHARISMA registry. <em>Front Cardiovasc Med.</em> 2023;10:1169037. PMID: 37476572.</li>
+    <li>Perge P, et al. Early rapid local impedance drop is associated with acute lesion efficacy during PVI. <em>J Interv Card Electrophysiol.</em> 2024. PMID: 39373571.</li>
+    <li>Harada T, et al. Averaged impedance drop-guided PVI with the TactiFlex SE catheter. <em>J Cardiovasc Electrophysiol.</em> 2026;37:501–509. PMID: 41517933.</li>
+    <li>Nair DG, et al. TactiFlex AF pivotal trial: an IDE study of a flexible-tip CF-sensing catheter. <em>Heart Rhythm O2.</em> 2023. PMID: 38204461.</li>
+    <li>Arai H, et al. Real-world safety of latest-generation RF ablation catheters: a multicenter registry analysis. <em>J Cardiovasc Electrophysiol.</em> 2024. PMID: 39188036.</li>
+    <li>Chinitz LA, et al. Safety and efficacy of a CF-sensing porous-tip catheter (SMART-SF). <em>Europace.</em> 2018. PMID: 29016769.</li>
+    <li>Mansour M, et al. Persistent AF ablation with CF-sensing catheter: the PRECEPT study. <em>JACC Clin Electrophysiol.</em> 2020. PMID: 32819531.</li>
+    <li>Lo MY, et al. TactiSense trial: safety and effectiveness of a next-generation CF-sensing catheter for paroxysmal AF. <em>J Cardiovasc Electrophysiol.</em> 2021. PMID: 33812831.</li>
+    <li>2024 ESC Guidelines for the management of atrial fibrillation developed with the EACTS. <em>Eur Heart J.</em> 2024. PMID: 39210723.</li>
+    <li>2023 ACC/AHA/ACCP/HRS guideline for the diagnosis and management of atrial fibrillation. <em>Circulation.</em> 2023. PMID: 38033089.</li>
+    <li>2017 HRS/EHRA/ECAS/APHRS/SOLAECE expert consensus statement on catheter and surgical ablation of AF. <em>Heart Rhythm.</em> 2017. PMID: 29021841.</li>
+  </ol>
+</section>
+
+</div>
+
+<footer>
+  Tổng quan hệ thống · Điện sinh lý can thiệp · 35 tài liệu (PMID-verified) · PRISMA + GRADE · 2026-06-14<br>
+  Corpus: PubMed, Consensus, ClinicalTrials.gov · Phương pháp đánh giá: RoB 2, ROBINS-I, GRADE
+</footer>
+
+</body>
+</html>
