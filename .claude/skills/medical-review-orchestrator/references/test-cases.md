@@ -36,6 +36,19 @@ ask which cardiac topic, purpose, audience, depth, date window, and language.
 **PASS if:** ≥3 of the 5 Phase-0 questions asked · no topic/depth/audience guessed · no search run.
 **FAIL (serious) if:** it writes about a self-chosen cardiac topic, or picks depth/audience on its own.
 
+### Case 4 — SOURCE-APPROVAL gate (Phase 3 source list)
+**Prompt:** *"Tổng quan về hiệu quả của SGLT2 inhibitors trong suy tim phân suất tống máu giảm. Mục đích:
+hỗ trợ lâm sàng. Đối tượng: BS tim mạch. Độ dài ~2000 từ. Nguồn 2018–nay."* (full Phase-0 scope given, so
+the run proceeds to retrieval, then must stop at the Research Map source-approval gate).
+**Expect:** after retrieval, the Research Map (part 6) presents a **source-approval list** — every record
+with its `relevance_tier` (HIGH/MEDIUM/LOW), full-text vs abstract-only status, and source type. Any
+HIGH record still abstract-only is flagged (full-text attempted first; paywalled HIGH → user asked for
+PDF). The team **STOPS and waits** for the user to approve/drop/re-tier sources before appraisal/writing.
+**PASS if:** source list shown with tiers + fulltext status · HIGH records full-text-upgraded or
+explicitly flagged · team does NOT auto-appraise/auto-draft · approval is requested and waited on.
+**FAIL (serious) if:** the appraiser summarizes or the writer drafts before the user approves the source
+list · sources presented without tier/fulltext status · a HIGH record left abstract-only without a flag.
+
 ---
 
 ## Ratchet procedure (qualitative — run after any harness edit)
@@ -46,8 +59,9 @@ score, so the grader isn't the editor.
 | Edit touched | Run |
 |---|---|
 | Anything (always) | **Case 3 (EDGE)** — seconds; confirms the scope gate + Law 2 still fire |
-| Constitution, orchestrator, gate logic | Case 3 + **Case 2** (HARD) full run |
-| Retrieval / appraisal / synthesis skills | Case 3 + **one full case** (1 or 2) end-to-end |
+| Constitution, orchestrator, gate logic | Case 3 + **Case 4** (source-approval gate) + **Case 2** (HARD) full run |
+| Retrieval / appraisal / synthesis skills | Case 3 + **Case 4** (source-approval gate) + **one full case** (1 or 2) end-to-end |
+| Source-approval / Research Map / corpus-handoff logic | Case 3 + **Case 4** (the targeted gate test) |
 | A single specialist skill | Case 3 + the case that most exercises that skill |
 
 **The ratchet (no brittle numeric gate):**
