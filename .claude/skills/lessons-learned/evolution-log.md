@@ -94,8 +94,6 @@ process was flawed before).
 ═══════════════════════════════════════════════
 
 ═══════════════════════════════════════════════
-
-═══════════════════════════════════════════════
 ### Entry #5 — 2026-06-15 — LA electrophysiology in elderly AF (PhD dissertation foundation)
 **Task:** Tổng quan chuyên sâu về đặc điểm điện học và điện sinh lý học nhĩ trái ở bệnh nhân rung nhĩ cao tuổi. Mục đích: nền tảng lý luận cho thiết kế nghiên cứu tiến sĩ. Độ sâu: 3.000–4.000 từ + phân tích gap chi tiết. Độc giả: BS tim mạch chuyên khoa điện sinh lý. Ngôn ngữ: tiếng Việt. Nguồn: ưu tiên 2015–2025.
 **Rubric total:** 97/100 → PASS (≥85 band)
