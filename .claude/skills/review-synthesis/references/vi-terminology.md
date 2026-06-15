@@ -50,5 +50,12 @@ parentheses on first appearance; afterward the abbreviation or Vietnamese is fin
 | Body mass index (BMI) | chỉ số khối cơ thể (BMI) |
 | GLP-1 receptor agonist | chất chủ vận thụ thể GLP-1 (GLP-1 RA) |
 
+## LA electrophysiology / elderly AF (verified Entry #5, 2026-06-15)
+| English | ✅ Standard Vietnamese |
+|---|---|
+| Unipolar voltage | Điện thế đơn cực |
+| Bipolar voltage | Điện thế lưỡng cực |
+| Low-voltage zone (LVZ) | Vùng điện thế thấp (LVZ) |
+
 When a needed term is missing here: translate carefully, mark it provisional, and ask the user to
 confirm — then it gets added (approved). Never invent a Vietnamese term silently for a key concept.

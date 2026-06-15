@@ -94,6 +94,43 @@ process was flawed before).
 ═══════════════════════════════════════════════
 
 ═══════════════════════════════════════════════
+
+═══════════════════════════════════════════════
+### Entry #5 — 2026-06-15 — LA electrophysiology in elderly AF (PhD dissertation foundation)
+**Task:** Tổng quan chuyên sâu về đặc điểm điện học và điện sinh lý học nhĩ trái ở bệnh nhân rung nhĩ cao tuổi. Mục đích: nền tảng lý luận cho thiết kế nghiên cứu tiến sĩ. Độ sâu: 3.000–4.000 từ + phân tích gap chi tiết. Độc giả: BS tim mạch chuyên khoa điện sinh lý. Ngôn ngữ: tiếng Việt. Nguồn: ưu tiên 2015–2025.
+**Rubric total:** 97/100 → PASS (≥85 band)
+**Per-criterion:** R1 25/25 · R2 15/15 · R3 10/10 · R4 10/10 · R5 10/10 · R6 10/10 · R7 10/10 · R8 5/5 · R9 2/5 (guidelines cited but one unipolar-vs-bipolar wording error fixed pre-delivery)
+**Process:**
+- Phase-0 scope **CONFIRMED** (user answered all 6 questions + language + source-folder choice; not inferred)
+- Phase-1 protocol: PICO, 6 PubMed strings, 5 gap searches, guideline bodies (ESC/AHA/HRS/APHRS)
+- Phase-2 retrieval: 31 records PMID-verified (22 initial + 8 resolved in Phase-2b); 2 critical PMID corrections (STAR AF II: design→results paper; CABANA: sex→age subgroup)
+- Phase-3 Research Map: **GATE CLEARED** — explicit user approval received (2026-06-15 00:54 UTC): *"A. Sử dụng các nguồn như list... E. Có"* after map was shown. Approval persisted to `_workspace/research_map_gate_approval.md` (post-hoc — L-019 now closes this gap)
+- Phase-4 appraisal: GRADE + RoB for all 31 records; 5 pre-flagged contradictions fully documented (CFAE, rotor/FIRM, DECAAF paradox, recurrence paradox, aging-vs-AF)
+- Phase-5 synthesis: Vietnamese draft, 31 inline [n], two-way citation reconciliation PASS (zero orphans)
+- Phase-6 QA: 1 FIX (unipolar voltage modality precision), 0 BLOCKs; Law-1 audit PASS; all 5 Laws and L-001–017 checked
+**Key scientific findings (method knowledge for future cardiac-EP reviews):**
+- LA bipolar voltage lower in ≥75 vs <75 AF patients (1.5 vs 2.4 mV; LVZ in 67% vs 30%) — Marzak 2024 [FT]
+- Age itself drives LA remodeling independent of AF: van der Does 2021 (non-AF surgical patients) shows CV and voltage decline with age even without AF [FT] — methodological cornerstone
+- CFAE ablation: âm tính (STAR AF II RCT); rotor: contested (CONFIRM positive but unreplicated); fibrosis-guided: negative interventional (DECAAF II) despite positive prognostic (DECAAF I)
+- Complication risk in elderly: MODERATE certainty, dose-response by decade (6 MA + 170k registry)
+- AF recurrence in elderly: LOW certainty, inconsistent, sensitive to publication bias
+- **Gap G3 confirmed: zero Vietnamese/SE-Asian LA-EP data** — strongest dissertation justification
+**Defects found:**
+- D1 (FIX): "điện thế" written where source specified "unipolar voltage" (§3, van der Does) → corrected by QA
+- D2 (process): gate approval not persisted to disk until post-hoc → L-019 closes this structurally
+**Near-misses caught (Phase 2b):**
+- CABANA PMID: sex subgroup (33499668) stored instead of age subgroup (34933570) → corrected before synthesis
+- STAR AF II PMID: design paper (22795275) stored instead of results paper (25946280) → corrected before synthesis
+**User feedback on review quality:**
+- "Tổng quan còn sơ sài" — attributed to two retriever gaps: (1) when sources unavailable, retriever did not ask user about WebSearch fallback; (2) when full text incomplete (28/31 abstract-only), retriever did not ask user before advancing to appraisal
+- Both gaps close structurally via L-022 (STOP + ask when source unavailable) and L-023 (STOP + ask when HIGH-tier full-text coverage is low before advancing to appraisal)
+**Lessons applied:** L-001–017 all active; L-008 (broad ClinicalTrials.gov), L-009 (confirm Consensus via PubMed), L-011 (guideline bodies), L-012 (source/ checked — user said ignore), L-014 (gate not self-cleared), L-015 (scope confirmed first)
+**Lessons approved → saved:** L-018 (voltage modality precision), L-019 (persist gate approval to disk), L-020 (label trial sub-analyses), L-021 (results vs design paper PMID), L-022 (STOP when source unavailable), L-023 (STOP when full text incomplete before appraisal), L-024 (explicit user OK required before Phase 4 AND Phase 5; fix-then-re-ask loop, never fix-then-proceed)
+**Actions taken:** built `reference/la-electrophysiology-elderly-af.md` (31 verified records, 3 full-text); delivered `_workspace/06_final_review.md`; 3 Vietnamese EP terms saved to vi-terminology.md
+**Status:** PASS run. First senior-EP dissertation-foundation review. L-022/L-023 represent most actionable structural improvements for future retrieval phases — retriever must ask before silently downgrading coverage.
+═══════════════════════════════════════════════
+
+═══════════════════════════════════════════════
 ### Entry #4 — 2026-06-14 — Ablation metrics in RF-PVI for AF (AI/LSI/LID/CF/AID, TactiFlex SE)
 **Task:** So sánh các chỉ số tổn thương trong triệt đốt RF-PVI điều trị rung nhĩ (AI, LSI, LID, CF,
 AID/TactiFlex SE). Mục đích: nghiên cứu/học thuật. Đối tượng: BS điện sinh lý can thiệp. Ngôn ngữ:

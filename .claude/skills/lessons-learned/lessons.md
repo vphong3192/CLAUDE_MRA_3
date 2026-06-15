@@ -127,3 +127,54 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Rule:** When society guidelines were retrieved per L-011, cite them explicitly in the "Established consensus" section to anchor each consensus statement — do not leave them sitting only in the reference list. The guideline must do interpretive work in the text (what it recommends and at what strength), not merely appear as a number.
 - **Why:** L-011 exists to make reviews read as complete to clinicians; that value is lost if the guidelines are retrieved then forgotten at the writing stage. Entry #4 retrieved ESC 2024, ACC/AHA 2023, HRS 2017 but did not embed them until QA's FIX.
 - **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
+
+### L-018: Specify voltage modality (unipolar vs bipolar) when citing mapping studies
+- **Role:** writer, appraiser
+- **Trigger:** citing any voltage value or LVZ threshold from an electroanatomic mapping study
+- **Rule:** Always state whether the cited voltage is unipolar or bipolar — they measure different tissue properties with different clinical thresholds (bipolar LVZ typically <0.5 mV; unipolar LVZ typically <0.5–1.0 mV depending on protocol). Write "điện thế lưỡng cực" or "điện thế đơn cực" explicitly; never write "điện thế" alone for a mapping value.
+- **Why:** Entry #5 draft wrote generic "điện thế" for van der Does 2021 which measured unipolar voltage — a meaningful distinction QA had to fix. Expert electrophysiology readers notice this immediately.
+- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
+
+### L-019: Persist the Research Map gate approval to disk at the moment it is received
+- **Role:** orchestrator
+- **Trigger:** immediately after the user sends their Research Map approval message, before launching any downstream agent
+- **Rule:** Write the verbatim user approval quote to `_workspace/research_map_gate_approval.md` before proceeding to Phase 4. This file is the audit's only way to verify gate compliance — if it does not exist, the audit must mark "process HOLD" regardless of what happened in the conversation. Complements L-014 (which forbids self-clearing); L-019 ensures that a legitimate clearance is auditable.
+- **Why:** Entry #5 gate was cleared correctly but approval was not persisted to disk — QA found no quotable gate record and had to flag a process hold. The orchestrator reconstructed the file post-hoc. One extra Write call at approval time costs nothing; an unauditable gate costs a HOLD and rework.
+- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
+
+### L-020: Label sub-analyses within the same trial separately in the reference store
+- **Role:** retriever
+- **Trigger:** a major trial (CABANA, AFFIRM, CASTLE-AF, etc.) has multiple published sub-analyses (by age, sex, AF type, QoL, etc.)
+- **Rule:** For each sub-analysis stored, record exactly which sub-analysis the PMID represents (e.g., "CABANA — age subgroup, Bahnson 2021"). When reusing the PMID, re-verify by title + first author — do not assume the stored PMID is the right paper just because the trial name matches.
+- **Why:** Entry #5 initially stored the CABANA sex subgroup PMID (Russo, 33499668) in the slot intended for the age subgroup (Bahnson, 34933570). The error was caught in Phase 2b before synthesis; if it had reached the writer, a citation would have supported a claim about age outcomes using a paper about sex differences — a Law-1-adjacent error.
+- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
+
+### L-021: Verify a trial PMID is the results paper, not the design/protocol paper
+- **Role:** retriever
+- **Trigger:** storing the PMID for any landmark or registered trial
+- **Rule:** Run a separate search "[trial name] results [year range]" in addition to "[trial name]" to distinguish the design/protocol paper from the primary endpoint/results paper. Store the **results paper** PMID; if the design paper is also needed, label it explicitly as "design paper — not the results."
+- **Why:** Entry #5 initially stored STAR AF II's design paper PMID (22795275, 2012) instead of the NEJM results paper (25946280, 2015). A "wrong but real" PMID passes naive existence checks and would misdirect any reader who follows it.
+- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
+
+### L-022: When a data source is unavailable, STOP and ask the user before continuing with reduced coverage
+- **Role:** retriever, orchestrator
+- **Trigger:** any planned search source is unavailable (MCP permission-denied, tool absent, rate-limited after retries)
+- **Rule:** Do NOT silently continue with reduced coverage. STOP and inform the user: "Source X is unavailable (reason). Options: (a) proceed without it and note the gap in Limitations; (b) I try WebSearch as a fallback; (c) you supply materials directly." Wait for the user's choice. Record the decision and its rationale in the search log. "Silently continuing" produces a review whose coverage gap is invisible to the user until they read the Limitations footnote — too late to add value.
+- **Why:** Entry #5: bioRxiv/medRxiv tool was permission-denied, ClinicalTrials.gov had no tool, ScienceDirect/Google Scholar were unavailable — retriever noted these in the log and continued without asking the user whether to try WebSearch or other fallbacks. User feedback: "không dừng lại hỏi xem có dùng websearch không, có cố thử lại không mà buồng luôn → khả năng thiếu sót cao."
+- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15); user-approved lesson
+
+### L-023: When full-text retrieval is incomplete, STOP and ask the user before advancing to appraisal
+- **Role:** retriever, orchestrator
+- **Trigger:** after the retrieval phase, when HIGH-tier records remain abstract-only
+- **Rule:** Before handing off to the critical-appraiser, count how many HIGH-tier records are still abstract-only. If ≥3 HIGH records lack full text, STOP and report: "X of Y HIGH records are abstract-only. Key missing: [list top 3–5]. Do you want to: (a) proceed with current depth and flag in Limitations; (b) grant full-text tool permission; (c) supply PDFs?" Do not advance to Phase 4 without this check.
+- **Why:** Entry #5: 28/31 records were abstract-only after retrieval (5 of the most important ones paywalled). The retriever reported this in the log but moved immediately to appraisal without asking the user whether to supplement. User feedback: "PHẢI hỏi user lại xem có muốn bổ sung không… đã chuyển bước sau luôn mà không hỏi user." Abstract-only appraisal of landmark RCTs forces the appraiser to rely on abstracts for RoB domains that require full methods — exactly the weakness user identified as making the review "sơ sài."
+- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15); user-approved lesson
+
+### L-024: User must explicitly OK each major phase handoff; fix-then-re-ask, never fix-then-proceed
+- **Role:** orchestrator
+- **Trigger:** before handing off to the critical-appraiser (Phase 4) AND before handing off to the synthesis-writer (Phase 5); and after fixing any user-requested change at either gate
+- **Rule:** The orchestrator presents the phase output (retrieval summary / appraisal summary) and STOPS for explicit user OK before launching the next agent. If the user requests changes or supplements (e.g., "find more full text," "add a search," "fix the tier"), the orchestrator makes those changes and ASKS AGAIN — it does NOT proceed to the next phase automatically after fixing. The loop continues until the user explicitly signals approval (e.g., "ok," "tiếp tục," "approve"). Two specific gates:
+  - **Gate 2b (post-retrieval):** After retrieval + corpus update, present: corpus size, full-text status, source availability gaps (L-022/L-023), any PMID issues. Ask: "Có muốn bổ sung gì trước khi thẩm định không?" Wait for OK.
+  - **Gate 4b (post-appraisal):** After appraisal, present: GRADE summary per axis, flagged contradictions, Assumption Register highlights. Ask: "Có muốn điều chỉnh gì trước khi viết bài không?" Wait for OK.
+- **Why:** User feedback (Entry #5, 2026-06-15): "ghi nhận rõ, trước khi giao việc cho appraiser và writer, người dùng phải ok mới làm. Nếu người dùng OK → yêu cầu sửa, sửa xong lại hỏi tiếp chứ không được giao việc luôn." These checkpoints cost one extra message per phase; the alternative is delivering a review the user considers shallow because coverage gaps were not caught early.
+- **Origin:** Entry #5 — user-stated requirement, 2026-06-15; approved immediately
