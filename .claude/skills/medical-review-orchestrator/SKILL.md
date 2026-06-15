@@ -61,18 +61,22 @@ persistent lessons with human approval before saving.
 
 ## Execution Mode: Agent Team
 `TeamCreate` the team, `TaskCreate` work with dependencies, members coordinate via `SendMessage`,
-artifacts flow through files. Two **hard stops** where the lead waits for the user: Phase 0 scope, and
-the Phase 3 Research Map.
+artifacts flow through files. **Four stops** where the lead waits for the user: Phase 0 scope,
+Gate 2b (post-retrieval), Phase 3 Research Map (hard gate), and Gate 4b (post-appraisal).
+At every gate: if the user requests changes → fix → ask again. Never fix-then-proceed silently. (L-024)
 
 ```
 [lead]
   ├── read constitution + lessons; lessons-curator posts role-tagged digest
-  ├── Phase 0  scope confirm ......................... STOP, await user
+  ├── Phase 0  scope confirm ......................... STOP, await user  (L-015)
   ├── TeamCreate(medical-review, [strategist,retriever,appraiser,writer,verifier,curator])
   ├── Phase 1  protocol (+ curiosity budget gaps)
   ├── Phase 2  retrieval: live sources + source/ folder → reference/<topic>.md
-  ├── Phase 3  RESEARCH MAP ......................... STOP, await user approval  ← HARD GATE
+  │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-023/L-024
+  ├── Phase 3  RESEARCH MAP ......................... STOP, await user approval  ← HARD GATE (L-014)
+  │            └── persist gate approval to _workspace/research_map_gate_approval.md  (L-019)
   ├── Phase 4  appraisal (GRADE/RoB + Assumption Register)
+  │            └── Gate 4b: present GRADE summary + contradictions + assumptions . STOP, await user OK  ← L-024
   ├── Phase 5  synthesis (writer cites only from reference store)
   ├── Phase 6  verification: claims↔sources + rubric score + audit  (writer⇄verifier loop)
   ├── assemble 06_final_review.md → deliver with audit report
@@ -89,6 +93,12 @@ evidence / contradiction / methodological / population / implementation).
 + Consensus (+ ChEMBL/Open Targets for drug topics). **Then list `source/` subfolders and ask the user
 which to read** — do this whether or not files exist (never silent). Write every verified record into
 `reference/<topic>.md` with a stable ID; produce `01_search_log.md` (PRISMA numbers) + `02_corpus.md`.
+
+**Gate 2b (post-retrieval) — STOP, await user OK before Phase 4.** Present: (a) corpus size and PMID status,
+(b) full-text coverage — count HIGH records still abstract-only; if ≥3, list them and ask user to supplement
+before proceeding (L-023); (c) source availability gaps — any planned source that was unavailable must be
+surfaced here with options: proceed / try WebSearch / user supplies PDFs (L-022). Wait for explicit user OK.
+If user requests changes: fix → present update → ask again. Do NOT launch appraisal until OK received. (L-024)
 
 **3 · Research Map — HARD GATE.** The lead, using the corpus + a light landscape pass from the appraiser,
 presents a **Research Map** and STOPS for the user. The Map has 7 parts:
@@ -122,6 +132,11 @@ presents a **Research Map** and STOPS for the user. The Map has 7 parts:
 tool per design, contradictions, gaps, and an **Assumption Register** (every extrapolation logged →
 surfaces in Limitations).
 
+**Gate 4b (post-appraisal) — STOP, await user OK before Phase 5.** Present: (a) GRADE certainty per axis
+(Strong/Adequate/Thin/Absent), (b) flagged contradictions, (c) key Assumption Register items. Ask: "Có muốn
+điều chỉnh gì trước khi viết bài không?" Wait for explicit user OK. If user requests changes: fix → present
+update → ask again. Do NOT launch writer until OK received. (L-024)
+
 **5 · Synthesis** — `synthesis-writer` → `04_draft_review.md` in the **confirmed language** (Vietnamese →
 load `review-synthesis/references/vi-terminology.md`), inline Vancouver `[n]`, citing **only** from
 `reference/<topic>.md`.
@@ -137,17 +152,19 @@ NOT deliver.
 to `evolution-log.md`.
 
 ## Error Handling
-- **MCP source fails:** retriever retries once, then continues with remaining sources and records the
-  gap in the search log (report it — never imply full coverage). *(Known: Consensus tool-ID can drift
-  per session — resolve via ToolSearch "consensus search"; Consensus years may differ from PubMed,
-  confirm PMIDs separately.)*
+- **MCP source fails:** retriever retries once. If still failing → **STOP and ask the user** (do NOT silently
+  continue): "Source X unavailable. Options: (a) proceed without it + note gap; (b) try WebSearch fallback;
+  (c) you supply materials." Wait for choice; record decision in search log. (L-022) *(Known: Consensus
+  tool-ID can drift per session — resolve via ToolSearch "consensus search"; Consensus years may differ from
+  PubMed, confirm PMIDs separately.)*
 - **Agent fails/returns nothing:** retry once; else proceed without it and note the omission in Limitations.
 - **Conflicting evidence:** never delete the minority finding — appraiser documents the conflict, both cited.
 - **Unverifiable citation:** QA marks BLOCK; the claim is corrected or removed.
 
 ## Team Size
 Six focused specialists, one task chain; keep each agent's tasks within its phase to limit coordination
-overhead. Two human gates (scope, Research Map) are where quality is won cheaply.
+overhead. **Four human gates** (scope, post-retrieval, Research Map, post-appraisal) are where quality is
+won cheaply — never skip or self-clear any of them.
 
 ## Test Scenarios
 **Normal:** "Tổng quan chuyên sâu về GLP-1 RA cho béo phì không đái tháo đường, tập trung kết cục tim
@@ -156,9 +173,10 @@ retrieval + source/ ask → **Research Map → STOP for approval** → GRADE app
 Vietnamese draft citing only the reference store → QA cross-check + rubric (e.g. 0.78 MET) + audit →
 delivered with audit report → lessons + evolution-log entry proposed.
 
-**Error:** ClinicalTrials.gov MCP rate-limits → retriever retries once, fails, continues with PubMed +
-preprints + Consensus, logs the gap → appraiser notes possible unpublished-trial bias → writer adds it
-to Limitations → audit records the coverage gap honestly.
+**Error:** ClinicalTrials.gov MCP rate-limits → retriever retries once, fails → **STOP at Gate 2b** and
+presents to user: "CT.gov unavailable. Proceed without / try WebSearch / supply NCT list?" → user chooses
+→ decision recorded in search log → appraiser notes possible unpublished-trial bias → writer adds to
+Limitations → audit records coverage gap honestly. (L-022)
 
 **Gate test:** user gives a "small" topic and says "just write it." → lead still presents the Research
 Map and STOPS — the gate has no small-scope exception (v1's most expensive repeated lesson).
