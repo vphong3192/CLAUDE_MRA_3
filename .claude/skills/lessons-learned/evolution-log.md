@@ -169,3 +169,57 @@ delivered `_workspace/06_final_review.md` (clean, post-FIX); 9 Vietnamese EP ter
 operate fully on user-supplied full text under an egress block — positive evidence gate + provenance
 disciplines hold under degraded retrieval conditions.
 ═══════════════════════════════════════════════
+
+### Entry #6 — 2026-06-16 — LA electrophysiology in elderly AF
+(PhD dissertation theoretical foundation; P-wave supplement added)
+═══════════════════════════════════════════════════════════════
+
+**TOPIC:** Đặc điểm điện học và điện sinh lý nhĩ trái ở bệnh nhân rung nhĩ
+       cao tuổi — PhD dissertation variable-table foundation
+**DEPTH:** Full systematic-style review (~3,500 words Vietnamese)
+**CORPUS:** 40 records (REF-001–040); 29 cited in draft; 39 citable (REF-039 partial)
+
+**PIPELINE STATUS:**
+- Phase 0 (scope confirm): PASS — topic, depth, language confirmed
+- Phase 1 (strategy): PASS — PICO defined; LA electrophysiology + aging
+- Phase 2 (retrieval): PASS — PubMed/PMC + Consensus + user-supplied HTML/PDF; 37 records → expanded to 40 with P-wave supplement
+- Phase 3 (Research Map): CLEARED — gate v3 (includes P-wave) approved "ok" 2026-06-16; persisted to `_workspace/research_map_gate_approval.md` (L-019)
+- Phase 4b (pre-writing): CLEARED — explicit "ok" before synthesis-writer launched (L-024)
+- Phase 5 (synthesis): DELIVERED — `_workspace/la-ep-elderly-af-review-draft.md`
+- Phase 6 (QA): PASS — rubric 0.91 (EXCEEDED); 54 claims verified; 0 fabricated citations; 2 minor issues (I-01 FIX applied; I-02 cosmetic)
+- Learning loop: Entry #6 (this); L-025 approved and saved
+
+**RUBRIC: 0.91 (EXCEEDED)**
+- T1 Search 0.85 — gate cleared; multi-source; MeSH not reproduced in draft body
+- T2 Quality 1.00 — Q1 journals, RCTs, SR/MA; no preprints; GRADE labeled
+- T3 Synthesis 0.90 — 9 thematic sections; all 4 key contradictions surfaced
+- T4 Appraisal 0.85 — GRADE per claim; RoB not re-shown in body; causal/associative correct
+- T5 Citation 0.90 — 28/29 fully clean; [11] minor format; [12] partial by design
+- T6 Applicability 1.00 — EnSite X variable table directly actionable; 4 gap statements
+
+**KEY FINDINGS:**
+- I-01 (mismatched-citation): van der Does unipolar voltage threshold bundled with bipolar studies; caught by QA; fixed before final push. → L-025 saved.
+- Non-PV foci direction CORRECTED: protocol said "↑ with age"; Lin C-H data shows opposite (higher in young — 8.6% vs 3.3%); writer correctly reversed per Law 1. Flagged in Appendix A.
+- REF-039 correctly handled: hedged to qualitative-only, ⚠️ flag in text and Appendix A; no pooled estimate stated.
+- P-wave scope expansion handled correctly: options A/B → supplementary search → Research Map v3 → gate re-approved before writing.
+- PDF extraction failed (poppler/cffi unavailable); DOI confirmed via WebSearch from filename.
+
+**PENDING (before dissertation submission):**
+- REF-039: retrieve PMC9935015 full text to confirm pooled OR for PWD→AF recurrence
+- REF-040: confirm PMID for Huang 2020 (DOI/PMC confirmed; MCP GET blocked)
+- REF-021 (Mené 2024): user needs to upload correct HTML
+
+**STATUS:** DELIVERED with 1 applied fix (I-01). Gate + provenance + QA disciplines held.
+═══════════════════════════════════════════════
+
+### Entry #6 — Addendum (2026-06-16, post-delivery user corrections)
+
+**Additional corrections caught by user after initial delivery:**
+1. **REF-021 PMID**: 40171797 (wrong-but-real) → ✅ 39245073 (Mené R, Int J Cardiol 2024, EU-PORIA; verified pubmed.ncbi.nlm.nih.gov/39245073/). Illustrates L-027: never store a PMID without title/author cross-check on PubMed.
+2. **REF-040 PMID**: "⏳ pending" → ✅ 32022368 (Huang Z, Ann Noninvasive Electrocardiol 2020; found immediately via WebSearch). Illustrates L-026: use WebSearch instantly when MCP tools blocked — do not leave PMID as pending.
+3. **REF-039 full text**: User supplied PDF (euac210.pdf = Intzes S et al., Europace 2023;25:450–459, DOI 10.1093/europace/euac210). All pooled ORs now verified: ΔPWD 7.8 ms; OR 2.04 (>120ms)/3.97 (aIAB)/10.89 (>150ms). Draft §2.3 updated from hedged qualitative → verified quantitative paragraph. Reference [12] completed. Variable table [12] updated with confirmed thresholds. ⚠️ warning removed from Appendix A.
+4. **L-026 + L-027 approved and saved** (user-approved post-delivery).
+
+**Revised final state:** All 3 original "pending" items now resolved. REF-021 file mismatch (HTML = Hirokami 2025, not Mené 2024) remains, but PMID is now correct and REF-021 is not cited in the 29-citation draft.
+
+**Revised rubric (post-corrections): ≥0.93** — REF-039 now full-text verified removes the main T5 deduction.

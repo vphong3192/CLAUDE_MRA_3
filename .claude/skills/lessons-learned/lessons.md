@@ -178,3 +178,24 @@ approval. One lesson = one reusable rule, with its rationale.
   - **Gate 4b (post-appraisal):** After appraisal, present: GRADE summary per axis, flagged contradictions, Assumption Register highlights. Ask: "Có muốn điều chỉnh gì trước khi viết bài không?" Wait for OK.
 - **Why:** User feedback (Entry #5, 2026-06-15): "ghi nhận rõ, trước khi giao việc cho appraiser và writer, người dùng phải ok mới làm. Nếu người dùng OK → yêu cầu sửa, sửa xong lại hỏi tiếp chứ không được giao việc luôn." These checkpoints cost one extra message per phase; the alternative is delivering a review the user considers shallow because coverage gaps were not caught early.
 - **Origin:** Entry #5 — user-stated requirement, 2026-06-15; approved immediately
+
+### L-025: Verify signal modality (bipolar / unipolar / omnipolar) before bundling citations for a voltage-threshold claim
+- **Role:** synthesis-writer, citation-verifier
+- **Trigger:** writing a claim that a voltage threshold is "used consistently" across multiple studies
+- **Rule:** Before bundling citations for any electrophysiology voltage-threshold sentence, check each study's signal modality. Bipolar (< 0.5 mV LVZ), unipolar (~5th-percentile-derived, ≈ 0.7 mV), and omnipolar (systematically higher than bipolar) use *different, non-interchangeable* thresholds. If modalities differ across studies, cite each separately with its own threshold — never merge them into a single "[X,Y,Z]" bundle.
+- **Why:** Entry #6 (LA-EP elderly AF review): van der Does [8] uses unipolar voltage with a 5th-percentile threshold (~0.73 mV), yet the draft bundled it with bipolar studies [5,7] in a "< 0.5 mV used consistently [5,7,8]" claim. The QA verifier caught this as I-01 (mismatched-citation). Fix: remove [8] from the blanket threshold statement and distinguish the modality explicitly.
+- **Origin:** Entry #6 — 2026-06-16
+
+### L-026: Khi MCP tools bị chặn, dùng WebSearch ngay để xác nhận PMID — không để "pending"
+- **Role:** retriever, orchestrator
+- **Trigger:** bất kỳ PMID nào chưa xác nhận sau khi MCP tool bị từ chối/blocked
+- **Rule:** Nếu `get_article_metadata` hoặc các PubMed MCP POST tools cần approval/bị chặn, **ngay lập tức** dùng WebSearch với query `site:pubmed.ncbi.nlm.nih.gov "[tên tác giả đầu] [từ khóa tiêu đề] [năm]"` để xác nhận PMID trước khi ghi vào store. Không được ghi "⏳ PMID pending" rồi chuyển sang bước tiếp theo — PMID phải được xác nhận tại bước retrieval.
+- **Why:** REF-040 (Huang 2020 PTFV1 MA) bị để "pending" suốt cả quá trình vì MCP tools cần approval. WebSearch tìm ra PMID 32022368 ngay lập tức — user phải tự làm thay. Một bản ghi với PMID chưa xác nhận không phải là bản ghi "đã thẩm định".
+- **Origin:** Entry #6 — 2026-06-16, user-caught
+
+### L-027: Xác nhận PMID bằng cách mở trang PubMed và kiểm tra tiêu đề — không tin vào kết quả từ Consensus hay agent mà không kiểm tra chéo
+- **Role:** retriever
+- **Trigger:** trước khi ghi bất kỳ PMID nào vào reference store, đặc biệt khi PMID đến từ Consensus search hoặc agent
+- **Rule:** Sau khi có một PMID từ bất kỳ nguồn nào (Consensus, PubMed search, agent), mở trang `pubmed.ncbi.nlm.nih.gov/[PMID]/` và xác nhận **(a) tên tác giả đầu khớp** và **(b) tiêu đề/journal/năm khớp** với paper dự định lưu. Chỉ ghi vào store sau khi hai trường này khớp.
+- **Why:** REF-021 (Mené 2024) bị ghi với PMID 40171797 — một PMID có thật nhưng là bài khác. PMID đúng là 39245073. Lỗi "wrong-but-real PMID" (đã có trong L-021 cho RCT results paper, nay tái xuất hiện cho bài registry) đặc biệt nguy hiểm vì vượt qua kiểm tra "PMID tồn tại".
+- **Origin:** Entry #6 — 2026-06-16, user-caught
