@@ -16,12 +16,14 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Why:** Fabricated/unsupported citations are the cardinal failure of AI reviews and destroy trust in the whole document.
 - **Origin:** seed
 
-### L-002: Match language strength to GRADE certainty
+### L-002: Match language strength to GRADE certainty and study design
 - **Role:** writer
-- **Trigger:** stating a finding the appraiser graded
-- **Rule:** High/Moderate → confident; Low → "may/suggests"; Very Low → explicitly tentative + "requires confirmation." Never state Low/Very-Low as fact.
-- **Why:** Overstating weak evidence misleads clinical readers and is the most damaging interpretive error.
-- **Origin:** seed
+- **Trigger:** stating any finding
+- **Rule:**
+  1. **GRADE-level language:** High/Moderate → confident; Low → "may/suggests"; Very Low → explicitly tentative + "requires confirmation." Never state Low/Very-Low as fact.
+  2. **Observational data:** Use associative verbs ("associated with," "linked to"), not causal ("causes," "reduces"), unless the design supports causation. Even Moderate-GRADE observational evidence cannot establish causation.
+- **Why:** Two defects, same root — language must match both evidence certainty (GRADE) and study design. Overstating either misleads clinical readers.
+- **Origin:** seed (L-002 + L-007); consolidated 2026-06-16
 
 ### L-003: Verify the source supports the specific sentence, not just that it exists
 - **Role:** verifier
@@ -51,13 +53,6 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Why:** Hiding conflict produces a falsely confident review and erases real clinical uncertainty.
 - **Origin:** seed
 
-### L-007: Avoid causal language for observational data
-- **Role:** writer
-- **Trigger:** reporting cohort/case-control findings
-- **Rule:** Use associative verbs ("associated with," "linked to"), not causal ("causes," "reduces"), unless the design supports causation.
-- **Why:** Observational designs cannot establish causation; causal phrasing overstates the evidence.
-- **Origin:** seed
-
 ### L-008: Don't over-constrain ClinicalTrials.gov queries
 - **Role:** retriever
 - **Trigger:** searching ClinicalTrials.gov
@@ -65,12 +60,16 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Why:** A 0 here looks like "no trials exist" and gets reported as a false evidence gap.
 - **Origin:** Entry #1 — search returned 0; retry recovered 11 trials.
 
-### L-009: Confirm Consensus hits via PubMed before citing
+### L-009: PMID verification protocol — always confirm before storing
 - **Role:** retriever
-- **Trigger:** a study surfaces via Consensus without a PMID/DOI
-- **Rule:** Confirm the PMID/DOI with a PubMed title search before the record enters the citable store; leave unconfirmed records uncited.
-- **Why:** Consensus metadata (including publication year) can be imprecise; citing an unconfirmed record risks a Law-1 violation.
-- **Origin:** Entry #1 — Yin 2025 confirmed (PMID 40207414); Kelkar 2024 left unconfirmed and therefore uncited.
+- **Trigger:** before writing any PMID into the reference store, from any source
+- **Rule:**
+  1. **Cross-check on PubMed:** Open `pubmed.ncbi.nlm.nih.gov/[PMID]/` and confirm: (a) first author matches, (b) title/journal/year matches the intended paper. A "wrong-but-real" PMID passes existence checks but is a Law-1-adjacent error.
+  2. **Source = Consensus:** Confirm the PMID/DOI via PubMed title search before the record enters the citable store; leave unconfirmed records uncited.
+  3. **Trial papers:** Run a separate search "[trial name] results [year range]" to distinguish the design/protocol paper from the primary results paper. Store the results paper PMID; label the design paper explicitly if also stored.
+  4. **When MCP is blocked:** Immediately use WebSearch (`site:pubmed.ncbi.nlm.nih.gov "[first author] [title keyword] [year]"`) to confirm the PMID. Never write "⏳ PMID pending" and proceed — PMID must be confirmed at retrieval time.
+- **Why:** Four entry-failures (Consensus hits, trial results vs. design, MCP-blocked, wrong-but-real PMID) all stem from the same discipline lapse — trusting a PMID without verification.
+- **Origin:** Entry #1, #5, #6; consolidated L-009 + L-021 + L-026 + L-027 (2026-06-16)
 
 ### L-010: Decompose composite endpoints before stating the headline
 - **Role:** appraiser / writer
@@ -104,7 +103,7 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Role:** orchestrator
 - **Trigger:** after presenting the Research Map, before any drafting
 - **Rule:** STOP and wait for an explicit user approval message. "Gate cleared" requires a real user reply received *after* the map was shown — not "small scope," not "unambiguous/fixed test-case scope," not "standing approval inferred from the request." Presenting the map and proceeding in the same turn is a violation. The audit must quote the user's approval; if it cannot, the gate is NOT cleared and the review is not deliverable.
-- **Why:** This is v1's Entry #9 failure recurring in v2 — and worse, the audit then falsely recorded "gate cleared," laundering the breach. The gate's whole value is the human checkpoint before expensive/мis-framed work.
+- **Why:** This is v1's Entry #9 failure recurring in v2 — and worse, the audit then falsely recorded "gate cleared," laundering the breach. The gate's whole value is the human checkpoint before expensive/mis-framed work.
 - **Origin:** Entry #2 — metformin run self-cleared the gate; user caught it.
 
 ### L-015: Always ask depth + purpose (+ audience + language) before writing
@@ -128,12 +127,14 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Why:** L-011 exists to make reviews read as complete to clinicians; that value is lost if the guidelines are retrieved then forgotten at the writing stage. Entry #4 retrieved ESC 2024, ACC/AHA 2023, HRS 2017 but did not embed them until QA's FIX.
 - **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
 
-### L-018: Specify voltage modality (unipolar vs bipolar) when citing mapping studies
-- **Role:** writer, appraiser
-- **Trigger:** citing any voltage value or LVZ threshold from an electroanatomic mapping study
-- **Rule:** Always state whether the cited voltage is unipolar or bipolar — they measure different tissue properties with different clinical thresholds (bipolar LVZ typically <0.5 mV; unipolar LVZ typically <0.5–1.0 mV depending on protocol). Write "điện thế lưỡng cực" or "điện thế đơn cực" explicitly; never write "điện thế" alone for a mapping value.
-- **Why:** Entry #5 draft wrote generic "điện thế" for van der Does 2021 which measured unipolar voltage — a meaningful distinction QA had to fix. Expert electrophysiology readers notice this immediately.
-- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
+### L-018: Voltage modality discipline — label explicitly and cite separately
+- **Role:** writer, appraiser, citation-verifier
+- **Trigger:** citing any voltage value, LVZ threshold, or electroanatomic mapping study
+- **Rule:**
+  1. **Label modality explicitly:** Write "điện thế lưỡng cực" or "điện thế đơn cực" (or "omnipolar"); never write "điện thế" alone for a mapping value.
+  2. **Never bundle citations across modalities:** Bipolar (<0.5 mV LVZ), unipolar (~0.73 mV 5th-percentile-derived), and omnipolar (systematically higher than bipolar) use different, non-interchangeable thresholds. If studies differ in modality, cite each separately with its own threshold.
+- **Why:** Two defects, same root: (a) Entry #5: "điện thế" used for van der Does 2021 (unipolar) — labeling failure; (b) Entry #6: van der Does [8] bundled into a bipolar "<0.5 mV used consistently [5,7,8]" claim — citation-modality mismatch caught by QA.
+- **Origin:** Entry #5 + #6; consolidated L-018 + L-025 (2026-06-16)
 
 ### L-019: Persist the Research Map gate approval to disk at the moment it is received
 - **Role:** orchestrator
@@ -149,53 +150,21 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Why:** Entry #5 initially stored the CABANA sex subgroup PMID (Russo, 33499668) in the slot intended for the age subgroup (Bahnson, 34933570). The error was caught in Phase 2b before synthesis; if it had reached the writer, a citation would have supported a claim about age outcomes using a paper about sex differences — a Law-1-adjacent error.
 - **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
 
-### L-021: Verify a trial PMID is the results paper, not the design/protocol paper
-- **Role:** retriever
-- **Trigger:** storing the PMID for any landmark or registered trial
-- **Rule:** Run a separate search "[trial name] results [year range]" in addition to "[trial name]" to distinguish the design/protocol paper from the primary endpoint/results paper. Store the **results paper** PMID; if the design paper is also needed, label it explicitly as "design paper — not the results."
-- **Why:** Entry #5 initially stored STAR AF II's design paper PMID (22795275, 2012) instead of the NEJM results paper (25946280, 2015). A "wrong but real" PMID passes naive existence checks and would misdirect any reader who follows it.
-- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
-
-### L-022: When a data source is unavailable, STOP and ask the user before continuing with reduced coverage
+### L-022: STOP when coverage is incomplete — ask before proceeding
 - **Role:** retriever, orchestrator
-- **Trigger:** any planned search source is unavailable (MCP permission-denied, tool absent, rate-limited after retries)
-- **Rule:** Do NOT silently continue with reduced coverage. STOP and inform the user: "Source X is unavailable (reason). Options: (a) proceed without it and note the gap in Limitations; (b) I try WebSearch as a fallback; (c) you supply materials directly." Wait for the user's choice. Record the decision and its rationale in the search log. "Silently continuing" produces a review whose coverage gap is invisible to the user until they read the Limitations footnote — too late to add value.
-- **Why:** Entry #5: bioRxiv/medRxiv tool was permission-denied, ClinicalTrials.gov had no tool, ScienceDirect/Google Scholar were unavailable — retriever noted these in the log and continued without asking the user whether to try WebSearch or other fallbacks. User feedback: "không dừng lại hỏi xem có dùng websearch không, có cố thử lại không mà buồng luôn → khả năng thiếu sót cao."
-- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15); user-approved lesson
-
-### L-023: When full-text retrieval is incomplete, STOP and ask the user before advancing to appraisal
-- **Role:** retriever, orchestrator
-- **Trigger:** after the retrieval phase, when HIGH-tier records remain abstract-only
-- **Rule:** Before handing off to the critical-appraiser, count how many HIGH-tier records are still abstract-only. If ≥3 HIGH records lack full text, STOP and report: "X of Y HIGH records are abstract-only. Key missing: [list top 3–5]. Do you want to: (a) proceed with current depth and flag in Limitations; (b) grant full-text tool permission; (c) supply PDFs?" Do not advance to Phase 4 without this check.
-- **Why:** Entry #5: 28/31 records were abstract-only after retrieval (5 of the most important ones paywalled). The retriever reported this in the log but moved immediately to appraisal without asking the user whether to supplement. User feedback: "PHẢI hỏi user lại xem có muốn bổ sung không… đã chuyển bước sau luôn mà không hỏi user." Abstract-only appraisal of landmark RCTs forces the appraiser to rely on abstracts for RoB domains that require full methods — exactly the weakness user identified as making the review "sơ sài."
-- **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15); user-approved lesson
+- **Trigger:** (a) any planned search source is unavailable, OR (b) ≥3 HIGH-tier records are still abstract-only after retrieval
+- **Rule:**
+  - **Source unavailable:** Do NOT silently continue with reduced coverage. Inform the user: "Source X is unavailable (reason). Options: (a) proceed without it and note the gap in Limitations; (b) try WebSearch as a fallback; (c) you supply materials directly." Wait for the user's choice.
+  - **Incomplete full text:** Before handing off to the critical-appraiser, count abstract-only HIGH records. If ≥3, report: "X of Y HIGH records are abstract-only. Key missing: [list top 3–5]. Do you want to: (a) proceed and flag in Limitations; (b) grant full-text tool permission; (c) supply PDFs?" Wait for OK.
+  - In both cases: record the decision and rationale in the search log.
+- **Why:** Entry #5: bioRxiv/ClinicalTrials.gov were unavailable AND 28/31 records were abstract-only — both gaps reported in the log but retriever moved immediately to appraisal without asking the user. User: "không dừng lại hỏi… khả năng thiếu sót cao."
+- **Origin:** Entry #5; consolidated L-022 + L-023 (2026-06-16)
 
 ### L-024: User must explicitly OK each major phase handoff; fix-then-re-ask, never fix-then-proceed
 - **Role:** orchestrator
 - **Trigger:** before handing off to the critical-appraiser (Phase 4) AND before handing off to the synthesis-writer (Phase 5); and after fixing any user-requested change at either gate
 - **Rule:** The orchestrator presents the phase output (retrieval summary / appraisal summary) and STOPS for explicit user OK before launching the next agent. If the user requests changes or supplements (e.g., "find more full text," "add a search," "fix the tier"), the orchestrator makes those changes and ASKS AGAIN — it does NOT proceed to the next phase automatically after fixing. The loop continues until the user explicitly signals approval (e.g., "ok," "tiếp tục," "approve"). Two specific gates:
-  - **Gate 2b (post-retrieval):** After retrieval + corpus update, present: corpus size, full-text status, source availability gaps (L-022/L-023), any PMID issues. Ask: "Có muốn bổ sung gì trước khi thẩm định không?" Wait for OK.
+  - **Gate 2b (post-retrieval):** After retrieval + corpus update, present: corpus size, full-text status, source availability gaps (L-022), any PMID issues. Ask: "Có muốn bổ sung gì trước khi thẩm định không?" Wait for OK.
   - **Gate 4b (post-appraisal):** After appraisal, present: GRADE summary per axis, flagged contradictions, Assumption Register highlights. Ask: "Có muốn điều chỉnh gì trước khi viết bài không?" Wait for OK.
 - **Why:** User feedback (Entry #5, 2026-06-15): "ghi nhận rõ, trước khi giao việc cho appraiser và writer, người dùng phải ok mới làm. Nếu người dùng OK → yêu cầu sửa, sửa xong lại hỏi tiếp chứ không được giao việc luôn." These checkpoints cost one extra message per phase; the alternative is delivering a review the user considers shallow because coverage gaps were not caught early.
 - **Origin:** Entry #5 — user-stated requirement, 2026-06-15; approved immediately
-
-### L-025: Verify signal modality (bipolar / unipolar / omnipolar) before bundling citations for a voltage-threshold claim
-- **Role:** synthesis-writer, citation-verifier
-- **Trigger:** writing a claim that a voltage threshold is "used consistently" across multiple studies
-- **Rule:** Before bundling citations for any electrophysiology voltage-threshold sentence, check each study's signal modality. Bipolar (< 0.5 mV LVZ), unipolar (~5th-percentile-derived, ≈ 0.7 mV), and omnipolar (systematically higher than bipolar) use *different, non-interchangeable* thresholds. If modalities differ across studies, cite each separately with its own threshold — never merge them into a single "[X,Y,Z]" bundle.
-- **Why:** Entry #6 (LA-EP elderly AF review): van der Does [8] uses unipolar voltage with a 5th-percentile threshold (~0.73 mV), yet the draft bundled it with bipolar studies [5,7] in a "< 0.5 mV used consistently [5,7,8]" claim. The QA verifier caught this as I-01 (mismatched-citation). Fix: remove [8] from the blanket threshold statement and distinguish the modality explicitly.
-- **Origin:** Entry #6 — 2026-06-16
-
-### L-026: Khi MCP tools bị chặn, dùng WebSearch ngay để xác nhận PMID — không để "pending"
-- **Role:** retriever, orchestrator
-- **Trigger:** bất kỳ PMID nào chưa xác nhận sau khi MCP tool bị từ chối/blocked
-- **Rule:** Nếu `get_article_metadata` hoặc các PubMed MCP POST tools cần approval/bị chặn, **ngay lập tức** dùng WebSearch với query `site:pubmed.ncbi.nlm.nih.gov "[tên tác giả đầu] [từ khóa tiêu đề] [năm]"` để xác nhận PMID trước khi ghi vào store. Không được ghi "⏳ PMID pending" rồi chuyển sang bước tiếp theo — PMID phải được xác nhận tại bước retrieval.
-- **Why:** REF-040 (Huang 2020 PTFV1 MA) bị để "pending" suốt cả quá trình vì MCP tools cần approval. WebSearch tìm ra PMID 32022368 ngay lập tức — user phải tự làm thay. Một bản ghi với PMID chưa xác nhận không phải là bản ghi "đã thẩm định".
-- **Origin:** Entry #6 — 2026-06-16, user-caught
-
-### L-027: Xác nhận PMID bằng cách mở trang PubMed và kiểm tra tiêu đề — không tin vào kết quả từ Consensus hay agent mà không kiểm tra chéo
-- **Role:** retriever
-- **Trigger:** trước khi ghi bất kỳ PMID nào vào reference store, đặc biệt khi PMID đến từ Consensus search hoặc agent
-- **Rule:** Sau khi có một PMID từ bất kỳ nguồn nào (Consensus, PubMed search, agent), mở trang `pubmed.ncbi.nlm.nih.gov/[PMID]/` và xác nhận **(a) tên tác giả đầu khớp** và **(b) tiêu đề/journal/năm khớp** với paper dự định lưu. Chỉ ghi vào store sau khi hai trường này khớp.
-- **Why:** REF-021 (Mené 2024) bị ghi với PMID 40171797 — một PMID có thật nhưng là bài khác. PMID đúng là 39245073. Lỗi "wrong-but-real PMID" (đã có trong L-021 cho RCT results paper, nay tái xuất hiện cho bài registry) đặc biệt nguy hiểm vì vượt qua kiểm tra "PMID tồn tại".
-- **Origin:** Entry #6 — 2026-06-16, user-caught
