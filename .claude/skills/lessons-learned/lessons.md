@@ -168,3 +168,66 @@ approval. One lesson = one reusable rule, with its rationale.
   - **Gate 4b (post-appraisal):** After appraisal, present: GRADE summary per axis, flagged contradictions, Assumption Register highlights. Ask: "Có muốn điều chỉnh gì trước khi viết bài không?" Wait for OK.
 - **Why:** User feedback (Entry #5, 2026-06-15): "ghi nhận rõ, trước khi giao việc cho appraiser và writer, người dùng phải ok mới làm. Nếu người dùng OK → yêu cầu sửa, sửa xong lại hỏi tiếp chứ không được giao việc luôn." These checkpoints cost one extra message per phase; the alternative is delivering a review the user considers shallow because coverage gaps were not caught early.
 - **Origin:** Entry #5 — user-stated requirement, 2026-06-15; approved immediately
+
+### L-025: Phase 5b quality-coach pass must be explicitly declared SKIPPED — silent absence is R4
+- **Role:** orchestrator
+- **Trigger:** effort=full (or normal) run reaches handoff between Phase 5 (draft) and Phase 6 (QA)
+- **Rule:** Before routing the draft to QA, confirm that 04b_coach.md exists in `_workspace/`. If it does not, the orchestrator must either (a) run the quality-coach pass, or (b) write a brief `04b_coach_skip.md` stating the reason (e.g., effort=tiny, user-waived). Silent omission for effort=full constitutes R4 ("Faking the steps") even when the draft meets the rubric.
+- **Why:** Entry #7 — 04b_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is an audit-visible step: QA checks for its artifact, and absence without justification is indistinguishable from never having run it.
+- **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17)
+
+### L-026: Law 4 section headers must be explicit labels in the draft body, not implicit content
+- **Role:** writer
+- **Trigger:** finishing any review draft, before handoff to quality-coach or QA
+- **Rule:** The draft must contain the literal section labels "**Established consensus**" and "**Ongoing controversy**" (or their Vietnamese equivalents) as visible headers or sub-headers — organizing the content topically is not enough. If the structure makes separate labeled sections awkward (e.g., a thematic multi-section draft), add a brief labeled sub-section inside the synthesis section rather than omitting the labels.
+- **Why:** Entry #7 — §11 "Balanced synthesis" covered both consensus and controversy in substance but lacked Law 4's explicit structural markers; QA issued V-03 and deducted T4 to 0.75. The rule exists so a reader (or auditor) can instantly locate each category — absent labels defeat that purpose regardless of content quality.
+- **Origin:** Entry #7 — CBA-vs-PFA review, Law 4 partial fail / V-03 (2026-06-17)
+
+### L-027: Assemble 08_manifest.md before routing to QA — it is a deliverable, not an afterthought
+- **Role:** orchestrator / synthesis-writer
+- **Trigger:** draft is complete and ready for QA handoff
+- **Rule:** Before submitting to the citation-verifier, the orchestrator (or synthesis-writer) assembles `_workspace/08_manifest.md` — a one-page confidence list, assumption register summary, and receipts index (listing all `_workspace/` artifacts on disk). QA checks for its presence; absence = process violation V-02. The manifest is written from `_workspace/` artifacts already on disk, so it requires no new work — only assembly.
+- **Why:** Entry #7 — 08_manifest.md not found at QA time; cited as V-02. The manifest's value is precisely that it is assembled pre-QA: it lets the verifier confirm what steps ran without relying on conversation memory (anti-R4). Creating it after QA flags its absence defeats the purpose.
+- **Origin:** Entry #7 — CBA-vs-PFA review, V-02 process violation (2026-06-17)
+
+### L-028: When citing sub-group statistics, name the sub-cohort N, not the parent-study N
+- **Role:** writer
+- **Trigger:** reporting any outcome that applies to a sub-cohort within a larger study (e.g., last-N-patient subgroup, per-protocol subset, age subgroup)
+- **Rule:** Write the sub-cohort N inline with the sub-group statistic. Do not write the parent-study N in the same parenthetical as a sub-group outcome — it implies the statistic applies to all parent-study participants. Pattern: "…finding X (sub-cohort n=25)" not "…finding X (study N=64)." If the parent N is also relevant, state it separately.
+- **Why:** Entry #7 D-02 — Chéhirlian §5.1 wrote "24% persisting at discharge in its fluoroscopy subgroup (N=64)" but N=64 was the whole study; the 24% figure (6/25) applied only to the last-25-patient fluoroscopy sub-cohort. A reader would reasonably infer 24% of 64 had the outcome — inflating the actual count from 6 to ~15.
+- **Origin:** Entry #7 — CBA-vs-PFA review, D-02 minor mismatched citation (2026-06-17)
+
+### L-029: Abstract GRADE labels must match body GRADE stamps; resolve dual-level certainty explicitly
+- **Role:** writer
+- **Trigger:** the abstract summarizes an evidence finding whose GRADE certainty was formally assigned in the appraisal section
+- **Rule:** Before finalizing the abstract, cross-check every certainty parenthetical "(High/Moderate/Low/Very-Low certainty)" against the GRADE stamp in the corresponding body section. If meta-analysis evidence justifies a higher certainty than the underlying RCT base (a legitimate GRADE upgrade), state both levels and the reason: e.g., "(Low–Moderate certainty: Low for the single RCT; Moderate for the pooled meta-analytic direction — see §3)." Never leave an unexplained discrepancy between the abstract label and the body stamp.
+- **Why:** Entry #7 D-03 — abstract wrote "equivalent (Moderate certainty)" while §3 assigned GRADE LOW for head-to-head efficacy; the difference was defensible (MA level vs. RCT level) but unexplained, creating an apparent inconsistency QA had to flag.
+- **Origin:** Entry #7 — CBA-vs-PFA review, D-03 minor overstated-certainty (2026-06-17)
+
+### L-030: A conditional gate option is not a cleared gate until the specific edits are received
+- **Role:** orchestrator / lead
+- **Trigger:** a user selects a conditional-approval option (e.g., "Duyệt có chỉnh" / "Chỉnh trước khi viết" / "Approve with changes") at any human gate
+- **Rule:** Treat a conditional approval as a HOLD, not a clearance. Ask immediately: "What specific changes do you want before I proceed?" Do NOT advance to the next phase, infer the edits from context, or self-determine that the changes are minor enough to skip. The gate is cleared only when (a) the user specifies the edits AND the orchestrator confirms they are applied, or (b) the user explicitly says "proceed" / "tiếp tục" after seeing the conditional option applied. Document the edit specification and the user's final proceed signal in the gate approval file alongside the original conditional response.
+- **Why:** This run — the user twice selected "Duyệt có chỉnh" without specifying edits; the lead correctly held and asked for specifics rather than self-clearing. This pattern is the same failure mode as L-014 (self-clearing the Research Map gate) extended to any gate with a conditional option. The lesson generalizes: a user clicking "approve with edits" is expressing intent to change something — proceeding without knowing what treats the conditional as unconditional.
+- **Origin:** Entry #7 — CBA-vs-PFA review, process observation (a) (2026-06-17)
+
+### L-031: Investigation dimensions set by the user are evidence axes, not conclusion steers
+- **Role:** synthesis-writer / quality-coach / orchestrator (lead)
+- **Trigger:** the user asks to "investigate" or "explore" dimensions that appear to favour one option (e.g., "focus on cost, learning curve, and maturity" when comparing two technologies where one option has advantages on those dimensions)
+- **Rule:** Treat user-specified investigation dimensions as search axes only — collect and grade evidence for those dimensions on both sides. Do not interpret a dimension list as a signal that the user expects (or prefers) a particular conclusion. Frame the synthesis by following the evidence, not by confirming the dimension set's implied prior. Explicitly steelman the weaker side on each requested dimension before concluding. If the lead notices the framing drifting toward the implied prior, flag it to the user before writing the synthesis.
+- **Why:** This run — the lead framed Gate-4b as a "CBA advantage" synthesis because the user's requested dimensions (cost, learning curve, maturity) happened to favour CBA. The user corrected: those dimensions were search directions, not a license to conclude in CBA's favour. An investigator who confirms the asker's implied prior fails the steelman-before-concluding operating principle (constitution) and produces a review that serves the reader's prior, not the truth.
+- **Origin:** Entry #7 — CBA-vs-PFA review, process observation (b) (2026-06-17)
+
+### L-032: Output language is gated — confirm with a quotable user choice; default Vietnamese, fail closed
+- **Role:** orchestrator / lead (and research-strategist)
+- **Trigger:** setting `output language` in `00_protocol.md` / scope at Phase 0
+- **Rule:** Output language defaults to Vietnamese (CLAUDE.md). Any non-default language (e.g. English) MUST be confirmed by the user in Phase 0 with a **quotable** confirmation recorded in the protocol/scope file. The strategist must NOT unilaterally set a non-default language. If no quotable user confirmation exists, the language is Vietnamese — fail closed (same discipline as the gate-clearance lessons L-014/L-030).
+- **Why:** Entry #7 addendum — `00_protocol.md` set "Output language: English" with no recorded user confirmation; the final review was delivered in English, and the user then asked why it wasn't Vietnamese (the harness default). A non-default language is a scope decision, not a strategist default.
+- **Origin:** Entry #7 addendum — CBA-vs-PFA review, post-delivery language correction (2026-06-17)
+
+### L-033: Non-English output is composed natively, never literal-translated from English
+- **Role:** synthesis-writer
+- **Trigger:** producing a Vietnamese (or any non-English) deliverable, including re-issuing an English draft in another language
+- **Rule:** Compose directly in the target language for that audience. Do NOT translate sentence-by-sentence: break English run-on sentences into short native clauses, use native connectors (*vì, do đó, ngược lại, trong khi đó*), follow topic–comment order, and avoid calques ("ở nơi… và ở nơi…", "mà ở đó…"). If an English draft exists, use it as a **content source** and re-compose for fluency — do not transliterate syntax. Preserve all numerics/CIs/P-values/GRADE labels/`[n]` citations and the reference list verbatim.
+- **Why:** Entry #7 addendum — the first Vietnamese re-issue was a literal translation; the user flagged it as unnatural and clunky (90-word run-on sentences, calque structures). A full native rewrite was required. Faithfulness to content ≠ faithfulness to English syntax.
+- **Origin:** Entry #7 addendum — CBA-vs-PFA review, Vietnamese fluency correction (2026-06-17)

@@ -20,6 +20,15 @@ verified term mappings: Vietnamese first, English in parentheses on first appear
 after. Never silently invent a Vietnamese term for a key concept — mark provisional and flag for the
 user. Learn style from any `source/` file the user provided rather than guessing.
 
+**Compose natively — never literal-translate (L-033).** Write directly in the target language for that
+audience. Do NOT render English sentence-by-sentence: break English run-on sentences into short Vietnamese
+clauses, use native connectors (*vì, do đó, ngược lại, trong khi đó, nói cách khác*), and follow
+topic–comment order rather than mirroring English word order. Avoid calques ("ở nơi… và ở nơi…", "mà ở
+đó…"). If an English draft already exists, treat it as a **content source** and re-compose for fluency —
+do not transliterate its syntax. Read each paragraph as a native clinician would: if a Vietnamese
+cardiologist wouldn't phrase it that way, rewrite it. Preserve all numerics/CIs/P-values/GRADE labels/`[n]`
+citations and the reference list **verbatim** while doing so.
+
 ## Provenance discipline (cite only from the store)
 Cite **only** from `reference/<topic>.md`. Before writing any sentence with a number or named study,
 re-read its line in that file. The conversation and any context summary are NOT citation sources — if
@@ -64,15 +73,23 @@ found Z." with no connective reasoning, you are listing, not synthesizing — fi
 - Reference entry format: `Authors. Title. Journal. Year;Vol(Issue):Pages. DOI/PMID — hyperlinked.`
 - For preprints: append `[Preprint, not peer-reviewed]`. For trials: cite the NCT number.
 
-## Strength-matched language
-Use the appraiser's `[GRADE]` labels:
-- **High/Moderate:** confident — "X reduces Y."
+## Strength-matched language (bidirectional)
+Use the appraiser's `[GRADE]` labels. The label calibrates language in **both** directions — it is not
+a license to hedge below what the evidence supports:
+- **High/Moderate:** confident — "X reduces Y." Do NOT downgrade to "may suggest / raises the question /
+  could indicate" when the evidence has already answered. Under-claiming strong evidence is a defect.
 - **Low:** hedged — "evidence suggests X may reduce Y."
 - **Very Low:** explicitly tentative — "a single small trial reported... ; this requires confirmation."
-Never state a Low/Very-Low finding as established fact.
+Never state a Low/Very-Low finding as established fact; equally, never bury a High/Moderate finding in
+weasel verbs. Watch for hedging tics ("đặt ra câu hỏi", "có thể gợi ý", "dường như") used where the data
+is actually decisive — if the evidence answered it, say so.
 
 ## Honesty rules
 - Show controversy where the appraiser flagged it — both sides, cited.
+- **Steelman before concluding (≠ false balance).** For each major conclusion, state the strongest
+  opposing interpretation the evidence allows, then conclude — stronger or corrected. False balance
+  avoids a conclusion; a steelman stress-tests it and still reaches one. Do not merely confirm the
+  expected answer.
 - State gaps and the review's own limitations plainly.
 - Foreground recent evidence and ongoing trials; flag every preprint-based claim as not-yet-peer-reviewed.
 

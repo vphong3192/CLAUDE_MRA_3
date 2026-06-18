@@ -223,3 +223,86 @@ disciplines hold under degraded retrieval conditions.
 **Revised final state:** All 3 original "pending" items now resolved. REF-021 file mismatch (HTML = Hirokami 2025, not Mené 2024) remains, but PMID is now correct and REF-021 is not cited in the 29-citation draft.
 
 **Revised rubric (post-corrections): ≥0.93** — REF-039 now full-text verified removes the main T5 deduction.
+
+═══════════════════════════════════════════════
+### Entry #7 — 2026-06-17 — Role of Cryoballoon Ablation in the PFA Era
+
+**Task:** In-depth English-language clinical review for electrophysiologists comparing CBA and PFA
+for AF ablation across efficacy, safety, durability, cost, learning curve, and CBA maturity as
+first-line and adjunct therapy; effort=full; ~2,000–3,000 words; audience: EP clinicians; no
+pro-CBA bias; neutrally grade all dimensions.
+
+**Rubric total:** 0.87 → EXCEEDED (≥0.85 band)
+**Per-criterion:** T1 0.90 | T2 0.90 | T3 0.90 | T4 0.75 | T5 0.85 | T6 0.90
+
+**Process:**
+- Phase 0 (Scope): PASS — effort=full confirmed; English; EP audience; purpose and length confirmed.
+- Phase 1 (Protocol): PASS — 00_protocol.md produced with PICO, MeSH blocks, inclusion/exclusion.
+- Phase 2 (Retrieval): PASS — 02_corpus.md + search_log + fulltext_upgrade; 39 records in store;
+  supplementary learning-curve and persistent-AF gap searches run.
+- Phase 3 (Research Map / HARD GATE): CLEARED — quotable approval "Duyệt có chỉnh" documented in
+  research_map_gate_approval.md. NOTE: conditional option selected twice without edit specification;
+  lead correctly held and requested specifics before proceeding.
+- Phase 4 (Appraisal): PASS — 03_appraisal.md with GRADE table per axis and RoB per study.
+- Phase 4b gate: PASS — lead presented appraisal; user approved before drafting.
+  NOTE: lead initially framed summary as "CBA advantage" dimensions; user corrected framing.
+- Phase 5b (Coach): NOT PRESENT — 04b_coach.md absent, no declared skip reason. V-01 R4 violation.
+- Phase 5 (Draft): PASS — 05_review_draft.md; 39 references; all inline; full structured review.
+- Phase 6 (QA): PASS — 06_qa_report.md; 21 live PMID checks; 0 fabrications; 5 minor defects.
+- Phase 8 (Manifest): NOT PRESENT — 08_manifest.md absent. V-02 process violation.
+- source/ folder checked: PASS — user confirmed no PDFs to add.
+- Research Map gate approval persisted to disk: PASS (L-019 compliant).
+
+**Violations found:**
+- V-01 [R4 — Faking the steps]: Phase 5b quality-coach pass absent; no declared skip reason for
+  effort=full run.
+- V-02 [PROCESS]: 08_manifest.md not produced before QA delivery.
+- V-03 [LAW 4]: Law 4 structural labels ("Established consensus" / "Ongoing controversy") absent
+  from draft body; content covered both but section headers missing.
+
+**Defects found (QA):**
+- D-01 MINOR format-error — P-value rounding (Urbanek §3: P=0.72/0.63 → P=0.724/0.629)
+- D-02 MINOR mismatched-citation — Chéhirlian §5.1: "(N=64)" parenthetical wrong for 24%
+  sub-cohort figure (correct N is 25)
+- D-03 MINOR overstated-certainty — Abstract "Moderate certainty" vs §3 GRADE LOW inconsistency
+  without explanation
+- D-04 MINOR format-error — Ref [5] Xu: "2025;Nov" should be "2025;62:101845"
+- D-05 MINOR format-error — Ref [21] preprint: author names absent from reference list entry
+All 5 defects corrected before final delivery. CRITICAL/MAJOR defects: ZERO.
+
+**Process observations:**
+- (a) User selected conditional gate option ("Duyệt có chỉnh") twice without specifying edits; lead
+  correctly held and asked for specifics rather than self-clearing. Gate behaviour was correct.
+- (b) Lead framed Gate-4b appraisal as "CBA advantage" because user-requested investigation
+  dimensions (cost, learning curve, maturity) favoured CBA; user corrected — dimensions are search
+  axes, not conclusion steers.
+
+**Lessons proposed (pending user approval):**
+- L-025 (orchestrator): Silent absence of 04b_coach.md for effort=full = R4; must declare SKIP
+- L-026 (writer): Law 4 explicit section labels required in draft body, not just implicit content
+- L-027 (orchestrator): 08_manifest.md must be assembled before QA handoff, not after
+- L-028 (writer): Sub-group statistics must cite sub-cohort N, not parent-study N
+- L-029 (writer): Abstract GRADE labels must match body stamps; resolve dual-level certainty inline
+- L-030 (orchestrator/lead): Conditional gate option = HOLD until specific edits specified
+- L-031 (writer/coach/lead): User-specified investigation dimensions are evidence axes, not
+  conclusion steers; steelman the weaker side before concluding
+
+**Actions taken (pending approval):**
+- _workspace/07_lessons_proposal.md produced (this file)
+- No changes to lessons.md or evolution-log.md until user approves
+
+**What changed / what this run validated:**
+- First PFA-vs-CBA review in the harness; validated multi-technology comparative framing.
+- Gate-hold behaviour on conditional approval worked correctly (process observation a).
+- Anti-bias (steelman) principle caught a framing drift at Gate-4b (process observation b).
+- V-01 and V-02 identify two recurring omissions (coach pass, manifest) that need procedural anchors.
+- T4 deduction for absent Law 4 headers is a clean writer-discipline failure with a simple fix (L-026).
+═══════════════════════════════════════════════
+
+**Entry #7 — Addendum (2026-06-17, post-delivery language correction)**
+- The review was delivered in English; `00_protocol.md` had set "Output language: English" with NO recorded, quotable user confirmation. Per CLAUDE.md the default is Vietnamese (user-selectable, confirm in Phase 0). User caught this and requested Vietnamese as the primary deliverable.
+- Re-issued in Vietnamese (`06_final_review_vi.md`). First pass was a literal translation — user flagged it as unnatural/clunky (run-on sentences, calques). A full **native rewrite** followed; all numerics/CIs/P-values/GRADE/citations preserved verbatim, neutral stance intact.
+- Process hardening: `00_protocol.md` annotated; orchestrator SKILL Phase 0 now gates output language (quotable confirm, else default Vietnamese, fail closed); review-synthesis SKILL now mandates native composition over literal translation.
+- New lessons: **L-032** (language gated, quotable, fail-closed Vietnamese) and **L-033** (compose natively, never literal-translate). English version retained at `06_final_review.md` for record.
+- Open follow-up: ablation-modality EP terms used in the VN version (cryoballoon, PFA, phrenic nerve palsy, PV isolation, electroporation, tamponade) are still **provisional** — pending user confirmation for append to `vi-terminology.md`.
+═══════════════════════════════════════════════

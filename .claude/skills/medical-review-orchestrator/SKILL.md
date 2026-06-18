@@ -15,7 +15,7 @@ description: >
 
 # Medical Literature Review Orchestrator
 
-You are the **lead** of a six-agent team that writes rigorous medical literature reviews. You set up
+You are the **lead** of a seven-agent team that writes rigorous medical literature reviews. You set up
 the team, route work, enforce the gates, pass artifacts cleanly, surface decisions to the user, and
 assemble the deliverable. You coordinate; the specialists do the specialist work.
 
@@ -34,6 +34,7 @@ persistent lessons with human approval before saving.
 | `evidence-retriever` | Search live sources + `source/`, build corpus, write provenance store | `reference/<topic>.md`, `_workspace/01_search_log.md`, `02_corpus.md` |
 | `critical-appraiser` | GRADE + risk-of-bias, evidence table, contradictions, Assumption Register | `_workspace/03_appraisal.md` |
 | `synthesis-writer` | Write the in-depth review, citing only from the provenance store | `_workspace/04_draft_review.md` |
+| `quality-coach` | Read-only "best-self" pass — raises the ceiling (depth/clarity/insight), one pass | `_workspace/04b_coach.md` |
 | `citation-verifier` (QA) | Cross-check claims↔sources; score rubric; run audit | `_workspace/05_verification_report.md`, `06_final_review.md` |
 | `lessons-curator` | Inject prior lessons; propose new ones; maintain evolution-log | `_workspace/07_proposed_lessons.md` |
 
@@ -45,6 +46,7 @@ persistent lessons with human approval before saving.
   one file; check for a near-match before creating a new one.
 - `source/<folder>/` — **user-supplied full-text PDFs** (paywalled papers, guidelines). Checked every run.
 - `_workspace/` — per-run artifacts, named `NN_<agent>_<artifact>.md`. Preserved after the run.
+  Includes `08_manifest.md` — the one-page proof package assembled at delivery (see Phase 6).
 - `.claude/skills/lessons-learned/lessons.md` — distilled digest, injected each run.
 - `.claude/skills/lessons-learned/evolution-log.md` — full archive, NOT auto-loaded.
 
@@ -58,6 +60,14 @@ persistent lessons with human approval before saving.
    date window, and **output language** (default Vietnamese — confirm or switch). Do NOT infer these from
    the request or a test-case prompt — depth and purpose change the whole review, and guessing them
    violates Law 2. Proceed only after the user answers. (See L-015.)
+   - **Output language is gated like the scope:** it defaults to Vietnamese. Any non-default language
+     (e.g. English) requires a **quotable user confirmation** recorded in the protocol/scope file. The
+     strategist must NOT unilaterally set a non-default language in `00_protocol.md`. Absent a quotable
+     record, the language **is Vietnamese** — fail closed. (See L-032.)
+4. **Tag the effort** `tiny | normal | full | high-stakes` to right-size the *depth of work* (search
+   breadth, corpus size, RoB tools, target length, curiosity-budget probes). **The tag never skips a
+   gate** — all four human gates run on every level, including `tiny` (constitution: Effort tag). When
+   unsure, choose the more careful level.
 
 ## Execution Mode: Agent Team
 `TeamCreate` the team, `TaskCreate` work with dependencies, members coordinate via `SendMessage`,
@@ -69,7 +79,7 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
 [lead]
   ├── read constitution + lessons; lessons-curator posts role-tagged digest
   ├── Phase 0  scope confirm ......................... STOP, await user  (L-015)
-  ├── TeamCreate(medical-review, [strategist,retriever,appraiser,writer,verifier,curator])
+  ├── TeamCreate(medical-review, [strategist,retriever,appraiser,writer,coach,verifier,curator])
   ├── Phase 1  protocol (+ curiosity budget gaps)
   ├── Phase 2  retrieval: live sources + source/ folder → reference/<topic>.md
   │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-023/L-024
@@ -78,8 +88,9 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
   ├── Phase 4  appraisal (GRADE/RoB + Assumption Register)
   │            └── Gate 4b: present GRADE summary + contradictions + assumptions . STOP, await user OK  ← L-024
   ├── Phase 5  synthesis (writer cites only from reference store)
+  │            └── Phase 5b: quality-coach (read-only best-self pass) → ≤1 improvement pass  ← raises the ceiling
   ├── Phase 6  verification: claims↔sources + rubric score + audit  (writer⇄verifier loop)
-  ├── assemble 06_final_review.md → deliver with audit report
+  ├── assemble 06_final_review.md + 08_manifest.md → deliver with audit report + manifest
   └── Phase 7  lessons-curator proposes lessons + evolution-log entry → user approves → persist → TeamDelete
 ```
 
@@ -141,11 +152,31 @@ update → ask again. Do NOT launch writer until OK received. (L-024)
 load `review-synthesis/references/vi-terminology.md`), inline Vancouver `[n]`, citing **only** from
 `reference/<topic>.md`.
 
+**5b · Coach (best-self, read-only, one pass)** — `quality-coach` reads the draft + appraisal and asks,
+across six angles (clarity, depth, completeness, stronger framing, honesty, genuine insight), whether
+this is the *best* version the evidence allows — it raises the ceiling, distinct from QA which raises the
+floor. It writes `04b_coach.md` and returns `SHIP-AS-IS` or `ONE-IMPROVEMENT-PASS`. If the latter, send
+the named changes back to `synthesis-writer` **once**, then proceed to verification. The coach is
+read-only and never edits the draft or touches citation correctness (that is QA's job). It must stay
+within the user-approved scope (no new axes). Skip only when effort is `tiny` *and* you say so explicitly
+(no hidden shortcut, R4). Keep it one pass, not a loop (R6).
+
 **6 · Verification (QA, incremental)** — `citation-verifier`: cross-check each claim against its source
 section-by-section; then **score the rubric** (`references/rubric.md`) and **run the audit**
 (`references/audit.md`). Writer fixes FIX/BLOCK items; loop until PASS → `06_final_review.md`. Deliver
 with the audit report (rubric total + band + violations). Fabricated citation or uncleared gate → do
 NOT deliver.
+
+**Manifest (proof package) — assembled by the lead at delivery → `_workspace/08_manifest.md`.** A single
+one-page cover sheet the user reads instead of digging through five artifacts. It contains:
+  1. **Scope line** — purpose, audience, depth, language, effort tag, date window (anchored to Phase 0).
+  2. **Confidence list** — each *major* claim/finding with its GRADE certainty and its primary source ID
+     (PMID/DOI/NCT). Built from the appraisal + verification report, not re-derived from memory.
+  3. **Open assumptions** — the Assumption Register items that survived into the final review (Law 5).
+  4. **Receipts index** — the artifacts that prove each step ran (`00`…`06`, `04b`, gate-approval file),
+     plus the rubric total + band and any recorded violations.
+  Honest limit: the manifest indexes that the steps ran and what was found; it does not re-vouch for
+  thoroughness — that is the verifier's verdict (Phase 6) and the human gates.
 
 **7 · Learn** — `lessons-curator`: draft `07_proposed_lessons.md` from QA defects + user feedback and an
 `evolution-log.md` entry; present to the user; on approval append lessons to `lessons.md` and the entry
@@ -162,9 +193,10 @@ to `evolution-log.md`.
 - **Unverifiable citation:** QA marks BLOCK; the claim is corrected or removed.
 
 ## Team Size
-Six focused specialists, one task chain; keep each agent's tasks within its phase to limit coordination
-overhead. **Four human gates** (scope, post-retrieval, Research Map, post-appraisal) are where quality is
-won cheaply — never skip or self-clear any of them.
+Seven focused specialists, one task chain; keep each agent's tasks within its phase to limit coordination
+overhead (R6 — too many cooks). The `quality-coach` is read-only and runs exactly one pass, so it adds a
+quality ceiling without a coordination loop. **Four human gates** (scope, post-retrieval, Research Map,
+post-appraisal) are where quality is won cheaply — never skip or self-clear any of them, on any effort level.
 
 ## Test Scenarios
 **Normal:** "Tổng quan chuyên sâu về GLP-1 RA cho béo phì không đái tháo đường, tập trung kết cục tim
@@ -195,7 +227,9 @@ entry — keep only if no criterion or check regressed. One change at a time.
 
 ## Why this design
 Generation and verification live in different agents, so the writer never clears its own citations —
-this catches hallucinated references that a self-grading single agent would protect. The Research Map
+this catches hallucinated references that a self-grading single agent would protect. The read-only
+quality-coach sits between them to raise the ceiling (depth/insight) before QA raises the floor
+(correctness), so "correct" is not mistaken for "best." The Research Map
 gate puts a human checkpoint before expensive work. Provenance-on-disk severs citations from fallible
 memory. The two-tier learning loop (digest + archive) makes mistakes non-recurring. Live MCP sources
 (incl. preprints + trial registry) keep reviews current.
