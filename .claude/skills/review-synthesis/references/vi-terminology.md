@@ -57,5 +57,14 @@ parentheses on first appearance; afterward the abbreviation or Vietnamese is fin
 | Bipolar voltage | Điện thế lưỡng cực |
 | Low-voltage zone (LVZ) | Vùng điện thế thấp (LVZ) |
 
+## Ablation modalities — CBA vs PFA (verified Entry #7, 2026-06-18)
+| English | ❌ Wrong/old | ✅ Standard Vietnamese |
+|---|---|---|
+| ablation (the procedure/verb) | triệt phá | **triệt đốt** |
+| Cryoballoon ablation (CBA) | triệt phá bằng bóng lạnh | Triệt đốt bằng bóng áp lạnh (cryoballoon ablation, CBA); short form: **bóng áp lạnh** |
+| Pulsed-field ablation (PFA) | triệt phá bằng trường xung điện | Triệt đốt bằng trường xung (pulsed-field ablation, PFA); short form: **trường xung** |
+| Implantable cardiac monitor (ICM) | máy theo dõi tim cấy ghép | thiết bị theo dõi tim cấy ghép (ICM) |
+| Head-to-head randomized trial (CBA vs PFA) | thử nghiệm ngẫu nhiên CBA-đối-PFA | thử nghiệm ngẫu nhiên so sánh đối đầu CBA và PFA |
+
 When a needed term is missing here: translate carefully, mark it provisional, and ask the user to
 confirm — then it gets added (approved). Never invent a Vietnamese term silently for a key concept.
