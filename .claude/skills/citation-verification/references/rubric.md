@@ -30,7 +30,8 @@ folded into criteria 2 and 4.
 - [ ] Supporting vs. opposing sources counted for key claims?
 - [ ] A general pattern extracted, not just per-paper summaries?
 - [ ] Mechanism discussed where relevant?
-- Scoring: 1.0 excellent + new insight · 0.8 good pattern · 0.6 ok but listy · 0.4 mostly listing · 0.2 abstract cut-paste
+- [ ] Major conclusions steelmanned (strongest opposing case stated before concluding, not false balance)?
+- Scoring: 1.0 excellent + new insight + steelmanned · 0.8 good pattern · 0.6 ok but listy · 0.4 mostly listing · 0.2 abstract cut-paste
 
 ## Criterion 4 — Critical appraisal — 15%
 - [ ] Separate "consensus" and "controversy" sections?
@@ -38,6 +39,7 @@ folded into criteria 2 and 4.
 - [ ] Risk-of-bias tool applied per design (RoB 2 / ROBINS-I / Newcastle-Ottawa / QUADAS-2)?
 - [ ] Publication/selection bias and conflicts of interest flagged where relevant?
 - [ ] Association vs. causation distinguished?
+- [ ] Language calibrated both ways (Low/Very-Low not stated as fact; High/Moderate not buried in weasel hedges)?
 - Scoring: 1.0 deep, each key source appraised · 0.8 good for main sources · 0.6 present but generic · 0.4 minimal · 0.2 sources presented as absolute truth
 
 ## Criterion 5 — Citation accuracy — 10%

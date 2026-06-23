@@ -86,7 +86,7 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
   ├── TeamCreate(medical-review, [strategist,retriever,appraiser,writer,coach,verifier,curator])
   ├── Phase 1  protocol (+ curiosity budget gaps)
   ├── Phase 2  retrieval: live sources + source/ folder → reference/<topic>.md
-  │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-023/L-024
+  │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-024
   ├── Phase 3  RESEARCH MAP ......................... STOP, await user approval  ← HARD GATE (L-014)
   │            └── persist gate approval to _workspace/research_map_gate_approval.md  (L-019)
   ├── Phase 4  appraisal (GRADE/RoB + Assumption Register)
@@ -111,7 +111,7 @@ which to read** — do this whether or not files exist (never silent). Write eve
 
 **Gate 2b (post-retrieval) — STOP, await user OK before Phase 4.** Present: (a) corpus size and PMID status,
 (b) full-text coverage — count HIGH records still abstract-only; if ≥3, list them and ask user to supplement
-before proceeding (L-023); (c) source availability gaps — any planned source that was unavailable must be
+before proceeding (L-022); (c) source availability gaps — any planned source that was unavailable must be
 surfaced here with options: proceed / try WebSearch / user supplies PDFs (L-022). Wait for explicit user OK.
 If user requests changes: fix → present update → ask again. Do NOT launch appraisal until OK received. (L-024)
 
