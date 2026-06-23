@@ -28,6 +28,17 @@ for approval before deep appraisal/writing. The gate has no small-scope exceptio
 defaults to Vietnamese but is user-selectable per review** (confirm in Phase 0) · lessons saved only
 after user approval.
 
+**Workflow — branch-per-study (repo hygiene):** The harness on `main` is the reusable tool; each
+research project is its own data. For every new review: (1) `git checkout main && git pull && git
+checkout -b review/<topic>` so the branch inherits the latest harness + lessons; (2) run the harness on
+that branch — `source/`, `reference/<topic>.md`, and `reviews/<topic>/` land here and are committed to
+the branch; (3) when done and the user has approved the lessons, update `main` with a *small* commit
+touching ONLY the three cross-session knowledge files — `lessons.md`, `evolution-log.md`, and
+`vi-terminology.md` (the glossary is part of "the lesson"; omitting it lets terminology errors recur);
+(4) keep `review/<topic>` as the permanent archive of that study — do NOT merge it into `main`. Always
+branch from a fresh `main` so each study starts with the newest lessons. (Note: branching keeps *future*
+checkouts light but does not shrink `.git` history; that is acceptable on a private repo.)
+
 **Change log:**
 | Date | Change | Target | Reason |
 |------|--------|--------|--------|
@@ -40,3 +51,4 @@ after user approval.
 | 2026-06-14 | **Correction (user-caught):** TC1 self-cleared the Research Map gate and assumed Phase-0 scope; QA falsely recorded "gate cleared." Corrected records (Entry #2, TC1 audit → process FAIL, score 0.84→0.81, baseline PROVISIONAL); hardened Phase 0 + Phase 3 + audit (gate-cleared now requires a quotable user approval; fail closed); added L-014 (gate no exception) + L-015 (always ask depth/purpose before writing) | orchestrator SKILL.md, audit.md, lessons.md, evolution-log.md, TC1 QA | Honor the two human gates; stop the audit from laundering gate breaches |
 | 2026-06-14 | Properly-gated metformin re-run (Entry #3): Phase-0 confirmed (user changed depth 1500→500w), Research Map approved via quotable "approve" before drafting; MET 0.81 | evolution-log.md | Positive evidence the gate corrections hold |
 | 2026-06-23 | Harness fix + PR salvage: added missing `quality-coach` agent (was spawned but undefined → would break TeamCreate); unified `vi-terminology` to one canonical file; replaced blanket all-opus spawn rule with per-agent frontmatter allocation; fixed dead `(L-023)`→`L-022` pointer. Repo set **PRIVATE** (resolves full-text copyright exposure; no history rewrite needed). Salvaged two completed reviews into `reviews/<topic>/` (LA-EP elderly AF ← PR#2; cryoballoon-vs-PFA ← PR#3) plus their `reference/` stores & `source/` corpora; pulled PR#3 harness upgrades (anti-hedging + steelman in constitution; steelman/calibration in rubric; coach+manifest checks in audit). Closed PRs #1 (superseded), #2, #3. | CLAUDE.md, constitution.md, orchestrator, quality-coach.md, rubric.md, audit.md, reviews/, reference/, source/ | Make the harness runnable as documented; preserve finished reviews durably; keep gate + fix integrity |
+| 2026-06-23 | Completed the PR#3 steelman/anti-hedging theme across the pipeline: added a **Steelman the opposing case** principle to `critical-appraiser` and a both-directions language-calibration + **Steelman before you conclude** bullet to `synthesis-writer` (the appraiser/writer halves of the constitution+rubric+audit changes already merged). Documented the **branch-per-study** workflow (study data on `review/<topic>` branches; only `lessons.md`+`evolution-log.md`+`vi-terminology.md` flow back to `main`). | critical-appraiser.md, synthesis-writer.md, CLAUDE.md | Make steelman/calibration consistent end-to-end; codify repo-hygiene workflow |
