@@ -238,3 +238,36 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Rule:** Before presenting attribute X as a contrast between arm A and arm B, confirm X genuinely differs between them. Do not build a false mechanistic contrast from a shared attribute. Concretely: both CBA (Arctic Front) and PFA (Farawave) use **single-use disposable catheters**; the reusable item is the console/generator, which **both** modalities require. So "single-use catheter vs reusable console" is NOT a CBA-vs-PFA differentiator. When a real cost gap exists, attribute it to the correct driver (here: the higher *price* of the PFA disposable, plus anaesthesia), not to a spurious single-use-vs-reusable distinction.
 - **Why:** Entry #7 addendum — §8/§9 contrasted "PFA single-use catheter vs CBA reusable console," implying CBA avoids a disposable catheter. User (a domain expert) flagged it: both arms use single-use catheters; neither saves cost via catheter reuse. The argument was logically void and had to be reframed around catheter price and anaesthesia profile.
 - **Origin:** Entry #7 addendum — CBA-vs-PFA review, §8/§9 false-contrast correction (2026-06-18)
+
+### L-035: Copy reference titles verbatim from PubMed metadata — never reconstruct from acronym or memory
+- **Role:** retriever / writer
+- **Trigger:** writing any reference-list TITLE into the store or the draft
+- **Rule:** Take the title string verbatim from `mcp__PubMed__get_article_metadata` (or the source full text). Do NOT reconstruct a title from the trial acronym, the topic, or memory (e.g. writing "CIRCA-DOSE comparison of energy sources and monitoring" instead of the real "Cryoballoon or Radiofrequency Ablation for Atrial Fibrillation Assessed by Continuous Monitoring: A Randomized Clinical Trial"). A reconstructed title is invisible to the writer (the PMID/DOI/content can all be correct) and is only caught by a QA re-fetch.
+- **Why:** This run — FIX-01: reference [2] CIRCA-DOSE carried a reconstructed title; PMID/DOI/content were correct, so nothing upstream flagged it. Only the verifier re-fetching the PubMed title caught it. Verbatim copy at retrieval time costs nothing and removes a whole class of silent format errors.
+- **Origin:** Entry #8 — elderly CB-vs-RF review, FIX-01 (2026-06-23)
+
+### L-036: Carry a missing/pending DOI as an explicit tag into the reference list, not as an empty field
+- **Role:** retriever / writer
+- **Trigger:** a store record has "DOI: pending" or no DOI (e.g. not-yet-indexed recent papers)
+- **Rule:** Propagate the status explicitly into the draft reference list as "DOI: not yet indexed" (or equivalent) rather than silently omitting the DOI field. An omitted field is ambiguous — it cannot be distinguished from an oversight — and triggers a format-error flag at QA. An explicit tag documents that the absence is known and intentional.
+- **Why:** This run — FIX-02: five references (Wang, Hirata, Ali, Nakasone, Mené) had no DOI consistent with not-yet-indexed status, but the omission read as incomplete formatting and was flagged. An explicit "not yet indexed" tag resolves the ambiguity.
+- **Origin:** Entry #8 — elderly CB-vs-RF review, FIX-02 (2026-06-23)
+
+### L-037: Run a native-fluency self-pass with a calque blacklist before handing off a Vietnamese draft
+- **Role:** synthesis-writer (and quality-coach as a check)
+- **Trigger:** finishing any Vietnamese (or non-English) draft, BEFORE handoff to coach/QA — not after the user complains
+- **Rule:** L-033 ("compose natively") is necessary but not sufficient — first drafts still leak calques. Before handoff, do a dedicated fluency self-pass that (a) splits any sentence >~40 words / with stacked em-dashes into short native clauses, and (b) scans for and rewrites a **calque blacklist** — abstract English idioms translated word-for-word. Known offenders to rewrite by MEANING (do not translate the word):
+  - "the X story" → ❌ "câu chuyện X"; ✅ reframe ("về X, vấn đề là…")
+  - "artifact (of methodology)" → ❌ "tạo tác"; ✅ "do được so sánh với… / phản ánh… / do sai lệch…"
+  - "binary/dichotomous endpoint" → ❌ "điểm cuối nhị phân"; ✅ "tiêu chí (đánh giá) kiểu có–không"
+  - "apparent" → ❌ "biểu kiến"; ✅ "bề ngoài / có vẻ"
+  - "survives the X / steelman" → ❌ "sống sót qua X"; ✅ "vẫn đứng vững trước X / không bị bác bỏ"
+  - "flatter (a result/arm)" → ❌ "tâng bốc"; ✅ "làm cao giả tạo / thổi phồng"
+  - "anchor (the evidence/comparison)" → ❌ "neo / neo bằng chứng"; ✅ "cơ sở vững nhất / dựa vào / làm nền cho"
+  - "carry through the review" → ❌ "mang theo suốt bản tổng quan"; ✅ "cần ghi nhớ trong suốt…"
+  - "naive pooling" → ❌ "gộp ngây thơ"; ✅ "gộp một cách thiếu cân nhắc"
+  - "driver (of heterogeneity)" → ❌ "động lực gián tiếp"; ✅ "nguồn gây tính gián tiếp/không nhất quán"
+  - avoid over-hyphenation ("tất-cả-lứa-tuổi" → "mọi lứa tuổi"; "tạo-giả-thuyết" → "tạo giả thuyết")
+  Preserve all numerics/CIs/P/GRADE/`[n]` and the reference list verbatim during the pass (fluency only, never content).
+- **Why:** Entry #8 — the delivered Vietnamese review passed QA (rubric 0.895) but the user, a native domain expert, flagged many sentences as unnatural word-by-word translations ("tạo tác", "điểm cuối nhị phân", "câu chuyện an toàn", "tâng bốc", 60–90-word run-ons). A post-hoc fluency pass reworked ~83 paragraphs. Catching these pre-handoff (with an explicit blacklist) avoids a delivery the expert reader finds clunky despite correct content — fluency is part of the deliverable, not optional polish.
+- **Origin:** Entry #8 addendum — elderly CB-vs-RF review, post-delivery Vietnamese fluency correction (2026-06-23)

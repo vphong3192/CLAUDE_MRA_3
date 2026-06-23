@@ -84,3 +84,19 @@ ablation metrics RF-PVI) before the two glossaries were unified into this single
 
 When a needed term is missing here: translate carefully, mark it provisional, and ask the user to
 confirm — then it gets added (approved). Never invent a Vietnamese term silently for a key concept.
+
+## Confirmed Entry #8 (elderly CB-vs-RF review, user-verified 2026-06-23)
+| English | ✅ Standard Vietnamese | Note |
+|---|---|---|
+| Mechanism-specific (safety) trade-off | **đánh đổi rủi ro theo cơ chế** | CBA↔liệt thần kinh hoành vs RF↔rò nhĩ-thực quản/chèn ép/đột quỵ; không phải "an toàn hơn toàn cục" |
+| Irrigated (ablation) catheter | **catheter đốt tưới lạnh** | RF tưới lạnh; *open-irrigated* = **tưới lạnh hở** (tưới nước muối làm lạnh đầu đốt) |
+| Excess recurrence (in the elderly) | **tái phát tăng thêm (ở người cao tuổi)** | phần tái phát vượt trội ở người cao tuổi so với người trẻ; tránh "dư thừa tái phát" |
+| Excess complications / excess stroke | **biến chứng tăng thêm / đột quỵ tăng thêm** | cùng khái niệm "excess"; trật tự tự nhiên: danh từ + "tăng thêm" |
+| Phrenic nerve palsy (PNP) | **liệt thần kinh hoành (PNP)** | biến chứng đặc trưng của CBA, thường thoáng qua |
+| Atrio-oesophageal fistula (AEF) | **rò nhĩ-thực quản (AEF)** | biến chứng thảm khốc, nghiêng mạnh về RF (~25×) |
+| Blanking period | **giai đoạn blanking** | giữ "blanking" (thuật ngữ EP quy ước; 3 tháng theo Calkins) |
+| Monitoring intensity | **cường độ theo dõi** | yếu tố gây sai lệch phát hiện (CIRCA-DOSE) |
+
+> **Style note (Entry #8, user 2026-06-23):** *artifact (of methodology)* — KHÔNG dịch chữ thành "tạo tác". Diễn đạt theo ý để người đọc tự hiểu, ví dụ "ưu thế của CBA một phần **do được so sánh với** kỹ thuật RF cũ" / "**phản ánh** việc so với nhánh RF dưới chuẩn" / "**do** sai lệch xuất bản". Nguyên tắc chung: dịch theo nghĩa, tránh dịch word-by-word các thuật ngữ trừu tượng.
+
+| Binary / dichotomous endpoint | **tiêu chí (đánh giá) kiểu có–không** | vd "tự do khỏi loạn nhịp theo tiêu chí có–không tái phát (ngưỡng ≥30 giây)"; tránh "điểm cuối nhị phân" (tối nghĩa) |
