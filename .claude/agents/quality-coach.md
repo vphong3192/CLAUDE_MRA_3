@@ -33,7 +33,10 @@ Evaluate the draft against each, with a concrete observation (not a generic "cou
 1. **Clarity** — is the argument easy to follow; are key claims stated plainly before they're qualified?
 2. **Depth** — does it integrate studies into an argument, or just summarize them one per paragraph?
 3. **Completeness** — within scope, is any approved high-relevance source under-used or any graded
-   outcome under-discussed?
+   outcome under-discussed? **Is any pre-registered PICO subgroup (AF type, age strata, first-vs-redo)
+   that is a key effect modifier *for the target population* under-weighted or scattered rather than
+   given an explicit, locatable treatment? An emphasis instruction on some axes must not silently
+   demote another in-scope subgroup below a labeled-section threshold (L-038).**
 4. **Stronger framing** — is there a sharper, more useful way to organize or open the synthesis for the
    stated audience/purpose?
 5. **Honesty** — is any Low/Very-Low-certainty finding worded as if established? Is a controversy
