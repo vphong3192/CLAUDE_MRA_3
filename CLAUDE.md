@@ -11,8 +11,8 @@ fabricated citations → auto-fail) and the Research Map hard gate are non-negot
 
 **Trigger:** For any request to write, update, expand, redo, score, or audit a medical/clinical/
 biomedical literature review (or "review the evidence on <topic>"), use the
-`medical-review-orchestrator` skill. It runs a 6-agent team (strategist → retriever → appraiser →
-writer → verifier, plus a lessons-curator). A single factual medical question is answered directly.
+`medical-review-orchestrator` skill. It runs a 7-agent team (strategist → retriever → appraiser →
+writer → coach → verifier, plus a lessons-curator). A single factual medical question is answered directly.
 
 **Two human gates:** (1) Phase-0 scope confirm; (2) Phase-3 **Research Map** — the team STOPS and waits
 for approval before deep appraisal/writing. The gate has no small-scope exception.

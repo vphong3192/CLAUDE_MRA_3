@@ -32,7 +32,7 @@ behind it and the user approved it.
 2. Draft an **evolution-log entry** (task, rubric total + band, violations, lessons, actions) and, for each recurring/important defect, a **generalized** digest lesson (see format).
 3. Write both to `_workspace/07_proposed_lessons.md`.
 4. Present to the user for **approve / edit / reject**.
-5. On approval: append the entry to `evolution-log.md`, approved lessons to `lessons.md`, and any user-confirmed Vietnamese terms to `review-synthesis/references/vi-terminology.md`. Record rejected proposals so they aren't re-surfaced.
+5. On approval: append the entry to `evolution-log.md`, approved lessons to `lessons.md`, and any user-confirmed Vietnamese terms to `.claude/skills/review-synthesis/references/vi-terminology.md`. Record rejected proposals so they aren't re-surfaced.
 
 ## Lesson format
 ```

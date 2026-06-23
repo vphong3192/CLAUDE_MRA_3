@@ -31,7 +31,7 @@ A rule enters the digest only after it has an evolution-log entry behind it and 
 **End of run (capture):**
 - Read `_workspace/05_verification_report.md` (defect categories + rubric/audit) + any user feedback.
 - Draft an `evolution-log.md` entry (task, rubric total + band, violations, lessons, actions) and any new/updated digest lessons → write both to `_workspace/07_proposed_lessons.md`.
-- After the user approves (via the lead): append the entry to `.claude/skills/lessons-learned/evolution-log.md`, append approved lessons to `.claude/skills/lessons-learned/lessons.md`, and append any user-confirmed Vietnamese terms to `review-synthesis/references/vi-terminology.md`.
+- After the user approves (via the lead): append the entry to `.claude/skills/lessons-learned/evolution-log.md`, append approved lessons to `.claude/skills/lessons-learned/lessons.md`, and append any user-confirmed Vietnamese terms to `.claude/skills/review-synthesis/references/vi-terminology.md`.
 
 ## Lesson Format
 ```

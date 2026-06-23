@@ -66,5 +66,21 @@ parentheses on first appearance; afterward the abbreviation or Vietnamese is fin
 | Implantable cardiac monitor (ICM) | máy theo dõi tim cấy ghép | thiết bị theo dõi tim cấy ghép (ICM) |
 | Head-to-head randomized trial (CBA vs PFA) | thử nghiệm ngẫu nhiên CBA-đối-PFA | thử nghiệm ngẫu nhiên so sánh đối đầu CBA và PFA |
 
+## Merged from legacy root glossary (PROVISIONAL — chờ người dùng xác nhận)
+These terms existed only in the old root-level `review-synthesis/references/vi-terminology.md` (Entry #4,
+ablation metrics RF-PVI) before the two glossaries were unified into this single canonical file. They are
+**not yet user-verified in this file** — confirm or correct before treating as binding.
+| English | Provisional Vietnamese | Note |
+|---|---|---|
+| Radiofrequency (RF) ablation | triệt đốt bằng năng lượng tần số radio (sóng cao tần) | aligns "ablation"→"triệt đốt" (Entry #7) |
+| Durable lesion | tổn thương bền vững | |
+| Averaged impedance drop (AID) | giảm trở kháng trung bình (AID) | TactiFlex SE / EnSite X term |
+
+> **Resolved (user decision, 2026-06-23):** *Ablation Index (AI)* is standardized as
+> **"chỉ số ablation (AI)"** — the proper index name keeps "Ablation" in English. This is intentionally
+> distinct from the translated *verb* "triệt đốt" (Entry #7): the procedure/verb is translated, the named
+> index is not. Do NOT re-translate AI as "chỉ số triệt đốt".
+
+
 When a needed term is missing here: translate carefully, mark it provisional, and ask the user to
 confirm — then it gets added (approved). Never invent a Vietnamese term silently for a key concept.

@@ -38,7 +38,11 @@ persistent lessons with human approval before saving.
 | `citation-verifier` (QA) | Cross-check claims↔sources; score rubric; run audit | `_workspace/05_verification_report.md`, `06_final_review.md` |
 | `lessons-curator` | Inject prior lessons; propose new ones; maintain evolution-log | `_workspace/07_proposed_lessons.md` |
 
-**Every team-member spawn uses `model: "opus"`.**
+**Model is set per agent in each agent's own frontmatter — do NOT override it on spawn.** Current
+allocation: `opus` for `critical-appraiser`, `synthesis-writer`, and `quality-coach` (deep reasoning /
+ceiling-raising); `sonnet` for `research-strategist`, `evidence-retriever`, `citation-verifier`, and
+`lessons-curator` (structured retrieval / checking). The lead runs as the orchestrator session's own
+model. Change an agent's model in its frontmatter, not here.
 
 ## Directory contract
 - `reference/<topic>.md` — **persistent verified-citation store** (PMID/DOI/NCT + date). The writer
@@ -149,7 +153,7 @@ surfaces in Limitations).
 update → ask again. Do NOT launch writer until OK received. (L-024)
 
 **5 · Synthesis** — `synthesis-writer` → `04_draft_review.md` in the **confirmed language** (Vietnamese →
-load `review-synthesis/references/vi-terminology.md`), inline Vancouver `[n]`, citing **only** from
+load `.claude/skills/review-synthesis/references/vi-terminology.md`), inline Vancouver `[n]`, citing **only** from
 `reference/<topic>.md`.
 
 **5b · Coach (best-self, read-only, one pass)** — `quality-coach` reads the draft + appraisal and asks,
