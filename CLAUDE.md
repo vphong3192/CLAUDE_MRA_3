@@ -14,8 +14,10 @@ biomedical literature review (or "review the evidence on <topic>"), use the
 `medical-review-orchestrator` skill. It runs a 7-agent team (strategist → retriever → appraiser →
 writer → coach → verifier, plus a lessons-curator). A single factual medical question is answered directly.
 
-**Two human gates:** (1) Phase-0 scope confirm; (2) Phase-3 **Research Map** — the team STOPS and waits
-for approval before deep appraisal/writing. The gate has no small-scope exception.
+**Four human gates:** (1) Phase-0 scope confirm; (2) Gate 2b post-retrieval (corpus + full-text/source
+gaps, L-022/L-024); (3) Phase-3 **Research Map** — the **hard gate**; (4) Gate 4b post-appraisal (GRADE +
+contradictions + assumptions, L-024). All four run on every effort level (incl. `tiny`); the Research Map
+hard gate has no small-scope exception. The team STOPS and waits for explicit user approval at each.
 
 **Directory contract:**
 - `reference/<topic>.md` — persistent verified-citation store; the writer cites ONLY from here.
