@@ -45,6 +45,27 @@ Verify each section as the writer completes it, not only at the end. Late full-d
 verification misses more and forces more rework. Re-verify after every writer revision until the
 whole document is **PASS**.
 
+## Deterministic citation audit — the mechanical floor (run LAST, always)
+Your semantic checks above can be *talked into* a pass by confident prose — the exact failure that
+let an early test self-clear a gate. So after your LLM verification, run a script that cannot be
+persuaded. It is a **traceability** check, not a meaning check; the two layers are complementary.
+
+```
+python3 .claude/skills/citation-verification/scripts/citation_audit.py \
+  --draft _workspace/06_final_review.md \
+  --store reference/<topic>.md \
+  --min-coverage-frac 0.4 \
+  --out _workspace/05b_citation_audit.md
+```
+- **HARD-FAIL → exit 1 → not deliverable** (Law 1): `fabricated_citation` (a draft reference's
+  PMID/DOI/NCT is not in the store), `missing_in_store` (a citation traces to no record),
+  `placeholder_leftover` (`[N] [?] CITATION_NEEDED TODO [@NEW:…]`), `coverage_below_threshold`.
+- **WARN → for human/LLM review** (non-blocking): `number_not_in_source`, `uncited_claim`.
+- **What it does NOT check:** whether a source *supports* the sentence, whether a number is the
+  *right* one, GRADE alignment, contradictions. Those stay yours. A clean exit-0 still requires a
+  human/LLM spot-check of ~10% of cited sentences before delivery. No LLM, no network; same input →
+  identical output every run. Fold its verdict into the audit report (see `references/audit.md`).
+
 ## Then score and audit
 Once claim-checking passes, run two more steps before delivery:
 1. **Rubric** (`references/rubric.md`) — 6 weighted criteria, each scored with cited evidence from the

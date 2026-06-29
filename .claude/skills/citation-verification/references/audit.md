@@ -5,6 +5,15 @@ audit is structured accounting, not a vibe check. Ported from v1, adapted to the
 
 > Load this only at the audit step (verifier), alongside rubric.md.
 
+## Part A.0 — Deterministic citation pre-flight (run first, machine verdict)
+Before any judgement call, run the deterministic checker (`scripts/citation_audit.py`, see
+`SKILL.md`) on the final draft + `reference/<topic>.md`. It is the floor your prose cannot argue
+past: a HARD-FAIL (`fabricated_citation` / `missing_in_store` / `placeholder_leftover` /
+`coverage_below_threshold`, exit 1) means **NOT deliverable** (Law 1) — fix, then re-run to a clean
+exit 0. WARNs (`number_not_in_source`, `uncited_claim`) are routed into your spot-check, not blocking.
+This is **traceability only** — it does not read meaning, so it never replaces Part B's Law-1
+spot-check; record both. Paste the checker's verdict line into the report.
+
 ## Part A — Process audit
 Mark PASS / FAIL / SKIPPED with evidence per phase:
 - **Protocol** — research question + PICO + inclusion/exclusion + search strategy written? (evidence: quote scope)
@@ -38,6 +47,7 @@ RUBRIC TOTAL: <0.XX> → <band>
   T2 Quality <0.X> — <reason>     T5 Citation <0.X> — <reason>
   T3 Synthesis <0.X> — <reason>   T6 Applicability <0.X> — <reason>
 PROCESS: <X phases PASS>   LAWS: <Y/6 PASS>   SCOPE: <PASS/FAIL>
+DETERMINISTIC CITATION AUDIT: <PASS / FAIL — categories> (exit <0/1>)
 RESEARCH MAP GATE: <CLEARED / NOT CLEARED>
 VIOLATIONS: <list>
 SELF-UPDATE PROPOSALS: <evolution-log entry · lessons to propose · skill/constitution change>
