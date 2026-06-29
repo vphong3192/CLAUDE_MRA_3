@@ -69,6 +69,39 @@ Record, per source: the exact query, date run, and hit count. Then the flow:
 `identified → after dedup → screened → included`. These numbers feed the writer's Methods section
 and the PRISMA diagram, and make the search reproducible.
 
+### Recall & reproducibility — prove it, don't imply it (P3)
+An MCP call usually returns one page, not the whole result set — so "I searched PubMed" silently
+hides how much was missed. Close that hole with three habits, then leave a machine-checkable receipt:
+
+1. **Count-target probe FIRST (cheap).** Before pulling any records, ask each source only for its
+   total count (PubMed `esearch ... retmax=0`; ClinicalTrials.gov `countTotal=true`; Consensus: note
+   the reported total). The total tells you whether to widen/narrow *before* spending tokens on a
+   full pull.
+2. **Paginate to exhaustion or cap on purpose.** Page until `retrieved == total`, or stop
+   deliberately and record the cap with a reason — never let a one-page pull masquerade as complete.
+3. **Log the reproducible call, not just the human query.** Record the actual params/URL
+   (`db=pubmed term="..." retmax=...`, or the REST URL) so the search can be rebuilt exactly.
+
+Emit these as a fixed table so a script can check them:
+```
+## Recall & reproducibility ledger (P3)
+| id | source | query | call | total_count | retrieved | recall |
+|----|--------|-------|------|-------------|-----------|--------|
+| P1 | PubMed | ablation index AND PVI | esearch db=pubmed term="ablation+index AND PVI" retmax=200 | 148 | 148 | retrieved==total ✓ |
+| P3 | PubMed | contact force AND PVI | esearch db=pubmed term="contact+force AND PVI" retmax=500 | 732 | 500 | capped ⚠ (landmark-filtered) |
+```
+Then validate the receipt's format (offline, deterministic — checks completeness/consistency, NOT
+whether the counts are true or the search well-designed):
+```
+python3 .claude/skills/literature-retrieval/scripts/validate_search_log.py \
+  --log _workspace/01_search_log.md
+```
+HARD-FAIL (exit 1) on a missing ledger, missing column, non-integer count, a `call` with no
+params/URL, or a recall verdict inconsistent with the numbers (e.g. "complete ✓" but
+`retrieved < total`). This is the floor under recall claims; multi-source breadth
+(PubMed + preprint + trials + Consensus) is unchanged — the ledger just makes each source's coverage
+auditable.
+
 ## The `source/` folder (every run, no exceptions)
 List the subfolders under `source/` and ask the user which to read **whether or not files exist** —
 staying silent here was a real v1 failure. User PDFs are usually the full text of paywalled key

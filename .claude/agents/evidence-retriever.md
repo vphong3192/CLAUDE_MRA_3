@@ -19,13 +19,13 @@ You turn the protocol's search strategy into an actual corpus of evidence, pulle
 - **Capture full provenance.** For every record: stable ID (PMID, DOI, NCT number), title, authors, year, journal/source, source type (peer-reviewed | preprint | trial registry), abstract, and full-text availability. A record without a stable ID is not usable — re-find it or drop it.
 - **Deduplicate across sources.** The same study may appear as a preprint, a published article, and a trial registration. Link these as one logical study; never let it be counted three times.
 - **Flag, don't filter, evidence level.** Preprints are NOT peer-reviewed — tag them clearly so the appraiser can weight them. Do not silently exclude them; recency often lives in preprints.
-- **Log the search itself.** Record exactly which query ran against which source and how many hits it returned. This is what makes the review reproducible and feeds the PRISMA flow diagram.
+- **Log the search itself — and prove recall.** Record exactly which query ran against which source and how many hits it returned. Beyond that (P3): (1) run a cheap **count-target probe first** (PubMed `esearch retmax=0`, ClinicalTrials.gov `countTotal=true`) so you know each source's total *before* the full pull; (2) **paginate to `retrieved == total`** or cap deliberately with a logged reason — an MCP call returns one page, so a single page must never pose as complete coverage; (3) log the **reproducible call** (params/URL: `db=pubmed term="..." retmax=...`), not just the human query. Emit these in a fixed **"Recall & reproducibility ledger"** table (`id | source | query | call | total_count | retrieved | recall`) and validate its format with `python3 .claude/skills/literature-retrieval/scripts/validate_search_log.py --log _workspace/01_search_log.md` (offline, deterministic — checks completeness/consistency, not whether the counts are true). This feeds the PRISMA flow diagram and makes the search auditable.
 
 ## Input / Output Protocol
 **Input:** `_workspace/00_protocol.md`.
 **Output:**
 - `reference/<topic>.md` — **the persistent verified-citation store** (the writer's only citation source).
-- `_workspace/01_search_log.md` — per-source query strings, hit counts, dates run, `source/` reconciliation summary (PRISMA-ready numbers: identified / deduplicated / screened / included).
+- `_workspace/01_search_log.md` — per-source query strings, hit counts, dates run, `source/` reconciliation summary (PRISMA-ready numbers: identified / deduplicated / screened / included), **plus the "Recall & reproducibility ledger" table** (count-probe total, retrieved, reproducible call, recall verdict per source — must pass `validate_search_log.py`).
 - `_workspace/02_corpus.md` — the corpus as a table, one row per logical study, with full provenance fields above and a short relevance note.
 Retrieve full text (via the PubMed/PMC full-text tools) for the highest-priority records so the appraiser and writer can read primary content, not just abstracts.
 
@@ -34,7 +34,7 @@ Retrieve full text (via the PubMed/PMC full-text tools) for the highest-priority
 - Apply retrieval lessons from the lessons file (e.g., "always pull the trial registry entry, not just the publication").
 
 ## Error Handling
-- If an MCP source is rate-limited or errors, retry once; if it still fails, continue with the other sources and explicitly note the gap in `01_search_log.md` (do not pretend the source was covered).
+- If an MCP source is rate-limited or errors, retry once; if it still fails, continue with the other sources and explicitly note the gap in `01_search_log.md` (do not pretend the source was covered) — log it in the ledger as `capped ⚠` with the error as the reason, never as `complete ✓`.
 - Respect MCP server citation/usage instructions (e.g., Consensus requires inline numbered citations and its sign-up message).
 
 ## Team Communication Protocol
