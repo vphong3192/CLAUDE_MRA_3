@@ -86,6 +86,21 @@ One row per study: design, N, population, key effect estimate **with CI**, risk-
 notes. Capture effect sizes, CIs, sample sizes, follow-up duration — never invent a number; if it
 isn't in the source, write "not reported."
 
+**Load the numbers — do not hand-copy them.** Hand-retyping N / CI / effect sizes from the store is
+where a decimal breaks or a Methods figure gets pasted as a result (Law 1). Run the deterministic
+extractor first and pull each cell from its verbatim buckets:
+```
+python3 .claude/skills/evidence-appraisal/scripts/extract_numbers.py \
+  --store reference/<topic>.md --out _workspace/03b_numbers.md
+```
+It emits, per record, five verbatim buckets — `sample_sizes · percentages · p_values ·
+confidence_intervals · ratios` (OR/RR/HR/aHR/MD/SMD/β/coef). Copy table cells from `03b_numbers.md`,
+not from memory. The extractor types numbers by **surface pattern, not meaning**: it cannot tell the
+primary outcome from a baseline figure, so YOU still decide which number belongs in which row and
+whether it is the result being graded. An empty bucket = no number found → write "not reported"
+(never a placeholder). Numbers it cannot bucket (e.g. mean±SD) you still read from the store
+directly. No LLM, no network; same store → identical buckets every run.
+
 Carry each study's **own `study_context`, `study_limitations`, and `author_suggestions`** (from the
 reference store) into the appraisal so the writer can reflect per-study IMRAD faithfully — the
 authors' background/rationale and framing of the topic (Introduction), the study's own limitations
