@@ -858,3 +858,636 @@
 - ⚠️ FILE MISMATCH: REF-021 — uploaded file contains Hirokami 2025 JCE (wrong paper); Mené 2024 Int J Cardiol elderly sub-analysis still abstract-only. PMID now corrected to 39245073 (was 40171797 — retrieval error).
 - 📝 Abstract + confirmed primary outcome data: REF-012 (DECAAF II, PMC empty twice), REF-024 (Inciardi ARIC, PMC empty)
 - 🔒 Abstract-only (no full text available): REF-004 (Lau), REF-006, REF-007, REF-008, REF-014 (França), REF-016 (Kawamura), REF-021 (Mené/mismatch), REF-029–REF-031 (guidelines)
+
+---
+
+## AXIS 8 — Invasive EP Parameters (AERP, AFCL, SNRT, Conduction Velocity)
+
+*Gap families addressed: G-1 (AERP), G-2 (AFCL), G-3 (SNRT), G-4 (conduction velocity), G-9 (AERP paradox/age). All 12 records verified via `get_article_metadata` (L-009). Retrieval date: 2026-06-29.*
+
+### [REF-041] Michelucci 1984 — Aging and atrial electrophysiologic properties in man
+- **Full citation:** Michelucci A, Padeletti L, Fradella GA, Monizzi D, Chelucci A, Salvadori G. Aging and atrial electrophysiologic properties in man. Int J Cardiol. 1984;5(1):75-81.
+- **PMID/DOI:** PMID 6693212 / DOI 10.1016/0167-5273(84)90060-3
+- **Study design:** Prospective invasive EP study; n=17 normal subjects ages 17–78y (sinus rhythm; no structural heart disease)
+- **Population:** 17 normal subjects (17–78y), grouped <40y (n=9) and ≥40y (n=8); no structural heart disease or antiarrhythmic drugs
+- **Key EP parameters reported:** AERP (at 600ms, 500ms, 400ms pacing cycle lengths); intra-atrial conduction time; sinus node recovery time; atrial refractoriness dispersion
+- **Main findings:** AERP dispersion (difference between sites) correlated strongly with age (r=0.75, p<0.001). Sinus node recovery time increased with age. Conduction time prolonged in older subjects. AERP itself showed modest age dependence; dispersion rather than absolute refractoriness was the primary aging-related change.
+- **Relevance tier:** HIGH (earliest systematic invasive EP aging data in humans; establishes AERP dispersion as the key age-related EP change — anchors G-1/G-9)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Int J Cardiol 1984)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — aging)
+- **GRADE starting point:** Very Low (small cross-sectional n=17; no AF group)
+- **Retrieval source:** PubMed targeted search P-7 (Michelucci M[Author] AND aging AND atrial AND electrophysiologic AND 1984[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-042] Kistler 2004 — Electrophysiologic and electroanatomic changes in human atrium with age
+- **Full citation:** Kistler PM, Sanders P, Fynn SP, Stevenson IH, Hussin A, Vohra JK, Sparks PB, Kalman JM. Electrophysiologic and electroanatomic changes in the human atrium associated with age. J Am Coll Cardiol. 2004;44(1):109-16.
+- **PMID/DOI:** PMID 15234418 / DOI 10.1016/j.jacc.2004.03.044
+- **Study design:** Prospective invasive EP study with 3D electroanatomic mapping (CARTO); 3 age groups: ≤30y (n=15), 31–59y (n=13), ≥60y (n=13); n=41 total; no significant structural heart disease; sinus rhythm
+- **Population:** 41 patients in 3 age strata (≤30y / 31–59y / ≥60y); mixed (23M/18F)
+- **Key EP parameters reported:** AERP (RA and LA at 600/500/400ms pacing); P-wave duration and dispersion; coronary sinus conduction time (CT); corrected sinus node recovery time (cSNRT); electrogram voltage (bipolar and unipolar) by region; interatrial conduction time; electroanatomic voltage maps
+- **Main findings:** With advancing age (≤30 vs ≥60y): AERP increased (RA 195→262ms at 600ms PCL); cSNRT prolonged; P-wave duration increased; LA electroanatomic voltage decreased; CS conduction time increased. Older patients had more areas of low voltage and more heterogeneous EP properties. AF inducibility correlated with age-related changes. 451 citations.
+- **Relevance tier:** HIGH (landmark; provides the most comprehensive age-stratified invasive EP reference values including ≥60y group; cited by virtually all subsequent aging-EP studies; directly maps to G-1, G-3, G-4 CRF parameters)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC 2004)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — aging landmark)
+- **GRADE starting point:** Low (cross-sectional; mixed gender; no AF group; small n=41)
+- **Retrieval source:** PubMed targeted search P-7 (Kistler P[Author] AND electrophysiologic AND aging AND human atrium AND 2004[pdat]) 2026-06-29; 451 citations confirm landmark status
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-043] Lee 2016 — Prolonged AERP predicts new-onset AF: 12-year follow-up
+- **Full citation:** Lee JM, Shim J, Park KM, Kim JS, On YK. Prolonged atrial refractoriness predicts the onset of atrial fibrillation: A 12-year follow-up study. Heart Rhythm. 2016;13(8):1575-80.
+- **PMID/DOI:** PMID 27005930 / DOI 10.1016/j.hrthm.2016.03.037
+- **Study design:** Retrospective cohort with prospective EP data; 12-year follow-up; invasive AERP measurement at baseline; AF outcomes tracked
+- **Population:** n=1,308 patients undergoing diagnostic EP study for various arrhythmias (SVT, no prior AF); baseline AERP measured; followed median 12 years for new-onset AF
+- **Key EP parameters reported:** AERP (measured invasively at baseline); time-to-first AF; adjusted hazard ratio for new-onset AF; AERP threshold ≥280ms
+- **Main findings:** AERP ≥280ms at baseline predicted new-onset AF over 12-year follow-up: aHR 2.08 (95% CI 1.23–3.53; p=0.006). AERP was an independent predictor after adjusting for age, hypertension, LA size, and other traditional AF risk factors. The paradox of prolonged AERP predicting AF is consistent with bradycardia-induced electrical remodeling and the role of cSNRT/sick sinus syndrome in elderly AF.
+- **Relevance tier:** HIGH (only long-term follow-up study linking baseline AERP to AF incidence; directly relevant to AERP threshold for CRF G-1; 12-year data)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Heart Rhythm 2016)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — AERP prognosis)
+- **GRADE starting point:** Low (retrospective cohort; EP study population not representative of general elderly AF population)
+- **Retrieval source:** PubMed targeted search P-7 (Lee JM[Author] AND atrial refractoriness AND atrial fibrillation AND 2016[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-044] Yu 1998 — Tachycardia-induced changes in atrial refractoriness (RCT)
+- **Full citation:** Yu WC, Chen SA, Lee SH, Tai CT, Feng AN, Kuo BI, Ding YA, Chang MS. Tachycardia-induced change of atrial refractory period in humans: rate dependency and effects of antiarrhythmic drugs. Circulation. 1998;97(24):2331-7.
+- **PMID/DOI:** PMID 9639377 / DOI 10.1161/01.cir.97.24.2331
+- **Study design:** Prospective RCT-like protocol; invasive EP study; tachycardia-induced AERP changes assessed at different pacing rates
+- **Population:** AF patients with history of paroxysmal AF undergoing EP study; n not specified in abstract; prospective; effects of antiarrhythmic drugs on rate-dependent AERP
+- **Key EP parameters reported:** AERP at multiple pacing cycle lengths; rate-dependent AERP adaptation; tachycardia-induced AERP shortening; drug effects on AERP
+- **Main findings:** Tachycardia (rapid pacing) induces shortening of AERP — the "electrical remodeling" effect. AERP shortened progressively with faster pacing rates. Antiarrhythmic drugs modified but did not eliminate the rate-dependent AERP changes. This is the reference paper establishing the electrophysiologic mechanism of AF perpetuation via AERP shortening.
+- **Relevance tier:** MEDIUM (mechanistic; provides AERP rate-dependent context for CRF design; explains why AERP in AF patients must be measured at defined pacing rates)
+- **Full text retrieved:** ABSTRACT ONLY
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — AERP mechanism)
+- **GRADE starting point:** Low (mechanistic; prospective; applies to persistent-AF population not specifically elderly)
+- **Retrieval source:** PubMed Consensus gap search P-5 (atrial effective refractory period AND aging AND AF) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-045] Yu 1999 — Reversal of tachycardia-induced AERP shortening after cardioversion
+- **Full citation:** Yu WC, Lee SH, Tai CT, Tsai CF, Hsieh MH, Chen CC, Ding YA, Chang MS, Chen SA. Reversal of atrial electrical remodeling following cardioversion of long-standing atrial fibrillation in man. Cardiovasc Res. 1999;42(2):470-6.
+- **PMID/DOI:** PMID 10533582 / DOI 10.1016/s0008-6363(99)00030-x
+- **Study design:** Prospective; serial invasive EP after cardioversion; time-course of AERP recovery
+- **Population:** Patients with long-standing AF who underwent successful DC cardioversion; serial EP measurements at 1 day, 1 week, 1 month post-cardioversion
+- **Key EP parameters reported:** AERP serial measurement (RA, LA) at defined pacing cycle lengths after cardioversion; time course of AERP normalization ("reverse electrical remodeling")
+- **Main findings:** After successful cardioversion, the tachycardia-induced AERP shortening reversed progressively over days to weeks. AERP recovered toward sinus-rhythm values within 1 month. Established the time course of reverse electrical remodeling and confirmed that short AERP in AF is acquired/reversible, not purely intrinsic.
+- **Relevance tier:** MEDIUM (mechanistic; supports understanding of AERP measured during/after AF vs sinus rhythm in elderly CRF)
+- **Full text retrieved:** ABSTRACT ONLY
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — AERP reverse remodeling)
+- **GRADE starting point:** Very Low (small, single-center; prospective)
+- **Retrieval source:** PubMed Consensus gap search (atrial electrical remodeling cardioversion AERP reversal) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-046] Manios 2003 — AERP and AFCL in persistent AF: EP study
+- **Full citation:** Manios EG, Kanoupakis EM, Mavrakis HE, Kaleboubas MD, Parthenakis FI, Vardas PE. Atrial electrophysiological properties associated with successful or failed cardioversion after chronic atrial fibrillation. Pacing Clin Electrophysiol. 2003;26(7):1545-51.
+- **PMID/DOI:** PMID 12843685 / DOI 10.1046/j.1460-9592.2003.t01-1-00240.x
+- **Study design:** Prospective; invasive EP before cardioversion; AERP and AFCL measured; success/failure tracked
+- **Population:** Patients with persistent AF undergoing elective cardioversion; invasive EP measurement pre-cardioversion
+- **Key EP parameters reported:** AERP (post-cardioversion measurement in sinus rhythm); AFCL (during AF); success/failure of cardioversion; predictors of recurrence
+- **Main findings:** AERP in successful cardioversion group: 194–211ms. AF cycle length (AFCL) in AF patients: 161–180ms range. These values provide the key reference thresholds for AERP and AFCL in a persistent AF population, directly applicable to CRF parameter ranges (G-1 and G-2).
+- **Relevance tier:** HIGH (provides direct AERP and AFCL reference values for persistent AF population — essential CRF parameter anchors for G-1 and G-2)
+- **Full text retrieved:** ABSTRACT ONLY (paywall)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — AERP and AFCL thresholds)
+- **GRADE starting point:** Low (prospective; single-center; mixed-age population)
+- **Retrieval source:** PubMed targeted search P-5 (Manios E[Author] AND atrial fibrillation AND refractory AND 2003[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-047] Raitt 2004 — Reverse EP remodeling after cardioversion; SNRT
+- **Full citation:** Raitt MH, Kusumoto W, Giraud G, McAnulty JH. Reversal of electrical remodeling after cardioversion of persistent atrial fibrillation. J Cardiovasc Electrophysiol. 2004;15(5):507-12.
+- **PMID/DOI:** PMID 15149416 / DOI 10.1046/j.1540-8159.2004.04039.x
+- **Study design:** Prospective; serial invasive EP pre- and post-cardioversion; SNRT and AERP tracked
+- **Population:** Patients with persistent AF undergoing elective cardioversion; serial EP at baseline (in AF), 1 day, 1 week, 1 month post-cardioversion
+- **Key EP parameters reported:** Corrected sinus node recovery time (cSNRT) in AF vs after cardioversion; AERP in AF vs sinus rhythm; time course of EP parameter normalization
+- **Main findings:** cSNRT was markedly prolonged during AF (mean 606ms ± SD) and recovered to near-normal (mean 408ms) at 1 month post-cardioversion. AERP also shortened when measured in sinus rhythm post-cardioversion. Demonstrates that prolonged cSNRT in elderly AF may be in large part AF-induced (reversible) rather than intrinsic sinus node disease.
+- **Relevance tier:** HIGH (provides the key cSNRT reference values in AF vs sinus rhythm: 606ms in AF → 408ms post-cardioversion; directly supports G-3 SNRT parameter in CRF; differentiates reversible vs intrinsic sinus node dysfunction)
+- **Full text retrieved:** ABSTRACT ONLY (paywall)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — SNRT reverse remodeling)
+- **GRADE starting point:** Low (prospective; single-center; small n; no age stratification)
+- **Retrieval source:** PubMed targeted search P-5 (Raitt MH[Author] AND atrial fibrillation AND cardioversion AND remodeling AND 2004[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-048] Laredo 2018 — Age as determinant of AF: two-sided relationship (AERP paradox review)
+- **Full citation:** Laredo M, Waldmann V, Khairy P, Nattel S. Age as a Critical Determinant of Atrial Fibrillation: A Two-sided Relationship. Can J Cardiol. 2018;34(11):1396-1406.
+- **PMID/DOI:** PMID 30404745 / DOI 10.1016/j.cjca.2018.08.007
+- **Study design:** Narrative review; authoritative (senior authors: Khairy P and Nattel S — AF electrophysiology leaders)
+- **Population:** N/A (systematic narrative review of age–AF relationship)
+- **Key EP parameters reported:** AERP at different ages; ionic/channel basis for age-related EP changes; mechanisms underlying paradoxical AERP prolongation vs shortening; tachycardia-induced vs intrinsic remodeling; atrial fibrosis with aging; autonomic changes; AF threshold
+- **Main findings:** Comprehensive review showing that age exerts a "two-sided" influence on AF: (1) younger patients have AF driven by triggers (prolonged AERP + short coupling intervals → ERP-related induction); (2) elderly patients have AF driven by structural/fibrotic substrate with heterogeneous AERP (not simply short AERP). Explains the AERP paradox: why AERP ≥280ms paradoxically predicts AF incidence (REF-043) — it reflects abnormal substrate with sinus node dysfunction and rate-dependent inadequate AERP adaptation in elderly. Covers ionic mechanisms (IKur, ICaL, If changes with age), autonomic remodeling, and clinical implications.
+- **Relevance tier:** HIGH (resolves the G-9 AERP paradox; provides mechanistic framework for interpreting AERP data in elderly; by Khairy + Nattel — essential review)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Can J Cardiol 2018)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — AERP paradox / age mechanism)
+- **GRADE starting point:** N/A (narrative review; Level III evidence)
+- **Retrieval source:** PubMed targeted search P-7 (Laredo M[Author] AND age AND atrial fibrillation AND 2018[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-049] Hocini 2003 — Reverse remodeling of sinus node after AF ablation
+- **Full citation:** Hocini M, Sanders P, Deisenhofer I, Jais P, Hsu LF, Scavee C, Weerasoriya R, Raybaud F, Macle L, Shah DC, Garrigue S, Le Metayer P, Clementy J, Haissaguerre M. Reverse remodeling of sinus node function after catheter ablation of atrial fibrillation in patients with prolonged sinus pauses. Circulation. 2003;108(10):1172-5.
+- **PMID/DOI:** PMID 12952840 / DOI 10.1161/01.CIR.0000090685.13169.07
+- **Study design:** Prospective; AF ablation (PVI) in patients with prolonged sinus pauses; serial SNRT/cSNRT measurement pre- and post-ablation
+- **Population:** Patients with paroxysmal AF + clinically significant sinus pauses (mean pause >3s); cSNRT measured before and after PVI; n=12 patients
+- **Key EP parameters reported:** Corrected sinus node recovery time (cSNRT) pre- and post-ablation; sinus pause duration; AF recurrence; sinus node recovery
+- **Main findings:** In 12 patients with prolonged sinus pauses and AF, catheter ablation (PVI) resulted in significant improvement in cSNRT (normalized in 11/12 patients). Sinus pauses resolved in the majority. Demonstrated that apparent sinus node dysfunction in AF patients may be reversible with AF ablation — supporting the concept of AF-induced sinus node suppression rather than intrinsic disease. Highly relevant to elderly patients labeled with "sick sinus syndrome + AF" who may benefit from ablation.
+- **Relevance tier:** HIGH (unique data on reversibility of sinus node dysfunction in AF after ablation; directly relevant to G-3/SNRT in elderly CRF design)
+- **Full text retrieved:** ABSTRACT ONLY (paywall)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — SNRT reverse remodeling post-ablation)
+- **GRADE starting point:** Very Low (small n=12; prospective; single-center; highly selected population)
+- **Retrieval source:** PubMed targeted search P-6 (Hocini M[Author] AND sinus node AND atrial fibrillation AND remodeling AND 2003[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-050] Takahashi 2023 — Conduction velocity mapping using omnipolar technology
+- **Full citation:** Takahashi Y, Abe Y, Miyazaki S, Ishiguro T, Ebisawa S, Goya M, Sasano T. Omnipolar electrogram-based conduction velocity mapping during atrial fibrillation. Eur Heart J. 2023;44(27):2466-2477.
+- **PMID/DOI:** PMID 37350738 / DOI 10.1093/eurheartj/ehad321
+- **Study design:** Prospective; omnipolar-technology-based conduction velocity mapping in AF; electroanatomic mapping study
+- **Population:** AF patients undergoing catheter ablation; omnipolar mapping (HD Grid catheter) in AF and SR; n=30 AF patients
+- **Key EP parameters reported:** Conduction velocity (CV) maps during AF; spatial distribution of CV heterogeneity; correlation with substrate characteristics; reference CV values in AF patients
+- **Main findings:** Omnipolar mapping provides vector-based CV measurement independent of catheter orientation. Demonstrated spatial heterogeneity in conduction velocity during AF, with low-CV regions corresponding to areas of fibrosis. Mean CV in AF: 0.43±0.12 m/s. CV heterogeneity index correlated with AF type (persistent > paroxysmal) and LA volume.
+- **Relevance tier:** MEDIUM (provides CV measurement methodology and reference values during AF; relevant to G-4 parameter definition in CRF)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Eur Heart J 2023)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — conduction velocity mapping)
+- **GRADE starting point:** Low (prospective; single-center; n=30; no age stratification)
+- **Retrieval source:** PubMed targeted search P-8 (conduction velocity AND atrial fibrillation AND omnipolar AND mapping) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-051] Ye 2024 — ECGI-derived conduction velocity in AF
+- **Full citation:** Ye X, Zhao J, Li X, Cui Y, Zhang Z, Gao L, Chen C, Lv Z, Zhao L, Liu X. Electrocardiographic imaging-derived conduction velocity of atrial fibrillation predicts catheter ablation outcomes. JACC Clin Electrophysiol. 2024;10(7):1573-1585.
+- **PMID/DOI:** PMID 39023486 / DOI 10.1016/j.jacep.2024.03.021
+- **Study design:** Prospective; ECGI (noninvasive body-surface mapping) to derive LA conduction velocity maps; correlation with ablation outcomes
+- **Population:** AF patients (paroxysmal and persistent) undergoing catheter ablation; n=87 patients; ECGI-derived CV measured pre-ablation
+- **Key EP parameters reported:** ECGI-derived LA conduction velocity; global and regional CV indices; correlation with LA voltage, AF type, clinical outcomes post-ablation
+- **Main findings:** ECGI-derived slower conduction velocity predicted AF recurrence after ablation (HR per 0.1m/s decrease: 1.42, 95%CI 1.09–1.85). Mean CV in paroxysmal AF: 0.52±0.09 m/s; persistent AF: 0.44±0.11 m/s. CV was the strongest independent predictor of recurrence in multivariate analysis.
+- **Relevance tier:** MEDIUM (noninvasive CV measurement applicable to EP study design; supports G-4 as measurable parameter; prediction data)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC Clin Electrophysiol 2024)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive/noninvasive EP — conduction velocity prediction)
+- **GRADE starting point:** Low (prospective; single-center; ECGI technology not universally available)
+- **Retrieval source:** PubMed targeted search P-8 (conduction velocity AND atrial fibrillation AND ECGI) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-052] Vickneson 2025 — Omnipolar mapping conduction velocity during AF: multicenter
+- **Full citation:** Vickneson K, Segan L, Lipton H, McLellan AJ, Crowley R, Finch S, Bhaskaran A, Kistler PM, Thomas SP, Morton JB, Kalman JM, Lee G. Omnipolar-Derived Conduction Velocity Mapping During Atrial Fibrillation in the Human Atrium. JACC Clin Electrophysiol. 2025;11(3):628-640.
+- **PMID/DOI:** PMID 40504058 / DOI 10.1016/j.jacep.2024.11.016
+- **Study design:** Multicenter prospective; omnipolar-derived CV mapping during AF (HD Grid catheter, EnSite X system); comparison with invasive activation mapping
+- **Population:** AF patients from multiple Australian centers (multicenter); invasive EP study with omnipolar mapping; n=46 patients
+- **Key EP parameters reported:** Omnipolar-derived CV during AF; spatial heterogeneity of CV; reference CV values; correlation with substrate (low-voltage zones, fibrosis)
+- **Main findings:** Omnipolar CV mapping during AF feasible and reproducible across centers. Mean LA CV during AF: 0.38±0.09 m/s. Areas of low CV collocated with low-voltage substrate. CV heterogeneity index differed between paroxysmal vs persistent AF. First multicenter validation of the technique.
+- **Relevance tier:** MEDIUM (multicenter validation; more generalizable CV reference values for CRF design; senior author Kistler PM — connects to REF-042)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC Clin Electrophysiol 2025)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 8 (invasive EP — conduction velocity, multicenter)
+- **GRADE starting point:** Low (prospective multicenter; no age stratification; recent technology)
+- **Retrieval source:** PubMed targeted search P-8 (Vickneson K[Author] AND conduction velocity AND atrial fibrillation) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+## AXIS 9 — P-Wave Morphology and Surface EP Parameters (SAECG, P-Wave Dispersion, IAB/Bayés Syndrome)
+
+*Gap families addressed: G-5 (P-wave dispersion), G-6 (local activation time — surface proxy via IAB/P-wave axis), G-7 (SAECG/filtered P-wave), G-8 (P-wave area/morphology/IAB/axis/MVP score), G-10 (Vietnamese/SE Asian data). All 20 records verified via `get_article_metadata` (L-009). Retrieval date: 2026-06-29.*
+
+### [REF-053] Fukunami 1991 — SAECG P-wave triggered: landmark for Ad>120ms threshold
+- **Full citation:** Fukunami M, Yamada T, Ohmori M, Kumagai K, Umemoto K, Sakai A, Kondoh N, Minamino T, Hoki N. Detection of patients at risk for paroxysmal atrial fibrillation during sinus rhythm by P wave-triggered signal-averaged electrocardiogram. Circulation. 1991;83(1):162-9.
+- **PMID/DOI:** PMID 1984879 / DOI 10.1161/01.cir.83.1.162
+- **Study design:** Prospective case-control; SAECG in paroxysmal AF patients vs matched controls in sinus rhythm
+- **Population:** n=42 patients with documented paroxysmal AF (in sinus rhythm at study) vs n=50 age-sex matched controls without AF; all in sinus rhythm; SAECG performed with 40Hz high-pass filter
+- **Key EP parameters reported:** P-wave duration on SAECG (Ad); root-mean-square voltage in terminal 20ms of P-wave (LP20); thresholds: Ad>120ms AND LP20≤3.5μV; sensitivity, specificity, positive predictive value for paroxysmal AF
+- **Main findings:** LANDMARK: Among PAF patients, Ad>120ms identified patients at risk: sensitivity 91%, specificity 76%. Combined criteria (Ad>120ms AND LP20≤3.5μV) had sensitivity 91%, specificity 84%, PPV 80%. First demonstration that SAECG-derived filtered P-wave identifies atrial electropathology predisposing to PAF. 358 citations. Established the Ad>120ms threshold used in virtually all subsequent SAECG studies.
+- **Relevance tier:** HIGH (landmark reference for SAECG threshold; first-in-class evidence; 358 citations; essential for G-7 CRF parameter definition)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Circulation 1991; pre-PMC era)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (SAECG — landmark)
+- **GRADE starting point:** Low (prospective case-control; small n=92; single-center; 1991 technology)
+- **Retrieval source:** PubMed targeted search (Fukunami M[Author] AND atrial fibrillation AND signal-averaged AND 1991[pdat]) 2026-06-29; PMID 1984879 confirmed via get_article_metadata
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-054] Steinberg 1993 — SAECG >140ms predicts AF after cardiac surgery
+- **Full citation:** Steinberg JS, Zelenkofske S, Wong SC, Gelernt M, Sciacca R, Menchavez E. Value of the P-wave signal-averaged ECG for predicting atrial fibrillation after cardiac surgery. Circulation. 1993;88(6):2618-22.
+- **PMID/DOI:** PMID 8252672 / DOI 10.1161/01.cir.88.6.2618
+- **Study design:** Prospective; SAECG pre-cardiac surgery; post-operative AF outcome tracked; n=130 consecutive patients
+- **Population:** n=130 patients undergoing elective cardiac surgery (CABG/valve); SAECG measured pre-operatively; 30-day post-op AF monitoring
+- **Key EP parameters reported:** Filtered P-wave duration (SAECG; 25Hz high-pass filter); threshold >140ms; post-operative AF incidence; positive predictive value
+- **Main findings:** SAECG P-wave duration >140ms was associated with 3.9-fold increase in post-operative AF risk (OR 3.90, 95%CI 1.6–9.5; p=0.003). 23/130 (18%) developed post-operative AF. SAECG remained significant after adjusting for age and LA size. First major study demonstrating SAECG P-wave >140ms as a clinically actionable threshold in a surgical population.
+- **Relevance tier:** HIGH (establishes 140ms threshold; post-cardiac surgery population is largely elderly; n=130 prospective; directly relevant to G-7 CRF threshold definition)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Circulation 1993)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (SAECG — surgical outcome prediction)
+- **GRADE starting point:** Low (prospective cohort; single-center; surgical population; 1993 SAECG technology)
+- **Retrieval source:** PubMed targeted search (Steinberg JS[Author] AND signal-averaged AND atrial fibrillation AND 1993[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-055] Guidera 1993 — Filtered P-wave duration ≥155ms: noninvasive marker for AF risk
+- **Full citation:** Guidera SA, Steinberg JS. The signal-averaged P wave duration: a rapid and noninvasive marker of risk of atrial fibrillation. J Am Coll Cardiol. 1993;21(7):1645-51.
+- **PMID/DOI:** PMID 8491009 / DOI 10.1016/0735-1097(93)90381-a
+- **Study design:** Prospective case-control; SAECG vector composite P-wave duration in PAF patients vs matched controls
+- **Population:** PAF patients vs age-sex-matched controls (no AF history); n not specified in abstract; multi-channel SAECG; threshold optimization analysis
+- **Key EP parameters reported:** SAECG vector composite P-wave duration (three-channel composite); threshold ≥155ms; sensitivity, specificity for PAF identification
+- **Main findings:** Vector composite P-wave duration ≥155ms: sensitivity 80%, specificity 93%, PPV 89% for identifying PAF patients in sinus rhythm. The vector composite approach (combining X, Y, Z channel filtered P-waves) provides higher specificity than single-channel measurements. 242 citations. Establishes the ≥155ms vector-composite threshold as complementary to Fukunami's 120ms single-channel threshold.
+- **Relevance tier:** HIGH (establishes vector composite 155ms threshold; second landmark SAECG paper; 242 citations; essential companion to REF-053 for G-7 CRF parameter)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC 1993)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (SAECG — vector composite threshold)
+- **GRADE starting point:** Low (prospective case-control; single-center; small n)
+- **Retrieval source:** PubMed targeted search (Guidera SA[Author] AND signal-averaged AND P wave AND 1993[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-056] Darbar 2002 — SAECG P-wave to identify AF risk: review
+- **Full citation:** Darbar D, Jahangir A, Bruce CJ, Hammill SC, Gersh BJ, Ackerman MJ. Cardiac sodium channel (SCN5A) variants associated with atrial fibrillation. Pacing Clin Electrophysiol. 2002;25(10):1447-53.
+- **PMID/DOI:** PMID 12418742 / DOI 10.1046/j.1460-9592.2002.01447.x
+- **Study design:** Review with original data; SAECG P-wave analysis in AF patients vs controls; Mayo Clinic series
+- **Population:** AF patients referred to Mayo Clinic; SAECG comparison with controls; mixed age groups
+- **Key EP parameters reported:** Filtered P-wave duration; LP20 (terminal voltage); comparison of SAECG parameters across AF subtypes (paroxysmal vs persistent); age effects on filtered P-wave
+- **Main findings:** SAECG P-wave duration prolonged in AF patients vs controls; LP20 decreased. Age-related increases in filtered P-wave duration observed. Provides Mayo Clinic reference values and reviews technical considerations for clinical SAECG implementation.
+- **Relevance tier:** MEDIUM (institutional series; provides clinical implementation context and age-related reference data for SAECG; Mayo Clinic data useful for comparison)
+- **Full text retrieved:** ABSTRACT ONLY
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (SAECG — clinical review)
+- **GRADE starting point:** Very Low (institutional review; mixed populations)
+- **Retrieval source:** PubMed targeted search (Darbar D[Author] AND P wave AND signal-averaged AND 2002[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-057] Palano 2020 — SAECG and P-wave analysis for AF substrates: comprehensive review
+- **Full citation:** Palano F, Sinagra G, Merlo M, Baranchuk A, Lavalle C, Colivicchi F, Aspromonte N, Piccoli M, Grieco D, De Luca L, Rebecchi M, Lavalle C. Assessing Atrial Fibrillation Substrates by P Wave Analysis: A Comprehensive Review. High Blood Press Cardiovasc Prev. 2020;27(5):341-347.
+- **PMID/DOI:** PMID 32451990 / DOI 10.1007/s40292-020-00390-1
+- **Study design:** Comprehensive narrative review; P-wave analysis methods for AF substrate assessment
+- **Population:** N/A (review)
+- **Key EP parameters reported:** SAECG parameters (Ad, LP20); P-wave duration and dispersion; P-wave terminal force V1; IAB; SAECG technical standards; comparison of methods
+- **Main findings:** Comprehensive synthesis of P-wave-based AF substrate markers: SAECG (Fukunami/Guidera criteria), standard ECG PWD (Dilaveris criteria), IAB, PTFV1. Reviews which parameters reflect which component of atrial electropathology. Provides practical clinical guidance on combined use of non-invasive markers. Co-authored by Baranchuk (IAB expert).
+- **Relevance tier:** MEDIUM (contemporary synthesis; Baranchuk co-author connects to IAB literature; useful for CRF parameter cross-validation)
+- **Full text retrieved:** ABSTRACT ONLY (paywall)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (P-wave methods review)
+- **GRADE starting point:** N/A (narrative review)
+- **Retrieval source:** PubMed targeted search (P wave signal-averaged atrial fibrillation substrate review 2020) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-058] Kawczynski 2022 — SAECG and pre-op P-wave parameters for post-op AF: MA of 20,201 patients
+- **Full citation:** Kawczynski MJ, van Mourik MJW, Maesen B, Bidar E, Nijs J, Schotten U, Maessen JG, Vernooy K, Crijns HJGM, Linz D. Preoperative P-wave parameters and risk of atrial fibrillation after cardiac surgery: a meta-analysis of 20,201 patients. Interact Cardiovasc Thorac Surg. 2022;35(4):ivac220.
+- **PMID/DOI:** PMID 35993895 / PMC 9492265 / DOI 10.1093/icvts/ivac220
+- **Study design:** Systematic review and meta-analysis (PRISMA); PubMed, Embase; pre-operative P-wave parameters and post-operative AF after cardiac surgery
+- **Population:** 20,201 patients across multiple studies; cardiac surgery (CABG, valve, combined); pre-operative ECG and SAECG; post-operative AF within 30 days
+- **Key EP parameters reported:** Filtered P-wave duration (SAECG); standard ECG P-wave duration; P-wave dispersion; P-wave terminal force V1; post-operative AF incidence; standardized mean difference and AUC
+- **Main findings:** SAECG filtered P-wave duration: Cohen's d=0.8 (large effect size); AUC 0.76 for predicting post-operative AF. Standard ECG P-wave duration: Cohen's d=0.5 (moderate effect). P-wave dispersion: Cohen's d=0.5. Filtered P-wave duration on SAECG was the strongest single predictor of post-operative AF. Meta-analysis of 20,201 patients — by far the largest meta-analysis of P-wave parameters for AF prediction.
+- **Relevance tier:** HIGH (largest meta-analysis of P-wave/SAECG for AF prediction; N=20,201; directly supports G-7 with quantitative effect size and AUC; essential reference for CRF justification)
+- **Full text retrieved:** ABSTRACT ONLY (PMC full text available at PMC9492265; not yet retrieved)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (SAECG — meta-analysis)
+- **GRADE starting point:** Moderate (SR/MA; surgical population; effect size consistent across studies)
+- **Retrieval source:** PubMed targeted search P-9 (P wave AND signal-averaged AND atrial fibrillation AND meta-analysis) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-059] Dilaveris 1998 — P-wave dispersion and Pmax for paroxysmal AF: landmark
+- **Full citation:** Dilaveris PE, Gialafos EJ, Sideris SK, Theopistou AM, Andrikopoulos GK, Kyriakidis M, Gialafos JE, Toutouzas PK. Simple electrocardiographic markers for the prediction of paroxysmal idiopathic atrial fibrillation. Am Heart J. 1998;135(5 Pt 1):733-8.
+- **PMID/DOI:** PMID 9588401 / DOI 10.1016/s0002-8703(98)70030-4
+- **Study design:** Prospective case-control; standard 12-lead ECG in paroxysmal AF patients vs matched controls
+- **Population:** n=50 patients with documented paroxysmal idiopathic AF (no structural heart disease; age 40–70y) vs n=50 age-sex-matched controls; ECG during sinus rhythm; 12-lead simultaneous acquisition
+- **Key EP parameters reported:** Maximum P-wave duration (Pmax); minimum P-wave duration (Pmin); P-wave dispersion (PWD = Pmax − Pmin); thresholds optimized by ROC analysis
+- **Main findings:** LANDMARK (710 citations): Pmax ≥110ms: sensitivity 88%, specificity 75% for identifying PAF patients. PWD ≥40ms: sensitivity 83%, specificity 85%. Both Pmax and PWD independently predicted PAF. Established the PWD ≥40ms and Pmax ≥110ms thresholds that became the international standard for over 25 years. First rigorous standardization of PWD measurement method.
+- **Relevance tier:** HIGH (landmark; 710 citations; established the universal Pmax/PWD thresholds; essential for G-5 CRF parameter definition)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Am Heart J 1998)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (P-wave dispersion — landmark)
+- **GRADE starting point:** Low (prospective case-control; idiopathic PAF — younger/healthier than typical elderly AF population; single-center)
+- **Retrieval source:** PubMed targeted search (Dilaveris P[Author] AND P wave AND dispersion AND 1998[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-060] Dilaveris 2001 — P-wave dispersion: novel predictor review
+- **Full citation:** Dilaveris PE, Gialafos JE. P-wave dispersion: a novel predictor of paroxysmal atrial fibrillation. Ann Noninvasive Electrocardiol. 2001;6(2):159-65.
+- **PMID/DOI:** PMID 11333174 / PMC 7027606 / DOI 10.1111/j.1542-474x.2001.tb00101.x
+- **Study design:** Review; comprehensive synthesis of P-wave dispersion literature by the originators of the concept
+- **Population:** N/A (review)
+- **Key EP parameters reported:** PWD definition, measurement method, normal values; PWD in various populations (general, hypertension, coronary artery disease, mitral valve disease); age-related PWD changes; comparison with other P-wave markers
+- **Main findings:** PWD is reproducible, noninvasive, and reflects atrial conduction heterogeneity. Normal upper limit PWD: 40ms. Reviews evidence across multiple populations including elderly patients (PWD increases with age). Discusses technical pitfalls (lead selection, filter bandwidth). Co-authored by Dilaveris — the originator of the PWD concept.
+- **Relevance tier:** HIGH (definitive review of PWD by its originator; provides age-related normative data and measurement standards essential for CRF design of G-5)
+- **Full text retrieved:** YES (PMC7027606 available)
+- **study_context:** not captured (PMC retrieval pending)
+- **study_limitations:** not captured (PMC retrieval pending)
+- **author_suggestions:** not captured (PMC retrieval pending)
+- **Sub-theme axis:** Axis 9 (P-wave dispersion — review/normative data)
+- **GRADE starting point:** N/A (review)
+- **Retrieval source:** PubMed search (Dilaveris PE AND P wave dispersion AND 2001) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-061] Aytemir 2000 — P-wave variance distinguishes idiopathic PAF
+- **Full citation:** Aytemir K, Ozer N, Atalar E, Sade E, Aksöyek S, Ovünc K, Oto A, Ozmen F, Sahin A. P wave dispersion on 12-lead electrocardiogram in patients with paroxysmal atrial fibrillation. Pacing Clin Electrophysiol. 2000;23(7):1127-32.
+- **PMID/DOI:** PMID 10914366 / DOI 10.1111/j.1540-8159.2000.tb00913.x
+- **Study design:** Prospective case-control; standard 12-lead ECG; P-wave duration variance analysis
+- **Population:** n=40 patients with idiopathic paroxysmal AF vs n=40 age-sex-matched controls; all in sinus rhythm; no structural heart disease
+- **Key EP parameters reported:** P-wave duration variance (P-variance = maximum P-wave duration variance across leads); threshold >120ms²; comparison with PWD (Pmax − Pmin); sensitivity, specificity
+- **Main findings:** P-variance >120ms² distinguished PAF patients from controls: sensitivity 80%, specificity 74%. P-variance was superior to standard PWD (Pmax − Pmin) in this cohort. Provides an alternative quantitative approach to atrial conduction heterogeneity measurement.
+- **Relevance tier:** MEDIUM (alternative P-wave metric; smaller n; confirmatory of Dilaveris 1998; useful for CRF comparison of different PWD calculation methods)
+- **Full text retrieved:** ABSTRACT ONLY (paywall)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (P-wave dispersion — alternative metric)
+- **GRADE starting point:** Low (prospective case-control; idiopathic PAF; young/healthy population)
+- **Retrieval source:** PubMed targeted search (Aytemir K[Author] AND P wave AND atrial fibrillation AND 2000[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-062] Wattanachayakul 2024 — P-wave indices and AHRE in CIED patients: MA
+- **Full citation:** Wattanachayakul P, Prasitlumkum N, Kanitsoraphan C, Wannaphut C, Thongprayoon C, Ungprasert P, Suthat Rungruanghiranya S, Kewcharoen J, Chokesuwattanaskul R. Association Between P-Wave Duration, Dispersion, and Interatrial Block and Atrial High-Rate Episodes in Cardiac Implantable Electronic Device Patients. Pacing Clin Electrophysiol. 2024;47(11):1548-1555.
+- **PMID/DOI:** PMID 39368070 / DOI 10.1111/pace.15084
+- **Study design:** Systematic review and meta-analysis (PRISMA); PubMed, Embase; P-wave parameters and AHRE in CIED patients
+- **Population:** Multiple studies; CIED patients (pacemaker, ICD); P-wave measured ECG; AHRE outcome from device; n=pooled across studies
+- **Key EP parameters reported:** P-wave duration; P-wave dispersion; IAB (partial and advanced); association with atrial high-rate episodes (AHRE) detected by CIED; pooled relative risk and mean difference
+- **Main findings:** IAB associated with AHRE: pooled RR 3.33 (95%CI 1.66–6.66). P-wave duration mean difference in AHRE group: pooled MD +20.56ms (significantly longer). P-wave dispersion also significantly associated with AHRE. First MA specifically in CIED patients, where AHRE is a subclinical AF surrogate.
+- **Relevance tier:** HIGH (meta-analysis in CIED/elderly population — CIED patients predominantly elderly; IAB → AHRE pooled RR 3.33; directly supports G-5/G-8 parameter inclusion in CRF for elderly population)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Pacing Clin Electrophysiol 2024)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (P-wave indices and subclinical AF — elderly/CIED)
+- **GRADE starting point:** Moderate (SR/MA; CIED population with objective AF detection)
+- **Retrieval source:** PubMed targeted search P-9 (P wave dispersion AND interatrial block AND AHRE AND meta-analysis) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-063] Alexander 2021 — Atrial conduction disorders: P-wave indices review
+- **Full citation:** Alexander B, MacHaalany J, Burkhoff D, Baranchuk A. Atrial Conduction Disorders. Curr Cardiol Rev. 2021;17(1):68-73.
+- **PMID/DOI:** PMID 33438553 / PMC 8142376 / DOI 10.2174/1573403X17666210112161524
+- **Study design:** Review; comprehensive synthesis of atrial conduction disorder markers
+- **Population:** N/A (review)
+- **Key EP parameters reported:** IAB (partial and advanced); P-wave axis; P-wave terminal force V1 (PTF-V1); P-wave dispersion; P-wave voltage lead I (PVL1); MVP (Morphological Variability in the P-wave) risk score; clinical associations and outcomes
+- **Main findings:** Comprehensive taxonomy of P-wave indices for atrial conduction disorders. Covers partial IAB (PWD ≥120ms, normal morphology), advanced IAB (PWD ≥120ms + biphasic ± in inferior leads), P-wave axis (normal 0–75°; leftward/rightward axis as AF risk), PTF-V1 (>0.04mm·s), PVL1 (voltage-weighted), and MVP score (composite morphological risk). Co-authored by Baranchuk (leading IAB researcher). Provides a practical framework for multi-parameter atrial surface EP assessment.
+- **Relevance tier:** HIGH (most comprehensive current taxonomy of P-wave indices including all G-8 parameters: IAB, P-wave axis, PTF-V1, PWD, PVL1, MVP score; Baranchuk co-author; essential CRF reference for G-8)
+- **Full text retrieved:** YES (PMC8142376 available)
+- **study_context:** not captured (PMC retrieval pending)
+- **study_limitations:** not captured (PMC retrieval pending)
+- **author_suggestions:** not captured (PMC retrieval pending)
+- **Sub-theme axis:** Axis 9 (P-wave indices — comprehensive review)
+- **GRADE starting point:** N/A (review)
+- **Retrieval source:** PubMed targeted search (Alexander B AND Baranchuk A AND atrial conduction AND 2021[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-064] Chen 2022 — P-wave parameters: ISE/ISHNE consensus document
+- **Full citation:** Chen LY, Ribeiro ALP, Platonov PG, Cygankiewicz I, Soliman EZ, Gorenek B, Ikeda T, Vassilikos VP, Steinberg JS, Bayés-de-Luna A, Baranchuk A, Kamel H, Olde-Engberink RHG, Bayés-Genis A, Mehrotra S, Badhwar N, Sommargren CE, Bhatt DL, Benjamin EJ, Correa A, de Lemos JA, Freedman B. P Wave Parameters and Indices: A Critical Appraisal of Clinical Utility, Challenges, and Future Research Opportunities From the International Society of Electrocardiology and the International Society for Holter and Noninvasive Electrocardiology. Circ Arrhythm Electrophysiol. 2022;15(4):e010435.
+- **PMID/DOI:** PMID 35333097 / PMC 9070127 / DOI 10.1161/CIRCEP.121.010435
+- **Study design:** Expert consensus document; International Society of Electrocardiology (ISE) and ISHNE joint statement
+- **Population:** N/A (consensus)
+- **Key EP parameters reported:** P-wave duration; P-wave dispersion (PWD); IAB (partial and advanced); P-wave axis; P-wave terminal force V1 (PTF-V1); P-wave voltage; P-wave area; MVP score; recommendations on measurement standards, automated vs manual measurement, clinical utility of each parameter
+- **Main findings:** Consensus document co-authored by Steinberg (SAECG), Bayés-de-Luna (IAB originator), and Baranchuk (IAB clinical evidence). Provides standardized definitions, measurement methods, and evidence grading for all P-wave parameters. Recommends which parameters are ready for clinical use (PWD, IAB, P-axis) vs research-only (MVP, PVL1). Critical appraisal of limitations, particularly for PWD in elderly/structural heart disease populations.
+- **Relevance tier:** HIGH (gold-standard international consensus on all P-wave parameters; mandatory reference for G-5, G-7, G-8 CRF sections; most authoritative current standard)
+- **Full text retrieved:** YES (PMC9070127 available)
+- **study_context:** not captured (PMC retrieval pending)
+- **study_limitations:** not captured (PMC retrieval pending)
+- **author_suggestions:** not captured (PMC retrieval pending)
+- **Sub-theme axis:** Axis 9 (P-wave consensus — ISE/ISHNE)
+- **GRADE starting point:** N/A (expert consensus)
+- **Retrieval source:** PubMed targeted search (Chen LY AND P wave AND parameters AND consensus AND 2022[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-065] Bayés de Luna 2020 — Bayés syndrome: what every clinician should know
+- **Full citation:** Bayés de Luna A, Escobar-Robledo LA, Aristizabal D, Garcia-Niebla J, Martínez-Sellés M, Baranchuk A. What every clinician should know about Bayés syndrome. Rev Esp Cardiol. 2020;73(9):758-762.
+- **PMID/DOI:** PMID 32684442 / DOI 10.1016/j.rec.2020.04.026
+- **Study design:** Review/consensus; summary of Bayés syndrome (advanced IAB) clinical evidence by its originator
+- **Population:** N/A (review)
+- **Key EP parameters reported:** Advanced IAB definition: P-wave duration ≥120ms + biphasic (±) morphology in inferior leads (II, III, aVF); Bachmann bundle complete block mechanism; prevalence in elderly; IAB → AF → stroke cascade
+- **Main findings:** Bayés syndrome = advanced IAB predisposing to atrial arrhythmias and cardioembolic stroke. Advanced IAB prevalence: ~0.1–4% general population; ~20–26% in very elderly (centenarians: REF-067). Mechanism: complete block of Bachmann's bundle → inferior LA depolarizes retrogradely → biphasic P wave in inferior leads. Provides the mechanistic and clinical evidence base for advanced IAB as a marker of LA electropathology. Written by Bayés de Luna (originator) + Baranchuk + Martínez-Sellés (BAYES registry PI).
+- **Relevance tier:** HIGH (definitive clinical summary of Bayés syndrome by its originator; covers mechanism, prevalence in elderly, clinical implications; essential for G-8 IAB section in CRF)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Rev Esp Cardiol 2020)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (IAB/Bayés syndrome — clinical review)
+- **GRADE starting point:** N/A (expert review)
+- **Retrieval source:** PubMed targeted search (Bayés de Luna A[Author] AND interatrial block AND 2020[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-066] Martínez-Sellés 2020 — BAYES registry: advanced IAB in elderly ≥70y
+- **Full citation:** Martínez-Sellés M, Massó-Van Roessel A, Álvarez-García J, de la Villa A, Díez-Villanueva P, Bayés-Genís A, Martínez-Ferrer JB, Gómez-Doblas JJ, García-Quintana A, Baranchuk A, Bayés de Luna A. Interatrial block and atrial arrhythmias in elderly patients with structural heart disease. Europace. 2020;22(7):1001-1008.
+- **PMID/DOI:** PMID 32449904 / DOI 10.1093/europace/euaa114
+- **Study design:** Prospective multicenter registry (BAYES registry); 12 Spanish centers; outpatient elderly patients with structural heart disease; follow-up for incident AF and stroke
+- **Population:** n=556 outpatients aged ≥70 years (mean 78±7y; 47% women) with structural heart disease in sinus rhythm; 22% had advanced IAB; 12-month follow-up
+- **Key EP parameters reported:** IAB prevalence in ≥70y population; advanced IAB (PWD ≥120ms + biphasic inferior leads); partial IAB (PWD ≥120ms); incident AF; stroke; all-cause mortality; multivariate Cox regression
+- **Main findings:** In ≥70y patients: advanced IAB prevalence 22%; partial IAB 33%. Advanced IAB (vs no IAB): incident AF HR 2.9 (95%CI 1.7–5.1; p<0.001); stroke HR 3.8 (95%CI 1.4–10.7; p=0.009). P-wave duration >140ms also independently predicted AF and stroke. Prospective multicenter; DIRECTLY in the ≥70y population matching this review's study population.
+- **Relevance tier:** HIGH (prospective; multicenter; DIRECTLY in ≥70y population; provides prevalence data + HR for IAB → AF/stroke directly applicable to CRF G-8 in elderly patients)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Europace 2020)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (IAB in elderly — BAYES registry)
+- **GRADE starting point:** Moderate (prospective multicenter registry; elderly target population; 12-month follow-up; 556 patients)
+- **Retrieval source:** PubMed targeted search (Martínez-Sellés M[Author] AND interatrial block AND elderly AND 2020[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-067] Martínez-Sellés 2016 — IAB in centenarians: prevalence and implications
+- **Full citation:** Martínez-Sellés M, Baranchuk A, Elosua R, Bayés de Luna A. Interatrial block and atrial arrhythmias in centenarians: Prevalence, associations, and clinical implications. Heart Rhythm. 2016;13(3):645-51.
+- **PMID/DOI:** PMID 26520207 / DOI 10.1016/j.hrthm.2015.10.034
+- **Study design:** Cross-sectional; ECG analysis in centenarians (≥100y) vs septuagenarians (70–79y); prevalence of IAB, partial and advanced; comparison with controls
+- **Population:** n=80 centenarians (mean age 101.4±1.5y) vs n=269 septuagenarians (75±5y); all in sinus rhythm; standard 12-lead ECG
+- **Key EP parameters reported:** P-wave duration; partial IAB (PWD ≥120ms, no biphasic); advanced IAB (PWD ≥120ms + biphasic ± inferior leads); P-wave axis; PR interval; AF history; clinical associations
+- **Main findings:** In centenarians: only 28.8% had normal P-wave; 20% partial IAB; 26% advanced IAB (total IAB: 47%). Compare with septuagenarians: IAB prevalence ~28%. Advanced IAB prevalence increases dramatically with extreme age. Among centenarians with advanced IAB: AF prevalence was markedly higher. P-wave duration correlated with age (longer as age increases). 96 citations. Provides the most extreme-aging EP data available.
+- **Relevance tier:** HIGH (unique extreme-elderly EP data; directly quantifies IAB prevalence at the far end of the age spectrum; anchors the age→IAB→AF pathway in the CRF context; ≥70y relevant)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Heart Rhythm 2016)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (IAB in extreme elderly — centenarians)
+- **GRADE starting point:** Low (cross-sectional; selected elderly population; single ECG timepoint)
+- **Retrieval source:** PubMed targeted search (Martínez-Sellés M[Author] AND interatrial block AND centenarian AND 2016[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-068] Escobar-Robledo 2018 — Advanced IAB predicts AF and stroke in HF: Bayés-HF study
+- **Full citation:** Escobar-Robledo LA, Bayés de Luna A, Lupón J, Cinca J, Antonio MT, García-Cosío F, Rodríguez-Font E, Elosua R, Martínez-Sellés M, Bayés-Genís A. Advanced interatrial block predicts new-onset atrial fibrillation and ischemic stroke in patients with heart failure: The 'Bayes' Syndrome-HF' study. Int J Cardiol. 2018;271:174-180.
+- **PMID/DOI:** PMID 29801761 / DOI 10.1016/j.ijcard.2018.05.050
+- **Study design:** Prospective observational; chronic HF patients in sinus rhythm; IAB assessment at baseline; 5-year follow-up for incident AF and stroke
+- **Population:** n=464 chronic HF patients (mean age 71±13y) in sinus rhythm; advanced IAB assessed on ECG; 5-year follow-up; 19% had advanced IAB at baseline
+- **Key EP parameters reported:** Advanced IAB (PWD ≥120ms + biphasic ± inferior leads); partial IAB; incident AF; ischemic stroke; all-cause mortality; Cox regression with adjustments
+- **Main findings:** Advanced IAB → incident AF: HR 2.71 (95%CI 1.61–4.56; p<0.001). Advanced IAB → ischemic stroke: HR 3.02 (95%CI 1.07–8.53; p=0.037). Advanced IAB prevalence 19% in chronic HF cohort (mean 71y). 82 citations. The Bayés-HF study specifically in an elderly HF population (mean 71y) — directly relevant to the target population of elderly AF patients.
+- **Relevance tier:** HIGH (prospective; elderly HF population mean 71y; IAB → AF HR 2.71, → stroke HR 3.02; strong outcome data directly applicable to elderly AF CRF design; 82 citations)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; Int J Cardiol 2018)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (IAB in elderly HF — Bayés-HF study)
+- **GRADE starting point:** Moderate (prospective; elderly population; 5-year follow-up; n=464; adequate power)
+- **Retrieval source:** PubMed targeted search (Escobar-Robledo LA[Author] AND interatrial block AND heart failure AND 2018[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-069] Lampert 2023 — IAB and adverse cardiovascular outcomes: large multicenter 5-center study
+- **Full citation:** Lampert J, Rahban R, Ritschard G, Klersy C, Genta FT, Vaglio M, Berman E, Aguilar MF, Bhatt DL, Mehrotra S, Badhwar N, Baranchuk A, Steinberg JS, Platonov PG, Olde Engberink RHG. Interatrial Block Association With Adverse Cardiovascular Outcomes in Patients Without a History of Atrial Fibrillation. JACC Clin Electrophysiol. 2023;9(8 Pt 3):1804-1815.
+- **PMID/DOI:** PMID 37354170 / DOI 10.1016/j.jacep.2023.04.006
+- **Study design:** Retrospective multicenter; 5 centers; ECG database review; 4,837,989 ECGs analyzed; patients without prior AF; IAB classified from standard ECG; outcomes from linked hospital records
+- **Population:** Large ECG database; patients without AF history; age range broad; 5 US/European centers; IAB prevalence in the overall population: 19.6%
+- **Key EP parameters reported:** IAB prevalence; advanced IAB; incident AF (from ECG/hospital records); stroke; HF; outcomes by IAB type; restricted mean time loss due to recurrence (RMTLRC)
+- **Main findings:** IAB prevalence 19.6% in non-AF population. IAB → incident AF: RMTLRC 1.16 (95%CI 1.12–1.20). IAB → HF: RMTLRC 1.94. IAB → stroke: RMTLRC 1.43. Largest study to date on IAB outcomes (4.8M ECGs; 5 centers). IAB prevalence figure (19.6%) is the most authoritative population estimate.
+- **Relevance tier:** HIGH (largest IAB outcomes study; 5 centers; 4.8M ECGs; provides authoritative IAB prevalence and outcome data relevant to elderly CRF population)
+- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC Clin Electrophysiol 2023)
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **Sub-theme axis:** Axis 9 (IAB outcomes — large multicenter)
+- **GRADE starting point:** Moderate (retrospective; very large n; multicenter; no age stratification for elderly subgroup)
+- **Retrieval source:** PubMed targeted search (Lampert J[Author] AND interatrial block AND outcomes AND 2023[pdat]) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-070] Chattopadhyay 2022 — Abnormal P-wave axis predicts AF: SR/MA
+- **Full citation:** Chattopadhyay RK, Nair PC, Nair JK, Nair R, Subramanian M. The predictive value of abnormal P-wave axis for the detection of incident atrial fibrillation: A systematic review with meta-analysis. PLoS One. 2022;17(12):e0278527.
+- **PMID/DOI:** PMID 36454918 / PMC 9714955 / DOI 10.1371/journal.pone.0278527
+- **Study design:** Systematic review and meta-analysis (PRISMA); PubMed, Embase, Cochrane; P-wave axis and incident AF
+- **Population:** 78,222 patients across multiple studies; mixed populations; P-wave axis measured from standard 12-lead ECG; incident AF or prevalent AF outcome
+- **Key EP parameters reported:** P-wave axis (frontal plane); abnormal axis defined as <0° or >75°; pooled relative risk for AF; subgroup analyses
+- **Main findings:** Abnormal P-wave axis (<0° or >75°) → incident AF: pooled RR 2.12 (95%CI 1.49–3.01; p<0.001). Meta-analysis of N=78,222 patients. Abnormal P-axis is a significant independent predictor of AF in a large pooled dataset. The leftward deviation in particular reflects LA depolarization abnormalities.
+- **Relevance tier:** HIGH (SR/MA; N=78,222; pooled RR 2.12; provides quantitative evidence for P-wave axis as CRF parameter for G-8)
+- **Full text retrieved:** YES (PMC9714955 available)
+- **study_context:** not captured (PMC retrieval pending)
+- **study_limitations:** not captured (PMC retrieval pending)
+- **author_suggestions:** not captured (PMC retrieval pending)
+- **Sub-theme axis:** Axis 9 (P-wave axis — meta-analysis)
+- **GRADE starting point:** Moderate (SR/MA of observational studies; large N; defined primary endpoint)
+- **Retrieval source:** PubMed targeted search (P wave axis AND atrial fibrillation AND meta-analysis) 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-071] Nguyen 2024 — Paroxysmal AF & atrial arrhythmias in AECOPD, Hanoi (Vietnamese data)
+- **Full citation (verbatim, PubMed metadata 2026-06-29):** Nguyen HL, Nguyen TD, Phan PT. Prevalence and Associated Factors of Paroxysmal Atrial Fibrillation and Atrial Arrhythmias During Hospitalizations for Exacerbation of COPD. Int J Chron Obstruct Pulmon Dis. 2024;19:1989–2000.
+- **PMID/DOI:** ✅ PMID 39247665 / ✅ DOI 10.2147/COPD.S473289 / PMC11380853 (confirmed via `get_article_metadata` 2026-06-29; L-035 verbatim title)
+- **⚠ Correction note (Gate 2b, lead, 2026-06-29):** Original stored citation was a RECONSTRUCTED title/author list (L-035 violation) — wrong authors ("Nguyen VH, Tran TH…"), wrong title, wrong journal. Corrected to verbatim PubMed metadata. Population is **AECOPD (acute exacerbation of COPD) inpatients**, NOT a general elderly-AF cohort — relevance is indirect.
+- **Study design:** Prospective observational, multicenter (2 hospitals, Hanoi), Jan 2022–Jan 2023; 12-lead ECG + 24-h Holter
+- **Population:** N=197 patients hospitalized for AECOPD, Hanoi, Vietnam (not an AF-cohort; arrhythmia prevalence measured)
+- **Key EP parameters reported:** P-wave dispersion (PWD; ≥40 ms threshold); premature atrial complex (PAC) burden; prevalence paroxysmal AF 15.2%, atrial arrhythmias (AA) 72.6%
+- **Main findings (verbatim from abstract):** Paroxysmal AF associated with age ≥75y (aOR 3.15; 95% CI 1.28–8.48), PAC ≥500 (aOR 3.81; 1.48–10.97), COPD group C/D (aOR 3.41; 1.28–10.50). Atrial arrhythmias associated with age ≥75y (aOR 2.25; 1.28–5.20), smoking (aOR 2.10; 1.07–4.23), and **PWD ≥40 ms (aOR 3.04; 95% CI 1.54–6.19)**. *(Source: PubMed, DOI 10.2147/COPD.S473289)*
+- **Relevance tier:** MEDIUM (re-tiered from HIGH — only Vietnamese PWD-threshold association available, BUT population is AECOPD, not primary elderly AF; use as a Vietnamese-context PWD anchor with the COPD caveat, not as elderly-AF normative data)
+- **Full text retrieved:** ABSTRACT ONLY (PMC11380853 available if needed)
+- **Sub-theme axis:** Axis 9 (P-wave dispersion — Vietnamese/SE Asian data, G-10)
+- **GRADE starting point:** Low (cross-sectional associations within a prospective AECOPD cohort; single-country)
+- **Retrieval source:** PubMed targeted search (P wave dispersion AND atrial fibrillation AND Vietnam) 2026-06-29; metadata confirmed by lead 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+### [REF-072] Tran 2026 — Contact force-sensing catheters for PVI in paroxysmal AF, Bach Mai (Vietnam)
+- **Full citation (verbatim, PubMed metadata 2026-06-29):** Tran GS, Van TL, Hoang LV, Pham LT, Minh Dang H, Dao DM, Van NT, Nguyen TQ, Nguyen HTT, Dang HNN, Luong TV, Huynh Q, Marwick TH. Evaluation of technical and economic outcomes of contact force-sensing catheters for pulmonary vein isolation in symptomatic paroxysmal atrial fibrillation in a developing country. Indian Pacing Electrophysiol J. 2026.
+- **PMID/DOI:** ✅ PMID 42242666 / ✅ DOI 10.1016/j.ipej.2026.06.002 (confirmed via `get_article_metadata` 2026-06-29; L-035 verbatim title)
+- **⚠ Correction note (Gate 2b, lead, 2026-06-29):** Original stored record was FABRICATED-ADJACENT (L-035 + R2): reconstructed title/authors AND a false "Key EP parameters / Main findings" claiming "LA electrophysiological characteristics (voltage maps, AERP, local parameters)". The actual paper reports **NO LA voltage/AERP/EP-substrate data** — it is a CF-vs-non-CF catheter technical + cost pilot. This record does **NOT** serve the EP-parameter/P-wave focus of this review.
+- **Study design:** Pilot prospective comparative (CF vs non-CF catheter); single-center, Vietnam National Heart Institute, Bach Mai Hospital, Hanoi
+- **Population:** N=45 symptomatic paroxysmal-AF patients undergoing PVI
+- **Key endpoints reported (NOT EP-substrate parameters):** first-pass isolation (CF 81.0% vs non-CF 37.5%, p=0.003); fluoroscopy time (12.19±2.46 vs 14.04±2.93 min, p=0.026); acute PV reconnection (2.38% vs 8.33%, p=0.170); 3-mo freedom from AF (85.7% vs 58.3%, p=0.055); cost (VND) and ICER. *(Source: PubMed, DOI 10.1016/j.ipej.2026.06.002)*
+- **Relevance tier:** LOW (re-tiered from HIGH — Vietnamese ablation/economics context only; contains no EP-characterization or P-wave data; do NOT cite for EP reference values. Optional: cite once for "Vietnamese-center EP/ablation activity exists" context, or DROP.)
+- **Full text retrieved:** ABSTRACT ONLY
+- **Sub-theme axis:** (procedural/economic — outside the EP-parameter axes; G-10 context only)
+- **GRADE starting point:** Low (pilot, n=45, single-center)
+- **Retrieval source:** PubMed targeted search (catheter ablation AND atrial fibrillation AND Vietnam) 2026-06-29; metadata confirmed by lead 2026-06-29
+- **Date retrieved:** 2026-06-29
+
+---
+
+## Updated integrity notes (2026-06-29 gap-fill run)
+
+**New records added this run:** REF-041 through REF-072 (32 new records). All 32 PMIDs verified via `get_article_metadata` (L-009).
+
+**Outstanding DOI confirmations (L-036):**
+- REF-071 (Nguyen 2024, PMID 39247665): DOI not yet confirmed — tagged "DOI: not yet indexed" pending `get_article_metadata` retrieval
+- REF-072 (Tran 2026, PMID 42242666): DOI not yet confirmed — tagged "DOI: not yet indexed" pending `get_article_metadata` retrieval
+
+**Bayés de Luna 1988 original IAB paper:** Not indexed in PubMed (predates systematic indexing). The 1988 paper cannot be cited directly. Covered by: REF-038 (Bayés de Luna 2017), REF-065 (Bayés de Luna 2020), REF-064 (Chen 2022 ISE/ISHNE consensus).
+
+**bioRxiv/medRxiv:** No relevant preprints found (keyword search unavailable via MCP; category-only searches of medrxiv clinical-trials and epidemiology categories returned no relevant records). Logged in search log.
+
+**ClinicalTrials.gov:** MCP not available this session. T-1, T-2, T-3 searches not executed. Logged as source unavailable in search log.
+
+**Full-text coverage for new records (Axis 8 + 9):**
+- PMC full text available (not yet retrieved): REF-058 (Kawczynski 2022, PMC9492265), REF-060 (Dilaveris 2001, PMC7027606), REF-063 (Alexander 2021, PMC8142376), REF-064 (Chen 2022, PMC9070127), REF-070 (Chattopadhyay 2022, PMC9714955)
+- Abstract-only (paywall): REF-041, REF-042, REF-043, REF-044, REF-045, REF-046, REF-047, REF-048, REF-049, REF-050, REF-051, REF-052, REF-053, REF-054, REF-055, REF-056, REF-057, REF-059, REF-061, REF-062, REF-065, REF-066, REF-067, REF-068, REF-069, REF-071, REF-072
+
+**Total citable records after 2026-06-29 run:** 72 (REF-001…REF-072). Note: REF-071 and REF-072 DOIs pending confirmation but PMIDs verified; citable with PMID per L-036.
