@@ -891,16 +891,16 @@
 - **Study design:** Prospective invasive EP study with 3D electroanatomic mapping (CARTO); 3 age groups: ≤30y (n=15), 31–59y (n=13), ≥60y (n=13); n=41 total; no significant structural heart disease; sinus rhythm
 - **Population:** 41 patients in 3 age strata (≤30y / 31–59y / ≥60y); mixed (23M/18F)
 - **Key EP parameters reported:** AERP (RA and LA at 600/500/400ms pacing); P-wave duration and dispersion; coronary sinus conduction time (CT); corrected sinus node recovery time (cSNRT); electrogram voltage (bipolar and unipolar) by region; interatrial conduction time; electroanatomic voltage maps
-- **Main findings:** With advancing age (≤30 vs ≥60y): AERP increased (RA 195→262ms at 600ms PCL); cSNRT prolonged; P-wave duration increased; LA electroanatomic voltage decreased; CS conduction time increased. Older patients had more areas of low voltage and more heterogeneous EP properties. AF inducibility correlated with age-related changes. 451 citations.
+- **Main findings:** ⚠ **Correction (2026-06-30, full text verified):** the original abstract-derived entry stated "AERP increased (RA 195→262ms at 600ms PCL)" — this specific numeric claim does NOT appear anywhere in the full text (verified absent on full-text search for "195" and "262" as AERP values) and is removed as unverifiable. The full text instead reports: AERP increased significantly with age across all atrial sites/cycle lengths (positive correlation with age: r=0.56 at 600ms, r=0.55 at 500ms, r=0.58 at 400ms PCL; p<0.01), but does not tabulate group-specific ms values usable verbatim. Verified verbatim findings: P-wave duration increased with age — group A (≥60y) 103.5±1.9ms, group B (31–59y) 96.8±3.9ms, group C (≤30y) 91.4±2.9ms (p<0.01; r=0.60 for correlation with age, p<0.01). Bipolar voltage amplitude reduced with age — group A 1.9±0.1mV, group B 1.6±0.1mV vs group C 3.0±0.3mV. Voltage dispersion (% abnormal points) greater in group A 16.0±2.9% and group B 12.3±3.5% vs group C 3.1±1.0% (p<0.01 and p<0.05 respectively); total abnormal-signal voltage dispersion group A 70.1±3.0% vs group C 56.6±2.2% (p<0.05), group B intermediate. Conduction velocity reduced in groups A and B vs group C (p<0.05). Corrected SNRTmax increased significantly with age (longest in group A at all cycle lengths). Rate adaptation of refractoriness (ERP600−ERP400) was preserved with aging (no significant group difference). No significant change in dispersion/heterogeneity of atrial ERP between groups. CS conduction delay (more double potentials) greater in group A vs B and C. Older patients (groups A, B) had more extensive low-voltage/fractionated-signal areas than group C. 451 citations.
 - **Relevance tier:** HIGH (landmark; provides the most comprehensive age-stratified invasive EP reference values including ≥60y group; cited by virtually all subsequent aging-EP studies; directly maps to G-1, G-3, G-4 CRF parameters)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC 2004)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
+- **Full text retrieved:** YES — full text supplied by user (HTML, source/la-ep-elderly-af/) and verified 2026-06-30
+- **study_context:** Prospective single-center invasive EP study with 3D electroanatomic (CARTO) mapping; designed to isolate the effect of age per se on atrial electrical/structural properties using patients without structural heart disease referred for unrelated EP studies (RFA for AVNRT/AVRT, syncope work-up)
+- **study_limitations:** Cross-sectional design (no longitudinal follow-up); mixed-sex groups not matched for sex distribution; small per-group n (13–15); no AF group included (cannot directly link findings to AF outcomes); single-center
+- **author_suggestions:** Age-related atrial electrical and structural remodeling (AERP prolongation, voltage reduction, conduction slowing, SNRT prolongation) may form part of the substrate predisposing the elderly atrium to AF; warrants further study correlating these changes directly with AF inducibility/occurrence
 - **Sub-theme axis:** Axis 8 (invasive EP — aging landmark)
 - **GRADE starting point:** Low (cross-sectional; mixed gender; no AF group; small n=41)
-- **Retrieval source:** PubMed targeted search P-7 (Kistler P[Author] AND electrophysiologic AND aging AND human atrium AND 2004[pdat]) 2026-06-29; 451 citations confirm landmark status
-- **Date retrieved:** 2026-06-29
+- **Retrieval source:** PubMed targeted search P-7 (Kistler P[Author] AND electrophysiologic AND aging AND human atrium AND 2004[pdat]) 2026-06-29; 451 citations confirm landmark status; full text supplied by user 2026-06-30
+- **Date retrieved:** 2026-06-29 (abstract); 2026-06-30 (full text)
 
 ---
 
@@ -910,16 +910,16 @@
 - **Study design:** Retrospective cohort with prospective EP data; 12-year follow-up; invasive AERP measurement at baseline; AF outcomes tracked
 - **Population:** n=1,308 patients undergoing diagnostic EP study for various arrhythmias (SVT, no prior AF); baseline AERP measured; followed median 12 years for new-onset AF
 - **Key EP parameters reported:** AERP (measured invasively at baseline); time-to-first AF; adjusted hazard ratio for new-onset AF; AERP threshold ≥280ms
-- **Main findings:** AERP ≥280ms at baseline predicted new-onset AF over 12-year follow-up: aHR 2.08 (95% CI 1.23–3.53; p=0.006). AERP was an independent predictor after adjusting for age, hypertension, LA size, and other traditional AF risk factors. The paradox of prolonged AERP predicting AF is consistent with bradycardia-induced electrical remodeling and the role of cSNRT/sick sinus syndrome in elderly AF.
+- **Main findings:** ⚠ **Correction (2026-06-30, full text verified):** the original entry stated "aHR 2.08 (95% CI 1.23–3.53; p=0.006)" — the point estimate (2.08) was correct but the 95% CI and p-value were wrong. Verified verbatim from full text: n=1308 patients with no overt structural heart disease; baseline AERP 234±31ms; mean follow-up 12.3±6.0 years; 51/1308 (3.9%) developed new-onset AF. Univariate: AERP ≥280ms unadjusted HR 2.54 (95% CI 1.27–5.07, p=0.008). Multivariate-adjusted: AERP ≥280ms aHR 2.08 (95% CI 1.03–4.21, p=0.041); age aHR 1.40 per 10 years (95% CI 1.15–1.70, p=0.001) — both independent predictors of new-onset AF. Conclusion: AERP increased with age, and prolonged AERP was independently associated with future AF risk.
 - **Relevance tier:** HIGH (only long-term follow-up study linking baseline AERP to AF incidence; directly relevant to AERP threshold for CRF G-1; 12-year data)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; Heart Rhythm 2016)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
+- **Full text retrieved:** YES — full text supplied by user (HTML, source/la-ep-elderly-af/) and verified 2026-06-30
+- **study_context:** Retrospective cohort of patients referred for diagnostic invasive EP study (supraventricular tachycardia work-up, no overt structural heart disease, no AF at baseline); baseline AERP measured invasively; followed long-term for new-onset AF to test whether prolonged (not shortened) AERP predicts AF
+- **study_limitations:** Retrospective design; EP-referral population (SVT work-up) not representative of general elderly population; relatively low event rate (51/1308, 3.9%) limits precision of multivariate estimates (wide 95% CIs)
+- **author_suggestions:** Prolonged AERP at baseline may reflect an aging-related atrial substrate (alongside increasing age itself) that predisposes to future AF; warrants further mechanistic study of why prolonged (rather than shortened) AERP associates with AF risk in this population
 - **Sub-theme axis:** Axis 8 (invasive EP — AERP prognosis)
 - **GRADE starting point:** Low (retrospective cohort; EP study population not representative of general elderly AF population)
-- **Retrieval source:** PubMed targeted search P-7 (Lee JM[Author] AND atrial refractoriness AND atrial fibrillation AND 2016[pdat]) 2026-06-29
-- **Date retrieved:** 2026-06-29
+- **Retrieval source:** PubMed targeted search P-7 (Lee JM[Author] AND atrial refractoriness AND atrial fibrillation AND 2016[pdat]) 2026-06-29; full text supplied by user 2026-06-30
+- **Date retrieved:** 2026-06-29 (abstract); 2026-06-30 (full text)
 
 ---
 
@@ -1004,17 +1004,17 @@
 - **PMID/DOI:** PMID 30404745 / DOI 10.1016/j.cjca.2018.08.007
 - **Study design:** Narrative review; authoritative (senior authors: Khairy P and Nattel S — AF electrophysiology leaders)
 - **Population:** N/A (systematic narrative review of age–AF relationship)
-- **Key EP parameters reported:** AERP at different ages; ionic/channel basis for age-related EP changes; mechanisms underlying paradoxical AERP prolongation vs shortening; tachycardia-induced vs intrinsic remodeling; atrial fibrosis with aging; autonomic changes; AF threshold
-- **Main findings:** Comprehensive review showing that age exerts a "two-sided" influence on AF: (1) younger patients have AF driven by triggers (prolonged AERP + short coupling intervals → ERP-related induction); (2) elderly patients have AF driven by structural/fibrotic substrate with heterogeneous AERP (not simply short AERP). Explains the AERP paradox: why AERP ≥280ms paradoxically predicts AF incidence (REF-043) — it reflects abnormal substrate with sinus node dysfunction and rate-dependent inadequate AERP adaptation in elderly. Covers ionic mechanisms (IKur, ICaL, If changes with age), autonomic remodeling, and clinical implications.
-- **Relevance tier:** HIGH (resolves the G-9 AERP paradox; provides mechanistic framework for interpreting AERP data in elderly; by Khairy + Nattel — essential review)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; Can J Cardiol 2018)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
-- **Sub-theme axis:** Axis 8 (invasive EP — AERP paradox / age mechanism)
+- **Key EP parameters reported:** Atrial action-potential duration (APD)/ERP changes with aging; ionic currents (IKur, Ito, Isus, IKACh upregulated; ICaL downregulated); resting membrane potential depolarization; atrial fibrosis; connexin-43 dysregulation; sinus node dysfunction (SND); Ca²⁺-handling abnormalities (RyR2 leak, JNK-CaMKII pathway); sex-hormone effects; congenital heart disease/athlete data on AF "resilience" at young age
+- **Main findings:** ⚠ **Correction (2026-06-30, full text verified):** the original entry's claim that this review "explains the AERP paradox: why AERP ≥280ms paradoxically predicts AF incidence (REF-043)" is **not supported by the full text** — the terms "paradox" and "280ms" do not appear anywhere in the article (verified by full-text search); this was an unsupported inferential link to REF-043 that has been removed. Verified verbatim findings: the review proposes a "two-sided" relationship between age and AF — aging promotes AF via structural remodeling (atrial fibrosis, preferentially in the LA posterior wall; connexin-43 downregulation; senile amyloidosis), electrical remodeling (APD/ERP prolongation with regional dispersion; resting-membrane depolarization — both favoring afterdepolarizations), ion-channel changes (IKur/Ito/Isus/IKACh upregulated, ICaL downregulated), sinus node dysfunction sharing a common aging-cardiomyopathy substrate with AF, and Ca²⁺-handling abnormalities (RyR2 diastolic SR Ca²⁺-leak via JNK-CaMKII activation, demonstrated in aged mouse/human atrial samples) driving triggered ectopic activity. Conversely, young age appears protective against AF even with substantial atrial remodeling (e.g., low AF prevalence in young congenital heart disease patients with severely enlarged/fibrotic atria; rat model showing young atria sustain only regular atrial tachycardia, not AF, after cell-uncoupling). Declining testosterone with age is also implicated (castration increases AF inducibility in rats, reversed by testosterone). No specific AERP cutoff or "paradox" framing is discussed; the review supports the general concept of age-related atrial cardiomyopathy as the unifying substrate, applicable as background mechanism context (not as direct resolution) for the elevated-AERP finding reported in REF-043.
+- **Relevance tier:** HIGH (mechanistic framework for age-related atrial remodeling and AF promotion; by Khairy + Nattel — essential review; provides background context, not a direct explanation, for REF-043's AERP finding)
+- **Full text retrieved:** YES — full text supplied by user (HTML, source/la-ep-elderly-af/) and verified 2026-06-30
+- **study_context:** Narrative review by senior AF electrophysiology authors (Khairy, Nattel) examining age as a "two-sided" determinant of AF risk — synthesizing epidemiological, structural, electrophysiological, ionic, and molecular evidence for why aging promotes AF and why young age (even with substantial atrial remodeling, e.g., congenital heart disease) appears protective
+- **study_limitations:** Narrative (non-systematic) review — no formal quality appraisal of included studies; evidence base is heterogeneous across species (rat/rabbit/canine/mouse models and human data) with discordant findings noted by the authors themselves for some endophenotypes (e.g., atrial ERP changes with age); mechanistic, not population-based prognostic data
+- **author_suggestions:** Better characterization of the molecular mechanisms protecting younger atria from AF (resilience) could reveal new therapeutic targets; authors call for further work on the JNK-CaMKII Ca²⁺-handling pathway and on non-fibrotic structural contributors (amyloidosis, fibroblast-cardiomyocyte coupling) to aging-related AF
+- **Sub-theme axis:** Axis 8 (invasive EP / mechanism — age-related atrial remodeling)
 - **GRADE starting point:** N/A (narrative review; Level III evidence)
-- **Retrieval source:** PubMed targeted search P-7 (Laredo M[Author] AND age AND atrial fibrillation AND 2018[pdat]) 2026-06-29
-- **Date retrieved:** 2026-06-29
+- **Retrieval source:** PubMed targeted search P-7 (Laredo M[Author] AND age AND atrial fibrillation AND 2018[pdat]) 2026-06-29; full text supplied by user 2026-06-30
+- **Date retrieved:** 2026-06-29 (abstract); 2026-06-30 (full text)
 
 ---
 
@@ -1099,16 +1099,16 @@
 - **Study design:** Prospective case-control; SAECG in paroxysmal AF patients vs matched controls in sinus rhythm
 - **Population:** n=42 patients with documented paroxysmal AF (in sinus rhythm at study) vs n=50 age-sex matched controls without AF; all in sinus rhythm; SAECG performed with 40Hz high-pass filter
 - **Key EP parameters reported:** P-wave duration on SAECG (Ad); root-mean-square voltage in terminal 20ms of P-wave (LP20); thresholds: Ad>120ms AND LP20≤3.5μV; sensitivity, specificity, positive predictive value for paroxysmal AF
-- **Main findings:** LANDMARK: Among PAF patients, Ad>120ms identified patients at risk: sensitivity 91%, specificity 76%. Combined criteria (Ad>120ms AND LP20≤3.5μV) had sensitivity 91%, specificity 84%, PPV 80%. First demonstration that SAECG-derived filtered P-wave identifies atrial electropathology predisposing to PAF. 358 citations. Established the Ad>120ms threshold used in virtually all subsequent SAECG studies.
+- **Main findings:** ⚠ **Correction (2026-06-30, full text verified):** the original entry mislabeled the combined-criteria result as the single Ad>120ms threshold, and the combined-criteria figures (84%/80%) did not match the real paper. Verified verbatim from full text — **single criteria** (each alone): LP20≤3.5μV: sensitivity 95%, specificity 54%, predictive value 73%. Ad>120ms: sensitivity 95%, specificity 48%, predictive value 70%. **Combined criteria** (LP20≤3.5μV AND Ad>120ms): sensitivity 91%, specificity 76%, predictive accuracy 83%; improved to 91%/86%/89% in the subgroup with organic heart disease. Presence/absence of organic heart disease did not otherwise affect the comparison. First demonstration that SAECG-derived filtered P-wave identifies atrial electropathology predisposing to PAF. 358 citations. Established the Ad>120ms / LP20≤3.5μV combined-criteria threshold used in virtually all subsequent SAECG studies.
 - **Relevance tier:** HIGH (landmark reference for SAECG threshold; first-in-class evidence; 358 citations; essential for G-7 CRF parameter definition)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; Circulation 1991; pre-PMC era)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
+- **Full text retrieved:** YES — full text supplied by user (HTML, source/la-ep-elderly-af/) and verified 2026-06-30
+- **study_context:** Prospective case-control study (n=42 documented PAF in sinus rhythm vs n=50 age-matched controls without AF, 40Hz high-pass-filtered SAECG) designed to test whether P-wave-triggered SAECG can identify patients at risk for PAF during sinus rhythm, independent of presence of organic heart disease
+- **study_limitations:** Small single-center sample (n=92 total); 1991-era SAECG technology (40Hz filter); case-control (not population-screening) design limits generalizability of predictive values; cross-sectional, no prospective incident-AF follow-up
+- **author_suggestions:** The P-wave-triggered SAECG (RMS terminal-20ms voltage and filtered P-wave duration) is a useful, non-invasive screening test for paroxysmal AF risk during sinus rhythm in both patients with and without organic heart disease
 - **Sub-theme axis:** Axis 9 (SAECG — landmark)
 - **GRADE starting point:** Low (prospective case-control; small n=92; single-center; 1991 technology)
-- **Retrieval source:** PubMed targeted search (Fukunami M[Author] AND atrial fibrillation AND signal-averaged AND 1991[pdat]) 2026-06-29; PMID 1984879 confirmed via get_article_metadata
-- **Date retrieved:** 2026-06-29
+- **Retrieval source:** PubMed targeted search (Fukunami M[Author] AND atrial fibrillation AND signal-averaged AND 1991[pdat]) 2026-06-29; PMID 1984879 confirmed via get_article_metadata; full text supplied by user 2026-06-30
+- **Date retrieved:** 2026-06-29 (abstract); 2026-06-30 (full text)
 
 ---
 
@@ -1211,18 +1211,18 @@
 - **Full citation:** Dilaveris PE, Gialafos EJ, Sideris SK, Theopistou AM, Andrikopoulos GK, Kyriakidis M, Gialafos JE, Toutouzas PK. Simple electrocardiographic markers for the prediction of paroxysmal idiopathic atrial fibrillation. Am Heart J. 1998;135(5 Pt 1):733-8.
 - **PMID/DOI:** PMID 9588401 / DOI 10.1016/s0002-8703(98)70030-4
 - **Study design:** Prospective case-control; standard 12-lead ECG in paroxysmal AF patients vs matched controls
-- **Population:** n=50 patients with documented paroxysmal idiopathic AF (no structural heart disease; age 40–70y) vs n=50 age-sex-matched controls; ECG during sinus rhythm; 12-lead simultaneous acquisition
-- **Key EP parameters reported:** Maximum P-wave duration (Pmax); minimum P-wave duration (Pmin); P-wave dispersion (PWD = Pmax − Pmin); thresholds optimized by ROC analysis
-- **Main findings:** LANDMARK (710 citations): Pmax ≥110ms: sensitivity 88%, specificity 75% for identifying PAF patients. PWD ≥40ms: sensitivity 83%, specificity 85%. Both Pmax and PWD independently predicted PAF. Established the PWD ≥40ms and Pmax ≥110ms thresholds that became the international standard for over 25 years. First rigorous standardization of PWD measurement method.
+- **Population:** ⚠ **Correction (2026-06-30, full text verified):** the stored population figures (n=50 patients vs n=50 controls; age 40–70y) were wrong. Verified verbatim: n=60 patients with documented idiopathic paroxysmal AF (40 men/20 women, mean age 59±12y) vs n=40 age- and sex-matched healthy controls (27 men/13 women, mean age 59±11y); no significant baseline differences (heart rate, respiratory rate, QRS/PQ duration, LA dimension, LVEF); ECG during sinus rhythm, 12-lead simultaneous acquisition, paper speed 50mm/sec
+- **Key EP parameters reported:** Maximum P-wave duration (Pmax); minimum P-wave duration (Pmin); P-wave dispersion (PWD = Pmax − Pmin); thresholds optimized by ROC sensitivity/specificity crossover; short-term reproducibility (3-day repeat)
+- **Main findings:** LANDMARK (710 citations) — sensitivity/specificity figures confirmed accurate against full text: Pmax ≥110ms: sensitivity 88%, specificity 75%, positive predictive accuracy 84%. PWD ≥40ms: sensitivity 83%, specificity 85%, positive predictive accuracy 89%. **Full-text enrichment (2026-06-30):** baseline Pmax 123±16ms (patients) vs 101±10ms (controls), p<0.0001; baseline PWD 49±15ms (patients) vs 28±7ms (controls), p<0.0001. Short-term reproducibility (3-day repeat) was good: r=0.78 (Pmax) and r=0.80 (PWD), both p<0.0001. PWD ≥40ms conferred relative risk 2.37 for PAF recurrence over 12-month follow-up (the corresponding RR figure for Pmax≥110ms was present in the source text but not legibly extractable from the converted file and is not reported here to avoid fabrication). Both Pmax and PWD independently predicted PAF; combining both criteria yielded an even higher predictive accuracy than either alone. Established the PWD ≥40ms and Pmax ≥110ms thresholds that became the international standard for over 25 years. First rigorous standardization of PWD measurement method.
 - **Relevance tier:** HIGH (landmark; 710 citations; established the universal Pmax/PWD thresholds; essential for G-5 CRF parameter definition)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; Am Heart J 1998)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
+- **Full text retrieved:** YES — full text supplied by user (HTML, source/la-ep-elderly-af/) and verified 2026-06-30
+- **study_context:** Prospective case-control study designed to find simple, noninvasive surface-ECG markers (Pmax, PWD) that separate idiopathic PAF patients from healthy controls and could serve as predictors of PAF development; idiopathic PAF strictly defined (structural/other cardiac disease excluded)
+- **study_limitations:** Idiopathic PAF population only (excludes structural heart disease) — younger/healthier than typical elderly AF population; no cardiac biopsy to rule out occult myocardial disease; single-center; P-wave measurements performed manually with calipers (intra/interobserver error <4% Pmax, <6% Pmin)
+- **author_suggestions:** Pmax and PWD are simple ECG markers that could be used for PAF prediction; authors call for further prospective studies in general, non-selected populations, and for evaluation of PWD's ability to select patients likely to benefit from antiarrhythmic therapy
 - **Sub-theme axis:** Axis 9 (P-wave dispersion — landmark)
 - **GRADE starting point:** Low (prospective case-control; idiopathic PAF — younger/healthier than typical elderly AF population; single-center)
-- **Retrieval source:** PubMed targeted search (Dilaveris P[Author] AND P wave AND dispersion AND 1998[pdat]) 2026-06-29
-- **Date retrieved:** 2026-06-29
+- **Retrieval source:** PubMed targeted search (Dilaveris P[Author] AND P wave AND dispersion AND 1998[pdat]) 2026-06-29; full text supplied by user 2026-06-30
+- **Date retrieved:** 2026-06-29 (abstract); 2026-06-30 (full text)
 
 ---
 
@@ -1344,18 +1344,18 @@
 - **Full citation:** Martínez-Sellés M, Massó-Van Roessel A, Álvarez-García J, de la Villa A, Díez-Villanueva P, Bayés-Genís A, Martínez-Ferrer JB, Gómez-Doblas JJ, García-Quintana A, Baranchuk A, Bayés de Luna A. Interatrial block and atrial arrhythmias in elderly patients with structural heart disease. Europace. 2020;22(7):1001-1008.
 - **PMID/DOI:** PMID 32449904 / DOI 10.1093/europace/euaa114
 - **Study design:** Prospective multicenter registry (BAYES registry); 12 Spanish centers; outpatient elderly patients with structural heart disease; follow-up for incident AF and stroke
-- **Population:** n=556 outpatients aged ≥70 years (mean 78±7y; 47% women) with structural heart disease in sinus rhythm; 22% had advanced IAB; 12-month follow-up
-- **Key EP parameters reported:** IAB prevalence in ≥70y population; advanced IAB (PWD ≥120ms + biphasic inferior leads); partial IAB (PWD ≥120ms); incident AF; stroke; all-cause mortality; multivariate Cox regression
-- **Main findings:** In ≥70y patients: advanced IAB prevalence 22%; partial IAB 33%. Advanced IAB (vs no IAB): incident AF HR 2.9 (95%CI 1.7–5.1; p<0.001); stroke HR 3.8 (95%CI 1.4–10.7; p=0.009). P-wave duration >140ms also independently predicted AF and stroke. Prospective multicenter; DIRECTLY in the ≥70y population matching this review's study population.
+- **Population:** ⚠ **Correction (2026-06-30, full text verified):** n=556 was correct, but the IAB-group split and follow-up duration were imprecise. Verified verbatim: of 556 outpatients (≥70y, structural heart disease, sinus rhythm, no prior AF diagnosis), 223 had normal P-wave (40.1%), 196 had partial IAB (35.3%), and 137 had advanced IAB (24.6%). Median follow-up was 694 days (not "12-month"). Mean age was similar across groups (76.5–77.9y, p=0.079 NS); P-wave duration rose by group: 114±15.9ms (normal) / 124±17.3ms (partial) / 130±22.1ms (advanced), p<0.001.
+- **Key EP parameters reported:** IAB prevalence in ≥70y population; advanced IAB (PWD ≥120ms + biphasic inferior leads); partial IAB (PWD ≥120ms, no biphasic); incident AF; stroke; all-cause mortality; multivariate Cox regression (P-wave duration as continuous variable also modeled)
+- **Main findings:** ⚠ **Correction (2026-06-30, full text verified):** the original entry's HR figures (AF HR 2.9, 95%CI 1.7–5.1; stroke HR 3.8, 95%CI 1.4–10.7) come verbatim from the abstract's summary sentence but do not match the paper's own multivariate-adjusted Table 3, which is the definitive reported model. Verified from full text — during median 694-day follow-up: 93 patients (16.7%) developed AF, 30 (5.4%) stroke, 34 (6.1%) died. **Table 3 multivariate-adjusted HRs** (advanced IAB vs normal P-wave, reference=1): AF HR 3.31 (95%CI 1.87–5.86, p<0.001); stroke HR 4.89 (95%CI 1.71–14.05, p=0.003); AF/stroke composite HR 2.91 (95%CI 1.68–5.05, p<0.001); mortality HR 1.33 (95%CI 0.46–3.83, p=0.600, NS). Partial IAB was not significantly associated with any endpoint (AF HR 1.58, 95%CI 0.89–2.80, p=0.115). P-wave duration (per ms, continuous): AF HR 1.044 (95%CI 1.023–1.066, p<0.001); AF/stroke HR 1.040 (95%CI 1.020–1.061, p<0.001); mortality HR 1.042 (95%CI 1.006–1.078, p=0.020); stroke alone NS (HR 1.033, 95%CI 0.998–1.069, p=0.063). The abstract's own headline HRs (2.9/3.8, the numbers originally stored) appear to derive from a less-adjusted or differently-specified model than Table 3; Table 3 is used here as the authoritative verbatim source since it is explicitly labeled "Multivariate adjusted association." Prospective multicenter; DIRECTLY in the ≥70y population matching this review's study population.
 - **Relevance tier:** HIGH (prospective; multicenter; DIRECTLY in ≥70y population; provides prevalence data + HR for IAB → AF/stroke directly applicable to CRF G-8 in elderly patients)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; Europace 2020)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
+- **Full text retrieved:** YES — full text supplied by user (HTML, source/la-ep-elderly-af/) and verified 2026-06-30
+- **study_context:** Prospective multicenter registry (12 Spanish centers) designed to assess, for the first time, whether advanced IAB in sinus rhythm is associated with incident AF and stroke in elderly (≥70y) outpatients with structural heart disease and no prior AF diagnosis — a population not previously studied for this question
+- **study_limitations:** Observational registry (residual confounding possible despite multivariate adjustment); AF detection relied on intermittent ECG/Holter monitoring (likely undercounts paroxysmal/silent AF); wide CIs for stroke/mortality endpoints reflect modest event counts (30 strokes, 34 deaths); stroke was partly self-reported
+- **author_suggestions:** Advanced IAB (Bayés syndrome) in sinus rhythm should be regarded as a clinically useful surrogate marker for AF/stroke risk in elderly structural-heart-disease patients; P-wave duration itself is an independent, continuous risk marker; authors note the unresolved question of whether advanced IAB and AF form a self-perpetuating "vicious circle" and call for study of whether this association extends to younger patients without heart disease
 - **Sub-theme axis:** Axis 9 (IAB in elderly — BAYES registry)
-- **GRADE starting point:** Moderate (prospective multicenter registry; elderly target population; 12-month follow-up; 556 patients)
-- **Retrieval source:** PubMed targeted search (Martínez-Sellés M[Author] AND interatrial block AND elderly AND 2020[pdat]) 2026-06-29
-- **Date retrieved:** 2026-06-29
+- **GRADE starting point:** Moderate (prospective multicenter registry; elderly target population; median 694-day follow-up; 556 patients)
+- **Retrieval source:** PubMed targeted search (Martínez-Sellés M[Author] AND interatrial block AND elderly AND 2020[pdat]) 2026-06-29; full text supplied by user 2026-06-30
+- **Date retrieved:** 2026-06-29 (abstract); 2026-06-30 (full text)
 
 ---
 
@@ -1483,7 +1483,8 @@
 **ClinicalTrials.gov:** MCP not available this session. T-1, T-2, T-3 searches not executed. Logged as source unavailable in search log.
 
 **Full-text coverage for new records (Axis 8 + 9):**
+- Full text retrieved & verified (user-supplied HTML, 2026-06-30): REF-042 (Kistler 2004), REF-043 (Lee 2016), REF-048 (Laredo 2018), REF-053 (Fukunami 1991), REF-059 (Dilaveris 1998), REF-066 (Martínez-Sellés 2020 BAYES). Verification found and corrected numeric discrepancies in REF-042, REF-043, REF-048, REF-053, and REF-066 (see ⚠ Correction notes in each entry); REF-059's sensitivity/specificity figures were confirmed accurate (only population n and RR detail required correction).
 - PMC full text available (not yet retrieved): REF-058 (Kawczynski 2022, PMC9492265), REF-060 (Dilaveris 2001, PMC7027606), REF-063 (Alexander 2021, PMC8142376), REF-064 (Chen 2022, PMC9070127), REF-070 (Chattopadhyay 2022, PMC9714955)
-- Abstract-only (paywall): REF-041, REF-042, REF-043, REF-044, REF-045, REF-046, REF-047, REF-048, REF-049, REF-050, REF-051, REF-052, REF-053, REF-054, REF-055, REF-056, REF-057, REF-059, REF-061, REF-062, REF-065, REF-066, REF-067, REF-068, REF-069, REF-071, REF-072
+- Abstract-only (paywall): REF-041, REF-044, REF-045, REF-046, REF-047, REF-049, REF-050, REF-051, REF-052, REF-054, REF-055, REF-056, REF-057, REF-061, REF-062, REF-065, REF-067, REF-068, REF-069, REF-071, REF-072
 
 **Total citable records after 2026-06-29 run:** 72 (REF-001…REF-072). Note: REF-071 and REF-072 DOIs pending confirmation but PMIDs verified; citable with PMID per L-036.
