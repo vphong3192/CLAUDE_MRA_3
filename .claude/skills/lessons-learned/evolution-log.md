@@ -338,3 +338,15 @@ All 5 defects corrected before final delivery. CRITICAL/MAJOR defects: ZERO.
 
 ### Entry #9 — 2026-06-29 — Dựng tầng tất định (mượn chiến thuật aglr-med, không mượn sự nông cạn)
 Thêm ba checker zero-dependency, không-LLM/không-mạng, tất định, chạy sau LLM và không thể thương lượng — `citation_audit.py` (sàn truy vết sau citation-verifier; HARD-FAIL với fabricated/missing/placeholder/coverage-thấp, Luật 1), `extract_numbers.py` (rổ số nguyên văn có kiểu để appraiser nạp thay vì chép tay), `validate_search_log.py` (kiểm định dạng ledger recall/tái lập). Hai review hoàn thành PASS citation audit tất định (0 false hard-fail); kèm fixture FAIL-path + valid/invalid. Thêm lesson L-039. Nhánh `claude/mra-deterministic-layer-n0t4yj`.
+
+### Entry #10 — 2026-06-30 — Đặc điểm điện học, điện sinh lý nhĩ trái ở bệnh nhân rung nhĩ cao tuổi (tổng quan + bảng CRF)
+- **Task:** Tổng quan tường thuật chuyên sâu (effort=full, ~3000–4000 từ) **+** bảng biến số đề xuất (CRF) — dual Phase-0 deliverable, tiếng Việt, cho bác sỹ tim mạch/EP và học viên nghiên cứu. Vancouver citations, kho 72 bản ghi citable (REF-001…REF-074, trừ REF-046/REF-050).
+- **Rubric:** 0.92 — band **EXCEEDED**. T1 0.9 · T2 0.85 · T3 0.95 · T4 0.95 · T5 1.0 · T6 0.9.
+- **Deterministic citation audit:** PASS, exit 0, 0 HARD-FAIL, 6 WARN không chặn (5 do heuristic định dạng, 1 khoảng trống độ-sâu-kho thực sự, cả hai đều đã truy gốc).
+- **Gates:** Research Map (Phase 3) duyệt "ok". Gate 4b duyệt "bắt đầu viết" — trong một turn riêng biệt, sau khi một sub-approval cấu trúc CRF lồng bên trong (3 câu hỏi có/không) đã được giải quyết và chốt trước.
+- **Coach verdict:** SHIP-AS-IS, một lượt duy nhất, không kích hoạt improvement-pass.
+- **Laws:** 6/6 PASS.
+- **Điểm mạnh:** kỷ luật khoảng trống AFCL (G-2) giữ vững xuyên suốt (không bao giờ dùng REF-074 để lấp khoảng trống một cách âm thầm — REF-074 đo CV ở nhịp xoang không-RN, không phải AFCL); mâu thuẫn nội tại Chattopadhyay (2.12 vs 2.10) báo cáo minh bạch cả hai chiều thay vì tự ý giải quyết; ngôn ngữ GRADE hiệu chỉnh theo cả hai hướng; kiểm tra hoàn chỉnh PICO-subgroup theo L-038 đã pass tường minh.
+- **Rủi ro nêu lên:** một bản ghi kho (REF-003, van der Does) chỉ truy xuất qua Consensus không có full-text, tạo ra các WARN `number_not_in_source` có thể dự đoán nhưng không chặn ở bước audit — chính verifier tự gắn cờ đây là ứng viên lesson.
+- **Process note:** stop-hook git-check kích hoạt nhiều lần trong suốt run vì các artifact `_workspace/` theo từng phase bị bỏ chưa commit ở ranh giới turn; mỗi lần đều được xử lý phản ứng (reactive) bằng add+commit+push ngay sau đó, thay vì commit chủ động tại thời điểm ghi file.
+- **Lessons added:** **L-040** (commit từng artifact ngay khi viết xong, không đợi đến cuối turn), **L-041** (theo dõi trạng thái gate tường minh qua các turn hội thoại phụ xen kẽ), **L-042** (deliverable thứ hai bị khóa ở Phase 0 — vd. bảng cấu trúc — có sub-approval riêng được gắn nhãn, lồng bên trong nhưng tách biệt khỏi gate chính), **L-043** (gắn cờ bản ghi kho chỉ-Consensus/chỉ-abstract ngay ở bước appraisal để WARN của verifier đã được tiền-phân loại).
