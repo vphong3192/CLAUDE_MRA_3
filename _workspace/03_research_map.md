@@ -9,8 +9,9 @@
 
 Tổng quan chuyên sâu (~3000–4000 từ, tiếng Việt) **+ bảng biến số CRF** về các thông số điện học/điện
 sinh lý nhĩ trái (PWD, IAB, PTFV1, P-axis, SAECG, AERP, AFCL, SNRT, CV, voltage…) ở bệnh nhân RN ≥65
-tuổi, cho BS tim mạch/điện sinh lý & NCS, không giới hạn thời gian xuất bản, dựa trên kho 72 bản ghi
-đã xác minh PMID (70 citable sau khi loại 2 bản ghi cách ly).
+tuổi, cho BS tim mạch/điện sinh lý & NCS, không giới hạn thời gian xuất bản, dựa trên kho 74 bản ghi
+đã xác minh PMID (72 citable sau khi loại bỏ REF-046, REF-050 — xem mục 6.2; bổ sung REF-073, REF-074
+ngày 2026-06-30 theo PDF người dùng cung cấp).
 
 ---
 
@@ -23,9 +24,9 @@ tuổi, cho BS tim mạch/điện sinh lý & NCS, không giới hạn thời gia
 | 3 | **Rotor/CFAE/nguồn khu trú** | `contested` | CONFIRM dương tính (REF-005) vs STAR AF II âm tính (REF-010) | Thấp — khái niệm còn tranh cãi, nay ít dùng lâm sàng |
 | 4 | **Công nghệ mapping mới (omnipolar, HD, ECGI)** | `emerging` | Narayan 2024 review (REF-036); Takahashi 2023 (REF-050* — bị cách ly, xem mục 6) | Đang phát triển, chưa chuẩn hóa |
 | 5 | **LA strain (reservoir)** | `mature/emerging` | Patel 2020 CHS (REF-025); Inciardi 2024 ARIC (REF-024) | Cao cho dự báo RN mới khởi phát; vai trò ở RN đã xác lập còn ít dữ liệu |
-| 6 | **Vận tốc dẫn truyền (CV) nhĩ trái — EP lab** | `emerging`, dữ liệu mỏng | van der Does 2021 (REF-003, không-RN); Ye 2024 (REF-051, đã sửa); Vickneson 2025 (REF-052, đã sửa) | Thấp — rất ít dữ liệu CV xâm lấn đặc hiệu cho RN cao tuổi |
+| 6 | **Vận tốc dẫn truyền (CV) nhĩ trái — EP lab** | `emerging`, dữ liệu mỏng hơn nhưng cải thiện | van der Does 2021 (REF-003, không-RN); Ye 2024 (REF-051, đã sửa); Vickneson 2025 (REF-052, đã sửa); Kojodjojo 2006 (REF-074, mới bổ sung 2026-06-30 — CV/ERP phân tầng theo tuổi rõ ràng nhưng đo trong nhịp xoang, không có tiền sử RN) | Thấp-trung bình — REF-074 là dữ liệu CV xâm lấn phân tầng tuổi tốt nhất trong kho nhưng KHÔNG đo trong RN |
 | 7 | **AERP / tính trơ nhĩ** | `contested` (nghịch lý AERP theo tuổi) | Kistler 2004 (REF-042, neo chính); Lee 2016 (REF-043); Laredo/Nattel 2018 review giải quyết nghịch lý (REF-048) | Trung bình — cơ chế rút ngắn AERP do nhịp nhanh (Yu 1998/1999) đối lập với kéo dài AERP do xơ hóa cấu trúc tuổi già |
-| 8 | **AF cycle length (AFCL)** | dữ liệu rất mỏng | Chỉ còn gián tiếp sau khi REF-046 (Manios) bị cách ly | **GAP thực sự** — cần làm rõ ở Gate 4b |
+| 8 | **AF cycle length (AFCL)** | dữ liệu rất mỏng | REF-046 (Manios) đã bị **loại bỏ hẳn** (2026-06-30, quyết định người dùng); bổ sung REF-073 (Haïssaguerre 2004, AFCL nền 186±19ms) nhưng KHÔNG phân tầng theo tuổi (tuổi TB 53±8/53±9) | **GAP thực sự, vẫn còn mở sau bổ sung** — không có dữ liệu AFCL phân tầng theo tuổi nào trong kho; cần nêu rõ là hạn chế trong bài tổng quan, không chỉ "cần làm rõ ở Gate 4b" |
 | 9 | **SNRT / cSNRT** | `mature` (cơ chế), elderly-specific `thin` | Raitt 2004 (REF-047), Hocini 2003 (REF-049) — tái cấu trúc đảo ngược rõ | Trung bình — ít dữ liệu chuẩn theo tuổi |
 | 10 | **P-wave duration (PWD) & dẫn truyền liên nhĩ** | `mature` | Dilaveris 1998 landmark (REF-059, 710 trích dẫn); Magnani 2011 Framingham (REF-037) | Cao |
 | 11 | **P-wave dispersion** | `mature` định nghĩa, `contested` tiện ích lâm sàng | Dilaveris 2001 (REF-060); Kawczynski 2022 MA (REF-058) — ES nhạy với loại bỏ outlier, bias công bố đáng kể | Trung bình — không đồng nhất cao (I²), thiên lệch công bố đã xác nhận |
@@ -84,7 +85,9 @@ Hạn chế của bài tổng quan.
 
 ## 6. Source approval list
 
-**Tổng: 72 bản ghi trong kho; 70 citable** (2 bị cách ly theo Luật 1 — xem dưới).
+**Tổng: 74 bản ghi trong kho; 72 citable** (REF-046, REF-050 ĐÃ LOẠI BỎ HẲN theo quyết định người dùng
+2026-06-30, không chỉ cách ly — xem mục 6.2; REF-073, REF-074 bổ sung cùng ngày, full-text PDF người
+dùng cung cấp, đã xác minh).
 
 ### 6.1 Theo trục chủ đề (rút gọn — chi tiết từng bản ghi trong `reference/la-electrophysiology-elderly-af.md` và `_workspace/02_corpus.md`)
 
@@ -95,10 +98,10 @@ Hạn chế của bài tổng quan.
 | Rotor/CFAE (Axis 3) | 6 (REF-005,006,007,008,009,010) | HIGH×3, MEDIUM-HIGH×2 | Hỗn hợp |
 | Mapping technology (Axis 3) | 4 (REF-033–036) | MEDIUM | user HTML |
 | LA strain (Axis 1) | 3 (REF-023,024,025) | HIGH | trùng với voltage |
-| AERP/refractoriness (G-1) | 7 (REF-041–045,048; REF-046 ⛔) | HIGH×4 | Chủ yếu abstract-only |
-| AFCL (G-2) | 0 citable (REF-046 ⛔ duy nhất, đã cách ly) | — | **GAP** |
+| AERP/refractoriness (G-1) | 6 citable (REF-041–045,048; REF-046 ❌ DROPPED) | HIGH×4 | Chủ yếu abstract-only |
+| AFCL (G-2) | 1 citable nhưng KHÔNG giải quyết gap (REF-073, không phân tầng tuổi; REF-046 ❌ DROPPED) | HIGH | retrieved (user PDF) — **GAP tuổi vẫn mở** |
 | SNRT (G-3) | 2 (REF-047,049) | HIGH | abstract-only |
-| Conduction velocity (G-4) | 4 (REF-003,050⛔,051,052) | 3 citable | abstract-only (đã sửa 051/052) |
+| Conduction velocity (G-4) | 4 citable (REF-003,051,052,074; REF-050 ❌ DROPPED) | HIGH×2 | abstract-only (đã sửa 051/052); REF-074 retrieved (user PDF) |
 | PWD/dispersion (G-5) | 6 (REF-037,059,060,061,062 + REF-058 trùng G-7) | HIGH đa số | REF-058/060 retrieved PMC |
 | SAECG (G-7) | 6 (REF-053–058) | HIGH×4 | REF-058 retrieved; còn lại abstract |
 | IAB/P-wave morphology/axis (G-8) | 9 (REF-038,063–070) | HIGH toàn bộ | REF-063,064,070 retrieved PMC |
@@ -106,13 +109,16 @@ Hạn chế của bài tổng quan.
 | Việt Nam/Đông Nam Á (G-10) | 3 (REF-032,071,072) | MEDIUM/LOW | abstract-only |
 | Hướng dẫn/đồng thuận | 4 (REF-029,030,031,064) | HIGH | available |
 | Animal/cơ chế (Axis 2,4) | 2 (REF-004,006) | MEDIUM | abstract-only |
+| Bổ sung 2026-06-30 (G-2, G-4) | 2 (REF-073,074) | HIGH | retrieved (user PDF, đã xác minh) |
 
 ### 6.2 Cần quyết định của người dùng (flag rõ ràng)
 
 | Bản ghi | Vấn đề | Đề xuất của lead |
 |---|---|---|
-| **REF-046 (Manios)** ⛔ | PMID không khớp bài; số liệu AERP 194–211ms/AFCL 161–180ms KHÔNG xác minh được | **Giữ cách ly** — loại khỏi corpus citable; nếu user có PDF đúng bài "Atrial electrophysiological properties... PACE 2003;26:1545" có thể khôi phục |
-| **REF-050 ("Takahashi CV")** ⛔ | PMID thực ra là bài mô học khác; giá trị CV 0.43±0.12 m/s là bịa | **Giữ cách ly** — loại khỏi corpus citable |
+| **REF-046 (Manios)** ❌ | PMID không khớp bài; số liệu AERP 194–211ms/AFCL 161–180ms KHÔNG xác minh được | **ĐÃ LOẠI BỎ HẲN theo quyết định người dùng (2026-06-30)** — không còn trong corpus citable, không tìm thêm PMID thay thế |
+| **REF-050 ("Takahashi CV")** ❌ | PMID thực ra là bài mô học khác; giá trị CV 0.43±0.12 m/s là bịa | **ĐÃ LOẠI BỎ HẲN theo quyết định người dùng (2026-06-30)** — không còn trong corpus citable |
+| **REF-073 (Haïssaguerre 2004)** mới | AFCL nền 186±19ms nhưng tuổi TB 53±8/53±9 — KHÔNG phân tầng theo tuổi | **Đã thêm, HIGH, full-text PDF đã xác minh (2026-06-30)** — dùng cho định nghĩa/baseline AFCL, KHÔNG dùng để suy luận AFCL theo tuổi |
+| **REF-074 (Kojodjojo 2006)** mới | CV/ERP phân tầng tuổi rõ ràng nhưng đo trong nhịp xoang, không có tiền sử RN — KHÔNG phải AFCL | **Đã thêm, HIGH, full-text PDF đã xác minh (2026-06-30)** — dùng cho CV/ERP theo tuổi (G-4), KHÔNG dùng để lấp gap AFCL (G-2) |
 | **REF-070 (Chattopadhyay 2022)** | Bài báo gốc tự mâu thuẫn nội tại (Abstract RR 2.12 vs Kết quả ES 2.10) | **Giữ trong corpus** nhưng trích dẫn kèm chú thích cả 2 giá trị, không chọn một bên im lặng |
 | **REF-072 (Trần 2026)** | Sau khi sửa: không có dữ liệu EP, chỉ kinh tế-kỹ thuật | **Re-tier LOW** — chỉ dùng làm bối cảnh "trung tâm Việt Nam có hoạt động cắt đốt RN", không trích số liệu EP |
 | **REF-071 (Nguyễn 2024)** | DOI chưa xác nhận; chỉ ECG bề mặt COPD, không phải EP xâm lấn thuần RN | **Giữ MEDIUM** — dùng cho mục Việt Nam picture, không dùng cho ngưỡng CRF chính |
@@ -132,11 +138,13 @@ OR/HR đã công bố.
 
 ## 7. Closing questions
 
-1. **Phê duyệt danh sách nguồn 70 bản ghi citable** (72 trừ REF-046, REF-050 cách ly) — đồng ý giữ
-   nguyên tier/trạng thái như trên, hay muốn re-tier/loại bỏ thêm bản ghi nào?
-2. **REF-046, REF-050:** giữ cách ly vĩnh viễn, hay bạn có bản PDF đúng để khôi phục?
-3. **Gaps nào muốn đào sâu thêm** trước khi sang Phase 4 thẩm định? (AFCL gần như trống — có cần tìm
-   thêm một vòng nữa, hay chấp nhận ghi nhận đây là gap và tiếp tục?)
+1. **Phê duyệt danh sách nguồn 72 bản ghi citable** (74 trừ REF-046, REF-050 đã loại bỏ hẳn) — đồng ý
+   giữ nguyên tier/trạng thái như trên, hay muốn re-tier/loại bỏ thêm bản ghi nào?
+2. **REF-046, REF-050:** ĐÃ LOẠI BỎ HẲN theo quyết định người dùng (2026-06-30) — không còn mở.
+3. **AFCL (G-2) vẫn là gap thực sự** ngay cả sau khi bổ sung REF-073/REF-074: REF-073 chỉ cho baseline
+   AFCL không phân tầng tuổi; REF-074 cho dữ liệu phân tầng tuổi tốt nhưng KHÔNG phải AFCL (nhịp xoang,
+   không tiền sử RN). Không có dữ liệu AFCL phân tầng theo tuổi nào trong y văn đã tìm được. Chấp nhận
+   ghi nhận đây là hạn chế rõ ràng trong bài tổng quan và tiếp tục, hay muốn tìm thêm một vòng nữa?
 4. **Giữ/bỏ trục nào?** (vd: rotor/CFAE Axis 3 — có cần giữ chi tiết hay rút gọn vì ít liên quan trực
    tiếp đến CRF thông số P-wave/AERP/SNRT?)
 5. **Thêm tìm kiếm nào khác** trước khi khóa cổng? (vd: re-thử ClinicalTrials.gov nếu MCP khả dụng lại)
@@ -144,6 +152,7 @@ OR/HR đã công bố.
 ---
 
 *Map này dựa trên `_workspace/00_protocol.md`, `01_search_log.md`, `02_corpus.md`,
-`02b_fulltext_request.md`, và kho `reference/la-electrophysiology-elderly-af.md` (72 bản ghi, cập nhật
-2026-06-30). Cổng này là CỔNG CỨNG (L-014) — đội sẽ KHÔNG tiến hành Phase 4 thẩm định cho đến khi nhận
-được phê duyệt rõ ràng, trích dẫn được, từ người dùng.*
+`02b_fulltext_request.md`, và kho `reference/la-electrophysiology-elderly-af.md` (74 bản ghi, 72
+citable, cập nhật 2026-06-30: REF-046/REF-050 loại bỏ hẳn, REF-073/REF-074 bổ sung). Cổng này là CỔNG
+CỨNG (L-014) — đội sẽ KHÔNG tiến hành Phase 4 thẩm định cho đến khi nhận được phê duyệt rõ ràng, trích
+dẫn được, từ người dùng.*

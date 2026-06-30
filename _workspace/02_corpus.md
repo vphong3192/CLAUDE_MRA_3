@@ -1,9 +1,10 @@
 # Evidence Corpus — Left Atrial Electrophysiology in Elderly AF
 
 **Topic:** Đặc điểm điện học và điện sinh lý học nhĩ trái ở bệnh nhân rung nhĩ cao tuổi  
-**Total records:** 72 (REF-001…REF-072)  
+**Total records:** 74 REF-IDs issued (REF-001…REF-074); **citable: 72** (REF-046, REF-050 dropped per user decision 2026-06-30)  
 **Prior run:** 2026-06-15/16 (REF-001–REF-040)  
 **Gap-fill run:** 2026-06-29 (REF-041–REF-072)  
+**Addendum run:** 2026-06-30 (REF-073–REF-074 added; REF-046, REF-050 dropped)  
 **Provenance store:** `/home/user/CLAUDE_MRA_3/reference/la-electrophysiology-elderly-af.md`
 
 All records are verified via PMID (L-009). For full provenance, key EP parameters, and detailed findings, see the reference store. This corpus table provides the one-row summary with tier and status.
@@ -59,11 +60,11 @@ All records are verified via PMID (L-009). For full provenance, key EP parameter
 | REF-043 | PMID 27005930 | Lee 2016: prolonged AERP predicts new-onset AF over 12y | Lee JM et al. | 2016 | Heart Rhythm | peer-reviewed | HIGH | abstract-only | G-1, G-9 | n=1308; AERP ≥280ms → aHR 2.08 for new-onset AF; 12-year follow-up |
 | REF-044 | PMID 9639377 | Yu 1998: tachycardia-induced AERP shortening (RCT) | Yu WC et al. | 1998 | Circulation | peer-reviewed | MEDIUM | abstract-only | G-1 mechanism | Tachycardia-induced AERP shortening — establishes rate-dependent remodeling mechanism |
 | REF-045 | PMID 10533582 | Yu 1999: reversal of AERP shortening after cardioversion | Yu WC et al. | 1999 | Cardiovasc Res | peer-reviewed | MEDIUM | abstract-only | G-1 mechanism | Reverse electrical remodeling; AERP recovers within 1 month post-cardioversion |
-| REF-046 | PMID 12843685 | Manios 2003: AERP and AFCL in persistent AF pre-cardioversion | Manios EG et al. | 2003 | Pacing Clin Electrophysiol | peer-reviewed | HIGH | abstract-only | G-1, G-2 | AERP 194–211ms; AFCL 161–180ms in persistent AF — key reference thresholds |
+| REF-046 | PMID 12843685 | ❌ DROPPED (2026-06-30, user decision) — was Law-1 quarantine: PMID mismatch | Manios EG et al. | 2003 | Pacing Clin Electrophysiol | peer-reviewed | — | DO NOT CITE | — | Mismatched PMID resolved to unrelated amiodarone/diltiazem RCT; no correct replacement found; dropped per user instruction |
 | REF-047 | PMID 15149416 | Raitt 2004: reverse EP remodeling; cSNRT 606→408ms | Raitt MH et al. | 2004 | J Cardiovasc Electrophysiol | peer-reviewed | HIGH | abstract-only | G-3, SNRT | cSNRT 606ms in AF → 408ms at 1 month post-cardioversion; reverse remodeling |
 | REF-048 | PMID 30404745 | Laredo 2018: age as determinant of AF — two-sided relationship | Laredo M, Nattel S et al. | 2018 | Can J Cardiol | review-article | HIGH | abstract-only | G-9, AERP paradox | Resolves AERP paradox; comprehensive aging-AF mechanism review by Khairy+Nattel |
 | REF-049 | PMID 12952840 | Hocini 2003: sinus node reverse remodeling after AF ablation | Hocini M et al. | 2003 | Circulation | peer-reviewed | HIGH | abstract-only | G-3, SNRT | cSNRT normalized in 11/12 patients with prolonged pauses after PVI |
-| REF-050 | PMID 37350738 | Takahashi 2023: omnipolar CV mapping during AF | Takahashi Y et al. | 2023 | Eur Heart J | peer-reviewed | MEDIUM | abstract-only | G-4 | Omnipolar CV mapping; mean LA CV in AF 0.43±0.12 m/s; spatial heterogeneity |
+| REF-050 | PMID 37350738 | ❌ DROPPED (2026-06-30, user decision) — was Law-1 quarantine: PMID mismatch | Takahashi Y et al. | 2023 | Eur Heart J | peer-reviewed | — | DO NOT CITE | — | Mismatched PMID resolved to unrelated histology paper; stored CV value fabricated-adjacent; no correct replacement found; dropped per user instruction |
 | REF-051 | PMID 39023486 | Ye 2024: ECGI-derived CV predicts ablation outcomes | Ye X et al. | 2024 | JACC Clin Electrophysiol | peer-reviewed | MEDIUM | abstract-only | G-4 | ECGI CV; paroxysmal AF 0.52 m/s vs persistent 0.44 m/s; predicts recurrence |
 | REF-052 | PMID 40504058 | Vickneson 2025: omnipolar CV mapping multicenter | Vickneson K et al. | 2025 | JACC Clin Electrophysiol | peer-reviewed | MEDIUM | abstract-only | G-4 | Multicenter; mean LA CV in AF 0.38±0.09 m/s; first multicenter validation |
 | REF-053 | PMID 1984879 | Fukunami 1991: SAECG P-wave triggered — Ad>120ms landmark | Fukunami M et al. | 1991 | Circulation | peer-reviewed | HIGH | abstract-only | G-7, SAECG | LANDMARK: Ad>120ms AND LP20≤3.5μV; sens 91%, spec 84%; n=92 |
@@ -86,6 +87,8 @@ All records are verified via PMID (L-009). For full provenance, key EP parameter
 | REF-070 | PMID 36454918 | Chattopadhyay 2022: abnormal P-axis predicts AF MA | Chattopadhyay RK et al. | 2022 | PLoS One | peer-reviewed | HIGH | PMC available (PMC9714955) | G-8, P-axis | SR/MA N=78,222; abnormal P-axis → AF pooled RR 2.12 |
 | REF-071 | PMID 39247665 | Nguyen 2024: PWD in elderly Vietnamese COPD patients (Hanoi) | Nguyen VH et al. | 2024 | — | peer-reviewed | HIGH | abstract-only (DOI pending L-036) | G-5, G-10, Vietnamese | Vietnamese data: PWD ≥40ms → atrial arrhythmias; ≥75y aOR 3.15 |
 | REF-072 | PMID 42242666 | Tran 2026: CF-guided PVI at Bach Mai Hospital, Hanoi | Tran TH et al. | 2026 | — | peer-reviewed | HIGH | abstract-only (DOI pending L-036) | G-10, Vietnamese | Vietnamese-center CF-guided PVI data; LA EP parameters from Bach Mai Hospital |
+| REF-073 | PMID 15184286 | Haïssaguerre 2004: AFCL changes during stepwise PV isolation | Haïssaguerre M et al. | 2004 | Circulation | peer-reviewed | HIGH | retrieved (user PDF, verified) | G-2 (partial) | Baseline AFCL 186±19ms; PVI-induced AFCL prolongation predicts noninducibility. Mean age 53±8/53±9 — NOT age-stratified; does not resolve the elderly AFCL gap |
+| REF-074 | PMID 16533247 | Kojodjojo 2006: age-related conduction velocity/ERP, electroanatomic mapping | Kojodjojo P et al. | 2006 | J Cardiovasc Electrophysiol | peer-reviewed | HIGH | retrieved (user PDF, verified) | G-4 (age-stratified) | WPV inversely correlated with age (RA r=-0.77, LA r=-0.79, both P<0.0001); septal ERP r=0.53; LA wavelength r=-0.56. Sinus rhythm, no AF history — does NOT address AFCL |
 
 ---
 
@@ -96,7 +99,8 @@ All records are verified via PMID (L-009). For full provenance, key EP parameter
 | Meta-analysis / SR | 8 | REF-015, 039, 040, 058, 062, 064, 070 + Wattanachayakul 2024 |
 | Major guideline / consensus | 4 | REF-029, 030, 031, 064 |
 | Large RCT (>200 pts, multicenter) | 3 | REF-010, 012, 018 |
-| Prospective cohort / registry | 9 | REF-011, 019, 037, 043, 066, 068, 069, 071, 072 |
+| Smaller RCT (<100 pts) | 1 | REF-073 |
+| Prospective cohort / registry | 10 | REF-011, 019, 037, 043, 066, 068, 069, 071, 072, 074 |
 | Cross-sectional / case-control | 20 | REF-001, 002, 003, 013, 020–028, 032–035, 041, 053, 054, 055, 059, 061 |
 | Review / narrative | 13 | REF-004, 007, 008, 036, 038, 048, 056, 057, 060, 063, 065 + 2 others |
 | Animal / ex-vivo | 2 | REF-004, 006 |
@@ -109,10 +113,10 @@ All records are verified via PMID (L-009). For full provenance, key EP parameter
 
 | Gap | Status | Key records |
 |-----|--------|-------------|
-| G-1 AERP | Covered | REF-041, 042, 043, 044, 045, 046, 048 |
-| G-2 AFCL | Covered | REF-046 |
+| G-1 AERP | Covered | REF-041, 042, 043, 044, 045, 048 (REF-046 dropped 2026-06-30, not counted) |
+| G-2 AFCL | **GAP — not resolved** | REF-073 gives a general (non-age-stratified) AFCL baseline only (REF-046, which would have given persistent-AF AFCL values, was dropped 2026-06-30 as a Law-1 mismatch with no correct replacement found). No age-stratified AFCL data exists in this corpus — flag as an explicit limitation in synthesis. |
 | G-3 SNRT | Covered | REF-042, 047, 049 |
-| G-4 Conduction velocity | Covered | REF-003, 050, 051, 052 |
+| G-4 Conduction velocity | Covered | REF-003, 051, 052, 074 (REF-050 dropped 2026-06-30, not counted; REF-074 adds age-stratified CV/ERP data, sinus rhythm) |
 | G-5 P-wave dispersion | Covered | REF-037, 059, 060, 061, 062 |
 | G-6 Voltage / LAT surrogate | Covered | REF-001, 002, 003, 013, 015, 023, 025, 027 |
 | G-7 SAECG / filtered P-wave | Covered | REF-053, 054, 055, 056, 057, 058 |

@@ -961,22 +961,9 @@
 
 ---
 
-### [REF-046] ⛔ QUARANTINED (Law 1 — PMID/title mismatch; AERP/AFCL values unverified; DO NOT CITE)
-- **⚠ Quarantine note (lead, Gate 2b, 2026-06-29):** Stored as Manios EG, et al. "Atrial electrophysiological properties associated with successful or failed cardioversion after chronic atrial fibrillation. PACE 2003;26:1545" with **AERP 194–211 ms / AFCL 161–180 ms**. But **PMID 12843685 actually resolves to:** Manios EG, et al. "Effects of amiodarone and diltiazem on persistent atrial fibrillation conversion and recurrence rates: a randomized controlled study." **Cardiovasc Drugs Ther. 2003**; DOI **10.1023/a:1024203824761** (confirmed via `get_article_metadata` 2026-06-29). The stored title/journal/DOI are wrong; the AERP/AFCL values are **not confirmed to come from this PMID**. QUARANTINED pending verification — the intended Manios PACE paper may be real but under a different PMID; the verifier must locate the correct PMID before any AERP/AFCL value is cited. Until then, AERP/AFCL thresholds rest on REF-041/042/043 (verified).
-- **PMID/DOI:** PMID 12843685 → mismatched (see note)
-- **Study design:** Prospective; invasive EP before cardioversion; AERP and AFCL measured; success/failure tracked
-- **Population:** Patients with persistent AF undergoing elective cardioversion; invasive EP measurement pre-cardioversion
-- **Key EP parameters reported:** AERP (post-cardioversion measurement in sinus rhythm); AFCL (during AF); success/failure of cardioversion; predictors of recurrence
-- **Main findings:** AERP in successful cardioversion group: 194–211ms. AF cycle length (AFCL) in AF patients: 161–180ms range. These values provide the key reference thresholds for AERP and AFCL in a persistent AF population, directly applicable to CRF parameter ranges (G-1 and G-2).
-- **Relevance tier:** HIGH (provides direct AERP and AFCL reference values for persistent AF population — essential CRF parameter anchors for G-1 and G-2)
-- **Full text retrieved:** ABSTRACT ONLY (paywall)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
-- **Sub-theme axis:** Axis 8 (invasive EP — AERP and AFCL thresholds)
-- **GRADE starting point:** Low (prospective; single-center; mixed-age population)
-- **Retrieval source:** PubMed targeted search P-5 (Manios E[Author] AND atrial fibrillation AND refractory AND 2003[pdat]) 2026-06-29
-- **Date retrieved:** 2026-06-29
+### [REF-046] ❌ DROPPED (user decision, 2026-06-30 — was Law 1 quarantine; no correct replacement citation found)
+- **Drop note (lead, 2026-06-30):** Previously QUARANTINED at Gate 2b (PMID 12843685 mismatched — resolves to an unrelated amiodarone/diltiazem RCT, not the intended Manios PACE 2003 cardioversion paper; AERP 194–211ms/AFCL 161–180ms values unverified). User instructed to drop this record outright rather than keep searching for the correct PMID. **DROPPED — not part of the citable corpus, not counted in record totals below.** Retained here only as an audit trail; do not cite under any circumstances. AERP thresholds remain anchored on REF-041/042/043; the AFCL gap this record would have partially filled is addressed by REF-073 (general AFCL definition/baseline, not age-stratified) but remains open for age-stratified AFCL data — see gap note in the full-text coverage summary below.
+- **PMID/DOI:** PMID 12843685 → confirmed mismatched; no correct PMID identified to date
 
 ---
 
@@ -1037,23 +1024,9 @@
 
 ---
 
-### [REF-050] ⛔ QUARANTINED (Law 1 — fabricated value / PMID mismatch; DO NOT CITE)
-- **⚠ Quarantine note (lead, Gate 2b, 2026-06-29):** Stored as "Takahashi 2023 — omnipolar conduction-velocity mapping, mean CV 0.43±0.12 m/s, n=30, DOI 10.1093/eurheartj/ehad321." **PMID 37350738 actually resolves to a DIFFERENT paper:** Takahashi Y, et al. "Histological validation of atrial structural remodelling in patients with atrial fibrillation." Eur Heart J. 2023; DOI **10.1093/eurheartj/ehad396**; PMC10499545 (confirmed via `get_article_metadata` 2026-06-29). The omnipolar-CV title, DOI ehad321, and the **0.43±0.12 m/s / n=30 values are not supported by this PMID — fabricated-adjacent**. Record QUARANTINED; not citable. CV reference values for the CRF must come from REF-051/REF-052/REF-003 (verified) instead. The verifier will decide whether a real omnipolar-CV paper exists to replace it.
-- **Original (UNVERIFIED) stored citation:** Takahashi Y, et al. Omnipolar electrogram-based conduction velocity mapping during atrial fibrillation. [UNCONFIRMED]
-- **PMID/DOI:** PMID 37350738 → mismatched (see note)
-- **Study design:** Prospective; omnipolar-technology-based conduction velocity mapping in AF; electroanatomic mapping study
-- **Population:** AF patients undergoing catheter ablation; omnipolar mapping (HD Grid catheter) in AF and SR; n=30 AF patients
-- **Key EP parameters reported:** Conduction velocity (CV) maps during AF; spatial distribution of CV heterogeneity; correlation with substrate characteristics; reference CV values in AF patients
-- **Main findings:** Omnipolar mapping provides vector-based CV measurement independent of catheter orientation. Demonstrated spatial heterogeneity in conduction velocity during AF, with low-CV regions corresponding to areas of fibrosis. Mean CV in AF: 0.43±0.12 m/s. CV heterogeneity index correlated with AF type (persistent > paroxysmal) and LA volume.
-- **Relevance tier:** MEDIUM (provides CV measurement methodology and reference values during AF; relevant to G-4 parameter definition in CRF)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; Eur Heart J 2023)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
-- **Sub-theme axis:** Axis 8 (invasive EP — conduction velocity mapping)
-- **GRADE starting point:** Low (prospective; single-center; n=30; no age stratification)
-- **Retrieval source:** PubMed targeted search P-8 (conduction velocity AND atrial fibrillation AND omnipolar AND mapping) 2026-06-29
-- **Date retrieved:** 2026-06-29
+### [REF-050] ❌ DROPPED (user decision, 2026-06-30 — was Law 1 quarantine; no correct replacement citation found)
+- **Drop note (lead, 2026-06-30):** Previously QUARANTINED at Gate 2b (PMID 37350738 mismatched — resolves to an unrelated histology paper, "Histological validation of atrial structural remodelling," Eur Heart J 2023, DOI 10.1093/eurheartj/ehad396; the stored omnipolar-CV title/DOI/0.43±0.12 m/s value were fabricated-adjacent). User instructed to drop this record outright rather than keep searching for the correct PMID. **DROPPED — not part of the citable corpus, not counted in record totals below.** Retained here only as an audit trail; do not cite under any circumstances. CV reference values for the CRF remain anchored on REF-051/REF-052/REF-074 (all verified); REF-074 (Kojodjojo 2006) additionally adds age-stratified conduction-velocity data this record never legitimately provided.
+- **PMID/DOI:** PMID 37350738 → confirmed mismatched; no correct PMID identified to date
 
 ---
 
@@ -1473,9 +1446,49 @@
 
 ---
 
+### [REF-073] Haïssaguerre 2004 — AF cycle length (AFCL) changes during catheter ablation and relation to outcome
+- **Full citation:** Haïssaguerre M, Sanders P, Hocini M, Hsu LF, Shah DC, Scavée C, Takahashi Y, Rotter M, Pasquié JL, Garrigue S, Clémenty J, Jaïs P. Changes in atrial fibrillation cycle length and inducibility during catheter ablation and their relation to outcome. Circulation. 2004;109(24):3007-3013.
+- **PMID/DOI:** PMID 15184286 / DOI 10.1161/01.CIR.0000130645.95357.97 (confirmed via `get_article_metadata` 2026-06-30; PDF user-supplied and verified verbatim against full text 2026-06-30)
+- **Study design:** Prospective RCT (70 patients randomized to PV isolation alone vs PV isolation + mitral isthmus linear ablation); serial intracardiac AFCL measurement during ongoing AF
+- **Population:** 70 patients with drug-refractory AF (clinical AF episodes ≥1 hour) undergoing curative catheter ablation; mean age 53±8 (PVI group) / 53±9 (PVI+mitral isthmus group) years — **NOT an elderly-specific or age-stratified cohort**
+- **Key EP parameters reported:** AFCL (atrial fibrillation cycle length), measured manually with online calipers (100 mm/s, averaged over 30 consecutive cycles) within the coronary sinus, at baseline, after 2- and 4-PV isolation, and after linear ablation; percentage electrogram fragmentation; AF/sustained-AF inducibility
+- **Main findings:** Baseline AFCL in the coronary sinus (sustained, induced AF, n=26) = **186±19 ms**, with low intra-measurement variability (8.5±4.6 ms). PV isolation produced progressive AFCL prolongation: to 214±24 ms (P<0.0001) when AF terminated vs 194±19 ms (P=0.002) when AF persisted; the AFCL gradient (Δ) was significantly greater in patients with AF termination (30±17 vs 14±11 ms, P=0.005), paired with reduced fragmentation (30.0±26.8%→10.3±14.5%, P<0.0001). Additional mitral-isthmus linear ablation produced further AFCL prolongation (44±13 vs 22±23 ms when AF terminated vs persisted, P=0.08). Greater AFCL increase independently predicted post-ablation AF noninducibility (33±15 vs 20±17 ms, P=0.015) and was one of four independent predictors of noninducibility (P=0.046). AFCL was clinically useful as a quantitative substrate-modification marker but the authors explicitly caution it "may not be a reliable parameter... as occurs in chronic AF" (study limitations).
+- **Relevance tier:** HIGH for AFCL **definition/measurement methodology and a general (non-elderly) baseline reference value (≈186ms)**; does **NOT** provide age-stratified or elderly-specific AFCL data — this paper does not analyze age as a variable at all. Added to partially fill gap G-2 (AFCL) after REF-046 was dropped (2026-06-30), but **the age-stratified AFCL gap remains open** — see integrity note below.
+- **Full text retrieved:** YES — full text supplied by user (PDF, source/la-ep-elderly-af/, "PMID 15184286.pdf") and verified verbatim 2026-06-30
+- **study_context:** Landmark mechanistic study from the Bordeaux/Haïssaguerre group establishing AFCL as a quantitative marker of AF substrate during catheter ablation; demonstrates causal link between AFCL prolongation, reduced fragmentation, and AF termination/noninducibility
+- **study_limitations:** Single-center; AFCL measured only at one site (coronary sinus); mean age 53 (range not reported as elderly-relevant) — population is NOT representative of elderly AF; AFCL reliability questioned in chronic/highly fragmented AF; no comparison across age groups
+- **author_suggestions:** "The usefulness of these end points for the ablation of chronic AF needs to be verified" — explicit call for further validation in chronic/persistent AF populations
+- **Sub-theme axis:** Axis 8 (invasive EP — AFCL definition and baseline value; G-2)
+- **GRADE starting point:** Low (RCT design but small n=70, single-center, surrogate/mechanistic endpoint, not age-stratified)
+- **Retrieval source:** WebSearch candidate identification (user-requested "OpenAlex" search substitute) 2026-06-30; PMID verified via PubMed `get_article_metadata` 2026-06-30; PDF user-supplied via GitHub upload 2026-06-30
+- **Date retrieved:** 2026-06-30
+
+---
+
+### [REF-074] Kojodjojo 2006 — Age-related changes in human left and right atrial conduction (invasive electroanatomic WPV/ERP mapping)
+- **Full citation:** Kojodjojo P, Kanagaratnam P, Markides V, Davies DW, Peters N. Age-related changes in human left and right atrial conduction. J Cardiovasc Electrophysiol. 2006;17(2):120-127.
+- **PMID/DOI:** PMID 16533247 / DOI 10.1111/j.1540-8167.2006.00293.x (confirmed via `get_article_metadata` 2026-06-30; PDF user-supplied and verified verbatim against full text 2026-06-30)
+- **Study design:** Prospective electroanatomic (CARTO) mapping study; 23 patients (no AF history) undergoing clinically indicated EPS for accessory pathways/syncope/palpitations
+- **Population:** 23 patients, age 17–75 years (mean 47), structurally normal hearts, **no history of AF**; 13 male; biatrial mapping during sinus rhythm (23 right atria, 15 left atria mapped)
+- **Key EP parameters reported:** Wavefront propagation velocity (WPV, a precise directional measure of conduction velocity, via novel trigonometric/triangulation algorithm on 3-D electroanatomic maps); effective refractory period (ERP) at 3 atrial sites (lateral high right atrium, septum, distal CS) at 2 cycle lengths; atrial wavelength (WPV × ERP); P-wave duration; left atrial diameter
+- **Main findings:** Mean WPV: right atrium 77.0±10.8 cm/s, left atrium 70.2±9.9 cm/s (right significantly faster, Δ=6.4±2.2 cm/s, P<0.01). **Strong inverse correlation between WPV and age in both atria**: right atrium r=−0.77 (P<0.0001, n=23), left atrium r=−0.79 (P<0.001, n=15), left atrium during CS pacing r=−0.65 (P<0.01, n=15) — i.e., conduction velocity declines markedly with advancing age. ERP correlated with age only at the atrial septum (r=0.53, P<0.01 at CL 600ms; r=0.48, P=0.02 at CL 500ms) — not at lateral right atrium or left atrium. Left atrial wavelength inversely correlated with age (r=−0.56, P=0.03); right atrial wavelength showed a similar trend (r=−0.39, P=0.07). Left atrial diameter increased with age (r=0.62, P<0.01). P-wave duration correlated with age (r=0.42, P=0.04) and LA size (r=0.44, P=0.04) but NOT with atrial WPV — supporting that P-wave duration reflects atrial volume/interatrial conduction rather than intra-atrial conduction velocity per se.
+- **Relevance tier:** HIGH — direct, invasively-measured, **age-stratified human conduction-velocity data** (17–75y), filling a genuine void in the age-CV literature; complements REF-051/REF-052 (CV reference values, not age-stratified) and REF-042/Kistler 2004 (age-stratified AERP/SNRT but not WPV). Note: this is **sinus-rhythm/pacing conduction data, NOT AFCL** (patients had no AF) — does not address the AFCL-aging gap (G-2); relevant instead to the conduction-velocity/conduction-delay CRF family.
+- **Full text retrieved:** YES — full text supplied by user (PDF, source/la-ep-elderly-af/, "PMID 16533247.pdf") and verified verbatim 2026-06-30
+- **study_context:** First study to measure WPV in the direction of wavefront propagation (correcting for a known overestimation bias in prior endocardial CV studies) in both atria of living, conscious humans, specifically testing the age-CV relationship
+- **study_limitations:** Cohort selected from accessory-pathway/syncope referrals (not a general elderly population) for ethical left-atrial access; small n for left atrial measurements (n=15); cross-sectional, not longitudinal; mechanism of age-related CV decline not directly tested (fibrosis/amyloidosis/autonomic changes discussed as plausible but not measured)
+- **author_suggestions:** "Establishing the normal electrophysiological profile of aging may allow the identification of patients vulnerable to AF" — explicit call for normative aging EP data, directly aligned with this review's purpose
+- **Sub-theme axis:** Axis 8 (invasive EP — conduction velocity and refractoriness vs age)
+- **GRADE starting point:** Low (small prospective cohort; not a true random/general-population sample; cross-sectional)
+- **Retrieval source:** WebSearch candidate identification (user-requested "OpenAlex" search substitute) 2026-06-30; PMID verified via PubMed `get_article_metadata` 2026-06-30; PDF user-supplied via GitHub upload 2026-06-30
+- **Date retrieved:** 2026-06-30
+
+---
+
 ## Updated integrity notes (2026-06-29 gap-fill run)
 
 **New records added this run:** REF-041 through REF-072 (32 new records). All 32 PMIDs verified via `get_article_metadata` (L-009).
+
+**2026-06-30 gap-fill addendum (user decision):** REF-046 and REF-050 DROPPED outright (previously Law-1 quarantined; no correct replacement PMID found — user instructed to drop rather than keep searching). REF-073 (Haïssaguerre 2004, PMID 15184286) and REF-074 (Kojodjojo 2006, PMID 16533247) ADDED — full text retrieved & verified (user-supplied PDF, `source/la-ep-elderly-af/`), verbatim-checked against PubMed metadata per L-009. Net effect on the AFCL gap (G-2): **gap remains open** — REF-073 supplies a general (non-age-stratified) AFCL baseline only; REF-074 supplies excellent age-stratified conduction/ERP data but in sinus rhythm with no AF history (not AFCL, which requires ongoing AF). No age-stratified AFCL data exists anywhere in this corpus.
 
 **Outstanding DOI confirmations (L-036):**
 - REF-071 (Nguyen 2024, PMID 39247665): DOI not yet confirmed — tagged "DOI: not yet indexed" pending `get_article_metadata` retrieval
@@ -1492,6 +1505,7 @@
 - Full text retrieved & verified (PubMed MCP `get_full_text_article`, PMC, 2026-06-30): REF-058 (Kawczynski 2022, PMC9492265), REF-063 (Alexander 2021, PMC8142376), REF-064 (Chen 2022 ISE/ISHNE consensus, PMC9070127), REF-070 (Chattopadhyay 2022, PMC9714955). Verification corrected discrepancies in all four (see ⚠ Correction notes in each entry): REF-058 — two wrong Cohen's d values (12-lead PWD and PWD-dispersion); REF-063 — unsupported PTFV1 numeric threshold removed (the >0.04mm·s figure belongs to REF-040/Morris-derived literature, not this review); REF-064 — unsupported "clinical-use vs research-only" parameter categorization removed; REF-070 — flagged a genuine internal inconsistency in the source paper itself (Abstract pooled RR 2.12, 95%CI 1.49–3.01 vs. Results-section pooled ES 2.10, 95%CI 1.48–2.72), both values now recorded with the discrepancy explicit rather than silently resolved. According to PubMed (NCBI/NLM, PMC open-access subset).
 - Abstract-only despite indexed PMCID (PMC entry shows "full text available," but `get_full_text_article` returned an empty body on retrieval — confirmed via retry, 2026-06-29/2026-06-30; treated as a source/tool limitation, not a verification failure): REF-060 (Dilaveris 2001, PMC7027606) — pre-existing unverifiable specific claims removed and findings restricted to abstract-supported content; REF-038 (Hernandez-Betancor 2017, PMC5730959) — re-attempted, status unchanged, no claims required revision.
 - Abstract-only (paywall, no PMC full text indexed): REF-041, REF-044, REF-045, REF-047, REF-049, REF-051, REF-052, REF-054, REF-055, REF-056, REF-057, REF-061, REF-062, REF-065, REF-067, REF-068, REF-069, REF-071, REF-072
-- ⛔ QUARANTINED (Law 1 — PMID/title mismatch or fabricated values; DO NOT CITE): REF-046 (Manios, AERP/AFCL values unverified), REF-050 ("Takahashi CV", values fabricated) — see corpus integrity sweep `_workspace/02b_fulltext_request.md` §A
+- ❌ DROPPED (user decision, 2026-06-30 — was Law 1 quarantine; PMID/title mismatch, no correct replacement found; DO NOT CITE): REF-046 (Manios, AERP/AFCL values unverified), REF-050 ("Takahashi CV", values fabricated) — see corpus integrity sweep `_workspace/02b_fulltext_request.md` §A
+- Full text retrieved & verified (user-supplied PDF, 2026-06-30): REF-073 (Haïssaguerre 2004, PMID 15184286), REF-074 (Kojodjojo 2006, PMID 16533247). Both verbatim-checked against PubMed metadata (title/authors/journal/year/DOI all match) before any content was drafted from them, per L-009 and Law 1.
 
-**Total records in store:** 72 (REF-001…REF-072); **citable: 70** (72 − 2 quarantined: REF-046, REF-050). REF-071 and REF-072 DOIs pending confirmation but PMIDs verified; citable with PMID per L-036.
+**Total records in store:** 74 REF-IDs issued (REF-001…REF-074); **citable: 72** (74 − 2 dropped: REF-046, REF-050). REF-071 and REF-072 DOIs pending confirmation but PMIDs verified; citable with PMID per L-036.
