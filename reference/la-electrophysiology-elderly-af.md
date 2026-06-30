@@ -772,8 +772,9 @@
 ---
 
 ### [REF-038] Bayés de Luna 2017 — Bayés syndrome and imaging techniques
-- **Full citation:** Bayés de Luna A, Baranchuk A, Martínez-Sellés M, Platonov P. Bayés' Syndrome: Advanced Interatrial Block in Patients with Paroxysmal Atrial Fibrillation — The Association between Interatrial Block and Atrial Fibrillation. Curr Cardiol Rev. 2017;13(4):285–291.
-- **PMID/DOI:** ✅ **PMID 28707575** / DOI 10.2174/1573403X13666170713122600
+- **Full citation (corrected verbatim, PubMed metadata 2026-06-29):** Hernandez-Betancor I, Izquierdo-Gómez MM, García-Niebla J, Laynez-Cerdeña I, Lacalzada-Almeida J, Bonilla-Arjona JA, Baranchuk A, Bayés-de-Luna A. Bayes Syndrome and Imaging Techniques. Curr Cardiol Rev. 2017;13(4):263–273.
+- **⚠ Correction note (Gate 2b, lead, 2026-06-29):** Stored full-citation line was reconstructed (wrong first author "Bayés de Luna A" + wrong title "Bayés' Syndrome: Advanced Interatrial Block…"). Real first author is Hernandez-Betancor I; title "Bayes Syndrome and Imaging Techniques"; Bayés-de-Luna is the senior author. Topic (Bayés syndrome / advanced IAB) is intact, so the record stays HIGH and citable — but cite with the corrected author/title.
+- **PMID/DOI:** ✅ **PMID 28707575** / DOI 10.2174/1573403X13666170713122600 / **PMC5730959 (full text available)**
 - **Study design:** Consensus review / expert synthesis
 - **Population:** N/A (review synthesizing clinical evidence on IAB and AF)
 - **Key EP parameters reported:** Advanced interatrial block (advanced IAB) definition: P-wave duration ≥120 ms + biphasic (±) morphology in inferior leads (II, III, aVF); reflects total block in Bachmann's bundle region; partial IAB: P-wave ≥120 ms without biphasic morphology; LA electropathology surrogate
@@ -960,9 +961,9 @@
 
 ---
 
-### [REF-046] Manios 2003 — AERP and AFCL in persistent AF: EP study
-- **Full citation:** Manios EG, Kanoupakis EM, Mavrakis HE, Kaleboubas MD, Parthenakis FI, Vardas PE. Atrial electrophysiological properties associated with successful or failed cardioversion after chronic atrial fibrillation. Pacing Clin Electrophysiol. 2003;26(7):1545-51.
-- **PMID/DOI:** PMID 12843685 / DOI 10.1046/j.1460-9592.2003.t01-1-00240.x
+### [REF-046] ⛔ QUARANTINED (Law 1 — PMID/title mismatch; AERP/AFCL values unverified; DO NOT CITE)
+- **⚠ Quarantine note (lead, Gate 2b, 2026-06-29):** Stored as Manios EG, et al. "Atrial electrophysiological properties associated with successful or failed cardioversion after chronic atrial fibrillation. PACE 2003;26:1545" with **AERP 194–211 ms / AFCL 161–180 ms**. But **PMID 12843685 actually resolves to:** Manios EG, et al. "Effects of amiodarone and diltiazem on persistent atrial fibrillation conversion and recurrence rates: a randomized controlled study." **Cardiovasc Drugs Ther. 2003**; DOI **10.1023/a:1024203824761** (confirmed via `get_article_metadata` 2026-06-29). The stored title/journal/DOI are wrong; the AERP/AFCL values are **not confirmed to come from this PMID**. QUARANTINED pending verification — the intended Manios PACE paper may be real but under a different PMID; the verifier must locate the correct PMID before any AERP/AFCL value is cited. Until then, AERP/AFCL thresholds rest on REF-041/042/043 (verified).
+- **PMID/DOI:** PMID 12843685 → mismatched (see note)
 - **Study design:** Prospective; invasive EP before cardioversion; AERP and AFCL measured; success/failure tracked
 - **Population:** Patients with persistent AF undergoing elective cardioversion; invasive EP measurement pre-cardioversion
 - **Key EP parameters reported:** AERP (post-cardioversion measurement in sinus rhythm); AFCL (during AF); success/failure of cardioversion; predictors of recurrence
@@ -1036,9 +1037,10 @@
 
 ---
 
-### [REF-050] Takahashi 2023 — Conduction velocity mapping using omnipolar technology
-- **Full citation:** Takahashi Y, Abe Y, Miyazaki S, Ishiguro T, Ebisawa S, Goya M, Sasano T. Omnipolar electrogram-based conduction velocity mapping during atrial fibrillation. Eur Heart J. 2023;44(27):2466-2477.
-- **PMID/DOI:** PMID 37350738 / DOI 10.1093/eurheartj/ehad321
+### [REF-050] ⛔ QUARANTINED (Law 1 — fabricated value / PMID mismatch; DO NOT CITE)
+- **⚠ Quarantine note (lead, Gate 2b, 2026-06-29):** Stored as "Takahashi 2023 — omnipolar conduction-velocity mapping, mean CV 0.43±0.12 m/s, n=30, DOI 10.1093/eurheartj/ehad321." **PMID 37350738 actually resolves to a DIFFERENT paper:** Takahashi Y, et al. "Histological validation of atrial structural remodelling in patients with atrial fibrillation." Eur Heart J. 2023; DOI **10.1093/eurheartj/ehad396**; PMC10499545 (confirmed via `get_article_metadata` 2026-06-29). The omnipolar-CV title, DOI ehad321, and the **0.43±0.12 m/s / n=30 values are not supported by this PMID — fabricated-adjacent**. Record QUARANTINED; not citable. CV reference values for the CRF must come from REF-051/REF-052/REF-003 (verified) instead. The verifier will decide whether a real omnipolar-CV paper exists to replace it.
+- **Original (UNVERIFIED) stored citation:** Takahashi Y, et al. Omnipolar electrogram-based conduction velocity mapping during atrial fibrillation. [UNCONFIRMED]
+- **PMID/DOI:** PMID 37350738 → mismatched (see note)
 - **Study design:** Prospective; omnipolar-technology-based conduction velocity mapping in AF; electroanatomic mapping study
 - **Population:** AF patients undergoing catheter ablation; omnipolar mapping (HD Grid catheter) in AF and SR; n=30 AF patients
 - **Key EP parameters reported:** Conduction velocity (CV) maps during AF; spatial distribution of CV heterogeneity; correlation with substrate characteristics; reference CV values in AF patients
@@ -1055,40 +1057,34 @@
 
 ---
 
-### [REF-051] Ye 2024 — ECGI-derived conduction velocity in AF
-- **Full citation:** Ye X, Zhao J, Li X, Cui Y, Zhang Z, Gao L, Chen C, Lv Z, Zhao L, Liu X. Electrocardiographic imaging-derived conduction velocity of atrial fibrillation predicts catheter ablation outcomes. JACC Clin Electrophysiol. 2024;10(7):1573-1585.
-- **PMID/DOI:** PMID 39023486 / DOI 10.1016/j.jacep.2024.03.021
-- **Study design:** Prospective; ECGI (noninvasive body-surface mapping) to derive LA conduction velocity maps; correlation with ablation outcomes
-- **Population:** AF patients (paroxysmal and persistent) undergoing catheter ablation; n=87 patients; ECGI-derived CV measured pre-ablation
-- **Key EP parameters reported:** ECGI-derived LA conduction velocity; global and regional CV indices; correlation with LA voltage, AF type, clinical outcomes post-ablation
-- **Main findings:** ECGI-derived slower conduction velocity predicted AF recurrence after ablation (HR per 0.1m/s decrease: 1.42, 95%CI 1.09–1.85). Mean CV in paroxysmal AF: 0.52±0.09 m/s; persistent AF: 0.44±0.11 m/s. CV was the strongest independent predictor of recurrence in multivariate analysis.
-- **Relevance tier:** MEDIUM (noninvasive CV measurement applicable to EP study design; supports G-4 as measurable parameter; prediction data)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC Clin Electrophysiol 2024)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
-- **Sub-theme axis:** Axis 8 (invasive/noninvasive EP — conduction velocity prediction)
-- **GRADE starting point:** Low (prospective; single-center; ECGI technology not universally available)
-- **Retrieval source:** PubMed targeted search P-8 (conduction velocity AND atrial fibrillation AND ECGI) 2026-06-29
+### [REF-051] Ye 2024 — Critical slowing of conduction via unipolar voltage + fractionation mapping
+- **Full citation (corrected verbatim, PubMed metadata 2026-06-29):** Ye Z, Ramdat Misier NL, van Schie MS, Xiang H, Knops P, Kluin J, Taverne YJHJ, de Groot NMS. Identification of Critical Slowing of Conduction Using Unipolar Atrial Voltage and Fractionation Mapping. JACC Clin Electrophysiol. 2024;10(9):1971–1981.
+- **⚠ Correction note (Gate 2b, lead, 2026-06-29):** Stored record was FABRICATED-ADJACENT (R2/L-009): false title ("ECGI-derived conduction velocity… predicts ablation outcomes"), wrong author list, wrong DOI (jacep.2024.03.021), and **fabricated values** ("ECGI; n=87; CV 0.52 vs 0.44 m/s; HR 1.42"). The real paper is **intraoperative epicardial mapping (sinus rhythm, n=319)** of unipolar voltage/fractionation vs local CV — NO ECGI, NO 0.52/0.44 values. Corrected to verbatim metadata; the real CV numbers (below) may now be cited.
+- **PMID/DOI:** ✅ PMID 39023486 / ✅ DOI 10.1016/j.jacep.2024.04.036 (confirmed via `get_article_metadata` 2026-06-29)
+- **Study design:** Intraoperative epicardial mapping during sinus rhythm; cross-sectional
+- **Population:** N=319 patients (cardiac surgery, intraoperative mapping)
+- **Key EP parameters reported (verbatim):** Unipolar low-voltage threshold <1.0 mV; fractionation = ≥3 deflections. Local CV at fractionated low-voltage sites **46.0 cm/s** (Q1–Q3 22.6–72.7) vs low-voltage non-fractionated **64.5 cm/s** (34.8–99.4) vs fractionated high-voltage **65.9 cm/s** (41.7–92.8), P<0.001. Slow-conduction defined as CV <50 cm/s. *(Source: PubMed, DOI 10.1016/j.jacep.2024.04.036)*
+- **Relevance tier:** MEDIUM (real CV reference values in cm/s + a voltage/fractionation methodology relevant to G-4; not age-stratified)
+- **Full text retrieved:** ABSTRACT ONLY
+- **Sub-theme axis:** Axis 8 (conduction velocity + fractionation)
+- **GRADE starting point:** Low (cross-sectional epicardial mapping; surgical cohort)
+- **Retrieval source:** PubMed; metadata confirmed/ corrected by lead 2026-06-29
 - **Date retrieved:** 2026-06-29
 
 ---
 
-### [REF-052] Vickneson 2025 — Omnipolar mapping conduction velocity during AF: multicenter
-- **Full citation:** Vickneson K, Segan L, Lipton H, McLellan AJ, Crowley R, Finch S, Bhaskaran A, Kistler PM, Thomas SP, Morton JB, Kalman JM, Lee G. Omnipolar-Derived Conduction Velocity Mapping During Atrial Fibrillation in the Human Atrium. JACC Clin Electrophysiol. 2025;11(3):628-640.
-- **PMID/DOI:** PMID 40504058 / DOI 10.1016/j.jacep.2024.11.016
-- **Study design:** Multicenter prospective; omnipolar-derived CV mapping during AF (HD Grid catheter, EnSite X system); comparison with invasive activation mapping
-- **Population:** AF patients from multiple Australian centers (multicenter); invasive EP study with omnipolar mapping; n=46 patients
-- **Key EP parameters reported:** Omnipolar-derived CV during AF; spatial heterogeneity of CV; reference CV values; correlation with substrate (low-voltage zones, fibrosis)
-- **Main findings:** Omnipolar CV mapping during AF feasible and reproducible across centers. Mean LA CV during AF: 0.38±0.09 m/s. Areas of low CV collocated with low-voltage substrate. CV heterogeneity index differed between paroxysmal vs persistent AF. First multicenter validation of the technique.
-- **Relevance tier:** MEDIUM (multicenter validation; more generalizable CV reference values for CRF design; senior author Kistler PM — connects to REF-042)
-- **Full text retrieved:** ABSTRACT ONLY (paywall; JACC Clin Electrophysiol 2025)
-- **study_context:** not captured (abstract-only)
-- **study_limitations:** not captured (abstract-only)
-- **author_suggestions:** not captured (abstract-only)
-- **Sub-theme axis:** Axis 8 (invasive EP — conduction velocity, multicenter)
-- **GRADE starting point:** Low (prospective multicenter; no age stratification; recent technology)
-- **Retrieval source:** PubMed targeted search P-8 (Vickneson K[Author] AND conduction velocity AND atrial fibrillation) 2026-06-29
+### [REF-052] Vickneson 2025 — Peri-atrial adipose tissue & EP remodeling (voltage + CV)
+- **Full citation (corrected verbatim, PubMed metadata 2026-06-29):** Vickneson K, Gharaviri A, Vigneswaran V, Tonko J, Bodagh N, Klis M, Kotadia I, Wright M, Newby DE, Dweck MR, Williams MC, O'Neill M, Whitaker J, Williams SE. Peri-Atrial Adipose Tissue Inflammation in Atrial Fibrillation: Quantification of Electrophysiological Effects Using Electroanatomic Mapping. JACC Clin Electrophysiol. 2025;11(9):1968–1979.
+- **⚠ Correction note (Gate 2b, lead, 2026-06-29):** Stored record was FABRICATED-ADJACENT (R2/L-009): false title ("Omnipolar-Derived Conduction Velocity Mapping…"), wrong author list, wrong DOI (jacep.2024.11.016), and **fabricated values** ("multicenter; n=46; mean CV 0.38±0.09 m/s; first multicenter validation"). The real paper is about **peri-atrial adipose tissue** (CTA + electroanatomic mapping, 37 controls + 44 AF) and its effect on voltage/CV. Corrected; real numbers below.
+- **PMID/DOI:** ✅ PMID 40504058 / ✅ DOI 10.1016/j.jacep.2025.04.023 (confirmed via `get_article_metadata` 2026-06-29)
+- **Study design:** Cross-sectional; cardiac CTA co-registered with LA electroanatomic mapping
+- **Population:** 37 controls + 44 AF patients
+- **Key EP parameters reported (verbatim):** In AF, high peri-atrial-fat areas vs low: bipolar voltage **1.75±1.72 vs 2.11±2.02 mV** (P<0.001) and **CV 0.627±0.55 vs 0.683±0.48 m/s** (P<0.001). Peri-atrial fat volume greater in AF (20.9 vs 14.2 cm³; aOR 1.11, 95% CI 1.01–1.24). *(Source: PubMed, DOI 10.1016/j.jacep.2025.04.023)*
+- **Relevance tier:** MEDIUM (real LA voltage + CV reference values; adipose-substrate mechanism is indirect to aging but provides measurable parameter ranges for G-4/G-6)
+- **Full text retrieved:** ABSTRACT ONLY
+- **Sub-theme axis:** Axis 8 (conduction velocity + voltage; adipose substrate)
+- **GRADE starting point:** Low (cross-sectional; single program)
+- **Retrieval source:** PubMed; metadata confirmed/ corrected by lead 2026-06-29
 - **Date retrieved:** 2026-06-29
 
 ---
@@ -1363,7 +1359,7 @@
 
 ---
 
-### [REF-067] Martínez-Sellés 2016 — IAB in centenarians: prevalence and implications
+### [REF-067] Martínez-Sellés 2015 — IAB in centenarians: prevalence and implications  *(year corrected from 2016→2015 per PubMed metadata; PMID 26520207, Heart Rhythm 2015, DOI 10.1016/j.hrthm.2015.10.034)*
 - **Full citation:** Martínez-Sellés M, Baranchuk A, Elosua R, Bayés de Luna A. Interatrial block and atrial arrhythmias in centenarians: Prevalence, associations, and clinical implications. Heart Rhythm. 2016;13(3):645-51.
 - **PMID/DOI:** PMID 26520207 / DOI 10.1016/j.hrthm.2015.10.034
 - **Study design:** Cross-sectional; ECG analysis in centenarians (≥100y) vs septuagenarians (70–79y); prevalence of IAB, partial and advanced; comparison with controls
