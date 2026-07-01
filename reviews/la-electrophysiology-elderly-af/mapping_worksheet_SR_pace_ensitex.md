@@ -105,17 +105,24 @@ ghi là sẹo cố định; đánh dấu để soi lại (đổi hướng tạo 
 
 Sau khi đã xác định vị trí bằng hoạt hóa, đo thêm để mô tả. **Lưu ý: điện thế tại đây THƯỜNG BÌNH THƯỜNG** (88%).
 
-| Vùng / vị trí | Điện thế lưỡng cực (mV) — SR / Pace | CV tối thiểu (m/s) — SR / Pace | Thời lượng EGM (ms) — corridor / pivot | Trong vùng điện thế thấp <0,5 mV? |
-|---|---|---|---|---|
-| ① Trần (mái) |  |  |  |  |
-| ② Thành trước |  |  |  |  |
-| ③ Thành sau |  |  |  |  |
-| ④ Vách |  |  |  |  |
-| ⑤ Thành bên |  |  |  |  |
-| ⑥ Antra 4 TMP |  |  |  |  |
-| ⑦ Sàn |  |  |  |  |
+| Vùng / vị trí | Điện thế lưỡng cực (mV) — SR / Pace | CV tối thiểu (m/s) — SR / Pace | Thời lượng EGM (ms) — corridor / pivot | Trong vùng điện thế thấp <0,5 mV? | **Hình thái LVZ (nếu có)** |
+|---|---|---|---|---|---|
+| ① Trần (mái) |  |  |  |  |  |
+| ② Thành trước |  |  |  |  |  |
+| ③ Thành sau |  |  |  |  |  |
+| ④ Vách |  |  |  |  |  |
+| ⑤ Thành bên |  |  |  |  |  |
+| ⑥ Antra 4 TMP |  |  |  |  |  |
+| ⑦ Sàn |  |  |  |  |  |
 
 *Mốc [Frontera]: mọi vị trí bất thường điện thế TB 1,25±0,59 mV; pivot 1,75±0,51 vs corridor 0,73±0,47 (P<0,001); CV corridor 0,52±0,17 m/s; EGM corridor 47±10 vs pivot 35±5 ms (P<0,001).*
+
+**Cách đọc "Hình thái LVZ":** chỉ ghi khi ô "Trong vùng điện thế thấp" = có. Nhìn hình dạng mảng <0,5 mV trên
+voltage map, phân {**Liền khối (confluent)** = một mảng lớn liên tục / **Manh mún (patchy)** = nhiều đảo nhỏ rời
+rạc xen giữa mô điện thế bình thường}. **Vì sao ghi thêm biến này [thích ứng EnSite]:** hai vùng có cùng %LVZ
+nhưng LVZ manh mún (nhiều "đảo" mô sống xen giữa mô sẹo) được cho là **nền dễ tạo vòng vào lại hơn** LVZ liền
+khối cùng diện tích — %diện tích một mình không phân biệt được hai kiểu này. Đây là quan sát định tính bổ sung,
+**không thay** ngưỡng <0,5 mV đã dùng để tính %LVZ.
 
 ---
 
