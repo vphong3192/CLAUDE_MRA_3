@@ -84,20 +84,20 @@ thay 13 dòng gốc.
 2. **Bắt buộc kèm khối Điều kiện đo:** mỗi ô số phải đi với ĐK-1…ĐK-8 (và **ĐK-9** cho lớp SR sau sốc); thiếu → không so sánh được.
 3. **Đơn vị vùng:** dùng đúng 7 vùng của Cách A — **mái · thành trước · vách · thành sau · thành bên · antra 4 TMP · sàn**.
 
-| Mã | Tên trường CRF (SR / paced) | Đơn vị | Loại | Cách lấy (tóm tắt — chi tiết §7b) | Nguồn / cờ |
-|---|---|---|---|---|---|
-| E-1 | `dien_the_trungvi_vung__SR` \| `__paced` | mV | Số máy đọc | Voltage map (lọc 30–300 Hz), trung vị + khoảng theo vùng | lọc [Frontera]; menu ⚠️CAS |
-| E-2 | `LVZ_pctarea_toanNT__SR` \| `__paced`; `LVZ_pctarea_vung__…` | cm²; % | Số máy đọc | Area tool trên voltage map, ngưỡng **<0,5 mV**, % so với model | ngưỡng [Frontera + REF-001/002]; area ⚠️CAS |
-| E-3 | *(nội bộ — không nhập thô)* LAT ref-channel | ms | Nền | AutoMap annotation, nền dựng activation & suy CV | [thích ứng EnSite] |
-| E-4 | `CV_min_vungcham__SR` \| `__paced` | m/s | Số máy đọc / bán-thủ | Gradient LAT/khoảng cách điểm vào–ra vùng chậm; hoặc mô-đun CV | [Frontera] ref **0,52±0,17 m/s**; menu CV ⚠️CAS |
-| E-5 | `so_corridor_cham__SR` \| `__paced`; `vitri_corridor` | đếm; danh mục vùng | Bán-thủ | Activation isochrone map, nơi isochrone chụm = corridor chậm | [thích ứng ~ isochrone Frontera]; spacing ⚠️CAS |
-| E-6 | `EGM_duration_corridor`; `EGM_duration_pivot` | ms | Thủ công | Đo bề rộng EGM lưỡng cực tại corridor/pivot | [Frontera] ref **corridor 47±10** vs **pivot 35±5 ms** |
-| E-7 | `phanmanh_vung__SR` \| `__paced`; `CFE_mean_vung` | có/không; ms | Số máy đọc / thủ | EGM >3 deflection; CFE-mean theo vùng nếu có bản đồ CFE | định nghĩa [Frontera]; CFE map ⚠️CAS |
-| E-8 | `so_EGM_map__SR` \| `__paced` | đếm | Số máy đọc | Map statistics; QC **≥3000 EGM/bản đồ** | mục tiêu [Frontera] |
-| E-9 | `dientich_bemat_NT` | cm² | Số máy đọc | Surface area của geometry đã khóa (dùng chung 2 lớp) | [thích ứng EnSite] |
-| E-10 | `so_vitri_fixed`; `so_vitri_functional`; `pct_functional_dienthe_binhthuong` | đếm; % | **Dẫn xuất** | So cặp SR↔paced (§7); ghi tên 2 người đọc | định nghĩa [Frontera]; ref **~88%** vị trí chức năng có điện thế bình thường |
-| E-11 | `co_LVZ_nghigia_huong` (+ vùng) | có/không | **Dẫn xuất** | Quy tắc chống-nhiễu-hướng: LVZ chỉ ở 1 nhịp → gắn cờ, không ghi sẹo cố định | [thích ứng dựa REF-034] |
-| E-12 | `kieu_lantruyen_vung__SR` \| `__paced` | mô tả | Số máy đọc | Propagation map động (SR vs paced) | [thích ứng EnSite] |
+| Mã | Tên trường CRF (SR / paced) | **Biến số này là gì (giải thích cho mapper)** | Đơn vị | Loại | Cách lấy (tóm tắt — chi tiết §7b) | Nguồn / cờ |
+|---|---|---|---|---|---|---|
+| E-1 | `dien_the_trungvi_vung__SR` \| `__paced` | **Điện thế lưỡng cực tại chỗ** = biên độ đỉnh–đỉnh của điện đồ nội mạc. Phản ánh khối cơ nhĩ còn sống ở điểm đó — càng thấp càng gợi ý mô sẹo/xơ | mV | Số máy đọc | Voltage map (lọc 30–300 Hz), trung vị + khoảng theo vùng | lọc [Frontera]; menu ⚠️CAS |
+| E-2 | `LVZ_pctarea_toanNT__SR` \| `__paced`; `LVZ_pctarea_vung__…` | **Vùng điện thế thấp (LVZ)** = phần diện tích nhĩ có điện thế <0,5 mV, tính bằng cm² và % tổng diện tích buồng. Đại diện cho gánh nặng sẹo/xơ hóa | cm²; % | Số máy đọc | Area tool trên voltage map, ngưỡng **<0,5 mV**, % so với model | ngưỡng [Frontera + REF-001/002]; area ⚠️CAS |
+| E-3 | *(nội bộ — không nhập thô)* LAT ref-channel | **Thời gian hoạt hóa tại chỗ (LAT)** = thời điểm sóng khử cực đi qua điểm đó so với mốc tham chiếu. Là nền để dựng bản đồ lan truyền và tính vận tốc | ms | Nền | AutoMap annotation, nền dựng activation & suy CV | [thích ứng EnSite] |
+| E-4 | `CV_min_vungcham__SR` \| `__paced` | **Vận tốc dẫn truyền (CV)** = tốc độ sóng điện lan trong cơ nhĩ. Chậm ở vùng xơ/rối loạn dẫn truyền — nơi dễ hình thành vòng vào lại | m/s | Số máy đọc / bán-thủ | Gradient LAT/khoảng cách điểm vào–ra vùng chậm; hoặc mô-đun CV | [Frontera] ref **0,52±0,17 m/s**; menu CV ⚠️CAS |
+| E-5 | `so_corridor_cham__SR` \| `__paced`; `vitri_corridor` | **Hành lang dẫn truyền chậm** = vùng có các đường đẳng thời (isochrone) chụm sát nhau, tức nơi sóng đi chậm lại. Đếm số vùng và ghi vị trí giải phẫu | đếm; danh mục vùng | Bán-thủ | Activation isochrone map, nơi isochrone chụm = corridor chậm | [thích ứng ~ isochrone Frontera]; spacing ⚠️CAS |
+| E-6 | `EGM_duration_corridor`; `EGM_duration_pivot` | **Thời lượng điện đồ (EGM)** = độ rộng của tín hiệu điện tại chỗ. Kéo dài ở hành lang dẫn truyền chậm, ngắn hơn ở điểm xoay (pivot) | ms | Thủ công | Đo bề rộng EGM lưỡng cực tại corridor/pivot | [Frontera] ref **corridor 47±10** vs **pivot 35±5 ms** |
+| E-7 | `phanmanh_vung__SR` \| `__paced`; `CFE_mean_vung` | **Điện đồ phân mảnh** = tín hiệu có >3 gợn sóng (deflection), dấu hiệu dẫn truyền hỗn loạn/mô bệnh. CFE-mean = khoảng cách trung bình giữa các gợn | có/không; ms | Số máy đọc / thủ | EGM >3 deflection; CFE-mean theo vùng nếu có bản đồ CFE | định nghĩa [Frontera]; CFE map ⚠️CAS |
+| E-8 | `so_EGM_map__SR` \| `__paced` | **Mật độ điểm bản đồ** = số điểm điện đồ đã thu trên mỗi bản đồ (thước đo độ "dày"/chi tiết của bản đồ). Cần ≥3000 để bản đồ đủ tin cậy | đếm | Số máy đọc | Map statistics; QC **≥3000 EGM/bản đồ** | mục tiêu [Frontera] |
+| E-9 | `dientich_bemat_NT` | **Diện tích bề mặt nhĩ trái** = diện tích mặt trong buồng nhĩ trái từ mô hình 3D đã dựng. Dùng làm mẫu số cho %LVZ và mô tả kích thước buồng | cm² | Số máy đọc | Surface area của geometry đã khóa (dùng chung 2 lớp) | [thích ứng EnSite] |
+| E-10 | `so_vitri_fixed`; `so_vitri_functional`; `pct_functional_dienthe_binhthuong` | **Phân loại bất thường dẫn truyền:** "cố định (fixed)" = thấy ở CẢ nhịp xoang lẫn nhịp tạo (sẹo thật); "chức năng (functional)" = chỉ thấy ở MỘT nhịp (phụ thuộc hướng/tần số). Đếm số vị trí mỗi loại + % vị trí chức năng mà điện thế vẫn bình thường | đếm; % | **Dẫn xuất** | So cặp SR↔paced (§7); ghi tên 2 người đọc | định nghĩa [Frontera]; ref **~88%** vị trí chức năng có điện thế bình thường |
+| E-11 | `co_LVZ_nghigia_huong` (+ vùng) | **Cờ cảnh báo LVZ giả:** vùng điện thế thấp chỉ hiện ở MỘT nhịp mà bình thường ở nhịp kia → nhiều khả năng là giả (do hướng sóng đập vào điện cực), KHÔNG phải sẹo thật | có/không | **Dẫn xuất** | Quy tắc chống-nhiễu-hướng: LVZ chỉ ở 1 nhịp → gắn cờ, không ghi sẹo cố định | [thích ứng dựa REF-034] |
+| E-12 | `kieu_lantruyen_vung__SR` \| `__paced` | **Kiểu lan truyền/hướng mặt sóng** = hướng và cách sóng điện đi qua nhĩ (bản đồ lan truyền động), mô tả ở mỗi nhịp | mô tả | Số máy đọc | Propagation map động (SR vs paced) | [thích ứng EnSite] |
 
 **Lưu ý phân loại:** E-10 và E-11 là **biến DẪN XUẤT** (kết luận từ so 2 lớp bản đồ, không phải số máy xuất trực
 tiếp) — trong CRF phải ghi rõ là biến suy diễn + tên 2 người đọc (bất đồng → người thứ ba đọc mù, theo Frontera).
