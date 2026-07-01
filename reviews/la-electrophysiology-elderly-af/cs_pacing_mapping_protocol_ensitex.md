@@ -40,24 +40,31 @@ không có CAS tại chỗ.
 
 ## 2. Vấn đề then chốt #1 — không có "parallel mapping" đồng thời
 
-EnSite X không sao chép tính năng thu **đồng thời** 2 bản đồ SR + paced như CARTO. Hai cách thay thế, chọn 1
-(hoặc kết hợp):
+EnSite X không sao chép tính năng thu **đồng thời** 2 bản đồ SR + paced như CARTO.
+**Phương pháp CHÍNH THỨC của protocol này = Cách A (người dùng chọn, 2026-07-01).** Cách B chỉ nêu làm phương
+án dự phòng/kiểm chứng, không phải quy trình vận hành.
 
-### Cách A (khuyến nghị) — **thu cặp theo VÙNG, tuần tự, trên CÙNG một model hình học**
-Vì mấu chốt là so **cùng một điểm ở hai nhịp**, và circular loop phủ hẹp hơn Pentaray, hãy chia NT thành các
-vùng giải phẫu (**mái, thành trước, vách, thành sau, thành bên, antra 4 TMP, sàn**) và với **mỗi vùng**:
-1. Thu bản đồ vùng đó **trong nhịp xoang**.
-2. Chuyển ngay sang **ngoại kích CS** (§4), thu lại **đúng vùng đó** trước khi di chuyển sang vùng khác.
+### ★ Cách A (PHƯƠNG PHÁP CHÍNH THỨC) — **thu cặp theo VÙNG, tuần tự, trên CÙNG một model hình học**
+Vì mấu chốt là so **cùng một điểm ở hai nhịp**, và circular loop phủ hẹp hơn Pentaray, chia NT thành các vùng
+giải phẫu (**mái, thành trước, vách, thành sau, thành bên, antra 4 TMP, sàn**) và với **mỗi vùng**, theo đúng
+trình tự:
+1. Thu bản đồ vùng đó **trong nhịp xoang** (đạt tiêu chí chấp nhận beat + mật độ vùng).
+2. **Chuyển ngay sang ngoại kích CS** (§4), thu lại **đúng vùng đó**.
+3. Chỉ khi cả hai lớp (SR + paced) của vùng đạt yêu cầu **mới di chuyển sang vùng kế**.
 
 → Giữ so sánh SR-vs-paced **cục bộ về không gian và gần nhau về thời gian**, giảm trôi hình học — tái lập gần
 nhất tinh thần "same site, two rhythms" của Frontera trên hệ không có parallel module. [thích ứng EnSite]
-**Lưu ý bắt buộc:** khóa/tái dùng **cùng một model geometry** cho cả hai bản đồ để điểm đồng đăng ký (co-register)
-point-by-point.
 
-### Cách B — **ghi liên tục + TurboMap offline**
-Ghi liên tục toàn bộ (một lượt sweep nền nhịp xoang, rồi một lượt sweep có ngoại kích CS), sau đó dùng
-**TurboMap** dựng lại **hai** bản đồ từ dữ liệu đã ghi, gate theo nhịp (beat xoang vs beat ngoại kích). Cách
-này mô phỏng "parallel mapping" theo kiểu hậu kỳ. ⚠️[chốt với CAS về khả năng gate theo nhịp trong TurboMap]
+**Ba quy tắc bắt buộc của Cách A:**
+- **Khóa một model geometry duy nhất** dùng cho cả hai lớp bản đồ (SR và paced) để điểm đồng đăng ký
+  (co-register) point-by-point — không tạo geometry mới cho lớp paced.
+- **Không rời vùng khi chưa đủ cặp:** một vùng chỉ "xong" khi có cả lớp SR và lớp paced đạt mật độ; tránh vùng
+  khuyết một trong hai nhịp (sẽ không phân loại được fixed/functional).
+- **Ghi thứ tự vùng + dấu thời gian mỗi lớp** để truy vết trôi hình học nếu cần.
+
+### Cách B (chỉ dự phòng/kiểm chứng, KHÔNG dùng vận hành) — ghi liên tục + TurboMap offline
+Ghi liên tục toàn bộ rồi dùng **TurboMap** dựng lại hai bản đồ, gate theo nhịp. Chỉ dùng khi Cách A gặp sự cố
+(vd trôi hình học nặng) hoặc để kiểm chứng hậu kỳ. ⚠️[chốt với CAS về khả năng gate theo nhịp trong TurboMap]
 
 ---
 
