@@ -84,7 +84,7 @@ thay 13 dòng gốc.
 2. **Bắt buộc kèm khối Điều kiện đo:** mỗi ô số phải đi với ĐK-1…ĐK-8 (và **ĐK-9** cho lớp SR sau sốc); thiếu → không so sánh được.
 3. **Đơn vị vùng:** dùng đúng 7 vùng của Cách A — **mái · thành trước · vách · thành sau · thành bên · antra 4 TMP · sàn**.
 
-| Mã | Tên trường CRF (SR | paced) | Đơn vị | Loại | Cách lấy (tóm tắt — chi tiết §7b) | Nguồn / cờ |
+| Mã | Tên trường CRF (SR / paced) | Đơn vị | Loại | Cách lấy (tóm tắt — chi tiết §7b) | Nguồn / cờ |
 |---|---|---|---|---|---|
 | E-1 | `dien_the_trungvi_vung__SR` \| `__paced` | mV | Số máy đọc | Voltage map (lọc 30–300 Hz), trung vị + khoảng theo vùng | lọc [Frontera]; menu ⚠️CAS |
 | E-2 | `LVZ_pctarea_toanNT__SR` \| `__paced`; `LVZ_pctarea_vung__…` | cm²; % | Số máy đọc | Area tool trên voltage map, ngưỡng **<0,5 mV**, % so với model | ngưỡng [Frontera + REF-001/002]; area ⚠️CAS |
