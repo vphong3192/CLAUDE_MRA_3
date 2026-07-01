@@ -137,6 +137,45 @@ trí dẫn truyền chậm **0,73±0,47 mV**; thời lượng EGM corridor **47�
 
 ---
 
+## 7b. Thông số EnSite X thu được theo protocol này → đưa vào CRF (kèm CÁCH LẤY)
+
+**Bối cảnh vận hành đã chốt (2026-07-01):** chuyển nhịp điện về xoang trước → map **trong nhịp xoang (SR)**
+rồi map **trong nhịp tạo CS (paced)** trên **cùng một model geometry đã khóa** (Cách A §2). Vì vậy **mọi thông
+số định lượng dưới đây đều thu THÀNH CẶP: một giá trị ở SR, một giá trị ở paced** — chính cặp này mới cho phép
+phân loại fixed/functional (§7). Nhập CRF theo cặp cột **(SR) | (paced)**.
+
+**Nguyên tắc bắt buộc:** mỗi ô số dưới đây **KHÔNG có nghĩa nếu thiếu khối "Điều kiện đo"** — luôn ghi kèm:
+nhịp (SR/paced), vị trí tạo nhịp (**CS 1-2**), coupling (**ERP tại chỗ + 30 ms**), catheter (**Advisor FL
+Circular, bipolar**), lọc (**30–300 Hz**), ngưỡng LVZ (**< 0,5 mV**), và geometry-model dùng chung. (Khớp khối
+ĐK-1…ĐK-8 trong `crf_table_with_measurement_conditions.md`.)
+
+| # | Thông số (đơn vị) | Cách lấy trên EnSite X (thao tác cụ thể) | Đo ở nhịp | Trường CRF đề xuất | Nguồn / cờ |
+|---|---|---|---|---|---|
+| E-1 | **Điện thế lưỡng cực đỉnh–đỉnh** (mV) | Bản đồ **voltage** (Advisor Circular, lọc 30–300 Hz); AutoMap gán biên độ peak-to-peak mỗi điểm; đọc **trung vị + khoảng** theo từng vùng giải phẫu | SR **và** paced | `dien_the_trungvi_vung__SR` / `__paced` (mV) | lọc & phương pháp [Frontera]; hiển thị/menu ⚠️CAS |
+| E-2 | **Diện tích LVZ (<0,5 mV) & % diện tích** (cm²; %) | Công cụ **area measurement** trên bản đồ voltage, đặt ngưỡng **<0,5 mV**; đọc diện tích vùng <0,5 mV và **% so với diện tích model** (toàn NT và từng vùng) | SR **và** paced | `LVZ_pctarea_toanNT__SR` / `__paced`; `LVZ_pctarea_vung__…` | ngưỡng [Frontera + REF-001/002]; công cụ area ⚠️CAS |
+| E-3 | **Thời gian hoạt hóa tại chỗ (LAT)** (ms) | Annotation LAT tự động của **AutoMap**, tham chiếu CS/khởi kích cố định; **không nhập thô vào CRF** — là nền để dựng bản đồ hoạt hóa & suy CV (E-4) | mỗi nhịp | *(nội bộ, không nhập; ghi ref-channel)* | [thích ứng EnSite] |
+| E-4 | **Vận tốc dẫn truyền (CV)** (m/s) | Từ **gradient LAT / khoảng cách** giữa điểm vào–ra vùng chậm; hoặc mô-đun CV tự động nếu phiên bản có. Ghi **CV tối thiểu tại vùng dẫn truyền chậm** | SR **và** paced, cùng vùng | `CV_min_vungcham__SR` / `__paced` (m/s) | [Frontera] (tham chiếu **0,52±0,17 m/s** tại vị trí chức năng bất thường); menu CV ⚠️CAS |
+| E-5 | **Vùng chen isochrone / vùng giảm tốc** (đếm; vị trí giải phẫu) | Bản đồ **activation isochrone**; đọc nơi isochrone chụm = **corridor dẫn truyền chậm**; đặt **isochrone spacing / window of interest** phù hợp | SR **và** paced | `so_corridor_cham__SR` / `__paced`; `vitri_corridor` (danh mục vùng) | [thích ứng EnSite ~ phân tích isochrone Frontera]; spacing ⚠️CAS |
+| E-6 | **Thời lượng EGM** (ms) | Đo **bề rộng EGM lưỡng cực** trên cửa sổ tại vị trí corridor và pivot | tại nhịp bộc lộ | `EGM_duration_corridor` / `EGM_duration_pivot` (ms) | [Frontera] (tham chiếu **corridor 47±10 ms** vs **pivot 35±5 ms**, P<0,001) |
+| E-7 | **Phân mảnh (fractionation, EGM >3 deflection)** (có/không; số điểm; CFE-mean ms) | Đọc hình dạng EGM; nếu phiên bản có **bản đồ CFE** thì lấy **CFE-mean** theo vùng | SR **và** paced | `phanmanh_vung__SR` / `__paced` (có/không); `CFE_mean_vung` (ms) | định nghĩa >3 deflection [Frontera]; bản đồ CFE ⚠️CAS |
+| E-8 | **Mật độ điểm / số EGM mỗi bản đồ** (đếm) | **Map statistics** của EnSite X: tổng EGM chấp nhận; dùng để **kiểm chất lượng ≥3000 EGM/bản đồ** | mỗi bản đồ (SR; paced) | `so_EGM_map__SR` / `__paced` (kiểm QC ≥3000) | mục tiêu [Frontera] |
+| E-9 | **Diện tích bề mặt model NT** (cm²) | Đọc **surface area** của geometry Advisor Circular đã khóa (dùng chung 2 lớp) | 1 lần (model chung) | `dientich_bemat_NT` (cm²) | [thích ứng EnSite] |
+| E-10 | **Phân loại fixed vs functional** (đếm; % ) — **DẪN XUẤT, không phải readout** | **So cặp** bản đồ SR vs paced theo §7 (KHÔNG có nút xuất trực tiếp): bất thường ở **cả hai** nhịp = fixed; **chỉ một** nhịp = functional | so SR↔paced | `so_vitri_fixed`; `so_vitri_functional`; `pct_functional_dienthe_binhthuong` | định nghĩa [Frontera] (tham chiếu **~88%** vị trí chức năng có điện thế bipolar bình thường) |
+| E-11 | **Cờ "LVZ nghi giả do hướng/functional"** (có/không) | Áp **quy tắc §7**: "LVZ" chỉ thấy ở MỘT nhịp mà bình thường ở nhịp kia → gắn cờ, **không** ghi là sẹo cố định | so SR↔paced | `co_LVZ_nghigia_huong` (có/không) + vùng | [thích ứng EnSite dựa REF-034] |
+| E-12 | **Kiểu lan truyền / hướng mặt sóng** (mô tả) | Bản đồ **propagation** động (SR vs paced) | SR **và** paced | `kieu_lantruyen_vung__SR` / `__paced` | [thích ứng EnSite] |
+
+**Ghi chú vận hành khi đưa vào CRF:**
+- **Đơn vị vùng:** mọi thông số vùng dùng đúng danh mục 7 vùng của Cách A (**mái · thành trước · vách · thành
+  sau · thành bên · antra 4 TMP · sàn**) để cặp SR–paced khớp point-by-point trên geometry đã khóa.
+- **E-10/E-11 là kết luận, không phải số máy đọc:** ghi rõ trong CRF đây là biến dẫn xuất từ so sánh 2 lớp,
+  kèm tên 2 người đọc (bất đồng → người thứ ba đọc mù, theo Frontera §6).
+- **Vì đã chốt chuyển nhịp trước:** nên bổ sung điều kiện đo **"thời gian từ chuyển nhịp điện đến khi bắt đầu
+  map SR (phút)"** (ứng viên **ĐK-9**) — phù nề/hồi phục sau sốc có thể ảnh hưởng điện thế & CV; ghi để hiệu
+  chỉnh/loại trừ. *(Đề xuất, chưa thêm vào file CRF — chờ bạn chốt.)*
+- **Tất cả ô ⚠️CAS:** xác nhận tên menu/khả năng xuất với ứng dụng viên Abbott trước khi khóa CRF (xem §9).
+
+---
+
 ## 8. An toàn & xử lý khởi phát RN
 
 - Khởi phát RN có thể do protocol ngoại kích **hoặc** thao tác catheter trong NT. [Frontera]

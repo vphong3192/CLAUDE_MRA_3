@@ -1,0 +1,77 @@
+flowchart LR
+    subgraph COLA["<b>A. CHUẨN BỊ</b>"]
+        direction TB
+        A1["Sốc điện về xoang<br/>Ghi ĐK-9 (phút → map SR)"]
+        A2["Khóa 1 model hình học NT<br/>(dùng chung SR + Pace)"]
+        A3["Cấu hình tín hiệu<br/>Lọc 30–300 Hz · LVZ &lt;0,5 mV<br/>≥3000 EGM/bản đồ"]
+        A4["Đo ERP tại chỗ<br/>Sensed CS 1-2<br/>Coupling = ERP + 30 ms"]
+        A1 --> A2 --> A3 --> A4
+    end
+
+    subgraph COLB["<b>B. THU THEO VÙNG (x7)</b>"]
+        direction TB
+        B1["Chọn 1 trong 7 vùng<br/>Trần·Trước·Sau·Vách·Bên·Antra 4TMP·Sàn"]
+        B2["Map hoạt hóa<br/><b>NHỊP XOANG (SR)</b>"]
+        B3["Map hoạt hóa<br/><b>NHỊP TẠO (Pace)</b><br/>— đúng vùng vừa xong"]
+        B4{"Đủ mật độ<br/>cả 2 lớp?"}
+        B5{"Còn vùng<br/>chưa xong?"}
+        B1 --> B2 --> B3 --> B4
+        B4 -- Chưa --> B3
+        B4 -- Đủ --> B5
+        B5 -- Còn --> B1
+    end
+
+    subgraph COLC["<b>C. ĐỌC &amp; PHÂN LOẠI</b>"]
+        direction TB
+        C1["Đọc isochrone 2 propagation<br/>2 người đọc · bất đồng→người 3"]
+        C2{"Pivot (&gt;45°) hay<br/>Corridor (&gt;3 isochrone/1cm)?"}
+        C3{"Xuất hiện<br/>ở mấy nhịp?"}
+        C4["<b>FIXED</b><br/>Cả 2 nhịp → sẹo thật"]
+        C5{"LVZ chỉ<br/>ở 1 nhịp?"}
+        C6["⚠️ Cờ <b>NGHI GIẢ DO HƯỚNG</b><br/>KHÔNG ghi sẹo cố định"]
+        C7["<b>FUNCTIONAL</b> thật"]
+        C1 --> C2 --> C3
+        C3 -- Cả 2 nhịp --> C4
+        C3 -- Chỉ 1 nhịp --> C5
+        C5 -- Có --> C6
+        C5 -- Không --> C7
+    end
+
+    subgraph COLD["<b>D. MÔ TẢ &amp; SAU MAP</b>"]
+        direction TB
+        D1["Đo mô tả (thứ cấp):<br/>Điện thế·CV·EGM·Hình thái LVZ<br/>⚠️ 88% functional điện thế BÌNH THƯỜNG"]
+        D2["PVI wide antral tiêu chuẩn<br/>(bất thường sát đường đốt → gộp vào)"]
+        D3["Đếm vị trí FUNCTIONAL<br/>còn NGOÀI vòng PVI = <b>residual</b><br/>(tiên lượng tái phát)"]
+        D1 --> D2 --> D3
+    end
+
+    COLA --> COLB --> COLC --> COLD
+    J1(("+"))
+    C4 --> J1
+    C6 --> J1
+    C7 --> J1
+    J1 --> D1
+
+    classDef stepbox fill:#eef4ff,stroke:#2c5aa0,stroke-width:1px,color:#111;
+    classDef corebox fill:#fff4e0,stroke:#b8730a,stroke-width:2px,color:#111;
+    classDef decisionbox fill:#ffe6e6,stroke:#c0392b,stroke-width:1px,color:#111;
+    classDef fixedbox fill:#e8f8e8,stroke:#2e7d32,stroke-width:2px,color:#111;
+    classDef funcbox fill:#fff0f0,stroke:#c0392b,stroke-width:2px,color:#111;
+    classDef flagbox fill:#ffd6d6,stroke:#a30000,stroke-width:2px,color:#111;
+    classDef descbox fill:#f2f2f2,stroke:#555,stroke-width:1px,color:#111;
+    classDef finalbox fill:#eaf7ff,stroke:#0b6aa2,stroke-width:2px,color:#111;
+
+    class A1,A2,A3,A4,B1,B2,B3 stepbox;
+    class C1,C2 corebox;
+    class B4,B5,C3,C5 decisionbox;
+    class C4 fixedbox;
+    class C7 funcbox;
+    class C6 flagbox;
+    class D1 descbox;
+    class D2,D3 finalbox;
+    class J1 finalbox;
+
+    style COLA fill:#ffffff,stroke:#999,stroke-width:1px
+    style COLB fill:#ffffff,stroke:#999,stroke-width:1px
+    style COLC fill:#ffffff,stroke:#999,stroke-width:1px
+    style COLD fill:#ffffff,stroke:#999,stroke-width:1px

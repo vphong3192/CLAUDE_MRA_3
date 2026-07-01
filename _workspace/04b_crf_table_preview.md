@@ -59,13 +59,53 @@ thiếu khối này thì trị số **không so sánh được** giữa bệnh n
 | **ĐK-6. Cấu hình tín hiệu** | Lọc bipolar (Hz) · ngưỡng LVZ (mV) · mật độ EGM/bản đồ | Mặc định khớp Frontera: **30–300 Hz · <0,5 mV · ≥3000 EGM** |
 | **ĐK-7. Phương pháp thu 2 nhịp** | {Cách A — cặp theo vùng, cùng model / Cách B — TurboMap} | Protocol §2: **Cách A là phương pháp chính thức** |
 | **ĐK-8. Phân loại bất thường** | {Cố định (fixed) / Chức năng (functional) / Không xác định} | fixed = hiện ở cả 2 nhịp; functional = chỉ 1 nhịp (Frontera) |
+| **ĐK-9. Thời gian từ chuyển nhịp điện → bắt đầu map SR** | Số nguyên phút (min); ghi "N/A" nếu vào phòng đã ở nhịp xoang | Chốt vận hành 2026-07-01: sốc điện về xoang TRƯỚC rồi map SR. Phù nề/hồi phục điện học sau sốc có thể làm giảm điện thế & CV thoáng qua → ghi để hiệu chỉnh/loại trừ khi phân tích lớp SR |
 
 **Quy tắc chống-nhiễu-hướng (lab bipolar):** nếu một vùng ghi LVZ (<0,5 mV) ở **chỉ một** nhịp mà bình thường ở
 nhịp kia → **đánh dấu ĐK-8 = "chức năng/nghi giả do hướng", KHÔNG ghi là sẹo cố định** (thao tác hóa REF-034).
 
 **Áp dụng theo dòng:** ĐK-1…ĐK-8 bắt buộc cho dòng #4 (CV) và #5 (Voltage/LVZ); ĐK-1…ĐK-4 bắt buộc cho #1 AERP,
-#2 AFCL, #3 SNRT/cSNRT (các biến kích thích-phụ thuộc); #13 Rotor/CFAE ghi ĐK-1, ĐK-5, ĐK-6. Các biến ECG bề
-mặt (#6–#11) và siêu âm (#12) **không** cần khối này (đo không xâm lấn, không phụ thuộc nhịp tạo/hệ mapping).
+#2 AFCL, #3 SNRT/cSNRT (các biến kích thích-phụ thuộc); #13 Rotor/CFAE ghi ĐK-1, ĐK-5, ĐK-6. **ĐK-9 ghi mỗi khi
+lớp bản đồ SR được thu SAU chuyển nhịp điện** (áp cho lớp SR của #4, #5 và của toàn bộ biến thu-số EnSite X
+E-1…E-12 dưới đây). Các biến ECG bề mặt (#6–#11) và siêu âm (#12) **không** cần khối này (đo không xâm lấn,
+không phụ thuộc nhịp tạo/hệ mapping).
+
+---
+
+## Bảng biến thu-số EnSite X theo protocol bản đồ kép (E-1…E-12) — hàng CRF chính thức (bổ sung 2026-07-01)
+
+**Nguồn & phạm vi:** các biến này thu trực tiếp khi chạy `cs_pacing_mapping_protocol_ensitex.md` **§7b** (chốt vận
+hành: sốc về xoang → map **SR** rồi map **paced CS** trên **cùng model geometry đã khóa**, Cách A). Đây là lớp
+**thu-số theo VÙNG/theo BẢN ĐỒ** trong buổi EP, **khác** 13 dòng gốc (mô tả cấp bệnh nhân + GRADE) — bổ sung, không
+thay 13 dòng gốc.
+
+**Ba quy tắc nhập:**
+1. **Thu thành CẶP:** mỗi biến định lượng có **hai ô — `__SR` và `__paced`**; chính cặp này phân loại fixed/functional.
+2. **Bắt buộc kèm khối Điều kiện đo:** mỗi ô số phải đi với ĐK-1…ĐK-8 (và **ĐK-9** cho lớp SR sau sốc); thiếu → không so sánh được.
+3. **Đơn vị vùng:** dùng đúng 7 vùng của Cách A — **mái · thành trước · vách · thành sau · thành bên · antra 4 TMP · sàn**.
+4. **Thứ bậc (theo Frontera):** nhóm **CHÍNH = bất thường HOẠT HÓA** — **pivot (E-5a)** + **corridor dẫn truyền chậm (E-5)** đọc trên bản đồ isochrone ở cả 2 nhịp → phân loại **fixed/functional (E-10, E-11)**. Nhóm **MÔ TẢ** (thứ cấp, KHÔNG dùng sàng lọc) = điện thế E-1, LVZ E-2, CV E-4, thời lượng EGM E-6 (điện thế tại vị trí bất thường **thường BÌNH THƯỜNG, ~88%** [Frontera]). Nhóm **TÙY CHỌN** = phân mảnh E-7 (**không** phải tiêu chí Frontera).
+
+| Mã | Tên trường CRF (SR / paced) | **Biến số này là gì (giải thích cho mapper)** | Đơn vị | Loại | Cách lấy (tóm tắt — chi tiết §7b) | Nguồn / cờ |
+|---|---|---|---|---|---|---|
+| E-1 | `dien_the_trungvi_vung__SR` \| `__paced` | **Điện thế lưỡng cực tại chỗ** = biên độ đỉnh–đỉnh của điện đồ nội mạc. Phản ánh khối cơ nhĩ còn sống ở điểm đó — càng thấp càng gợi ý mô sẹo/xơ | mV | Số máy đọc | Voltage map (lọc 30–300 Hz), trung vị + khoảng theo vùng | lọc [Frontera]; menu ⚠️CAS |
+| E-2 | `LVZ_pctarea_toanNT__SR` \| `__paced`; `LVZ_pctarea_vung__…` | **Vùng điện thế thấp (LVZ)** = phần diện tích nhĩ có điện thế <0,5 mV, tính bằng cm² và % tổng diện tích buồng. Đại diện cho gánh nặng sẹo/xơ hóa | cm²; % | Số máy đọc | Area tool trên voltage map, ngưỡng **<0,5 mV**, % so với model | ngưỡng [Frontera + REF-001/002]; area ⚠️CAS |
+| E-2a | `LVZ_hinhthai_vung__SR` \| `__paced` | **Hình thái LVZ** = dạng phân bố của mảng <0,5 mV: **liền khối (confluent)** (một mảng lớn liên tục) vs **manh mún (patchy)** (nhiều đảo nhỏ rời rạc xen mô điện thế bình thường). Hai vùng cùng %LVZ nhưng LVZ manh mún được cho là nền dễ vào lại hơn — %diện tích một mình không phân biệt được | {liền khối / manh mún} | Quan sát trực quan | Đọc hình dạng mảng <0,5 mV trên cùng voltage map dùng cho E-2 | [thích ứng EnSite]; bổ sung định tính, không thay ngưỡng E-2 |
+| E-3 | *(nội bộ — không nhập thô)* LAT ref-channel | **Thời gian hoạt hóa tại chỗ (LAT)** = thời điểm sóng khử cực đi qua điểm đó so với mốc tham chiếu. Là nền để dựng bản đồ lan truyền và tính vận tốc | ms | Nền | AutoMap annotation, nền dựng activation & suy CV | [thích ứng EnSite] |
+| E-4 | `CV_min_vungcham__SR` \| `__paced` | **Vận tốc dẫn truyền (CV)** = tốc độ sóng điện lan trong cơ nhĩ. Chậm ở vùng xơ/rối loạn dẫn truyền — nơi dễ hình thành vòng vào lại | m/s | Số máy đọc / bán-thủ | Gradient LAT/khoảng cách điểm vào–ra vùng chậm; hoặc mô-đun CV | [Frontera] ref **0,52±0,17 m/s**; menu CV ⚠️CAS |
+| **E-5a** | `so_pivot__SR` \| `__paced`; `vitri_pivot` | **Điểm xoay (pivot)** [nhóm CHÍNH] = vùng khu trú nơi mặt sóng **bẻ hướng** (xoay theo/ngược chiều kim đồng hồ), hướng mới **lệch >45°** so hướng tới — điểm sóng "rẽ", có thể là **neo cho vòng vào lại**. Đếm số điểm + ghi vị trí | đếm; danh mục vùng | Bán-thủ | Activation isochrone map: nơi mũi tên lan truyền đổi hướng >45° | **[Frontera]** (định nghĩa pivot); ⚠️CAS |
+| E-5 | `so_corridor_cham__SR` \| `__paced`; `vitri_corridor` | **Hành lang dẫn truyền chậm** [nhóm CHÍNH] = dải mô nơi sóng đi chậm — cụ thể **>3 đường isochrone chụm trong bán kính 1 cm**. Đếm số vùng và ghi vị trí giải phẫu | đếm; danh mục vùng | Bán-thủ | Activation isochrone map, nơi isochrone chụm (crowding) = corridor chậm | **[Frontera]** (định nghĩa corridor); spacing ⚠️CAS |
+| E-6 | `EGM_duration_corridor`; `EGM_duration_pivot` | **Thời lượng điện đồ (EGM)** = độ rộng của tín hiệu điện tại chỗ. Kéo dài ở hành lang dẫn truyền chậm, ngắn hơn ở điểm xoay (pivot) | ms | Thủ công | Đo bề rộng EGM lưỡng cực tại corridor/pivot | [Frontera] ref **corridor 47±10** vs **pivot 35±5 ms** |
+| E-7 | `phanmanh_vung__SR` \| `__paced`; `CFE_mean_vung` | **Điện đồ phân mảnh** = tín hiệu có >3 gợn sóng (deflection), dấu hiệu dẫn truyền hỗn loạn/mô bệnh. CFE-mean = khoảng cách trung bình giữa các gợn | có/không; ms | Số máy đọc / thủ | EGM >3 deflection; CFE-mean theo vùng nếu có bản đồ CFE | định nghĩa [Frontera]; CFE map ⚠️CAS |
+| E-8 | `so_EGM_map__SR` \| `__paced` | **Mật độ điểm bản đồ** = số điểm điện đồ đã thu trên mỗi bản đồ (thước đo độ "dày"/chi tiết của bản đồ). Cần ≥3000 để bản đồ đủ tin cậy | đếm | Số máy đọc | Map statistics; QC **≥3000 EGM/bản đồ** | mục tiêu [Frontera] |
+| E-9 | `dientich_bemat_NT` | **Diện tích bề mặt nhĩ trái** = diện tích mặt trong buồng nhĩ trái từ mô hình 3D đã dựng. Dùng làm mẫu số cho %LVZ và mô tả kích thước buồng | cm² | Số máy đọc | Surface area của geometry đã khóa (dùng chung 2 lớp) | [thích ứng EnSite] |
+| E-10 | `so_vitri_fixed`; `so_vitri_functional`; `pct_functional_dienthe_binhthuong` | **Phân loại bất thường dẫn truyền:** "cố định (fixed)" = thấy ở CẢ nhịp xoang lẫn nhịp tạo (sẹo thật); "chức năng (functional)" = chỉ thấy ở MỘT nhịp (phụ thuộc hướng/tần số). Đếm số vị trí mỗi loại + % vị trí chức năng mà điện thế vẫn bình thường | đếm; % | **Dẫn xuất** | So cặp SR↔paced (§7); ghi tên 2 người đọc | định nghĩa [Frontera]; ref **~88%** vị trí chức năng có điện thế bình thường |
+| E-11 | `co_LVZ_nghigia_huong` (+ vùng) | **Cờ cảnh báo LVZ giả:** vùng điện thế thấp chỉ hiện ở MỘT nhịp mà bình thường ở nhịp kia → nhiều khả năng là giả (do hướng sóng đập vào điện cực), KHÔNG phải sẹo thật | có/không | **Dẫn xuất** | Quy tắc chống-nhiễu-hướng: LVZ chỉ ở 1 nhịp → gắn cờ, không ghi sẹo cố định | [thích ứng dựa REF-034] |
+| E-12 | `kieu_lantruyen_vung__SR` \| `__paced` | **Kiểu lan truyền/hướng mặt sóng** = hướng và cách sóng điện đi qua nhĩ (bản đồ lan truyền động), mô tả ở mỗi nhịp | mô tả | Số máy đọc | Propagation map động (SR vs paced) | [thích ứng EnSite] |
+
+**Lưu ý phân loại:** E-10 và E-11 là **biến DẪN XUẤT** (kết luận từ so 2 lớp bản đồ, không phải số máy xuất trực
+tiếp) — trong CRF phải ghi rõ là biến suy diễn + tên 2 người đọc (bất đồng → người thứ ba đọc mù, theo Frontera).
+Mọi giá trị verbatim Frontera giữ nguyên + gắn cờ; ô ⚠️CAS xác nhận tên menu/khả năng xuất với ứng dụng viên Abbott
+trước khi khóa CRF.
 
 ---
 
@@ -73,6 +113,8 @@ mặt (#6–#11) và siêu âm (#12) **không** cần khối này (đo không x�
 mục "Bảng biến số đề xuất (CRF)" trong bài tổng quan cuối; synthesis-writer viết phần narrative tương ứng
 theo đúng GRADE/ngôn ngữ/ngoại suy ở mỗi dòng, không tự thêm/bớt cột.
 
-**Bổ sung 2026-07-01 (theo yêu cầu người dùng):** thêm **Khối "Điều kiện đo" (ĐK-1…ĐK-8)** để CRF khớp với
-protocol tạo nhịp CS trên EnSite X (`cs_pacing_mapping_protocol_ensitex.md`, Cách A). Đây là phần MỞ RỘNG sau
-khi cấu trúc gốc 13×9 đã duyệt — không sửa 13 dòng gốc, chỉ thêm khối điều kiện đo áp cho các biến xâm lấn.
+**Bổ sung 2026-07-01 (theo yêu cầu người dùng):** thêm **Khối "Điều kiện đo" (ĐK-1…ĐK-9)** và **Bảng biến thu-số
+EnSite X (E-1…E-12)** để CRF khớp với protocol tạo nhịp CS trên EnSite X (`cs_pacing_mapping_protocol_ensitex.md`,
+Cách A + §7b). ĐK-9 ("thời gian từ chuyển nhịp → map SR") thêm sau khi chốt vận hành sốc-về-xoang-trước. Đây là
+phần MỞ RỘNG sau khi cấu trúc gốc 13×9 đã duyệt — **không sửa 13 dòng gốc**, chỉ thêm khối điều kiện đo (áp cho
+các biến xâm lấn) và bảng biến thu-số EnSite X (thu theo vùng/bản đồ trong buổi EP).
