@@ -1,104 +1,123 @@
-# Proposed Lessons & Evolution-Log Entry — Run #4 (ablation metrics RF-PVI)
+# Phase 7 — Proposed Lessons (pending user approval)
 
-> **Status: PENDING USER APPROVAL.** Nothing here is saved to `lessons.md` or `evolution-log.md` yet.
-> Curator will append on the lead's confirmation that the user approved.
-> Run: ablation metrics in RF-PVI for AF · 2026-06-14 · Rubric 0.98 — EXCELLENT.
+**Run:** LA electrophysiology in elderly AF (Đặc điểm điện học, điện sinh lý nhĩ trái ở bệnh nhân rung
+nhĩ cao tuổi) · **Date:** 2026-06-30 · **Branch:** review/la-ep-elderly-af
 
----
-
-## Part A — Proposed new lessons (L-016, L-017)
-
-### L-016: Reconcile inline citations against the reference list before handoff
-- **Role:** writer
-- **Trigger:** finishing any draft that has a numbered reference list
-- **Rule:** Before handing the draft to QA, run a two-way reconciliation: every reference-list entry [n] must appear at least once inline, and every inline [n] must have a list entry. Resolve orphans (listed-but-uncited) by either citing them in the relevant section or removing them from the list. Do not rely on QA to catch this.
-- **Why:** This run left refs [29–34] (3 CF-catheter benchmarks + 3 society guidelines) in the list but uncited inline — orphan references that QA had to fix. An orphan reference signals retrieved-but-unused evidence and looks like sloppy scholarship to an expert reader; catching it pre-handoff keeps the writer, not QA, accountable for completeness.
-- **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
-
-### L-017: Embed L-011 guideline citations in the consensus section, not just the reference list
-- **Role:** writer
-- **Trigger:** the strategy ran an L-011 guideline-body search (ESC / AHA / ACC / ADA / NICE / HRS) and those guidelines are in the store
-- **Rule:** When society guidelines were retrieved per L-011, cite them explicitly in the "Established consensus" section to anchor each consensus statement — do not leave them sitting only in the reference list. The guideline must do interpretive work in the text (what it recommends and at what strength), not merely appear as a number.
-- **Why:** L-011 exists to make reviews read as complete to clinicians; that value is lost if the guidelines are retrieved and then forgotten at the writing stage. This run retrieved the 2024 ESC/EACTS, 2023 ACC/AHA, and 2017 HRS guidelines but did not embed them until QA's FIX — guideline citations are easy to fetch and easy to forget to use, so the omission slightly weakened L-011 coverage (cost C10 0.1).
-- **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
+**Verification basis:** Read `_workspace/06_verification_report.md`, `_workspace/05b_coach.md`,
+`_workspace/gate4b_approval.md`, `_workspace/04b_crf_table_preview.md`, and `git log` over `_workspace/`
+to confirm candidates against actual events (not the user's framing alone) before drafting.
 
 ---
 
-## Part B — Proposed evolution-log entry (Entry #4)
+## Evolution-log entry (draft — Entry #10)
 
-```
-═══════════════════════════════════════════════
-### Entry #4 — 2026-06-14 — Ablation metrics in RF-PVI for AF (AI/LSI/LID/CF/AID, TactiFlex SE)
-**Task:** So sánh các chỉ số tổn thương trong triệt đốt RF-PVI điều trị rung nhĩ (AI, LSI, LID, CF,
-AID/TactiFlex SE). Mục đích: nghiên cứu/học thuật. Đối tượng: BS điện sinh lý can thiệp. Ngôn ngữ:
-tiếng Việt. Độ sâu: ~3000+ từ.
-**Rubric total:** 0.98 → EXCELLENT (≥0.90)
-**Per-criterion:** C1 1.0 · C2 1.0 · C3 1.0 · C4 1.0 · C5 1.0 · C6 1.0 · C7 1.0 · C8 1.0 · C9 1.0 · C10 0.9
-(10-criterion verifier rubric; C10 Completeness held at 0.9 for thin guideline integration pre-FIX).
-**Process:** protocol → retrieval (source/ checked — L-012 applied; 10 user PDFs/HTML used) → Research Map
-**GATE CLEARED** (user answered all map questions + uploaded 10 PDFs + "tiếp tục quy trình nghiên cứu",
-2026-06-14 08:28 UTC, received after the map was shown — satisfies L-014, no self-clear) → appraisal
-(GRADE + RoB) → Vietnamese draft → QA + rubric + audit. Law-compliance 6/6 PASS.
-**Records:** 35 PMID-verified records (2 UNCONFIRMED — Segreti A022, Pedersen — excluded/uncited per L-009);
-10 load-bearing records full-text-confirmed via user-supplied HTML+PDF in source/af-ablation-metrics/.
-**Process notes (non-law, recorded):**
-- Full-text retrieval initially BLOCKED — PubMed metadata/full-text MCP + NCBI E-utilities permission-denied
-  → user uploaded 10 HTML+PDF files → resolved. QA could not independently re-resolve PMIDs (same egress
-  block); mitigated by retriever title-confirmation at capture + verifier full-text re-read of the 10
-  highest-stakes records. Recommend re-granting PubMed metadata permission for future runs.
-- bioRxiv/medRxiv preprint sweep permission-denied → 0 preprints → flagged in §11 Limitations (L-004 honoured
-  in intent; gap disclosed honestly).
-- Synthesis writer hit Consensus API session limit → file was already complete (204 lines), no data loss.
-- AutoMark Index: 0 PubMed results → reported as "not peer-reviewed literature, future direction only"
-  (Law 1 "no source found" treatment, not a fabrication).
-**Violations found:** none blocking; no fabricated citation; both human gates honoured.
-**Defects:** LOW (writer) — orphan reference entries [29–34] listed but uncited inline; L-011 society
-guidelines (ESC/AHA/HRS) retrieved but not embedded in the consensus section. → QA FIX applied (added
-[29,30,31] to §6.4 and [32,33,34] to §10.1; numbers verified vs A018/A019/A020). Non-blocking.
-**Key scientific findings (method knowledge for future cardiac-EP reviews):**
-- No RCT exists for ANY lesion-quality index (AI/LSI/LID/AID) vs conventional — the entire efficacy thesis
-  rests on cohort/historical-control data (GRADE LOW for AI/LSI, VERY LOW for LID/AID).
-- Both CF RCTs (TOCCASTAR, Ullah) are NEGATIVE for 12-mo clinical benefit — the strongest conclusion in the
-  whole review is this MODERATE-certainty negative; cohort-positive CF data must NOT override it (Law 3).
-- A028 (Lian, LID-vs-LSI head-to-head) is fatally confounded: the LID arm had NO contact-force sensing, so
-  the comparison is not metric-vs-metric. Internal stat inconsistency too (KM P=0.037 vs Table-2 P=0.09).
-- AID/TactiFlex SE is an emerging paradigm with pilot-level evidence only (single-arm n=30, pivotal n=334).
-**Lessons applied:** L-001/002/003/006/007/009/010/011/012/014/015 — all fired correctly.
-**Lessons learned → proposed (pending approval):** L-016 (inline-vs-list reconciliation before handoff),
-L-017 (embed L-011 guideline citations in the consensus section).
-**Actions taken:** built `reference/af-ablation-metrics-pvi-rf.md` (35 verified records); 10 full-text-backed
-via source/af-ablation-metrics/; delivered `_workspace/06_final_review.md` (clean, post-FIX). Vietnamese
-terms for the glossary to be confirmed with the user (see Part C).
-**Status:** clean EXCELLENT run; first run to clear the gate via PDF-upload + explicit Vietnamese approval and
-to operate fully on user-supplied full text under an egress block — good positive evidence the gate + provenance
-disciplines hold under degraded retrieval.
-═══════════════════════════════════════════════
-```
+**Topic:** LA electrophysiology in elderly AF — narrative review + CRF parameter table (dual Phase-0
+deliverable). **Rubric:** 0.92 (EXCEEDED). **Bands:** T1 0.9 · T2 0.85 · T3 0.95 · T4 0.95 · T5 1.0 · T6
+0.9. **Deterministic citation audit:** PASS, exit 0, 0 HARD-FAIL, 6 non-blocking WARN (5 formatting
+heuristics + 1 genuine store-depth gap, both traced). **Gates:** Research Map (Phase 3) approved "ok";
+Gate 4b approved "bắt đầu viết" in a distinct turn after a nested CRF structural sub-approval (3
+yes/no decisions) was resolved. **Coach verdict:** SHIP-AS-IS, one pass, no improvement-pass triggered.
+**Laws:** 6/6 PASS. **Strengths:** AFCL (G-2) gap discipline held throughout (never used REF-074 to
+silently fill it); Chattopadhyay internal inconsistency reported transparently rather than resolved;
+GRADE language calibrated both directions; L-038 PICO-subgroup-completeness check explicitly passed.
+**Risk surfaced:** one store record (REF-003, van der Does) retrieved via Consensus-only with no
+full-text pull, producing predictable but non-blocking `number_not_in_source` WARNs at audit time —
+flagged by the verifier itself as a lesson candidate. **Process note:** the stop-hook fired multiple
+times across the run because per-phase `_workspace/` artifacts were left uncommitted at turn
+boundaries; each time resolved reactively rather than the artifact being committed proactively at
+write-time.
 
 ---
 
-## Part C — Vietnamese terminology candidates (to confirm with user before saving to vi-terminology.md)
+## Candidate lessons
 
-These English↔Vietnamese term choices were used in the draft and, if the user confirms, should be appended
-to `review-synthesis/references/vi-terminology.md` for consistency across future cardiac-EP reviews:
+### L-040: Commit each phase artifact immediately after it is written and verified, not at turn end
+- **Role:** orchestrator
+- **Trigger:** any `_workspace/` artifact is written or finalized (appraisal, draft, coach report, QA
+  output, table preview, gate-approval file)
+- **Rule:** Run `git add` + commit for that artifact in the same tool-call batch that finishes writing
+  it — before moving on to the next phase step or ending the turn. Do not wait for the stop-hook to
+  flag uncommitted changes as the trigger to commit.
+- **Why:** This run, the stop-hook (`~/.claude/stop-hook-git-check.sh`) fired roughly five times because
+  newly-written artifacts (appraisal, CRF preview, draft, coach report, QA outputs) were left
+  uncommitted at turn boundaries; each was resolved with an immediate add+commit+push cycle, but only
+  reactively. The hook is a safety net for forgotten commits, not the intended commit trigger — relying
+  on it costs an extra round-trip per phase and risks losing the per-phase audit trail (L-019/L-027's
+  value: artifacts on disk are the audit's only evidence) if a session ends before the hook fires.
+- **Origin:** Entry #10 — LA-EP elderly AF review, recurring stop-hook pattern (2026-06-30)
 
-- **pulmonary vein isolation (PVI)** — cô lập tĩnh mạch phổi
-- **radiofrequency (RF) ablation** — triệt đốt bằng năng lượng tần số radio (sóng cao tần)
-- **Ablation Index (AI)** — chỉ số triệt đốt (giữ nguyên "Ablation Index/AI" trong ngoặc)
-- **Lesion Size Index (LSI)** — chỉ số kích thước tổn thương
-- **Local Impedance Drop (LID)** — mức sụt trở kháng tại chỗ
-- **contact force (CF)** — lực tiếp xúc
-- **first-pass isolation** — cô lập ngay lần đốt đầu (first-pass)
-- **durable lesion** — tổn thương bền vững
-- **inter-lesion distance (ILD)** — khoảng cách giữa các điểm đốt
+### L-041: Track gate status as explicit state across interleaved side-conversation turns
+- **Role:** orchestrator
+- **Trigger:** a human gate (Research Map, Gate 2b, Gate 4b) has been presented and is awaiting
+  approval, AND the user's next messages are unrelated or semi-related questions before the actual
+  approval/rejection arrives
+- **Rule:** Answer side questions on their merits without treating them as gate approval and without
+  re-litigating gate status mid-answer. Before launching the next phase's agent, re-confirm explicitly
+  that the gate-closing question was asked again (if the side conversation introduced new decisions,
+  e.g. a structural sub-approval) and that a distinct, quotable approval was received for the gate
+  itself — not inferred from the side conversation's tone or from "the user seems satisfied."
+- **Why:** This run, Gate 4b's presentation was followed by two side-conversation turns (a CRF table
+  draft request, a CV data question) and a nested 3-question structural sub-approval on the CRF table,
+  before the actual gate-closing approval ("bắt đầu viết") arrived in a separate, later turn. The
+  orchestrator handled this correctly here (confirmed in `gate4b_approval.md`'s sequence-of-record), but
+  the pattern is a plausible failure mode the existing L-024 doesn't explicitly name: L-024 covers
+  "present, then stop and wait," not "present, then survive N interleaved unrelated turns before
+  closing." Naming the multi-turn case makes the discipline explicit rather than incidentally correct.
+- **Origin:** Entry #10 — LA-EP elderly AF review, Gate 4b interleaved side-conversation (2026-06-30)
 
-(Curator note: confirm these match the EP audience's preferred Vietnamese usage before persisting.)
+### L-042: A second locked Phase-0 deliverable (e.g., a structured table) gets its own labeled sub-approval, nested inside but distinct from the phase gate
+- **Role:** orchestrator
+- **Trigger:** Phase 0 scope locks two deliverables (e.g., narrative review + CRF/structured table), and
+  the second deliverable's structure (columns, highlighting, grouping) requires user decisions before
+  it can be finalized
+- **Rule:** When a phase gate (e.g., Gate 4b) also requires finalizing a second deliverable's structure,
+  present the structural questions as an explicitly labeled sub-approval (e.g., numbered yes/no
+  decisions) distinct from the gate-closing question. Resolve and record the sub-approval first: write
+  the finalized structure to its own artifact (e.g., `04b_crf_table_preview.md`) and commit it. Only
+  then re-ask the gate-closing question on its own. Do not let "user answered the structural questions"
+  stand in for "user closed the gate" — they are different approvals even though they happen inside the
+  same gate window.
+- **Why:** This run, Gate 4b correctly nested a 3-question CRF structural sub-approval ("1.2. có 3.
+  không") inside the gate window, finalized and committed the table (`d1e4ad0`) before re-asking the
+  gate-closing question, and only then received "bắt đầu viết" as the distinct gate approval. This
+  worked because the orchestrator treated them as separate approvals; documenting the pattern protects
+  future dual-deliverable reviews (any review locking a narrative + a structured artifact at Phase 0)
+  from collapsing the two into one ambiguous approval.
+- **Origin:** Entry #10 — LA-EP elderly AF review, CRF table structural sub-approval (2026-06-30)
+
+### L-043: Flag Consensus-only / abstract-only store entries at appraisal time so verifier WARNs on them are pre-triaged
+- **Role:** appraiser, retriever
+- **Trigger:** a store record was retrieved via Consensus (or any abstract-only path) without a
+  full-text pull, and it anchors a quantitative claim (effect size, coefficient, p-value) used in the
+  draft
+- **Rule:** When building the evidence table (Phase 4), explicitly tag such records — e.g., "Consensus-
+  only / abstract-depth: numbers unconfirmable by audit heuristic" — in the appraisal artifact (and
+  propagate the tag into `03b_numbers.md` or the store entry itself). At QA time, the citation-verifier
+  should treat a `number_not_in_source` WARN on a pre-tagged record as already triaged (known store-
+  depth limitation) rather than re-investigating it as if newly discovered.
+- **Why:** This run, REF-003 (van der Does) was a Consensus-only retrieval lacking full-text verbatim
+  numbers; the deterministic citation_audit.py correctly WARN-flagged its cited coefficient/p-value as
+  `number_not_in_source`, and the verifier had to manually re-derive that this was a store-completeness
+  gap, not a draft error — taking real investigation effort that a Phase-4 tag would have pre-empted.
+  This is the citation-verifier's own self-update proposal in `06_verification_report.md` §5/§6,
+  confirmed here as a generalizable rule rather than a one-paper note. Complements L-009 (PMID
+  verification) and L-005 (copy from results table, not abstract) by closing the loop when full text
+  genuinely isn't available: tag the limitation instead of leaving it implicit.
+- **Origin:** Entry #10 — LA-EP elderly AF review, REF-003 WARN triage (citation-verifier
+  self-update proposal, 2026-06-30)
 
 ---
 
-## Approval checklist (for the lead to relay to the user)
+## Items considered and NOT proposed as new lessons
 
-- [ ] Approve **L-016** (writer: inline-vs-list reconciliation) — as-is / edit / reject
-- [ ] Approve **L-017** (writer: embed L-011 guideline citations in consensus) — as-is / edit / reject
-- [ ] Approve **Entry #4** for the evolution-log archive
-- [ ] Approve which **Vietnamese terms** (Part C) to add to the glossary
+- **Citation_audit.py heuristic false positives** (comma-vs-period decimals, bare "95" inside "95% CI"):
+  the verifier's own report (§5 SELF-UPDATE PROPOSALS) explicitly concludes these are already documented
+  script-docstring limitations with no script change recommended — this is confirmation the existing
+  L-039 deterministic-layer discipline is working as intended, not a new defect. No lesson drafted.
+- No fabricated citation, no overstated certainty, no missed contradiction, no format error occurred
+  this run (per `06_verification_report.md` §6) — nothing else in the two QA artifacts rises to a
+  generalizable defect beyond the four drafted above.
+
+---
+
+## Awaiting user decision: approve / edit / reject each of L-040 through L-043, and the Entry #10 draft above.
