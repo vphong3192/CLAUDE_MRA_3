@@ -75,8 +75,8 @@ frontmatter, not here.
      record, the language **is Vietnamese** — fail closed. (See L-032.)
 4. **Tag the effort** `tiny | normal | full | high-stakes` to right-size the *depth of work* (search
    breadth, corpus size, RoB tools, target length, curiosity-budget probes). **The tag never skips a
-   gate** — all four human gates run on every level, including `tiny` (constitution: Effort tag). When
-   unsure, choose the more careful level.
+   gate** — all three human gates (Phase-0 scope, Research Map, Gate 4b) run on every level, including
+   `tiny` (constitution: Effort tag). When unsure, choose the more careful level.
 
 ## Execution Mode: Agent Team
 `TeamCreate` the team, `TaskCreate` work with dependencies, members coordinate via `SendMessage`,
