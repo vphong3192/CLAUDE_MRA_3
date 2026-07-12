@@ -23,9 +23,13 @@ behind it and the user approved it.
 
 ### Inject (start of every run)
 1. Read `lessons.md`.
-2. Select lessons relevant to the current topic.
+2. **Select by `Scope:` ∩ `Role:` — never inject the whole file.** Load only lessons whose
+   `Scope:` matches this run — `universal` (always) **+** `vi-language` (only when output is
+   Vietnamese/non-English, the default) **+** `cardiology-ep` (only when the topic is cardiac /
+   electrophysiology / arrhythmia). Then route each selected lesson to the agent(s) in its `Role:`
+   line. This keeps each agent's set to a handful, so the store can grow without growing per-run weight.
 3. Post a **role-tagged digest** to the team so each agent applies its own lessons. Format:
-   `[writer] L-007: hedge observational findings — avoid causal verbs.`
+   `[writer] L-002: match language strength to GRADE certainty.`
 
 ### Capture (end of run)
 1. Read `_workspace/05_verification_report.md` (QA defect categories + rubric/audit) + any user feedback relayed by the lead.
@@ -37,12 +41,16 @@ behind it and the user approved it.
 ## Lesson format
 ```
 ### L-<id>: <short title>
-- **Role:** strategist | retriever | appraiser | writer | verifier
+- **Role:** strategist | retriever | appraiser | writer | verifier | orchestrator · **Scope:** universal | vi-language | cardiology-ep
 - **Trigger:** when this applies
 - **Rule:** what to do
 - **Why:** the rationale (so it transfers to new cases)
 - **Origin:** run date / the defect that prompted it
 ```
+Choose `Scope:` by the *rule's* generality, not the origin run's domain: tag `universal` when the
+rule transfers across specialties (let a domain example illustrate it); tag `cardiology-ep` only when
+the rule itself is cardiac-specific (voltage-modality thresholds, named-trial subgroups); tag
+`vi-language` for Vietnamese/non-English composition rules.
 
 ## Generalize, never overfit
 A lesson must be a reusable rule, not a note about one paper.
