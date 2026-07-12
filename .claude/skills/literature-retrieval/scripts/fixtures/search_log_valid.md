@@ -1,6 +1,6 @@
 # Search Log (PRISMA-ready) — fixture (valid ledger)
 
-**Run date:** 2026-06-29 · Retriever: evidence-retriever agent.
+**Run date:** 2026-06-29 · Retriever: scoping-retriever agent.
 
 ## Recall & reproducibility ledger (P3)
 

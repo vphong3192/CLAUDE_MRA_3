@@ -1,23 +1,37 @@
 # Lessons Learned — Medical Review Harness
 
 Persistent, human-approved store of generalized rules the team has learned from past mistakes.
-Injected (role-tagged) at the start of every review. New lessons are appended only after user
-approval. One lesson = one reusable rule, with its rationale.
+Injected (role- **and scope-**tagged) at the start of every review. New lessons are appended only
+after user approval. One lesson = one reusable rule, with its rationale.
 
 > Seeded with starter lessons capturing the most common AI-review failure modes. Remove or edit any
 > that don't fit your practice; the curator will add more as real defects surface.
 
+## Selective injection (keep the digest light)
+
+Each lesson carries a **`Scope:`** tag in addition to its **`Role:`**. At inject time the lead loads
+**only the lessons that match this run** — never the whole file — by intersecting:
+- **Scope match:** `universal` (always) **+** `vi-language` (only when the output language is
+  Vietnamese/non-English — the default, so usually on) **+** `cardiology-ep` (only when the topic is
+  cardiac / electrophysiology / arrhythmia). A nephrology review never sees the AF-ablation lessons.
+- **Role match:** post each lesson only to the agent(s) named in its `Role:` line.
+
+This keeps each agent's injected set to a handful of relevant rules instead of the full store. Adding
+a lesson does not add per-run weight unless its scope matches. When a lesson's example is domain-bound
+but its *rule* is general, tag it `universal` and let the example illustrate — do not tag it
+`cardiology-ep` just because the origin was a cardiac run.
+
 ---
 
 ### L-001: Every substantive claim needs a resolvable citation
-- **Role:** writer
+- **Role:** writer · **Scope:** universal
 - **Trigger:** writing any factual/quantitative statement
 - **Rule:** Do not write a claim unless it maps to a real corpus record with a stable ID. No record → soften, remove, or request retrieval.
 - **Why:** Fabricated/unsupported citations are the cardinal failure of AI reviews and destroy trust in the whole document.
 - **Origin:** seed
 
 ### L-002: Match language strength to GRADE certainty and study design
-- **Role:** writer
+- **Role:** writer · **Scope:** universal
 - **Trigger:** stating any finding
 - **Rule:**
   1. **GRADE-level language:** High/Moderate → confident; Low → "may/suggests"; Very Low → explicitly tentative + "requires confirmation." Never state Low/Very-Low as fact.
@@ -26,42 +40,42 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Origin:** seed (L-002 + L-007); consolidated 2026-06-16
 
 ### L-003: Verify the source supports the specific sentence, not just that it exists
-- **Role:** verifier
+- **Role:** verifier · **Scope:** universal
 - **Trigger:** checking any inline `[n]`
 - **Rule:** Read claim and source side by side; confirm population, intervention, and endpoint match. A real-but-mismatched citation is a BLOCK, not a pass.
 - **Why:** "Reference exists" is the weak check that lets hallucinated support through.
 - **Origin:** seed
 
 ### L-004: Always include preprints and trial registries, and label them
-- **Role:** retriever
+- **Role:** retriever · **Scope:** universal
 - **Trigger:** building the corpus
 - **Rule:** Sweep bioRxiv/medRxiv and ClinicalTrials.gov every run; tag preprints as not-peer-reviewed; never silently exclude them.
 - **Why:** The newest evidence lives in preprints and registries; omitting them makes the review stale, which violates the up-to-date requirement.
 - **Origin:** seed
 
 ### L-005: Copy effect sizes and CIs from the results table, not the abstract
-- **Role:** appraiser
+- **Role:** appraiser · **Scope:** universal
 - **Trigger:** recording a quantitative effect estimate
 - **Rule:** Take effect size, CI, N, and follow-up from the full-text results/tables; abstracts round or omit intervals. If only the abstract is available, mark the value provisional.
 - **Why:** Abstract numbers are frequently rounded or selectively reported, corrupting GRADE imprecision judgments.
 - **Origin:** seed
 
 ### L-006: Document contradictions; never drop the minority finding
-- **Role:** appraiser
+- **Role:** appraiser · **Scope:** universal
 - **Trigger:** studies disagree on an outcome
 - **Rule:** Report both sides with citations and a methodological reason for the discrepancy. Do not present only the majority result.
 - **Why:** Hiding conflict produces a falsely confident review and erases real clinical uncertainty.
 - **Origin:** seed
 
 ### L-008: Don't over-constrain ClinicalTrials.gov queries
-- **Role:** retriever
+- **Role:** retriever · **Scope:** universal
 - **Trigger:** searching ClinicalTrials.gov
 - **Rule:** Don't combine intervention + condition + phase in the first query; over-constrained queries return 0 silently. Start broad (intervention OR condition alone), then narrow.
 - **Why:** A 0 here looks like "no trials exist" and gets reported as a false evidence gap.
 - **Origin:** Entry #1 — search returned 0; retry recovered 11 trials.
 
 ### L-009: PMID verification protocol — always confirm before storing
-- **Role:** retriever
+- **Role:** retriever · **Scope:** universal
 - **Trigger:** before writing any PMID into the reference store, from any source
 - **Rule:**
   1. **Cross-check on PubMed:** Open `pubmed.ncbi.nlm.nih.gov/[PMID]/` and confirm: (a) first author matches, (b) title/journal/year matches the intended paper. A "wrong-but-real" PMID passes existence checks but is a Law-1-adjacent error.
@@ -72,251 +86,204 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Origin:** Entry #1, #5, #6; consolidated L-009 + L-021 + L-026 + L-027 (2026-06-16)
 
 ### L-010: Decompose composite endpoints before stating the headline
-- **Role:** appraiser / writer
+- **Role:** appraiser / writer · **Scope:** universal
 - **Trigger:** reporting a composite outcome (e.g., MACE)
 - **Rule:** Break the composite into its components before writing the headline number; the benefit may rest on only some components.
 - **Why:** "↓20% CV events" was driven by MI + all-cause mortality, NOT CV death or stroke — stating the composite as if all components moved overstates the evidence.
 - **Origin:** Entry #1 — Yin 2025 component analysis.
 
 ### L-011: Search the relevant guideline body
-- **Role:** strategist
+- **Role:** strategist · **Scope:** universal
 - **Trigger:** topic has society guidance (cardiology / obesity / endocrine, etc.)
 - **Rule:** Add an explicit guideline-body search (ESC / AHA / ACC / ADA / NICE) to the strategy.
 - **Why:** A review missing the relevant guideline reads as incomplete to clinicians and costs search-comprehensiveness.
 - **Origin:** Entry #1 — T1 scored 0.75 partly for no guideline cited.
 
 ### L-012: List source/ and ask — every run, including tests
-- **Role:** orchestrator / retriever
+- **Role:** orchestrator / retriever · **Scope:** universal
 - **Trigger:** the start of every review's retrieval phase
 - **Rule:** List the `source/` folder and ask the user which to read, even when you expect it empty.
 - **Why:** Silence here was a v1 failure and recurred as a deviation; user PDFs are often the full text of paywalled key papers.
 - **Origin:** Entry #1 — audit flagged source/ not checked.
 
 ### L-013: An established drug's "efficacy safety" query returns add-on/comparator trials
-- **Role:** retriever
+- **Role:** retriever · **Scope:** universal
 - **Trigger:** searching the evidence for an established first-line drug (e.g., metformin, aspirin, statins)
 - **Rule:** A `<drug> efficacy safety` query returns mostly trials where the drug is the *background* and a newer agent is the subject. To get the drug's own evidence, search `<drug> monotherapy` + the landmark trial (e.g., UKPDS) + the relevant guideline.
 - **Why:** The naive query silently mis-frames the corpus toward comparators, weakening the review's coverage of the actual subject drug.
 - **Origin:** Entry #2 — first metformin query returned tirzepatide/SGLT2/GLP-1 add-on meta-analyses.
 
-### L-014: The Research Map gate has NO exception — never self-clear it
-- **Role:** orchestrator
-- **Trigger:** after presenting the Research Map, before any drafting
-- **Rule:** STOP and wait for an explicit user approval message. "Gate cleared" requires a real user reply received *after* the map was shown — not "small scope," not "unambiguous/fixed test-case scope," not "standing approval inferred from the request." Presenting the map and proceeding in the same turn is a violation. The audit must quote the user's approval; if it cannot, the gate is NOT cleared and the review is not deliverable.
-- **Why:** This is v1's Entry #9 failure recurring in v2 — and worse, the audit then falsely recorded "gate cleared," laundering the breach. The gate's whole value is the human checkpoint before expensive/mis-framed work.
-- **Origin:** Entry #2 — metformin run self-cleared the gate; user caught it.
+### L-014: Gate discipline — a gate is cleared only by an explicit, quotable user approval received after the gate was shown
+- **Role:** orchestrator · **Scope:** universal
+- **Trigger:** any human gate (Phase-0 scope, the Research Map corpus/source gate, Gate 4b post-appraisal) has been presented and is awaiting the user's decision
+- **Rule:** *(This is the harness's single most-repeated lesson. It absorbs former L-024, L-030, L-041, L-042, L-044.)*
+  1. **Never self-clear.** "Gate cleared" requires a real user reply received *after* the gate content was shown — not "small scope," not "unambiguous/fixed test-case scope," not "standing approval inferred from the request." Presenting a gate and proceeding in the same turn is a violation. The audit must be able to quote the approval; if it cannot, the gate is NOT cleared and nothing downstream is deliverable. (former L-014)
+  2. **Fix-then-re-ask, never fix-then-proceed.** If the user requests changes or supplements at a gate ("find more full text," "add a search," "fix the tier"), make the change and ASK AGAIN — do not advance automatically after fixing. Loop until the user explicitly signals approval ("ok," "tiếp tục," "approve," "bắt đầu viết"). (former L-024)
+  3. **A conditional approval is a HOLD, not a clearance.** If the user picks "approve with changes" / "Duyệt có chỉnh" without specifying edits, ask "what specific changes?" and hold. Cleared only when the edits are specified + applied, or the user says "proceed" after seeing them applied. (former L-030)
+  4. **Track gate state across interleaved side-conversation turns.** If side questions arrive before the approval, answer them on their merits without treating them as gate approval; before launching the next phase, re-confirm a distinct, quotable approval was received for the gate itself — not inferred from the side conversation's tone. (former L-041)
+  5. **A second locked deliverable gets its own labeled sub-approval, nested but distinct.** When a gate also finalizes a second deliverable's structure (e.g., a CRF/structured table), present those structural questions as an explicitly labeled sub-approval, resolve and commit that artifact first, then re-ask the gate-closing question on its own. Do not let "answered the structural questions" stand in for "closed the gate." (former L-042)
+  6. **Never bundle a content decision with the gate-approval decision in one question/reply** — especially under a tool-failure fallback. If `AskUserQuestion` errors and you fall back to plain text, ask the content question (e.g., "how should full-text be sourced?") alone first, process it, THEN ask the gate-closing question separately. Do not improvise a merged reply ("answer '1a, 2A'") that resolves two different kinds of decision at once. (former L-044)
+- **Why:** This cluster is v1's Entry #9 failure recurring across many forms — self-clearing, fix-then-proceed, conditional-as-unconditional, interleaved-turn drift, dual-deliverable collapse, and tool-failure bundling. All share one root: treating something short of an explicit post-gate approval as clearance. Consolidating them makes the discipline one rule with named sub-cases instead of six near-duplicates diluting the digest.
+- **Origin:** Entries #2, #7, #10; consolidated L-014 + L-024 + L-030 + L-041 + L-042 + L-044 (2026-07-12)
 
 ### L-015: Always ask depth + purpose (+ audience + language) before writing
-- **Role:** orchestrator / strategist
+- **Role:** orchestrator / strategist · **Scope:** universal
 - **Trigger:** the start of every review, before Phase 1
 - **Rule:** Explicitly ask the user for the review's **purpose** (clinical / research / education), **depth/length**, audience, and output language, and STOP for the answer. Do not infer these from the request or from a fixed test-case prompt. Confirm scope in the user's own words before proceeding.
 - **Why:** Depth and purpose change the whole review (a 1500-word clinical aid ≠ a 3000-word research gap-analysis). Guessing them violates Law 2 (serve the purpose, not the process) and produces the wrong artifact confidently.
 - **Origin:** user feedback, 2026-06-14 — both test runs assumed scope instead of confirming it.
 
 ### L-016: Reconcile inline citations against the reference list before handoff
-- **Role:** writer
+- **Role:** writer · **Scope:** universal
 - **Trigger:** finishing any draft that has a numbered reference list
 - **Rule:** Before handing the draft to QA, run a two-way reconciliation: every reference-list entry [n] must appear at least once inline, and every inline [n] must have a list entry. Resolve orphans (listed-but-uncited) by either citing them in the relevant section or removing them from the list. Do not rely on QA to catch this.
-- **Why:** Entry #4 left refs [29–34] (3 CF-catheter benchmarks + 3 society guidelines) listed but uncited inline — orphan references that QA had to fix. An orphan reference signals retrieved-but-unused evidence and looks like sloppy scholarship to an expert reader; catching it pre-handoff keeps the writer accountable for completeness.
+- **Why:** Entry #4 left refs [29–34] listed but uncited inline — orphan references that QA had to fix. An orphan reference signals retrieved-but-unused evidence and looks like sloppy scholarship to an expert reader; catching it pre-handoff keeps the writer accountable for completeness.
 - **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
 
-### L-017: Embed L-011 guideline citations in the consensus section, not just the reference list
-- **Role:** writer
-- **Trigger:** the strategy ran an L-011 guideline-body search (ESC / AHA / ACC / ADA / NICE / HRS) and those guidelines are in the store
+### L-017: Embed guideline citations in the consensus section, not just the reference list
+- **Role:** writer · **Scope:** universal
+- **Trigger:** the strategy ran an L-011 guideline-body search and those guidelines are in the store
 - **Rule:** When society guidelines were retrieved per L-011, cite them explicitly in the "Established consensus" section to anchor each consensus statement — do not leave them sitting only in the reference list. The guideline must do interpretive work in the text (what it recommends and at what strength), not merely appear as a number.
 - **Why:** L-011 exists to make reviews read as complete to clinicians; that value is lost if the guidelines are retrieved then forgotten at the writing stage. Entry #4 retrieved ESC 2024, ACC/AHA 2023, HRS 2017 but did not embed them until QA's FIX.
 - **Origin:** Entry #4 — ablation metrics RF-PVI review (2026-06-14)
 
 ### L-018: Voltage modality discipline — label explicitly and cite separately
-- **Role:** writer, appraiser, citation-verifier
+- **Role:** writer, appraiser, citation-verifier · **Scope:** cardiology-ep
 - **Trigger:** citing any voltage value, LVZ threshold, or electroanatomic mapping study
 - **Rule:**
   1. **Label modality explicitly:** Write "điện thế lưỡng cực" or "điện thế đơn cực" (or "omnipolar"); never write "điện thế" alone for a mapping value.
   2. **Never bundle citations across modalities:** Bipolar (<0.5 mV LVZ), unipolar (~0.73 mV 5th-percentile-derived), and omnipolar (systematically higher than bipolar) use different, non-interchangeable thresholds. If studies differ in modality, cite each separately with its own threshold.
-- **Why:** Two defects, same root: (a) Entry #5: "điện thế" used for van der Does 2021 (unipolar) — labeling failure; (b) Entry #6: van der Does [8] bundled into a bipolar "<0.5 mV used consistently [5,7,8]" claim — citation-modality mismatch caught by QA.
+- **Why:** Two defects, same root: (a) Entry #5 "điện thế" used for van der Does 2021 (unipolar) — labeling failure; (b) Entry #6 van der Does [8] bundled into a bipolar "<0.5 mV used consistently [5,7,8]" claim — citation-modality mismatch caught by QA.
 - **Origin:** Entry #5 + #6; consolidated L-018 + L-025 (2026-06-16)
 
-### L-019: Persist the Research Map gate approval to disk at the moment it is received
-- **Role:** orchestrator
+### L-019: Persist the gate approval to disk at the moment it is received
+- **Role:** orchestrator · **Scope:** universal
 - **Trigger:** immediately after the user sends their Research Map approval message, before launching any downstream agent
-- **Rule:** Write the verbatim user approval quote to `_workspace/research_map_gate_approval.md` before proceeding to Phase 4. This file is the audit's only way to verify gate compliance — if it does not exist, the audit must mark "process HOLD" regardless of what happened in the conversation. Complements L-014 (which forbids self-clearing); L-019 ensures that a legitimate clearance is auditable.
-- **Why:** Entry #5 gate was cleared correctly but approval was not persisted to disk — QA found no quotable gate record and had to flag a process hold. The orchestrator reconstructed the file post-hoc. One extra Write call at approval time costs nothing; an unauditable gate costs a HOLD and rework.
+- **Rule:** Write the verbatim user approval quote to `_workspace/research_map_gate_approval.md` before proceeding to Phase 4. This file is the audit's only way to verify gate compliance — if it does not exist, the audit must mark "process HOLD" regardless of what happened in the conversation. Complements L-014 (which forbids self-clearing); L-019 ensures a legitimate clearance is auditable.
+- **Why:** Entry #5 gate was cleared correctly but approval was not persisted to disk — QA found no quotable gate record and had to flag a process hold. One extra Write call at approval time costs nothing; an unauditable gate costs a HOLD and rework.
 - **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
 
 ### L-020: Label sub-analyses within the same trial separately in the reference store
-- **Role:** retriever
+- **Role:** retriever · **Scope:** cardiology-ep
 - **Trigger:** a major trial (CABANA, AFFIRM, CASTLE-AF, etc.) has multiple published sub-analyses (by age, sex, AF type, QoL, etc.)
 - **Rule:** For each sub-analysis stored, record exactly which sub-analysis the PMID represents (e.g., "CABANA — age subgroup, Bahnson 2021"). When reusing the PMID, re-verify by title + first author — do not assume the stored PMID is the right paper just because the trial name matches.
-- **Why:** Entry #5 initially stored the CABANA sex subgroup PMID (Russo, 33499668) in the slot intended for the age subgroup (Bahnson, 34933570). The error was caught in Phase 2b before synthesis; if it had reached the writer, a citation would have supported a claim about age outcomes using a paper about sex differences — a Law-1-adjacent error.
+- **Why:** Entry #5 initially stored the CABANA sex subgroup PMID (Russo, 33499668) in the slot intended for the age subgroup (Bahnson, 34933570). Caught in Phase 2b before synthesis; if it had reached the writer, a citation would have supported an age claim using a sex-differences paper — a Law-1-adjacent error.
 - **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
 
-### L-022: STOP when coverage is incomplete — ask before proceeding
-- **Role:** retriever, orchestrator
+### L-022: STOP when coverage is incomplete — surface it at the Research Map corpus/source gate
+- **Role:** retriever, orchestrator · **Scope:** universal
 - **Trigger:** (a) any planned search source is unavailable, OR (b) ≥3 HIGH-tier records are still abstract-only after retrieval
-- **Rule:**
-  - **Source unavailable:** Do NOT silently continue with reduced coverage. Inform the user: "Source X is unavailable (reason). Options: (a) proceed without it and note the gap in Limitations; (b) try WebSearch as a fallback; (c) you supply materials directly." Wait for the user's choice.
-  - **Incomplete full text:** Before handing off to the critical-appraiser, count abstract-only HIGH records. If ≥3, report: "X of Y HIGH records are abstract-only. Key missing: [list top 3–5]. Do you want to: (a) proceed and flag in Limitations; (b) grant full-text tool permission; (c) supply PDFs?" Wait for OK.
+- **Rule:** *(Since Gate 2b was folded into the Research Map, these are presented as part of the Map's corpus/source-approval section — not as a separate earlier stop.)*
+  - **Source unavailable:** Do NOT silently continue with reduced coverage. Present in the Map: "Source X is unavailable (reason). Options: (a) proceed and note the gap in Limitations; (b) try WebSearch as a fallback; (c) you supply materials." Wait for the user's choice.
+  - **Incomplete full text:** In the Map's source-approval list, count abstract-only HIGH records. If ≥3, report: "X of Y HIGH records are abstract-only. Key missing: [list top 3–5]. Do you want to: (a) proceed and flag in Limitations; (b) grant full-text tool permission; (c) supply PDFs?" Wait for OK.
   - In both cases: record the decision and rationale in the search log.
-- **Why:** Entry #5: bioRxiv/ClinicalTrials.gov were unavailable AND 28/31 records were abstract-only — both gaps reported in the log but retriever moved immediately to appraisal without asking the user. User: "không dừng lại hỏi… khả năng thiếu sót cao."
-- **Origin:** Entry #5; consolidated L-022 + L-023 (2026-06-16)
+- **Why:** Entry #5: bioRxiv/ClinicalTrials.gov were unavailable AND 28/31 records were abstract-only — both gaps reported in the log but the retriever moved straight to appraisal without asking. User: "không dừng lại hỏi… khả năng thiếu sót cao." Folding the check into the Research Map keeps the one human corpus review instead of two adjacent stops.
+- **Origin:** Entry #5; consolidated L-022 + L-023 (2026-06-16); corpus/source gate merged into Research Map (2026-07-12)
 
-### L-024: User must explicitly OK each major phase handoff; fix-then-re-ask, never fix-then-proceed
-- **Role:** orchestrator
-- **Trigger:** before handing off to the critical-appraiser (Phase 4) AND before handing off to the synthesis-writer (Phase 5); and after fixing any user-requested change at either gate
-- **Rule:** The orchestrator presents the phase output (retrieval summary / appraisal summary) and STOPS for explicit user OK before launching the next agent. If the user requests changes or supplements (e.g., "find more full text," "add a search," "fix the tier"), the orchestrator makes those changes and ASKS AGAIN — it does NOT proceed to the next phase automatically after fixing. The loop continues until the user explicitly signals approval (e.g., "ok," "tiếp tục," "approve"). Two specific gates:
-  - **Gate 2b (post-retrieval):** After retrieval + corpus update, present: corpus size, full-text status, source availability gaps (L-022), any PMID issues. Ask: "Có muốn bổ sung gì trước khi thẩm định không?" Wait for OK.
-  - **Gate 4b (post-appraisal):** After appraisal, present: GRADE summary per axis, flagged contradictions, Assumption Register highlights. Ask: "Có muốn điều chỉnh gì trước khi viết bài không?" Wait for OK.
-- **Why:** User feedback (Entry #5, 2026-06-15): "ghi nhận rõ, trước khi giao việc cho appraiser và writer, người dùng phải ok mới làm. Nếu người dùng OK → yêu cầu sửa, sửa xong lại hỏi tiếp chứ không được giao việc luôn." These checkpoints cost one extra message per phase; the alternative is delivering a review the user considers shallow because coverage gaps were not caught early.
-- **Origin:** Entry #5 — user-stated requirement, 2026-06-15; approved immediately
-
-### L-025: Phase 5b quality-coach pass must be explicitly declared SKIPPED — silent absence is R4
-- **Role:** orchestrator
-- **Trigger:** effort=full (or normal) run reaches handoff between Phase 5 (draft) and Phase 6 (QA)
-- **Rule:** Before routing the draft to QA, confirm that 04b_coach.md exists in `_workspace/`. If it does not, the orchestrator must either (a) run the quality-coach pass, or (b) write a brief `04b_coach_skip.md` stating the reason (e.g., effort=tiny, user-waived). Silent omission for effort=full constitutes R4 ("Faking the steps") even when the draft meets the rubric.
-- **Why:** Entry #7 — 04b_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is an audit-visible step: QA checks for its artifact, and absence without justification is indistinguishable from never having run it.
-- **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17)
+### L-025: The quality-coach pass is conditional — run it for full/high-stakes, and declare any skip (never silent)
+- **Role:** orchestrator · **Scope:** universal
+- **Trigger:** a run reaches the handoff between Phase 5 (draft) and Phase 6 (QA)
+- **Rule:** The coach is spawned for `full` and `high-stakes` effort. For `normal` and `tiny` it is skipped by default, but the skip must be **declared**: write `_workspace/04b_coach_skip.md` naming the effort tag as the reason. Before routing the draft to QA, confirm that either `04b_coach.md` (ran) or `04b_coach_skip.md` (declared skip) exists. A silent absence on any run is R4 ("Faking the steps") even when the draft meets the rubric. The user may request the coach on any run.
+- **Why:** Entry #7 — 04b_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is audit-visible: QA checks for its artifact, and absence without justification is indistinguishable from never having run it. (Updated 2026-07-12: coach demoted to a conditional pass to lighten routine runs — the *declare-the-skip* discipline now covers `normal` too, not only `tiny`.)
+- **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17); scope updated when coach became conditional (2026-07-12)
 
 ### L-026: Law 4 section headers must be explicit labels in the draft body, not implicit content
-- **Role:** writer
+- **Role:** writer · **Scope:** universal
 - **Trigger:** finishing any review draft, before handoff to quality-coach or QA
-- **Rule:** The draft must contain the literal section labels "**Established consensus**" and "**Ongoing controversy**" (or their Vietnamese equivalents) as visible headers or sub-headers — organizing the content topically is not enough. If the structure makes separate labeled sections awkward (e.g., a thematic multi-section draft), add a brief labeled sub-section inside the synthesis section rather than omitting the labels.
-- **Why:** Entry #7 — §11 "Balanced synthesis" covered both consensus and controversy in substance but lacked Law 4's explicit structural markers; QA issued V-03 and deducted T4 to 0.75. The rule exists so a reader (or auditor) can instantly locate each category — absent labels defeat that purpose regardless of content quality.
+- **Rule:** The draft must contain the literal section labels "**Established consensus**" and "**Ongoing controversy**" (or their Vietnamese equivalents) as visible headers or sub-headers — organizing the content topically is not enough. If a thematic multi-section draft makes separate labeled sections awkward, add a brief labeled sub-section inside the synthesis rather than omitting the labels.
+- **Why:** Entry #7 §11 "Balanced synthesis" covered both consensus and controversy in substance but lacked Law 4's explicit structural markers; QA issued V-03 and deducted T4 to 0.75. The rule lets a reader/auditor instantly locate each category — absent labels defeat that regardless of content quality.
 - **Origin:** Entry #7 — CBA-vs-PFA review, Law 4 partial fail / V-03 (2026-06-17)
 
 ### L-027: Assemble 08_manifest.md before routing to QA — it is a deliverable, not an afterthought
-- **Role:** orchestrator / synthesis-writer
+- **Role:** orchestrator / synthesis-writer · **Scope:** universal
 - **Trigger:** draft is complete and ready for QA handoff
-- **Rule:** Before submitting to the citation-verifier, the orchestrator (or synthesis-writer) assembles `_workspace/08_manifest.md` — a one-page confidence list, assumption register summary, and receipts index (listing all `_workspace/` artifacts on disk). QA checks for its presence; absence = process violation V-02. The manifest is written from `_workspace/` artifacts already on disk, so it requires no new work — only assembly.
-- **Why:** Entry #7 — 08_manifest.md not found at QA time; cited as V-02. The manifest's value is precisely that it is assembled pre-QA: it lets the verifier confirm what steps ran without relying on conversation memory (anti-R4). Creating it after QA flags its absence defeats the purpose.
+- **Rule:** Before submitting to the citation-verifier, assemble `_workspace/08_manifest.md` — a one-page confidence list, assumption-register summary, and receipts index (listing all `_workspace/` artifacts on disk). QA checks for its presence; absence = process violation V-02. The manifest is written from artifacts already on disk, so it requires no new work — only assembly.
+- **Why:** Entry #7 — 08_manifest.md not found at QA time; cited as V-02. Its value is precisely being assembled pre-QA: it lets the verifier confirm what ran without relying on conversation memory (anti-R4). Creating it after QA flags its absence defeats the purpose.
 - **Origin:** Entry #7 — CBA-vs-PFA review, V-02 process violation (2026-06-17)
 
 ### L-028: When citing sub-group statistics, name the sub-cohort N, not the parent-study N
-- **Role:** writer
-- **Trigger:** reporting any outcome that applies to a sub-cohort within a larger study (e.g., last-N-patient subgroup, per-protocol subset, age subgroup)
+- **Role:** writer · **Scope:** universal
+- **Trigger:** reporting any outcome that applies to a sub-cohort within a larger study (last-N-patient subgroup, per-protocol subset, age subgroup)
 - **Rule:** Write the sub-cohort N inline with the sub-group statistic. Do not write the parent-study N in the same parenthetical as a sub-group outcome — it implies the statistic applies to all parent-study participants. Pattern: "…finding X (sub-cohort n=25)" not "…finding X (study N=64)." If the parent N is also relevant, state it separately.
-- **Why:** Entry #7 D-02 — Chéhirlian §5.1 wrote "24% persisting at discharge in its fluoroscopy subgroup (N=64)" but N=64 was the whole study; the 24% figure (6/25) applied only to the last-25-patient fluoroscopy sub-cohort. A reader would reasonably infer 24% of 64 had the outcome — inflating the actual count from 6 to ~15.
-- **Origin:** Entry #7 — CBA-vs-PFA review, D-02 minor mismatched citation (2026-06-17)
+- **Why:** Entry #7 D-02 — "24% persisting at discharge in its fluoroscopy subgroup (N=64)" but N=64 was the whole study; the 24% (6/25) applied only to the last-25-patient sub-cohort. A reader would infer 24% of 64 — inflating the count from 6 to ~15.
+- **Origin:** Entry #7 — CBA-vs-PFA review, D-02 (2026-06-17)
 
 ### L-029: Abstract GRADE labels must match body GRADE stamps; resolve dual-level certainty explicitly
-- **Role:** writer
-- **Trigger:** the abstract summarizes an evidence finding whose GRADE certainty was formally assigned in the appraisal section
-- **Rule:** Before finalizing the abstract, cross-check every certainty parenthetical "(High/Moderate/Low/Very-Low certainty)" against the GRADE stamp in the corresponding body section. If meta-analysis evidence justifies a higher certainty than the underlying RCT base (a legitimate GRADE upgrade), state both levels and the reason: e.g., "(Low–Moderate certainty: Low for the single RCT; Moderate for the pooled meta-analytic direction — see §3)." Never leave an unexplained discrepancy between the abstract label and the body stamp.
-- **Why:** Entry #7 D-03 — abstract wrote "equivalent (Moderate certainty)" while §3 assigned GRADE LOW for head-to-head efficacy; the difference was defensible (MA level vs. RCT level) but unexplained, creating an apparent inconsistency QA had to flag.
-- **Origin:** Entry #7 — CBA-vs-PFA review, D-03 minor overstated-certainty (2026-06-17)
-
-### L-030: A conditional gate option is not a cleared gate until the specific edits are received
-- **Role:** orchestrator / lead
-- **Trigger:** a user selects a conditional-approval option (e.g., "Duyệt có chỉnh" / "Chỉnh trước khi viết" / "Approve with changes") at any human gate
-- **Rule:** Treat a conditional approval as a HOLD, not a clearance. Ask immediately: "What specific changes do you want before I proceed?" Do NOT advance to the next phase, infer the edits from context, or self-determine that the changes are minor enough to skip. The gate is cleared only when (a) the user specifies the edits AND the orchestrator confirms they are applied, or (b) the user explicitly says "proceed" / "tiếp tục" after seeing the conditional option applied. Document the edit specification and the user's final proceed signal in the gate approval file alongside the original conditional response.
-- **Why:** This run — the user twice selected "Duyệt có chỉnh" without specifying edits; the lead correctly held and asked for specifics rather than self-clearing. This pattern is the same failure mode as L-014 (self-clearing the Research Map gate) extended to any gate with a conditional option. The lesson generalizes: a user clicking "approve with edits" is expressing intent to change something — proceeding without knowing what treats the conditional as unconditional.
-- **Origin:** Entry #7 — CBA-vs-PFA review, process observation (a) (2026-06-17)
+- **Role:** writer · **Scope:** universal
+- **Trigger:** the abstract summarizes an evidence finding whose GRADE certainty was formally assigned in the appraisal
+- **Rule:** Before finalizing the abstract, cross-check every certainty parenthetical against the GRADE stamp in the corresponding body section. If meta-analysis evidence justifies a higher certainty than the underlying RCT base (a legitimate GRADE upgrade), state both levels and the reason: "(Low–Moderate: Low for the single RCT; Moderate for the pooled direction — see §3)." Never leave an unexplained discrepancy between the abstract label and the body stamp.
+- **Why:** Entry #7 D-03 — abstract wrote "equivalent (Moderate certainty)" while §3 assigned GRADE LOW; the difference was defensible (MA vs RCT level) but unexplained, creating an apparent inconsistency QA had to flag.
+- **Origin:** Entry #7 — CBA-vs-PFA review, D-03 (2026-06-17)
 
 ### L-031: Investigation dimensions set by the user are evidence axes, not conclusion steers
-- **Role:** synthesis-writer / quality-coach / orchestrator (lead)
-- **Trigger:** the user asks to "investigate" or "explore" dimensions that appear to favour one option (e.g., "focus on cost, learning curve, and maturity" when comparing two technologies where one option has advantages on those dimensions)
-- **Rule:** Treat user-specified investigation dimensions as search axes only — collect and grade evidence for those dimensions on both sides. Do not interpret a dimension list as a signal that the user expects (or prefers) a particular conclusion. Frame the synthesis by following the evidence, not by confirming the dimension set's implied prior. Explicitly steelman the weaker side on each requested dimension before concluding. If the lead notices the framing drifting toward the implied prior, flag it to the user before writing the synthesis.
-- **Why:** This run — the lead framed Gate-4b as a "CBA advantage" synthesis because the user's requested dimensions (cost, learning curve, maturity) happened to favour CBA. The user corrected: those dimensions were search directions, not a license to conclude in CBA's favour. An investigator who confirms the asker's implied prior fails the steelman-before-concluding operating principle (constitution) and produces a review that serves the reader's prior, not the truth.
+- **Role:** synthesis-writer / quality-coach / orchestrator · **Scope:** universal
+- **Trigger:** the user asks to "investigate" or "explore" dimensions that appear to favour one option (e.g., "focus on cost, learning curve, maturity" when comparing two technologies where one has advantages on those dimensions)
+- **Rule:** Treat user-specified investigation dimensions as search axes only — collect and grade evidence for those dimensions on both sides. Do not read a dimension list as a signal that the user expects a particular conclusion. Follow the evidence, not the dimension set's implied prior. Steelman the weaker side on each requested dimension before concluding. If the framing drifts toward the implied prior, flag it to the user before writing.
+- **Why:** Entry #7 — the lead framed Gate-4b as a "CBA advantage" synthesis because the requested dimensions happened to favour CBA. The user corrected: those were search directions, not a license to conclude for CBA. Confirming the asker's implied prior fails the steelman-before-concluding principle.
 - **Origin:** Entry #7 — CBA-vs-PFA review, process observation (b) (2026-06-17)
 
 ### L-032: Output language is gated — confirm with a quotable user choice; default Vietnamese, fail closed
-- **Role:** orchestrator / lead (and research-strategist)
+- **Role:** orchestrator / scoping-retriever · **Scope:** universal
 - **Trigger:** setting `output language` in `00_protocol.md` / scope at Phase 0
-- **Rule:** Output language defaults to Vietnamese (CLAUDE.md). Any non-default language (e.g. English) MUST be confirmed by the user in Phase 0 with a **quotable** confirmation recorded in the protocol/scope file. The strategist must NOT unilaterally set a non-default language. If no quotable user confirmation exists, the language is Vietnamese — fail closed (same discipline as the gate-clearance lessons L-014/L-030).
-- **Why:** Entry #7 addendum — `00_protocol.md` set "Output language: English" with no recorded user confirmation; the final review was delivered in English, and the user then asked why it wasn't Vietnamese (the harness default). A non-default language is a scope decision, not a strategist default.
+- **Rule:** Output language defaults to Vietnamese (CLAUDE.md). Any non-default language (e.g. English) MUST be confirmed by the user in Phase 0 with a **quotable** confirmation recorded in the protocol/scope file. The strategist must NOT unilaterally set a non-default language. If no quotable confirmation exists, the language is Vietnamese — fail closed (same discipline as L-014).
+- **Why:** Entry #7 addendum — `00_protocol.md` set "Output language: English" with no recorded user confirmation; the review was delivered in English, and the user asked why it wasn't Vietnamese (the default). A non-default language is a scope decision, not a strategist default.
 - **Origin:** Entry #7 addendum — CBA-vs-PFA review, post-delivery language correction (2026-06-17)
 
-### L-033: Non-English output is composed natively, never literal-translated from English
-- **Role:** synthesis-writer
-- **Trigger:** producing a Vietnamese (or any non-English) deliverable, including re-issuing an English draft in another language
-- **Rule:** Compose directly in the target language for that audience. Do NOT translate sentence-by-sentence: break English run-on sentences into short native clauses, use native connectors (*vì, do đó, ngược lại, trong khi đó*), follow topic–comment order, and avoid calques ("ở nơi… và ở nơi…", "mà ở đó…"). If an English draft exists, use it as a **content source** and re-compose for fluency — do not transliterate syntax. Preserve all numerics/CIs/P-values/GRADE labels/`[n]` citations and the reference list verbatim.
-- **Why:** Entry #7 addendum — the first Vietnamese re-issue was a literal translation; the user flagged it as unnatural and clunky (90-word run-on sentences, calque structures). A full native rewrite was required. Faithfulness to content ≠ faithfulness to English syntax.
-- **Origin:** Entry #7 addendum — CBA-vs-PFA review, Vietnamese fluency correction (2026-06-17)
+### L-033: Non-English output is composed natively, with a fluency self-pass + calque blacklist before handoff
+- **Role:** synthesis-writer (and quality-coach as a check) · **Scope:** vi-language
+- **Trigger:** producing a Vietnamese (or any non-English) deliverable — BEFORE handoff to coach/QA, not after the user complains
+- **Rule:** *(absorbs former L-037.)*
+  1. **Compose natively, do not translate.** Write directly in the target language for that audience. Do NOT translate sentence-by-sentence: break English run-ons into short native clauses, use native connectors (*vì, do đó, ngược lại, trong khi đó*), follow topic–comment order, avoid calques ("ở nơi… và ở nơi…", "mà ở đó…"). If an English draft exists, use it as a **content source** and re-compose for fluency — do not transliterate syntax.
+  2. **Run a dedicated fluency self-pass before handoff.** (a) Split any sentence >~40 words / with stacked em-dashes into short native clauses. (b) Scan for and rewrite a **calque blacklist** — abstract English idioms translated word-for-word. Known offenders (rewrite by MEANING, never the word): "the X story"→❌"câu chuyện X" ✅ reframe ("về X, vấn đề là…"); "artifact"→❌"tạo tác" ✅ "do được so sánh với…/phản ánh…"; "binary/dichotomous endpoint"→❌"điểm cuối nhị phân" ✅ "tiêu chí kiểu có–không"; "apparent"→❌"biểu kiến" ✅ "bề ngoài/có vẻ"; "survives the X / steelman"→❌"sống sót qua X" ✅ "vẫn đứng vững trước X"; "flatter (a result)"→❌"tâng bốc" ✅ "làm cao giả tạo/thổi phồng"; "anchor"→❌"neo" ✅ "cơ sở vững nhất/dựa vào"; "carry through the review"→❌"mang theo suốt" ✅ "cần ghi nhớ trong suốt…"; "naive pooling"→❌"gộp ngây thơ" ✅ "gộp một cách thiếu cân nhắc"; "driver"→❌"động lực gián tiếp" ✅ "nguồn gây tính gián tiếp/không nhất quán"; avoid over-hyphenation ("tất-cả-lứa-tuổi"→"mọi lứa tuổi").
+  3. Preserve all numerics/CIs/P-values/GRADE labels/`[n]` citations and the reference list verbatim during the pass (fluency only, never content).
+- **Why:** Entry #7 + #8 — the first Vietnamese re-issue was a literal translation (90-word run-ons, calque structures) the native-expert user flagged as clunky; Entry #8 passed QA at 0.895 but still leaked "tạo tác", "điểm cuối nhị phân", 60–90-word run-ons, requiring a post-hoc rework of ~83 paragraphs. L-033 ("compose natively") is necessary but not sufficient — first drafts still leak calques, so the explicit pre-handoff pass with a blacklist is required. Fluency is part of the deliverable, not optional polish.
+- **Origin:** Entry #7 + #8 addenda; consolidated L-033 + L-037 (2026-07-12)
 
 ### L-034: A feature is only a "differentiator" if it actually differs between the arms — verify before contrasting
-- **Role:** critical-appraiser / synthesis-writer
+- **Role:** critical-appraiser / synthesis-writer · **Scope:** universal
 - **Trigger:** writing any sentence that frames a device/procedure attribute as an advantage or distinguishing factor of one arm over another (cost mechanism, infrastructure, safety, workflow)
-- **Rule:** Before presenting attribute X as a contrast between arm A and arm B, confirm X genuinely differs between them. Do not build a false mechanistic contrast from a shared attribute. Concretely: both CBA (Arctic Front) and PFA (Farawave) use **single-use disposable catheters**; the reusable item is the console/generator, which **both** modalities require. So "single-use catheter vs reusable console" is NOT a CBA-vs-PFA differentiator. When a real cost gap exists, attribute it to the correct driver (here: the higher *price* of the PFA disposable, plus anaesthesia), not to a spurious single-use-vs-reusable distinction.
-- **Why:** Entry #7 addendum — §8/§9 contrasted "PFA single-use catheter vs CBA reusable console," implying CBA avoids a disposable catheter. User (a domain expert) flagged it: both arms use single-use catheters; neither saves cost via catheter reuse. The argument was logically void and had to be reframed around catheter price and anaesthesia profile.
+- **Rule:** Before presenting attribute X as a contrast between arm A and arm B, confirm X genuinely differs between them. Do not build a false mechanistic contrast from a shared attribute. Example: both CBA (Arctic Front) and PFA (Farawave) use **single-use disposable catheters**; the reusable item is the console, which **both** need. So "single-use catheter vs reusable console" is NOT a CBA-vs-PFA differentiator. When a real cost gap exists, attribute it to the correct driver (here: the higher price of the PFA disposable + anaesthesia), not a spurious single-use-vs-reusable distinction.
+- **Why:** Entry #7 addendum — §8/§9 contrasted "PFA single-use catheter vs CBA reusable console," implying CBA avoids a disposable catheter. A domain-expert user flagged it: both arms use single-use catheters. The argument was logically void and had to be reframed.
 - **Origin:** Entry #7 addendum — CBA-vs-PFA review, §8/§9 false-contrast correction (2026-06-18)
 
 ### L-035: Copy reference titles verbatim from PubMed metadata — never reconstruct from acronym or memory
-- **Role:** retriever / writer
+- **Role:** retriever / writer · **Scope:** universal
 - **Trigger:** writing any reference-list TITLE into the store or the draft
-- **Rule:** Take the title string verbatim from `mcp__PubMed__get_article_metadata` (or the source full text). Do NOT reconstruct a title from the trial acronym, the topic, or memory (e.g. writing "CIRCA-DOSE comparison of energy sources and monitoring" instead of the real "Cryoballoon or Radiofrequency Ablation for Atrial Fibrillation Assessed by Continuous Monitoring: A Randomized Clinical Trial"). A reconstructed title is invisible to the writer (the PMID/DOI/content can all be correct) and is only caught by a QA re-fetch.
-- **Why:** This run — FIX-01: reference [2] CIRCA-DOSE carried a reconstructed title; PMID/DOI/content were correct, so nothing upstream flagged it. Only the verifier re-fetching the PubMed title caught it. Verbatim copy at retrieval time costs nothing and removes a whole class of silent format errors.
+- **Rule:** Take the title string verbatim from `mcp__PubMed__get_article_metadata` (or the source full text). Do NOT reconstruct a title from the trial acronym, the topic, or memory (e.g. writing "CIRCA-DOSE comparison of energy sources and monitoring" instead of the real "Cryoballoon or Radiofrequency Ablation for Atrial Fibrillation Assessed by Continuous Monitoring: A Randomized Clinical Trial"). A reconstructed title is invisible to the writer (PMID/DOI/content can all be correct) and is only caught by a QA re-fetch.
+- **Why:** Entry #8 FIX-01 — reference [2] CIRCA-DOSE carried a reconstructed title; PMID/DOI/content were correct, so nothing upstream flagged it. Only the verifier re-fetching the PubMed title caught it. Verbatim copy at retrieval time costs nothing and removes a whole class of silent format errors.
 - **Origin:** Entry #8 — elderly CB-vs-RF review, FIX-01 (2026-06-23)
 
 ### L-036: Carry a missing/pending DOI as an explicit tag into the reference list, not as an empty field
-- **Role:** retriever / writer
+- **Role:** retriever / writer · **Scope:** universal
 - **Trigger:** a store record has "DOI: pending" or no DOI (e.g. not-yet-indexed recent papers)
-- **Rule:** Propagate the status explicitly into the draft reference list as "DOI: not yet indexed" (or equivalent) rather than silently omitting the DOI field. An omitted field is ambiguous — it cannot be distinguished from an oversight — and triggers a format-error flag at QA. An explicit tag documents that the absence is known and intentional.
-- **Why:** This run — FIX-02: five references (Wang, Hirata, Ali, Nakasone, Mené) had no DOI consistent with not-yet-indexed status, but the omission read as incomplete formatting and was flagged. An explicit "not yet indexed" tag resolves the ambiguity.
+- **Rule:** Propagate the status explicitly into the draft reference list as "DOI: not yet indexed" (or equivalent) rather than silently omitting the DOI field. An omitted field is ambiguous — indistinguishable from an oversight — and triggers a format-error flag at QA. An explicit tag documents that the absence is known and intentional.
+- **Why:** Entry #8 FIX-02 — five references had no DOI consistent with not-yet-indexed status, but the omission read as incomplete formatting and was flagged. An explicit "not yet indexed" tag resolves the ambiguity.
 - **Origin:** Entry #8 — elderly CB-vs-RF review, FIX-02 (2026-06-23)
 
-### L-037: Run a native-fluency self-pass with a calque blacklist before handing off a Vietnamese draft
-- **Role:** synthesis-writer (and quality-coach as a check)
-- **Trigger:** finishing any Vietnamese (or non-English) draft, BEFORE handoff to coach/QA — not after the user complains
-- **Rule:** L-033 ("compose natively") is necessary but not sufficient — first drafts still leak calques. Before handoff, do a dedicated fluency self-pass that (a) splits any sentence >~40 words / with stacked em-dashes into short native clauses, and (b) scans for and rewrites a **calque blacklist** — abstract English idioms translated word-for-word. Known offenders to rewrite by MEANING (do not translate the word):
-  - "the X story" → ❌ "câu chuyện X"; ✅ reframe ("về X, vấn đề là…")
-  - "artifact (of methodology)" → ❌ "tạo tác"; ✅ "do được so sánh với… / phản ánh… / do sai lệch…"
-  - "binary/dichotomous endpoint" → ❌ "điểm cuối nhị phân"; ✅ "tiêu chí (đánh giá) kiểu có–không"
-  - "apparent" → ❌ "biểu kiến"; ✅ "bề ngoài / có vẻ"
-  - "survives the X / steelman" → ❌ "sống sót qua X"; ✅ "vẫn đứng vững trước X / không bị bác bỏ"
-  - "flatter (a result/arm)" → ❌ "tâng bốc"; ✅ "làm cao giả tạo / thổi phồng"
-  - "anchor (the evidence/comparison)" → ❌ "neo / neo bằng chứng"; ✅ "cơ sở vững nhất / dựa vào / làm nền cho"
-  - "carry through the review" → ❌ "mang theo suốt bản tổng quan"; ✅ "cần ghi nhớ trong suốt…"
-  - "naive pooling" → ❌ "gộp ngây thơ"; ✅ "gộp một cách thiếu cân nhắc"
-  - "driver (of heterogeneity)" → ❌ "động lực gián tiếp"; ✅ "nguồn gây tính gián tiếp/không nhất quán"
-  - avoid over-hyphenation ("tất-cả-lứa-tuổi" → "mọi lứa tuổi"; "tạo-giả-thuyết" → "tạo giả thuyết")
-  Preserve all numerics/CIs/P/GRADE/`[n]` and the reference list verbatim during the pass (fluency only, never content).
-- **Why:** Entry #8 — the delivered Vietnamese review passed QA (rubric 0.895) but the user, a native domain expert, flagged many sentences as unnatural word-by-word translations ("tạo tác", "điểm cuối nhị phân", "câu chuyện an toàn", "tâng bốc", 60–90-word run-ons). A post-hoc fluency pass reworked ~83 paragraphs. Catching these pre-handoff (with an explicit blacklist) avoids a delivery the expert reader finds clunky despite correct content — fluency is part of the deliverable, not optional polish.
-- **Origin:** Entry #8 addendum — elderly CB-vs-RF review, post-delivery Vietnamese fluency correction (2026-06-23)
-
 ### L-038: Build a PICO×outcome coverage matrix — every pre-registered subgroup gets an explicit, locatable section
-- **Role:** synthesis-writer (check), quality-coach (completeness angle), citation-verifier (audit), orchestrator (gate emphasis)
+- **Role:** synthesis-writer (check), quality-coach (completeness angle), citation-verifier (audit), orchestrator (gate emphasis) · **Scope:** universal
 - **Trigger:** finishing a draft whose protocol pre-registered subgroups (AF type, age strata, first-vs-redo, sex, etc.); and whenever the user emphasizes some axes at a gate
-- **Rule:** Before handoff, map every protocol-registered PICO subgroup to an **explicit, locatable** place in the draft (a labeled section/sub-section), not scattered prose. A subgroup that has data but no findable, labeled treatment is a defect — even if the facts appear somewhere. Where a subgroup is an **effect modifier especially important for the target population** (e.g. persistent AF in the ≥75 elderly, which is the highest-recurrence and lowest-evidence group), foreground it as a clinical headline, not a buried clause. Critically: a user emphasis on some axes (e.g. "deepen safety + QoL") ADDS depth to those axes — it must NOT silently demote another in-scope subgroup below the labeled-section threshold. The orchestrator, when relaying an emphasis at a gate, should confirm the non-emphasized in-scope subgroups stay at least explicitly covered.
-- **Why:** Entry #8 — the elderly CB-vs-RF review passed QA at 0.895 but the user (domain expert) flagged that the paroxysmal-vs-persistent distinction, and the clinically salient point that ≥75 + persistent AF has the highest recurrence (Boehmer 57%), were present-but-scattered rather than given a labeled section. Root cause: the Gate-4b emphasis on safety + QoL implicitly de-prioritized an in-scope PICO subgroup; the writer "covered" it in substance (same failure mode as L-026 for Law-4 labels); and neither the rubric, the coach, nor the audit had an explicit PICO-subgroup-completeness check. Data present + correct, but salience/synthesis defect — a PhD committee asks exactly this question first. Generalizes L-026 (explicit labels) from Law-4 sections to all pre-registered subgroups, and is the inverse of L-031 (emphasis as axis, not steer): here emphasis on some axes shrank another.
+- **Rule:** Before handoff, map every protocol-registered PICO subgroup to an **explicit, locatable** place in the draft (a labeled section/sub-section), not scattered prose. A subgroup with data but no findable, labeled treatment is a defect — even if the facts appear somewhere. Where a subgroup is an **effect modifier especially important for the target population** (e.g. persistent AF in the ≥75 elderly), foreground it as a clinical headline, not a buried clause. Critically: a user emphasis on some axes ADDS depth to those axes — it must NOT silently demote another in-scope subgroup below the labeled-section threshold. When relaying an emphasis at a gate, confirm the non-emphasized in-scope subgroups stay at least explicitly covered.
+- **Why:** Entry #8 — the elderly CB-vs-RF review passed QA at 0.895 but the user flagged that the paroxysmal-vs-persistent distinction, and the salient point that ≥75 + persistent AF has the highest recurrence (Boehmer 57%), were present-but-scattered rather than given a labeled section. Root cause: the Gate-4b emphasis on safety + QoL implicitly de-prioritized an in-scope PICO subgroup. Data present + correct, but a salience/synthesis defect a PhD committee asks about first. Generalizes L-026 (explicit labels) from Law-4 sections to all pre-registered subgroups.
 - **Origin:** Entry #8 addendum — elderly CB-vs-RF review, paroxysmal/persistent salience gap (2026-06-23)
 
-### L-039: Đẩy các khâu cơ học ra khỏi LLM, vào một tầng tất định chạy SAU và không thể bị thương lượng
-- **Role:** citation-verifier, critical-appraiser, evidence-retriever (và mọi bước QA tương lai); nguyên tắc thiết kế harness cho mọi agent
-- **Trigger:** bất kỳ khâu nào thuần cơ học — đếm, đối chiếu citekey/ID, chép số nguyên văn, kiểm coverage, chứng minh recall, log lời gọi. Đặc biệt khi bằng chứng "đã xong" hiện chỉ là lời tự thuật của LLM ("đã verify citation", "đã tìm hết", "đã chép số").
-- **Rule:** Một khâu không cần phán đoán thì KHÔNG để LLM làm — vì một agent viết trôi chảy có thể tự thuyết phục mình (hoặc một QA-LLM) rằng "đạt" (đúng lỗi từng để một test tự-thông Research Map gate). Chuyển nó sang script zero-dependency, không-LLM, không-mạng: (a) chạy **sau** bước LLM, (b) **tất định** (cùng input → output giống hệt), (c) phát **PASS/FAIL bằng exit code**, (d) tự nêu rõ nó kiểm gì và KHÔNG kiểm gì (truy vết ≠ ngữ nghĩa). Script chỉ THÊM một sàn, KHÔNG thay lớp phán đoán của LLM (RoB/GRADE/nghĩa/tổng hợp vẫn của LLM). Hiện có ba sàn bắt buộc chạy: `citation_audit.py` (sau citation-verifier, trước giao — Luật 1), `extract_numbers.py` (trước khi appraiser điền bảng chứng cứ — *nạp* số, không chép tay), `validate_search_log.py` (trên ledger recall của retriever). Mỗi script tối giản, dùng built-in.
-- **Why:** mượn chiến thuật từ một harness đối thủ chạy script-first (aglr-med) — nông hơn về phương pháp nhưng vượt đúng một điểm: đóng đinh khâu cơ học nên không thể bịa/tự-thuyết-phục. Quá trình dựng ba tầng đã lộ ra lỗi thật mà mắt-LLM dễ cho qua: CI tiếng Việt `[0,88–4,17]` bị đọc nhầm thành citation; một tham chiếu thử nghiệm PEACE chỉ-có-NCT hợp lệ bị gắn cờ nhầm; bộ lọc metadata nuốt cả dòng số liệu kết thúc bằng "(Source: …DOI…)". Lỗi cơ học được bắt bằng kiểm cơ học. (Cả hai review hoàn thành PASS citation audit tất định, 0 false hard-fail.)
-- **Origin:** Entry #9 — dựng tầng tất định (P1 citation audit · P2 number extraction · P3 search-log validation), 2026-06-29
+### L-039: Push mechanical steps out of the LLM into a deterministic layer that runs AFTER and cannot be negotiated
+- **Role:** citation-verifier, critical-appraiser, scoping-retriever (and every future QA step); harness design principle for every agent · **Scope:** universal
+- **Trigger:** any purely mechanical step — counting, cross-checking citekeys/IDs, copying numbers verbatim, coverage checks, recall proofs, call logging. Especially when the evidence of "done" is currently just the LLM's own narration ("verified the citations," "searched everything," "copied the numbers").
+- **Rule:** A step that needs no judgment must NOT be left to the LLM — a fluent agent can talk itself (or a QA-LLM) into "passed" (the exact bug that once let a test self-clear the Research Map gate). Move it to a zero-dependency, no-LLM, no-network script: (a) runs **after** the LLM step, (b) **deterministic** (same input → identical output), (c) emits **PASS/FAIL by exit code**, (d) states plainly what it checks and does NOT (traceability ≠ semantics). The script ADDS a floor, it does NOT replace the LLM's judgment layer (RoB/GRADE/meaning/synthesis stay with the LLM). Three floors run today: `citation_audit.py` (after the citation-verifier, before delivery — Law 1), `extract_numbers.py` (before the appraiser fills the evidence table — *loads* numbers, no hand-copy), `validate_search_log.py` (on the retriever's recall ledger).
+- **Why:** borrowed the script-first tactic from a rival harness (aglr-med) — shallower in method but ahead on exactly one point: nailing mechanical steps so they can't be faked/self-persuaded. Building the three floors surfaced real errors an LLM eye waves through: a Vietnamese CI `[0,88–4,17]` misread as a citation; a valid NCT-only PEACE trial reference falsely flagged; a metadata filter swallowing a numbers line ending in "(Source: …DOI…)". Mechanical errors caught by mechanical checks.
+- **Origin:** Entry #9 — building the deterministic layer (P1 citation audit · P2 number extraction · P3 search-log validation), 2026-06-29
 
 ### L-040: Commit each phase artifact immediately after it is written and verified, not at turn end
-- **Role:** orchestrator
+- **Role:** orchestrator · **Scope:** universal
 - **Trigger:** any `_workspace/` artifact is written or finalized (appraisal, draft, coach report, QA output, table preview, gate-approval file)
-- **Rule:** Run `git add` + commit for that artifact in the same tool-call batch that finishes writing it — before moving on to the next phase step or ending the turn. Do not wait for the stop-hook to flag uncommitted changes as the trigger to commit.
-- **Why:** This run, the stop-hook (`~/.claude/stop-hook-git-check.sh`) fired roughly five times because newly-written artifacts (appraisal, CRF preview, draft, coach report, QA outputs) were left uncommitted at turn boundaries; each was resolved with an immediate add+commit+push cycle, but only reactively. The hook is a safety net for forgotten commits, not the intended commit trigger — relying on it costs an extra round-trip per phase and risks losing the per-phase audit trail (L-019/L-027's value: artifacts on disk are the audit's only evidence) if a session ends before the hook fires.
+- **Rule:** Run `git add` + commit for that artifact in the same tool-call batch that finishes writing it — before moving to the next phase step or ending the turn. Do not wait for the stop-hook to flag uncommitted changes as the trigger to commit.
+- **Why:** The stop-hook fired ~5 times because newly-written artifacts were left uncommitted at turn boundaries. The hook is a safety net, not the intended commit trigger — relying on it costs a round-trip per phase and risks losing the per-phase audit trail if a session ends before it fires.
 - **Origin:** Entry #10 — LA-EP elderly AF review, recurring stop-hook pattern (2026-06-30)
 
-### L-041: Track gate status as explicit state across interleaved side-conversation turns
-- **Role:** orchestrator
-- **Trigger:** a human gate (Research Map, Gate 2b, Gate 4b) has been presented and is awaiting approval, AND the user's next messages are unrelated or semi-related questions before the actual approval/rejection arrives
-- **Rule:** Answer side questions on their merits without treating them as gate approval and without re-litigating gate status mid-answer. Before launching the next phase's agent, re-confirm explicitly that the gate-closing question was asked again (if the side conversation introduced new decisions, e.g. a structural sub-approval) and that a distinct, quotable approval was received for the gate itself — not inferred from the side conversation's tone or from "the user seems satisfied."
-- **Why:** This run, Gate 4b's presentation was followed by two side-conversation turns (a CRF table draft request, a CV data question) and a nested 3-question structural sub-approval on the CRF table, before the actual gate-closing approval ("bắt đầu viết") arrived in a separate, later turn. The orchestrator handled this correctly here (confirmed in `gate4b_approval.md`'s sequence-of-record), but the pattern is a plausible failure mode the existing L-024 doesn't explicitly name: L-024 covers "present, then stop and wait," not "present, then survive N interleaved unrelated turns before closing." Naming the multi-turn case makes the discipline explicit rather than incidentally correct.
-- **Origin:** Entry #10 — LA-EP elderly AF review, Gate 4b interleaved side-conversation (2026-06-30)
-
-### L-042: A second locked Phase-0 deliverable (e.g., a structured table) gets its own labeled sub-approval, nested inside but distinct from the phase gate
-- **Role:** orchestrator
-- **Trigger:** Phase 0 scope locks two deliverables (e.g., narrative review + CRF/structured table), and the second deliverable's structure (columns, highlighting, grouping) requires user decisions before it can be finalized
-- **Rule:** When a phase gate (e.g., Gate 4b) also requires finalizing a second deliverable's structure, present the structural questions as an explicitly labeled sub-approval (e.g., numbered yes/no decisions) distinct from the gate-closing question. Resolve and record the sub-approval first: write the finalized structure to its own artifact (e.g., `04b_crf_table_preview.md`) and commit it. Only then re-ask the gate-closing question on its own. Do not let "user answered the structural questions" stand in for "user closed the gate" — they are different approvals even though they happen inside the same gate window.
-- **Why:** This run, Gate 4b correctly nested a 3-question CRF structural sub-approval ("1.2. có 3. không") inside the gate window, finalized and committed the table (`d1e4ad0`) before re-asking the gate-closing question, and only then received "bắt đầu viết" as the distinct gate approval. This worked because the orchestrator treated them as separate approvals; documenting the pattern protects future dual-deliverable reviews (any review locking a narrative + a structured artifact at Phase 0) from collapsing the two into one ambiguous approval.
-- **Origin:** Entry #10 — LA-EP elderly AF review, CRF table structural sub-approval (2026-06-30)
-
-### L-043: Flag Consensus-only / abstract-only store entries at appraisal time so verifier WARNs on them are pre-triaged
-- **Role:** appraiser, retriever
+### L-043: Flag Consensus-only / abstract-only store entries at appraisal time so verifier WARNs are pre-triaged
+- **Role:** appraiser, retriever · **Scope:** universal
 - **Trigger:** a store record was retrieved via Consensus (or any abstract-only path) without a full-text pull, and it anchors a quantitative claim (effect size, coefficient, p-value) used in the draft
-- **Rule:** When building the evidence table (Phase 4), explicitly tag such records — e.g., "Consensus-only / abstract-depth: numbers unconfirmable by audit heuristic" — in the appraisal artifact (and propagate the tag into `03b_numbers.md` or the store entry itself). At QA time, the citation-verifier should treat a `number_not_in_source` WARN on a pre-tagged record as already triaged (known store-depth limitation) rather than re-investigating it as if newly discovered.
-- **Why:** This run, REF-003 (van der Does) was a Consensus-only retrieval lacking full-text verbatim numbers; the deterministic citation_audit.py correctly WARN-flagged its cited coefficient/p-value as `number_not_in_source`, and the verifier had to manually re-derive that this was a store-completeness gap, not a draft error — taking real investigation effort that a Phase-4 tag would have pre-empted. This is the citation-verifier's own self-update proposal in `06_verification_report.md` §5/§6, confirmed here as a generalizable rule rather than a one-paper note. Complements L-009 (PMID verification) and L-005 (copy from results table, not abstract) by closing the loop when full text genuinely isn't available: tag the limitation instead of leaving it implicit.
-- **Origin:** Entry #10 — LA-EP elderly AF review, REF-003 WARN triage (citation-verifier self-update proposal, 2026-06-30)
-
-### L-044: Never bundle a content decision with a gate-approval decision in the same question/reply turn — especially under tool-failure fallback
-- **Role:** orchestrator
-- **Trigger:** an `AskUserQuestion` (or other structured-choice tool) call errors before rendering and the orchestrator must fall back to a plain-text question, OR any gate-closing approval question is being drafted together with an unrelated content/scope decision in the same message
-- **Rule:** Even under a tool failure forcing a plain-text fallback, never combine a content/scope decision (e.g., "how should full-text be sourced") with the gate-closing approval question in one prompt or one expected combined reply (e.g., "trả lời gộp '1a, 2A'"). Ask the content question alone first, process that answer, THEN — in a separate, later message — ask the gate-closing question on its own and wait for a distinct approval before advancing. Do not improvise a merged free-text format whose single reply is asked to resolve two decisions of different kinds at once.
-- **Why:** This run, the `AskUserQuestion` call at Gate 2b errored before rendering ("Tool permission stream closed before response received"). The fallback prompt asked the user to answer both the full-text-sourcing decision and the gate-closing decision in one combined reply. The user picked "(3) Bạn cung cấp PDF" — a full-text content decision only — but the bundled format caused the orchestrator to treat the reply as resolving both questions, advancing straight toward building/closing the Research Map gate without the PDF having actually been supplied. This is the same same-turn gate-self-clearing pattern L-014/L-024 exist to prevent, triggered indirectly through a tool failure and an improvised fallback format rather than impatience. The user caught and corrected it in the same exchange (no downstream harm to the delivered review), but the failure mode — a tool-error fallback silently merging an unrelated content question into the gate-approval question — is generalizable and distinct from L-040–L-043.
-- **Origin:** Entry #10 — LA-EP elderly AF review, Gate 2b `AskUserQuestion` tool failure + bundled fallback question (2026-06-30, raised by user post-delivery)
+- **Rule:** When building the evidence table (Phase 4), explicitly tag such records — e.g., "Consensus-only / abstract-depth: numbers unconfirmable by audit heuristic" — in the appraisal artifact (and propagate the tag into `03b_numbers.md` or the store entry). At QA time, the citation-verifier treats a `number_not_in_source` WARN on a pre-tagged record as already triaged (known store-depth limitation) rather than re-investigating it as newly discovered.
+- **Why:** Entry #10 — REF-003 (van der Does) was a Consensus-only retrieval lacking full-text verbatim numbers; `citation_audit.py` correctly WARN-flagged its cited coefficient/p-value as `number_not_in_source`, and the verifier had to manually re-derive that this was a store-completeness gap. A Phase-4 tag would have pre-empted the effort. Complements L-009 and L-005 by closing the loop when full text genuinely isn't available.
+- **Origin:** Entry #10 — LA-EP elderly AF review, REF-003 WARN triage (2026-06-30)

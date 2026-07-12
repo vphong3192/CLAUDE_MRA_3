@@ -93,7 +93,9 @@ At Phase 0, tag the run `tiny | normal | full | high-stakes`. The tag scales the
 (number of searches, corpus breadth, RoB tools applied, target length, curiosity-budget probes) so a
 small question isn't over-built and a high-stakes one isn't under-built.
 
-**The tag never changes the gates.** All four human gates (scope, post-retrieval, Research Map,
-post-appraisal) run on every effort level, including `tiny`. There is no fast lane that skips a gate —
-the Research Map gate has no small-scope exception (the lineage's most expensive repeated lesson). When
-unsure of the tag, choose the more careful level.
+**The tag never changes the gates.** All three human gates (Phase-0 scope, the Research Map — which also
+carries the corpus/source review formerly split out as Gate 2b — and Gate 4b post-appraisal) run on every
+effort level, including `tiny`. There is no fast lane that skips a gate — the Research Map gate has no
+small-scope exception (the lineage's most expensive repeated lesson). When unsure of the tag, choose the
+more careful level. *(Note: the effort tag does gate one non-human step — the `full`/`high-stakes`-only
+quality-coach pass — but a skip there must be declared on disk, L-025; it is not a human gate.)*
