@@ -180,6 +180,13 @@ but its *rule* is general, tag it `universal` and let the example illustrate —
 - **Why:** Entry #5: bioRxiv/ClinicalTrials.gov were unavailable AND 28/31 records were abstract-only — both gaps reported in the log but the retriever moved straight to appraisal without asking. User: "không dừng lại hỏi… khả năng thiếu sót cao." Folding the check into the Research Map keeps the one human corpus review instead of two adjacent stops.
 - **Origin:** Entry #5; consolidated L-022 + L-023 (2026-06-16); corpus/source gate merged into Research Map (2026-07-12)
 
+### L-025: The quality-coach pass is conditional — run it for full/high-stakes, and declare any skip (never silent)
+- **Role:** orchestrator · **Scope:** universal
+- **Trigger:** a run reaches the handoff between Phase 5 (draft) and Phase 6 (QA)
+- **Rule:** The coach is spawned for `full` and `high-stakes` effort. For `normal` and `tiny` it is skipped by default, but the skip must be **declared**: write `_workspace/04b_coach_skip.md` naming the effort tag as the reason. Before routing the draft to QA, confirm that either `04b_coach.md` (ran) or `04b_coach_skip.md` (declared skip) exists. A silent absence on any run is R4 ("Faking the steps") even when the draft meets the rubric. The user may request the coach on any run.
+- **Why:** Entry #7 — 04b_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is audit-visible: QA checks for its artifact, and absence without justification is indistinguishable from never having run it. (Updated 2026-07-12: coach demoted to a conditional pass to lighten routine runs — the *declare-the-skip* discipline now covers `normal` too, not only `tiny`.)
+- **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17); scope updated when coach became conditional (2026-07-12)
+
 ### L-026: Law 4 section headers must be explicit labels in the draft body, not implicit content
 - **Role:** writer · **Scope:** universal
 - **Trigger:** finishing any review draft, before handoff to quality-coach or QA
@@ -216,7 +223,7 @@ but its *rule* is general, tag it `universal` and let the example illustrate —
 - **Origin:** Entry #7 — CBA-vs-PFA review, process observation (b) (2026-06-17)
 
 ### L-032: Output language is gated — confirm with a quotable user choice; default Vietnamese, fail closed
-- **Role:** orchestrator / research-strategist · **Scope:** universal
+- **Role:** orchestrator / scoping-retriever · **Scope:** universal
 - **Trigger:** setting `output language` in `00_protocol.md` / scope at Phase 0
 - **Rule:** Output language defaults to Vietnamese (CLAUDE.md). Any non-default language (e.g. English) MUST be confirmed by the user in Phase 0 with a **quotable** confirmation recorded in the protocol/scope file. The strategist must NOT unilaterally set a non-default language. If no quotable confirmation exists, the language is Vietnamese — fail closed (same discipline as L-014).
 - **Why:** Entry #7 addendum — `00_protocol.md` set "Output language: English" with no recorded user confirmation; the review was delivered in English, and the user asked why it wasn't Vietnamese (the default). A non-default language is a scope decision, not a strategist default.
@@ -261,7 +268,7 @@ but its *rule* is general, tag it `universal` and let the example illustrate —
 - **Origin:** Entry #8 addendum — elderly CB-vs-RF review, paroxysmal/persistent salience gap (2026-06-23)
 
 ### L-039: Push mechanical steps out of the LLM into a deterministic layer that runs AFTER and cannot be negotiated
-- **Role:** citation-verifier, critical-appraiser, evidence-retriever (and every future QA step); harness design principle for every agent · **Scope:** universal
+- **Role:** citation-verifier, critical-appraiser, scoping-retriever (and every future QA step); harness design principle for every agent · **Scope:** universal
 - **Trigger:** any purely mechanical step — counting, cross-checking citekeys/IDs, copying numbers verbatim, coverage checks, recall proofs, call logging. Especially when the evidence of "done" is currently just the LLM's own narration ("verified the citations," "searched everything," "copied the numbers").
 - **Rule:** A step that needs no judgment must NOT be left to the LLM — a fluent agent can talk itself (or a QA-LLM) into "passed" (the exact bug that once let a test self-clear the Research Map gate). Move it to a zero-dependency, no-LLM, no-network script: (a) runs **after** the LLM step, (b) **deterministic** (same input → identical output), (c) emits **PASS/FAIL by exit code**, (d) states plainly what it checks and does NOT (traceability ≠ semantics). The script ADDS a floor, it does NOT replace the LLM's judgment layer (RoB/GRADE/meaning/synthesis stay with the LLM). Three floors run today: `citation_audit.py` (after the citation-verifier, before delivery — Law 1), `extract_numbers.py` (before the appraiser fills the evidence table — *loads* numbers, no hand-copy), `validate_search_log.py` (on the retriever's recall ledger).
 - **Why:** borrowed the script-first tactic from a rival harness (aglr-med) — shallower in method but ahead on exactly one point: nailing mechanical steps so they can't be faked/self-persuaded. Building the three floors surfaced real errors an LLM eye waves through: a Vietnamese CI `[0,88–4,17]` misread as a citation; a valid NCT-only PEACE trial reference falsely flagged; a metadata filter swallowing a numbers line ending in "(Source: …DOI…)". Mechanical errors caught by mechanical checks.

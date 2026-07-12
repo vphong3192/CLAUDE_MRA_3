@@ -4,7 +4,7 @@ Load when writing a review in Vietnamese. These mappings were **verified directl
 and are binding for Vietnamese output. Convention: use the Vietnamese term first, with the English in
 parentheses on first appearance; afterward the abbreviation or Vietnamese is fine.
 
-> This is a living glossary. When the user confirms a new term, the lessons-curator appends it here
+> This is a living glossary. When the user confirms a new term, the lead (lessons-learned capture) appends it here
 > (user-approved only). When the user corrects a translation, record it here **before** doing anything
 > else — translation errors recur otherwise (v1 lesson).
 

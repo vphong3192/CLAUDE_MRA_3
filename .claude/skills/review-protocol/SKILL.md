@@ -3,7 +3,7 @@ name: review-protocol
 description: >
   Builds a systematic, reproducible medical-review protocol — research question, PICO/PECO
   framing, inclusion/exclusion criteria, and a database search strategy with MeSH/Emtree terms
-  and Boolean logic. Used by the research-strategist agent at the start of any medical literature
+  and Boolean logic. Used by the scoping-retriever agent at the start of any medical literature
   review, and whenever the user asks to define scope, framing, or a search strategy for a review.
 ---
 

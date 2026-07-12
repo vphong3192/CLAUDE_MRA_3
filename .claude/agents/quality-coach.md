@@ -65,11 +65,18 @@ user-approved scope + source list (Research Map). Read-only.
 3. Any out-of-scope observations recorded separately as **"Notes for the user"** (not actionable by the
    writer this run).
 
+## When you run (conditional pass)
+You are **spawned only for `full` and `high-stakes` effort runs** — that is where a ceiling-raising
+pass earns its coordination cost. For `normal` and `tiny` runs you are skipped by default, and the
+lead must record the skip explicitly in `_workspace/04b_coach_skip.md` with the effort tag as the
+reason (a declared skip, never a silent one — R4). A strong writer plus the Research Map gate cover
+the ceiling on routine runs; reserve the dedicated best-self pass for depth-critical work. The user
+may also request the coach on any run — honour that.
+
 ## Hand-off
 - **Receives from:** `synthesis-writer` (draft) via the lead.
 - **Sends to (via lead):** `synthesis-writer` — the named changes, applied **once**; then the lead
   proceeds to the `citation-verifier`. If the verdict is `SHIP-AS-IS`, the lead skips straight to QA.
-- The lead skips this agent only when effort is `tiny` **and** says so explicitly (no hidden shortcut, R4).
 
 ## Error Handling
 - If the draft is missing or empty, report that to the lead and return `SHIP-AS-IS` (nothing to coach).

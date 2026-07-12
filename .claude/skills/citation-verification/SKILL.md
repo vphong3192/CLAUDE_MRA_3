@@ -26,7 +26,7 @@ source** side by side:
 4. **Verdict:** `PASS` / `FIX` (correctable) / `BLOCK` (unverifiable → claim must be removed).
 
 ## Defect categories (tag every issue)
-Tag each finding so the lessons-curator can build preventive rules:
+Tag each finding so the lead's lessons-learned capture step can build preventive rules:
 - `fabricated-citation` — reference doesn't exist / 404s.
 - `mismatched-citation` — exists but doesn't support the claim (wrong finding/population/endpoint).
 - `overstated-certainty` — language stronger than GRADE allows.
@@ -76,6 +76,6 @@ Once claim-checking passes, run two more steps before delivery:
 ## Output
 A claim-by-claim table: `claim | citation | verdict | problem | required correction`, **then the
 rubric score and audit report**, then an overall deliver / do-not-deliver decision. Send FIX/BLOCK
-items to the writer; send the tagged defect list to the lessons-curator. Never pass an unverifiable
+items to the writer; send the tagged defect list to the lead (lessons-learned capture). Never pass an unverifiable
 citation — if it can't be resolved after one re-fetch, it's BLOCK. Do not deliver on a fabricated
 citation or an uncleared Research Map gate.

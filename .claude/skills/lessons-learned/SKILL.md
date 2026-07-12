@@ -4,13 +4,15 @@ description: >
   The learning-from-mistakes memory for the medical review harness. Loads the persistent lessons
   store and injects role-tagged rules at the start of every review; collects defects (from QA) and
   user feedback at the end, drafts generalized lessons, and — after human approval — appends them to
-  the store. Used by the lessons-curator agent, and whenever the user wants to record a mistake,
-  review proposed lessons, or see what the harness has learned.
+  the store. Run by the orchestrator lead directly (there is no separate curator agent), and whenever
+  the user wants to record a mistake, review proposed lessons, or see what the harness has learned.
 ---
 
 # Lessons Learned
 
-The mechanism that stops the team repeating mistakes. **Two tiers:**
+The mechanism that stops the team repeating mistakes. The **orchestrator lead runs this skill itself**
+— injecting at the start, capturing at the end — rather than spawning a dedicated agent for a job that
+is file-load + file-append with no specialist reasoning (fewer team members, less coordination). **Two tiers:**
 - `lessons.md` — distilled, role-tagged "When X → do Y" digest, injected every run.
 - `evolution-log.md` — the full per-run archive (task, rubric result, violations, lessons, actions);
   NOT auto-loaded; read it to investigate patterns or to append a new entry.

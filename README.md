@@ -2,7 +2,7 @@
 
 Harness đa-agent (do LLM lái) để sản xuất các bản **tổng quan y văn chuyên sâu, kiểu hệ thống** từ
 nguồn sống, cập nhật (PubMed/PMC, bioRxiv/medRxiv, ClinicalTrials.gov, Consensus) — kèm hiến pháp 6
-Luật, 4 cổng người-duyệt (Research Map là cổng cứng), GRADE/PRISMA, provenance trên đĩa, và một
+Luật, 3 cổng người-duyệt (Research Map là cổng cứng), GRADE/PRISMA, provenance trên đĩa, và một
 **learning loop**.
 
 Đây là bản fork từ `CLAUDE_MRA_2`, bổ sung **tầng kiểm tra tất định (deterministic layer)**: rút các
@@ -72,9 +72,10 @@ Mỗi thư mục `scripts/` đều có `fixtures/` minh hoạ đường PASS/FAI
 
 ---
 
-## Bốn cổng người-duyệt (không bao giờ bỏ qua)
-(1) Phase-0 xác nhận phạm vi · (2) Gate 2b sau retrieval · (3) **Research Map — cổng cứng** ·
-(4) Gate 4b sau appraisal. Cả bốn chạy ở mọi mức effort (kể cả `tiny`); Research Map không có ngoại lệ.
+## Ba cổng người-duyệt (không bao giờ bỏ qua)
+(1) Phase-0 xác nhận phạm vi · (2) **Research Map — cổng cứng**, nay kiêm luôn khâu soát corpus/nguồn
+(trước đây tách thành Gate 2b) · (3) Gate 4b sau appraisal. Cả ba chạy ở mọi mức effort (kể cả `tiny`);
+Research Map không có ngoại lệ. *(Gate 2b được gộp vào Research Map để người dùng chỉ soát corpus một lần.)*
 
 ## Workflow branch-per-study
 `main` là công cụ tái dùng; mỗi nghiên cứu là một nhánh `review/<topic>` riêng. Khi xong và lesson
@@ -83,7 +84,8 @@ Mỗi thư mục `scripts/` đều có `fixtures/` minh hoạ đường PASS/FAI
 
 ## Bắt đầu một review
 Kích hoạt skill `medical-review-orchestrator` (hoặc yêu cầu "review the evidence on <chủ đề>"). Đội
-7 agent chạy: strategist → retriever → appraiser → writer → coach → verifier (+ lessons-curator).
+**4 agent** chạy: scoping-retriever → appraiser → writer → verifier; thêm quality-coach **chỉ khi**
+effort là full/high-stakes; vòng lessons-learned do chính lead chạy (không có agent curator riêng).
 
 ## Cấu hình mặc định
 PRISMA + GRADE · trích dẫn Vancouver · **ngôn ngữ output mặc định tiếng Việt** (chọn được mỗi review,

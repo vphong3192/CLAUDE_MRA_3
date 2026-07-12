@@ -4,7 +4,7 @@ description: >
   Executes a medical-review search strategy across live MCP sources — PubMed/PMC, bioRxiv/medRxiv
   preprints, ClinicalTrials.gov, Consensus, and (for drug/target topics) ChEMBL/Open Targets —
   retrieves metadata and full text, deduplicates across sources, and records full provenance plus
-  a PRISMA-ready search log. Used by the evidence-retriever agent and whenever a review needs its
+  a PRISMA-ready search log. Used by the scoping-retriever agent and whenever a review needs its
   evidence corpus built or refreshed from up-to-date sources.
 ---
 

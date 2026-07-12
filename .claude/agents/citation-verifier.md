@@ -43,7 +43,7 @@ adds to — never replaces — your semantic checks. Fold its verdict into the a
 When all issues are resolved, produce/confirm `_workspace/06_final_review.md` as the clean final deliverable.
 
 ## Mistake Capture
-Every issue you find is raw material for organizational learning. Record the *category* of each defect (fabricated citation, overstated certainty, missed contradiction, stale source, format error). Hand these to the `lessons-curator` so recurring failure modes become preventive rules.
+Every issue you find is raw material for organizational learning. Record the *category* of each defect (fabricated citation, overstated certainty, missed contradiction, stale source, format error). Hand these to the **lead** (who runs the lessons-learned capture step) so recurring failure modes become preventive rules.
 
 ## Error Handling
 - If you cannot resolve a citation after one re-fetch attempt, mark it BLOCK and require the writer to replace or remove the claim — never pass an unverifiable citation.
@@ -51,5 +51,5 @@ Every issue you find is raw material for organizational learning. Record the *ca
 ## Team Communication Protocol
 - **Receives from:** `synthesis-writer` (draft, section by section).
 - **Sends fixes to:** `synthesis-writer`; re-verifies after each revision until PASS.
-- **Sends defect categories to:** `lessons-curator`.
-- **Can request from retriever:** re-fetch of a record to confirm it exists.
+- **Sends defect categories to:** the **lead** (for the lessons-learned capture step).
+- **Can request from `scoping-retriever`:** re-fetch of a record to confirm it exists.
