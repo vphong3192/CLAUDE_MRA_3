@@ -31,6 +31,42 @@ You are the methodological conscience of the review. You judge *how much each st
 5. **Assumption Register** — every extrapolation made, for the Limitations section.
 6. Per-claim "evidence strength" labels the writer must carry into the draft.
 
+## Evidence cards with verbatim quotes — `_workspace/04b_cards.jsonl` (P8)
+
+For every **substantive claim you will hand to the writer**, emit a card carrying the quote it
+rests on, verbatim from the source file on disk. One line per (study, claim):
+
+```json
+{"card_id":"REF-001-c1","study_id":"pmid:33652425","source_file":"33652425_Andrade_2021.html",
+ "tier":"fulltext","claim":"Tái phát 42,9% so với 67,8% (HR 0,48).",
+ "abstract":"In this trial, initial treatment with cryoballoon ablation was compared with …",
+ "quote":"Atrial tachyarrhythmia recurrence occurred in 42.9% of the ablation group and in 67.8% of the antiarrhythmic drug group (hazard ratio, 0.48; 95% CI, 0.35 to 0.66; P<0.001)."}
+```
+
+Then run the locks and fix what they reject:
+
+```bash
+python3 .claude/skills/citation-verification/scripts/verify_quotes.py \
+  --cards _workspace/04b_cards.jsonl --source-dir source/<folder>/ \
+  --out _workspace/04c_quote_locks.md
+```
+
+**A rejected card is not citable.** Repair the quote or drop the claim — the one thing you may
+never do is widen a lock so a card slips through. Five things the locks will not let past:
+a quote that is not literally in the file · a number in the claim that is not in its own quote ·
+a real quote attached to the wrong paper · a quote too short to evidence anything or long enough
+to contain the number by accident · a card tagged `fulltext` whose quote sits entirely inside the
+abstract, which is claiming depth you did not read (R4).
+
+Carry the record's `abstract` on the card itself. The FULLTEXT lock needs something to compare
+against, and keeping it on the card avoids a fourth artifact duplicating what the store already
+holds; omit it and that lock stays silent rather than guessing.
+
+Write the claim in the review's output language and the quote in the source's — the NUMBER lock
+canonicalises decimals, so a Vietnamese `42,9%` matches an English `42.9%`. Quote from **prose**,
+never from a table dump or embedded page metadata. PDFs are not readable by this layer: quote from
+the converted HTML the corpus stores alongside them.
+
 ## Prior-Output / Re-invocation Behavior
 - If an appraisal exists and the corpus was updated, appraise only the new studies and update the GRADE summaries that they affect.
 - Apply appraisal lessons (e.g., "flag industry funding as a risk-of-bias consideration").

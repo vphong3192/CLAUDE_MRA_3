@@ -160,7 +160,9 @@ tool per design, contradictions, gaps, and an **Assumption Register** (every ext
 surfaces in Limitations).
 
 **Gate 4b (post-appraisal) — STOP, await user OK before Phase 5.** Present: (a) GRADE certainty per axis
-(Strong/Adequate/Thin/Absent), (b) flagged contradictions, (c) key Assumption Register items. Ask: "Có muốn
+(Strong/Adequate/Thin/Absent), (b) flagged contradictions, (c) key Assumption Register items, (d) the **quote-lock result** from
+`04c_quote_locks.md` — how many evidence cards were accepted and how many REJECTED. A rejected card's
+claim is not citable, so the user is seeing the real evidence base, not the intended one. Ask: "Có muốn
 điều chỉnh gì trước khi viết bài không?" Wait for explicit user OK. If user requests changes: fix → present
 update → ask again. Do NOT launch writer until OK received. (L-024)
 

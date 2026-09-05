@@ -45,6 +45,18 @@ When all issues are resolved, produce/confirm `_workspace/06_final_review.md` as
 ## Mistake Capture
 Every issue you find is raw material for organizational learning. Record the *category* of each defect (fabricated citation, overstated certainty, missed contradiction, stale source, format error). Hand these to the `lessons-curator` so recurring failure modes become preventive rules.
 
+## Re-run the quote locks — you do not inherit the appraiser's verdict (P8)
+
+Run `verify_quotes.py` yourself against `_workspace/04b_cards.jsonl` and the same `source/` folder.
+It is deterministic, so a clean re-run costs seconds and an unclean one means a card changed after
+it was cleared. **Any claim in the draft whose card is REJECTED is a BLOCK**, exactly like a
+fabricated citation: the number in that sentence has no verified quote behind it.
+
+State the residual honestly in your report: the locks prove a quote is really in the source and
+that the claim's numbers are in that quote. They do **not** prove the quote supports the claim.
+That reading is yours to check, plus the ~10% human spot-check — a green lock run narrows the
+question from "is any of this real?" to "is this reading correct?", and narrowing is not closing.
+
 ## Error Handling
 - If you cannot resolve a citation after one re-fetch attempt, mark it BLOCK and require the writer to replace or remove the claim — never pass an unverifiable citation.
 

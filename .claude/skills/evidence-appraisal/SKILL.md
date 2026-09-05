@@ -125,6 +125,28 @@ For each finding the writer will report, emit a label: `[GRADE: High|Moderate|Lo
 writer must carry these into the draft so language strength matches evidence strength, and the QA
 verifier checks the alignment.
 
+## Evidence cards + verbatim quote locks (P8)
+
+Numbers from `04a_numbers.md` tell you WHAT a record reports. A card records **which sentence of
+the paper** a claim rests on, and `verify_quotes.py` proves that sentence is really there:
+
+```bash
+python3 .claude/skills/citation-verification/scripts/verify_quotes.py \
+  --cards _workspace/04b_cards.jsonl --source-dir source/<folder>/ \
+  --out _workspace/04c_quote_locks.md
+```
+
+Card schema and the five locks are in `.claude/agents/critical-appraiser.md`. Two rules that decide
+whether this layer is worth anything: **a rejected card's claim does not reach the writer**, and
+**no lock is ever widened to let a card through**. The FULLTEXT lock needs the record's
+abstract to compare against: carry it on the card as `"abstract"`, which keeps it with the claim
+that needs it instead of in a fourth file duplicating what the store already holds. Without it the
+lock stays silent rather than guessing. (`--abstracts` accepts a shared `{study_id: abstract}` map
+if you ever have one; nothing in this pipeline produces one.)
+
+What it still cannot do: prove the quote *supports* the claim. A card can pass all five locks and
+misread its own quote. That reading stays with you, the verifier, and the human spot-check.
+
 ## Why grading matters
 Treating a small unblinded preprint as equal to a large RCT is the most damaging error a review can
 make. Explicit hierarchy + risk-of-bias + GRADE is the guardrail. If full text is missing for a
