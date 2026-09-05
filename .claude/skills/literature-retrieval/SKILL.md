@@ -1,10 +1,10 @@
 ---
 name: literature-retrieval
 description: >
-  Executes a medical-review search strategy across live MCP sources — PubMed/PMC, bioRxiv/medRxiv
-  preprints, ClinicalTrials.gov, Consensus, and (for drug/target topics) ChEMBL/Open Targets —
-  retrieves metadata and full text, deduplicates across sources, and records full provenance plus
-  a PRISMA-ready search log. Used by the evidence-retriever agent and whenever a review needs its
+  Executes a medical-review search strategy across live MCP sources — PubMed/PMC, Elicit,
+  bioRxiv/medRxiv preprints, ClinicalTrials.gov, Consensus, and (for drug/target topics)
+  ChEMBL/Open Targets — retrieves metadata and full text, deduplicates across sources, and records
+  full provenance plus a PRISMA-ready search log. Used by the evidence-retriever agent and whenever a review needs its
   evidence corpus built or refreshed from up-to-date sources.
 ---
 
@@ -22,6 +22,8 @@ strong enough that every later claim is traceable. Produce `_workspace/01_search
 | **bioRxiv/medRxiv** | `search_preprints`, `get_preprint`, `search_published_preprints` | Newest preprints (NOT peer-reviewed); check if a preprint was later published |
 | **ClinicalTrials.gov** | `search_trials`, `get_trial_details`, `analyze_endpoints`, `search_by_sponsor` | Registered/ongoing/completed trials, unpublished results, endpoint design |
 | **Consensus** | `search` | AI-ranked evidence + fast coverage check across the field |
+| **Elicit** | `search_papers`, `search_trials` | Large-scale recall: semantic **or** Lucene-keyword search over a corpus wider than PubMed, up to 10,000 hits per call, with filters PubMed cannot express — `typeTags` (RCT / Meta-Analysis / Systematic Review / Review / Longitudinal), `maxQuartile` (journal quartile), `minYear`/`maxYear`, `hasPdf`, `retracted` |
+| **Elicit** *(paid — see gate below)* | `create_systematic_review`, `create_report`, `get_systematic_review`, `get_report`, `list_sessions`, `resume_session`, `get_usage` | Screening + structured extraction at corpus scale, with per-decision supporting quotes |
 | **ChEMBL / Open Targets** | `compound_search`, `drug_search`, `get_mechanism`, `get_bioactivity`, target tools | Drug/compound/target-specific reviews: mechanism, activity, target–disease links |
 | **Google Scholar** *(web)* | `WebSearch` — query: `site:scholar.google.com OR "Google Scholar" <terms>` | Supplementary: catch papers not indexed in PubMed (conference, non-English, very recent); results must be PMID/DOI-verified before entering corpus |
 | **ScienceDirect** *(web)* | `WebSearch` — query: `site:sciencedirect.com <terms>` | Supplementary: Elsevier journals sometimes lag PubMed indexing; full text usually paywalled — use for metadata/DOI only |
@@ -36,6 +38,50 @@ Web search is **supplementary only** — run it after PubMed/Consensus to fill g
 2. For each result: extract the DOI or PMID and **verify in PubMed** before adding to corpus. If PubMed confirms it → add normally. If PubMed has no record → treat as unverified, do not cite.
 3. If a web-found paper appears important (high citations, directly on-topic, pivotal design) but full text is **paywalled and unavailable** via any MCP tool: **alert the user explicitly** — state the title, DOI, and why it looks important — and ask if they can supply the PDF to `source/`. Do not silently skip it.
 4. Log web-found additions in the search log with source noted as `(web-supplementary)`.
+
+### Elicit protocol — recall breadth, retraction safety, and the credit gate
+
+Elicit does three things no other source in this map does. Use it deliberately, not reflexively.
+
+**1 · Recall breadth (free tier of the tooling — use on every review).**
+`search_papers` reaches a corpus wider than PubMed and returns up to 10,000 hits per call, in either
+`semantic` mode (natural-language question) or `keyword` mode (Lucene boolean — mutually exclusive
+with `filters`, so put the filter expressions inside the query string). Run it **alongside** the
+PubMed query, never instead of it: PubMed remains the ID authority, Elicit is the recall widener.
+Set `corpus: "elicit"` for breadth; `corpus: "pubmed"` only to cross-check a PubMed count.
+
+**2 · Retraction screening — this closes a real Law 1 hole.**
+`filters.retracted` defaults to `exclude_retracted`. Nothing else in this source map checks whether a
+paper has been retracted, and citing a retracted study is a Law 1 failure the citation-verifier cannot
+catch (the PMID resolves; the record is real; the science was withdrawn). Two obligations:
+- Leave the default in place on every Elicit search — never pass `include_retracted` casually.
+- Before the Research Map gate, re-run the corpus's key studies through `search_papers` with
+  `retracted: "only_retracted"` and the study titles as `includeKeywords`. Any hit is a **BLOCK**:
+  drop the record and say so at the gate. Log the check in the search log even when it returns nothing —
+  a check that leaves no receipt did not happen (R4).
+
+**3 · Filters that map onto rubric and law.**
+- `typeTags: ["Meta-Analysis","Systematic Review","RCT"]` → Law 3 evidence hierarchy, applied at
+  retrieval instead of after the fact.
+- `maxQuartile: 1` → rubric Criterion 2 ("Q1 journals / Cochrane / major-body guidelines"). Use it to
+  *check coverage*, never as a hard filter on the main pull — quartile is a journal property, not a
+  study-quality property, and cutting on it silently drops registry reports and guideline documents.
+- `search_trials` (`phase`, `recruitmentStatus`, `hasResults`) complements the ClinicalTrials.gov MCP;
+  when both are available prefer the CT.gov MCP for trial *detail* and Elicit for trial *recall*.
+
+**The credit gate — `create_systematic_review` and `create_report` SPEND THE USER'S MONEY.**
+These two tools consume Elicit credits. They are **never** run on the retriever's own initiative.
+- Present the plan at **Gate 2b** with the concrete parameters (searches, `maxResults`, screening
+  criteria, `depth`, extraction columns) and the output of `get_usage`, and wait for an explicit
+  user OK — the same fail-closed discipline as L-022/L-024. No quotable approval → do not run it.
+- When approved, set `abstractScreening.depth: "thorough"`. `fast` costs less but "wrongly excludes
+  more papers that met your criteria and returns decisions **without supporting quotes**" — a screen
+  with no quote behind each decision is unauditable, which is exactly R4.
+- Screening decisions and extracted values are **retrieval output, not appraisal**. They enter
+  `reference/<topic>.md` as ordinary records; GRADE and risk-of-bias remain the critical-appraiser's
+  work and are never inherited from Elicit.
+- `list_sessions` / `resume_session` recover an interrupted review — resume rather than re-run, so a
+  crash does not cost the credits twice.
 
 ## Provenance schema (every corpus row)
 | Field | Notes |

@@ -104,8 +104,8 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
 per-source search strings, **and a curiosity budget** (≥1–2 searches aimed at the 5 gap types:
 evidence / contradiction / methodological / population / implementation).
 
-**2 · Retrieval** — `evidence-retriever`: run the strategy across PubMed/PMC + preprints + ClinicalTrials.gov
-+ Consensus (+ ChEMBL/Open Targets for drug topics). **Then list `source/` subfolders and ask the user
+**2 · Retrieval** — `evidence-retriever`: run the strategy across PubMed/PMC + **Elicit** + preprints +
+ClinicalTrials.gov + Consensus (+ ChEMBL/Open Targets for drug topics). Elicit's `search_papers` is free to run and widens recall; its `create_systematic_review`/`create_report` **spend user credits and are gated at 2b**. **Then list `source/` subfolders and ask the user
 which to read** — do this whether or not files exist (never silent). Write every verified record into
 `reference/<topic>.md` with a stable ID; produce `01_search_log.md` (PRISMA numbers) + `02_corpus.md`.
 
