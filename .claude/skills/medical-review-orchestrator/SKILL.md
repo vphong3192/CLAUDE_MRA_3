@@ -222,8 +222,18 @@ Map and STOPS — the gate has no small-scope exception (v1's most expensive rep
 updates affected claims → QA re-verifies + re-scores changed sections.
 
 ## Regression safety (after editing the harness)
-When the harness itself changes (new agent, changed skill, reworded constitution), guard against quality
-regression with `references/test-cases.md` — 3 fixed cases (EASY / HARD / EDGE) + a qualitative ratchet.
+When the harness itself changes (new agent, changed skill, reworded constitution), run the checks in
+this order — cheapest first.
+
+**1 · Automated suite (seconds, always).** `python3 -m unittest discover -s .claude/tests -t .claude/tests`
+must exit 0 before anything else. It pins the deterministic layer's thresholds and every HARD-FAIL
+category, and it catches the two structural bugs this harness has actually shipped: an agent the
+orchestrator spawns but no file defines, and a rule citing a lesson ID that resolves to nothing. It is
+mechanical and cannot be talked past. A red suite means stop and fix, never "proceed and note it".
+
+**2 · Qualitative cases (minutes to hours).** Then guard *judgment* quality with
+`references/test-cases.md` — 3 fixed cases (EASY / HARD / EDGE) + a qualitative ratchet. The suite
+proves the harness is still wired correctly; only these prove it still reviews well.
 Minimum after any edit: run the cheap **EDGE** case (it must refuse to proceed without scope — tests the
 gate + Law 2 in seconds). For edits touching retrieval/appraisal/synthesis, run one full case end-to-end
 and have the verifier compare **per-criterion rubric + law/gate checks** to the prior run's evolution-log

@@ -25,7 +25,7 @@ behind it and the user approved it.
 1. Read `lessons.md`.
 2. Select lessons relevant to the current topic.
 3. Post a **role-tagged digest** to the team so each agent applies its own lessons. Format:
-   `[writer] L-007: hedge observational findings — avoid causal verbs.`
+   `[writer] L-002: hedge observational findings — associative verbs, not causal.`
 
 ### Capture (end of run)
 1. Read `_workspace/05_verification_report.md` (QA defect categories + rubric/audit) + any user feedback relayed by the lead.
