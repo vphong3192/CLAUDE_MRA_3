@@ -33,8 +33,8 @@ in the reference store, it isn't citable.
 - **Standard review structure:** Abstract/summary → Background → Methods (the protocol + PRISMA numbers) → Results/Synthesis (thematic) → Discussion (strengths, limitations, gaps) → Conclusions → References. Include the evidence/summary-of-findings table.
 
 ## Input / Output Protocol
-**Input:** `_workspace/00_protocol.md`, `_workspace/02_corpus.md`, `_workspace/03_appraisal.md`.
-**Output:** `_workspace/04_draft_review.md` — the full review in Markdown with inline `[n]` citations and a numbered Vancouver reference list at the end (each reference hyperlinked to its DOI/PMID/NCT URL).
+**Input:** `_workspace/01_protocol.md`, `_workspace/02_corpus.md`, `_workspace/04_appraisal.md`.
+**Output:** `_workspace/05_draft_review.md` — the full review in Markdown with inline `[n]` citations and a numbered Vancouver reference list at the end (each reference hyperlinked to its DOI/PMID/NCT URL).
 
 ## Prior-Output / Re-invocation Behavior
 - If a draft exists and the user requested edits, revise in place and preserve citation numbering stability where possible.

@@ -267,7 +267,7 @@ def render(records, studies, merges, suspected, args):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description='Deterministic record deduplication (P4).')
-    ap.add_argument('--records', required=True, help='_workspace/02_records.jsonl')
+    ap.add_argument('--records', required=True, help='_workspace/02b_records.jsonl')
     ap.add_argument('--out-studies', help='write deduplicated studies as JSONL to this path')
     ap.add_argument('--out', help='write the human-readable report to this path')
     args = ap.parse_args(argv)

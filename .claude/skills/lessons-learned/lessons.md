@@ -139,7 +139,7 @@ approval. One lesson = one reusable rule, with its rationale.
 ### L-019: Persist the Research Map gate approval to disk at the moment it is received
 - **Role:** orchestrator
 - **Trigger:** immediately after the user sends their Research Map approval message, before launching any downstream agent
-- **Rule:** Write the verbatim user approval quote to `_workspace/research_map_gate_approval.md` before proceeding to Phase 4. This file is the audit's only way to verify gate compliance — if it does not exist, the audit must mark "process HOLD" regardless of what happened in the conversation. Complements L-014 (which forbids self-clearing); L-019 ensures that a legitimate clearance is auditable.
+- **Rule:** Write the verbatim user approval quote to `_workspace/03a_gate_approval.md` before proceeding to Phase 4. This file is the audit's only way to verify gate compliance — if it does not exist, the audit must mark "process HOLD" regardless of what happened in the conversation. Complements L-014 (which forbids self-clearing); L-019 ensures that a legitimate clearance is auditable.
 - **Why:** Entry #5 gate was cleared correctly but approval was not persisted to disk — QA found no quotable gate record and had to flag a process hold. The orchestrator reconstructed the file post-hoc. One extra Write call at approval time costs nothing; an unauditable gate costs a HOLD and rework.
 - **Origin:** Entry #5 — LA electrophysiology elderly AF review (2026-06-15)
 
@@ -172,8 +172,8 @@ approval. One lesson = one reusable rule, with its rationale.
 ### L-025: Phase 5b quality-coach pass must be explicitly declared SKIPPED — silent absence is R4
 - **Role:** orchestrator
 - **Trigger:** effort=full (or normal) run reaches handoff between Phase 5 (draft) and Phase 6 (QA)
-- **Rule:** Before routing the draft to QA, confirm that 04b_coach.md exists in `_workspace/`. If it does not, the orchestrator must either (a) run the quality-coach pass, or (b) write a brief `04b_coach_skip.md` stating the reason (e.g., effort=tiny, user-waived). Silent omission for effort=full constitutes R4 ("Faking the steps") even when the draft meets the rubric.
-- **Why:** Entry #7 — 04b_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is an audit-visible step: QA checks for its artifact, and absence without justification is indistinguishable from never having run it.
+- **Rule:** Before routing the draft to QA, confirm that 05a_coach.md exists in `_workspace/`. If it does not, the orchestrator must either (a) run the quality-coach pass, or (b) write a brief `04b_coach_skip.md` stating the reason (e.g., effort=tiny, user-waived). Silent omission for effort=full constitutes R4 ("Faking the steps") even when the draft meets the rubric.
+- **Why:** Entry #7 — 05a_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is an audit-visible step: QA checks for its artifact, and absence without justification is indistinguishable from never having run it.
 - **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17)
 
 ### L-026: Law 4 section headers must be explicit labels in the draft body, not implicit content
@@ -183,11 +183,11 @@ approval. One lesson = one reusable rule, with its rationale.
 - **Why:** Entry #7 — §11 "Balanced synthesis" covered both consensus and controversy in substance but lacked Law 4's explicit structural markers; QA issued V-03 and deducted T4 to 0.75. The rule exists so a reader (or auditor) can instantly locate each category — absent labels defeat that purpose regardless of content quality.
 - **Origin:** Entry #7 — CBA-vs-PFA review, Law 4 partial fail / V-03 (2026-06-17)
 
-### L-027: Assemble 08_manifest.md before routing to QA — it is a deliverable, not an afterthought
+### L-027: Assemble 06c_manifest.md before routing to QA — it is a deliverable, not an afterthought
 - **Role:** orchestrator / synthesis-writer
 - **Trigger:** draft is complete and ready for QA handoff
-- **Rule:** Before submitting to the citation-verifier, the orchestrator (or synthesis-writer) assembles `_workspace/08_manifest.md` — a one-page confidence list, assumption register summary, and receipts index (listing all `_workspace/` artifacts on disk). QA checks for its presence; absence = process violation V-02. The manifest is written from `_workspace/` artifacts already on disk, so it requires no new work — only assembly.
-- **Why:** Entry #7 — 08_manifest.md not found at QA time; cited as V-02. The manifest's value is precisely that it is assembled pre-QA: it lets the verifier confirm what steps ran without relying on conversation memory (anti-R4). Creating it after QA flags its absence defeats the purpose.
+- **Rule:** Before submitting to the citation-verifier, the orchestrator (or synthesis-writer) assembles `_workspace/06c_manifest.md` — a one-page confidence list, assumption register summary, and receipts index (listing all `_workspace/` artifacts on disk). QA checks for its presence; absence = process violation V-02. The manifest is written from `_workspace/` artifacts already on disk, so it requires no new work — only assembly.
+- **Why:** Entry #7 — 06c_manifest.md not found at QA time; cited as V-02. The manifest's value is precisely that it is assembled pre-QA: it lets the verifier confirm what steps ran without relying on conversation memory (anti-R4). Creating it after QA flags its absence defeats the purpose.
 - **Origin:** Entry #7 — CBA-vs-PFA review, V-02 process violation (2026-06-17)
 
 ### L-028: When citing sub-group statistics, name the sub-cohort N, not the parent-study N
@@ -220,9 +220,9 @@ approval. One lesson = one reusable rule, with its rationale.
 
 ### L-032: Output language is gated — confirm with a quotable user choice; default Vietnamese, fail closed
 - **Role:** orchestrator / lead (and research-strategist)
-- **Trigger:** setting `output language` in `00_protocol.md` / scope at Phase 0
+- **Trigger:** setting `output language` in `01_protocol.md` / scope at Phase 0
 - **Rule:** Output language defaults to Vietnamese (CLAUDE.md). Any non-default language (e.g. English) MUST be confirmed by the user in Phase 0 with a **quotable** confirmation recorded in the protocol/scope file. The strategist must NOT unilaterally set a non-default language. If no quotable user confirmation exists, the language is Vietnamese — fail closed (same discipline as the gate-clearance lessons L-014/L-030).
-- **Why:** Entry #7 addendum — `00_protocol.md` set "Output language: English" with no recorded user confirmation; the final review was delivered in English, and the user then asked why it wasn't Vietnamese (the harness default). A non-default language is a scope decision, not a strategist default.
+- **Why:** Entry #7 addendum — `01_protocol.md` set "Output language: English" with no recorded user confirmation; the final review was delivered in English, and the user then asked why it wasn't Vietnamese (the harness default). A non-default language is a scope decision, not a strategist default.
 - **Origin:** Entry #7 addendum — CBA-vs-PFA review, post-delivery language correction (2026-06-17)
 
 ### L-033: Non-English output is composed natively, never literal-translated from English
@@ -310,7 +310,7 @@ approval. One lesson = one reusable rule, with its rationale.
 ### L-043: Flag Consensus-only / abstract-only store entries at appraisal time so verifier WARNs on them are pre-triaged
 - **Role:** appraiser, retriever
 - **Trigger:** a store record was retrieved via Consensus (or any abstract-only path) without a full-text pull, and it anchors a quantitative claim (effect size, coefficient, p-value) used in the draft
-- **Rule:** When building the evidence table (Phase 4), explicitly tag such records — e.g., "Consensus-only / abstract-depth: numbers unconfirmable by audit heuristic" — in the appraisal artifact (and propagate the tag into `03b_numbers.md` or the store entry itself). At QA time, the citation-verifier should treat a `number_not_in_source` WARN on a pre-tagged record as already triaged (known store-depth limitation) rather than re-investigating it as if newly discovered.
+- **Rule:** When building the evidence table (Phase 4), explicitly tag such records — e.g., "Consensus-only / abstract-depth: numbers unconfirmable by audit heuristic" — in the appraisal artifact (and propagate the tag into `04a_numbers.md` or the store entry itself). At QA time, the citation-verifier should treat a `number_not_in_source` WARN on a pre-tagged record as already triaged (known store-depth limitation) rather than re-investigating it as if newly discovered.
 - **Why:** This run, REF-003 (van der Does) was a Consensus-only retrieval lacking full-text verbatim numbers; the deterministic citation_audit.py correctly WARN-flagged its cited coefficient/p-value as `number_not_in_source`, and the verifier had to manually re-derive that this was a store-completeness gap, not a draft error — taking real investigation effort that a Phase-4 tag would have pre-empted. This is the citation-verifier's own self-update proposal in `06_verification_report.md` §5/§6, confirmed here as a generalizable rule rather than a one-paper note. Complements L-009 (PMID verification) and L-005 (copy from results table, not abstract) by closing the loop when full text genuinely isn't available: tag the limitation instead of leaving it implicit.
 - **Origin:** Entry #10 — LA-EP elderly AF review, REF-003 WARN triage (citation-verifier self-update proposal, 2026-06-30)
 

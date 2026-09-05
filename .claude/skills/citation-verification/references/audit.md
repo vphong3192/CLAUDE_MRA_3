@@ -21,9 +21,9 @@ Mark PASS / FAIL / SKIPPED with evidence per phase:
 - **Research Map (HARD GATE)** — map presented with gaps + Vietnam/local picture? **Quote the user's explicit approval message received after the map was shown.** No quotable approval → gate is **NOT cleared** (fail closed) → **not deliverable**, regardless of how clear the scope seemed. Inferred/"standing"/"fixed-scope" approval does not count. Also confirm a Phase-0 scope confirmation (purpose + depth) was obtained before searching.
 - **Appraisal** — Assumption Register written? RoB tool + GRADE applied?
 - **Synthesis** — grouped by sub-theme (not listing)? consensus vs. controversy counted? language calibrated **both ways** (no Low/Very-Low stated as fact; no High/Moderate buried in weasel hedges)? each major conclusion **steelmanned** before concluding (strongest opposing case stated, not false balance)? **every pre-registered PICO subgroup (AF type, age strata, first-vs-redo, etc.) given an explicit, locatable treatment where data exist — and any subgroup that is a key effect modifier for the target population foregrounded, not buried (L-038)?**
-- **Coach pass** — `04b_coach.md` exists with a verdict? if `ONE-IMPROVEMENT-PASS`, was the one pass applied? (SKIPPED is allowed only when effort=`tiny` and was declared — not a silent omission, R4)
+- **Coach pass** — `05a_coach.md` exists with a verdict? if `ONE-IMPROVEMENT-PASS`, was the one pass applied? (SKIPPED is allowed only when effort=`tiny` and was declared — not a silent omission, R4)
 - **Draft** — full standard structure? every claim cited inline from `reference/<topic>.md`?
-- **Manifest** — `08_manifest.md` assembled at delivery (scope line + confidence list + open assumptions + receipts index)? Numbers/grades trace to appraisal + verification, not re-derived from memory.
+- **Manifest** — `06c_manifest.md` assembled at delivery (scope line + confidence list + open assumptions + receipts index)? Numbers/grades trace to appraisal + verification, not re-derived from memory.
 
 ## Part B — Law-compliance audit
 Check the 6 Laws (see `.claude/constitution.md`):

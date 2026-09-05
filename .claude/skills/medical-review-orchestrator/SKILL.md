@@ -30,12 +30,12 @@ persistent lessons with human approval before saving.
 
 | Agent (`subagent_type`) | Role | Primary artifact |
 |---|---|---|
-| `research-strategist` | Protocol: question, PICO, criteria, search strategy (+ curiosity budget) | `_workspace/00_protocol.md` |
-| `evidence-retriever` | Search live sources + `source/`, build corpus, write provenance store | `reference/<topic>.md`, `_workspace/01_search_log.md`, `02_corpus.md` |
-| `critical-appraiser` | GRADE + risk-of-bias, evidence table, contradictions, Assumption Register | `_workspace/03_appraisal.md` |
-| `synthesis-writer` | Write the in-depth review, citing only from the provenance store | `_workspace/04_draft_review.md` |
-| `quality-coach` | Read-only "best-self" pass — raises the ceiling (depth/clarity/insight), one pass | `_workspace/04b_coach.md` |
-| `citation-verifier` (QA) | Cross-check claims↔sources; score rubric; run audit | `_workspace/05_verification_report.md`, `06_final_review.md` |
+| `research-strategist` | Protocol: question, PICO, criteria, search strategy (+ curiosity budget) | `_workspace/01_protocol.md` |
+| `evidence-retriever` | Search live sources + `source/`, build corpus, write provenance store | `reference/<topic>.md`, `_workspace/02a_search_log.md`, `02_corpus.md` |
+| `critical-appraiser` | GRADE + risk-of-bias, evidence table, contradictions, Assumption Register | `_workspace/04_appraisal.md` |
+| `synthesis-writer` | Write the in-depth review, citing only from the provenance store | `_workspace/05_draft_review.md` |
+| `quality-coach` | Read-only "best-self" pass — raises the ceiling (depth/clarity/insight), one pass | `_workspace/05a_coach.md` |
+| `citation-verifier` (QA) | Cross-check claims↔sources; score rubric; run audit | `_workspace/06a_verification_report.md`, `06_final_review.md` |
 | `lessons-curator` | Inject prior lessons; propose new ones; maintain evolution-log | `_workspace/07_proposed_lessons.md` |
 
 **Model is set per agent in each agent's own frontmatter — do NOT override it on spawn.** Current
@@ -50,7 +50,7 @@ model. Change an agent's model in its frontmatter, not here.
   one file; check for a near-match before creating a new one.
 - `source/<folder>/` — **user-supplied full-text PDFs** (paywalled papers, guidelines). Checked every run.
 - `_workspace/` — per-run artifacts, named `NN_<agent>_<artifact>.md`. Preserved after the run.
-  Includes `08_manifest.md` — the one-page proof package assembled at delivery (see Phase 6).
+  Includes `06c_manifest.md` — the one-page proof package assembled at delivery (see Phase 6).
 - `.claude/skills/lessons-learned/lessons.md` — distilled digest, injected each run.
 - `.claude/skills/lessons-learned/evolution-log.md` — full archive, NOT auto-loaded.
 
@@ -64,9 +64,13 @@ model. Change an agent's model in its frontmatter, not here.
    date window, and **output language** (default Vietnamese — confirm or switch). Do NOT infer these from
    the request or a test-case prompt — depth and purpose change the whole review, and guessing them
    violates Law 2. Proceed only after the user answers. (See L-015.)
+   - **Persist the answer to `_workspace/00_scope.md` the moment it arrives**, quoting the user's own
+     words for purpose, depth, audience, date window and language. Phase 0 previously left no artifact
+     at all, so "the user confirmed the scope" was a claim with no receipt behind it — exactly R4.
+     Every later phase anchors to this file, and the audit quotes it.
    - **Output language is gated like the scope:** it defaults to Vietnamese. Any non-default language
      (e.g. English) requires a **quotable user confirmation** recorded in the protocol/scope file. The
-     strategist must NOT unilaterally set a non-default language in `00_protocol.md`. Absent a quotable
+     strategist must NOT unilaterally set a non-default language in `01_protocol.md`. Absent a quotable
      record, the language **is Vietnamese** — fail closed. (See L-032.)
 4. **Tag the effort** `tiny | normal | full | high-stakes` to right-size the *depth of work* (search
    breadth, corpus size, RoB tools, target length, curiosity-budget probes). **The tag never skips a
@@ -88,32 +92,32 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
   ├── Phase 2  retrieval: live sources + source/ folder → reference/<topic>.md
   │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-024
   ├── Phase 3  RESEARCH MAP ......................... STOP, await user approval  ← HARD GATE (L-014)
-  │            └── persist gate approval to _workspace/research_map_gate_approval.md  (L-019)
+  │            └── persist map to 03_research_map.md, then approval to 03a_gate_approval.md  (L-019)
   ├── Phase 4  appraisal (GRADE/RoB + Assumption Register)
   │            └── Gate 4b: present GRADE summary + contradictions + assumptions . STOP, await user OK  ← L-024
   ├── Phase 5  synthesis (writer cites only from reference store)
   │            └── Phase 5b: quality-coach (read-only best-self pass) → ≤1 improvement pass  ← raises the ceiling
   ├── Phase 6  verification: claims↔sources + rubric score + audit  (writer⇄verifier loop)
-  ├── assemble 06_final_review.md + 08_manifest.md → deliver with audit report + manifest
+  ├── assemble 06_final_review.md + 06c_manifest.md → deliver with audit report + manifest
   └── Phase 7  lessons-curator proposes lessons + evolution-log entry → user approves → persist → TeamDelete
 ```
 
 ### Phase detail
 
-**1 · Protocol** — `research-strategist` → `00_protocol.md`: research question, PICO, inclusion/exclusion,
+**1 · Protocol** — `research-strategist` → `01_protocol.md`: research question, PICO, inclusion/exclusion,
 per-source search strings, **and a curiosity budget** (≥1–2 searches aimed at the 5 gap types:
 evidence / contradiction / methodological / population / implementation).
 
 **2 · Retrieval** — `evidence-retriever`: run the strategy across PubMed/PMC + **Elicit** + preprints +
 ClinicalTrials.gov + Consensus (+ ChEMBL/Open Targets for drug topics). Elicit's `search_papers` is free to run and widens recall; its `create_systematic_review`/`create_report` **spend user credits and are gated at 2b**. **Then list `source/` subfolders and ask the user
 which to read** — do this whether or not files exist (never silent). Write every verified record into
-`reference/<topic>.md` with a stable ID; produce `01_search_log.md` (PRISMA numbers) + `02_corpus.md`,
-and the machine-readable `02_records.jsonl` that the P4 screening pipeline consumes. Then run
-`dedupe_records.py` → `prefilter_records.py`, screen the worksheet into `02g_verdicts.jsonl`, and draw
+`reference/<topic>.md` with a stable ID; produce `02a_search_log.md` (PRISMA numbers) + `02_corpus.md`,
+and the machine-readable `02b_records.jsonl` that the P4 screening pipeline consumes. Then run
+`dedupe_records.py` → `prefilter_records.py`, screen the worksheet into `02h_verdicts.jsonl`, and draw
 the flow with `prisma_flow.py` (exit 1 when the counts contradict each other).
 
 **Gate 2b (post-retrieval) — STOP, await user OK before Phase 4.** Present: (a) corpus size and PMID status,
-(a2) the **PRISMA flow** from `02i_prisma.md` — identified → deduplicated → retracted removed → screened →
+(a2) the **PRISMA flow** from `02j_prisma.md` — identified → deduplicated → retracted removed → screened →
 excluded with reasons → included — plus how many studies the prefilter **deferred unread**, so the user
 can ask for them if the corpus looks thin,
 (b) full-text coverage — count HIGH records still abstract-only; if ≥3, list them and ask user to supplement
@@ -122,7 +126,9 @@ surfaced here with options: proceed / try WebSearch / user supplies PDFs (L-022)
 If user requests changes: fix → present update → ask again. Do NOT launch appraisal until OK received. (L-024)
 
 **3 · Research Map — HARD GATE.** The lead, using the corpus + a light landscape pass from the appraiser,
-presents a **Research Map** and STOPS for the user. The Map has 7 parts:
+writes the map to `_workspace/03_research_map.md`, presents it, and STOPS for the user. **Write the file
+before presenting it** — a map that lives only in a chat turn cannot be re-read by the appraiser, cannot be
+diffed when the user asks for changes, and leaves the audit nothing to check the approval against. The Map has 7 parts:
   1. Scope recap (one line, anchored to Phase 0).
   2. World picture — main axes/sub-themes, each tagged `[mature | emerging | contested]` with a landmark
      study/guideline anchor and consensus strength.
@@ -149,7 +155,7 @@ presents a **Research Map** and STOPS for the user. The Map has 7 parts:
   recurred in v2 Entry #2). The audit must be able to quote the user's approval; if it cannot, the gate is
   NOT cleared and nothing is delivered. (See L-014.) Delivery is sacred only *after* gates are cleared.
 
-**4 · Appraisal** — `critical-appraiser` → `03_appraisal.md`: evidence table, GRADE per outcome, RoB
+**4 · Appraisal** — `critical-appraiser` → `04_appraisal.md`: evidence table, GRADE per outcome, RoB
 tool per design, contradictions, gaps, and an **Assumption Register** (every extrapolation logged →
 surfaces in Limitations).
 
@@ -158,14 +164,14 @@ surfaces in Limitations).
 điều chỉnh gì trước khi viết bài không?" Wait for explicit user OK. If user requests changes: fix → present
 update → ask again. Do NOT launch writer until OK received. (L-024)
 
-**5 · Synthesis** — `synthesis-writer` → `04_draft_review.md` in the **confirmed language** (Vietnamese →
+**5 · Synthesis** — `synthesis-writer` → `05_draft_review.md` in the **confirmed language** (Vietnamese →
 load `.claude/skills/review-synthesis/references/vi-terminology.md`), inline Vancouver `[n]`, citing **only** from
 `reference/<topic>.md`.
 
 **5b · Coach (best-self, read-only, one pass)** — `quality-coach` reads the draft + appraisal and asks,
 across six angles (clarity, depth, completeness, stronger framing, honesty, genuine insight), whether
 this is the *best* version the evidence allows — it raises the ceiling, distinct from QA which raises the
-floor. It writes `04b_coach.md` and returns `SHIP-AS-IS` or `ONE-IMPROVEMENT-PASS`. If the latter, send
+floor. It writes `05a_coach.md` and returns `SHIP-AS-IS` or `ONE-IMPROVEMENT-PASS`. If the latter, send
 the named changes back to `synthesis-writer` **once**, then proceed to verification. The coach is
 read-only and never edits the draft or touches citation correctness (that is QA's job). It must stay
 within the user-approved scope (no new axes). Skip only when effort is `tiny` *and* you say so explicitly
@@ -177,7 +183,7 @@ section-by-section; then **score the rubric** (`references/rubric.md`) and **run
 with the audit report (rubric total + band + violations). Fabricated citation or uncleared gate → do
 NOT deliver.
 
-**Manifest (proof package) — assembled by the lead at delivery → `_workspace/08_manifest.md`.** A single
+**Manifest (proof package) — assembled by the lead at delivery → `_workspace/06c_manifest.md`.** A single
 one-page cover sheet the user reads instead of digging through five artifacts. It contains:
   1. **Scope line** — purpose, audience, depth, language, effort tag, date window (anchored to Phase 0).
   2. **Confidence list** — each *major* claim/finding with its GRADE certainty and its primary source ID

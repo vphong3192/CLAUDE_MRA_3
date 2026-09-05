@@ -11,7 +11,7 @@ description: >
 # Literature Retrieval
 
 Turn the protocol's search strategy into a corpus pulled from **live** sources, with provenance
-strong enough that every later claim is traceable. Produce `_workspace/01_search_log.md` and
+strong enough that every later claim is traceable. Produce `_workspace/02a_search_log.md` and
 `_workspace/02_corpus.md`.
 
 ## Source map — which MCP for what
@@ -113,7 +113,7 @@ recall can be checked instead of believed. Judgment — is this study eligible? 
 in the worksheet the pipeline hands it.
 
 **Write the machine-readable layer as you retrieve.** Alongside `02_corpus.md` (for humans), append
-one JSON object per retrieved record to `_workspace/02_records.jsonl`. **PRISMA needs the
+one JSON object per retrieved record to `_workspace/02b_records.jsonl`. **PRISMA needs the
 pre-screening population, which `reference/<topic>.md` structurally cannot hold** — that store is
 the *output* of screening, so without this file the identification and exclusion counts cannot be
 derived at all.
@@ -130,20 +130,20 @@ reported by name rather than silently binned. `search_id` ties the record back t
 
 ```bash
 # 1 · one row per STUDY (a preprint + its paper + its registration are one study, not three)
-python3 .claude/skills/literature-retrieval/scripts/dedupe_records.py   --records _workspace/02_records.jsonl   --out-studies _workspace/02b_studies.jsonl --out _workspace/02c_dedup.md
+python3 .claude/skills/literature-retrieval/scripts/dedupe_records.py   --records _workspace/02b_records.jsonl   --out-studies _workspace/02c_studies.jsonl --out _workspace/02d_dedup.md
 
 # 2 · rank by concept coverage and emit the screening worksheet
-python3 .claude/skills/literature-retrieval/scripts/prefilter_records.py   --studies _workspace/02b_studies.jsonl --concepts _workspace/00b_concepts.json   --out-candidates _workspace/02d_candidates.jsonl --out-deferred _workspace/02e_deferred.jsonl   --out _workspace/02f_worksheet.md
+python3 .claude/skills/literature-retrieval/scripts/prefilter_records.py   --studies _workspace/02c_studies.jsonl --concepts _workspace/01a_concepts.json   --out-candidates _workspace/02e_candidates.jsonl --out-deferred _workspace/02f_deferred.jsonl   --out _workspace/02g_worksheet.md
 
 # 3 · after screening: draw the flow from the stage files (exit 1 if the counts contradict)
-python3 .claude/skills/literature-retrieval/scripts/prisma_flow.py   --records _workspace/02_records.jsonl --studies _workspace/02b_studies.jsonl   --candidates _workspace/02d_candidates.jsonl --deferred _workspace/02e_deferred.jsonl   --verdicts _workspace/02g_verdicts.jsonl   --out-json _workspace/02h_prisma.json --out _workspace/02i_prisma.md
+python3 .claude/skills/literature-retrieval/scripts/prisma_flow.py   --records _workspace/02b_records.jsonl --studies _workspace/02c_studies.jsonl   --candidates _workspace/02e_candidates.jsonl --deferred _workspace/02f_deferred.jsonl   --verdicts _workspace/02h_verdicts.jsonl   --out-json _workspace/02i_prisma.json --out _workspace/02j_prisma.md
 ```
 
-`00b_concepts.json` comes from the protocol's PICO — one concept per PICO element:
+`01a_concepts.json` comes from the protocol's PICO — one concept per PICO element:
 `{"concepts":[{"name":"population","terms":["atrial fibrillation","AF"]}, …],"scope_terms":["ablation"]}`.
 
-**You fill the worksheet, the script counts it.** Read `02f_worksheet.md`, judge each candidate
-against the protocol's criteria, and write `_workspace/02g_verdicts.jsonl` — one line per screened
+**You fill the worksheet, the script counts it.** Read `02g_worksheet.md`, judge each candidate
+against the protocol's criteria, and write `_workspace/02h_verdicts.jsonl` — one line per screened
 study: `{"study_id":"…","verdict":"include|exclude|maybe","reason":"…"}`. **Every exclusion needs a
 reason**; PRISMA 2020 requires one and step 3 fails the flow without it. A `maybe` is NOT included —
 it is listed for the user at the gate.
@@ -201,7 +201,7 @@ Then validate the receipt's format (offline, deterministic — checks completene
 whether the counts are true or the search well-designed):
 ```
 python3 .claude/skills/literature-retrieval/scripts/validate_search_log.py \
-  --log _workspace/01_search_log.md
+  --log _workspace/02a_search_log.md
 ```
 HARD-FAIL (exit 1) on a missing ledger, missing column, non-integer count, a `call` with no
 params/URL, or a recall verdict inconsistent with the numbers (e.g. "complete ✓" but

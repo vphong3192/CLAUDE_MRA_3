@@ -11,7 +11,7 @@ description: >
 # Evidence Appraisal
 
 Judge how much each study can be trusted and how certain the overall evidence is, so the writer
-reports findings proportionate to their strength. Produce `_workspace/03_appraisal.md`.
+reports findings proportionate to their strength. Produce `_workspace/04_appraisal.md`.
 
 **Appraise only user-approved sources.** The Phase 3 Research Map gate ends with the user approving
 the source list (with HIGH/MEDIUM/LOW tiers). Summarize and grade only those approved records — do
@@ -91,10 +91,10 @@ where a decimal breaks or a Methods figure gets pasted as a result (Law 1). Run 
 extractor first and pull each cell from its verbatim buckets:
 ```
 python3 .claude/skills/evidence-appraisal/scripts/extract_numbers.py \
-  --store reference/<topic>.md --out _workspace/03b_numbers.md
+  --store reference/<topic>.md --out _workspace/04a_numbers.md
 ```
 It emits, per record, five verbatim buckets — `sample_sizes · percentages · p_values ·
-confidence_intervals · ratios` (OR/RR/HR/aHR/MD/SMD/β/coef). Copy table cells from `03b_numbers.md`,
+confidence_intervals · ratios` (OR/RR/HR/aHR/MD/SMD/β/coef). Copy table cells from `04a_numbers.md`,
 not from memory. The extractor types numbers by **surface pattern, not meaning**: it cannot tell the
 primary outcome from a baseline figure, so YOU still decide which number belongs in which row and
 whether it is the result being graded. An empty bucket = no number found → write "not reported"

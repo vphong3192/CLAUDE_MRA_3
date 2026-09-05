@@ -38,8 +38,8 @@ adds to — never replaces — your semantic checks. Fold its verdict into the a
 - **Run the audit** — `.claude/skills/citation-verification/references/audit.md`: process + law-compliance + scope integrity, including **whether the Research Map hard gate was cleared**. Output the structured audit report.
 
 ## Input / Output Protocol
-**Input:** `_workspace/04_draft_review.md` (+ `reference/<topic>.md`, corpus, and appraisal for cross-reference).
-**Output:** `_workspace/05_verification_report.md` — the claim-by-claim table (claim, citation, verdict PASS/FIX/BLOCK, problem, correction), **followed by the rubric score and the audit report**. End with an overall deliver/do-not-deliver decision.
+**Input:** `_workspace/05_draft_review.md` (+ `reference/<topic>.md`, corpus, and appraisal for cross-reference).
+**Output:** `_workspace/06a_verification_report.md` — the claim-by-claim table (claim, citation, verdict PASS/FIX/BLOCK, problem, correction), **followed by the rubric score and the audit report**. End with an overall deliver/do-not-deliver decision.
 When all issues are resolved, produce/confirm `_workspace/06_final_review.md` as the clean final deliverable.
 
 ## Mistake Capture

@@ -11,7 +11,7 @@ description: >
 # Review Synthesis & Writing
 
 Organize and interpret the appraised evidence into a rigorous, readable review. Produce
-`_workspace/04_draft_review.md`. You do not generate facts — every substantive claim is anchored to
+`_workspace/05_draft_review.md`. You do not generate facts — every substantive claim is anchored to
 a corpus record and carries the appraiser's strength label.
 
 ## Language (confirm in Phase 0 — default Vietnamese)

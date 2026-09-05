@@ -37,7 +37,7 @@ python3 .claude/skills/citation-verification/scripts/citation_audit.py \
   --draft _workspace/06_final_review.md \
   --store reference/<topic>.md \
   --min-coverage-frac 0.4 \
-  --out _workspace/05b_citation_audit.md
+  --out _workspace/06b_citation_audit.md
 ```
 - **HARD-FAIL (exit 1 → không giao được, Luật 1):** `fabricated_citation`, `missing_in_store`,
   `placeholder_leftover` (`[N] [?] CITATION_NEEDED TODO [@NEW:…]`), `coverage_below_threshold`.
@@ -50,9 +50,9 @@ Chạy **trước** khi appraiser điền bảng chứng cứ. Bóc **nguyên v�
 `sample_sizes · percentages · p_values · confidence_intervals · ratios` (OR/RR/HR/aHR/MD/SMD/β/coef).
 ```bash
 python3 .claude/skills/evidence-appraisal/scripts/extract_numbers.py \
-  --store reference/<topic>.md --out _workspace/03b_numbers.md
+  --store reference/<topic>.md --out _workspace/04a_numbers.md
 ```
-Appraiser **nạp** số từ `03b_numbers.md` thay vì chép tay (diệt lỗi gãy thập phân / nhầm số
+Appraiser **nạp** số từ `04a_numbers.md` thay vì chép tay (diệt lỗi gãy thập phân / nhầm số
 Methods thành kết quả). Rổ rỗng = "(none)", không bao giờ bịa. **KHÔNG kiểm:** số nào là outcome
 chính vs nền — việc đó của LLM.
 
@@ -60,7 +60,7 @@ chính vs nền — việc đó của LLM.
 Kiểm *định dạng* "Recall & reproducibility ledger" trong search log (offline).
 ```bash
 python3 .claude/skills/literature-retrieval/scripts/validate_search_log.py \
-  --log _workspace/01_search_log.md
+  --log _workspace/02a_search_log.md
 ```
 - **HARD-FAIL (exit 1):** thiếu ledger, thiếu cột, số không phải integer, `call` không có
   params/URL, hoặc verdict recall mâu thuẫn số (vd "complete ✓" nhưng `retrieved < total`).

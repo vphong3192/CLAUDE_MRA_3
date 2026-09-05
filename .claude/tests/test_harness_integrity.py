@@ -75,6 +75,60 @@ class Wiring(unittest.TestCase):
                 self.assertEqual(frontmatter_name(path), path.parent.name)
 
 
+class WorkspaceContract(unittest.TestCase):
+    """Every `_workspace/` artifact an operational file names must be declared in CLAUDE.md.
+
+    Guards the orphan-artifact bug: P4 required `_workspace/01a_concepts.json` while no agent was
+    told to write it, so the pipeline depended on a file nothing produced. An artifact nobody
+    declares is an artifact nobody owns.
+    """
+
+    # Match ANY path under _workspace/, then check its shape separately. Filtering with the same
+    # pattern the naming test asserts would make that test unable to fail.
+    ANY_ARTIFACT = re.compile(r"_workspace/([A-Za-z0-9_.-]+\.[a-z]+)")
+    WELL_FORMED = re.compile(r"[0-9]{2}[a-z]?_[a-z_]+\.[a-z]+")
+    DECLARED = re.compile(r"`([0-9]{2}[a-z]?_[a-z_]+\.[a-z]+)`")
+
+    def named_in_operational_files(self):
+        found = {}
+        for path in operational_files():
+            rel = str(path.relative_to(REPO))
+            for m in self.ANY_ARTIFACT.finditer(path.read_text(encoding="utf-8")):
+                found.setdefault(m.group(1), set()).add(rel)
+        return found
+
+    def declared(self):
+        text = (REPO / "CLAUDE.md").read_text(encoding="utf-8")
+        return set(self.DECLARED.findall(text))
+
+    def test_every_named_artifact_is_declared(self):
+        undeclared = {a: sorted(w) for a, w in self.named_in_operational_files().items()
+                      if a not in self.declared()}
+        self.assertEqual(undeclared, {},
+                         f"artifacts used but not in the CLAUDE.md contract: {undeclared}")
+
+    def test_numbering_rule_holds(self):
+        """NN = the phase; an optional single letter = a supporting artifact of that phase."""
+        bad = {a: sorted(w) for a, w in self.named_in_operational_files().items()
+               if not self.WELL_FORMED.fullmatch(a)}
+        self.assertEqual(bad, {}, f"artifacts breaking the NN[a-z]_name.ext rule: {bad}")
+
+    def test_pipeline_inputs_have_a_producer_outside_their_consumer(self):
+        """A file a script READS must be WRITTEN by some agent, not assumed into existence.
+
+        `literature-retrieval/SKILL.md` is where both of these are consumed, so a mention there
+        proves nothing — the producer has to be somewhere else.
+        """
+        consumer = ".claude/skills/literature-retrieval/SKILL.md"
+        named = self.named_in_operational_files()
+        for artifact in ("01a_concepts.json", "02b_records.jsonl"):
+            with self.subTest(artifact=artifact):
+                producers = named.get(artifact, set()) - {consumer}
+                self.assertTrue(producers,
+                                f"{artifact} is consumed by the P4 pipeline but no agent outside "
+                                f"{consumer} is told to write it")
+
+
 class ScriptPointers(unittest.TestCase):
     def test_every_script_a_doc_points_at_exists(self):
         docs = operational_files() + [REPO / "README.md", REPO / "CLAUDE.md"]
