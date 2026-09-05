@@ -22,6 +22,7 @@ constraints as the scripts under test, so the suite runs anywhere Python 3 runs.
 | `test_prefilter_records.py` | P4. The scope bonus is worth strictly less than one concept hit; an empty scope signal is unknown, never out; both recall floors, including through the CLI so the shipped defaults are what runs; ranking independent of input order |
 | `test_prisma_flow.py` | P4. Boxes appear only for steps that ran; preprint servers count as databases; retraction and deferral are their own lines, never exclusions; the flow must add up |
 | `test_verify_quotes.py` | P8. Each of the five locks on its own trigger; Vietnamese decimal commas match an English source without blurring one number into another; the normalisation boundary (forgives whitespace and typography, not case and not a changed word); embedded page metadata is not quotable; PDFs are refused, not read |
+| `test_import_external.py` | P7. All four export formats parse (including RIS wrapped-line folding and the DOI hidden in NBIB's `LID` tag); the manifest is mandatory and every PRISMA-S field required; a truncated export is surfaced; the module never reaches a subscription platform |
 | `test_harness_integrity.py` | The harness's own wiring: no dead `L-NNN` pointers in operational files, every agent named by the orchestrator exists, every script a doc points at exists, every `_workspace/` artifact is declared in the CLAUDE.md contract and has a producer outside its consumer, the deterministic layer stays dependency-free |
 
 ## Validate by mutation, not by count

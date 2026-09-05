@@ -61,10 +61,24 @@ def read_jsonl(path):
 
 
 def source_split(records):
-    """Split identification by PRISMA column: databases/registers vs other methods."""
+    """Split identification by PRISMA column: databases/registers vs other methods.
+
+    An explicit `prisma_column` on the record WINS over this function's own guess. Author-supplied
+    exports carry one, because the guess is wrong for exactly the case that matters: a Scopus or
+    Embase export arrived by hand, but it is still a DATABASE SEARCH. Filing it under "other
+    methods" because of how the file reached disk understates the systematic search and overstates
+    the hand-found material — a false claim about the method, not a cosmetic mislabel.
+    """
     db, other = 0, {}
     for r in records:
         src = (r.get('source') or '').lower()
+        declared = (r.get('prisma_column') or '').lower()
+        if declared == 'database':
+            db += 1
+            continue
+        if declared == 'other':
+            other[src or '(unlabelled)'] = other.get(src or '(unlabelled)', 0) + 1
+            continue
         if src in DATABASE_SOURCES or src in REGISTRY_SOURCES:
             db += 1
         else:

@@ -40,6 +40,26 @@ class SourceClassification(unittest.TestCase):
         self.assertEqual(db, 1)
         self.assertEqual(sum(other.values()), 2)
 
+    def test_declared_column_beats_the_guess(self):
+        """A Scopus export arrived by hand but is still a DATABASE SEARCH.
+
+        Filing it under "other methods" because of how the file reached disk understates the
+        systematic search and overstates the hand-found material — a false claim about the
+        method. The manifest declares the column; the guess does not get a vote.
+        """
+        db, other = M.source_split([r("external:scopus", prisma_column="database"),
+                                    r("external:embase", prisma_column="database")])
+        self.assertEqual((db, other), (2, {}))
+
+    def test_a_declaration_of_other_is_also_honoured(self):
+        db, other = M.source_split([r("external:colleague", prisma_column="other")])
+        self.assertEqual(db, 0)
+        self.assertEqual(sum(other.values()), 1)
+
+    def test_without_a_declaration_the_guess_still_applies(self):
+        self.assertEqual(M.source_split([r("pubmed")])[0], 1)
+        self.assertEqual(M.source_split([r("source_folder")])[0], 0)
+
     def test_unknown_source_is_named_not_silently_binned(self):
         _, other = M.source_split([r("typo_source")])
         self.assertIn("typo_source", other)

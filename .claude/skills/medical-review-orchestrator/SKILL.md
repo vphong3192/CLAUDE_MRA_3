@@ -64,6 +64,12 @@ model. Change an agent's model in its frontmatter, not here.
    date window, and **output language** (default Vietnamese — confirm or switch). Do NOT infer these from
    the request or a test-case prompt — depth and purpose change the whole review, and guessing them
    violates Law 2. Proceed only after the user answers. (See L-015.)
+   - **Ask whether the author has database access beyond the MCP sources** (Scopus, Web of Science,
+     Embase, CENTRAL). Ask HERE, not at retrieval: the answer changes the whole search plan, and by
+     Phase 2 it is too late to rebuild the strategy around a source you did not know existed. If yes,
+     they export the result set to `source/<folder>/_exports/` with a manifest and the retriever
+     imports it (P7). Record the answer in `00_scope.md` either way — an unasked question and an
+     answered "no" look identical at Gate 2b.
    - **Persist the answer to `_workspace/00_scope.md` the moment it arrives**, quoting the user's own
      words for purpose, depth, audience, date window and language. Phase 0 previously left no artifact
      at all, so "the user confirmed the scope" was a claim with no receipt behind it — exactly R4.
