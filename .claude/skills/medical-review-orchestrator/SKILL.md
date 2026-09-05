@@ -107,9 +107,15 @@ evidence / contradiction / methodological / population / implementation).
 **2 · Retrieval** — `evidence-retriever`: run the strategy across PubMed/PMC + **Elicit** + preprints +
 ClinicalTrials.gov + Consensus (+ ChEMBL/Open Targets for drug topics). Elicit's `search_papers` is free to run and widens recall; its `create_systematic_review`/`create_report` **spend user credits and are gated at 2b**. **Then list `source/` subfolders and ask the user
 which to read** — do this whether or not files exist (never silent). Write every verified record into
-`reference/<topic>.md` with a stable ID; produce `01_search_log.md` (PRISMA numbers) + `02_corpus.md`.
+`reference/<topic>.md` with a stable ID; produce `01_search_log.md` (PRISMA numbers) + `02_corpus.md`,
+and the machine-readable `02_records.jsonl` that the P4 screening pipeline consumes. Then run
+`dedupe_records.py` → `prefilter_records.py`, screen the worksheet into `02g_verdicts.jsonl`, and draw
+the flow with `prisma_flow.py` (exit 1 when the counts contradict each other).
 
 **Gate 2b (post-retrieval) — STOP, await user OK before Phase 4.** Present: (a) corpus size and PMID status,
+(a2) the **PRISMA flow** from `02i_prisma.md` — identified → deduplicated → retracted removed → screened →
+excluded with reasons → included — plus how many studies the prefilter **deferred unread**, so the user
+can ask for them if the corpus looks thin,
 (b) full-text coverage — count HIGH records still abstract-only; if ≥3, list them and ask user to supplement
 before proceeding (L-022); (c) source availability gaps — any planned source that was unavailable must be
 surfaced here with options: proceed / try WebSearch / user supplies PDFs (L-022). Wait for explicit user OK.

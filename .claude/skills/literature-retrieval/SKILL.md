@@ -105,10 +105,71 @@ summary. Read the **Introduction** of every full-text record for `study_context`
 results. All three are populated only from full text; mark them `not captured (abstract-only)` until
 the record is upgraded, never invent them.
 
+## Screening & PRISMA — the deterministic pipeline (P4)
+
+Deduplication, relevance ranking and the PRISMA numbers are **mechanical**. They run as scripts so
+the flow diagram is a count of records on disk rather than a recollection, and so a claim about
+recall can be checked instead of believed. Judgment — is this study eligible? — stays with the LLM,
+in the worksheet the pipeline hands it.
+
+**Write the machine-readable layer as you retrieve.** Alongside `02_corpus.md` (for humans), append
+one JSON object per retrieved record to `_workspace/02_records.jsonl`. **PRISMA needs the
+pre-screening population, which `reference/<topic>.md` structurally cannot hold** — that store is
+the *output* of screening, so without this file the identification and exclusion counts cannot be
+derived at all.
+
+```json
+{"record_id":"P1-001","source":"pubmed","search_id":"P1","pmid":"33652425",
+ "doi":"10.1056/NEJMoa2029554","nct":null,"title":"…","authors":"Andrade JG, et al.",
+ "year":2021,"journal":"N Engl J Med","abstract":"…",
+ "publication_types":["Randomized Controlled Trial"],"retracted":false}
+```
+`source` must be the real source name (`pubmed`, `elicit`, `consensus`, `biorxiv`, `medrxiv`,
+`ctgov`, `source_folder`, `web`) — PRISMA splits identification by it, and an unrecognised value is
+reported by name rather than silently binned. `search_id` ties the record back to its ledger row.
+
+```bash
+# 1 · one row per STUDY (a preprint + its paper + its registration are one study, not three)
+python3 .claude/skills/literature-retrieval/scripts/dedupe_records.py   --records _workspace/02_records.jsonl   --out-studies _workspace/02b_studies.jsonl --out _workspace/02c_dedup.md
+
+# 2 · rank by concept coverage and emit the screening worksheet
+python3 .claude/skills/literature-retrieval/scripts/prefilter_records.py   --studies _workspace/02b_studies.jsonl --concepts _workspace/00b_concepts.json   --out-candidates _workspace/02d_candidates.jsonl --out-deferred _workspace/02e_deferred.jsonl   --out _workspace/02f_worksheet.md
+
+# 3 · after screening: draw the flow from the stage files (exit 1 if the counts contradict)
+python3 .claude/skills/literature-retrieval/scripts/prisma_flow.py   --records _workspace/02_records.jsonl --studies _workspace/02b_studies.jsonl   --candidates _workspace/02d_candidates.jsonl --deferred _workspace/02e_deferred.jsonl   --verdicts _workspace/02g_verdicts.jsonl   --out-json _workspace/02h_prisma.json --out _workspace/02i_prisma.md
+```
+
+`00b_concepts.json` comes from the protocol's PICO — one concept per PICO element:
+`{"concepts":[{"name":"population","terms":["atrial fibrillation","AF"]}, …],"scope_terms":["ablation"]}`.
+
+**You fill the worksheet, the script counts it.** Read `02f_worksheet.md`, judge each candidate
+against the protocol's criteria, and write `_workspace/02g_verdicts.jsonl` — one line per screened
+study: `{"study_id":"…","verdict":"include|exclude|maybe","reason":"…"}`. **Every exclusion needs a
+reason**; PRISMA 2020 requires one and step 3 fails the flow without it. A `maybe` is NOT included —
+it is listed for the user at the gate.
+
+**Four things the pipeline will not let you say:**
+- A **deferred** study is *unread*, never *excluded*. Nobody opened it. The diagram says so, and the
+  Methods section must too.
+- A **retracted** study is removed on its own line — never folded into duplicates or exclusion
+  reasons. It was never eligible.
+- **No full-text eligibility box** is drawn unless full text was actually assessed (`--fulltext-assessed`).
+  Eligibility here is decided on **title and abstract**, and that is what the diagram is labelled.
+- Screening is **AI-assisted with a human at the gates**. Never write "two reviewers independently
+  screened" unless that literally happened.
+
+Thresholds (fuzzy 0.92 · year guard ±1 · scope bonus < one concept hit · the two recall floors) are
+hardcoded and pinned by tests. **Never loosen one to move a study across the line.** The floors in
+particular are calibrated cautiously and are NOT measured on this harness's own corpora — re-measure
+and record the measurement before tightening them.
+
 ## Deduplication
-The same study can surface as a preprint, a journal article, and a trial registration. Use
-`convert_article_ids` and `search_published_preprints` to link them under one `study_id`. Never
-let one study count as three.
+The same study can surface as a preprint, a journal article, and a trial registration. `dedupe_records.py`
+above links them under one `study_id` by DOI, PMID, NCT, then fuzzy title within the year guard; use
+`convert_article_ids` and `search_published_preprints` to supply the identifiers that make those links
+possible. Never let one study count as three. A same-title pair whose years fall **outside** the guard is
+reported, not merged — usually a preprint and its journal version, sometimes two different studies, and
+the script will not guess for you.
 
 ## Search log (PRISMA numbers)
 Record, per source: the exact query, date run, and hit count. Then the flow:

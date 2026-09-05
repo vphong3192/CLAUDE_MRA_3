@@ -18,7 +18,24 @@ constraints as the scripts under test, so the suite runs anywhere Python 3 runs.
 | `test_citation_audit.py` | P1. Every HARD-FAIL category fires on its own trigger; WARNs never block; the 40% coverage default; Law 1's exit-code contract |
 | `test_extract_numbers.py` | P2. The five buckets and their priority order; Vietnamese decimal commas; metadata scrubbing; the `CI` word-boundary guard; empty bucket renders `(none)`, never a placeholder |
 | `test_validate_search_log.py` | P3. The seven required ledger columns; each HARD-FAIL cause in isolation; recall verdicts consistent with their own numbers |
+| `test_dedupe_records.py` | P4. The three merge thresholds; identifiers matched across formatting; a preprint and its paper merge inside the year guard and are only *reported* outside it; a merged study takes its identity from the published record; clustering independent of input order |
+| `test_prefilter_records.py` | P4. The scope bonus is worth strictly less than one concept hit; an empty scope signal is unknown, never out; both recall floors, including through the CLI so the shipped defaults are what runs; ranking independent of input order |
+| `test_prisma_flow.py` | P4. Boxes appear only for steps that ran; preprint servers count as databases; retraction and deferral are their own lines, never exclusions; the flow must add up |
 | `test_harness_integrity.py` | The harness's own wiring: no dead `L-NNN` pointers in operational files, every agent named by the orchestrator exists, every script a doc points at exists, the deterministic layer stays dependency-free |
+
+## Validate by mutation, not by count
+
+A test that cannot fail is theatre. Before trusting a new test, break the thing it guards and
+confirm the suite goes red. Every guard here was validated that way, and the first sweep found
+three defects in the tests themselves — including a loader that served stale `__pycache__`
+bytecode, so the suite ran green against code that was not on disk.
+
+Two traps that sweep exposed, both worth checking for in any new test:
+- **Testing your own copy.** A threshold test that rebuilds the script's `argparse` tests the
+  copy, not the script. Read the real value, or go through `main()`.
+- **Injecting every default.** If a test always passes its own config, the module's shipped
+  constants are never executed and a mutation to them survives. Exercise at least one path
+  through the CLI.
 
 ## Two rules for adding a test
 
