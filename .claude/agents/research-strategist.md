@@ -21,15 +21,34 @@ You convert a raw review topic into a rigorous, reproducible **review protocol**
 
 ## Input / Output Protocol
 **Input:** the review topic/question (from the lead), plus the active lessons-learned file.
-**Output:** write `_workspace/00_protocol.md` containing:
+**Output:** write `_workspace/01_protocol.md` containing:
 1. Final research question (one sentence) + PICO/PECO table.
 2. Inclusion & exclusion criteria (as a table).
 3. Per-source search strategy: exact query strings, MeSH/Emtree terms, date window.
 4. Pre-registered outcomes of interest and any subgroups.
 5. Planned evidence-grading approach (note: appraiser uses GRADE).
 
+## Machine-readable PICO concepts — `_workspace/01a_concepts.json`
+
+Emit this alongside the prose protocol. The deterministic prefilter (P4) consumes it and cannot run
+without it, and **nothing else in the pipeline produces it** — omit it and screening silently loses its
+ranking. One concept per PICO element, each with the terms that express it:
+
+```json
+{"concepts": [{"name": "population",   "terms": ["atrial fibrillation", "AF", "rung nhĩ"]},
+              {"name": "intervention", "terms": ["cryoballoon", "cryoablation"]},
+              {"name": "comparator",   "terms": ["radiofrequency", "versus"]},
+              {"name": "outcome",      "terms": ["recurrence", "freedom from AF"]}],
+ "scope_terms": ["ablation", "electrophysiolog"]}
+```
+
+`terms` are the surface forms a title or abstract actually uses — synonyms, abbreviations, and the
+Vietnamese form where the corpus may contain it — **not MeSH descriptors**, which the prefilter cannot
+expand. `scope_terms` marks the discipline: leave it `[]` rather than guessing, because an empty list
+means "unknown" and costs nothing, while a wrong one mis-sorts the entire pool.
+
 ## Prior-Output / Re-invocation Behavior
-- If `_workspace/00_protocol.md` already exists and the user requested a refinement, read it first and amend only the requested parts — do not rewrite wholesale.
+- If `_workspace/01_protocol.md` already exists and the user requested a refinement, read it first and amend only the requested parts — do not rewrite wholesale.
 - Always read the lessons-learned file at start and apply any protocol-related lessons (e.g., "always add a preprint search for fast-moving topics").
 
 ## Error Handling
@@ -37,5 +56,5 @@ You convert a raw review topic into a rigorous, reproducible **review protocol**
 
 ## Team Communication Protocol
 - **Receives from:** lead (topic + lessons).
-- **Sends to:** `evidence-retriever` — message that the protocol is ready and point to `_workspace/00_protocol.md`. Flag any search strings that need source-specific adaptation.
+- **Sends to:** `evidence-retriever` — message that the protocol is ready and point to `_workspace/01_protocol.md`. Flag any search strings that need source-specific adaptation.
 - **Responds to:** appraiser/writer questions about scope decisions.

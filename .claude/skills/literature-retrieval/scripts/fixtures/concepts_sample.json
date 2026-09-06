@@ -1,0 +1,9 @@
+{
+  "concepts": [
+    {"name": "population", "terms": ["atrial fibrillation", "AF", "paroxysmal"]},
+    {"name": "intervention", "terms": ["cryoballoon", "pulsed field ablation", "PFA", "pulmonary vein isolation", "PVI"]},
+    {"name": "comparator", "terms": ["versus", "compared with", "antiarrhythmic"]},
+    {"name": "outcome", "terms": ["recurrence", "outcomes", "durable isolation", "freedom from"]}
+  ],
+  "scope_terms": ["ablation", "cardiac", "arrhythmia", "electrophysiolog"]
+}

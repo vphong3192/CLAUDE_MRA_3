@@ -12,7 +12,7 @@ description: >
 
 The most dangerous failure of an AI-written review is a confident claim attached to a citation that
 doesn't say what's claimed — or doesn't exist. This protocol catches that. Produce
-`_workspace/05_verification_report.md`, and when clean, `_workspace/06_final_review.md`.
+`_workspace/06a_verification_report.md`, and when clean, `_workspace/06_final_review.md`.
 
 ## Boundary-crossing verification — the core check
 "A reference exists" is not enough. For each inline `[n]`, read the **claim** and the **actual
@@ -55,7 +55,7 @@ python3 .claude/skills/citation-verification/scripts/citation_audit.py \
   --draft _workspace/06_final_review.md \
   --store reference/<topic>.md \
   --min-coverage-frac 0.4 \
-  --out _workspace/05b_citation_audit.md
+  --out _workspace/06b_citation_audit.md
 ```
 - **HARD-FAIL → exit 1 → not deliverable** (Law 1): `fabricated_citation` (a draft reference's
   PMID/DOI/NCT is not in the store), `missing_in_store` (a citation traces to no record),

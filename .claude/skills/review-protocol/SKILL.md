@@ -11,7 +11,7 @@ description: >
 
 A protocol is what makes a review *systematic* instead of an opinion: it fixes the question and
 method before searching, so the result is reproducible and not cherry-picked. Produce
-`_workspace/00_protocol.md` with the sections below.
+`_workspace/01_protocol.md` with the sections below.
 
 ## 1. Research question (PICO/PECO)
 State the question in one sentence, then decompose into a table:

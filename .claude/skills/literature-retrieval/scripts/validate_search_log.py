@@ -167,7 +167,7 @@ def render(findings, n_rows, path):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description='Deterministic search-log format validator (P3).')
-    ap.add_argument('--log', required=True, help='_workspace/01_search_log.md')
+    ap.add_argument('--log', required=True, help='_workspace/02a_search_log.md')
     ap.add_argument('--out', help='write the report to this path (also prints to stdout)')
     args = ap.parse_args(argv)
 

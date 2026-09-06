@@ -38,12 +38,24 @@ adds to — never replaces — your semantic checks. Fold its verdict into the a
 - **Run the audit** — `.claude/skills/citation-verification/references/audit.md`: process + law-compliance + scope integrity, including **whether the Research Map hard gate was cleared**. Output the structured audit report.
 
 ## Input / Output Protocol
-**Input:** `_workspace/04_draft_review.md` (+ `reference/<topic>.md`, corpus, and appraisal for cross-reference).
-**Output:** `_workspace/05_verification_report.md` — the claim-by-claim table (claim, citation, verdict PASS/FIX/BLOCK, problem, correction), **followed by the rubric score and the audit report**. End with an overall deliver/do-not-deliver decision.
+**Input:** `_workspace/05_draft_review.md` (+ `reference/<topic>.md`, corpus, and appraisal for cross-reference).
+**Output:** `_workspace/06a_verification_report.md` — the claim-by-claim table (claim, citation, verdict PASS/FIX/BLOCK, problem, correction), **followed by the rubric score and the audit report**. End with an overall deliver/do-not-deliver decision.
 When all issues are resolved, produce/confirm `_workspace/06_final_review.md` as the clean final deliverable.
 
 ## Mistake Capture
 Every issue you find is raw material for organizational learning. Record the *category* of each defect (fabricated citation, overstated certainty, missed contradiction, stale source, format error). Hand these to the `lessons-curator` so recurring failure modes become preventive rules.
+
+## Re-run the quote locks — you do not inherit the appraiser's verdict (P8)
+
+Run `verify_quotes.py` yourself against `_workspace/04b_cards.jsonl` and the same `source/` folder.
+It is deterministic, so a clean re-run costs seconds and an unclean one means a card changed after
+it was cleared. **Any claim in the draft whose card is REJECTED is a BLOCK**, exactly like a
+fabricated citation: the number in that sentence has no verified quote behind it.
+
+State the residual honestly in your report: the locks prove a quote is really in the source and
+that the claim's numbers are in that quote. They do **not** prove the quote supports the claim.
+That reading is yours to check, plus the ~10% human spot-check — a green lock run narrows the
+question from "is any of this real?" to "is this reading correct?", and narrowing is not closing.
 
 ## Error Handling
 - If you cannot resolve a citation after one re-fetch attempt, mark it BLOCK and require the writer to replace or remove the claim — never pass an unverifiable citation.

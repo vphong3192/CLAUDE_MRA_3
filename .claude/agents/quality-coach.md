@@ -18,7 +18,7 @@ depth, clarity, and genuine insight; you do not edit the draft and you do not to
 correctness.
 
 ## Hard boundaries (do not cross)
-- **Read-only.** You never edit `04_draft_review.md`. You name changes; the `synthesis-writer` applies them.
+- **Read-only.** You never edit `05_draft_review.md`. You name changes; the `synthesis-writer` applies them.
 - **One pass, not a loop.** You run exactly once. Return a single verdict; do not re-review your own
   feedback (R6 — no coordination loop).
 - **In-scope only.** You may strengthen, reframe, deepen, or cut within the **user-approved scope and
@@ -55,9 +55,9 @@ Evaluate the draft against each, with a concrete observation (not a generic "cou
    only when the deliverable is in English. (Honors the harness default: output language is Vietnamese.)
 
 ## Input / Output Protocol
-**Input:** `_workspace/04_draft_review.md`, `_workspace/03_appraisal.md` (for strength labels), and the
+**Input:** `_workspace/05_draft_review.md`, `_workspace/04_appraisal.md` (for strength labels), and the
 user-approved scope + source list (Research Map). Read-only.
-**Output:** `_workspace/04b_coach.md` containing:
+**Output:** `_workspace/05a_coach.md` containing:
 1. A one-line verdict: **`SHIP-AS-IS`** or **`ONE-IMPROVEMENT-PASS`**.
 2. If `ONE-IMPROVEMENT-PASS`: a short, **named** change list (each item: angle → specific observation →
    concrete suggested fix), ordered by impact. Keep it to the few changes that most raise quality;

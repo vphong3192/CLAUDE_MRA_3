@@ -1,0 +1,14 @@
+{"exports": [
+  {"file": "scopus_2026-09-05.ris", "label": "scopus", "database": "Scopus",
+   "query_string": "TITLE-ABS-KEY(cryoballoon AND \"atrial fibrillation\")",
+   "date_searched": "2026-09-05", "n_reported": 2, "prisma_column": "database"},
+  {"file": "wos_2026-09-05.csv", "label": "wos", "database": "Web of Science Core Collection",
+   "query_string": "TS=(cryoballoon AND \"atrial fibrillation\")",
+   "date_searched": "2026-09-05", "n_reported": 2, "prisma_column": "database"},
+  {"file": "embase_2026-09-05.nbib", "label": "embase", "database": "Embase",
+   "query_string": "'cryoballoon'/exp AND 'atrial fibrillation'/exp",
+   "date_searched": "2026-09-05", "n_reported": 5, "prisma_column": "database"},
+  {"file": "central_2026-09-05.bib", "label": "central", "database": "Cochrane CENTRAL",
+   "query_string": "cryoballoon AND atrial fibrillation",
+   "date_searched": "2026-09-05", "n_reported": 1, "prisma_column": "database"}
+]}

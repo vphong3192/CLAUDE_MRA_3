@@ -25,10 +25,10 @@ behind it and the user approved it.
 1. Read `lessons.md`.
 2. Select lessons relevant to the current topic.
 3. Post a **role-tagged digest** to the team so each agent applies its own lessons. Format:
-   `[writer] L-007: hedge observational findings — avoid causal verbs.`
+   `[writer] L-002: hedge observational findings — associative verbs, not causal.`
 
 ### Capture (end of run)
-1. Read `_workspace/05_verification_report.md` (QA defect categories + rubric/audit) + any user feedback relayed by the lead.
+1. Read `_workspace/06a_verification_report.md` (QA defect categories + rubric/audit) + any user feedback relayed by the lead.
 2. Draft an **evolution-log entry** (task, rubric total + band, violations, lessons, actions) and, for each recurring/important defect, a **generalized** digest lesson (see format).
 3. Write both to `_workspace/07_proposed_lessons.md`.
 4. Present to the user for **approve / edit / reject**.

@@ -1,17 +1,17 @@
 ---
 name: literature-retrieval
 description: >
-  Executes a medical-review search strategy across live MCP sources — PubMed/PMC, bioRxiv/medRxiv
-  preprints, ClinicalTrials.gov, Consensus, and (for drug/target topics) ChEMBL/Open Targets —
-  retrieves metadata and full text, deduplicates across sources, and records full provenance plus
-  a PRISMA-ready search log. Used by the evidence-retriever agent and whenever a review needs its
+  Executes a medical-review search strategy across live MCP sources — PubMed/PMC, Elicit,
+  bioRxiv/medRxiv preprints, ClinicalTrials.gov, Consensus, and (for drug/target topics)
+  ChEMBL/Open Targets — retrieves metadata and full text, deduplicates across sources, and records
+  full provenance plus a PRISMA-ready search log. Used by the evidence-retriever agent and whenever a review needs its
   evidence corpus built or refreshed from up-to-date sources.
 ---
 
 # Literature Retrieval
 
 Turn the protocol's search strategy into a corpus pulled from **live** sources, with provenance
-strong enough that every later claim is traceable. Produce `_workspace/01_search_log.md` and
+strong enough that every later claim is traceable. Produce `_workspace/02a_search_log.md` and
 `_workspace/02_corpus.md`.
 
 ## Source map — which MCP for what
@@ -22,6 +22,8 @@ strong enough that every later claim is traceable. Produce `_workspace/01_search
 | **bioRxiv/medRxiv** | `search_preprints`, `get_preprint`, `search_published_preprints` | Newest preprints (NOT peer-reviewed); check if a preprint was later published |
 | **ClinicalTrials.gov** | `search_trials`, `get_trial_details`, `analyze_endpoints`, `search_by_sponsor` | Registered/ongoing/completed trials, unpublished results, endpoint design |
 | **Consensus** | `search` | AI-ranked evidence + fast coverage check across the field |
+| **Elicit** | `search_papers`, `search_trials` | Large-scale recall: semantic **or** Lucene-keyword search over a corpus wider than PubMed, up to 10,000 hits per call, with filters PubMed cannot express — `typeTags` (RCT / Meta-Analysis / Systematic Review / Review / Longitudinal), `maxQuartile` (journal quartile), `minYear`/`maxYear`, `hasPdf`, `retracted` |
+| **Elicit** *(paid — see gate below)* | `create_systematic_review`, `create_report`, `get_systematic_review`, `get_report`, `list_sessions`, `resume_session`, `get_usage` | Screening + structured extraction at corpus scale, with per-decision supporting quotes |
 | **ChEMBL / Open Targets** | `compound_search`, `drug_search`, `get_mechanism`, `get_bioactivity`, target tools | Drug/compound/target-specific reviews: mechanism, activity, target–disease links |
 | **Google Scholar** *(web)* | `WebSearch` — query: `site:scholar.google.com OR "Google Scholar" <terms>` | Supplementary: catch papers not indexed in PubMed (conference, non-English, very recent); results must be PMID/DOI-verified before entering corpus |
 | **ScienceDirect** *(web)* | `WebSearch` — query: `site:sciencedirect.com <terms>` | Supplementary: Elsevier journals sometimes lag PubMed indexing; full text usually paywalled — use for metadata/DOI only |
@@ -36,6 +38,50 @@ Web search is **supplementary only** — run it after PubMed/Consensus to fill g
 2. For each result: extract the DOI or PMID and **verify in PubMed** before adding to corpus. If PubMed confirms it → add normally. If PubMed has no record → treat as unverified, do not cite.
 3. If a web-found paper appears important (high citations, directly on-topic, pivotal design) but full text is **paywalled and unavailable** via any MCP tool: **alert the user explicitly** — state the title, DOI, and why it looks important — and ask if they can supply the PDF to `source/`. Do not silently skip it.
 4. Log web-found additions in the search log with source noted as `(web-supplementary)`.
+
+### Elicit protocol — recall breadth, retraction safety, and the credit gate
+
+Elicit does three things no other source in this map does. Use it deliberately, not reflexively.
+
+**1 · Recall breadth (free tier of the tooling — use on every review).**
+`search_papers` reaches a corpus wider than PubMed and returns up to 10,000 hits per call, in either
+`semantic` mode (natural-language question) or `keyword` mode (Lucene boolean — mutually exclusive
+with `filters`, so put the filter expressions inside the query string). Run it **alongside** the
+PubMed query, never instead of it: PubMed remains the ID authority, Elicit is the recall widener.
+Set `corpus: "elicit"` for breadth; `corpus: "pubmed"` only to cross-check a PubMed count.
+
+**2 · Retraction screening — this closes a real Law 1 hole.**
+`filters.retracted` defaults to `exclude_retracted`. Nothing else in this source map checks whether a
+paper has been retracted, and citing a retracted study is a Law 1 failure the citation-verifier cannot
+catch (the PMID resolves; the record is real; the science was withdrawn). Two obligations:
+- Leave the default in place on every Elicit search — never pass `include_retracted` casually.
+- Before the Research Map gate, re-run the corpus's key studies through `search_papers` with
+  `retracted: "only_retracted"` and the study titles as `includeKeywords`. Any hit is a **BLOCK**:
+  drop the record and say so at the gate. Log the check in the search log even when it returns nothing —
+  a check that leaves no receipt did not happen (R4).
+
+**3 · Filters that map onto rubric and law.**
+- `typeTags: ["Meta-Analysis","Systematic Review","RCT"]` → Law 3 evidence hierarchy, applied at
+  retrieval instead of after the fact.
+- `maxQuartile: 1` → rubric Criterion 2 ("Q1 journals / Cochrane / major-body guidelines"). Use it to
+  *check coverage*, never as a hard filter on the main pull — quartile is a journal property, not a
+  study-quality property, and cutting on it silently drops registry reports and guideline documents.
+- `search_trials` (`phase`, `recruitmentStatus`, `hasResults`) complements the ClinicalTrials.gov MCP;
+  when both are available prefer the CT.gov MCP for trial *detail* and Elicit for trial *recall*.
+
+**The credit gate — `create_systematic_review` and `create_report` SPEND THE USER'S MONEY.**
+These two tools consume Elicit credits. They are **never** run on the retriever's own initiative.
+- Present the plan at **Gate 2b** with the concrete parameters (searches, `maxResults`, screening
+  criteria, `depth`, extraction columns) and the output of `get_usage`, and wait for an explicit
+  user OK — the same fail-closed discipline as L-022/L-024. No quotable approval → do not run it.
+- When approved, set `abstractScreening.depth: "thorough"`. `fast` costs less but "wrongly excludes
+  more papers that met your criteria and returns decisions **without supporting quotes**" — a screen
+  with no quote behind each decision is unauditable, which is exactly R4.
+- Screening decisions and extracted values are **retrieval output, not appraisal**. They enter
+  `reference/<topic>.md` as ordinary records; GRADE and risk-of-bias remain the critical-appraiser's
+  work and are never inherited from Elicit.
+- `list_sessions` / `resume_session` recover an interrupted review — resume rather than re-run, so a
+  crash does not cost the credits twice.
 
 ## Provenance schema (every corpus row)
 | Field | Notes |
@@ -59,10 +105,139 @@ summary. Read the **Introduction** of every full-text record for `study_context`
 results. All three are populated only from full text; mark them `not captured (abstract-only)` until
 the record is upgraded, never invent them.
 
+## Widening recall beyond MCP (P7)
+
+The MCP source map is not the whole literature. Three additions, in descending order of value.
+
+### 1 · Author-supplied exports — the biggest gain, and it costs no credential
+
+The harness has no Scopus, Web of Science, Embase or CENTRAL access and **must never try to get
+it**: an automated agent querying those platforms uses someone's institutional subscription in a
+way their licence forbids. The author has that login. They export; the script reads the file.
+
+Ask at Phase 0, not at retrieval — the answer changes the whole search plan, and by Phase 2 it is
+too late to redo the strategy around a source you did not know you had. Files go in
+`source/<folder>/_exports/`, with a manifest beside them:
+
+```json
+{"exports": [
+  {"file": "scopus_2026-09-05.ris", "label": "scopus", "database": "Scopus",
+   "query_string": "TITLE-ABS-KEY(cryoballoon AND \"atrial fibrillation\")",
+   "date_searched": "2026-09-05", "n_reported": 412, "prisma_column": "database"}
+]}
+```
+
+```bash
+python3 .claude/skills/literature-retrieval/scripts/import_external.py \
+  --export-dir source/<folder>/_exports/ --manifest source/<folder>/_exports/manifest.json \
+  --out-records _workspace/02b_records_external.jsonl --out _workspace/02b_import.md
+```
+
+Then concatenate into `02b_records.jsonl` before running dedupe — imported records use the same
+schema, so P4 handles them with no special casing.
+
+RIS · NBIB/MEDLINE · BibTeX · CSV are parsed. **Three things this refuses to do quietly:**
+- **A file with no manifest entry is not imported.** An export carries records but not the search
+  that produced them, and PRISMA-S needs the query, the date, the database and the reported count.
+  An unrecorded search is an unreproducible one, and it would sit in the corpus looking recorded.
+- **`prisma_column` is declared, never guessed.** A Scopus export arrived by hand but is still a
+  *database search*. Filing it under "other methods" understates the systematic search — a false
+  claim about the method. A colleague's suggested reference genuinely is `other`.
+- **`n_reported` vs records parsed is compared.** Most platforms cap one download far below the
+  result count, so a truncated export is the commonest silent recall loss in a manual workflow.
+  A shortfall is reported per file; re-export in batches before trusting the corpus.
+
+### 2 · Three no-key APIs, via `WebFetch`
+
+**Europe PMC · OpenAlex · Semantic Scholar** need no key and cover ground PubMed does not
+(Europe PMC adds European and grey literature; OpenAlex and S2 reach beyond biomedicine and expose
+citation graphs). They have no MCP here, so the retriever calls them with `WebFetch` and records
+the URL verbatim in the ledger's `call` column — a URL is the most reproducible call form there is.
+
+```
+https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=...&format=json&pageSize=100
+https://api.openalex.org/works?filter=title_and_abstract.search:...&per-page=200&mailto=<email>
+https://api.semanticscholar.org/graph/v1/paper/search?query=...&limit=100&fields=title,year,externalIds,abstract
+```
+
+Every hit still needs its PMID or DOI confirmed in PubMed before entering the store, exactly as
+for the web-supplementary protocol above. OpenAlex's `mailto` is a courtesy that buys a faster
+pool — use the author's address only with their say-so.
+
+### 3 · Pacing — a discipline, not a mechanism
+
+Nothing in this harness throttles anything: the deterministic layer never touches the network and
+the MCP servers pace themselves. So this is a rule **you** follow, and saying otherwise would be
+claiming a safeguard that does not exist. Space unauthenticated calls to the same host — roughly
+3/second at NCBI without a key, 1/second at Semantic Scholar. On a 429, slow that host down for
+the rest of the run rather than retrying politely and returning to the old rhythm; retrying at the
+same rate is how an IP gets blocked for everyone sharing it.
+
+## Screening & PRISMA — the deterministic pipeline (P4)
+
+Deduplication, relevance ranking and the PRISMA numbers are **mechanical**. They run as scripts so
+the flow diagram is a count of records on disk rather than a recollection, and so a claim about
+recall can be checked instead of believed. Judgment — is this study eligible? — stays with the LLM,
+in the worksheet the pipeline hands it.
+
+**Write the machine-readable layer as you retrieve.** Alongside `02_corpus.md` (for humans), append
+one JSON object per retrieved record to `_workspace/02b_records.jsonl`. **PRISMA needs the
+pre-screening population, which `reference/<topic>.md` structurally cannot hold** — that store is
+the *output* of screening, so without this file the identification and exclusion counts cannot be
+derived at all.
+
+```json
+{"record_id":"P1-001","source":"pubmed","search_id":"P1","pmid":"33652425",
+ "doi":"10.1056/NEJMoa2029554","nct":null,"title":"…","authors":"Andrade JG, et al.",
+ "year":2021,"journal":"N Engl J Med","abstract":"…",
+ "publication_types":["Randomized Controlled Trial"],"retracted":false}
+```
+`source` must be the real source name (`pubmed`, `elicit`, `consensus`, `biorxiv`, `medrxiv`,
+`ctgov`, `source_folder`, `web`) — PRISMA splits identification by it, and an unrecognised value is
+reported by name rather than silently binned. `search_id` ties the record back to its ledger row.
+
+```bash
+# 1 · one row per STUDY (a preprint + its paper + its registration are one study, not three)
+python3 .claude/skills/literature-retrieval/scripts/dedupe_records.py   --records _workspace/02b_records.jsonl   --out-studies _workspace/02c_studies.jsonl --out _workspace/02d_dedup.md
+
+# 2 · rank by concept coverage and emit the screening worksheet
+python3 .claude/skills/literature-retrieval/scripts/prefilter_records.py   --studies _workspace/02c_studies.jsonl --concepts _workspace/01a_concepts.json   --out-candidates _workspace/02e_candidates.jsonl --out-deferred _workspace/02f_deferred.jsonl   --out _workspace/02g_worksheet.md
+
+# 3 · after screening: draw the flow from the stage files (exit 1 if the counts contradict)
+python3 .claude/skills/literature-retrieval/scripts/prisma_flow.py   --records _workspace/02b_records.jsonl --studies _workspace/02c_studies.jsonl   --candidates _workspace/02e_candidates.jsonl --deferred _workspace/02f_deferred.jsonl   --verdicts _workspace/02h_verdicts.jsonl   --out-json _workspace/02i_prisma.json --out _workspace/02j_prisma.md
+```
+
+`01a_concepts.json` comes from the protocol's PICO — one concept per PICO element:
+`{"concepts":[{"name":"population","terms":["atrial fibrillation","AF"]}, …],"scope_terms":["ablation"]}`.
+
+**You fill the worksheet, the script counts it.** Read `02g_worksheet.md`, judge each candidate
+against the protocol's criteria, and write `_workspace/02h_verdicts.jsonl` — one line per screened
+study: `{"study_id":"…","verdict":"include|exclude|maybe","reason":"…"}`. **Every exclusion needs a
+reason**; PRISMA 2020 requires one and step 3 fails the flow without it. A `maybe` is NOT included —
+it is listed for the user at the gate.
+
+**Four things the pipeline will not let you say:**
+- A **deferred** study is *unread*, never *excluded*. Nobody opened it. The diagram says so, and the
+  Methods section must too.
+- A **retracted** study is removed on its own line — never folded into duplicates or exclusion
+  reasons. It was never eligible.
+- **No full-text eligibility box** is drawn unless full text was actually assessed (`--fulltext-assessed`).
+  Eligibility here is decided on **title and abstract**, and that is what the diagram is labelled.
+- Screening is **AI-assisted with a human at the gates**. Never write "two reviewers independently
+  screened" unless that literally happened.
+
+Thresholds (fuzzy 0.92 · year guard ±1 · scope bonus < one concept hit · the two recall floors) are
+hardcoded and pinned by tests. **Never loosen one to move a study across the line.** The floors in
+particular are calibrated cautiously and are NOT measured on this harness's own corpora — re-measure
+and record the measurement before tightening them.
+
 ## Deduplication
-The same study can surface as a preprint, a journal article, and a trial registration. Use
-`convert_article_ids` and `search_published_preprints` to link them under one `study_id`. Never
-let one study count as three.
+The same study can surface as a preprint, a journal article, and a trial registration. `dedupe_records.py`
+above links them under one `study_id` by DOI, PMID, NCT, then fuzzy title within the year guard; use
+`convert_article_ids` and `search_published_preprints` to supply the identifiers that make those links
+possible. Never let one study count as three. A same-title pair whose years fall **outside** the guard is
+reported, not merged — usually a preprint and its journal version, sometimes two different studies, and
+the script will not guess for you.
 
 ## Search log (PRISMA numbers)
 Record, per source: the exact query, date run, and hit count. Then the flow:
@@ -94,7 +269,7 @@ Then validate the receipt's format (offline, deterministic — checks completene
 whether the counts are true or the search well-designed):
 ```
 python3 .claude/skills/literature-retrieval/scripts/validate_search_log.py \
-  --log _workspace/01_search_log.md
+  --log _workspace/02a_search_log.md
 ```
 HARD-FAIL (exit 1) on a missing ledger, missing column, non-integer count, a `call` with no
 params/URL, or a recall verdict inconsistent with the numbers (e.g. "complete ✓" but

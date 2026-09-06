@@ -43,7 +43,25 @@ SCRUB_RE = re.compile(
 SEP = r'(?:–|—|-|to|;|,)'
 CI_PATTERN = (r'(?:95\s*%\s*)?\bCI\b[^\d−-]{0,6}' + NUM + r'\s*' + SEP + r'\s*' + NUM  # 95% CI 0.76–1.22
               + r'|\[\s*' + NUM + r'\s*' + SEP + r'\s*' + NUM + r'\s*\]')           # [1.2–2.3]
-RATIO_PATTERN = r'\b(?:aHR|HR|OR|RR|MD|SMD|β|coef\.?|coefficient)\b\s*[=:]?\s*' + NUM
+# Effect estimates. Two failures this shape is built to avoid, found by an integration run:
+#   * "hazard ratio, 0.48" — how NEJM/JAMA/Lancet actually write it in prose — was missed, so the
+#     single most important number in a trial never reached a bucket and the appraiser had to
+#     hand-copy it, which is the exact hazard P2 exists to remove.
+#   * `\bOR\b` under IGNORECASE matched the English word "or", turning "cryoballoon or 12
+#     patients" into a ratio of 12. A fabricated number in front of the appraiser is worse than a
+#     missing one, so the ABBREVIATIONS are matched case-sensitively — they are always uppercase
+#     in medical prose — while only the spelled-out names are case-insensitive.
+RATIO_ABBREV = r'aHR|aOR|aRR|HR|OR|RR|IRR|SMD|MD|β'
+RATIO_SPELLED = (r'(?i:(?:adjusted|unadjusted|pooled)\s+)?'
+                 r'(?i:(?:hazard|odds|risk|rate|incidence\s+rate)\s+ratios?'
+                 r'|relative\s+risk'
+                 r'|(?:standardi[sz]ed\s+)?mean\s+difference'
+                 r'|coefficients?|coef\.?'
+                 r'|tỷ\s+số\s+nguy\s+cơ|tỷ\s+suất\s+nguy\s+cơ|tỷ\s+số\s+chênh'
+                 r'|nguy\s+cơ\s+tương\s+đối|khác\s+biệt\s+trung\s+bình)')
+# The separator is optional and forgiving: "HR 0.48", "HR, 0.48", "HR=0.48", "ratio of 0.91".
+RATIO_SEP = r'\s*(?:[=:,]|\bof\b|\bwas\b|\blà\b)?\s*'
+RATIO_PATTERN = r'\b(?:' + RATIO_SPELLED + r'|' + RATIO_ABBREV + r')\b' + RATIO_SEP + NUM
 PVALUE_PATTERN = r'\bp\s*[<>=]\s*' + NUM
 SAMPLE_PATTERN = (
     r'\b[nN]\s*=\s*' + NUM +                                              # n=762 / N=132
@@ -56,7 +74,7 @@ PCT_PATTERN = NUM + r'\s*%'
 # is a ratio (not a bare percentage/sample size) and "95% CI 0.76–1.22" is one interval.
 BUCKETS = [
     ('confidence_intervals', re.compile(CI_PATTERN, re.IGNORECASE)),
-    ('ratios', re.compile(RATIO_PATTERN, re.IGNORECASE)),
+    ('ratios', re.compile(RATIO_PATTERN)),   # NOT IGNORECASE — see RATIO_ABBREV
     ('p_values', re.compile(PVALUE_PATTERN, re.IGNORECASE)),
     ('sample_sizes', re.compile(SAMPLE_PATTERN, re.IGNORECASE)),
     ('percentages', re.compile(PCT_PATTERN)),
