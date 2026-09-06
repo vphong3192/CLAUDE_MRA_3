@@ -64,8 +64,23 @@ holds; omit it and that lock stays silent rather than guessing.
 
 Write the claim in the review's output language and the quote in the source's — the NUMBER lock
 canonicalises decimals, so a Vietnamese `42,9%` matches an English `42.9%`. Quote from **prose**,
-never from a table dump or embedded page metadata. PDFs are not readable by this layer: quote from
-the converted HTML the corpus stores alongside them.
+never from a table dump or embedded page metadata.
+
+**A PDF is not quotable until its text is on disk, and how it got there changes what the lock
+proves.** `verify_quotes.py` reads `.html/.htm/.txt/.md/.xml`, never `.pdf`. Before building cards
+for a paper that exists only as a PDF, put a text file beside it in `source/<folder>/` — same
+basename, `.txt` or `.html` — and record which of these produced it:
+
+- **Machine-extracted** (`pdftotext file.pdf file.txt`, or the publisher's own HTML). The lock then
+  proves the quote is in text no model wrote. On Windows, `pdftotext.exe` ships with Git at
+  `C:/Program Files/Git/mingw64/bin/`.
+- **Transcribed by you** from reading the PDF. The lock still catches a quote you invented later,
+  but it can only check against a transcript **you produced** — so it proves internal consistency,
+  not fidelity to the paper. Say so in the appraisal rather than letting a green lock imply more
+  than it earned, and prefer machine extraction wherever it is available.
+
+Never quote from a PDF you read without writing the text out: the card would point at a file the
+lock cannot open, and `04c_quote_locks.md` would reject it as IDENTITY.
 
 ## Prior-Output / Re-invocation Behavior
 - If an appraisal exists and the corpus was updated, appraise only the new studies and update the GRADE summaries that they affect.
