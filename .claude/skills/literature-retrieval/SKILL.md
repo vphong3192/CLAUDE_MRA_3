@@ -25,9 +25,42 @@ strong enough that every later claim is traceable. Produce `_workspace/01_search
 | **ChEMBL / Open Targets** | `compound_search`, `drug_search`, `get_mechanism`, `get_bioactivity`, target tools | Drug/compound/target-specific reviews: mechanism, activity, target–disease links |
 | **Google Scholar** *(web)* | `WebSearch` — query: `site:scholar.google.com OR "Google Scholar" <terms>` | Supplementary: catch papers not indexed in PubMed (conference, non-English, very recent); results must be PMID/DOI-verified before entering corpus |
 | **ScienceDirect** *(web)* | `WebSearch` — query: `site:sciencedirect.com <terms>` | Supplementary: Elsevier journals sometimes lag PubMed indexing; full text usually paywalled — use for metadata/DOI only |
+| **OpenAlex** *(script)* | `openalex_search.py coverage` / `citations` | (1) Coverage cross-check: find papers missed by PubMed that aren't indexed in MEDLINE; (2) Citation chaining: forward (who cited a key paper) and backward (what a key paper cites) — neither is available natively in PubMed |
 
 Run the protocol's per-source query strings. Honor each server's usage rules (e.g., Consensus
 requires inline numbered citations and its sign-up message preserved verbatim).
+
+### OpenAlex supplementary workflow
+OpenAlex is **run after** PubMed/Consensus as a gap-filler and citation-graph tool. No API key required;
+the script uses the polite pool (mailto in User-Agent). Two use cases:
+
+**1. Coverage cross-check** — run after primary retrieval with the same keyword string:
+```bash
+# Count probe first (P3 habit 1)
+python3 .claude/skills/literature-retrieval/scripts/openalex_search.py coverage \
+  --query "semaglutide cardiovascular prevention" --year-from 2019 --count-only
+
+# Pull records (capped at 200)
+python3 .claude/skills/literature-retrieval/scripts/openalex_search.py coverage \
+  --query "semaglutide cardiovascular prevention" --year-from 2019
+```
+Compare `stable_id` values against the corpus. Any PMID/DOI already in the corpus → skip (already
+covered). Any new record → screen for relevance and add if in-scope, noting `(OpenAlex-supplementary)`.
+OpenAlex has broader coverage than MEDLINE but no MeSH; expect more noise — screen tightly.
+
+**2. Citation chaining** — for each HIGH-relevance paper, trace its citation graph:
+```bash
+python3 .claude/skills/literature-retrieval/scripts/openalex_search.py citations \
+  --doi 10.1056/NEJMoa1901009 --direction both
+```
+Forward citations (papers citing the key paper) → find derivative studies and meta-analyses.
+Backward citations (the paper's own references) → find foundational work the protocol may have missed.
+Add any newly discovered in-scope records to the corpus; deduplicate by PMID/DOI.
+
+Both modes emit a ledger row for `validate_search_log.py` — paste it into the "Recall &
+reproducibility ledger" table like any other source. Source column: `OpenAlex-coverage` or
+`OpenAlex-citations`. OpenAlex does not provide full text; any record found here still needs
+full-text via `get_full_text_article` (PMC) or `source/` before appraisal.
 
 ### Web search protocol (Google Scholar & ScienceDirect)
 Web search is **supplementary only** — run it after PubMed/Consensus to fill gaps, not as a primary source.
