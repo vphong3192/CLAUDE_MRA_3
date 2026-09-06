@@ -38,6 +38,45 @@ class BucketContract(unittest.TestCase):
         self.assertIn("353", joined)
 
 
+class EffectEstimates(unittest.TestCase):
+    """The effect estimate is the most important number in a trial, and both directions of
+    getting it wrong were found by an integration run rather than by a unit test."""
+
+    SPELLINGS = [
+        "hazard ratio, 0.48", "hazard ratio 0.48", "HR 0.48", "HR, 0.48", "HR=0.48",
+        "aHR 0,73", "odds ratio, 1.24", "risk ratio of 0.91", "adjusted hazard ratio, 0.73",
+        "relative risk 1.15", "mean difference, -2.4", "standardized mean difference 0.31",
+        "tỷ số nguy cơ 0,48", "khác biệt trung bình -2,4", "β = 0.12",
+    ]
+
+    def test_every_spelling_journals_actually_use(self):
+        for text in self.SPELLINGS:
+            with self.subTest(text=text):
+                self.assertTrue(M.extract(text)["ratios"],
+                                "a missed effect estimate forces the appraiser to hand-copy it — "
+                                "the exact hazard P2 exists to remove")
+
+    def test_the_english_word_or_is_not_an_odds_ratio(self):
+        """`\\bOR\\b` under IGNORECASE turned "cryoballoon or 12 patients" into a ratio of 12.
+        A fabricated number in front of the appraiser is worse than a missing one."""
+        for text in ("cryoballoon or 12 patients were excluded",
+                     "drug therapy or 3 months of follow-up",
+                     "either ablation or 2 drugs",
+                     "Or 5 patients withdrew"):
+            with self.subTest(text=text):
+                self.assertEqual(M.extract(text)["ratios"], [])
+
+    def test_abbreviations_are_case_sensitive_but_names_are_not(self):
+        self.assertTrue(M.extract("Hazard Ratio, 0.48")["ratios"])
+        self.assertEqual(M.extract("hr 0.48")["ratios"], [])
+
+    def test_a_full_results_sentence_partitions_correctly(self):
+        found = M.extract("Recurrence 42.9% vs 67.8% (hazard ratio, 0.48; 95% CI, 0.35 to 0.66; P<0.001).")
+        self.assertEqual(found["ratios"], ["hazard ratio, 0.48"])
+        self.assertTrue(any("0.35" in v for v in found["confidence_intervals"]))
+        self.assertEqual(found["percentages"], ["42.9%", "67.8%"])
+
+
 class VietnameseAndUnicode(unittest.TestCase):
     def test_decimal_comma_p_value(self):
         """Vietnamese decimal commas are data, not typos."""

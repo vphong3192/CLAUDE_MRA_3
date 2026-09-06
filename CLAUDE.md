@@ -73,12 +73,12 @@ hard gate has no small-scope exception. The team STOPS and waits for explicit us
   `08_manifest`→`06c_manifest` · `research_map_gate_approval`→`03a_gate_approval`.
   `02_corpus`, `06_final_review` and `07_proposed_lessons` are unchanged.
 
-  **Exports are not in the contract yet.** One completed run wrote a hand-built `_workspace/index.html`
-  (a styled HTML rendering of its final review). Producing an export is legitimate and useful, but it
-  has no agreed name or generator — **P6 will replace it with a proper CSL/Pandoc path** (`.docx` to the
-  target journal's style, plus a publish gate that refuses to export while the citation audit is
-  failing). Until then, treat any export as ad-hoc: `06_final_review.md` remains the deliverable of
-  record, and nothing downstream may depend on an export existing.
+  **Markdown is the deliverable; there is no export layer, by decision.** `06_final_review.md` is
+  the finished product — not a draft awaiting conversion. A CSL/Pandoc `.docx` path was scoped and
+  **cancelled** (2026-09-06): it would add a non-stdlib dependency, a second place for the citation
+  audit to be bypassed, and a format nobody asked for. One earlier run wrote a hand-built
+  `_workspace/index.html`; producing such a thing on request is fine, but it is ad-hoc, it has no
+  generator in this harness, and **nothing downstream may depend on an export existing**.
 - `.claude/skills/lessons-learned/lessons.md` — distilled digest (injected each run) ·
   `evolution-log.md` — full archive (not auto-loaded).
 - `.claude/tests/` — automated regression suite; run
