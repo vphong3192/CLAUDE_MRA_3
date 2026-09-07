@@ -3,7 +3,7 @@ name: review-protocol
 description: >
   Builds a systematic, reproducible medical-review protocol — research question, PICO/PECO
   framing, inclusion/exclusion criteria, and a database search strategy with MeSH/Emtree terms
-  and Boolean logic. Used by the research-strategist agent at the start of any medical literature
+  and Boolean logic. Used by the lead at the start of any medical literature
   review, and whenever the user asks to define scope, framing, or a search strategy for a review.
 ---
 
@@ -73,3 +73,23 @@ Pre-specifying the question, criteria, and search means a different person re-ru
 gets the same corpus. That reproducibility is the difference between evidence synthesis and
 narrative bias. If the topic is too broad to bound, say so and offer 2–3 scoped interpretations
 rather than guessing.
+
+
+## Machine-readable PICO concepts — `_workspace/01a_concepts.json`
+
+Emit this alongside the prose protocol. The deterministic prefilter (P4) consumes it and cannot run
+without it, and **nothing else in the pipeline produces it** — omit it and screening silently loses its
+ranking. One concept per PICO element, each with the terms that express it:
+
+```json
+{"concepts": [{"name": "population",   "terms": ["atrial fibrillation", "AF", "rung nhĩ"]},
+              {"name": "intervention", "terms": ["cryoballoon", "cryoablation"]},
+              {"name": "comparator",   "terms": ["radiofrequency", "versus"]},
+              {"name": "outcome",      "terms": ["recurrence", "freedom from AF"]}],
+ "scope_terms": ["ablation", "electrophysiolog"]}
+```
+
+`terms` are the surface forms a title or abstract actually uses — synonyms, abbreviations, and the
+Vietnamese form where the corpus may contain it — **not MeSH descriptors**, which the prefilter cannot
+expand. `scope_terms` marks the discipline: leave it `[]` rather than guessing, because an empty list
+means "unknown" and costs nothing, while a wrong one mis-sorts the entire pool.

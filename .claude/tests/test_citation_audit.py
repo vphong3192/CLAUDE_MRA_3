@@ -1,3 +1,4 @@
+from pathlib import Path
 """P1 — deterministic citation audit.
 
 The audit is the mechanical floor under Law 1: it proves every citation traces to the
@@ -155,7 +156,7 @@ class ExitCodeContract(unittest.TestCase):
     """Law 1: a fabricated citation makes the review not-deliverable — exit 1."""
 
     def _fixture(self, name):
-        return str(M.__file__).rsplit("/", 1)[0] + "/fixtures/" + name
+        return str(Path(M.__file__).parent / "fixtures" / name)
 
     def _rc(self, draft_name):
         with contextlib.redirect_stdout(io.StringIO()):

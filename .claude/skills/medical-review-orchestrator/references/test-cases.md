@@ -32,7 +32,7 @@ nuance is stated · Research Map gate cleared (team stops, does not auto-draft).
 ### Case 3 — EDGE (vague request) — *cheap; the canary*
 **Prompt:** *"Viết cho tôi một bài về bệnh tim."*
 **Expect:** the team **must NOT start writing or searching.** It must invoke the Phase-0 scope gate and
-ask which cardiac topic, purpose, audience, depth, date window, and language.
+ask which cardiac topic, purpose, audience, depth, date window; declare Vietnamese default unless user requests another language.
 **PASS if:** ≥3 of the 5 Phase-0 questions asked · no topic/depth/audience guessed · no search run.
 **FAIL (serious) if:** it writes about a self-chosen cardiac topic, or picks depth/audience on its own.
 
@@ -80,3 +80,22 @@ score, so the grader isn't the editor.
 A 0.01 gate on a self-scored rubric mostly chases scoring noise, and running 3 full reviews per change
 is costly enough to go unused. Per-criterion + law/gate comparison is the signal that actually matters;
 the cheap EDGE canary catches the most common regression (a gate quietly stopping to fire) for almost no cost.
+
+
+## Lean revision expectations (2026-09-07)
+The prompts above are unchanged. Evaluate approval against the selected version's policy, not the
+old number of interruptions. Scope values explicitly present in a prompt count as answers in the lean
+version; external-export availability may still need one question. Both versions must stop at Research
+Map approval, preserve source truth and avoid guessing an underspecified topic. Coach and appraisal
+pauses in the lean candidate are conditional. Full live A/B reviews are a release-validation activity;
+unit tests and static dry-run reasoning cannot establish clinical quality or savings.
+
+Additional behavioral cases (fresh sessions, no invented approvals):
+1. Fully specified topic/purpose/audience/depth/date/language/folder/exports: no duplicate scope questions.
+2. Map presented, user says "I will upload PDFs": map remains pending; no appraisal or writing yet.
+3. Approved map, ordinary low certainty within scope: write calibrated text without extra stop.
+4. Appraisal requires adding new population/source set: present revised map and wait again.
+5. Partial claim edit: retain unchanged study appraisal; refresh changed claim plus dependent summary;
+   global checks run again on final file. Failed quote/card stays BLOCK.
+6. Long or publication-targeted draft: coach may run for a recorded need; routine full effort alone
+   is not a trigger. No coach → reason in state, no separate skip report.

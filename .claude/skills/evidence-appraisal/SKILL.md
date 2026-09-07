@@ -151,3 +151,32 @@ misread its own quote. That reading stays with you, the verifier, and the human 
 Treating a small unblinded preprint as equal to a large RCT is the most damaging error a review can
 make. Explicit hierarchy + risk-of-bias + GRADE is the guardrail. If full text is missing for a
 pivotal study, appraise from the abstract but mark it provisional and ask the retriever to fetch it.
+
+
+## Preparing PDF source text
+**A PDF is not quotable until its text is on disk, and how it got there changes what the lock
+proves.** `verify_quotes.py` reads `.html/.htm/.txt/.md/.xml`, never `.pdf`. Before building cards
+for a paper that exists only as a PDF, put a text file beside it in `source/<folder>/` — same
+basename, `.txt` or `.html` — and record which of these produced it:
+
+- **Machine-extracted** (`pdftotext file.pdf file.txt`, or the publisher's own HTML). The lock then
+  proves the quote is in text no model wrote. On Windows, `pdftotext.exe` ships with Git at
+  `C:/Program Files/Git/mingw64/bin/`.
+- **Transcribed by you** from reading the PDF. The lock still catches a quote you invented later,
+  but it can only check against a transcript **you produced** — so it proves internal consistency,
+  not fidelity to the paper. Say so in the appraisal rather than letting a green lock imply more
+  than it earned, and prefer machine extraction wherever it is available.
+
+Never quote from a PDF you read without writing the text out: the card would point at a file the
+lock cannot open, and `04c_quote_locks.md` would reject it as IDENTITY.
+
+
+
+## Lean output
+Cards carry outcome and certainty (High/Moderate/Low/Very Low/not_assessed); optional design,
+sample_size, effect and rob are extracted once. Certainty reflects the outcome-level appraisal,
+not an automated per-study score. Render `04d_evidence_table.md` from cards using
+`medical-review-orchestrator/scripts/render_artifacts.py evidence`; link it from appraisal instead
+of recreating the table. Fulltext cards must include a nonempty abstract for FULLTEXT comparison.
+Read source text around the extracted quote to verify comparator, timepoint, denominator and endpoint.
+An empty number bucket means no regex match, not necessarily not reported; inspect the original text.

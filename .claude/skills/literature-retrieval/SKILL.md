@@ -71,7 +71,7 @@ catch (the PMID resolves; the record is real; the science was withdrawn). Two ob
 
 **The credit gate — `create_systematic_review` and `create_report` SPEND THE USER'S MONEY.**
 These two tools consume Elicit credits. They are **never** run on the retriever's own initiative.
-- Present the plan at **Gate 2b** with the concrete parameters (searches, `maxResults`, screening
+- Present the plan at **Research Map gate** with the concrete parameters (searches, `maxResults`, screening
   criteria, `depth`, extraction columns) and the output of `get_usage`, and wait for an explicit
   user OK — the same fail-closed discipline as L-022/L-024. No quotable approval → do not run it.
 - When approved, set `abstractScreening.depth: "thorough"`. `fast` costs less but "wrongly excludes
@@ -133,7 +133,7 @@ python3 .claude/skills/literature-retrieval/scripts/import_external.py \
   --out-records _workspace/02b_records_external.jsonl --out _workspace/02b_import.md
 ```
 
-Then concatenate into `02b_records.jsonl` before running dedupe — imported records use the same
+Then concatenate the native and external record streams once into a dedupe input (preserve the originals) before running dedupe — imported records use the same
 schema, so P4 handles them with no special casing.
 
 RIS · NBIB/MEDLINE · BibTeX · CSV are parsed. **Three things this refuses to do quietly:**
@@ -278,14 +278,11 @@ params/URL, or a recall verdict inconsistent with the numbers (e.g. "complete �
 auditable.
 
 ## The `source/` folder (every run, no exceptions)
-List the subfolders under `source/` and ask the user which to read **whether or not files exist** —
-staying silent here was a real v1 failure. User PDFs are usually the full text of paywalled key
-papers. Reconcile each:
-| Situation | Action |
-|---|---|
-| Duplicate of a record already found (same author+year+title) | "Already have it — skipped." |
-| Full text where you only had an abstract | Upgrade the record; note "(full text from source/)" |
-| Not yet in the corpus | Add it; note "(manually supplied)" |
+Inspect source folders every run. Reuse the explicitly designated folder; ask only if selection
+or supplied inputs are ambiguous. Record absence in the search log without repeating an answered question.
+Reconcile supplied files: duplicate record → retain one identity; new full text → upgrade its
+availability and provenance; a new eligible study → add it as manually supplied and include it in
+the source-approval list. Never silently drop a file or treat the folder listing as reading its contents.
 When you read a full-text PDF, also read its **reference list** to harvest extra cited PMIDs.
 *(Windows: `pdftotext.exe` ships with Git at `C:/Program Files/Git/mingw64/bin/`.)*
 
@@ -297,7 +294,7 @@ date captured. Externalize large metadata blobs (parse with Python for >15 PMIDs
 raw JSON in context.
 
 ## Curiosity budget (execute the gap searches)
-Run the strategist's ≥1–2 gap-directed searches (evidence/contradiction/methodological/population/
+Run the lead's ≥1–2 gap-directed searches (evidence/contradiction/methodological/population/
 implementation). If PubMed returns <3 RCTs/SRs, expand to case reports/series, check
 ClinicalTrials.gov for running trials, and flag the thin evidence base — don't let scarcity pass silently.
 

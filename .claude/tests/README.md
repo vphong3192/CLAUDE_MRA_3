@@ -53,3 +53,8 @@ produced a green suite over a broken guarantee, so check for all three in any ne
    `min-coverage-frac` defaults to 0.4 because a test says so.
 2. **Never loosen a threshold to make a test pass.** If a real store trips a check, the finding
    is the point. Fix the store, or fix the check for a stated reason — never widen it quietly.
+
+
+Windows: set `$env:PYTHONUTF8 = "1"` before running Python, so subprocesses also use UTF-8.
+Lean tests add linkage, selective lessons, renderer/state and paired metrics checks.
+Full medical A/B validation remains separate; see `docs/lean-harness-evaluation.md`.

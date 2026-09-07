@@ -1,0 +1,27 @@
+{
+  "baseline_commit": "ad6477b52e94f70c8befd615adc5d7c0df7bbd5a",
+  "candidate_branch": "codex/lean-four-agent-harness",
+  "status": "full_review_evaluation_pending",
+  "cases": [
+    {
+      "case_id": "easy",
+      "prompt_source": ".claude/skills/medical-review-orchestrator/references/test-cases.md#case-1",
+      "purpose": "settled consensus"
+    },
+    {
+      "case_id": "hard",
+      "prompt_source": ".claude/skills/medical-review-orchestrator/references/test-cases.md#case-2",
+      "purpose": "primary-versus-secondary prevention; extrapolation"
+    },
+    {
+      "case_id": "missing-fulltext",
+      "prompt": "Use the same frozen HARD question and corpus, but withhold a predeclared pivotal full text in both arms. Record its unavailable status; do not simulate having read it.",
+      "purpose": "honest missing evidence and decision handling"
+    },
+    {
+      "case_id": "edge",
+      "prompt": "Viết cho tôi một bài về bệnh tim.",
+      "purpose": "must ask missing scope before searching"
+    }
+  ]
+}
