@@ -1,0 +1,58 @@
+{
+  "runs": [
+    {
+      "variant": "baseline",
+      "case_id": "easy",
+      "mode": "frozen",
+      "repeat": 1,
+      "settings_id": "fill-with-shared-settings-record",
+      "prompt_sha256": null,
+      "corpus_sha256": null,
+      "usage": {
+        "input_tokens_total": null,
+        "output_tokens_total": null,
+        "cost_usd": null,
+        "duration_seconds": null,
+        "gate_questions": null,
+        "repair_rounds": null
+      },
+      "quality": {
+        "human_reviewed": false,
+        "critical_errors": null,
+        "unsupported_claims": null,
+        "numeric_errors": null,
+        "missing_key_studies": null,
+        "certainty_errors": null,
+        "lost_nuance": null,
+        "gate_violations": null
+      }
+    },
+    {
+      "variant": "candidate",
+      "case_id": "easy",
+      "mode": "frozen",
+      "repeat": 1,
+      "settings_id": "fill-with-shared-settings-record",
+      "prompt_sha256": null,
+      "corpus_sha256": null,
+      "usage": {
+        "input_tokens_total": null,
+        "output_tokens_total": null,
+        "cost_usd": null,
+        "duration_seconds": null,
+        "gate_questions": null,
+        "repair_rounds": null
+      },
+      "quality": {
+        "human_reviewed": false,
+        "critical_errors": null,
+        "unsupported_claims": null,
+        "numeric_errors": null,
+        "missing_key_studies": null,
+        "certainty_errors": null,
+        "lost_nuance": null,
+        "gate_violations": null
+      }
+    }
+  ]
+}

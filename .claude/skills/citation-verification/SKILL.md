@@ -26,7 +26,7 @@ source** side by side:
 4. **Verdict:** `PASS` / `FIX` (correctable) / `BLOCK` (unverifiable → claim must be removed).
 
 ## Defect categories (tag every issue)
-Tag each finding so the lessons-curator can build preventive rules:
+Tag each finding so the lead can build preventive rules:
 - `fabricated-citation` — reference doesn't exist / 404s.
 - `mismatched-citation` — exists but doesn't support the claim (wrong finding/population/endpoint).
 - `overstated-certainty` — language stronger than GRADE allows.
@@ -62,8 +62,7 @@ python3 .claude/skills/citation-verification/scripts/citation_audit.py \
   `placeholder_leftover` (`[N] [?] CITATION_NEEDED TODO [@NEW:…]`), `coverage_below_threshold`.
 - **WARN → for human/LLM review** (non-blocking): `number_not_in_source`, `uncited_claim`.
 - **What it does NOT check:** whether a source *supports* the sentence, whether a number is the
-  *right* one, GRADE alignment, contradictions. Those stay yours. A clean exit-0 still requires a
-  human/LLM spot-check of ~10% of cited sentences before delivery. No LLM, no network; same input →
+  *right* one, GRADE alignment, contradictions. Those stay yours. A clean exit-0 still requires independent semantic QA of all substantive claims. Human sampling is recommended and recorded honestly as completed or pending. No LLM, no network; same input →
   identical output every run. Fold its verdict into the audit report (see `references/audit.md`).
 
 ## Then score and audit
@@ -74,8 +73,17 @@ Once claim-checking passes, run two more steps before delivery:
    the **Research Map hard gate was cleared**. Emit the structured audit report.
 
 ## Output
-A claim-by-claim table: `claim | citation | verdict | problem | required correction`, **then the
+A checked-claim ID list plus a defect table: `claim_id | citation | verdict | problem | required correction`, **then the
 rubric score and audit report**, then an overall deliver / do-not-deliver decision. Send FIX/BLOCK
-items to the writer; send the tagged defect list to the lessons-curator. Never pass an unverifiable
+items to the writer; send the tagged defect list to the lead. Never pass an unverifiable
 citation — if it can't be resolved after one re-fetch, it's BLOCK. Do not deliver on a fabricated
 citation or an uncleared Research Map gate.
+
+
+## Mandatory draft-to-card check
+Use `docs/claim-links.md` and `verify_claim_links.py` before semantic QA and after final edits.
+It verifies exact draft text mappings, card/study/citation sets, source locks and draft numbers against
+linked quotes. Report `_workspace/06d_claim_audit.json`. Its successful inputs are SHA-256 bound;
+editing text, cards, links or source bytes makes the report stale. Derived numbers need an explicitly
+auditable derivation outside this supported verbatim contract; do not smuggle them in or loosen locks.
+Changing prose updates links and triggers semantic re-verification, even when quote locks still pass.

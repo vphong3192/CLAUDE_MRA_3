@@ -1,3 +1,4 @@
+from pathlib import Path
 """P3 — recall & reproducibility ledger validation.
 
 The ledger is how a recall claim stops being narration and becomes a receipt. The script
@@ -112,7 +113,7 @@ class RecallSelfConsistency(unittest.TestCase):
 
 class Fixtures(unittest.TestCase):
     def _read(self, name):
-        path = str(M.__file__).rsplit("/", 1)[0] + "/fixtures/" + name
+        path = str(Path(M.__file__).parent / "fixtures" / name)
         with open(path, encoding="utf-8") as fh:
             return fh.read()
 

@@ -4,7 +4,7 @@ description: >
   Writes an in-depth medical literature review from the appraised evidence — standard review
   structure, thematic narrative synthesis (not a paper-by-paper list), inline Vancouver numbered
   citations mapped to a hyperlinked reference list, language strength matched to GRADE certainty,
-  and honest treatment of controversy and gaps. Used by the synthesis-writer agent whenever the
+  and honest treatment of controversy and gaps. Used by the lead agent whenever the
   review draft is written or revised.
 ---
 
@@ -97,3 +97,14 @@ is actually decisive — if the evidence answered it, say so.
 When the citation-verifier returns FIX/BLOCK items, correct the claim, swap the citation, or remove
 the statement — don't defend an unsupported sentence. Preserve citation numbering stability across
 revisions where possible.
+
+
+## Claim links and economical revisions
+Follow `docs/claim-links.md`: every cited paragraph or table row has an invisible claim ID and an
+exact-text mapping in `_workspace/05b_claim_links.jsonl` to accepted cards. Use one-line numbered
+references with explicit PMID/DOI/NCT under a References/Tài liệu tham khảo heading. Keep IDs
+stable on revisions; update link text when prose changes. Do not split a paragraph solely to
+pad coverage. Reference-store entries and accepted cards are the on-disk source of citation facts;
+load each relevant entry once per batch rather than one tool call per sentence. Re-read when its
+content changes or an interpretation is uncertain. Patch affected sections, then refresh dependent
+summary/conclusions and run global checks. Evidence table comes from the renderer, not retyping.

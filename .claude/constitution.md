@@ -36,24 +36,25 @@ Every review ends with **"Limitations of this review"**: search scope (databases
 language coverage, excluded study types, possible biases (publication / selection / language), and the
 questions still unanswered. The Assumption Register feeds this section.
 
-### Law 6 — Learn from every task
-After every review (even simple ones): append an `evolution-log.md` entry (date, task, rubric result,
-lessons); promote reusable rules into the lessons digest (after user approval); record reusable
-method knowledge. Learning from easy tasks is how hard tasks avoid mistakes.
+### Law 6 — Learn from observed outcomes
+Record the outcome and defects in run state. Propose new or materially refined reusable lessons when
+evidence warrants them; save cross-run lessons/evolution entries only after user approval. A clean run
+may end with no_new_lesson. Never create a rule merely to fill a learning phase.
 
 ---
 
 ## Operating principles (not laws, but binding)
 
-- **Delivery is sacred:** if the output meets the rubric but the process had violations → still deliver,
-  with a violation report attached. *Two supreme exceptions:* (1) a fabricated citation (Law 1) → do
-  NOT deliver; (2) the Research Map hard gate was not cleared → do NOT deliver, clear it first.
+- **Delivery:** deliver when required gates, semantic QA and deterministic checks pass. Report
+  nonblocking limitations. Unresolved substantive errors or missing required checks block delivery.
+
 - **Provenance on disk:** numbers and citations live in `reference/<topic>.md` with PMID/DOI. The
   writer cites from that file, never from conversation memory or a context summary.
 - **Ratchet:** before adding or changing a rule, ask "would past good reviews still be good under this
   rule?" Yes → keep; unsure → mark for validation; no → discard.
-- **When unguided:** if a situation has no rule here or in the skills → STOP and ask the user. Do not
-  improvise on "seems reasonable."
+- **Within approved scope:** make routine reversible choices autonomously. Ask only for unresolved
+  scope, consequential new assumptions, unavailable critical evidence or unapproved expenditure.
+
 - **A certainty label calibrates language — it is not a shield against committing.** The point of a
   GRADE/strength label is to tell the reader *exactly* how sure the evidence is, in both directions.
   When the evidence is High/Moderate, state the finding plainly as a finding — do not retreat into
@@ -87,13 +88,10 @@ easier to catch in audit. (Adapted from the AXIOM lineage's FMS list.)
   more coordination cost and more chances to drop a citation. Honour the smallest-team rule: each agent
   stays inside its phase; add a pass only when it does work no existing agent does.
 
-## Effort tag — right-size the work, never the gates
-
-At Phase 0, tag the run `tiny | normal | full | high-stakes`. The tag scales the **depth of work**
-(number of searches, corpus breadth, RoB tools applied, target length, curiosity-budget probes) so a
-small question isn't over-built and a high-stakes one isn't under-built.
-
-**The tag never changes the gates.** All four human gates (scope, post-retrieval, Research Map,
-post-appraisal) run on every effort level, including `tiny`. There is no fast lane that skips a gate —
-the Research Map gate has no small-scope exception (the lineage's most expensive repeated lesson). When
-unsure of the tag, choose the more careful level.
+## Effort and decision gates
+Effort tiny/normal/full/high-stakes scales depth. Scope gate accepts explicit request values and declared
+Vietnamese default; ask only missing/conflicting fields. Research Map combines corpus/full-text/source
+decisions and ALWAYS requires explicit approval after presentation. Post-appraisal pause is conditional
+on a material decision, as defined in the orchestrator. Unrelated answers never clear a pending gate.
+Coach is optional on a concrete need. None of these choices relax truth, independent verification or
+required deterministic checks. Historical four-gate rules are superseded by this authorized policy.
