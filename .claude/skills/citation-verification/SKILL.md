@@ -68,8 +68,16 @@ python3 .claude/skills/citation-verification/scripts/citation_audit.py \
 
 ## Then score and audit
 Once claim-checking passes, run two more steps before delivery:
-1. **Rubric** (`references/rubric.md`) — 6 weighted criteria, each scored with cited evidence from the
-   output → total + band (EXCEEDED/MET/ADEQUATE/BELOW/FAIL). Any fabricated citation → AUTO-FAIL (Law 1).
+1. **Rubric** (`references/rubric.md`) — judge the 6 criteria, each with cited evidence from the output
+   and its count of passed boxes. Then let the script do the arithmetic — never total it by hand:
+   ```
+   python3 .claude/skills/citation-verification/scripts/rubric_total.py \
+     --score T1=<s> … --score T6=<s> --boxes T1=<passed>/7 … --boxes T6=<passed>/4 [--fabricated]
+   ```
+   It snaps every score **down** to the grid (rule 3), allows 1.0 only with every box passed (rule 2),
+   applies the T1/T2 box ceilings, and prints the weighted total + band; `--fabricated` → T5 = 0 and
+   AUTO-FAIL (exit 1, Law 1). Paste its table into the report and use its total. It does not judge
+   levels — that stays yours.
 2. **Audit** (`references/audit.md`) — process + law-compliance + scope integrity, including whether
    the **Research Map hard gate was cleared**. Emit the structured audit report.
 

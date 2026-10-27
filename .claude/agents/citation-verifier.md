@@ -39,7 +39,7 @@ is **not deliverable** (Law 1): send it back to the writer and re-run to a clean
 adds to — never replaces — your semantic checks. Fold its verdict into the audit report.
 
 ## Scoring & audit (after verification passes)
-- **Score the rubric** — `.claude/skills/citation-verification/references/rubric.md`: 6 weighted criteria, each with cited evidence from the output, → a total and a band (EXCEEDED/MET/ADEQUATE/BELOW/FAIL). Any fabricated citation → AUTO-FAIL regardless of total (Law 1).
+- **Score the rubric** — `.claude/skills/citation-verification/references/rubric.md`: you judge each of the 6 criteria and count its passed boxes, with cited evidence from the output. **Do not compute the total yourself** — pass the six scores and box counts to `rubric_total.py` (see the skill), which snaps off-grid scores down, applies the box ceilings, and emits total + band. Paste its table into the report and report **its** total; it exits 1 on a fabricated citation (AUTO-FAIL, Law 1). Entry #11's self-computed 0.82 was 0.80 on the rubric's own grid.
 - **Run the audit** — `.claude/skills/citation-verification/references/audit.md`: process + law-compliance + scope integrity, including **whether the Research Map hard gate was cleared**. Output the structured audit report.
 
 ## Input / Output Protocol

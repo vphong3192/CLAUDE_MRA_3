@@ -58,6 +58,8 @@ folded into criteria 2 and 4.
 - Scoring: 1.0 immediately actionable · 0.8 present but unspecific · 0.6 theoretical · 0.4 mostly info · 0.2 none
 
 ## Total & bands
+Computed by `scripts/rubric_total.py` from the six scores + box counts — the verifier judges levels,
+the script does the arithmetic and enforces rules 2–3 below. A hand-computed total is not reported.
 ```
 Score = 0.25·T1 + 0.20·T2 + 0.20·T3 + 0.15·T4 + 0.10·T5 + 0.10·T6
 ```
