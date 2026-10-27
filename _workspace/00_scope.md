@@ -25,3 +25,9 @@ Case 1 (EASY) of `references/test-cases.md`; PASS = rubric ≥0.70 · no Law-1 v
 gate cleared · Vietnamese output.
 
 All four human gates (scope ✔, Gate 2b, Research Map, Gate 4b) apply.
+
+## Amendment — length (2026-10-27, Phase 5)
+The first draft's main text came to ~4,700 syllable-tokens (Vietnamese words are counted per syllable, as word
+processors do), roughly 3× the confirmed "~1500 từ". The lead asked the user; the user's answer (verbatim):
+**"Rút còn ~1800–2000 từ (Recommended)"** → target main text ~1,800–2,000 syllable-tokens, excluding title,
+references, the summary-of-findings table and any appendix. All mandatory sections retained.
