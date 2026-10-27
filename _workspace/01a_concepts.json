@@ -1,0 +1,7 @@
+{"concepts": [
+  {"name": "population", "terms": ["type 2 diabetes", "type 2 diabetes mellitus", "T2D", "T2DM", "diabetes mellitus, type 2", "đái tháo đường týp 2", "non-insulin-dependent"]},
+  {"name": "intervention", "terms": ["metformin", "biguanide", "metformin extended-release", "metformin XR"]},
+  {"name": "comparator", "terms": ["placebo", "sulfonylurea", "DPP-4", "SGLT2", "GLP-1", "insulin", "versus", "compared with", "no metformin"]},
+  {"name": "outcome", "terms": ["HbA1c", "glycated hemoglobin", "cardiovascular", "MACE", "mortality", "death", "lactic acidosis", "vitamin B12", "gastrointestinal", "hypoglycemia", "body weight", "kidney", "eGFR", "heart failure", "safety", "adverse"]}
+ ],
+ "scope_terms": ["diabet", "glyc", "metformin"]}
