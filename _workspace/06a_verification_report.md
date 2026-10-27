@@ -3,7 +3,7 @@
 **Verifier:** citation-verifier (independent; read draft + store + cards + NCBI XML in `source/metformin-t2d/` directly; `05b_writer_notes.md` used only to locate items).
 **Draft verified:** `_workspace/05_draft_review.md` (commit ae13729 + f066067). **Pass:** 1 (first verification).
 
-## DECISION: **FIX — do NOT deliver yet; `06_final_review.md` NOT produced.**
+## DECISION (Round 1): FIX — superseded by **Round 2 below: PASS**.
 No fabricated or unresolvable citation (no BLOCK). Law 1 clean, Research Map gate cleared, Vietnamese, rubric 0.785 (MET) — the regression Case-1 PASS criteria are met. But 12 FIX items remain, five of them substantive misreads or over-readings (F1–F5) that a clinician reader would act on. All are correctable with word-neutral edits.
 
 ---
@@ -174,3 +174,69 @@ Evolution-log entry (regression Case 1, EASY): rubric 0.785 MET pre-FIX; first-p
 
 ## Next step
 Writer applies F1–F12 (net words ≤ 0); verifier re-runs: `citation_audit.py` on the revised file, quick re-check of F1–F5 against the cards, then produces `06_final_review.md` (clean, no internal notes) and refreshes `06b_citation_audit.md` against it.
+
+
+---
+
+# ROUND 2 — re-verification after writer fixes (commit 5be4cf1) · 2026-10-27
+
+**Decision: PASS — deliverable.** `06_final_review.md` written (byte-identical copy of the verified `05_draft_review.md`; it already contains no internal notes).
+Method: read the revised draft directly; checked each F1–F12 against the text and the NCBI sources/cards (the writer's "Phase 6 fixes (round 1)" notes used only to locate edits); re-read every changed sentence for new errors.
+
+## Mechanical floors (re-run)
+| Check | Result |
+|---|---|
+| `verify_quotes.py` | 104 accepted / 0 rejected, exit 0. Cards and store unchanged since Round 1 (`git diff` touches only the draft and writer notes), and no cited number changed. |
+| `citation_audit.py` on `06_final_review.md` → `06b_citation_audit.md` | **PASS, exit 0**; 0 HARD-FAIL; 33 entries / 33 inline; 33/39 store records cited (85%); 3 WARN (formatting only: "1.000" ×2, "44,2"). |
+| Numbers with no card | Same set as Round 1 (301, 816, 71, 2008, PRISMA counts), all verified in NCBI text; none new. |
+| References | 33 entries unchanged (identity check from Round 1 still valid; reference text not edited except F12 tag removal). No `(MET-…)` tags, no "Bản nháp", no italic internal header remain (`grep` clean). Dropped M02/M13/M17 still not cited. |
+| Length (amendment method) | **1,996 tokens incl. title / 1,974 excl. title**, title to the `## 6.` heading. Within "~1800–2000". |
+
+## F1–F12 disposition
+| # | Status | Verified against |
+|---|---|---|
+| F1 | **Closed** | §3.3 no longer carries 0.98; §3.4.1 bullets give 45–59 aHR 1.16 (0.95–1.41) and 30–44 aHR 1.09 (0.83–1.44) = card S01-c1; SoF row labels 0.98 "toàn đoàn hệ (mọi mức eGFR)". |
+| F2 | **Closed** | §3.2: AHRQ CV mortality lower [2]; Cochrane all-cause similar [12]; "không nhất quán" removed; SoF labels 31/1454 vs 31/1441 "tử vong chung (hai kết cục khác nhau)" — matches Cochrane abstract. |
+| F3 | **Closed** | "chỉ" removed; pooled-controls NS [3]; vs placebo in CKD incl. ADPKD [14] (card H14-c3/c4). |
+| F4 | **Closed** (one minor wording note, R2-1) | (a) conclusion now "ước tính điểm chỉ nghiêng về nhồi máu…"; (b) steelman scoped to "đơn trị … tử vong chung và nhồi máu [4,5,11]"; (c) "khoảng tin cậy của đột quỵ … 48%" = H04-c5; (d) "Thành phần MACE theo Griffin" [4]. |
+| F5 | **Closed** | Summary "bằng chứng chủ yếu trên nền metformin [9]" (M01-c1/c2); §3.5 and SoF now state scoped absence plus Silverii's direct metformin–SGLT2i comparison favouring metformin but inconsistent with NMA [6] = card H10-c6, cited [6]. |
+| F6 | **Closed** | "các ước tính hiệu ứng chính đã khoá…"; "Tổng quan có phương pháp (PRISMA, GRADE), đề cương lưu trước". |
+| F7 | **Closed** | HbA1c [1] vs AHRQ [2] split (H07-c1); "chênh lệch tới 5 kg" (H07-c2). |
+| F8 | **Closed** | "chưa xác định được vì chỉ đọc được tóm tắt"; "cân nhắc phối hợp" (H01-c2); mortality [5], tim–thận [29] (H09-c1; Shi abstract also reports CV death/HF/ESKD benefit). |
+| F9 | **Closed** | NCT02915198 separated from [4,12] and hyperlinked (`clinicaltrials.gov/study/NCT02915198`, confirmed to exist in Round 1); Limitations add "Consensus 10; medRxiv một trang, một chuyên mục" (`02a` rows C1–C3, M1). |
+| F10 | **Closed** | SoF split: RCT RR 1.00 [14]; Clegg MACE HR 0.91 [23] labelled "không ngẫu nhiên", GRADE Rất thấp (appraisal §3, M15 under "Mortality/CV benefit in CKD G1–3 (obs)"); §3.4.1 text says "so sánh không ngẫu nhiên". |
+| F11 | **Closed** | Summary and §5: "dùng được khi eGFR ≥30 … [GRADE: thấp]". |
+| F12 | **Closed** | Internal tags removed (see above). |
+
+## Changed sentences re-checked for new errors — none blocking
+- §5 now one paragraph; each clause cites an accepted source ([22] doses are in §3.4.1; [15] XR; [17,18,20] B12; [27] cirrhosis; [5] organ protection — Shi abstract supports). Dialysis contraindication is no longer written out; "chống chỉ định <30" remains in §3.4.1/§4.2(2). Acceptable.
+- §2 no longer lists pre-registered subgroups, but each keeps its labelled heading (§3.4.1–3.4.4, §3.5, §3.3) — L-038 intact.
+- §4.3 dropped the UKPDS-applicability clause (still stated in §3.2) and "(đánh giá tạm thời)"; Law 5 elements (databases/scope, language, bias, unanswered) remain.
+- **R2-1 (advisory, non-blocking, originated in my own suggested wording):** §4.2(1) "ước tính điểm chỉ nghiêng về nhồi máu, không về … tử vong tim mạch": the CV-death point estimate is 0.97 (essentially null) and "đơn trị" does not strictly describe Shi [5] (add-on to standard care). Hedged, GRADE-Low language; does not mislead on direction or size. Optional polish: "rõ nhất ở nhồi máu".
+- Unchanged advisories not applied (writer's length cap): A1 label "nhiều khả năng do nhiễu"/"khó tin" as inference; A4 "trong các phân tích gộp RCT"; A5 COI note.
+
+## Rubric (Round 2; anti-inflation applied)
+| Criterion (weight) | Score | Evidence |
+|---|---|---|
+| T1 Search (25%) | **0.8** | Unchanged: 6/7; MeSH/keywords still not in the draft's Methods (they are in `01_protocol.md`); Limitations now also disclose capped Consensus/medRxiv coverage. |
+| T2 Source quality (20%) | **0.8** | Unchanged: 22/33 SR/NMA + guideline (67%), ≈80% with large cohorts; 9/16 HIGH abstract-only (declared). |
+| T3 Synthesis (20%) | **0.8** | Thematic; three steelmen, the over-absolute one now scoped; Silverii direct comparison restored to controversy (3); mechanism still barely discussed. |
+| T4 Appraisal (15%) | **0.8** | Language now calibrated both ways (F3/F4/F11 fixed); abstract-vs-text discrepancies disclosed; COI still unflagged; inference labels (A1) not all applied. |
+| T5 Citation accuracy (10%) | **0.9** | 33/33 resolve and match PubMed; 0 fabricated; F1/F2/F7/F10 mismatches corrected and re-read against sources; residual: NCT cited as inline link (not numbered), 5 non-card numbers (verified), unlabelled inferences. |
+| T6 Applicability (10%) | **0.9** | Dosing by eGFR, B12, XR, cirrhosis caution, "do not continue <30"; limits stated; practice items now compressed into one sentence in §5 but doses remain in §3.4.1. |
+
+**TOTAL = 0.25·0.8 + 0.20·0.8 + 0.20·0.8 + 0.15·0.8 + 0.10·0.9 + 0.10·0.9 = 0.82 → MET.** (Round 1: 0.785.)
+
+## Audit report (Round 2)
+```
+RUBRIC TOTAL: 0.82 → MET
+PROCESS: 8/8 PASS   LAWS: 6/6 PASS (Law 6 pending Phase 7)   SCOPE: PASS
+DETERMINISTIC CITATION AUDIT: PASS (exit 0) on 06_final_review.md
+QUOTE LOCKS: 104/0
+RESEARCH MAP GATE: CLEARED ("Duyệt, tiếp tục", 03a_gate_approval.md; commit 54b04d4 precedes appraisal and draft)
+VIOLATIONS: none (Round-1 process overclaim F6 corrected)
+DECISION: [x] Deliver — no violations; advisory R2-1, A1, A4, A5 optional
+```
+Regression Case 1 (EASY) PASS criteria: rubric ≥0.70 ✔ (0.82) · no Law-1 violation ✔ · Research Map gate cleared ✔ · Vietnamese ✔.
+
+**For the lead:** (1) `06c_manifest.md` row "Phase 6 QA / rubric / violations" is still pending — fill with 0.82 MET, 0 violations, and the Round-1 → Round-2 history. (2) Phase 7 candidate lessons are in Round 1 §F; add: a verifier suggestion can itself over-read (R2-1) — prefer quoting the CI-compatible range over a "not from X" formulation.
