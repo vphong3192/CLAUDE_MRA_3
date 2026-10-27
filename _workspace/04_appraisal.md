@@ -362,3 +362,4 @@ regenerate 04a–04c; everything numbered above 04 becomes stale.
 - Q3 landmark review: **"Không cần (Recommended)"**.
 - Q4 SR risk-of-bias tool: **"Đồng ý ROBIS rút gọn (Recommended)"**.
 Gate 4b approval: pending (asked separately).
+- **Gate 4b — CLEARED.** Gate-closing question asked alone: "Gate 4b: Có muốn điều chỉnh gì trước khi viết bài không? Anh có duyệt kết quả thẩm định … để tôi chuyển sang Phase 5 viết bài không?" User's answer (verbatim): **"Duyệt, tiếp tục"**.
