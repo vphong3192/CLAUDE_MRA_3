@@ -17,7 +17,8 @@
     "Protocol, design or baseline-characteristics report without results": 3,
     "Registry entry of the Lim 2025 RCT (verdict recorded on the publication record)": 1,
     "Surrogate heart-failure markers only; mixed diabetic/non-diabetic populations": 1,
-    "Systematic review limited to newer agents; metformin not evaluated": 1
+    "Systematic review limited to newer agents; metformin not evaluated": 1,
+    "excluded at Gate 2b by user decision": 7
   },
   "identified_other_breakdown": {},
   "labels": {
@@ -33,12 +34,12 @@
     "deferred_not_screened": 68,
     "duplicates_removed": 31,
     "eligible_for_screening": 218,
-    "excluded_title_abstract": 116,
+    "excluded_title_abstract": 123,
     "identified": 250,
     "identified_databases_registers": 250,
     "identified_other_methods": 0,
-    "included": 23,
-    "maybe_not_included": 11,
+    "included": 27,
+    "maybe_not_included": 0,
     "retracted_removed": 1,
     "screened_title_abstract": 150,
     "verdicts_recorded": 150

@@ -4,13 +4,13 @@
 > Every PMID/DOI below was confirmed against PubMed metadata (title + first author + year + journal) in this run (L-009). Titles are copied from PubMed metadata (L-035); where the PubMed export stripped the subscript "12" of vitamin B12 in two titles, the digits were restored from the Consensus/PubMed display.
 > Fulltext legend: `retrieved` = body text read; `available` = PMC record exists but the MCP returned abstract only; `unavailable` = no PMCID / paywalled.
 > `study_context` / `study_limitations` / `author_suggestions` are filled ONLY for records read in full text; otherwise `not captured (abstract-only)`.
-> **Not yet approved by the user (Gate 2b):** records below are the retriever's inclusion verdicts on title/abstract; the user may drop, re-tier or add. Records listed under "Uncertain" are NOT citable until approved.
+> **Gate 2b status:** user decisions on content applied (4 uncertain records included, 7 excluded); Gate 2b approval itself NOT yet given.
 > **Retraction screen:** Elicit `retracted` filter unavailable (account has no API access). Substitute check: PubMed publication-type query `metformin AND "type 2 diabetes" AND "Retracted Publication"[pt]` 2015-2026 returned 15 PMIDs; none is in this store; one retrieved record (Hasan 2025, PMID 40323973, title begins "RETRACTED:") was removed before screening. This substitute does not cover retractions not yet flagged in PubMed.
 
 ## Summary
-- Included in store: **29 studies** (HIGH 14 / MEDIUM 15); of which 23 passed the pipeline screening and 6 (MET-H02, H03, M12, M13, M14, M15) were DEFERRED by the automated prefilter (thin metadata/low concept score, i.e. unread by the pipeline) and were added by hand after known-item guideline/Vietnam/CKD searches - PRISMA 'included' (23) therefore does not count them; the Methods text must say so.
-- HIGH records with full text read: 6 of 14 (MET-H04, H05, H08, H10, H12, H13); abstract-only: 8 (MET-H01, H02, H03, H06, H07, H09, H11, H14).
-- Evidence-hierarchy mix: guidelines/consensus 6 entries; SR/MA/NMA 17; primary RCT-derived/cohort/cross-sectional/PK studies 6.
+- Included in store: **33 studies** (HIGH 14 / MEDIUM 19); of which 27 passed the pipeline screening (23 initially + 4 uncertain records included at Gate 2b by the user) and 6 (MET-H02, H03, M12, M13, M14, M15) were DEFERRED by the automated prefilter (thin metadata/low concept score, i.e. unread by the pipeline) and were added by hand after known-item guideline/Vietnam/CKD searches - PRISMA 'included' (23) therefore does not count them; the Methods text must say so.
+- HIGH records with full text read: 6 of 14 (MET-H04, H05, H08, H10, H12, H13); abstract-only: 8 (MET-H01, H02, H03, H06, H07, H09, H11, H14) - unchanged after the Gate 2b full-text attempts (PMC bodies not served by the MCP; WebFetch DNS-blocked).
+- Evidence-hierarchy mix: guidelines/consensus 6 entries; SR/MA/NMA 18; primary RCT-derived/cohort/cross-sectional/PK/descriptive studies 8; Level III review 1 (MET-M18).
 
 ## Entries
 
@@ -20,7 +20,7 @@
 - **authors / journal / year:** Davies MJ; Aroda VR; Bajaj M; ElSayed NA; Giorgino F; Green J et al. - Diabetes Care - 2026
 - **source_type:** peer-reviewed (major-body consensus report, parallel publication in Diabetes Care and Diabetologia = one document)
 - **retrieved via:** PubMed | hit in P4/P10 (screened: include); both PMIDs verified by metadata (first author Davies MJ; Diabetes Care DOI 10.2337/dci26-0141; Diabetologia DOI 10.1007/s00125-026-06855-7; Diabetologia date 2026-10-02)
-- **relevance_tier:** HIGH | **fulltext:** unavailable (no PMCID; MCP abstract only)
+- **relevance_tier:** HIGH | **fulltext:** unavailable (no PMCID; MCP abstract only; Gate 2b web fallback: WebSearch found only press release/secondary coverage and an ADA PDF URL diabetes.org/sites/default/files/2026-10/26.09.30_Management of T2D consensus statement_FINAL.pdf, but WebFetch cannot reach any host (DNS) so the text could not be read)
 - **verified finding (captured 2026-10-27):** Abstract: update of the 2022 ADA/EASD consensus (nonpregnant adults); broadens focus from hyperglycaemia to holistic management of T2D and associated long-term conditions; "earlier use, potentially from diagnosis, of SGLT2 inhibitors and/or GLP-1-based therapies to offer organ protection" is advocated; earlier combination of SGLT2i and GLP-1-based therapy should be considered with concomitant CVD, CKD, HF. The abstract does NOT state metformin's position - it must be read from the full text (not retrievable here).
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
@@ -33,7 +33,7 @@
 - **authors / journal / year:** Bajaj M; McCoy RG; Balapattabi K; et al. [authors per secondary web source; PubMed metadata gave no author list] - Diabetes Care - 2026
 - **source_type:** peer-reviewed (major-body guideline: ADA Standards of Care 2026, section 9)
 - **retrieved via:** PubMed | PMID/DOI verified by PubMed metadata (DOI 10.2337/dc26-S009; title as stored); authors/pages (Bajaj M, McCoy RG, Balapattabi K, et al.; Diabetes Care 2026;49(Suppl 1):S183-S215, published 2025-12-08) come from a secondary web source - PubMed metadata gave no author list; DEFERRED by prefilter, added by known-item guideline search
-- **relevance_tier:** HIGH | **fulltext:** available (PMC12690185, open access) - MCP get_full_text returned abstract only
+- **relevance_tier:** HIGH | **fulltext:** unavailable via tools (PMC12690185 exists, open access; MCP get_full_text returned abstract only on 2 attempts; WebFetch to pmc.ncbi.nlm.nih.gov failed: DNS)
 - **verified finding (captured 2026-10-27):** PubMed abstract is generic (annual update of ADA Standards of Care). Recommendation text on metformin NOT captured. A secondary web summary (not a citable source) reports 2026 changes on oral semaglutide/tirzepatide ASCVD data and HF recommendations; unverified.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
@@ -46,7 +46,7 @@
 - **authors / journal / year:** KDIGO Diabetes Work Group - Kidney Int - 2022
 - **source_type:** peer-reviewed (major-body guideline: KDIGO 2022 diabetes in CKD) + linked executive summary PMID 36272755 (Rossing P; DOI 10.1016/j.kint.2022.06.013)
 - **retrieved via:** PubMed | PMID 36272764 / DOI 10.1016/j.kint.2022.06.008 verified (Kidney Int, 2022); first author not provided by PubMed (KDIGO Diabetes Work Group); DEFERRED by prefilter, added by known-item guideline search
-- **relevance_tier:** HIGH | **fulltext:** unavailable (PubMed record has no abstract; no PMCID)
+- **relevance_tier:** HIGH | **fulltext:** unavailable (PubMed record has no abstract; no PMCID; Gate 2b web fallback: kdigo.org not reachable - WebFetch DNS failure; WebSearch returned only secondary summaries)
 - **verified finding (captured 2026-10-27):** No abstract in PubMed. Metformin/eGFR thresholds NOT captured.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
@@ -85,7 +85,7 @@
 - **authors / journal / year:** Gnesin F; Thuesen ACB; Kähler LKA; Madsbad S; Hemmingsen B - Cochrane Database Syst Rev - 2020
 - **source_type:** peer-reviewed (Cochrane SR/MA, GRADE)
 - **retrieved via:** PubMed (P9/P15) | PMID verified (Gnesin F, Cochrane Database Syst Rev 2020, DOI 10.1002/14651858.CD012906.pub2)
-- **relevance_tier:** HIGH | **fulltext:** available (PMC7386876) - MCP body empty, abstract only
+- **relevance_tier:** HIGH | **fulltext:** unavailable via tools (PMC7386876 exists; MCP body empty on 2 attempts; WebFetch DNS failure)
 - **verified finding (captured 2026-10-27):** 18 RCTs (N=10,680), >=1 year; no trial at low risk of bias; no trial compared metformin with placebo or behaviour-change interventions. Versus sulphonylureas (7 trials): all-cause mortality 31/1454 vs 31/1441 (very low certainty). Versus TZDs RR 0.88 (0.55-1.39); no substantial differences vs DPP-4i or GLP-1 RA. All outcomes very low certainty. Conclusion: no clear evidence on patient-important outcomes of metformin monotherapy vs no intervention, behaviour change or other drugs. 4 ongoing trials (5824 participants) due 2018-2024.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
@@ -189,7 +189,7 @@
 - **authors / journal / year:** El-Damanawi R; Stanley IK; Staatz C; Pascoe EM; Craig JC; Johnson DW et al. - Cochrane Database Syst Rev - 2024
 - **source_type:** peer-reviewed (Cochrane SR/MA, GRADE; diabetes AND ADPKD populations)
 - **retrieved via:** PubMed (P11) + Consensus C2 | PMID verified (El-Damanawi R, Cochrane Database Syst Rev 2024, DOI 10.1002/14651858.CD013414.pub2)
-- **relevance_tier:** HIGH | **fulltext:** available (PMC11152183) - MCP body empty, abstract only
+- **relevance_tier:** HIGH | **fulltext:** unavailable via tools (PMC11152183 exists; MCP body empty on 2 attempts; WebFetch DNS failure)
 - **verified finding (captured 2026-10-27):** 11 RCTs (8,449 participants; 4 ADPKD, 7 diabetes), search to 2023-07-19. Metformin vs placebo: slightly smaller eGFR decline MD 1.92 mL/min (0.33-3.51; low certainty); death RR 1.00 (0.76-1.32; moderate); serious AE RR 1.15 (0.76-1.72; moderate); intolerance leading to withdrawal RR 2.19 (1.46-3.27; moderate). Versus active controls: death RR 0.95 (0.63-1.43; low); albuminuria (UACR) may increase MD 14.61 (8.17-21.05; low). Authors: lack of RCTs on kidney function in CKD; 7 ongoing studies.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** Abstract: GRADE mostly low/very low; two abstract-only studies at high risk of bias.
@@ -391,25 +391,76 @@
 - **author_suggestions:** not captured (abstract-only)
 - **retriever note:** deferred by prefilter -> hand-added.
 
-## Uncertain - listed for the user at Gate 2b (NOT citable until approved)
+### MET-M16 - Charytan DM 2019 (MEDIUM)
+- **stable_id:** PMID 30672083 / DOI 10.1111/dom.13642
+- **title (verbatim, PubMed):** Metformin use and cardiovascular events in patients with type 2 diabetes and chronic kidney disease.
+- **authors / journal / year:** Charytan DM; Solomon SD; Ivanovich P; et al. - Diabetes Obes Metab - 2019
+- **source_type:** peer-reviewed (post hoc analysis of RCT TREAT, NCT00093015)
+- **retrieved via:** PubMed (P15) + Consensus C2 | PMID verified (Charytan DM, Diabetes Obes Metab 2019, DOI 10.1111/dom.13642); uncertain -> included at Gate 2b by user
+- **relevance_tier:** MEDIUM | **fulltext:** abstract-only (provisional)
+- **verified finding (captured 2026-10-27):** T2D+CKD, 591 metformin users vs 3447 non-users; PS-matched: metformin independently associated with lower all-cause mortality HR 0.49 (0.36-0.69), CV death HR 0.49 (0.32-0.74), CV composite HR 0.67 (0.51-0.88), kidney composite HR 0.77 (0.61-0.98); ESRD HR 1.01 (0.65-1.55) ns; two lactic acidosis cases. Observational analysis within a trial (confounding by indication).
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **retriever note:** Gate 2b include.
+
+### MET-M17 - Mohammadi D 2026 (MEDIUM)
+- **stable_id:** PMID 42365335 / DOI 10.1186/s13098-026-02226-9 ; PMCID PMC13573484
+- **title (verbatim, PubMed):** Comparative cardiovascular efficacy of antidiabetic therapies in type 2 diabetes: a systematic review and network meta-analysis of randomized trials.
+- **authors / journal / year:** Mohammadi D; Sadeghirad B; Rasouli MA; Saed L; Baradaran HR; Moradi Y - Diabetol Metab Syndr - 2026
+- **source_type:** peer-reviewed (SR/NMA of 133 RCTs, 289,558 participants; search to 2024-12-30)
+- **retrieved via:** PubMed (Q2/P2) | PMID verified (Mohammadi D, Diabetol Metab Syndr 2026, DOI 10.1186/s13098-026-02226-9); uncertain -> included at Gate 2b by user
+- **relevance_tier:** MEDIUM | **fulltext:** abstract-only (provisional)
+- **verified finding (captured 2026-10-27):** Abstract reports class effects for GLP-1 RA (CV mortality RR 0.85, 0.75-0.98; stroke RR 0.83) and SGLT2i (HF RR 0.64; CV hospitalisation RR 0.72), all high certainty; metformin-specific estimates NOT in the abstract. Overlaps Silverii 2026 (MET-H10).
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **retriever note:** Gate 2b include; no metformin numbers in abstract.
+
+### MET-M18 - Bin Hussain AK 2019 (MEDIUM)
+- **stable_id:** PMID 31235118 / DOI 10.1016/j.dsx.2019.04.028
+- **title (verbatim, PubMed):** Should metformin still be the first-line of treatment in type 2 diabetes mellitus? A comprehensive review and suggested algorithm.
+- **authors / journal / year:** Bin Hussain AK; Abdelgadir E; Rashid F; Al Haj A; Thadani P; Bashier AMK - Diabetes Metab Syndr - 2019
+- **source_type:** peer-reviewed narrative review (Level III; no systematic method) with suggested algorithm
+- **retrieved via:** PubMed (Q5/P5) | PMID verified (Bin Hussain AK, Diabetes Metab Syndr 2019, DOI 10.1016/j.dsx.2019.04.028); uncertain -> included at Gate 2b by user as controversy framing
+- **relevance_tier:** MEDIUM | **fulltext:** abstract-only (provisional)
+- **verified finding (captured 2026-10-27):** Reviews evidence for metformin vs SGLT2 inhibitors vs incretin-based therapies as first-line in T2D and the rationale for selection, in the light of CVOT results. Use only as Level III context for the "first-line status" controversy.
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **retriever note:** Gate 2b include (Level III).
+
+### MET-M19 - Dang KD 2024 (MEDIUM)
+- **stable_id:** PMID 39391521 / DOI 10.5114/pm.2024.141090 ; PMCID PMC11462144
+- **title (verbatim, PubMed):** Optimising antidiabetic medication management for type 2 diabetes and renal dysfunction in Can Tho City, Vietnam.
+- **authors / journal / year:** Dang KD; Nguyen HMT; Phung YP; Le TQN - Prz Menopauzalny - 2024
+- **source_type:** peer-reviewed (descriptive hospital study, VIETNAM - Can Tho)
+- **retrieved via:** PubMed (P7) | PMID verified (Dang KD, Prz Menopauzalny 2024, DOI 10.5114/pm.2024.141090); uncertain -> included at Gate 2b by user as Vietnam context
+- **relevance_tier:** MEDIUM | **fulltext:** abstract-only (provisional)
+- **verified finding (captured 2026-10-27):** Antidiabetic use in T2D with kidney failure at a Can Tho hospital: insulin monotherapy predominant; metformin the most prescribed ORAL drug; ~85.78% received safe and appropriate treatment; safe use/minimal interactions associated with reaching glucose/HbA1c targets at 3 months. Descriptive, not an efficacy/safety estimate for metformin.
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **retriever note:** Gate 2b include; Vietnam context, descriptive.
+
+## Uncertain records - RESOLVED at Gate 2b (user: include 30672083, 42365335, 31235118, 39391521; the 7 below excluded)
 | year | stable_id | what it is | why uncertain |
 |---|---|---|---|
-| 2026 | PMID 42365335 / DOI 10.1186/s13098-026-02226-9 | Comparative cardiovascular efficacy of antidiabetic therapies in type 2 diabetes: a systematic review and netw | 2026 SR/NMA of CV efficacy incl. metformin; overlaps Silverii 2026; listed for user decision |
-| 2025 | PMID 41223492 / DOI 10.1016/j.jdiacomp.2025.109214 | Empagliflozin versus metformin for glucose variability and metabolic outcomes in drug-naïve type 2 diabetes: T | Small RCT (n=46) drug-naive empagliflozin vs metformin, glycaemic-variability surrogate; listed for user decision |
-| 2024 | PMID 38719492 / DOI 10.1136/bmj-2023-077097 | Comparative effectiveness of second line oral antidiabetic treatments among people with type 2 diabetes mellit | Target-trial emulation of second-line agents added to metformin (n=75,739); metformin is background; listed for user decision |
-| 2024 | PMID 39391521 / DOI 10.5114/pm.2024.141090 | Optimising antidiabetic medication management for type 2 diabetes and renal dysfunction in Can Tho City, Vietn | Vietnamese hospital (Can Tho) antidiabetic use in kidney failure: local prescribing context, descriptive; listed for user decision |
-| 2019 | PMID 31235118 / DOI 10.1016/j.dsx.2019.04.028 | Should metformin still be the first-line of treatment in type 2 diabetes mellitus? A comprehensive review and  | Level III narrative review on whether metformin should stay first-line; useful for controversy framing; listed for user decision |
-| 2025 | PMID 41373013 / DOI 10.1186/s13098-025-02040-9 | Efficacy and safety of metformin versus empagliflozin on chronic kidney disease progression (MET-EMPA-CKD): a  | MET-EMPA-CKD RCT (n=120, mixed diabetic/non-diabetic CKD, retrospectively registered); population only partly T2D; listed for user decision |
-| 2024 | DOI 10.1101/2024.01.07.24300938 | Metformin use is associated with lower risks of dementia, anxiety and depression: The Hong Kong Diabetes Study (PREPRINT - not peer-reviewed) | medRxiv PREPRINT (not peer-reviewed): metformin vs sulphonylurea, dementia/psychiatric outcomes (HK cohort n=89,711); observational signal; listed for user decision (L-004) |
-| 2022 | PMID 36129996 / DOI 10.1056/NEJMoa2200433 | Glycemia Reduction in Type 2 Diabetes - Glycemic Outcomes. | GRADE RCT: second-line agents added to metformin (n=5047); informs add-on sequencing, not metformin itself; listed for user decision |
-| 2020 | PMID 32132005 / DOI 10.2337/dc19-0936 | The Long-term Effects of Metformin on Patients With Type 2 Diabetic Kidney Disease. | Observational DKD cohort (n=10,426): mortality/ESRD/lactic acidosis; may overlap included CKD meta-analyses; listed for user decision |
-| 2019 | PMID 30672083 / DOI 10.1111/dom.13642 | Metformin use and cardiovascular events in patients with type 2 diabetes and chronic kidney disease. | TREAT post hoc (NCT00093015) metformin in T2D+CKD: mortality HR 0.49; may overlap included CKD meta-analyses; listed for user decision |
-| 2018 | NCT NCT03627039 | Metformin And Cardiovascular Effectiveness vs SGLT2 (MACES) | Registered observational metformin-vs-SGLT2 CV effectiveness study (n=20000, status unknown); no publication found; listed for user decision |
+| 2025 | PMID 41223492 / DOI 10.1016/j.jdiacomp.2025.109214 | Empagliflozin versus metformin for glucose variability and metabolic outcomes in drug-naïve type 2 diabetes: T | excluded at Gate 2b by user decision |
+| 2024 | PMID 38719492 / DOI 10.1136/bmj-2023-077097 | Comparative effectiveness of second line oral antidiabetic treatments among people with type 2 diabetes mellit | excluded at Gate 2b by user decision |
+| 2025 | PMID 41373013 / DOI 10.1186/s13098-025-02040-9 | Efficacy and safety of metformin versus empagliflozin on chronic kidney disease progression (MET-EMPA-CKD): a  | excluded at Gate 2b by user decision |
+| 2024 | DOI 10.1101/2024.01.07.24300938 | Metformin use is associated with lower risks of dementia, anxiety and depression: The Hong Kong Diabetes Study (PREPRINT - not peer-reviewed) | excluded at Gate 2b by user decision |
+| 2022 | PMID 36129996 / DOI 10.1056/NEJMoa2200433 | Glycemia Reduction in Type 2 Diabetes - Glycemic Outcomes. | excluded at Gate 2b by user decision |
+| 2020 | PMID 32132005 / DOI 10.2337/dc19-0936 | The Long-term Effects of Metformin on Patients With Type 2 Diabetic Kidney Disease. | excluded at Gate 2b by user decision |
+| 2018 | NCT NCT03627039 | Metformin And Cardiovascular Effectiveness vs SGLT2 (MACES) | excluded at Gate 2b by user decision |
 
 ## Context-only registry records (not evidence; for the CVOT-gap statement)
 - **NCT02915198 VA-IMPACT** - metformin XR vs placebo for ASCVD outcomes in PREDIABETES (n=7,410 planned; Phase 4; recruiting; primary completion 2029-09-28; ClinicalTrials.gov via MCP, 2026-10-27). Not T2D - excluded from the evidence set but shows the only adequately-powered metformin CV outcomes trial identified is in prediabetes and unfinished.
 - **NCT03627039 MACES** - observational metformin vs SGLT2 CV effectiveness (n=20,000; status UNKNOWN; primary completion 2020-08-01); no publication found.
 - No registered, adequately powered placebo-controlled metformin CVOT in T2D was found in ClinicalTrials.gov (3 query variants, see ledger T1-T3). Griffin 2017 (MET-H04) states such a trial is unlikely.
+
+## Official-source fallback (Gate 2b item 2) - NICE NG28 and FDA 2016: NOT added to the store
+WebSearch (fallback) located NICE NG28 (secondary summaries of the Feb 2026 update; official URL https://www.nice.org.uk/guidance/ng28) and the FDA Drug Safety Communication of 2016-04-08 (official URL https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-revises-warnings-regarding-use-diabetes-medicine-metformin-certain). WebFetch to both official pages failed (getaddrinfo ENOTFOUND), so neither could be verified from the official page; per instruction they are NOT stored and carry no stable ID here. Unverified search-snippet content (do NOT cite): NG28 - modified-release metformin preferred, SGLT2i + metformin first-line dual therapy (Feb 2026), dose reduction to 1 g/day at eGFR<45; FDA - contraindicated eGFR<30, starting not recommended 30-45, reassess yearly, contrast-imaging rule. Likewise KDIGO 2022 metformin wording (eGFR>=30; 1000 mg/day at 30-44) is from a secondary summary only.
 
 ## Gaps recorded (do not paper over)
 - No source gave the text of metformin-specific guideline recommendations (ADA SOC 2026 s9, ADA/EASD 2026, KDIGO 2022): see HIGH abstract-only list.

@@ -54,10 +54,14 @@ Run date 2026-10-27 - evidence-retriever - branch `review/regression-2026-10-27`
 | X1 | Europe PMC | not run (host unreachable) | WebFetch https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:36272764&format=json&resultType=lite (3 attempts incl. fullTextXML) | 1 | 0 | capped ⚠ (SOURCE FAILED: getaddrinfo ENOTFOUND www.ebi.ac.uk, retried; not substituted) |
 | X2 | OpenAlex | not run (host unreachable) | WebFetch https://api.openalex.org/works?search=metformin%20type%202%20diabetes&per-page=1&select=id (2 attempts) | 1 | 0 | capped ⚠ (SOURCE FAILED: getaddrinfo ENOTFOUND api.openalex.org, retried; not substituted) |
 | X3 | Semantic Scholar | not run (host unreachable) | WebFetch https://api.semanticscholar.org/graph/v1/paper/search?query=metformin+type+2+diabetes&limit=1&fields=title (1 attempt) | 1 | 0 | capped ⚠ (SOURCE FAILED: getaddrinfo ENOTFOUND; single attempt, sibling hosts down - not retried) |
+| W1 | WebSearch (fallback) | NICE NG28 metformin recommendations | WebSearch query="NICE NG28 type 2 diabetes in adults management metformin recommendations eGFR" mode=standard | 9 | 0 | capped ⚠ (fallback for unsearched source; only secondary summaries; official page unreachable (WebFetch DNS) -> NOT stored) |
+| W2 | WebSearch (fallback) | FDA 2016 DSC metformin eGFR | WebSearch query="FDA Drug Safety Communication 2016 metformin-containing drugs revised warnings certain patients reduced kidney function eGFR" mode=standard | 10 | 0 | capped ⚠ (official fda.gov URL listed but WebFetch DNS failure -> unverified, NOT stored) |
+| W3 | WebSearch (fallback) | KDIGO 2022 full text | WebSearch query="KDIGO 2022 Clinical Practice Guideline Diabetes Management in Chronic Kidney Disease metformin eGFR full text kdigo.org" mode=standard | 9 | 0 | capped ⚠ (secondary summaries only; kdigo.org WebFetch DNS failure) |
+| W4 | WebSearch (fallback) | ADA/EASD 2026 full text | WebSearch query="Management of Type 2 Diabetes, 2026 consensus report ADA EASD full text metformin" mode=standard | 9 | 0 | capped ⚠ (press release/secondary coverage only; ADA PDF URL listed but WebFetch DNS failure) |
 
 ## PRISMA numbers (script-derived: `02i_prisma.json` / `02j_prisma.md`)
 
-identified 250 (databases+registers; other methods 0) -> duplicates 31 -> retracted removed 1 (Hasan 2025, DOI 10.1371/journal.pone.0321032, title begins RETRACTED) -> eligible 218 -> **deferred (UNREAD, NOT excluded) 68** | screened (title+abstract) 150 -> excluded 116 (reasons in 02j) / uncertain 11 / included 23.
+identified 250 (databases+registers; other methods 0) -> duplicates 31 -> retracted removed 1 (Hasan 2025, DOI 10.1371/journal.pone.0321032, title begins RETRACTED) -> eligible 218 -> **deferred (UNREAD, NOT excluded) 68** | screened (title+abstract) 150 -> excluded 123 (reasons in 02j; incl. 7 excluded at Gate 2b) / uncertain 0 / included 27.
 
 **Prefilter defect to note (not corrected - thresholds never loosened):** because min_candidates=150 forces a cut at the 150th of 218, studies with sparse metadata sank into the deferred (unread) pool, including key guideline documents (ADA SOC 2026 s9, KDIGO 2022 + executive summary, ADA/KDIGO 2022, ADA/EASD 2022) and Phan 2025 / Clegg 2021 / Chapman 2016. Six were rescued by hand via known-item searches and flagged in the store; the others stay deferred. Candidate lesson: guideline documents with empty abstracts need a known-item lane outside the prefilter.
 
@@ -83,6 +87,14 @@ HIGH = 14. **Full text read (6):** Griffin 2017 (28770324), Li T 2021 (33516224)
 - Two PubMed records (35121575 Drug Ther Bull summary; 35640743 Triggle 2022 review) were fetched late and are in the deferred pool, unread.
 - Silverii 2026 (abstract OR 0.69, 0.53-0.89 vs main text OR 0.68, 0.51-0.92 for metformin MACE) and Lambourg 2024 (abstract HR 1.26 vs main text HR 1.23) show abstract/text number discrepancies: the appraiser must lock numbers to the text via `verify_quotes.py` (needs text files in source/).
 - Elicit paid tools: NOT run; `get_usage` not called (API not enabled).
+
+## Gate 2b actions applied (retriever, 2026-10-27, after user content decisions)
+
+1. **Full text (item 1):** MCP get_full_text_article retried for PMC12690185 (ADA SOC 2026 s9), PMC7386876 (Gnesin Cochrane), PMC11152183 (El-Damanawi Cochrane): body text empty again (abstract only). WebFetch to pmc.ncbi.nlm.nih.gov failed (getaddrinfo ENOTFOUND); every external host (pmc, fda.gov, nice.org.uk, kdigo.org, diabetes.org) is unreachable via WebFetch in this environment. WebSearch for ADA/EASD 2026 and KDIGO 2022 returned only press release/secondary coverage. **No full text obtained; no text file written to source/** (nothing to extract). All five stay `unavailable via tools`.
+2. **WebSearch fallback (item 2):** ledger rows W1-W4. NICE NG28 and FDA 2016 DSC found by search but NOT verifiable from the official pages -> not added to the store (no official-page URL+access-date verification possible). Search-snippet content is recorded in the store as unverified/do-not-cite.
+3. **Uncertain records (item 3):** included 30672083 (MET-M16), 42365335 (MET-M17), 31235118 (MET-M18, Level III), 39391521 (MET-M19); excluded 7 (41223492, 38719492, 36129996, 41373013, 32132005, medRxiv 10.1101/2024.01.07.24300938, NCT03627039) with reason "excluded at Gate 2b by user decision". 02h_verdicts.jsonl updated; prisma_flow.py rerun: exit 0; included 27, excluded 123, uncertain 0, deferred-unread 68.
+4. **HIGH abstract-only recount (item 4):** still **8 of 14**: MET-H01 ADA/EASD 2026; MET-H02 ADA SOC 2026 s9; MET-H03 KDIGO 2022; MET-H06 Gnesin Cochrane; MET-H07 Maruthur 2016; MET-H09 Nong 2025; MET-H11 Patino-Cardona 2026; MET-H14 El-Damanawi Cochrane. Full text read: 6.
+5. **Still unresolved:** metformin recommendation text of ADA/EASD 2026, ADA SOC 2026 s9, KDIGO 2022 (and NICE NG28 / FDA label) -> Limitations unless the user supplies PDFs/text to `source/`. Gate 2b approval itself not yet given.
 
 ## Gate 2b — user decisions (2026-10-27, lead-recorded, verbatim structured answers)
 Content decisions asked separately from the gate-closing question (L-044):

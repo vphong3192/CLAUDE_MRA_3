@@ -2,7 +2,7 @@
 {"study_id": "doi:10.1016/j.diabres.2026.113503", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/s0140-6736(26)01865-9", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.4067/s0034-98872026000701070", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
-{"study_id": "doi:10.1186/s13098-026-02226-9", "verdict": "maybe", "reason": "2026 SR/NMA of CV efficacy incl. metformin; overlaps Silverii 2026; listed for user decision"}
+{"study_id": "doi:10.1186/s13098-026-02226-9", "verdict": "include", "reason": "Included at Gate 2b by user decision (Nhan 4 bai co ich). 2026 SR/NMA of CV efficacy incl. metformin; overlaps Silverii 2026; listed for user decision"}
 {"study_id": "doi:10.1007/s41999-026-01608-6", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}
 {"study_id": "doi:10.1186/s12933-026-03346-2", "verdict": "exclude", "reason": "Narrative review/editorial without systematic method"}
 {"study_id": "doi:10.3389/fendo.2026.1877839", "verdict": "exclude", "reason": "Intervention is early insulin add-on; no metformin-vs-no-metformin contrast"}
@@ -26,17 +26,17 @@
 {"study_id": "doi:10.1001/jamainternmed.2024.5982", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}
 {"study_id": "doi:10.1007/s12325-025-03323-3", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/s2213-8587(25)00196-2", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
-{"study_id": "doi:10.1016/j.jdiacomp.2025.109214", "verdict": "maybe", "reason": "Small RCT (n=46) drug-naive empagliflozin vs metformin, glycaemic-variability surrogate; listed for user decision"}
+{"study_id": "doi:10.1016/j.jdiacomp.2025.109214", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.1016/s2213-8587(25)00022-1", "verdict": "exclude", "reason": "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)"}
 {"study_id": "doi:10.1111/dom.16647", "verdict": "exclude", "reason": "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)"}
 {"study_id": "doi:10.1111/dom.70320", "verdict": "exclude", "reason": "Protocol, design or baseline-characteristics report without results"}
 {"study_id": "doi:10.2337/dc24-2825", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/j.jacc.2024.05.069", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
-{"study_id": "doi:10.1136/bmj-2023-077097", "verdict": "maybe", "reason": "Target-trial emulation of second-line agents added to metformin (n=75,739); metformin is background; listed for user decision"}
+{"study_id": "doi:10.1136/bmj-2023-077097", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.4093/dmj.2023.0077", "verdict": "exclude", "reason": "Fixed-dose combination with statin; lipid/glycaemic surrogate endpoints; metformin effect not isolated"}
 {"study_id": "doi:10.1007/s12325-024-03037-y", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1007/978-3-031-63657-8_17", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}
-{"study_id": "doi:10.5114/pm.2024.141090", "verdict": "maybe", "reason": "Vietnamese hospital (Can Tho) antidiabetic use in kidney failure: local prescribing context, descriptive; listed for user decision"}
+{"study_id": "doi:10.5114/pm.2024.141090", "verdict": "include", "reason": "Included at Gate 2b by user decision (Nhan 4 bai co ich). Vietnamese hospital (Can Tho) antidiabetic use in kidney failure: local prescribing context, descriptive; listed for user decision"}
 {"study_id": "doi:10.1053/j.ajkd.2024.08.012", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
 {"study_id": "doi:10.1111/dom.15724", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/j.diabres.2024.111717", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
@@ -62,7 +62,7 @@
 {"study_id": "doi:10.1016/s2213-8587(19)30311-0", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/j.diabres.2019.04.008", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1177/1060028019889064", "verdict": "exclude", "reason": "Narrative review/editorial without systematic method"}
-{"study_id": "doi:10.1016/j.dsx.2019.04.028", "verdict": "maybe", "reason": "Level III narrative review on whether metformin should stay first-line; useful for controversy framing; listed for user decision"}
+{"study_id": "doi:10.1016/j.dsx.2019.04.028", "verdict": "include", "reason": "Included at Gate 2b by user decision (Nhan 4 bai co ich). Level III narrative review on whether metformin should stay first-line; useful for controversy framing; listed for user decision"}
 {"study_id": "doi:10.1007/s00592-018-1271-3", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1007/s11892-018-1043-z", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.3310/hta21020", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
@@ -101,7 +101,7 @@
 {"study_id": "doi:10.2337/dc25-0241", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1111/jdi.70103", "verdict": "exclude", "reason": "Letter/comment, no primary data"}
 {"study_id": "doi:10.1111/jdi.70037", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
-{"study_id": "doi:10.1186/s13098-025-02040-9", "verdict": "maybe", "reason": "MET-EMPA-CKD RCT (n=120, mixed diabetic/non-diabetic CKD, retrospectively registered); population only partly T2D; listed for user decision"}
+{"study_id": "doi:10.1186/s13098-025-02040-9", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.1186/s12967-025-06357-x", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}
 {"study_id": "title:medication time of metformin and sulfonylureas and incidence", "verdict": "exclude", "reason": "No stable identifier verified (Consensus-only record; PMID/DOI not confirmed in PubMed) - not citable (L-009)"}
 {"study_id": "doi:10.1136/bmj-2024-083039", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
@@ -115,7 +115,7 @@
 {"study_id": "doi:10.17925/ee.2024.20.2.7", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
 {"study_id": "doi:10.12688/wellcomeopenres.19455.2", "verdict": "exclude", "reason": "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)"}
 {"study_id": "doi:10.1002/14651858.cd013414.pub2", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
-{"study_id": "doi:10.1101/2024.01.07.24300938", "verdict": "maybe", "reason": "medRxiv PREPRINT (not peer-reviewed): metformin vs sulphonylurea, dementia/psychiatric outcomes (HK cohort n=89,711); observational signal; listed for user decision (L-004)"}
+{"study_id": "doi:10.1101/2024.01.07.24300938", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.7326/m23-2788", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
 {"study_id": "doi:10.7326/m23-1490", "verdict": "exclude", "reason": "Systematic review limited to newer agents; metformin not evaluated"}
 {"study_id": "doi:10.1093/ageing/afad254", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
@@ -127,7 +127,7 @@
 {"study_id": "doi:10.1080/17474124.2022.2118112", "verdict": "exclude", "reason": "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)"}
 {"study_id": "doi:10.1007/s40265-021-01665-0", "verdict": "exclude", "reason": "Population defined by pre-existing CVD irrespective of diabetes status; RCT and cohort data pooled"}
 {"study_id": "doi:10.3389/fendo.2022.975912", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
-{"study_id": "doi:10.1056/nejmoa2200433", "verdict": "maybe", "reason": "GRADE RCT: second-line agents added to metformin (n=5047); informs add-on sequencing, not metformin itself; listed for user decision"}
+{"study_id": "doi:10.1056/nejmoa2200433", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.1016/s0140-6736(22)02074-8", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/s2213-8587(21)00203-5", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1186/s12978-021-01207-7", "verdict": "exclude", "reason": "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)"}
@@ -138,13 +138,13 @@
 {"study_id": "doi:10.1186/s12888-020-02992-4", "verdict": "exclude", "reason": "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)"}
 {"study_id": "doi:10.1016/j.diabres.2020.108001", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
 {"study_id": "doi:10.1016/j.cct.2020.106067", "verdict": "exclude", "reason": "Protocol, design or baseline-characteristics report without results"}
-{"study_id": "doi:10.2337/dc19-0936", "verdict": "maybe", "reason": "Observational DKD cohort (n=10,426): mortality/ESRD/lactic acidosis; may overlap included CKD meta-analyses; listed for user decision"}
+{"study_id": "doi:10.2337/dc19-0936", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "pmid:30845101", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1016/s2213-8587(19)30249-9", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
-{"study_id": "doi:10.1111/dom.13642", "verdict": "maybe", "reason": "TREAT post hoc (NCT00093015) metformin in T2D+CKD: mortality HR 0.49; may overlap included CKD meta-analyses; listed for user decision"}
+{"study_id": "doi:10.1111/dom.13642", "verdict": "include", "reason": "Included at Gate 2b by user decision (Nhan 4 bai co ich). TREAT post hoc (NCT00093015) metformin in T2D+CKD: mortality HR 0.49; may overlap included CKD meta-analyses; listed for user decision"}
 {"study_id": "doi:10.1016/s0140-6736(18)32261-x", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
 {"study_id": "doi:10.1158/1055-9965.epi-17-0936", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}
 {"study_id": "doi:10.1111/dom.13553", "verdict": "exclude", "reason": "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)"}
-{"study_id": "nct:NCT03627039", "verdict": "maybe", "reason": "Registered observational metformin-vs-SGLT2 CV effectiveness study (n=20000, status unknown); no publication found; listed for user decision"}
+{"study_id": "nct:NCT03627039", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.2337/dc17-2231", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
 {"study_id": "doi:10.3233/jad-180263", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}

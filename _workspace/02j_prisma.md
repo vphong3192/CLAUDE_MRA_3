@@ -15,16 +15,14 @@ flowchart TD
   C["Studies eligible for screening<br/>(n = 218)"]
   D["Deferred by automated relevance prioritisation<br/>NOT screened, not excluded (n = 68)"]
   E["Studies screened on title and abstract<br/>(n = 150)"]
-  F["Excluded with reasons<br/>(n = 116)"]
-  M["Uncertain — not included, listed for the author<br/>(n = 11)"]
-  I["Studies included in the synthesis<br/>(n = 23)"]
+  F["Excluded with reasons<br/>(n = 123)"]
+  I["Studies included in the synthesis<br/>(n = 27)"]
   A --> B
   B --> R
   R --> C
   C --> D
   C --> E
   E --> F
-  E --> M
   E --> I
 ```
 
@@ -42,9 +40,9 @@ flowchart TD
 | screened title abstract | 150 |
 | deferred not screened | 68 |
 | verdicts recorded | 150 |
-| excluded title abstract | 116 |
-| maybe not included | 11 |
-| included | 23 |
+| excluded title abstract | 123 |
+| maybe not included | 0 |
+| included | 27 |
 
 ## Retracted, removed before screening
 Never eligible, and never folded into "duplicates" or the exclusion reasons.
@@ -58,6 +56,7 @@ Never eligible, and never folded into "duplicates" or the exclusion reasons.
 | Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal) | 21 |
 | Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease) | 18 |
 | Narrative review/editorial without systematic method | 8 |
+| excluded at Gate 2b by user decision | 7 |
 | Protocol, design or baseline-characteristics report without results | 3 |
 | Letter/comment, no primary data | 2 |
 | No stable identifier verified (Consensus-only record; PMID/DOI not confirmed in PubMed) - not citable (L-009) | 2 |
