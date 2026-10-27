@@ -66,6 +66,12 @@ class RealStore(unittest.TestCase):
         agents = {p.stem for p in AGENTS.glob("*.md")}
         self.assertEqual(agents - set(M.ROLES), set())
 
+    def test_no_role_for_an_agent_that_does_not_exist(self):
+        """A role key with no agent file routes its lessons to nobody. When the strategist was
+        folded into the lead, its lessons had to move to `orchestrator` or they would be lost."""
+        agents = {p.stem for p in AGENTS.glob("*.md")}
+        self.assertEqual(set(M.ROLES) - agents - {"orchestrator"}, set())
+
     def test_digest_is_smaller_than_the_store(self):
         for role in M.ROLES:
             with self.subTest(role=role):

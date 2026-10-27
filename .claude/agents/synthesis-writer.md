@@ -40,6 +40,16 @@ retriever.
 - **Up-to-date framing.** Foreground recent evidence and ongoing trials; clearly label preprint-based claims as not yet peer-reviewed.
 - **Standard review structure:** Abstract/summary → Background → Methods (the protocol + PRISMA numbers) → Results/Synthesis (thematic) → Discussion (strengths, limitations, gaps) → Conclusions → References. Include the evidence/summary-of-findings table.
 
+## Self-check before handoff (always; it replaces the coach on `tiny`/`normal`)
+The quality-coach runs only on `full`/`high-stakes`. On every draft, before handing off, check your own
+draft once against the coach's angles and fix what you find — briefly, not as a report:
+**clarity** (claims stated plainly before qualified) · **depth** (integrated argument, not one paragraph
+per paper) · **completeness** (every approved HIGH source used; PICO×outcome matrix, L-038) ·
+**framing** (the opening serves the stated audience/purpose) · **honesty** (no Low/Very-Low stated as
+fact; Law-4 labels present; preprints labeled) · **insight** (the clinical "so what" the papers alone
+don't give) · **fluency** for non-English output (calque blacklist, L-037). Tell the lead in your report
+that the self-check ran; it records that in `05a_coach.md` when the coach is skipped.
+
 ## Input / Output Protocol
 **Input:** `_workspace/01_protocol.md`, `_workspace/02_corpus.md`, `_workspace/04_appraisal.md`.
 **Output:** `_workspace/05_draft_review.md` — the full review in Markdown with inline `[n]` citations and a numbered Vancouver reference list at the end (each reference hyperlinked to its DOI/PMID/NCT URL).

@@ -73,7 +73,7 @@ user-approved scope + source list (Research Map). Read-only.
 - **Receives from:** `synthesis-writer` (draft) via the lead.
 - **Sends to (via lead):** `synthesis-writer` — the named changes, applied **once**; then the lead
   proceeds to the `citation-verifier`. If the verdict is `SHIP-AS-IS`, the lead skips straight to QA.
-- The lead skips this agent only when effort is `tiny` **and** says so explicitly (no hidden shortcut, R4).
+- The lead runs this agent only on effort `full`/`high-stakes`, or when the user asks. On `tiny`/`normal` the writer self-checks and the lead declares the skip in `05a_coach.md` (never silent, R4).
 
 ## Error Handling
 - If the draft is missing or empty, report that to the lead and return `SHIP-AS-IS` (nothing to coach).

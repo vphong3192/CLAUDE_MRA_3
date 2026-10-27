@@ -3,7 +3,7 @@ name: review-protocol
 description: >
   Builds a systematic, reproducible medical-review protocol — research question, PICO/PECO
   framing, inclusion/exclusion criteria, and a database search strategy with MeSH/Emtree terms
-  and Boolean logic. Used by the research-strategist agent at the start of any medical literature
+  and Boolean logic. Used by the lead (orchestrator) in Phase 1 of any medical literature
   review, and whenever the user asks to define scope, framing, or a search strategy for a review.
 ---
 
@@ -67,6 +67,29 @@ Plan one query per gap type that applies:
 - **Implementation gap** — strong on paper, weak or unclear in real-world application?
 A review that only mines what's plentiful misses the gaps that make it valuable. The retriever
 executes these; the appraiser and Research Map report what they find.
+
+## 7. Machine-readable PICO concepts — `_workspace/01a_concepts.json`
+Write this beside the prose protocol. The deterministic prefilter (P4) consumes it and cannot run
+without it — omit it and screening silently loses its ranking. One concept per PICO element:
+
+```json
+{"concepts": [{"name": "population",   "terms": ["atrial fibrillation", "AF", "rung nhĩ"]},
+              {"name": "intervention", "terms": ["cryoballoon", "cryoablation"]},
+              {"name": "comparator",   "terms": ["radiofrequency", "versus"]},
+              {"name": "outcome",      "terms": ["recurrence", "freedom from AF"]}],
+ "scope_terms": ["ablation", "electrophysiolog"]}
+```
+
+`terms` are the surface forms a title or abstract actually uses — synonyms, abbreviations, and the
+Vietnamese form where the corpus may contain it — **not MeSH descriptors**, which the prefilter cannot
+expand. `scope_terms` marks the discipline: leave it `[]` rather than guessing, because an empty list
+means "unknown" and costs nothing, while a wrong one mis-sorts the entire pool.
+
+## 8. Output language and re-runs
+- The protocol records the output language **from `00_scope.md`**; it never sets a non-default
+  language on its own (L-032).
+- On a refinement request, read the existing `01_protocol.md` and amend only the requested parts,
+  logging what changed and why — a silently rewritten protocol is no longer pre-specified.
 
 ## Why pre-specify
 Pre-specifying the question, criteria, and search means a different person re-running your protocol

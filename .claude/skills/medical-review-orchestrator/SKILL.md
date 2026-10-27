@@ -15,9 +15,10 @@ description: >
 
 # Medical Literature Review Orchestrator
 
-You are the **lead** of a seven-agent team that writes rigorous medical literature reviews. You set up
-the team, route work, enforce the gates, pass artifacts cleanly, surface decisions to the user, and
-assemble the deliverable. You coordinate; the specialists do the specialist work.
+You are the **lead** of a six-agent team that writes rigorous medical literature reviews. You confirm
+the scope, **write the protocol yourself** (Phase 1), route work, enforce the gates, pass artifacts
+cleanly, surface decisions to the user, and assemble the deliverable. The specialists do the
+specialist work.
 
 **Before anything else, read `.claude/constitution.md`** — the 6 immutable Laws bind the whole team.
 Law 1 (no fabricated citations → auto-fail) and the Research Map hard gate are non-negotiable.
@@ -30,17 +31,16 @@ persistent lessons with human approval before saving.
 
 | Agent (`subagent_type`) | Role | Primary artifact |
 |---|---|---|
-| `research-strategist` | Protocol: question, PICO, criteria, search strategy (+ curiosity budget) | `_workspace/01_protocol.md` |
 | `evidence-retriever` | Search live sources + `source/`, build corpus, write provenance store | `reference/<topic>.md`, `_workspace/02a_search_log.md`, `02_corpus.md` |
 | `critical-appraiser` | GRADE + risk-of-bias, evidence table, contradictions, Assumption Register | `_workspace/04_appraisal.md` |
 | `synthesis-writer` | Write the in-depth review, citing only from the provenance store | `_workspace/05_draft_review.md` |
-| `quality-coach` | Read-only "best-self" pass — raises the ceiling (depth/clarity/insight), one pass | `_workspace/05a_coach.md` |
+| `quality-coach` | Read-only "best-self" pass — raises the ceiling; **runs on `full`/`high-stakes` only** (Phase 5b) | `_workspace/05a_coach.md` |
 | `citation-verifier` (QA) | Cross-check claims↔sources; score rubric; run audit | `_workspace/06a_verification_report.md`, `06_final_review.md` |
 | `lessons-curator` | Phase 7: propose new lessons + evolution-log entry (start-of-run injection is a script) | `_workspace/07_proposed_lessons.md` |
 
 **Model, effort, preloaded skill and tool limits are set in each agent's own frontmatter — do NOT
 override them on spawn.** Current allocation: `opus` for `critical-appraiser`, `synthesis-writer`, and
-`quality-coach` (deep reasoning / ceiling-raising); `sonnet` for `research-strategist`,
+`quality-coach` (deep reasoning / ceiling-raising); `sonnet` for
 `evidence-retriever`, `citation-verifier`, and `lessons-curator`. `effort: medium` for the retriever and
 curator (tool-heavy, mechanical), `high` for the rest. Each agent preloads its own skill via `skills:`,
 so its procedure is in context from the first turn instead of depending on the agent choosing to open
@@ -82,10 +82,11 @@ orchestrator session's own model. Change any of these in the agent's frontmatter
      Every later phase anchors to this file, and the audit quotes it.
    - **Output language is gated like the scope:** it defaults to Vietnamese. Any non-default language
      (e.g. English) requires a **quotable user confirmation** recorded in the protocol/scope file. The
-     strategist must NOT unilaterally set a non-default language in `01_protocol.md`. Absent a quotable
+     protocol must NOT set a non-default language on its own in `01_protocol.md`. Absent a quotable
      record, the language **is Vietnamese** — fail closed. (See L-032.)
 4. **Tag the effort** `tiny | normal | full | high-stakes` to right-size the *depth of work* (search
-   breadth, corpus size, RoB tools, target length, curiosity-budget probes). **The tag never skips a
+   breadth, corpus size, RoB tools, target length, curiosity-budget probes) and decides whether the
+   quality-coach runs (Phase 5b: `full`/`high-stakes` only). **The tag never skips a
    gate** — all four human gates run on every level, including `tiny` (constitution: Effort tag). When
    unsure, choose the more careful level.
 
@@ -112,9 +113,9 @@ paywalled HIGH record, an Elicit credit spend), the agent puts the question in i
 the lead asks, records the answer in the relevant artifact, and re-invokes the agent with it. This
 also keeps every gate with the lead, the only party that can quote the user's approval.
 
-**Agent Team mode (optional).** If `TeamCreate` is available and the user prefers it, the same seven
+**Agent Team mode (optional).** If `TeamCreate` is available and the user prefers it, the same six
 agents can run as a team (`TaskCreate` with dependencies, `SendMessage` between members). It buys
-direct writer⇄verifier messaging at the cost of seven persistent contexts that stay open across every
+direct writer⇄verifier messaging at the cost of six persistent contexts that stay open across every
 gate wait; the gates and artifacts are identical either way.
 
 **Four stops** where the lead waits for the user: Phase 0 scope, Gate 2b (post-retrieval), Phase 3
@@ -125,7 +126,7 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
 [lead]
   ├── read constitution + lessons_digest.py --role orchestrator (each agent loads its own slice)
   ├── Phase 0  scope confirm ......................... STOP, await user  (L-015)
-  ├── Phase 1  protocol (+ curiosity budget gaps)
+  ├── Phase 1  protocol — written by the lead (review-protocol skill) → 01_protocol.md + 01a_concepts.json
   ├── Phase 2  retrieval: live sources + source/ folder → reference/<topic>.md
   │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-024
   ├── Phase 3  RESEARCH MAP ......................... STOP, await user approval  ← HARD GATE (L-014)
@@ -133,7 +134,7 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
   ├── Phase 4  appraisal (GRADE/RoB + Assumption Register)
   │            └── Gate 4b: present GRADE summary + contradictions + assumptions . STOP, await user OK  ← L-024
   ├── Phase 5  synthesis (writer cites only from reference store)
-  │            └── Phase 5b: quality-coach (read-only best-self pass) → ≤1 improvement pass  ← raises the ceiling
+  │            └── Phase 5b: full/high-stakes → quality-coach → ≤1 improvement pass · tiny/normal → writer self-check, SKIPPED declared
   ├── Phase 6  verification: claims↔sources + rubric score + audit  (writer⇄verifier loop)
   ├── assemble 06_final_review.md + 06c_manifest.md → deliver with audit report + manifest
   └── Phase 7  lessons-curator proposes lessons + evolution-log entry → user approves → persist (+ TeamDelete in team mode)
@@ -141,9 +142,15 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
 
 ### Phase detail
 
-**1 · Protocol** — `research-strategist` → `01_protocol.md`: research question, PICO, inclusion/exclusion,
-per-source search strings, **and a curiosity budget** (≥1–2 searches aimed at the 5 gap types:
-evidence / contradiction / methodological / population / implementation).
+**1 · Protocol — written by the lead, no agent spawned.** You already hold the scope conversation
+verbatim; a separate agent would have to rebuild it from `00_scope.md` to write a 2–3 page file. Invoke
+the `review-protocol` skill and follow it → `01_protocol.md` (research question, PICO, inclusion/
+exclusion, per-source search strings, pre-registered outcomes/subgroups, **curiosity budget** of ≥1–2
+searches aimed at the 5 gap types) **and** `01a_concepts.json` (the P4 prefilter cannot run without it).
+Pre-specification comes from the file being on disk **before** Phase 2 starts — so write both files,
+then spawn the retriever; never revise the protocol after seeing results without logging the change
+and the reason in `01_protocol.md`. Do not hand protocol-writing to the retriever: an agent that sets
+its own strategy and then runs it can quietly bend the strategy toward what was easy to find.
 
 **2 · Retrieval** — `evidence-retriever`: run the strategy across PubMed/PMC + **Elicit** + preprints +
 ClinicalTrials.gov + Consensus (+ ChEMBL/Open Targets for drug topics). Elicit's `search_papers` is free to run and widens recall; its `create_systematic_review`/`create_report` **spend user credits and are gated at 2b**. **Then list `source/` subfolders and ask the user
@@ -207,14 +214,23 @@ update → ask again. Do NOT launch writer until OK received. (L-024)
 load `.claude/skills/review-synthesis/references/vi-terminology.md`), inline Vancouver `[n]`, citing **only** from
 `reference/<topic>.md`.
 
-**5b · Coach (best-self, read-only, one pass)** — `quality-coach` reads the draft + appraisal and asks,
+**5b · Coach (best-self, read-only, one pass) — conditional on the effort tag.**
+- **`full` / `high-stakes` → run it.** Also run it on any level when the user asks for it.
+- **`tiny` / `normal` → do not spawn it.** The writer runs its six-angle self-check before handoff
+  (`synthesis-writer.md`), and you write `05a_coach.md` with one line:
+  `SKIPPED — effort=<tag>; writer self-check done` (+ the user's words if they waived or asked). The
+  skip is declared, never silent (R4, L-025). Why conditional: across runs #7/#8/#10 the coach was
+  skipped once, added real depth once, and returned SHIP-AS-IS once — and the two defects the user later
+  caught in #8 (calques, a buried PICO subgroup) it missed; both are now writer checks (L-037, L-038). An
+  opus pass over the whole draft earns its cost where the bar is highest, not on every review.
+
+When it runs: `quality-coach` reads the draft + appraisal and asks,
 across six angles (clarity, depth, completeness, stronger framing, honesty, genuine insight), whether
 this is the *best* version the evidence allows — it raises the ceiling, distinct from QA which raises the
 floor. It writes `05a_coach.md` and returns `SHIP-AS-IS` or `ONE-IMPROVEMENT-PASS`. If the latter, send
 the named changes back to `synthesis-writer` **once**, then proceed to verification. The coach is
 read-only and never edits the draft or touches citation correctness (that is QA's job). It must stay
-within the user-approved scope (no new axes). Skip only when effort is `tiny` *and* you say so explicitly
-(no hidden shortcut, R4). Keep it one pass, not a loop (R6).
+within the user-approved scope (no new axes). Keep it one pass, not a loop (R6).
 
 **6 · Verification (QA, incremental)** — `citation-verifier`: cross-check each claim against its source
 section-by-section; then **score the rubric** (`references/rubric.md`) and **run the audit**
@@ -248,9 +264,12 @@ to `evolution-log.md`.
 - **Unverifiable citation:** QA marks BLOCK; the claim is corrected or removed.
 
 ## Team Size
-Seven focused specialists, one task chain; keep each agent's tasks within its phase to limit coordination
-overhead (R6 — too many cooks). The `quality-coach` is read-only and runs exactly one pass, so it adds a
-quality ceiling without a coordination loop. **Four human gates** (scope, post-retrieval, Research Map,
+Six specialists (four always run: retriever, appraiser, writer, verifier; the coach on `full`/`high-stakes`;
+the curator at Phase 7), one task chain; keep each agent's tasks within its phase to limit coordination
+overhead (R6 — too many cooks). The protocol is the lead's own work: a separate strategist agent had to
+re-derive the scope the lead already held, and pre-specification comes from the file on disk, not from a
+separate author. Keep the four core separations — retrieval (context isolation), appraisal (deep
+judgment), and above all writer ≠ verifier (generation never clears its own citations). **Four human gates** (scope, post-retrieval, Research Map,
 post-appraisal) are where quality is won cheaply — never skip or self-clear any of them, on any effort level.
 
 ## Test Scenarios

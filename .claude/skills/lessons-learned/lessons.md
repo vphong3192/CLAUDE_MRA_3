@@ -171,10 +171,10 @@ approval. One lesson = one reusable rule, with its rationale.
 
 ### L-025: Phase 5b quality-coach pass must be explicitly declared SKIPPED — silent absence is R4
 - **Role:** orchestrator
-- **Trigger:** effort=full (or normal) run reaches handoff between Phase 5 (draft) and Phase 6 (QA)
-- **Rule:** Before routing the draft to QA, confirm that 05a_coach.md exists in `_workspace/`. If it does not, the orchestrator must either (a) run the quality-coach pass, or (b) write a brief `04b_coach_skip.md` stating the reason (e.g., effort=tiny, user-waived). Silent omission for effort=full constitutes R4 ("Faking the steps") even when the draft meets the rubric.
+- **Trigger:** any run reaches handoff between Phase 5 (draft) and Phase 6 (QA)
+- **Rule:** Before routing the draft to QA, confirm that 05a_coach.md exists in `_workspace/`. If it does not, the orchestrator must either (a) run the quality-coach pass (required on effort `full`/`high-stakes`), or (b) write `05a_coach.md` stating SKIPPED and the reason (effort `tiny`/`normal` + writer self-check done, or a quoted user waiver). Silent omission at any effort level constitutes R4 ("Faking the steps") even when the draft meets the rubric.
 - **Why:** Entry #7 — 05a_coach.md was absent with no declared reason; QA flagged V-01 as R4. The coach pass is an audit-visible step: QA checks for its artifact, and absence without justification is indistinguishable from never having run it.
-- **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17)
+- **Origin:** Entry #7 — CBA-vs-PFA review, V-01 process violation (2026-06-17); trigger/rule updated 2026-10-27 when the coach became conditional on effort (user decision)
 
 ### L-026: Law 4 section headers must be explicit labels in the draft body, not implicit content
 - **Role:** writer

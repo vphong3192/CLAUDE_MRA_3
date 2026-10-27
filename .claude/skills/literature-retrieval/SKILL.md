@@ -241,7 +241,7 @@ date captured. Externalize large metadata blobs (parse with Python for >15 PMIDs
 raw JSON in context.
 
 ## Curiosity budget (execute the gap searches)
-Run the strategist's ≥1–2 gap-directed searches (evidence/contradiction/methodological/population/
+Run the protocol's ≥1–2 gap-directed searches (evidence/contradiction/methodological/population/
 implementation). If PubMed returns <3 RCTs/SRs, expand to case reports/series, check
 ClinicalTrials.gov for running trials, and flag the thin evidence base — don't let scarcity pass silently.
 

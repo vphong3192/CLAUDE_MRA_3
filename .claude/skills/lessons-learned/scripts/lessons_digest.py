@@ -37,8 +37,9 @@ DEFAULT_STORE = Path(__file__).resolve().parents[1] / "lessons.md"
 # Canonical role -> words that mean that role in a lesson's free-text `Role:` line.
 # Matched as whole words, so "synthesis-writer" matches `writer` and "(lead)" matches `lead`.
 ROLES = {
-    "orchestrator": ("orchestrator", "lead"),
-    "research-strategist": ("strategist",),
+    # The lead writes the protocol (Phase 1) since the strategist agent was folded into it, so
+    # lessons still tagged `strategist` route to the lead rather than to an agent that never runs.
+    "orchestrator": ("orchestrator", "lead", "strategist"),
     "evidence-retriever": ("retriever",),
     "critical-appraiser": ("appraiser",),
     "synthesis-writer": ("writer",),

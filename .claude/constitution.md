@@ -90,7 +90,8 @@ easier to catch in audit. (Adapted from the AXIOM lineage's FMS list.)
 ## Effort tag — right-size the work, never the gates
 
 At Phase 0, tag the run `tiny | normal | full | high-stakes`. The tag scales the **depth of work**
-(number of searches, corpus breadth, RoB tools applied, target length, curiosity-budget probes) so a
+(number of searches, corpus breadth, RoB tools applied, target length, curiosity-budget probes,
+and whether the quality-coach pass runs — `full`/`high-stakes` only) so a
 small question isn't over-built and a high-stakes one isn't under-built.
 
 **The tag never changes the gates.** All four human gates (scope, post-retrieval, Research Map,

@@ -11,8 +11,9 @@ fabricated citations → auto-fail) and the Research Map hard gate are non-negot
 
 **Trigger:** For any request to write, update, expand, redo, score, or audit a medical/clinical/
 biomedical literature review (or "review the evidence on <topic>"), use the
-`medical-review-orchestrator` skill. It runs a 7-agent team (strategist → retriever → appraiser →
-writer → coach → verifier, plus a lessons-curator). A single factual medical question is answered directly.
+`medical-review-orchestrator` skill. The lead writes the protocol itself, then runs a
+6-agent team (retriever → appraiser → writer → coach → verifier, plus a lessons-curator); the coach
+runs only on effort `full`/`high-stakes`. A single factual medical question is answered directly.
 
 **Four human gates:** (1) Phase-0 scope confirm; (2) Gate 2b post-retrieval (corpus + full-text/source
 gaps, L-022/L-024); (3) Phase-3 **Research Map** — the **hard gate**; (4) Gate 4b post-appraisal (GRADE +
@@ -33,7 +34,7 @@ hard gate has no small-scope exception. The team STOPS and waits for explicit us
 | Artifact | Phase | Who writes it | Read at |
 |---|---|---|---|
 | `00_scope.md` | 0 | lead | — |
-| `01_protocol.md` · `01a_concepts.json` | 1 | research-strategist | — |
+| `01_protocol.md` · `01a_concepts.json` | 1 | lead (`review-protocol` skill) | — |
 | `02_corpus.md` | 2 | evidence-retriever | Gate 2b |
 | `02a_search_log.md` | 2 | evidence-retriever | Gate 2b |
 | `02b_records.jsonl` · `02b_records_external.jsonl` · `02b_import.md` | 2 | retriever · `import_external.py` | — |
@@ -46,7 +47,7 @@ hard gate has no small-scope exception. The team STOPS and waits for explicit us
 | `04b_cards.jsonl` | 4 | critical-appraiser | — |
 | `04c_quote_locks.md` | 4 | `verify_quotes.py` | Gate 4b |
 | `05_draft_review.md` | 5 | synthesis-writer | — |
-| `05a_coach.md` | 5b | quality-coach | — |
+| `05a_coach.md` | 5b | quality-coach · lead writes `SKIPPED` on `tiny`/`normal` | audit |
 | `06_final_review.md` | 6 | lead | **deliverable** |
 | `06a_verification_report.md` | 6 | citation-verifier | delivery |
 | `06b_citation_audit.md` | 6 | `citation_audit.py` | delivery |

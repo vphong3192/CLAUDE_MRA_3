@@ -43,7 +43,7 @@ because agents do not see the Why.
 ## Lesson format
 ```
 ### L-<id>: <short title>
-- **Role:** strategist | retriever | appraiser | writer | coach | verifier | orchestrator
+- **Role:** orchestrator | retriever | appraiser | writer | coach | verifier   (legacy `strategist` tags route to the lead)
 - **Trigger:** when this applies
 - **Rule:** what to do
 - **Why:** the rationale (so it transfers to new cases)

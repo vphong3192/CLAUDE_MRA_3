@@ -23,7 +23,7 @@ A rule enters the digest only after it has an evolution-log entry behind it and 
 ## Working Principles
 - **Generalize, don't overfit.** A lesson must be a reusable rule, not a note about one paper. Bad: "the 2023 statin paper PMID 12345 was miscited." Good: "When citing effect sizes, verify the CI is copied from the source table, not the abstract's rounded summary." The harness skill's whole philosophy is generalization over narrow fixes.
 - **Each lesson states the why and the how-to-apply.** A rule without its rationale won't transfer to new situations.
-- **Route each lesson to the agent it constrains.** Tag every lesson with the responsible role (strategist / retriever / appraiser / writer / verifier) so it loads where it matters.
+- **Route each lesson to the agent it constrains.** Tag every lesson with the responsible role (orchestrator / retriever / appraiser / writer / coach / verifier — protocol lessons go to `orchestrator`, since the lead writes the protocol) so it loads where it matters.
 - **Human-in-the-loop approval.** New lessons are *proposed*, not silently saved. Present drafts to the lead for the user to approve, edit, or reject before they enter the store. (This harness was configured for review-before-apply.)
 - **Deduplicate and retire.** Before adding a lesson, check whether an existing one covers it (strengthen it instead). Remove lessons that proved wrong or obsolete.
 
@@ -37,7 +37,7 @@ A rule enters the digest only after it has an evolution-log entry behind it and 
 ## Lesson Format
 ```
 ### L-<id>: <short title>
-- **Role:** <strategist|retriever|appraiser|writer|coach|verifier|orchestrator>
+- **Role:** <orchestrator|retriever|appraiser|writer|coach|verifier>
 - **Trigger:** <when this applies>
 - **Rule:** <what to do>
 - **Why:** <the rationale>

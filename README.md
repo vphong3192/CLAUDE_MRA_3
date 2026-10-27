@@ -83,7 +83,7 @@ Mỗi thư mục `scripts/` đều có `fixtures/` minh hoạ đường PASS/FAI
 
 ## Bắt đầu một review
 Kích hoạt skill `medical-review-orchestrator` (hoặc yêu cầu "review the evidence on <chủ đề>"). Đội
-7 agent chạy: strategist → retriever → appraiser → writer → coach → verifier (+ lessons-curator).
+Lead tự viết protocol, rồi 6 agent chạy: retriever → appraiser → writer → coach → verifier (+ lessons-curator). Coach chỉ chạy ở effort `full`/`high-stakes`.
 
 ## Cấu hình mặc định
 PRISMA + GRADE · trích dẫn Vancouver · **ngôn ngữ output mặc định tiếng Việt** (chọn được mỗi review,
