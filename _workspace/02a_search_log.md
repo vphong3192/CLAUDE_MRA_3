@@ -83,3 +83,10 @@ HIGH = 14. **Full text read (6):** Griffin 2017 (28770324), Li T 2021 (33516224)
 - Two PubMed records (35121575 Drug Ther Bull summary; 35640743 Triggle 2022 review) were fetched late and are in the deferred pool, unread.
 - Silverii 2026 (abstract OR 0.69, 0.53-0.89 vs main text OR 0.68, 0.51-0.92 for metformin MACE) and Lambourg 2024 (abstract HR 1.26 vs main text HR 1.23) show abstract/text number discrepancies: the appraiser must lock numbers to the text via `verify_quotes.py` (needs text files in source/).
 - Elicit paid tools: NOT run; `get_usage` not called (API not enabled).
+
+## Gate 2b — user decisions (2026-10-27, lead-recorded, verbatim structured answers)
+Content decisions asked separately from the gate-closing question (L-044):
+1. HIGH abstract-only (8/14): user chose **"Tải PMC + thử web (Recommended)"** — fetch the 3 open-access PMC texts (MET-H02 PMC12690185, MET-H06 PMC7386876, MET-H14 PMC11152183); try free publisher/web versions of ADA/EASD 2026 (MET-H01) and KDIGO 2022 (MET-H03); anything still missing → Limitations.
+2. Unavailable sources: user chose **"WebSearch NICE + FDA (Recommended)"** — WebSearch fallback for NICE NG28 and the FDA 2016 metformin/eGFR safety communication; Elicit (api_access_denied), Europe PMC / OpenAlex / Semantic Scholar (DNS) recorded as coverage gaps → Limitations.
+3. 11 uncertain records: user chose **"Nhận 4 bài có ích (Recommended)"** — include PMID 30672083 (TREAT post hoc, CKD), PMID 42365335 (2026 CV NMA), PMID 31235118 (first-line narrative review, Level III, controversy framing), PMID 39391521 (Can Tho, Vietnam context); exclude the other 7 (incl. the medRxiv dementia preprint).
+Gate 2b approval itself: NOT yet given — to be asked after these changes are applied (L-024).
