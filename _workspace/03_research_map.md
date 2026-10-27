@@ -89,3 +89,13 @@ FT = full text read; ABS = abstract only. Type: G = guideline/consensus; SR = SR
 2. Coverage holes: **"Tìm bổ sung ngắn (Recommended)"** → short supplementary PubMed search (older adults; lactic acidosis; hepatic if yield) — new records to be shown to the user before appraisal.
 3. Axes: **"Giữ cả 6, cân bằng (Recommended)"** → A1–A6 balanced; controversy concentrated on A2/A5/A6.
 Gate-closing approval: pending — to be asked alone after the supplement (L-044/L-024).
+
+## Supplementary search result (commit d11e9aa) and user decision
+Added: MET-S01 Lazarus 2018 (cohort, acidosis by eGFR; HIGH; ABS), MET-S02 Yen 2021 (Taiwan cirrhosis cohort; HIGH; FT), MET-S03 Sakellariou 2023 (SR/MA peri-PCI; MEDIUM; ABS). Older adults: no metformin-specific T2D record found (3 queries) → evidence gap → Limitations. Prefilter not re-run after hand-appending the new candidates (disclose in Methods).
+User decision (verbatim): **"Nhận cả 3 (Recommended)"**.
+
+### Final approved-for-appraisal source list (pending gate approval): 33 sources
+HIGH (15): H01, H02, H03, H04, H05, H06, H07, H08, H10, H11, H12, H13, H14, M03, S01, S02 → (16 incl. S02; H09 moved to MEDIUM)
+MEDIUM (17): H09, M01, M04, M05, M06, M07, M08, M09, M10, M11, M12, M14, M15, M16, M18, M19, S03
+Dropped (kept in store, not for citation): M02, M13, M17.
+HIGH abstract-only 9/16: H01, H02, H03, H06, H07, H11, H14, M03, S01.
