@@ -1,6 +1,6 @@
 # 06c_manifest.md — proof package (lead) · metformin in adult T2D · 2026-10-27
 
-> Assembled from `_workspace/` artifacts on disk (L-027). Pre-QA version; the rubric/verdict row is filled after Phase 6.
+> Assembled from `_workspace/` artifacts on disk (L-027). Pre-QA version written before Phase 6; QA rows filled after the round-2 PASS.
 > Honest limit: this indexes that the steps ran and what was found; it does not re-vouch for thoroughness — that is the verifier's verdict and the human gates.
 
 ## 1. Scope line
@@ -40,6 +40,6 @@ AR-1 older adults extrapolated · AR-2 Vietnamese generalisability · AR-3 ADA/K
 | Machine-fetched text | `source/metformin-t2d/` (56 NCBI XML, `_PROVENANCE.md`, SHA-256 manifest) | ✔ (user: keep in source/ with label) |
 | Phase 5 draft | `05_draft_review.md` (1,996 tokens), `05b_writer_notes.md` | ✔ |
 | Phase 5b coach | `05a_coach.md` — SKIPPED, effort=normal (declared) | ✔ |
-| Phase 6 QA | `06a_verification_report.md`, `06b_citation_audit.md`, `06_final_review.md` | pending |
-| Rubric total / band / violations | — | pending |
+| Phase 6 QA | `06a_verification_report.md` (round 1: FIX ×12, no BLOCK; round 2: PASS), `06b_citation_audit.md` (PASS, exit 0), `06_final_review.md` (1,996 tokens incl. title; 33 refs) | ✔ |
+| Rubric total / band / violations | **0.82 MET** — T1 0.8 · T2 0.8 · T3 0.8 · T4 0.8 · T5 0.9 · T6 0.9 (round 1: 0.785). Laws 6/6 (Law 6 completes at Phase 7). No fabricated citation; all 3 gates cleared with quotable approvals. Violations: none recorded. Advisory open: R2-1, A1, A4, A5 (non-blocking) | ✔ |
 | Phase 7 lessons | `07_proposed_lessons.md` | pending |
