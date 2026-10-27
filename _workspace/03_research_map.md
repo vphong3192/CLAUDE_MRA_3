@@ -1,7 +1,7 @@
 # 03_research_map.md — Research Map (Phase 3, HARD GATE)
 
 **Lead-authored 2026-10-27**, from `reference/metformin-t2d.md` (33 studies) + `02_corpus.md`. Written to disk before it is shown to the user.
-**Status: AWAITING USER APPROVAL.** No appraisal or drafting until the user explicitly approves the source list (L-014).
+**Status: CLEARED — see `03a_gate_approval.md`** (user: "Duyệt, tiếp tục", 2026-10-27). Originally presented as AWAITING USER APPROVAL; no appraisal or drafting ran before that approval (L-014).
 
 ## 1. Scope recap
 Hiệu quả và an toàn của metformin trong ĐTĐ týp 2 ở người lớn. Mục đích: hỗ trợ quyết định lâm sàng. Đối tượng: BS nội khoa. ~1500 từ. Nguồn 2015–nay. Viết bằng tiếng Việt. Effort `normal` (`00_scope.md`).
