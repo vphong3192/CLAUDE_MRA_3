@@ -95,7 +95,7 @@ Added: MET-S01 Lazarus 2018 (cohort, acidosis by eGFR; HIGH; ABS), MET-S02 Yen 2
 User decision (verbatim): **"Nhận cả 3 (Recommended)"**.
 
 ### Final approved-for-appraisal source list (pending gate approval): 33 sources
-HIGH (15): H01, H02, H03, H04, H05, H06, H07, H08, H10, H11, H12, H13, H14, M03, S01, S02 → (16 incl. S02; H09 moved to MEDIUM)
+HIGH (16): H01, H02, H03, H04, H05, H06, H07, H08, H10, H11, H12, H13, H14, M03, S01, S02 (H09 moved to MEDIUM)
 MEDIUM (17): H09, M01, M04, M05, M06, M07, M08, M09, M10, M11, M12, M14, M15, M16, M18, M19, S03
 Dropped (kept in store, not for citation): M02, M13, M17.
 HIGH abstract-only 9/16: H01, H02, H03, H06, H07, H11, H14, M03, S01.
