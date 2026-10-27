@@ -1,0 +1,446 @@
+<?xml version="1.0"  ?><!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "https://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd"><pmc-articleset><article xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">BMJ Open</journal-id><journal-id journal-id-type="iso-abbrev">BMJ Open</journal-id><journal-id journal-id-type="pmc-domain-id">1609</journal-id><journal-id journal-id-type="pmc-domain">bmjo</journal-id><journal-id journal-id-type="nlm-id">101552874</journal-id><journal-id journal-id-type="publisher-id">bmjopen</journal-id><journal-title-group><journal-title>BMJ Open</journal-title></journal-title-group><issn pub-type="epub">2044-6055</issn><publisher><publisher-name>BMJ Publishing Group</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12185888</article-id><article-id pub-id-type="pmcid-ver">PMC12185888.1</article-id><article-id pub-id-type="pmcaid">12185888</article-id><article-id pub-id-type="pmcaiid">12185888</article-id><article-id pub-id-type="pmid">40374214</article-id><article-id pub-id-type="doi">10.1136/bmjopen-2025-100672</article-id><article-id pub-id-type="publisher-id">bmjopen-2025-100672</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="heading"><subject>Diabetes and Endocrinology</subject></subj-group><subj-group subj-group-type="hwp-journal-coll"><subject>1506</subject><subject>1843</subject></subj-group><series-title>Original research</series-title></article-categories><title-group><article-title>Association between vitamin B<sub>12</sub> deficiency and metformin use in type 2 diabetic patients: a cross-sectional study in a South Vietnam tertiary hospital</article-title></title-group><contrib-group><contrib id="author-130322173" contrib-type="author"><name name-style="western"><surname>Phan</surname><given-names initials="HH">Hen Huu</given-names></name><xref rid="aff1" ref-type="aff">1</xref></contrib><contrib id="author-130460004" contrib-type="author"><name name-style="western"><surname>Nguyen</surname><given-names initials="ATT">An Thuy Thi</given-names></name><xref rid="aff1" ref-type="aff">1</xref></contrib><contrib id="author-130160102" contrib-type="author" corresp="yes"><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0002-9997-6390</contrib-id><name name-style="western"><surname>Do</surname><given-names initials="MD">Minh Duc</given-names></name><xref rid="aff2" ref-type="aff">2</xref></contrib></contrib-group><aff id="aff1">
+<label>1</label>
+<institution content-type="department">Department of Endocrinology</institution>, <institution specific-use="Ringgold_58601">Cho Ray Hospital</institution>, <addr-line content-type="city">Ho Chi Minh City</addr-line>, <country>Vietnam</country>
+</aff><aff id="aff2">
+<label>2</label>
+<institution content-type="department">Center for Molecular Biomedicine</institution>, <institution specific-use="Ringgold_377386">University of Medicine and Pharmacy</institution>, <addr-line content-type="city">Ho Chi Minh City</addr-line>, <country>Vietnam</country>
+</aff><author-notes><corresp>
+<label>Correspondence to</label> Dr Minh Duc Do; <email>ducminh@ump.edu.vn</email>
+</corresp></author-notes><pub-date pub-type="collection"><year>2025</year></pub-date><pub-date pub-type="epub"><day>14</day><month>5</month><year>2025</year></pub-date><volume>15</volume><issue>5</issue><issue-id pub-id-type="pmc-issue-id">487901</issue-id><elocation-id>e100672</elocation-id><history><date date-type="received"><day>14</day><month>2</month><year>2025</year></date><date date-type="accepted"><day>01</day><month>5</month><year>2025</year></date></history><pub-history><event event-type="pmc-release"><date><day>14</day><month>05</month><year>2025</year></date></event><event event-type="pmc-live"><date><day>24</day><month>06</month><year>2025</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2025-06-25 00:25:28.230"><day>25</day><month>06</month><year>2025</year></date></event></pub-history><permissions><copyright-statement>© Author(s) (or their employer(s)) 2025. Re-use permitted under CC BY-NC. No commercial re-use. See rights and permissions. Published by BMJ Group.</copyright-statement><copyright-year>2025</copyright-year><ali:free_to_read xmlns:ali="http://www.niso.org/schemas/ali/1.0/"/><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbynclicense" start_date="2025-05-14">https://creativecommons.org/licenses/by-nc/4.0/</ali:license_ref><license-p>This is an open access article distributed in accordance with the Creative Commons Attribution Non Commercial (CC BY-NC 4.0) license, which permits others to distribute, remix, adapt, build upon this work non-commercially, and license their derivative works on different terms, provided the original work is properly cited, appropriate credit is given, any changes made indicated, and the use is non-commercial. See: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by-nc/4.0/">http://creativecommons.org/licenses/by-nc/4.0/</ext-link>.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="bmjopen-15-5.pdf"/><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:title="pdf" xlink:href="bmjopen-15-5.pdf"/><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="reviewers-comments-pdf" xlink:href="bmjopen-2025-100672.reviewer_comments.pdf"/><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="draft-revisions-pdf" xlink:href="bmjopen-2025-100672.draft_revisions.pdf"/><abstract><sec><title>Objectives</title><p>Vitamin B<sub>12</sub> deficiency is a common and neglected adverse effect experienced by type 2 diabetic patients treated with metformin. A lack of vitamin B<sub>12</sub> may have severe consequences, such as fatigue, macrocytic anaemia and worsened peripheral diabetic neuropathy. This study aims to identify the rate of vitamin B<sub>12</sub> deficiency and the associated factors in type 2 diabetic patients treated with metformin.</p></sec><sec><title>Design</title><p>Cross-sectional study.</p></sec><sec><title>Setting and participants</title><p>This study involved 145 type 2 diabetic patients treated with metformin in Cho Ray hospital, a tertiary healthcare centre in South Vietnam. The levels of vitamin B<sub>12</sub> and associated clinical and paraclinical parameters were measured and collected.</p></sec><sec><title>Results</title><p>The study population’s mean age was 61.5 years, of which 51.7% were women. The median duration of metformin use was 10 years, and the median metformin dose was 1700 mg. The vitamin B<sub>12</sub> deficiency rate was 22.1%. HbA1c, duration of metformin use and metformin dose were independent factors statistically associated with vitamin B<sub>12</sub> deficiency.</p></sec><sec><title>Conclusions</title><p>This study identified the rate of vitamin B<sub>12</sub> deficiency and associated factors in type 2 diabetic patients treated with metformin. These findings can be helpful in screening patients and replacing vitamin B<sub>12</sub> in high-risk populations with vitamin B<sub>12</sub> deficiency.</p></sec><sec><title>Trial registration number</title><p>Ethical Committee of Cho Ray Hospital (approval number 1711/CN-HĐĐĐ)</p></sec></abstract><kwd-group><kwd>Diabetes Mellitus, Type 2</kwd><kwd>General diabetes</kwd><kwd>Drug Therapy</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY-NC</meta-value></custom-meta><custom-meta><meta-name>special-feature</meta-name><meta-value>unlocked</meta-value></custom-meta></custom-meta-group></article-meta></front><body><boxed-text id="BX1" position="float" orientation="portrait"><caption><title>STRENGTHS AND LIMITATIONS OF THIS STUDY</title></caption><list list-type="bullet"><list-item><p>This study investigated the vitamin B<sub>12</sub> deficiency rate and its associated factors in type 2 diabetic Vietnamese patients treated with metformin, a population with very limited data.</p></list-item><list-item><p>The levels of methylmalonic acid and homocysteine were not measured in this study; these markers reflect early vitamin B<sub>12</sub> deficiency in tissues.</p></list-item><list-item><p>This is a single centre, cross-sectional study; therefore, the results may not represent the prevalence of vitamin B<sub>12</sub> deficiency in type 2 diabetic patients treated with metformin in the southern region of Vietnam.</p></list-item></list></boxed-text><sec sec-type="intro" id="s1"><title>Introduction</title><p>Metformin belongs to the biguanide class and is synthesised from galegine, an isoprenyl derivative of guanidine, found in the perennial herb French lilac (<italic toggle="yes">Galega officinalis</italic>).<xref rid="R1" ref-type="bibr">1</xref> Metformin is recommended in most treatment guidelines as the first-line drug for the management of type 2 diabetes, based on its effectiveness in blood glucose control, low cost, safety and cardiovascular benefits, as demonstrated by the UK Prospective Diabetes Study.<xref rid="R2" ref-type="bibr">2 3</xref>
+</p><p>The drug’s effectiveness is dose-dependent, and the mechanism of action of metformin is not fully understood. Extensive evidence obtained in clinical studies and animal models suggests that the main function of metformin in regulating glucose homeostasis is to inhibit hepatic glucose production through the regulation of hepatic gluconeogenesis and glycogenolysis.<xref rid="R4" ref-type="bibr">4 5</xref> Metformin also improves cellular sensitivity to insulin, thereby enhancing peripheral glucose uptake, mainly in skeletal muscle and significantly reducing fasting plasma insulin levels.<xref rid="R6" ref-type="bibr">6</xref> Improvements in insulin sensitivity with metformin may be due to its effects on insulin receptor expression and tyrosine kinase activity.</p><p>The most common adverse effects of metformin are gastrointestinal symptoms, such as diarrhoea, nausea and/or abdominal discomfort.<xref rid="R7" ref-type="bibr">7</xref> These symptoms are usually mild, transient and dose-dependent. A rare but more concerning adverse effect of biguanides is lactic acidosis. Risk factors for metformin-induced lactic acidosis include conditions that increase lactate production, such as severe infections, severe liver or kidney disease, recent surgery and any condition causing hypoxia or decreased tissue perfusion.<xref rid="R8" ref-type="bibr">8 9</xref>
+</p><p>In 1969, Berchtold <italic toggle="yes">et al</italic> first reported vitamin B<sub>12</sub> deficiency in patients using metformin, resulting from decreased gastrointestinal vitamin B<sub>12</sub> absorption.<xref rid="R10" ref-type="bibr">10</xref> This effect can occur as early as the third month of using metformin. Several mechanisms have been proposed to explain the effect of metformin, including changes in small intestinal motility leading to overgrowth of intestinal bacteria, competitive inhibition and inactivation of vitamin B<sub>12</sub> absorption capacity, alteration of intrinsic factor levels and interaction with the intracellular cubilin receptor.<xref rid="R11" ref-type="bibr">11 12</xref> Of these, the most widely accepted mechanism is the inhibition of the calcium-dependent binding of the B<sub>12</sub>-intrinsic factor complex to the cubilin receptor in the ileum. The HOME study is one of the first clinical trials that confirmed the causative effect of vitamin B<sub>12</sub> deficiency by metformin. The results showed that metformin usage at a dose of 850 mg three times per day reduces vitamin B<sub>12</sub> levels by 19% compared with a placebo.<xref rid="R13" ref-type="bibr">13</xref>
+</p><p>Type 2 diabetes mellitus is a complicated, heterogeneous and multifactorial disease, for which treatment often requires the combination of metformin and other medications.<xref rid="R14" ref-type="bibr">14</xref>
+<xref rid="R15" ref-type="bibr">15</xref>
+<xref rid="R16" ref-type="bibr">16</xref>
+<xref rid="R17" ref-type="bibr">17</xref>
+<xref rid="R18" ref-type="bibr">18</xref>
+<xref rid="R19" ref-type="bibr">19</xref> . However, there are few studies on vitamin B<sub>12</sub> deficiency related to metformin use in Vietnam. In 2023, Huynh <italic toggle="yes">et al</italic> conducted a cross-sectional study on the prevalence of vitamin B<sub>12</sub> deficiency in type 2 diabetic patients using metformin at the Vinmec Central Park Hospital, a private outpatient clinic in Ho Chi Minh City.<xref rid="R20" ref-type="bibr">20</xref> Of the 156 type 2 diabetic patients treated with metformin, the rate of vitamin B<sub>12</sub> deficiency was 18.6%. Vitamin B<sub>12</sub> deficiency may differ depending on region, diet and studied population; this study set out to investigate the rate of vitamin B<sub>12</sub> deficiency and its associated factors in type 2 diabetic patients treated with metformin in Cho Ray Hospital, one of the largest tertiary hospitals in Vietnam.</p></sec><sec sec-type="materials" id="s2"><title>Materials and methods</title><sec id="s2-1"><title>Participant recruitment</title><p>The protocol for this cross-sectional study was approved by the Ethical Committee of Cho Ray Hospital (approval number 1711/CN-HĐĐĐ). A sample size calculation was performed to estimate the rate of vitamin B<sub>12</sub> deficiency in the target population using the formula below:</p><p>
+<disp-formula id="E1">
+<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="eqn1" overflow="scroll"><mml:mstyle displaystyle="true" scriptlevel="0"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:msubsup><mml:mi>Z</mml:mi><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mfrac><mml:mi>α</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mfrac><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mi>p</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:msup><mml:mi>d</mml:mi><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
+</disp-formula>
+</p><p>In which, <italic toggle="yes">Z</italic>=1.96, p=0.095 (based on a similar study by Ko <italic toggle="yes">et al</italic>
+<xref rid="R21" ref-type="bibr">21</xref>) and d=0.05. The estimated patient number was 132. Recruitment took place from March to August 2024. The main inclusion criterion was: type 2 diabetic patients treated with metformin for at least 3 months with unchanged dose in the last 3 months. Patients were excluded from the study if they had: (1) a recent acute illness, such as severe infection, cancer or acute coronary syndrome, within the past 3 months, (2) serious organ damage defined as cirrhosis, liver cell damage with aspartate aminotransferase (AST) or alanine aminotransferase (ALT) increased ≥3 times the upper limit of normal, symptoms of heart failure, impaired renal function (serum creatinine levels: &gt;1.7 mg/dL for men and &gt;1.5 mg/dL for women), estimated glomerular filtration rate &lt;30 mL/min/1.73 m² or (3) a history of partial or total gastrectomy or pancreatectomy or colectomy. Patients were also excluded from the study if they were diagnosed with: (1) gastrointestinal malabsorption disorders, such as chronic colitis or irritable bowel syndrome or (2) pernicious anaemia or other haematological disorders. Finally, patients were excluded from the study if they were currently on vitamin B<sub>12</sub> or multivitamin replacement, they had been treated with proton-pump inhibitors or H2-receptor antagonists for at least 12 months consecutively or they had followed a vegetarian/vegan diet for 3 years.</p><p>All the selected patients gave their informed written consent on participating in the study. Baseline characteristics of the patients were recorded (age, gender, weight, height, body mass index (BMI), blood pressure, waist and hip circumference, duration of type 2 diabetes, duration of metformin use and metformin dose). Hypertension was identified based on the criteria of the American College of Cardiology/American Heart Association Task Force in 2017<xref rid="R22" ref-type="bibr">22</xref> or if the patients were currently on antihypertensive drugs. Diabetic peripheral neuropathies were diagnosed based on patient history or the diagnostic criteria of the Toronto Diabetic Neuropathy Expert Group.<xref rid="R23" ref-type="bibr">23</xref> The Metformin Usage Index (MUI) was calculated by multiplying the daily metformin dose (mg) by usage duration (year) and dividing by 1000.<xref rid="R24" ref-type="bibr">24</xref>
+</p><p>Patients and/or the public were not involved in the design, conduct, reporting or dissemination plans of this research.</p></sec><sec id="s2-2"><title>Paraclinical measurements</title><p>Fasting blood samples for all the participants were sent to the central laboratory of the Department of Biochemistry, Cho Ray Hospital. Vitamin B<sub>12</sub> and folic acid levels were measured using an Architect i2000SR Immunoassay analyser (Abbott Laboratories, Chicago, Illinois, USA). Vitamin B<sub>12</sub> deficiency was defined as a vitamin B<sub>12</sub> level &lt;300 pg/mL with a normal level of folic acid (≥4 ng/mL). An ADVIA 1800 Chemistry System (Siemens Healthineers, Erlangen, Germany) was used to measure other biochemical parameters, including fasting plasma glucose, creatinine, AST, ALT and lipid profile. HbA1c was measured using a G8 HPLC analyzer (Tosoh Corporation, Tokyo, Japan). Total blood count was obtained using a DxH 600 Hematology Analyzer (Beckman Coulter).</p></sec><sec id="s2-3"><title>Statistical analysis</title><p>Continuous variables were represented either as means±SD or as medians with IQRs, depending on their distribution. These variables were compared using either T-tests or Mann-Whitney U tests. Qualitative variables were characterised by frequencies and counts. χ<sup>2</sup> tests were used to compare categorical variables between groups. To investigate the associations between vitamin B<sub>12</sub> deficiency and patients’ characteristics, univariate and multivariate logistic regression was applied to calculate ORs and 95% CIs. A p value of ≤0.05 was considered statistically significant in all analyses. Data analysis was performed using SPSS Statistics for Windows V.20.0 (IBM Corporation, Armonk, New York, USA)</p></sec></sec><sec sec-type="results" id="s3"><title>Results</title><p>A total of 145 patients participated in this study. The baseline characteristics of participants are described in <xref rid="T1" ref-type="table">table 1</xref>. In brief, the mean age of the studied population was 61.5 years, with 51.7% of them being women. The median duration of metformin use was 10 years, the median metformin dose was 1700 mg and the mean level of HbA1c was 8.1%. The rate of vitamin B<sub>12</sub> deficiency was 22.1% (32 out of 145 participants). We could not detect any cases of macrocytic anaemia.</p><table-wrap position="float" id="T1" orientation="portrait"><label>Table 1</label><caption><p>Baseline characteristics of participants</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" valign="bottom" rowspan="1" colspan="1">Characteristics</td><td align="left" valign="bottom" rowspan="1" colspan="1">Total (n=145)</td><td align="left" valign="bottom" rowspan="1" colspan="1">No vitamin B<sub>12</sub> deficiency (n=113)</td><td align="left" valign="bottom" rowspan="1" colspan="1">Vitamin B<sub>12</sub> deficiency (n=32)</td><td align="left" valign="bottom" rowspan="1" colspan="1">P value</td></tr></thead><tbody><tr><td align="left" valign="top" rowspan="1" colspan="1">Age (years)</td><td align="left" valign="top" rowspan="1" colspan="1">61.5±11.0</td><td align="left" valign="top" rowspan="1" colspan="1">60.6±11.0</td><td align="left" valign="top" rowspan="1" colspan="1">64.5±10.7</td><td align="left" valign="top" rowspan="1" colspan="1">0.075</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Gender</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.844</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Women, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">75 (51.7)</td><td align="left" valign="top" rowspan="1" colspan="1">59 (52.5)</td><td align="left" valign="top" rowspan="1" colspan="1">16 (50)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Men, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">70 (48.3)</td><td align="left" valign="top" rowspan="1" colspan="1">54 (47.8)</td><td align="left" valign="top" rowspan="1" colspan="1">16 (50)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">BMI (kg/m<sup>2</sup>)</td><td align="left" valign="top" rowspan="1" colspan="1">22.9±1.9</td><td align="left" valign="top" rowspan="1" colspan="1">22.9±2.1</td><td align="left" valign="top" rowspan="1" colspan="1">22.8±1.5</td><td align="left" valign="top" rowspan="1" colspan="1">0.755</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Hypertension</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.031</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Yes, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">105 (61.9)</td><td align="left" valign="top" rowspan="1" colspan="1">77 (68.1)</td><td align="left" valign="top" rowspan="1" colspan="1">28 (87.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">No, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">40 (38.1)</td><td align="left" valign="top" rowspan="1" colspan="1">36 (31.9)</td><td align="left" valign="top" rowspan="1" colspan="1">4 (12.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Diabetic peripheral neuropathy</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.972</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Yes, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">No, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">54 (37.2)</td><td align="left" valign="top" rowspan="1" colspan="1">42 (37.2)</td><td align="left" valign="top" rowspan="1" colspan="1">12 (37.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">91 (62.8)</td><td align="left" valign="top" rowspan="1" colspan="1">71 (62.8)</td><td align="left" valign="top" rowspan="1" colspan="1">20 (62.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Diabetes duration (years)</td><td align="left" valign="top" rowspan="1" colspan="1">10.0 (6.0–10.0)</td><td align="left" valign="top" rowspan="1" colspan="1">10.0 (5.5–15.0)</td><td align="left" valign="top" rowspan="1" colspan="1">12.0 (10.0–15.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.029</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Metformin use duration (years)</td><td align="left" valign="top" rowspan="1" colspan="1">10.0 (6.0–10.0)</td><td align="left" valign="top" rowspan="1" colspan="1">10.0 (5.5–15.0)</td><td align="left" valign="top" rowspan="1" colspan="1">12.0 (10.0–15.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.044</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Metformin dose (mg)</td><td align="left" valign="top" rowspan="1" colspan="1">1700.0 (1000.0–1850.0)</td><td align="left" valign="top" rowspan="1" colspan="1">1700.0 (1000.0–1700.0)</td><td align="left" valign="top" rowspan="1" colspan="1">1700.0 (1700.0–2000.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.001</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Hb (g/dL)</td><td align="left" valign="top" rowspan="1" colspan="1">13.6±1.6</td><td align="left" valign="top" rowspan="1" colspan="1">13.6±1.6</td><td align="left" valign="top" rowspan="1" colspan="1">13.4±1.5</td><td align="left" valign="top" rowspan="1" colspan="1">0.674</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MCV (fL)</td><td align="left" valign="top" rowspan="1" colspan="1">87.6±6.6</td><td align="left" valign="top" rowspan="1" colspan="1">87.1±7.0</td><td align="left" valign="top" rowspan="1" colspan="1">89.5±5.1</td><td align="left" valign="top" rowspan="1" colspan="1">0.071</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Fasting plasma glucose (mg/dL)</td><td align="left" valign="top" rowspan="1" colspan="1">158.4±72.1</td><td align="left" valign="top" rowspan="1" colspan="1">162.4±77.2</td><td align="left" valign="top" rowspan="1" colspan="1">144.2±48.2</td><td align="left" valign="top" rowspan="1" colspan="1">0.208</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">HbA1c (%)</td><td align="left" valign="top" rowspan="1" colspan="1">8.1±1.9</td><td align="left" valign="top" rowspan="1" colspan="1">8.3±2.0</td><td align="left" valign="top" rowspan="1" colspan="1">7.4±1.6</td><td align="left" valign="top" rowspan="1" colspan="1">0.021</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Creatinine (mg/dL)</td><td align="left" valign="top" rowspan="1" colspan="1">0.9(0.7–1.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.9 (0.7–1.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.9 (0.8–1.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.274</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Total cholesterol (mmol/L)</td><td align="left" valign="top" rowspan="1" colspan="1">146.0 (114.0–180.0)</td><td align="left" valign="top" rowspan="1" colspan="1">148.0 (114.5–181.5)</td><td align="left" valign="top" rowspan="1" colspan="1">138.0 (107.3–164.5)</td><td align="left" valign="top" rowspan="1" colspan="1">0.292</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Triglyceride (mmol/L)</td><td align="left" valign="top" rowspan="1" colspan="1">163.0 (109.5–238.0)</td><td align="left" valign="top" rowspan="1" colspan="1">163.0 (107.0–231.0)</td><td align="left" valign="top" rowspan="1" colspan="1">162.0 (131.8–307.3)</td><td align="left" valign="top" rowspan="1" colspan="1">0.166</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">HDL-C (mmol/L)</td><td align="left" valign="top" rowspan="1" colspan="1">44.0 (38.0–51.0)</td><td align="left" valign="top" rowspan="1" colspan="1">44.0 (39.0–52.0)</td><td align="left" valign="top" rowspan="1" colspan="1">44.0 (35.0–49.0)</td><td align="left" valign="top" rowspan="1" colspan="1">0.425</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">LDL-C (mmol/L)</td><td align="left" valign="top" rowspan="1" colspan="1">75.0 (49.5–107.5)</td><td align="left" valign="top" rowspan="1" colspan="1">77.0 (53.8–112.5)</td><td align="left" valign="top" rowspan="1" colspan="1">64.2 (48.2–94.9)</td><td align="left" valign="top" rowspan="1" colspan="1">0.242</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Vitamin B12 level (pg/mL)</td><td align="left" valign="top" rowspan="1" colspan="1">478.0 (323.0–608.0)</td><td align="left" valign="top" rowspan="1" colspan="1">514.0 (416.0–667.5)</td><td align="left" valign="top" rowspan="1" colspan="1">233.0 (196.5–273.8)</td><td align="left" valign="top" rowspan="1" colspan="1">&lt; 0.001</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Median(Q1–Q3)</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Folate level (μmol/mL)</td><td align="left" valign="top" rowspan="1" colspan="1">11.5±3.5</td><td align="left" valign="top" rowspan="1" colspan="1">11.6±3.5</td><td align="left" valign="top" rowspan="1" colspan="1">11.1±3.5</td><td align="left" valign="top" rowspan="1" colspan="1">0.457</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mean±SD</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Insulin treatment</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.684</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Yes, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">50 (34.5)</td><td align="left" valign="top" rowspan="1" colspan="1">38 (33.6)</td><td align="left" valign="top" rowspan="1" colspan="1">12 (37.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">No, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">95 (65.5)</td><td align="left" valign="top" rowspan="1" colspan="1">75 (66.4)</td><td align="left" valign="top" rowspan="1" colspan="1">20 (62.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Sulfonyl urea treatment</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.37</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Yes, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">45 (31.0)</td><td align="left" valign="top" rowspan="1" colspan="1">33 (29.2)</td><td align="left" valign="top" rowspan="1" colspan="1">12 (37.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">No, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">100 (69.0)</td><td align="left" valign="top" rowspan="1" colspan="1">80 (70.8)</td><td align="left" valign="top" rowspan="1" colspan="1">20 (62.5)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">DPP4i treatment</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.089</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Yes, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">116 (80.0)</td><td align="left" valign="top" rowspan="1" colspan="1">87 (77.0)</td><td align="left" valign="top" rowspan="1" colspan="1">29 (90.6)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">No, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">29 (20.0)</td><td align="left" valign="top" rowspan="1" colspan="1">26 (23.0)</td><td align="left" valign="top" rowspan="1" colspan="1">3 (9.4)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">SGLT2i treatment</td><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1"/><td align="left" valign="top" rowspan="1" colspan="1">0.161</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Yes, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">88 (60.7)</td><td align="left" valign="top" rowspan="1" colspan="1">72 (63.7)</td><td align="left" valign="top" rowspan="1" colspan="1">16 (50.0)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">No, N (%)</td><td align="left" valign="top" rowspan="1" colspan="1">57 (39.3)</td><td align="left" valign="top" rowspan="1" colspan="1">41 (36.3)</td><td align="left" valign="top" rowspan="1" colspan="1">16 (50.0)</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr></tbody></table><table-wrap-foot><fn id="T1_FN1"><p>BMI, body mass index; DPP4i, dipeptidyl peptidase 4 inhibitor; Hb, haemoglobin; HDL-C, high-density lipoprotein-cholesterol; LDL-C, low-density lipoprotein-cholesterol; MCV, mean cell volume; SGLT2i, sodium-glucose cotransporter 2 inhibitor.</p></fn></table-wrap-foot></table-wrap><p>There were no differences between the groups with and without vitamin B<sub>12</sub> deficiency in terms of age, gender, BMI, haemoglobin level, mean cell volume, creatinine level and lipid profile. Patients with vitamin B<sub>12</sub> deficiency had significantly longer duration of type 2 diabetes, longer duration of metformin use, higher metformin dose and lower HbA1c levels than patients without vitamin B<sub>12</sub> deficiency. The medications used for type 2 diabetes treatment, including insulin, sulfonyl urea, dipeptidyl peptidase 4 inhibitor and sodium-glucose cotransporter 2 inhibitor, were not statistically different between the groups with and without vitamin B<sub>12</sub> deficiency.</p><p>Univariate logistic analyses also showed that hypertension, duration of metformin use, metformin dose, HbA1c level and MUI were statistically associated with vitamin B<sub>12</sub> deficiency in the studied population (<xref rid="T2" ref-type="table">table 2</xref>). Notably, a duration of metformin use &gt; median (10 years), metformin dose &gt; median dose (1700 mg/day) and MUI ≥10 were strongly associated with vitamin B<sub>12</sub> deficiency with OR (95% CI) =8.539 (2.459–29.648), 4.942 (1.777–13.749) and 5.095 (1.459–17.788), respectively. After adjusting for covariates using continuous and binomial variable models, HbA1c levels, duration of metformin use and metformin dose were still independently associated with vitamin B<sub>12</sub> deficiency (<xref rid="T3" ref-type="table">table 3</xref>).</p><table-wrap position="float" id="T2" orientation="portrait"><label>Table 2</label><caption><p>Univariate logistic regression analysis of factors associated with vitamin B<sub>12</sub> deficiency</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" valign="bottom" rowspan="1" colspan="1">Variables</td><td align="left" valign="bottom" rowspan="1" colspan="1">OR (95% CI)</td><td align="left" valign="bottom" rowspan="1" colspan="1">P value</td></tr></thead><tbody><tr><td align="left" valign="top" rowspan="1" colspan="1">Age</td><td align="left" valign="top" rowspan="1" colspan="1">1.034 (0.996 to 1.074)</td><td align="left" valign="top" rowspan="1" colspan="1">0.077</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Gender</td><td align="left" valign="top" rowspan="1" colspan="1">1.093 (0.498 to 2.396)</td><td align="left" valign="top" rowspan="1" colspan="1">0.825</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">BMI</td><td align="left" valign="top" rowspan="1" colspan="1">0.967 (0.786 to 1.190)</td><td align="left" valign="top" rowspan="1" colspan="1">0.753</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Hypertension</td><td align="left" valign="top" rowspan="1" colspan="1">3.268 (1.068 to 10.000)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>0.038</bold>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Duration of diabetes</td><td align="left" valign="top" rowspan="1" colspan="1">1.047 (0.989 to 1.108)</td><td align="left" valign="top" rowspan="1" colspan="1">0.115</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Duration of metformin use</td><td align="left" valign="top" rowspan="1" colspan="1">1.043 (0.985 to 1.103)</td><td align="left" valign="top" rowspan="1" colspan="1">0.147</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Long-term use of metformin<break/>(duration &gt; median duration)</td><td align="left" valign="top" rowspan="1" colspan="1">8.539 (2.459 to 29.648)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>&lt; 0.001</bold>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Metformin dose</td><td align="left" valign="top" rowspan="1" colspan="1">1.002 (1.001 to 1.003)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>0.002</bold>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Metformin dose &gt; median dose</td><td align="left" valign="top" rowspan="1" colspan="1">4.942 (1.777 to 13.749)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>0.002</bold>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Hb</td><td align="left" valign="top" rowspan="1" colspan="1">0.949 (0.744 to 1.210)</td><td align="left" valign="top" rowspan="1" colspan="1">0.671</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MCV</td><td align="left" valign="top" rowspan="1" colspan="1">1.068 (0.993 to 1.148)</td><td align="left" valign="top" rowspan="1" colspan="1">0.075</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Fasting plasma glucose</td><td align="left" valign="top" rowspan="1" colspan="1">0.995 (0.988 to 1.003)</td><td align="left" valign="top" rowspan="1" colspan="1">0.210</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">HbA1c</td><td align="left" valign="top" rowspan="1" colspan="1">0.733 (0.557 to 0.964)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>0.026</bold>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MUI</td><td align="left" valign="top" rowspan="1" colspan="1">1.043 (1.009 to 1.078)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>0.014</bold>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MUI≥10</td><td align="left" valign="top" rowspan="1" colspan="1">5.095 (1.459 to 17.788)</td><td align="left" valign="top" rowspan="1" colspan="1">
+<bold>0.011</bold>
+</td></tr></tbody></table><table-wrap-foot><fn id="T2_FN1"><p>BMI, body mass index; Hb, haemoglobin; MCV, mean cell volume; MUI, metformin usage index.</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="T3" orientation="portrait"><label>Table 3</label><caption><p>Multivariate logistic regression analysis of factors associated with vitamin B<sub>12</sub> deficiency</p></caption><table frame="hsides" rules="groups"><thead><tr><td align="left" valign="bottom" rowspan="1" colspan="1">Model</td><td align="left" valign="bottom" rowspan="1" colspan="1">Variables</td><td align="left" valign="bottom" rowspan="1" colspan="1">OR (95% CI)</td><td align="left" valign="bottom" rowspan="1" colspan="1">P value</td></tr></thead><tbody><tr><td align="left" valign="top" rowspan="3" colspan="1">Model 1</td><td align="left" valign="top" rowspan="1" colspan="1">HbA1c</td><td align="left" valign="top" rowspan="1" colspan="1">0.624 (0.455–0.856)</td><td align="left" valign="top" rowspan="1" colspan="1">0.003</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Duration of metformin use</td><td align="left" valign="top" rowspan="1" colspan="1">1.076 (1.005–1.151)</td><td align="left" valign="top" rowspan="1" colspan="1">0.037</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Metformin dose</td><td align="left" valign="top" rowspan="1" colspan="1">1.002 (1.001–1.004)</td><td align="left" valign="top" rowspan="1" colspan="1">0.002</td></tr><tr><td align="left" valign="top" rowspan="3" colspan="1">Model 2</td><td align="left" valign="top" rowspan="1" colspan="1">HbA1c</td><td align="left" valign="top" rowspan="1" colspan="1">0.631 (0.460–0.865)</td><td align="left" valign="top" rowspan="1" colspan="1">0.004</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Long-term use of metformin (duration &gt; median duration)</td><td align="left" valign="top" rowspan="1" colspan="1">10.078 (2.729–37.219)</td><td align="left" valign="top" rowspan="1" colspan="1">0.001</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Metformin dose &gt; median dose</td><td align="left" valign="top" rowspan="1" colspan="1">4.429 (1.475–13.303)</td><td align="left" valign="top" rowspan="1" colspan="1">0.008</td></tr><tr><td align="left" valign="top" rowspan="2" colspan="1">Model 3</td><td align="left" valign="top" rowspan="1" colspan="1">HbA1c</td><td align="left" valign="top" rowspan="1" colspan="1">0.647 (0.480–0.874)</td><td align="left" valign="top" rowspan="1" colspan="1">0.005</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MUI≥10</td><td align="left" valign="top" rowspan="1" colspan="1">7.644 (2.109–27.707)</td><td align="left" valign="top" rowspan="1" colspan="1">0.002</td></tr></tbody></table><table-wrap-foot><fn id="T3_FN1"><p>MUI, metformin usage index;</p></fn></table-wrap-foot></table-wrap></sec><sec sec-type="discussion" id="s4"><title>Discussion</title><p>In our study, the vitamin B<sub>12</sub> deficiency rate was 22.1% in type 2 diabetic Vietnamese patients treated with metformin for at least 3 months. This deficiency rate may vary between countries and ethnicities, and previous studies have reported a wide range of 4.3–30% for patients undergoing metformin treatment.<xref rid="R21" ref-type="bibr">21 25–27</xref> Our study showed similar results to the study by Kim <italic toggle="yes">et al</italic> at Yongin Severance Hospital, South Korea, and Gao <italic toggle="yes">et al</italic> at 12 tertiary hospitals in China.<xref rid="R28" ref-type="bibr">28 29</xref> This similarity may reflect consistency between the studies in average age, duration of type 2 diabetes, duration of metformin use and metformin dosage. However, our results are higher than those of Ko <italic toggle="yes">et al</italic> in South Korea, who found a vitamin B<sub>12</sub> deficiency rate of 9.5% with a cut-off of vitamin B<sub>12</sub> levels ≤300 pg/mL and no folate deficiency (folate &gt;4 ng/mL).<xref rid="R21" ref-type="bibr">21</xref> These differences in vitamin B<sub>12</sub> deficiency rates between studies may come from differences in testing methods, patient characteristics and the duration and dosage of metformin prescribed. Except for similar average ages, our patients’ duration of type 2 diabetes, duration of metformin use and average metformin dosage were all higher than those in Ko <italic toggle="yes">et al</italic>’s study, which partly explains why the vitamin B<sub>12</sub> deficiency rate in our study is higher. More importantly, the subjects in our study had a longer duration of type 2 diabetes, longer duration of metformin use and a higher prescribed metformin dose compared with the patients in Ko <italic toggle="yes">et al</italic>’s study.<xref rid="R21" ref-type="bibr">21</xref> There were several reasons why the vitamin B<sub>12</sub> deficiency rate was 22.1% but did not occur in all the participants. First, not all the participants were treated with metformin for four consecutive years and/or with high metformin dose. Second, the exact mechanisms of vitamin B<sub>12</sub> deficiency in patients treated with metformin remained elusive, and who will absolutely develop vitamin B<sub>12</sub> deficiency is still an unanswered question. Therefore, current American Diabetes Association guidelines recommend screening for high-risk patients and treating if they have vitamin B<sub>12</sub> deficiency rather than treating all patients with metformin use for four consecutive years and more.<xref rid="R30" ref-type="bibr">30</xref>
+</p><p>Compared with a domestic study in Vietnam by Huynh <italic toggle="yes">et al</italic> conducted at Vinmec Central Park Hospital, Ho Chi Minh City in 2023, the vitamin B<sub>12</sub> deficiency rate in our study is higher.<xref rid="R20" ref-type="bibr">20</xref> This difference can be explained by differences in the characteristics of the subjects and the research context. Huynh’s study mainly focused on patients undergoing health checks at a private hospital. These are usually patients with better economic conditions, better access to high-quality medical services and who potentially pay more attention to their diet. Thus, the vitamin B<sub>12</sub> deficiency rate in their study is lower. Moreover, the patients in Huynh’s study were younger, had lower metformin doses and a shorter duration of metformin treatment. In contrast, our study was conducted at Cho Ray Hospital, a large tertiary hospital that receives patients with complex and more severe medical conditions. Therefore, the patients in our study had a longer disease duration, longer duration of metformin use, higher metformin dose and a higher rate of vitamin B<sub>12</sub> deficiency.</p><p>Our study found that metformin dose and duration of metformin use were statistically associated with vitamin B<sub>12</sub> deficiency. These findings are similar to previous studies and emphasise again the important role of vitamin B<sub>12</sub> screening in patients with long-term use and/or high doses of metformin.<xref rid="R28" ref-type="bibr">28 31</xref> In addition, MUI ≥10 was found to be an independent factor that is statistically associated with vitamin B<sub>12</sub> deficiency, suggesting that MUI can be used as a reliable and alternative parameter to decide when to screen for vitamin B<sub>12</sub> deficiency rather than using duration of metformin use or metformin dose alone. We could not use a cut-off value of 5 years for the duration of metformin use and 5 years for MUI because the number of participants with the duration of metformin use of less than 5 years was small (only 21 out of 145 cases), leading to underpowered statistical analyses. Interestingly, lower HbA1c was statistically associated with vitamin B<sub>12</sub> deficiency in this study. This outcome may result from the fact that patients achieving lower HbA1c were intensively treated with higher doses of metformin.</p><p>Our study has several limitations. First, we did not measure methylmalonic acid or homocysteine levels; these markers reflect early vitamin B<sub>12</sub> deficiency in tissues. Second, the sample size was small, and all the data were collected in a single centre. Therefore, the reported results may not represent the landscape of type 2 diabetic patients in the southern region of Vietnam.</p><p>In conclusion, our study showed that the rate of vitamin B<sub>12</sub> deficiency was up to 22.1% in type 2 diabetic patients with a median of 10 years of metformin use and 1700 mg of metformin dose. This rate presents a warning and requires routine screening and replacement of vitamin B<sub>12</sub> in metformin-treated patients. Further multicentre studies are necessary to understand the landscape of vitamin B<sub>12</sub> deficiency in patients treated with metformin in Vietnam.</p></sec><sec sec-type="supplementary-material"><title>Supplementary Material</title><supplementary-material content-type="local-data" id="d67e126" position="float" orientation="portrait"><caption><title>Reviewer comments</title></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="bmjopen-2025-100672.reviewer_comments.pdf" position="float" orientation="portrait"/></supplementary-material><supplementary-material content-type="local-data" id="d67e127" position="float" orientation="portrait"><caption><title>Author's
+manuscript</title></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="bmjopen-2025-100672.draft_revisions.pdf" position="float" orientation="portrait"/></supplementary-material></sec></body><back><fn-group><fn id="fn2" fn-type="other"><p><bold>Contributors:</bold> HP, AN and MD designed the research study. AN recruited the participants for the study. HP and MD analysed the data. HP, AN and MD wrote the manuscript. MD is the guarantor.</p></fn><fn fn-type="other"><p><bold>Funding:</bold> The authors have not declared a specific grant for this research from any funding agency in the public, commercial or not-for-profit sectors.</p></fn><fn fn-type="COI-statement"><p><bold>Competing interests:</bold> None declared.</p></fn><fn fn-type="other"><p><bold>Patient and public involvement:</bold> Patients and/or the public were not involved in the design, conduct, reporting or dissemination plans of this research.</p></fn><fn fn-type="other"><p><bold>Provenance and peer review:</bold> Not commissioned; externally peer reviewed.</p></fn></fn-group><sec sec-type="data-availability"><title>Data availability statement</title><p>Data are available upon reasonable request.</p></sec><sec sec-type="ethics-statement"><title>Ethics statements</title><sec><title>Patient consent for publication</title><p content-type="ethics-consent-to-publish">Not applicable.</p></sec><sec><title>Ethics approval</title><p content-type="ethics-approval">This study involves human participants and was approved by Ethical Committee of Cho Ray Hospital (approval number 1711/CN-HĐĐĐ). Participants gave informed consent to participate in the study before taking part.</p></sec></sec><ref-list><title>References</title><ref id="R1"><label>1</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Bailey</surname>
+<given-names>CJ</given-names>
+</string-name>
+</person-group>. <article-title>Metformin: historical overview</article-title>. <source>Diabetologia</source>
+<year>2017</year>;<volume>60</volume>:<fpage>1566</fpage>–<lpage>76</lpage>. <pub-id pub-id-type="doi">10.1007/s00125-017-4318-z</pub-id>
+<pub-id pub-id-type="pmid">28776081</pub-id>
+</mixed-citation></ref><ref id="R2"><label>2</label><mixed-citation publication-type="journal">
+<article-title>Effect of intensive blood-glucose control with metformin on complications in overweight patients with type 2 diabetes (UKPDS 34)</article-title>. <source>The Lancet</source>
+<year>1998</year>;<volume>352</volume>:<fpage>854</fpage>–<lpage>65</lpage>. <pub-id pub-id-type="doi">10.1016/S0140-6736(98)07037-8</pub-id>
+<pub-id pub-id-type="pmid">9742977</pub-id></mixed-citation></ref><ref id="R3"><label>3</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<collab>American Diabetes Association Professional Practice Committee</collab>
+</person-group>. <article-title>9. Pharmacologic Approaches to Glycemic Treatment: Standards of Care in Diabetes-2024</article-title>. <source>Diabetes Care</source>
+<year>2024</year>;<volume>47</volume>:<fpage>S158</fpage>–<lpage>78</lpage>. <pub-id pub-id-type="doi">10.2337/dc24-S009</pub-id>
+<pub-id pub-id-type="pmid">38078590</pub-id>
+<pub-id pub-id-type="pmcid">PMC10725810</pub-id></mixed-citation></ref><ref id="R4"><label>4</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Viollet</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Guigas</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sanz Garcia</surname>
+<given-names>N</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Cellular and molecular mechanisms of metformin: an overview</article-title>. <source>Clin Sci (Lond)</source>
+<year>2012</year>;<volume>122</volume>:<fpage>253</fpage>–<lpage>70</lpage>. <pub-id pub-id-type="doi">10.1042/CS20110386</pub-id>
+<pub-id pub-id-type="pmid">22117616</pub-id>
+<pub-id pub-id-type="pmcid">PMC3398862</pub-id></mixed-citation></ref><ref id="R5"><label>5</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Rena</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hardie</surname>
+<given-names>DG</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pearson</surname>
+<given-names>ER</given-names>
+</string-name>
+</person-group>. <article-title>The mechanisms of action of metformin</article-title>. <source>Diabetologia</source>
+<year>2017</year>;<volume>60</volume>:<fpage>1577</fpage>–<lpage>85</lpage>. <pub-id pub-id-type="doi">10.1007/s00125-017-4342-z</pub-id>
+<pub-id pub-id-type="pmid">28776086</pub-id>
+<pub-id pub-id-type="pmcid">PMC5552828</pub-id></mixed-citation></ref><ref id="R6"><label>6</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Wiernsperger</surname>
+<given-names>NF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bailey</surname>
+<given-names>CJ</given-names>
+</string-name>
+</person-group>. <article-title>The antihyperglycaemic effect of metformin: therapeutic and cellular mechanisms</article-title>. <source>Drugs (Abingdon Engl)</source>
+<year>1999</year>;<volume>58 Suppl 1</volume>:<fpage>31</fpage>–<lpage>9</lpage>; . <pub-id pub-id-type="doi">10.2165/00003495-199958001-00009</pub-id>
+<pub-id pub-id-type="pmid">10576523</pub-id></mixed-citation></ref><ref id="R7"><label>7</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Bouchoucha</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Uzzan</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cohen</surname>
+<given-names>R</given-names>
+</string-name>
+</person-group>. <article-title>Metformin and digestive disorders</article-title>. <source>Diabetes Metab</source>
+<year>2011</year>;<volume>37</volume>:<fpage>90</fpage>–<lpage>6</lpage>. <pub-id pub-id-type="doi">10.1016/j.diabet.2010.11.002</pub-id>
+<pub-id pub-id-type="pmid">21236717</pub-id>
+</mixed-citation></ref><ref id="R8"><label>8</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>DeFronzo</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fleming</surname>
+<given-names>GA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Chen</surname>
+<given-names>K</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Metformin-associated lactic acidosis: Current perspectives on causes and risk</article-title>. <source>Metab Clin Exp</source>
+<year>2016</year>;<volume>65</volume>:<fpage>20</fpage>–<lpage>9</lpage>. <pub-id pub-id-type="doi">10.1016/j.metabol.2015.10.014</pub-id>
+<pub-id pub-id-type="pmid">26773926</pub-id>
+</mixed-citation></ref><ref id="R9"><label>9</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Bailey</surname>
+<given-names>CJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Turner</surname>
+<given-names>RC</given-names>
+</string-name>
+</person-group>. <article-title>Metformin</article-title>. <source>N Engl J Med</source>
+<year>1996</year>;<volume>334</volume>:<fpage>574</fpage>–<lpage>9</lpage>. <pub-id pub-id-type="doi">10.1056/NEJM199602293340906</pub-id>
+<pub-id pub-id-type="pmid">8569826</pub-id>
+</mixed-citation></ref><ref id="R10"><label>10</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Berchtold</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bolli</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Arbenz</surname>
+<given-names>U</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Disturbance of intestinal absorption following metformin therapy (observations on the mode of action of biguanides</article-title>. <source>Diabetologia</source>
+<year>1969</year>;<volume>5</volume>:<fpage>405</fpage>–<lpage>12</lpage>. <pub-id pub-id-type="doi">10.1007/BF00427979</pub-id>
+<pub-id pub-id-type="pmid">5372893</pub-id>
+</mixed-citation></ref><ref id="R11"><label>11</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Mazokopakis</surname>
+<given-names>EE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Starakis</surname>
+<given-names>IK</given-names>
+</string-name>
+</person-group>. <article-title>Recommendations for diagnosis and management of metformin-induced vitamin B12 (Cbl) deficiency</article-title>. <source>Diabetes Res Clin Pract</source>
+<year>2012</year>;<volume>97</volume>:<fpage>359</fpage>–<lpage>67</lpage>. <pub-id pub-id-type="doi">10.1016/j.diabres.2012.06.001</pub-id>
+<pub-id pub-id-type="pmid">22770998</pub-id>
+</mixed-citation></ref><ref id="R12"><label>12</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Infante</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Leoni</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Caprio</surname>
+<given-names>M</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Long-term metformin therapy and vitamin B12 deficiency: An association to bear in mind</article-title>. <source>World J Diabetes</source>
+<year>2021</year>;<volume>12</volume>:<fpage>916</fpage>–<lpage>31</lpage>. <pub-id pub-id-type="doi">10.4239/wjd.v12.i7.916</pub-id>
+<pub-id pub-id-type="pmid">34326945</pub-id>
+<pub-id pub-id-type="pmcid">PMC8311483</pub-id></mixed-citation></ref><ref id="R13"><label>13</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>de Jager</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kooy</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lehert</surname>
+<given-names>P</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Long term treatment with metformin in patients with type 2 diabetes and risk of vitamin B-12 deficiency: randomised placebo controlled trial</article-title>. <source>BMJ</source>
+<year>2010</year>;<volume>340</volume>:<elocation-id>c2181</elocation-id>. <pub-id pub-id-type="doi">10.1136/bmj.c2181</pub-id>
+<pub-id pub-id-type="pmid">20488910</pub-id>
+<pub-id pub-id-type="pmcid">PMC2874129</pub-id></mixed-citation></ref><ref id="R14"><label>14</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Tran</surname>
+<given-names>NQ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Truong</surname>
+<given-names>SD</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ma</surname>
+<given-names>PT</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Association of KCNJ11 and ABCC8 single-nucleotide polymorphisms with type 2 diabetes mellitus in a Kinh Vietnamese population</article-title>. <source>Medicine (Baltimore)</source>
+<year>2022</year>;<volume>101</volume>:<elocation-id>e31653</elocation-id>. <pub-id pub-id-type="doi">10.1097/MD.0000000000031653</pub-id>
+<pub-id pub-id-type="pmid">36401380</pub-id>
+<pub-id pub-id-type="pmcid">PMC9678638</pub-id></mixed-citation></ref><ref id="R15"><label>15</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Truong</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tran</surname>
+<given-names>NQ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ma</surname>
+<given-names>PT</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Association of ADIPOQ Single-Nucleotide Polymorphisms with the Two Clinical Phenotypes Type 2 Diabetes Mellitus and Metabolic Syndrome in a Kinh Vietnamese Population</article-title>. <source>Diabetes Metab Syndr Obes</source>
+<year>2022</year>;<volume>15</volume>:<fpage>307</fpage>–<lpage>19</lpage>. <pub-id pub-id-type="doi">10.2147/DMSO.S347830</pub-id>
+<pub-id pub-id-type="pmid">35140489</pub-id>
+<pub-id pub-id-type="pmcid">PMC8820255</pub-id></mixed-citation></ref><ref id="R16"><label>16</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Mai</surname>
+<given-names>TP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Luong</surname>
+<given-names>BA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ma</surname>
+<given-names>PT</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Genome-wide association and polygenic risk score estimation of type 2 diabetes mellitus in Kinh Vietnamese-A pilot study</article-title>. <source>J Cell Mol Med</source>
+<year>2024</year>;<volume>28</volume>:<elocation-id>e18526</elocation-id>. <pub-id pub-id-type="doi">10.1111/jcmm.18526</pub-id>
+<pub-id pub-id-type="pmid">38957036</pub-id>
+<pub-id pub-id-type="pmcid">PMC11220366</pub-id></mixed-citation></ref><ref id="R17"><label>17</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Beulens</surname>
+<given-names>JWJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pinho</surname>
+<given-names>MGM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Abreu</surname>
+<given-names>TC</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Environmental risk factors of type 2 diabetes-an exposome approach</article-title>. <source>Diabetologia</source>
+<year>2022</year>;<volume>65</volume>:<fpage>263</fpage>–<lpage>74</lpage>. <pub-id pub-id-type="doi">10.1007/s00125-021-05618-w</pub-id>
+<pub-id pub-id-type="pmid">34792619</pub-id>
+</mixed-citation></ref><ref id="R18"><label>18</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Del Prato</surname>
+<given-names>S</given-names>
+</string-name>
+</person-group>. <article-title>Rational combination therapy for type 2 diabetes</article-title>. <source>Lancet Diabetes Endocrinol</source>
+<year>2019</year>;<volume>7</volume>:<fpage>328</fpage>–<lpage>9</lpage>. <pub-id pub-id-type="doi">10.1016/S2213-8587(19)30069-5</pub-id>
+<pub-id pub-id-type="pmid">30833171</pub-id>
+</mixed-citation></ref><ref id="R19"><label>19</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Bailey</surname>
+<given-names>T</given-names>
+</string-name>
+</person-group>. <article-title>Options for combination therapy in type 2 diabetes: comparison of the ADA/EASD position statement and AACE/ACE algorithm</article-title>. <source>Am J Med</source>
+<year>2013</year>;<volume>126</volume>:<fpage>S10</fpage>–<lpage>20</lpage>. <pub-id pub-id-type="doi">10.1016/j.amjmed.2013.06.009</pub-id>
+<pub-id pub-id-type="pmid">23953074</pub-id>
+</mixed-citation></ref><ref id="R20"><label>20</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Huynh</surname>
+<given-names>DT</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nguyen</surname>
+<given-names>NT</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Do</surname>
+<given-names>MD</given-names>
+</string-name>
+</person-group>. <article-title>Vitamin B12 deficiency in diabetic patients treated with metformin: A cross-sectional study</article-title>. <source>PLoS One</source>
+<year>2024</year>;<volume>19</volume>:<elocation-id>e0302500</elocation-id>. <pub-id pub-id-type="doi">10.1371/journal.pone.0302500</pub-id>
+<pub-id pub-id-type="pmid">38662670</pub-id>
+<pub-id pub-id-type="pmcid">PMC11045118</pub-id></mixed-citation></ref><ref id="R21"><label>21</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Ko</surname>
+<given-names>SH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ko</surname>
+<given-names>SH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ahn</surname>
+<given-names>YB</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Association of vitamin B12 deficiency and metformin use in patients with type 2 diabetes</article-title>. <source>J Korean Med Sci</source>
+<year>2014</year>;<volume>29</volume>:<fpage>965</fpage>–<lpage>72</lpage>. <pub-id pub-id-type="doi">10.3346/jkms.2014.29.7.965</pub-id>
+<pub-id pub-id-type="pmid">25045229</pub-id>
+<pub-id pub-id-type="pmcid">PMC4101785</pub-id></mixed-citation></ref><ref id="R22"><label>22</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Whelton</surname>
+<given-names>PK</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Carey</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Aronow</surname>
+<given-names>WS</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults: Executive Summary: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines</article-title>. <source>Hypertension</source>
+<year>2018</year>;<volume>71</volume>:<fpage>1269</fpage>–<lpage>324</lpage>. <pub-id pub-id-type="doi">10.1161/HYP.0000000000000066</pub-id>
+<pub-id pub-id-type="pmid">29133354</pub-id>
+</mixed-citation></ref><ref id="R23"><label>23</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Tesfaye</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Boulton</surname>
+<given-names>AJM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dyck</surname>
+<given-names>PJ</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Diabetic Neuropathies: Update on Definitions, Diagnostic Criteria, Estimation of Severity, and Treatments</article-title>. <source>Diabetes Care</source>
+<year>2010</year>;<volume>33</volume>:<fpage>2285</fpage>–<lpage>93</lpage>. <pub-id pub-id-type="doi">10.2337/dc10-1303</pub-id>
+<pub-id pub-id-type="pmid">20876709</pub-id>
+<pub-id pub-id-type="pmcid">PMC2945176</pub-id></mixed-citation></ref><ref id="R24"><label>24</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Shivaprasad</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gautham</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ramdas</surname>
+<given-names>B</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Metformin Usage Index and assessment of vitamin B12 deficiency among metformin and non-metformin users with type 2 diabetes mellitus</article-title>. <source>Acta Diabetol</source>
+<year>2020</year>;<volume>57</volume>:<fpage>1073</fpage>–<lpage>80</lpage>. <pub-id pub-id-type="doi">10.1007/s00592-020-01526-4</pub-id>
+<pub-id pub-id-type="pmid">32266492</pub-id>
+</mixed-citation></ref><ref id="R25"><label>25</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Tomkin</surname>
+<given-names>GH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hadden</surname>
+<given-names>DR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Weaver</surname>
+<given-names>JA</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Vitamin-B12 status of patients on long-term metformin therapy</article-title>. <source>Br Med J</source>
+<year>1971</year>;<volume>2</volume>:<fpage>685</fpage>–<lpage>7</lpage>. <pub-id pub-id-type="doi">10.1136/bmj.2.5763.685</pub-id>
+<pub-id pub-id-type="pmid">5556053</pub-id>
+<pub-id pub-id-type="pmcid">PMC1796258</pub-id></mixed-citation></ref><ref id="R26"><label>26</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Reinstatler</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Qi</surname>
+<given-names>YP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Williamson</surname>
+<given-names>RS</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Association of Biochemical B12 Deficiency With Metformin Therapy and Vitamin B12 Supplements</article-title>. <source>Diabetes Care</source>
+<year>2012</year>;<volume>35</volume>:<fpage>327</fpage>–<lpage>33</lpage>. <pub-id pub-id-type="doi">10.2337/dc11-1582</pub-id>
+<pub-id pub-id-type="pmid">22179958</pub-id>
+<pub-id pub-id-type="pmcid">PMC3263877</pub-id></mixed-citation></ref><ref id="R27"><label>27</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Kos</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Liszek</surname>
+<given-names>MJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Emanuele</surname>
+<given-names>MA</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Effect of metformin therapy on vitamin D and vitamin B₁₂ levels in patients with type 2 diabetes mellitus</article-title>. <source>Endocr Pract</source>
+<year>2012</year>;<volume>18</volume>:<fpage>179</fpage>–<lpage>84</lpage>. <pub-id pub-id-type="doi">10.4158/EP11009.OR</pub-id>
+<pub-id pub-id-type="pmid">21940283</pub-id>
+</mixed-citation></ref><ref id="R28"><label>28</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Kim</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ahn</surname>
+<given-names>CW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fang</surname>
+<given-names>S</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Association between metformin dose and vitamin B12 deficiency in patients with type 2 diabetes</article-title>. <source>Medicine (Baltimore)</source>
+<year>2019</year>;<volume>98</volume>:<elocation-id>e17918</elocation-id>. <pub-id pub-id-type="doi">10.1097/MD.0000000000017918</pub-id>
+<pub-id pub-id-type="pmid">31725641</pub-id>
+<pub-id pub-id-type="pmcid">PMC6867725</pub-id></mixed-citation></ref><ref id="R29"><label>29</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Gao</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ran</surname>
+<given-names>X</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Liu</surname>
+<given-names>X</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>The effects of daily dose and treatment duration of metformin on the prevalence of vitamin B12 deficiency and peripheral neuropathy in Chinese patients with type 2 diabetes mellitus: A multicenter cross-sectional study</article-title>. <source>J Diabetes</source>
+<year>2023</year>;<volume>15</volume>:<fpage>765</fpage>–<lpage>76</lpage>. <pub-id pub-id-type="doi">10.1111/1753-0407.13428</pub-id>
+<pub-id pub-id-type="pmid">37310028</pub-id>
+<pub-id pub-id-type="pmcid">PMC10509512</pub-id></mixed-citation></ref><ref id="R30"><label>30</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<collab>American Diabetes Association Professional Practice Committee</collab>
+</person-group>. <article-title>3. Prevention or Delay of Diabetes and Associated Comorbidities: Standards of Care in Diabetes-2025</article-title>. <source>Diabetes Care</source>
+<year>2025</year>;<volume>48</volume>:<fpage>S50</fpage>–<lpage>8</lpage>. <pub-id pub-id-type="doi">10.2337/dc25-S003</pub-id>
+<pub-id pub-id-type="pmid">39651971</pub-id>
+<pub-id pub-id-type="pmcid">PMC11635039</pub-id></mixed-citation></ref><ref id="R31"><label>31</label><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<string-name name-style="western">
+<surname>Ting</surname>
+<given-names>RZW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Szeto</surname>
+<given-names>CC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Chan</surname>
+<given-names>MHM</given-names>
+</string-name>, <etal>et al</etal>
+</person-group>. <article-title>Risk factors of vitamin B(12) deficiency in patients receiving metformin</article-title>. <source>Arch Intern Med</source>
+<year>2006</year>;<volume>166</volume>:<fpage>1975</fpage>–<lpage>9</lpage>. <pub-id pub-id-type="doi">10.1001/archinte.166.18.1975</pub-id>
+<pub-id pub-id-type="pmid">17030830</pub-id>
+</mixed-citation></ref></ref-list></back></article></pmc-articleset>

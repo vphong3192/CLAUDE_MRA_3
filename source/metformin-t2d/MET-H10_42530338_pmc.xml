@@ -1,0 +1,531 @@
+<?xml version="1.0"  ?><!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "https://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd"><pmc-articleset><article id="dom71128" xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Diabetes Obes Metab</journal-id><journal-id journal-id-type="iso-abbrev">Diabetes Obes Metab</journal-id><journal-id journal-id-type="pmc-domain-id">379</journal-id><journal-id journal-id-type="pmc-domain">blackwellopen</journal-id><journal-id journal-id-type="nlm-id">100883645</journal-id><journal-id journal-id-type="publisher-id">DOM</journal-id><journal-title-group><journal-title>Diabetes, Obesity &amp; Metabolism</journal-title></journal-title-group><issn pub-type="ppub">1462-8902</issn><issn pub-type="epub">1463-1326</issn><custom-meta-group><custom-meta><meta-name>pmc-is-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-collection-title</meta-name><meta-value>Wiley Open Access Collection</meta-value></custom-meta></custom-meta-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC13538750</article-id><article-id pub-id-type="pmcid-ver">PMC13538750.1</article-id><article-id pub-id-type="pmcaid">13538750</article-id><article-id pub-id-type="pmcaiid">13538750</article-id><article-id pub-id-type="pmid">42530338</article-id><article-id pub-id-type="doi">10.1111/dom.71128</article-id><article-id pub-id-type="publisher-id">DOM71128</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Original Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Original Article</subject></subj-group></article-categories><title-group><article-title>Effect of Medications for Type 2 Diabetes on Cardiovascular Events and Mortality: A Comprehensive Pairwise and Network Meta‐Analysis</article-title></title-group><contrib-group><contrib id="dom71128-cr-0001" contrib-type="author"><name name-style="western"><surname>Silverii</surname><given-names initials="GA">Giovanni Antonio</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6695-3213</contrib-id><xref rid="dom71128-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="dom71128-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="dom71128-cr-0002" contrib-type="author"><name name-style="western"><surname>Velardi</surname><given-names initials="V">Valerio</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0001-4516-8427</contrib-id><xref rid="dom71128-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="dom71128-cr-0003" contrib-type="author"><name name-style="western"><surname>Marinelli</surname><given-names initials="C">Christian</given-names></name><xref rid="dom71128-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="dom71128-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="dom71128-cr-0004" contrib-type="author"><name name-style="western"><surname>Lax</surname><given-names initials="A">Antonino</given-names></name><xref rid="dom71128-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="dom71128-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="dom71128-cr-0005" contrib-type="author"><name name-style="western"><surname>Monami</surname><given-names initials="M">Matteo</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-9349-828X</contrib-id><xref rid="dom71128-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="dom71128-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="dom71128-cr-0006" contrib-type="author" corresp="yes"><name name-style="western"><surname>Mannucci</surname><given-names initials="E">Edoardo</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0001-9759-9408</contrib-id><xref rid="dom71128-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="dom71128-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><address><email>edoardo.mannucci@unifi.it</email></address></contrib></contrib-group><aff id="dom71128-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Diabetology Unit</named-content>
+<institution>Careggi Hospital</institution>
+<city>Florence</city>
+<country country="IT">Italy</country>
+</aff><aff id="dom71128-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<institution>University of Florence</institution>
+<city>Florence</city>
+<country country="IT">Italy</country>
+</aff><aff id="dom71128-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Department of Medical Surgical and Health Sciences</named-content>
+<institution>University of Trieste</institution>
+<city>Trieste</city>
+<country country="IT">Italy</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence:</bold>
+<break/>
+Edoardo Mannucci (<email>edoardo.mannucci@unifi.it</email>)<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>30</day><month>7</month><year>2026</year></pub-date><pub-date pub-type="ppub"><month>10</month><year>2026</year></pub-date><volume>28</volume><issue seq="610">10</issue><issue-id pub-id-type="pmc-issue-id">520826</issue-id><issue-id pub-id-type="doi">10.1111/dom.v28.10</issue-id><fpage>9403</fpage><lpage>9411</lpage><history><date date-type="rev-recd"><day>06</day><month>7</month><year>2026</year></date><date date-type="received"><day>19</day><month>5</month><year>2026</year></date><date date-type="accepted"><day>09</day><month>7</month><year>2026</year></date></history><pub-history><event event-type="pmc-release"><date><day>03</day><month>09</month><year>2026</year></date></event><event event-type="pmc-live"><date><day>04</day><month>09</month><year>2026</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-09-04 00:07:29.847"><day>04</day><month>09</month><year>2026</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2026 The Author(s). <italic toggle="yes">Diabetes, Obesity and Metabolism</italic> published by John Wiley &amp; Sons Ltd.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="DOM-28-9403.pdf"/><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:DOM-28-9403.pdf"/><abstract><title>ABSTRACT</title><sec id="dom71128-sec-0001"><title>Aim</title><p>To assess the effect of all the approved classes of medications for type 2 diabetes on Major Adverse Cardiovascular events (MACE) and all‐cause mortality.</p></sec><sec id="dom71128-sec-0002"><title>Methods</title><p>We performed a pairwise and network meta‐analysis, including randomised controlled trials with a duration of at least 40 weeks, comparing medications versus placebo or an active comparator, in which MACE and deaths were adjudicated.</p></sec><sec id="dom71128-sec-0003"><title>Results</title><p>We included 93 studies. In pairwise meta‐analyses, versus all comparators, GLP‐1 receptor agonists (GLP1RA), SGLT‐2 inhibitors (SGLT2i), metformin and pioglitazone were associated with a significant reduction of MACE and sulfonylureas with increased MACE. Furthermore, tirzepatide, SGLT2i and GLP1RA were associated with a significantly reduced all‐cause mortality. In the principal (frequentist) network meta‐analysis, metformin (OR 0.69, 95% CI 0.53–0.89), SGLT2i (0.82, 0.75–0.90), GLP1RA (0.87, 0.83–0.92) and tirzepatide (0.82, 0.72–0.93) were associated with a significant reduction of MACE versus placebo; no effect was observed for insulin, DPP4 inhibitors (DPP4i) or sulfonylureas. Tirzepatide (0.72, 0.64–0.82), SGLT2i (0.85, 0.80–0.91) and GLP1RA (0.85, 0.80–0.91) were associated with a significantly reduced mortality versus placebo; no effect was detected for other drugs. The sensitivity (Bayesian) analysis did not confirm the significance of results for pioglitazone on MACE. The certainty of evidence was moderate‐to‐high for GLP1RA, SGLT2i, Tirzepatide, DPP4i; low for metformin; low‐to‐moderate for other drugs.</p></sec><sec id="dom71128-sec-0004"><title>Conclusion</title><p>SGLT2i, GLP1RA, tirzepatide and (with lower quality of evidence) pioglitazone and metformin are associated with a reduced incidence of cardiovascular events; tirzepatide, SGLT2i and GLP1RA are also associated with a reduced all‐cause mortality.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="dom71128-kwd-0001">antidiabetic drug</kwd><kwd id="dom71128-kwd-0002">cardiovascular disease</kwd><kwd id="dom71128-kwd-0003">meta‐analysis</kwd><kwd id="dom71128-kwd-0004">network meta‐analysis</kwd><kwd id="dom71128-kwd-0005">type 2 diabetes</kwd></kwd-group><counts><fig-count count="2"/><table-count count="2"/><page-count count="9"/><word-count count="6500"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>October 2026</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.8.6 mode:remove_FC converted:03.09.2026</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="dom71128-cit-1001">
+<string-name name-style="western">
+<given-names>G. A.</given-names>
+<surname>Silverii</surname>
+</string-name>, <string-name name-style="western">
+<given-names>V.</given-names>
+<surname>Velardi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Marinelli</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Lax</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Monami</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, “<article-title>Effect of Medications for Type 2 Diabetes on Cardiovascular Events and Mortality: A Comprehensive Pairwise and Network Meta‐Analysis</article-title>,” <source>Diabetes, Obesity and Metabolism</source>
+<volume>28</volume>, no. <issue>10</issue> (<year>2026</year>): <fpage>9403</fpage>–<lpage>9411</lpage>, <pub-id pub-id-type="doi">10.1111/dom.71128</pub-id>.<pub-id pub-id-type="pmcid">PMC13538750</pub-id><pub-id pub-id-type="pmid">42530338</pub-id></mixed-citation>
+</p><fn-group id="dom71128-ntgp-0001"><fn fn-type="handlingEditor" id="dom71128-note-0001"><p>
+<bold>Handling Editor:</bold> Richard Donnelly</p></fn></fn-group></notes></front><body id="dom71128-body-0001"><sec id="dom71128-sec-0005"><label>1</label><title>Introduction</title><p>The treatment of type 2 diabetes is aimed at reducing the risk of acute and chronic complications of hyperglycemia. Among those, cardiovascular disease is a major cause of death and disability. Beyond the possible benefits of glycemic control on cardiovascular risk [<xref rid="dom71128-bib-0001" ref-type="bibr">1</xref>], the choice of glucose‐lowering medications is a major determinant of cardiovascular outcomes [<xref rid="dom71128-bib-0002" ref-type="bibr">2</xref>]. In fact, randomised controlled trials, often originally designed for the assessment of the long‐term safety of specific medications, have shown that some classes of drugs are able to reduce cardiovascular morbidity and mortality in patients with type 2 diabetes. In particular, metformin [<xref rid="dom71128-bib-0003" ref-type="bibr">3</xref>], Sodium‐Glucose Transporter 2 inhibitors (SGLT2i) and Glucagon‐like peptide 1 Receptor agonists (GLP1RA) have been reported to reduce the incidence of major adverse cardiovascular events (MACE) in people with type 2 diabetes mellitus [<xref rid="dom71128-bib-0004" ref-type="bibr">4</xref>, <xref rid="dom71128-bib-0005" ref-type="bibr">5</xref>, <xref rid="dom71128-bib-0006" ref-type="bibr">6</xref>]. The effect of pioglitazone, which could reduce MACE but increases the risk of hospitalisation for heart failure, is still debated [<xref rid="dom71128-bib-0007" ref-type="bibr">7</xref>, <xref rid="dom71128-bib-0008" ref-type="bibr">8</xref>], whereas Dipeptidyl Peptidase‐4 inhibitors (DPP4i) and insulin do not appear to have any relevant effect on cardiovascular risk [<xref rid="dom71128-bib-0009" ref-type="bibr">9</xref>]. Conversely, sulfonylureas may increase the risk for MACE [<xref rid="dom71128-bib-0010" ref-type="bibr">10</xref>].</p><p>The evidence base for assessing the effects of drugs for type 2 diabetes on cardiovascular outcomes evolves with the progressive accumulation of new trials. In recent years, the development of new drugs (most notably, the dual GLP1/GIP receptor agonist tirzepatide) and the publication of results of new trials on other already available drugs have changed the general landscape. Notably, although most trials compare an active drug with a placebo, some studies are head‐to‐head comparisons between active drugs. In particular, the largest trial with adjudicated cardiovascular outcomes performed with tirzepatide is a comparison versus dulaglutide, which had already demonstrated cardiovascular benefits [<xref rid="dom71128-bib-0011" ref-type="bibr">11</xref>]. In this context, the use of traditional meta‐analyses can be misleading, underestimating potential benefits if trials versus active comparators are included and reducing the evidence base if they are excluded. A Network Meta‐Analysis (NMA), allowing multiple comparisons with the inclusion of both placebo‐ and active comparator‐controlled trials, can overcome such issues, providing a comprehensive summary of current evidence [<xref rid="dom71128-bib-0012" ref-type="bibr">12</xref>]. However, results of NMA need to be considered with some caution, because differences in characteristics of enrolled samples and/or trial procedures across different studies can produce distortions in indirect comparisons. A living systematic review with NMA, including all classes of drugs for type 2 diabetes and assessing their effects on cardiovascular events and all‐cause mortality [<xref rid="dom71128-bib-0013" ref-type="bibr">13</xref>], does not yet include the recently published cardiovascular outcome trial with tirzepatide [<xref rid="dom71128-bib-0011" ref-type="bibr">11</xref>], not allowing a reliable estimate of the effects of this agent on cardiovascular morbidity and mortality. In addition, that living systematic review is not specifically aimed at assessing cardiovascular outcomes, considering a wider range of endpoints; consequently, it includes shorter‐term trials (useful for metabolic outcomes, but potentially attenuating differences on cardiovascular endpoints) and drugs specifically aimed at other conditions associated with diabetes, such as finerenone. The present NMA is specifically designed for summarising all current evidence on the effect of drugs for type 2 diabetes on MACE and all‐cause mortality, also providing data for tirzepatide.</p></sec><sec sec-type="methods" id="dom71128-sec-0006"><label>2</label><title>Methods</title><p>This NMA was reported following the criteria of Preferred Reporting Items for Systematic Reviews and Meta‐Analyses (PRISMA) statement [<xref rid="dom71128-bib-0014" ref-type="bibr">14</xref>]. The protocol of the present meta‐analysis was published on the PROSPERO website (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.crd.york.ac.uk/prospero/#recordDetails" ext-link-type="uri">https://www.crd.york.ac.uk/prospero/#recordDetails</ext-link>; registration number: CRD420261290664).</p><p>The principal endpoint was MACE, a composite of Cardiovascular Death, nonfatal myocardial infarction and nonfatal stroke. The secondary endpoints are all‐cause mortality, nonfatal stroke and nonfatal myocardial infarction.</p><sec id="dom71128-sec-0007"><label>2.1</label><title>Search Strategy</title><p>A Medline, Embase and Cochrane central search was performed up to January 31, 2026; detailed information on the search strategy and keywords used is reported in Table <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S1</xref>. Animal studies were excluded, whereas no language or date restriction was imposed.</p></sec><sec id="dom71128-sec-0008"><label>2.2</label><title>Inclusion Criteria</title><p>We included all randomised controlled trials with a duration of 40 weeks or longer performed in adults (≥ 18 years) with established type 2 diabetes mellitus, in which any glucose‐lowering drug approved by the European Medicines Agency (EMA) as a treatment for type 2 diabetes mellitus was compared with placebo or any other EMA‐approved glucose‐lowering drug and cardiovascular events and deaths were independently adjudicated by an external committee. Studies were included independent of blinding. The choice of a 40‐week duration as an inclusion criterion is somewhat arbitrary (like any other threshold in that respect) and it allows for a duration of treatment of at least 6 months after drug titration, for those agents needing progressive up‐titration at the beginning of treatment. This threshold was chosen as a reasonable compromise between the need to exclude shorter‐term trials, which could blunt differences between drug classes for cardiovascular endpoints and the need to retrieve a sufficiently large number of trials, with relevant sample sizes to increase the reliability of comparisons.</p><p>We excluded trials in which the control arm consisted of two or more different drugs (either as predefined combination therapies or as two different treatments prescribed separately to each or different subjects) and no data on subgroups were provided, as well as trials in which intervention and comparator arms consisted of different doses of the same drug.</p></sec><sec id="dom71128-sec-0009"><label>2.3</label><title>Data Extraction</title><p>Information on the baseline characteristics of the enrolled samples and the incidence of MACE and all‐cause mortality was extracted from the principal publication when available; when needed, secondary publications and the ClinicalTrials.gov registry were used to retrieve missing information, in the hierarchical order reported above. Four authors (A.L., C.M., G.A.S., V.V.) performed data extraction independently and conflicts were resolved by a fifth investigator (E.M.).</p><p>The risk of bias was assessed using the Cochrane recommended ROB2.0 tool to determine the risk of bias in Randomised Controlled Trials and with CINeMA software to assess bias in meta‐analysis. The risk of bias was described and evaluated in five specific domains: randomisation process, deviations from intended interventions, missing outcome data, measurement of the outcome, selection of the reported result; a further domain encompassing all the previous was specified as ‘overall bias’. The results of these domains were graded as ‘low’ risk of bias, ‘high’ risk of bias or ‘uncertain’ risk of bias.</p></sec><sec id="dom71128-sec-0010"><label>2.4</label><title>Statistical Analysis</title><p>Mantel‐Haenzel Odds Ratio for categorical variables were calculated, using random effect models. We performed an NMA for all the outcomes listed above, to verify differences across individual glucose‐lowering strategies concerning their effects on primary and secondary endpoints. These analyses allow indirect comparisons when direct trials are unavailable, using differences from common comparators and then combining direct and indirect comparisons for a final estimate of effects. The reference category was placebo. The NMA was performed within a pairwise modelling framework using the Meta Insight software. H values were calculated to evaluate consistency between direct and indirect evidence; <italic toggle="yes">p</italic> &gt; 0.05 for inconsistency indicates non‐significant inconsistency of treatment effects. Publication bias was assessed through the visual analysis of funnel plots; when publication bias was not ruled out through funnel plot, the Egger's test was performed, using Comprehensive Meta‐analysis. All other analyses were performed using Review Manager (RevMan), Version 5.3 (Copenhagen: The Nordic Cochrane Centre, The Cochrane Collaboration, 2014).</p></sec></sec><sec sec-type="results" id="dom71128-sec-0011"><label>3</label><title>Results</title><sec id="dom71128-sec-0012"><label>3.1</label><title>Retrieved Trials</title><p>The search of Medline, Embase and Cochrane databases allowed the identification of 13 503 items; after excluding 13 164 studies by reading the title and the abstract, 247 further trials were excluded after reviewing the full text (See Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S1</xref>, Table <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S2</xref>). We therefore retrieved 93 trials fulfilling all inclusion criteria (two of which were included in the same paper) [<xref rid="dom71128-bib-0003" ref-type="bibr">3</xref>]. The principal characteristics of trials included in the analysis are reported in Table <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S3</xref>.</p><p>The quality of studies was generally satisfactory (Figures <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S2</xref> and <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S3</xref>), with five studies in which potential issues with randomisation could not be ruled out and seven studies in which deviation from the intended intervention could not be excluded.</p></sec><sec id="dom71128-sec-0013"><label>3.2</label><title>Principal Outcome: <styled-content style="fixed-case" toggle="no">MACE</styled-content>
+</title><sec id="dom71128-sec-0014"><label>3.2.1</label><title>Traditional Meta‐Analyses (By Class)</title><p>The visual analysis of funnel plots ruled out publication bias for trials performed with all drug classes, except for sulfonylureas (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S4</xref>). This finding was confirmed by the Egger's test, which showed a significant publication bias only for sulfonylureas (<italic toggle="yes">p</italic> = 0.02, Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S4</xref>). In comparisons versus all comparators, GLP1RA, SGLT2i, metformin and pioglitazone, but not tirzepatide, were associated with a significant reduction of MACE (Figures <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S5–S9</xref>). For GLP1RA, the effect was significant for trials versus placebo, but not versus active comparators (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S5</xref>). For SGLT2i, the result was largely driven by trials vs. placebo (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S6</xref>) and for tirzepatide by trials versus GLP1RA (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S9</xref>). DPP4i and insulin were neutral in respect to cardiovascular risk (Figures <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S10</xref> and <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S11</xref>), whereas sulfonylureas were associated with a significant increase in MACE (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S12</xref>).</p></sec><sec id="dom71128-sec-0015"><label>3.2.2</label><title>Network Meta‐Analysis</title><p>The analysis included 85 studies (82 two‐arm studies and 3 multi‐arm studies, of which 4 had zero events and 16 had at least one zero‐event arm) assessed 9 interventions (8 drug classes and placebo), overall including 21 174 MACE in 247 193 patients. Out of 36 possible pairwise comparisons, 22 comparisons with direct data were retrieved (Figure <xref rid="dom71128-fig-0001" ref-type="fig">1</xref>). GLP1RA were investigated in 32 studies, DPP4i in 28, sulfonylureas in 14, SGLT2i and insulin in 13 studies each, tirzepatide in 12, pioglitazone in 10, whereas only 4 studies used metformin; most of the trials (46) were versus placebo (Figure <xref rid="dom71128-fig-0001" ref-type="fig">1</xref>). In the principal (frequentist) analysis, metformin (OR 0.68, 95% CI 0.51–0.92), SGLT2i (OR 0.82, 0.75–0.90), GLP1RA (OR 0.88, 0.83–0.93), tirzepatide (OR 0.83, 0.72–0.96) and pioglitazone (OR 0.85, 0.73–0.98) were associated with a significant reduction of MACE in respect to placebo, whereas no effect was observed for insulin, DPP4i, or sulfonylureas (Figure <xref rid="dom71128-fig-0002" ref-type="fig">2A</xref>).</p><fig position="float" fig-type="FIGURE" id="dom71128-fig-0001" orientation="portrait"><label>FIGURE 1</label><caption><p>Network plot for Major Adverse Cardiovascular events. (A) The numbers on the nodes are the number of trials for each comparison. (B and C) Node size is proportional to the number of included patients, width of lines between nodes is proportional to the number of included trials. (C) The proportion of green and Yellow in the nodes reflects the within‐trial risk of bias.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="DOM-28-9403-g003.webp"/></fig><fig position="float" fig-type="FIGURE" id="dom71128-fig-0002" orientation="portrait"><label>FIGURE 2</label><caption><p>frequentist Meta‐analysis, forest plots: Difference in the incidence of Major Adverse Cardiovascular events (A), All‐cause mortality (B), Non‐Fatal Myocardial infarction (C), Non‐Fatal Stroke (D) between Diabetes drugs classes and placebo; CI, confidence interval; OR, odds ratio.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="DOM-28-9403-g004.webp"/></fig><p>In direct comparisons, metformin was superior to sulfonylureas; SGLT2i and pioglitazone were superior to placebo, whereas GLP1RA was superior to placebo, DPP4i and insulin (Table <xref rid="dom71128-tbl-0001" ref-type="table">1</xref>). Conversely, tirzepatide was not statistically different from any comparator, including placebo. In indirect (network) comparisons, metformin, SGLT2i, GLP1RA and tirzepatide were all superior to placebo, DPP4i, insulin and sulfonylureas, whereas pioglitazone was superior to insulin and sulfonylureas only and DPP4i to sulfonylureas only (Table <xref rid="dom71128-tbl-0001" ref-type="table">1</xref>). In the sensitivity (Bayesian) analysis, metformin, GLP1RA and SGLT2i and tirzepatide remained associated with a significant reduction of MACE versus placebo, whereas results with pioglitazone were not statistically significant (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S13</xref>). A significant inconsistency was observed only for the comparison of metformin vs. SGLT2i (with metformin superior in direct comparison but not in indirect comparison and NMA, Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S14</xref>).</p><table-wrap position="float" id="dom71128-tbl-0001" content-type="TABLE" orientation="portrait"><label>TABLE 1</label><caption><p>Frequentist treatment effect: Summary forest plots direct comparisons (in black) and indirect comparisons (in grey) between diabetes drug classes in the incidence of Major Adverse Cardiovascular Events (dir. = direct).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><tbody valign="top"><tr><td valign="middle" align="left" rowspan="1" colspan="1">
+<inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:title="image" xlink:href="DOM-28-9403-g002.jpg"/>
+</td></tr></tbody></table></table-wrap><p>The overall within‐study risk of bias, assessed using the Cochrane risk‐of‐bias tool, was low for most comparisons contributing to the network. Some concerns were identified in specific contrasts, particularly those involving metformin and, to a lesser extent, many comparisons involving insulin, sulfonylureas, or pioglitazone, mainly due to limitations in allocation concealment and outcome reporting (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S15</xref>). These concerns had a limited impact on the overall network estimates and were incorporated into the CINeMA framework when rating the certainty of evidence (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S16</xref>).</p><p>The confidence of evidence was rated high or moderate for all comparisons including GLP1RA, except those with metformin for which the confidence rating was low; it was also rated high for SGLT2i and tirzepatide, quality was high for all comparisons except pioglitazone, GLP1RA and metformin (moderate), whereas for metformin the certainty of the evidence was mostly rated as low or moderate. Confidence for comparison between insulin and placebo or active comparators was mostly moderate and high for GLP1RA and tirzepatide; moderate to high for pioglitazone; for comparisons between sulfonylureas and placebo, insulin, DPP4i or pioglitazone confidence was moderate, whereas it was low for comparison between sulfonylureas and metformin or insulin and high for comparisons between sulfonylureas and GLP1RA, SGLT2i and tirzepatide (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S16</xref>).</p></sec></sec><sec id="dom71128-sec-0016"><label>3.3</label><title>All‐Cause Mortality</title><sec id="dom71128-sec-0017"><label>3.3.1</label><title>Traditional Meta‐Analyses (By Class)</title><p>Funnel plots did not detect a significant publication bias (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S17</xref>). Tirzepatide, SGLT2i and GLP1RA, but not metformin, were associated with a significant reduction of all‐cause mortality (Figures <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S18–S20</xref>). Results for tirzepatide were largely driven by active‐comparator‐controlled studies, with over 90% of the total result determined by the SURPASS‐CVOT study versus GLP1RA (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S20</xref>), whereas the result of SGLT2i was largely driven by placebo‐controlled studies (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S19</xref>). For GLP1RA, the reduction of mortality was statistically significant in placebo‐controlled studies, but not in trials vs. active comparators, where the sample size was smaller; the estimated effect on mortality in active comparator trials was similar to that of placebo‐controlled studies and the difference across subgroups of trials was not statistically significant (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S15</xref>). DPP4i, pioglitazone, insulin and sulfonylureas did not show significant effects on all‐cause mortality (Figures <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S21–S24</xref>).</p></sec><sec id="dom71128-sec-0018"><label>3.3.2</label><title>Network Meta‐Analysis</title><p>The analysis included 91 studies (89 two‐arm studies and two three‐arm studies, of which 13 had zero events and 25 had at least one zero‐event arm), which assessed 10 interventions (nine drug classes and placebo), overall including 18 101 deaths in 256 455 patients. Out of 45 possible pairwise comparisons, 23 comparisons with direct data were retrieved (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S25</xref>). Tirzepatide (OR 0.72, 0.64–0.82), SGLT2i (OR 0.85, 0.80–0.91) and GLP1RA (OR 0.87, 0.82–0.92) were associated with a significant reduction of all‐cause mortality versus placebo. No effect was observed for other drugs (Figure <xref rid="dom71128-fig-0002" ref-type="fig">2B</xref>). In direct comparisons, tirzepatide was superior to GLP1RA and GLP1RA were superior to insulin, DPP4i and sulfonylureas (Table <xref rid="dom71128-tbl-0002" ref-type="table">2</xref>). In indirect comparisons, tirzepatide was superior to all other drugs with the only exception of metformin and acarbose; SGLT2i and GLP1RA were superior to insulin, DPP4i and sulfonylureas (Table <xref rid="dom71128-tbl-0002" ref-type="table">2</xref>). In the sensitivity analysis (Bayesian meta‐analysis), Tirzepatide, GLP1RA and SGLT2i were associated with a significant reduction of all‐cause mortality versus placebo, whereas results with other drugs were not statistically significant (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S26</xref>). No inconsistency was found for any comparison (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S27</xref>).</p><table-wrap position="float" id="dom71128-tbl-0002" content-type="TABLE" orientation="portrait"><label>TABLE 2</label><caption><p>Frequentist treatment effect: Summary forest plots direct comparisons (in black) and indirect comparisons (in grey) between diabetes drug classes in overall mortality (dir. = direct).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><tbody valign="top"><tr><td valign="middle" align="left" rowspan="1" colspan="1">
+<inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:title="image" xlink:href="DOM-28-9403-g001.jpg"/>
+</td></tr></tbody></table></table-wrap><p>The overall within‐study risk of bias, assessed using the Cochrane risk‐of‐bias tool, was low for most comparisons contributing to the network. Some concerns were identified in several specific contrasts, particularly those involving metformin, insulin, sulfonylureas, or pioglitazone (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S28</xref>). These concerns had a limited impact on the network estimates. The certainty of evidence for all‐cause mortality, evaluated using the CINeMA framework, is presented in Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S29</xref>. Overall, confidence in the estimates was low for all comparisons involving acarbose, due to imprecision, as only one trial performed with acarbose was available, whereas it was high for most comparisons involving GLP1RA, SGLT2i and tirzepatide versus placebo and most active comparators, with the exception of some lower certainty that we observed in specific cases, mainly driven by imprecision and within‐study bias, especially regarding the UKPDS trials [<xref rid="dom71128-bib-0003" ref-type="bibr">3</xref>, <xref rid="dom71128-bib-0015" ref-type="bibr">15</xref>]. Evidence for acarbose was consistently rated as low certainty due to imprecision. For GLP1RA, certainty was generally high, with moderate ratings in comparisons versus placebo, metformin, or pioglitazone. For metformin, certainty ranged from low (notably versus tirzepatide or sulfonylureas, mainly due to imprecision and inconsistency) to high (versus DPP4i), with most other comparisons rated as moderate. Certainty of evidence for SGLT2i and tirzepatide was high for most comparisons, except for comparisons involving metformin or pioglitazone, which were rated as moderate. Evidence for insulin and sulfonylureas was generally of moderate certainty, with lower confidence in comparisons involving metformin and higher certainty in comparisons versus GLP1RA, SGLT2i and tirzepatide. Similarly, comparisons involving pioglitazone were mostly supported by moderate certainty, except for higher confidence estimates in selected contrasts. Downgrading of certainty was primarily driven by imprecision and, to a lesser extent, inconsistency, rather than within‐study risk of bias.</p></sec></sec><sec id="dom71128-sec-0019"><label>3.4</label><title>Components of <styled-content style="fixed-case" toggle="no">MACE</styled-content>
+</title><sec id="dom71128-sec-0020"><label>3.4.1</label><title>Nonfatal Myocardial Infarction</title><p>In the 21 available pairwise comparisons in 61 studies, assessing eight drug classes and placebo, 196 031 patients were enrolled and 7987 non‐fatal myocardial infarctions were reported. Out of 36 possible pairwise comparisons, 21 comparisons with direct data were retrieved. In the principal (frequentist) analysis, SGLT2i, GLP1RA and tirzepatide were associated with a lower incidence of myocardial infarction, whereas no significant effect was observed for pioglitazone, DPP4i, insulin, metformin and sulfonylureas. In indirect comparisons, tirzepatide was associated with a lower incidence of myocardial infarction than DPP4i and sulfonylureas; GLP1RA were associated with a lower incidence of myocardial infarction than DPP4i; SGLT2i were associated with a lower incidence of myocardial infarction than sulfonylureas (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S30</xref>).</p></sec><sec id="dom71128-sec-0021"><label>3.4.2</label><title>Non‐Fatal Stroke</title><p>The NMA included 56 studies, which assessed eight drug classes and placebo, overall including 3320 non‐fatal strokes in 155 019 patients. Out of 36 possible pairwise comparisons, 19 with direct data were retrieved. GLP1RA were associated with a lower incidence of non‐fatal stroke than placebo (Figure <xref rid="dom71128-fig-0002" ref-type="fig">2D</xref>), SGLT2i and sulfonylureas and pioglitazone in comparison with sulfonylureas, whereas all the other glucose‐lowering drug classes were not associated with any significant effect on the incidence of non‐fatal stroke (Figure <xref rid="dom71128-supitem-0001" ref-type="supplementary-material">S31</xref>).</p></sec></sec></sec><sec sec-type="discussion" id="dom71128-sec-0022"><label>4</label><title>Discussion</title><p>The present NMA confirms, on a wider evidence base including indirect comparisons, the beneficial effects of SGLT2i and GLP1RA on cardiovascular risk and all‐cause mortality in patients with type 2 diabetes, already reported in traditional meta‐analyses of placebo‐controlled trials [<xref rid="dom71128-bib-0004" ref-type="bibr">4</xref>, <xref rid="dom71128-bib-0005" ref-type="bibr">5</xref>, <xref rid="dom71128-bib-0006" ref-type="bibr">6</xref>]. Notably, both classes are superior not only to placebo, but also to several classes of active drugs, such as DPP4i, sulfonylureas and insulin. A significant reduction in the incidence of nonfatal myocardial infarction is observed for both classes, confirming previous meta‐analyses [<xref rid="dom71128-bib-0005" ref-type="bibr">5</xref>, <xref rid="dom71128-bib-0006" ref-type="bibr">6</xref>], whereas the effect on the risk of nonfatal stroke is significant only for GLP1RA. It can be speculated that the mechanisms responsible for the reduction of cardiovascular risk with either SGLT2i or GLP1RA are partly divergent: although both classes have positive effects on some cardiovascular risk factors, such as blood pressure, blood glucose and body weight [<xref rid="dom71128-bib-0016" ref-type="bibr">16</xref>], GLP1RA could have direct protective effects on vascular walls via the interaction with the endothelial GLP1 receptor, leading to the prevention of atherogenesis [<xref rid="dom71128-bib-0017" ref-type="bibr">17</xref>]. On the other hand, SGLT2i could have a more specific cardiac effect, determined by a reduction of pre‐ and post‐load and consequent decrease in oxygen consumption [<xref rid="dom71128-bib-0018" ref-type="bibr">18</xref>, <xref rid="dom71128-bib-0019" ref-type="bibr">19</xref>], as well as by enhanced oxygen supply and a shift in substrate metabolism [<xref rid="dom71128-bib-0020" ref-type="bibr">20</xref>].</p><p>The assessment of the effects of tirzepatide on cardiovascular risk is methodologically challenging, since the larger available trial assessing cardiovascular outcomes [<xref rid="dom71128-bib-0011" ref-type="bibr">11</xref>] is a non‐inferiority trial versus an active comparator, dulaglutide, with proven cardiovascular benefit [<xref rid="dom71128-bib-0021" ref-type="bibr">21</xref>]. The present NMA shows a significant reduction of cardiovascular risk versus placebo, insulin, DPP4i and sulfonylureas, similar to that observed for SGLT2i and GLP1RA. This result should be interpreted cautiously since it was obtained mainly through indirect comparisons. The reduction of risk versus placebo was significant for myocardial infarction, but not for stroke; however, for the latter, the relative paucity of available data for tirzepatide, generating wide confidence intervals, could have contributed to the result. Notably, the overall reduction of MACE was not greater than with GLP1RA, suggesting that the stimulation of GIP receptor [<xref rid="dom71128-bib-0022" ref-type="bibr">22</xref>] does not play a major role in cardiovascular prevention [<xref rid="dom71128-bib-0023" ref-type="bibr">23</xref>]. Tirzepatide was also associated with a wide reduction in all‐cause mortality versus placebo; with this drug, mortality was significantly lower not only than with DPP4i, insulin and sulfonylureas, but also in comparison with pioglitazone, SGLT2i and GLP1RA. The result is largely driven by the direct comparison with dulaglutide [<xref rid="dom71128-bib-0011" ref-type="bibr">11</xref>]. It can be speculated that the greater reduction of hyperglycemia and/or the more pronounced weight loss in comparison with other drugs, including GLP1RA [<xref rid="dom71128-bib-0024" ref-type="bibr">24</xref>], contributes to an improvement in the prognosis of cardiovascular events, thus reducing cardiovascular and all‐cause mortality.</p><p>The positive effect of metformin on cardiovascular risk [<xref rid="dom71128-bib-0004" ref-type="bibr">4</xref>, <xref rid="dom71128-bib-0025" ref-type="bibr">25</xref>] is confirmed by the present NMA, with significant differences from placebo, DPP4i, sulfonylureas and insulin. On the other hand, data on mortality are not significant. The assessment of the effects of metformin is based on a small number of studies with limited sample size, mostly performed many years ago. In fact, metformin is rarely chosen as a comparator for newer drugs assessing cardiovascular outcomes, maybe because of the high expectations for its effects on cardiovascular risk. The lower quality of parent trials reduces the reliability of the results of metformin on MACE and all‐cause mortality.</p><p>Pioglitazone had been previously reported to reduce the incidence of MACE, while increasing the risk of hospitalisations for heart failure [<xref rid="dom71128-bib-0007" ref-type="bibr">7</xref>]. In the present pairwise meta‐analysis, pioglitazone had a significant effect versus all comparators, confirming previous results [<xref rid="dom71128-bib-0008" ref-type="bibr">8</xref>]. In NMA, the beneficial effect of pioglitazone was observed in comparison with placebo, DPP4i, insulin and sulfonylureas, although it was more nuanced, as it was not confirmed by the Bayesian sensitivity analysis. It may be speculated that the antiatherogenic effect of pioglitazone, demonstrated by clinical trials [<xref rid="dom71128-bib-0026" ref-type="bibr">26</xref>] was partly countered by the effects on fluid retention, determining increased myocardial oxygen consumption [<xref rid="dom71128-bib-0027" ref-type="bibr">27</xref>]. Notably, a trial showing a reduction in the risk of stroke determined by treatment with pioglitazone could not be included in the meta‐analysis because it enrolled patients without diabetes [<xref rid="dom71128-bib-0028" ref-type="bibr">28</xref>].</p><p>The neutrality of DPP4i with respect to cardiovascular morbidity and all‐cause mortality is confirmed by the present NMA [<xref rid="dom71128-bib-0009" ref-type="bibr">9</xref>], as well as the effects of insulin, which neither increases nor decreases the incidence of MACE and mortality and is also in line with previous reports [<xref rid="dom71128-bib-0029" ref-type="bibr">29</xref>, <xref rid="dom71128-bib-0030" ref-type="bibr">30</xref>].</p><p>The paucity of data does not allow an accurate assessment of the effects of acarbose.</p><p>Previous meta‐analyses of clinical trials had reported a significant increase in the incidence of MACE and all‐cause mortality associated with sulfonylureas [<xref rid="dom71128-bib-0010" ref-type="bibr">10</xref>, <xref rid="dom71128-bib-0025" ref-type="bibr">25</xref>]. The present pairwise meta‐analysis confirms that sulfonylureas are associated with an increased risk of cardiovascular events. This phenomenon can be attributed to the interaction of the drugs of this class with ATP‐dependent potassium channels in cardiomyocytes and cerebral tissues, augmenting the susceptibility to ischemic damage [<xref rid="dom71128-bib-0031" ref-type="bibr">31</xref>, <xref rid="dom71128-bib-0032" ref-type="bibr">32</xref>] and/or to an increased risk of hypoglycemia [<xref rid="dom71128-bib-0033" ref-type="bibr">33</xref>]. Conversely, in contrast to previous pairwise meta‐analyses [<xref rid="dom71128-bib-0004" ref-type="bibr">4</xref>, <xref rid="dom71128-bib-0010" ref-type="bibr">10</xref>], in this NMA the observed association between sulfonylureas and the increase in cardiovascular events and all‐cause mortality did not reach statistical significance. It is possible that previous results were partly determined by comparisons with active drugs which reduce cardiovascular events and mortality, such as SGLT2i, GLP1RA, pioglitazone and possibly metformin. Furthermore, our choice to exclude all trials not adjudicating MACE may also have determined a difference in results. A significant publication bias has been detected for sulfonylureas in our pairwise meta‐analysis, warranting caution in the interpretation of results. In addition, the possibility of bias determined by the relatively lower quality of some of the available trials with sulfonylureas should be considered. Furthermore, indirect comparisons in NMA could be affected by residual bias determined by the heterogeneity of trials, potentially explaining differences from pairwise metanalyses.</p><p>The results of the present NMA are largely, but not entirely, convergent with those of a recently published analysis, which shares most of the same methods [<xref rid="dom71128-bib-0013" ref-type="bibr">13</xref>]. However, the present analysis includes some recent large‐scale trials, such as the cardiovascular outcome study with tirzepatide [<xref rid="dom71128-bib-0011" ref-type="bibr">11</xref>], which were not yet available when the previous NMA was performed. In addition, this NMA does not include finerenone, which is not indicated for type 2 diabetes, but only for diabetic nephropathy. Furthermore, we excluded short‐term (24–40 weeks) trials and studies without formal adjudication of cardiovascular events, which can induce background noise, possibly attenuating differences in outcomes across treatments.</p><p>The strengths of the present analysis include the overall consideration of all drugs indicated for type 2 diabetes, including only trials with adjudication for events for greater certainty of diagnosis. The relatively high number of direct comparisons between active drugs adds robustness to the analysis. Further strengths are the large size of the enrolled samples, the high quality of a large majority of included trials and the low inconsistency across most comparisons. On the other hand, some weaknesses should be recognised. The analysis of drug classes could overlook potential differences across molecules within the same class with respect to cardiovascular risk. Some of the older drugs were assessed mainly based on results of smaller and lower‐quality trials. In addition, not all direct comparisons were available and indirect comparisons estimated by NMA always need to be considered with some caution, as they could be affected by differences in trial design and case mix. In particular, differences in disease duration, glucose control and comorbidities, as well as differences in concurrent treatments in patients enrolled in different trials, could produce distortions which are difficult to eliminate through statistical analysis. Therefore, direct (pairwise) comparisons, where available for appropriate sample size, should be considered more reliable than indirect comparisons. Notably, most of the evidence on the effects of different drugs on cardiovascular events and all‐cause mortality are derived from cardiovascular outcome trials, which enrolled patients with established cardiovascular disease or with multiple risk factors; the applicability of those results to patients at lower cardiovascular risk remains uncertain.</p><p>Another methodological issue is the possible impact of differences in glucose control between treatment arms on the incidence of MACE [<xref rid="dom71128-bib-0002" ref-type="bibr">2</xref>]. In fact, HbA1c levels are significantly different between treatment arms in all placebo‐controlled trials with metabolic outcomes and in a large majority cardiovascular outcome trials, with between‐group differences greater than 1% in some instances [<xref rid="dom71128-bib-0011" ref-type="bibr">11</xref>, <xref rid="dom71128-bib-0034" ref-type="bibr">34</xref>]. Therefore, the positive results with some classes of drugs cannot be automatically interpreted as the demonstration of cardiovascular protection independent of glucose control. On the other hand, the reduction of glucose levels, together with the favourable effects on other risk factors (e.g., blood pressure, body weight, etc.) could be one of the mechanisms underlying the cardiovascular benefits of some classes of drugs. If this is the case, the design of most cardiovascular outcome trials, which established a rescue therapy for patients above reasonable glucose targets, limiting between‐group differences in glucose control, could have produced an actual underestimation of the efficacy of some classes of drugs for cardiovascular prevention in type 2 diabetes.</p><p>In conclusion, available data from randomised trials show that SGLT2i, GLP1RA, tirzepatide and (with a lower quality of evidence) metformin and pioglitazone are associated with a reduction of the incidence of cardiovascular events; SGLT2i, GLP1RA and tirzepatide are also associated with a reduced all‐cause mortality.</p></sec><sec id="dom71128-sec-0025"><title>Author Contributions</title><p>G.A.S. and E.M. were involved in design, data collection, analysis and writing the manuscript. V.V., M.M. and A.L. were involved in data collection, analysis and manuscript revision. A.L. and C.M. were involved in data collection.</p></sec><sec id="dom71128-sec-0024"><title>Funding</title><p>The authors have nothing to report.</p></sec><sec sec-type="COI-statement" id="dom71128-sec-0023"><title>Conflicts of Interest</title><p>G.A.S. has received grants and consultancy fees from Eli Lilly. M.M. has received speaking fees from Astra Zeneca, Bristol Myers Squibb, Boehringer‐Ingelheim, Eli‐Lilly, Merck, Novo Nordisk, Sanofi and Novartis and research grants from Bristol Myers Squibb. E.M. has received consultancy fees from Merck and Novartis, speaking fees from Astra Zeneca, Bristol Myers Squibb, Boehringer‐Ingelheim, Eli‐Lilly, Merck, Novo Nordisk, Sanofi and Novartis and research grants from Merck, Novartis and Takeda. V.V., A.L. and C.M. declares no conflicts of interest.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="dom71128-supitem-0001" position="float" content-type="local-data" orientation="portrait"><caption><p>
+<bold>Table S1:</bold> Search strategy.</p><p>
+<bold>Figure S1:</bold> Trial flow summary.</p><p>
+<bold>Figure S2:</bold> Risk of bias graph.</p><p>
+<bold>Figure S3:</bold> Risk of bias summary.</p><p>
+<bold>Table S2:</bold> List of excluded trials, with reasons for exclusion.</p><p>
+<bold>Table S3:</bold> List of included trial. Dur = duration; Age = mean age; DMdur; duration of diabetes; HbA1c = glycated haemoglobin; BMI = Body Mass Index.</p><p>
+<bold>Figure S4:</bold> Funnel plots for MACE.</p><p>
+<bold>Figure S5:</bold> Difference in MACE, GLP1‐RA vs. comparators.</p><p>
+<bold>Figure S6:</bold> Difference in MACE, SGLT2i vs. comparators.</p><p>
+<bold>Figure S7:</bold> Difference in MACE, metformin vs. comparators.</p><p>
+<bold>Figure S8:</bold> Difference in MACE, pioglitazone vs. comparators.</p><p>
+<bold>Figure S9:</bold> Difference in MACE, Tirzepatide vs. comparators.</p><p>
+<bold>Figure S10:</bold> Difference in MACE, DPP4 inhibitors vs. comparators.</p><p>
+<bold>Figure S11:</bold> Difference in MACE, insulin vs. comparators.</p><p>
+<bold>Figure S12:</bold> Difference in MACE, sulfonylureas vs. comparators.</p><p>
+<bold>Figure S13:</bold> Bayesian Meta‐analysis, forest plot: difference in the incidence of MACE between Diabetes drug classes and placebo.</p><p>
+<bold>Figure S15:</bold> MACE within study bias.</p><p>
+<bold>Figure S16:</bold> MACE confidence rating.</p><p>
+<bold>Figure S17:</bold> Overall mortality: funnel plots.</p><p>
+<bold>Figure S18:</bold> Overall mortality: Tirzepatide vs. comparators.</p><p>
+<bold>Figure S19:</bold> Overall mortality: SGLT2i vs. comparators.</p><p>
+<bold>Figure S20:</bold> Overall mortality: GLP1‐RA vs. comparators.</p><p>
+<bold>Figure S21:</bold> Overall mortality: metformin vs. comparators.</p><p>
+<bold>Figure S22:</bold> Overall mortality: DPP4i vs. comparators.</p><p>
+<bold>Figure S23:</bold> Overall mortality: insulin vs. comparators.</p><p>
+<bold>Figure S24:</bold> Overall mortality: SU vs. comparators.</p><p>
+<bold>Figure S25:</bold> Network plot (Panel A: number of trials; panel B: node size is proportional to number of included patients).</p><p>
+<bold>Figure S26:</bold> Bayesian Meta‐analysis, forest plot: difference in overall mortality between Diabetes drug classes and placebo.</p><p>
+<bold>Figure S27:</bold> Nodesplit analysis (inconsistency assessment).</p><p>
+<bold>Figure S28:</bold> Within study bias.</p><p>
+<bold>Figure S29:</bold> Certainty of bias.</p><p>
+<bold>Figure S30:</bold> Non fatal Stroke forest plot.</p><p>
+<bold>Figure S31:</bold> Non Fatal MI.</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="DOM-28-9403-s001.pdf" position="float" orientation="portrait"/></supplementary-material></sec></body><back><ack id="dom71128-sec-29"><title>Acknowledgements</title><p>Open access publishing facilitated by Universita degli Studi di Firenze, as part of the Wiley ‐ CRUI‐CARE agreement.</p></ack><sec sec-type="data-availability" id="dom71128-sec-0027"><title>Data Availability Statement</title><p>Data sharing not applicable to this article as no datasets were generated or analysed during the current study.</p></sec><ref-list content-type="cited-references" id="dom71128-bibl-0001"><title>References</title><ref id="dom71128-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="dom71128-cit-0001">
+<string-name name-style="western">
+<given-names>M. I.</given-names>
+<surname>Maiorino</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Longo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Scappaticcio</surname>
+</string-name>, et al., “<article-title>Improvement of Glycemic Control and Reduction of Major Cardiovascular Events in 18 Cardiovascular Outcome Trials: An Updated Meta‐Regression</article-title>,” <source>Cardiovascular Diabetology</source>
+<volume>20</volume>, no. <issue>1</issue> (<year>2021</year>): <fpage>210</fpage>, <pub-id pub-id-type="doi">10.1186/s12933-021-01401-8</pub-id>.<pub-id pub-id-type="pmid">34663316</pub-id>
+<pub-id pub-id-type="pmcid">PMC8522255</pub-id></mixed-citation></ref><ref id="dom71128-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="dom71128-cit-0002">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Monami</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Candido</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Pintaudi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Targher</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, “<article-title>Improvement of Glycemic Control in Type 2 Diabetes: A Systematic Review and Meta‐Analysis of Randomized Controlled Trials</article-title>,” <source>Nutrition, Metabolism, and Cardiovascular Diseases</source>
+<volume>31</volume>, no. <issue>9</issue> (<year>2021</year>): <fpage>2539</fpage>–<lpage>2546</lpage>, <pub-id pub-id-type="doi">10.1016/j.numecd.2021.05.010</pub-id>.<pub-id pub-id-type="pmid">34158243</pub-id></mixed-citation></ref><ref id="dom71128-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="dom71128-cit-0003">
+<article-title>Effect of Intensive Blood‐Glucose Control With Metformin on Complications in Overweight Patients With Type 2 Diabetes (UKPDS 34)</article-title>,” <source>Lancet</source>
+<volume>352</volume>, no. <issue>9131</issue> (<year>1998</year>): <fpage>854</fpage>–<lpage>865</lpage>, <pub-id pub-id-type="doi">10.1016/S0140-6736(98)07037-8</pub-id>.<pub-id pub-id-type="pmid">9742977</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="dom71128-cit-0004">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Gallo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Giaccari</surname>
+</string-name>, et al., “<article-title>Effects of Glucose‐Lowering Agents on Cardiovascular and Renal Outcomes in Subjects With Type 2 Diabetes: An Updated Meta‐Analysis of Randomized Controlled Trials With External Adjudication of Events</article-title>,” <source>Diabetes, Obesity &amp; Metabolism</source>
+<volume>25</volume>, no. <issue>2</issue> (<year>2023</year>): <fpage>444</fpage>–<lpage>453</lpage>, <pub-id pub-id-type="doi">10.1111/dom.14888</pub-id>.<pub-id pub-id-type="pmid">36205446</pub-id></mixed-citation></ref><ref id="dom71128-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="dom71128-cit-0005">
+<string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Sattar</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. M. Y.</given-names>
+<surname>Lee</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. L.</given-names>
+<surname>Kristensen</surname>
+</string-name>, et al., “<article-title>Cardiovascular, Mortality, and Kidney Outcomes With GLP‐1 Receptor Agonists in Patients With Type 2 Diabetes: A Systematic Review and Meta‐Analysis of Randomised Trials</article-title>,” <source>Lancet Diabetes and Endocrinology</source>
+<volume>9</volume>, no. <issue>10</issue> (<year>2021</year>): <fpage>653</fpage>–<lpage>662</lpage>, <pub-id pub-id-type="doi">10.1016/S2213-8587(21)00203-5</pub-id>.<pub-id pub-id-type="pmid">34425083</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="dom71128-cit-0006">
+<string-name name-style="western">
+<given-names>D. K.</given-names>
+<surname>McGuire</surname>
+</string-name>, <string-name name-style="western">
+<given-names>W. J.</given-names>
+<surname>Shih</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F.</given-names>
+<surname>Cosentino</surname>
+</string-name>, et al., “<article-title>Association of SGLT2 Inhibitors With Cardiovascular and Kidney Outcomes in Patients With Type 2 Diabetes: A Meta‐Analysis</article-title>,” <source>JAMA Cardiology</source>
+<volume>6</volume>, no. <issue>2</issue> (<year>2021</year>): <fpage>148</fpage>–<lpage>158</lpage>, <pub-id pub-id-type="doi">10.1001/jamacardio.2020.4511</pub-id>.<pub-id pub-id-type="pmid">33031522</pub-id>
+<pub-id pub-id-type="pmcid">PMC7542529</pub-id></mixed-citation></ref><ref id="dom71128-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="dom71128-cit-0007">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Giaccari</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Gallo</surname>
+</string-name>, et al., “<article-title>Effects of Pioglitazone on Cardiovascular Events and All‐Cause Mortality in Patients With Type 2 Diabetes: A Meta‐Analysis of Randomized Controlled Trials</article-title>,” <source>Nutrition, Metabolism, and Cardiovascular Diseases</source>
+<volume>32</volume>, no. <issue>3</issue> (<year>2022</year>): <fpage>529</fpage>–<lpage>536</lpage>, <pub-id pub-id-type="doi">10.1016/j.numecd.2021.12.006</pub-id>.<pub-id pub-id-type="pmid">35144855</pub-id></mixed-citation></ref><ref id="dom71128-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="dom71128-cit-0008">
+<string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Zhou</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Huang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Ji</surname>
+</string-name>, <string-name name-style="western">
+<given-names>X.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Shen</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Wang</surname>
+</string-name>, “<article-title>Pioglitazone for the Primary and Secondary Prevention of Cardiovascular and Renal Outcomes in Patients With or at High Risk of Type 2 Diabetes Mellitus: A Meta‐Analysis</article-title>,” <source>Journal of Clinical Endocrinology and Metabolism</source>
+<volume>105</volume>, no. <issue>5</issue> (<year>2020</year>): <fpage>1670</fpage>–<lpage>1681</lpage>, <pub-id pub-id-type="doi">10.1210/clinem/dgz252</pub-id>.<pub-id pub-id-type="pmid">31822895</pub-id></mixed-citation></ref><ref id="dom71128-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="dom71128-cit-0009">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Nreu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Montereggi</surname>
+</string-name>, et al., “<article-title>Cardiovascular Events and All‐Cause Mortality in Patients With Type 2 Diabetes Treated With Dipeptidyl Peptidase‐4 Inhibitors: An Extensive Meta‐Analysis of Randomized Controlled Trials</article-title>,” <source>Nutrition, Metabolism, and Cardiovascular Diseases</source>
+<volume>31</volume>, no. <issue>10</issue> (<year>2021</year>): <fpage>2745</fpage>–<lpage>2755</lpage>, <pub-id pub-id-type="doi">10.1016/j.numecd.2021.06.002</pub-id>.<pub-id pub-id-type="pmid">34364771</pub-id></mixed-citation></ref><ref id="dom71128-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="dom71128-cit-0010">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Monami</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Candido</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Pintaudi</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Targher</surname>
+</string-name>, “<article-title>Effect of Insulin Secretagogues on Major Cardiovascular Events and All‐Cause Mortality: A Meta‐Analysis of Randomized Controlled Trials</article-title>,” <source>Nutrition, Metabolism, and Cardiovascular Diseases</source>
+<volume>30</volume>, no. <issue>10</issue> (<year>2020</year>): <fpage>1601</fpage>–<lpage>1608</lpage>, <pub-id pub-id-type="doi">10.1016/j.numecd.2020.05.032</pub-id>.<pub-id pub-id-type="pmid">32811736</pub-id></mixed-citation></ref><ref id="dom71128-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="dom71128-cit-0011">
+<string-name name-style="western">
+<given-names>S. J.</given-names>
+<surname>Nicholls</surname>
+</string-name>, <string-name name-style="western">
+<given-names>I.</given-names>
+<surname>Pavo</surname>
+</string-name>, <string-name name-style="western">
+<given-names>D. L.</given-names>
+<surname>Bhatt</surname>
+</string-name>, et al., “<article-title>Cardiovascular Outcomes With Tirzepatide Versus Dulaglutide in Type 2 Diabetes</article-title>,” <source>New England Journal of Medicine</source>
+<volume>393</volume>, no. <issue>24</issue> (<year>2025</year>): <fpage>2409</fpage>–<lpage>2420</lpage>, <pub-id pub-id-type="doi">10.1056/NEJMoa2505928</pub-id>.<pub-id pub-id-type="pmid">41406444</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="dom71128-cit-0012">
+<string-name name-style="western">
+<given-names>L. V.</given-names>
+<surname>Madden</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.‐P.</given-names>
+<surname>Piepho</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>P. A.</given-names>
+<surname>Paul</surname>
+</string-name>, “<article-title>Statistical Models and Methods for Network Meta‐Analysis</article-title>,” <source>Phytopathology</source>
+<volume>106</volume>, no. <issue>8</issue> (<year>2016</year>): <fpage>792</fpage>–<lpage>806</lpage>, <pub-id pub-id-type="doi">10.1094/PHYTO-12-15-0342-RVW</pub-id>.<pub-id pub-id-type="pmid">27111798</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="dom71128-cit-0013">
+<string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Nong</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B. T.</given-names>
+<surname>Jeppesen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Q.</given-names>
+<surname>Shi</surname>
+</string-name>, et al., “<article-title>Medications for Adults With Type 2 Diabetes: A Living Systematic Review and Network Meta‐Analysis</article-title>,” <source>BMJ</source>
+<volume>390</volume> (<year>2025</year>): <elocation-id>e083039</elocation-id>, <pub-id pub-id-type="doi">10.1136/bmj-2024-083039</pub-id>.<pub-id pub-id-type="pmid">40813122</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="dom71128-cit-0014">
+<string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Page</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. E.</given-names>
+<surname>McKenzie</surname>
+</string-name>, <string-name name-style="western">
+<given-names>P. M.</given-names>
+<surname>Bossuyt</surname>
+</string-name>, et al., “<article-title>The PRISMA 2020 Statement: An Updated Guideline for Reporting Systematic Reviews</article-title>,” <source>Systematic Reviews</source>
+<volume>10</volume>, no. <issue>1</issue> (<year>2021</year>): <fpage>89</fpage>, <pub-id pub-id-type="doi">10.1186/s13643-021-01626-4</pub-id>.<pub-id pub-id-type="pmid">33781348</pub-id>
+<pub-id pub-id-type="pmcid">PMC8008539</pub-id></mixed-citation></ref><ref id="dom71128-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="dom71128-cit-0015">
+<article-title>Intensive Blood‐Glucose Control With Sulphonylureas or Insulin Compared With Conventional Treatment and Risk of Complications in Patients With Type 2 Diabetes (UKPDS 33)</article-title>,” <source>Lancet</source>
+<volume>352</volume>, no. <issue>9131</issue> (<year>1998</year>): <fpage>837</fpage>–<lpage>853</lpage>, <pub-id pub-id-type="doi">10.1016/S0140-6736(98)07019-6</pub-id>.<pub-id pub-id-type="pmid">9742976</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="dom71128-cit-0016">
+<string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Ma</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.‐H.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.‐Z.</given-names>
+<surname>Dai</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.‐S.</given-names>
+<surname>Lin</surname>
+</string-name>, <string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Huang</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.‐Y.</given-names>
+<surname>Liu</surname>
+</string-name>, “<article-title>Efficacy and Safety of GLP‐1 Receptor Agonists Versus SGLT‐2 Inhibitors in Overweight/Obese Patients With or Without Diabetes Mellitus: A Systematic Review and Network Meta‐Analysis</article-title>,” <source>BMJ Open</source>
+<volume>13</volume>, no. <issue>3</issue> (<year>2023</year>): <elocation-id>e061807</elocation-id>, <pub-id pub-id-type="doi">10.1136/bmjopen-2022-061807</pub-id>.<pub-id pub-id-type="pmcid">PMC10008474</pub-id><pub-id pub-id-type="pmid">36882248</pub-id></mixed-citation></ref><ref id="dom71128-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="dom71128-cit-0017">
+<string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Battistoni</surname>
+</string-name>, <string-name name-style="western">
+<given-names>L.</given-names>
+<surname>Piras</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.</given-names>
+<surname>Tartaglia</surname>
+</string-name>, <string-name name-style="western">
+<given-names>F. M.</given-names>
+<surname>Carrano</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>De Vitis</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Barbato</surname>
+</string-name>, “<article-title>Glucagon‐Like Peptide‐1 Receptor Agonists and the Endothelium: Molecular and Clinical Insights Into Cardiovascular Protection</article-title>,” <source>Frontiers in Medicine</source>
+<volume>12</volume> (<year>2025</year>): <elocation-id>1669685</elocation-id>, <pub-id pub-id-type="doi">10.3389/fmed.2025.1669685</pub-id>.<pub-id pub-id-type="pmid">40995089</pub-id>
+<pub-id pub-id-type="pmcid">PMC12454090</pub-id></mixed-citation></ref><ref id="dom71128-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="dom71128-cit-0018">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Rau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Thiele</surname>
+</string-name>, <string-name name-style="western">
+<given-names>N.‐U. K.</given-names>
+<surname>Hartmann</surname>
+</string-name>, et al., “<article-title>Empagliflozin Does Not Change Cardiac Index nor Systemic Vascular Resistance but Rapidly Improves Left Ventricular Filling Pressure in Patients With Type 2 Diabetes: A Randomized Controlled Study</article-title>,” <source>Cardiovascular Diabetology</source>
+<volume>20</volume>, no. <issue>1</issue> (<year>2021</year>): <fpage>6</fpage>, <pub-id pub-id-type="doi">10.1186/s12933-020-01175-5</pub-id>.<pub-id pub-id-type="pmid">33413355</pub-id>
+<pub-id pub-id-type="pmcid">PMC7791833</pub-id></mixed-citation></ref><ref id="dom71128-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="dom71128-cit-0019">
+<string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Thiele</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Rau</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Grebe</surname>
+</string-name>, et al., “<article-title>Empagliflozin Improves Left Atrial Strain in Patients With Type 2 Diabetes: Data From a Randomized, Placebo‐Controlled Study</article-title>,” <source>Circulation. Cardiovascular Imaging</source>
+<volume>16</volume>, no. <issue>4</issue> (<year>2023</year>): <elocation-id>e015156</elocation-id>, <pub-id pub-id-type="doi">10.1161/CIRCIMAGING.122.015176</pub-id>.<pub-id pub-id-type="pmid">37071716</pub-id></mixed-citation></ref><ref id="dom71128-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="dom71128-cit-0020">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Ferrannini</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Mark</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mayoux</surname>
+</string-name>, “<article-title>CV Protection in the EMPA‐REG OUTCOME Trial: A “Thrifty Substrate” Hypothesis</article-title>,” <source>Diabetes Care</source>
+<volume>39</volume>, no. <issue>7</issue> (<year>2016</year>): <fpage>1108</fpage>–<lpage>1114</lpage>, <pub-id pub-id-type="doi">10.2337/dc16-0330</pub-id>.<pub-id pub-id-type="pmid">27289126</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="dom71128-cit-0021">
+<string-name name-style="western">
+<given-names>H. C.</given-names>
+<surname>Gerstein</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H. M.</given-names>
+<surname>Colhoun</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G. R.</given-names>
+<surname>Dagenais</surname>
+</string-name>, et al., “<article-title>Dulaglutide and Cardiovascular Outcomes in Type 2 Diabetes (REWIND): A Double‐Blind, Randomised Placebo‐Controlled Trial</article-title>,” <source>Lancet</source>
+<volume>394</volume>, no. <issue>10193</issue> (<year>2019</year>): <fpage>121</fpage>–<lpage>130</lpage>, <pub-id pub-id-type="doi">10.1016/S0140-6736(19)31149-3</pub-id>.<pub-id pub-id-type="pmid">31189511</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="dom71128-cit-0022">
+<string-name name-style="western">
+<given-names>Y.</given-names>
+<surname>Mori</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Matsui</surname>
+</string-name>, <string-name name-style="western">
+<given-names>T.</given-names>
+<surname>Hirano</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Yamagishi</surname>
+</string-name>, “<article-title>GIP as a Potential Therapeutic Target for Atherosclerotic Cardiovascular Disease–A Systematic Review</article-title>,” <source>International Journal of Molecular Sciences</source>
+<volume>21</volume>, no. <issue>4</issue> (<year>2020</year>): <fpage>1509</fpage>, <pub-id pub-id-type="doi">10.3390/ijms21041509</pub-id>.<pub-id pub-id-type="pmid">32098413</pub-id>
+<pub-id pub-id-type="pmcid">PMC7073149</pub-id></mixed-citation></ref><ref id="dom71128-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="dom71128-cit-0023">
+<string-name name-style="western">
+<given-names>A. A.</given-names>
+<surname>Greenwell</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J. J.</given-names>
+<surname>Chahade</surname>
+</string-name>, and <string-name name-style="western">
+<given-names>J. R.</given-names>
+<surname>Ussher</surname>
+</string-name>, “<article-title>Cardiovascular Biology of the GIP Receptor</article-title>,” <source>Peptides</source>
+<volume>125</volume> (<year>2020</year>): <elocation-id>170228</elocation-id>, <pub-id pub-id-type="doi">10.1016/j.peptides.2019.170228</pub-id>.<pub-id pub-id-type="pmid">31812593</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="dom71128-cit-0024">
+<string-name name-style="western">
+<given-names>J. P.</given-names>
+<surname>Frías</surname>
+</string-name>, <string-name name-style="western">
+<given-names>M. J.</given-names>
+<surname>Davies</surname>
+</string-name>, <string-name name-style="western">
+<given-names>J.</given-names>
+<surname>Rosenstock</surname>
+</string-name>, et al., “<article-title>Tirzepatide Versus Semaglutide Once Weekly in Patients With Type 2 Diabetes</article-title>,” <source>New England Journal of Medicine</source>
+<volume>385</volume>, no. <issue>6</issue> (<year>2021</year>): <fpage>503</fpage>–<lpage>515</lpage>, <pub-id pub-id-type="doi">10.1056/NEJMoa2107519</pub-id>.<pub-id pub-id-type="pmid">34170647</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="dom71128-cit-0025">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Monami</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Candido</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Pintaudi</surname>
+</string-name>, et al., “<article-title>Effect of Metformin on All‐Cause Mortality and Major Adverse Cardiovascular Events: An Updated Meta‐Analysis of Randomized Controlled Trials</article-title>,” <source>Nutrition, Metabolism, and Cardiovascular Diseases</source>
+<volume>31</volume>, no. <issue>3</issue> (<year>2021</year>): <fpage>699</fpage>–<lpage>704</lpage>, <pub-id pub-id-type="doi">10.1016/j.numecd.2020.11.031</pub-id>.<pub-id pub-id-type="pmid">33549430</pub-id></mixed-citation></ref><ref id="dom71128-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="dom71128-cit-0026">
+<string-name name-style="western">
+<given-names>S. E.</given-names>
+<surname>Nissen</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. J.</given-names>
+<surname>Nicholls</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K.</given-names>
+<surname>Wolski</surname>
+</string-name>, et al., “<article-title>Comparison of Pioglitazone vs Glimepiride on Progression of Coronary Atherosclerosis in Patients With Type 2 Diabetes: The PERISCOPE Randomized Controlled Trial</article-title>,” <source>Jama</source>
+<volume>299</volume>, no. <issue>13</issue> (<year>2008</year>): <fpage>1561</fpage>–<lpage>1573</lpage>, <pub-id pub-id-type="doi">10.1001/jama.299.13.1561</pub-id>.<pub-id pub-id-type="pmid">18378631</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="dom71128-cit-0027">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Erdmann</surname>
+</string-name> and <string-name name-style="western">
+<given-names>R. G.</given-names>
+<surname>Wilcox</surname>
+</string-name>, “<article-title>Weighing Up the Cardiovascular Benefits of Thiazolidinedione Therapy: The Impact of Increased Risk of Heart Failure</article-title>,” <source>European Heart Journal</source>
+<volume>29</volume>, no. <issue>1</issue> (<year>2007</year>): <fpage>12</fpage>–<lpage>20</lpage>, <pub-id pub-id-type="doi">10.1093/eurheartj/ehm529</pub-id>.<pub-id pub-id-type="pmid">18167366</pub-id></mixed-citation></ref><ref id="dom71128-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="dom71128-cit-0028">
+<string-name name-style="western">
+<given-names>W. N.</given-names>
+<surname>Kernan</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C. M.</given-names>
+<surname>Viscoli</surname>
+</string-name>, <string-name name-style="western">
+<given-names>K. L.</given-names>
+<surname>Furie</surname>
+</string-name>, et al., “<article-title>Pioglitazone After Ischemic Stroke or Transient Ischemic Attack</article-title>,” <source>New England Journal of Medicine</source>
+<volume>374</volume>, no. <issue>14</issue> (<year>2016</year>): <fpage>1321</fpage>–<lpage>1331</lpage>, <pub-id pub-id-type="doi">10.1056/NEJMoa1506930</pub-id>.<pub-id pub-id-type="pmid">26886418</pub-id>
+<pub-id pub-id-type="pmcid">PMC4887756</pub-id></mixed-citation></ref><ref id="dom71128-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="dom71128-cit-0029">
+<string-name name-style="western">
+<given-names>J. S.</given-names>
+<surname>Skyler</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Bergenstal</surname>
+</string-name>, <string-name name-style="western">
+<given-names>R. O.</given-names>
+<surname>Bonow</surname>
+</string-name>, et al., “<article-title>Intensive Glycemic Control and the Prevention of Cardiovascular Events: Implications of the ACCORD, ADVANCE, and VA Diabetes Trials</article-title>,” <source>Diabetes Care</source>
+<volume>32</volume>, no. <issue>1</issue> (<year>2009</year>): <fpage>187</fpage>–<lpage>192</lpage>, <pub-id pub-id-type="doi">10.2337/dc08-9026</pub-id>.<pub-id pub-id-type="pmid">19092168</pub-id>
+<pub-id pub-id-type="pmcid">PMC2606812</pub-id></mixed-citation></ref><ref id="dom71128-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="dom71128-cit-0030">
+<string-name name-style="western">
+<given-names>E.</given-names>
+<surname>Mannucci</surname>
+</string-name>, <string-name name-style="western">
+<given-names>G.</given-names>
+<surname>Targher</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Nreu</surname>
+</string-name>, et al., “<article-title>Effects of Insulin on Cardiovascular Events and All‐Cause Mortality in Patients With Type 2 Diabetes: A Meta‐Analysis of Randomized Controlled Trials</article-title>,” <source>Nutrition, Metabolism, and Cardiovascular Diseases</source>
+<volume>32</volume>, no. <issue>6</issue> (<year>2022</year>): <fpage>1353</fpage>–<lpage>1360</lpage>, <pub-id pub-id-type="doi">10.1016/j.numecd.2022.03.007</pub-id>.<pub-id pub-id-type="pmid">35422359</pub-id></mixed-citation></ref><ref id="dom71128-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="dom71128-cit-0031">
+<string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Scognamiglio</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Avogaro</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Vigili De Kreutzenberg</surname>
+</string-name>, et al., “<article-title>Effects of Treatment With Sulfonylurea Drugs or Insulin on Ischemia‐Induced Myocardial Dysfunction in Type 2 Diabetes</article-title>,” <source>Diabetes</source>
+<volume>51</volume>, no. <issue>3</issue> (<year>2002</year>): <fpage>808</fpage>–<lpage>812</lpage>, <pub-id pub-id-type="doi">10.2337/diabetes.51.3.808</pub-id>.<pub-id pub-id-type="pmid">11872684</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="dom71128-cit-0032">
+<string-name name-style="western">
+<given-names>R.</given-names>
+<surname>Liu</surname>
+</string-name>, <string-name name-style="western">
+<given-names>H.</given-names>
+<surname>Wang</surname>
+</string-name>, <string-name name-style="western">
+<given-names>B.</given-names>
+<surname>Xu</surname>
+</string-name>, et al., “<article-title>Cerebrovascular Safety of Sulfonylureas: The Role of KATP Channels in Neuroprotection and the Risk of Stroke in Patients With Type 2 Diabetes</article-title>,” <source>Diabetes</source>
+<volume>65</volume>, no. <issue>9</issue> (<year>2016</year>): <fpage>2795</fpage>–<lpage>2809</lpage>, <pub-id pub-id-type="doi">10.2337/db15-1737</pub-id>.<pub-id pub-id-type="pmid">27207539</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="dom71128-cit-0033">
+<string-name name-style="western">
+<given-names>M.</given-names>
+<surname>Monami</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Luzzi</surname>
+</string-name>, <string-name name-style="western">
+<given-names>C.</given-names>
+<surname>Lamanna</surname>
+</string-name>, et al., “<article-title>Three‐Year Mortality in Diabetic Patients Treated With Different Combinations of Insulin Secretagogues and Metformin</article-title>,” <source>Diabetes/Metabolism Research and Reviews</source>
+<volume>22</volume>, no. <issue>6</issue> (<year>2006</year>): <fpage>477</fpage>–<lpage>482</lpage>, <pub-id pub-id-type="doi">10.1002/dmrr.642</pub-id>.<pub-id pub-id-type="pmid">16634115</pub-id>
+</mixed-citation></ref><ref id="dom71128-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="dom71128-cit-0034">
+<string-name name-style="western">
+<given-names>S. P.</given-names>
+<surname>Marso</surname>
+</string-name>, <string-name name-style="western">
+<given-names>S. C.</given-names>
+<surname>Bain</surname>
+</string-name>, <string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Consoli</surname>
+</string-name>, et al., “<article-title>Semaglutide and Cardiovascular Outcomes in Patients With Type 2 Diabetes</article-title>,” <source>New England Journal of Medicine</source>
+<volume>375</volume>, no. <issue>19</issue> (<year>2016</year>): <fpage>1834</fpage>–<lpage>1844</lpage>, <pub-id pub-id-type="doi">10.1056/NEJMoa1607141</pub-id>.<pub-id pub-id-type="pmid">27633186</pub-id>
+</mixed-citation></ref></ref-list></back></article></pmc-articleset>
