@@ -178,3 +178,12 @@ After appending lessons, run `python3 -m unittest discover -s .claude/tests -t .
 `lessons_digest.py --list-roles` (every new Role must match an agent; this file uses `evidence-retriever`, `synthesis-writer`,
 `critical-appraiser`, `orchestrator`, `citation-verifier`). Per the CLAUDE.md workflow, the cross-session knowledge goes to `main`
 as a small commit touching only lessons.md, evolution-log.md, vi-terminology.md. A CHANGELOG row is needed for any harness edit (§4).
+
+---
+
+## 7. User decisions (2026-10-27, lead-recorded verbatim)
+- D2 lessons: **"L-045–L-052, gộp L-053 (Recommended)"** → accept L-045…L-052; fold L-053 into L-050 as item (e); apply E-1 (L-003) and E-2 (L-019). E-3 (L-011 retag) was optional and not part of the approved option → not applied.
+- D1 machine-fetched text location: **"source/<folder>/_fetched/ (Recommended)"** → harness backlog (CLAUDE.md contract edit + `verify_quotes.py` path check); this run's files stay where they are (Gate 4b decision).
+- D3 scripts: **"Ghi backlog (Recommended)"** → `extract_numbers.py` CI branch and `prefilter_records.py --seed/--only-new` logged as backlog, not implemented.
+- Where to persist: **"Review + claude/lucid-… (Recommended)"** → this review branch + a small knowledge-only commit on `claude/lucid-brahmagupta-1ys4ne`; main untouched.
+- D4: no vi-terminology change.
