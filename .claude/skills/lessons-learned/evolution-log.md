@@ -390,3 +390,24 @@ in Methods (length cap), T2 67% tiers 1–3 and 9/16 HIGH abstract-only, T3 mech
 **Actions taken:** lessons L-045…L-052 appended; L-003 and L-019 edited; extract_numbers.py CI regex defect reproduced (not fixed); no constitution change.
 **New rules (role tags):** evidence-retriever (L-045–048), orchestrator+synthesis-writer (L-049), synthesis-writer (L-050, L-051), critical-appraiser (L-052); edits to citation-verifier (L-003) and orchestrator (L-019).
 ═══════════════════════════════════════════════
+
+### Entry #11 — Addendum (2026-10-27, ratchet re-score requested by the user)
+**Why an addendum:** Entry #11's ratchet line justified the 0.05 drops as "inside the stated self-scoring noise";
+test-cases.md states noise of ~0.005–0.01 on *totals*, not 0.05 per criterion. The judgement stands, the reason is corrected.
+**Comparator:** latest prior Case 1 entry = #3 (2026-06-14; ~500-word variant); #2 also shown (same 1,500-word prompt).
+**Per-criterion, mapped to rubric levels (1.0/0.8/0.6/0.4/0.2; anti-inflation rule 3 → off-grid scores round down):**
+vs #3: T1 0.75(0.6)→0.8(0.8) ↑ · T2 0.85(0.8)→0.8 = · T3 0.80→0.8 = · T4 0.80→0.8 = · T5 0.85(0.8)→0.9(0.8) = · T6 0.85(0.8)→0.9(0.8) =.
+vs #2: T1 0.70(0.6)→0.8 ↑ · T2–T4 0.85(0.8)→0.8 = · T5–T6 0.85(0.8)→0.9(0.8) =. No criterion dropped a level.
+Note: verifier's T5/T6 = 0.9 is off-grid; on-grid total = 0.80 (MET), reported 0.82 (MET).
+**Law/gate checks:** none newly fails; Research Map gate fires and is receipted (#2 violated it) → improvement.
+**Targeted checks:** (a) protocol + concepts lead-written, no strategist agent — PASS · (b) 05a SKIPPED with effort tag, writer
+six-angle self-check in 05b §2 — PASS · (c) audit accepts declared SKIPPED on `normal` — PASS · (d) four gates quotable
+(00_scope; 02a:121; 03a:11; 04 §13), commit order gate→appraisal→draft verified — PASS · (e) Case 1 PASS 4/4; Case 4 criteria
+4/4 checked on the Case 1 run (proxy, not a Case 4 run).
+**Expect deviation (not a PASS criterion):** Case 1 expects a large consensus and a smaller controversy section; this run's
+§4.1 = 59 tokens vs §4.2 = 415 (evidence-driven in part; length cut compressed §4.1 to bullets).
+**Decision: KEEP — conditional.** The edits under test (8382cc2, ae90d62) touched constitution + orchestrator/gate logic,
+for which the ratchet table requires Case 3 + Case 4 + Case 2; only Case 1 ran. Run Case 3 (EDGE) next, then Case 2 (HARD)
+and a true Case 4 run. Many changes since June → improvement not attributable to a single edit.
+**Approved by the user (verbatim):** "Duyệt addendum, ghi vào log rồi chạy Case 3".
+═══════════════════════════════════════════════
