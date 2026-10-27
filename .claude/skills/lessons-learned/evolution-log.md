@@ -354,3 +354,39 @@ Thêm ba checker zero-dependency, không-LLM/không-mạng, tất định, chạ
 **Entry #10 — Addendum (2026-06-30, post-delivery Gate 2b near-miss raised by user)**
 - User asked post-delivery why, at Gate 2b, choosing "(3) Bạn cung cấp PDF" (full-text content decision) did not stop the run but instead pushed straight toward closing the Research Map gate. Investigation of the transcript found the root cause: the `AskUserQuestion` call for Gate 2b errored before rendering (`Tool permission request failed: Error: Tool permission stream closed before response received`), so the lead fell back to a plain-text message that bundled the full-text-sourcing decision and the gate-closing decision into one combined expected reply (e.g. "1a, 2A"). The user's reply selecting the full-text option was then treated as resolving both questions, advancing toward gate closure without the PDF having actually been supplied — the same same-turn self-clearing pattern L-014/L-024 exist to prevent, triggered via a tool failure + improvised fallback format rather than impatience. The user caught it in the same exchange and Gate 2b was correctly re-held and explicitly re-approved ("ok tiếp") before Research Map was built — no downstream harm to the delivered review.
 - New lesson **L-044** (never bundle a content decision with a gate-approval decision in the same question/reply turn, including under tool-failure plain-text fallback). User-approved 2026-06-30.
+
+═══════════════════════════════════════════════
+### Entry #11 — 2026-10-27 — Metformin efficacy & safety in adult T2D (regression Case 1, EASY, harness of 2026-10-27)
+**Task:** Tổng quan hiệu quả + an toàn metformin trong ĐTĐ týp 2 ở người lớn; hỗ trợ quyết định lâm sàng; bác sĩ nội khoa;
+"~1500 từ" → amended by the user at Phase 5 to ~1,800–2,000 syllable-tokens ("Rút còn ~1800–2000 từ (Recommended)");
+tiếng Việt; nguồn 2015–nay; effort normal (coach SKIPPED, declared). Branch review/regression-2026-10-27. MCP sources only.
+**Rubric total:** 0.82 → MET (round 1: 0.785; verifier rounds 1–2, independent)
+**Per-criterion:** T1 0.8 · T2 0.8 · T3 0.8 · T4 0.8 · T5 0.9 · T6 0.9   (round 1: 0.8 · 0.8 · 0.8 · 0.7 · 0.7 · 0.9)
+**Process:** 8/8 phases PASS; four human gates all cleared with quotable approvals ("Duyệt, tiếp tục" at Gate 2b, Research Map,
+Gate 4b; scope confirmed item by item); content decisions asked separately from each gate-closing question (L-044); gate commit
+54b04d4 precedes appraisal and draft; source/ listed and asked (L-012); coach SKIPPED declared (L-025); manifest before QA (L-027).
+Corpus: identified 260 → included 30 (+6 hand-rescued −3 dropped at the map = 33; 16 HIGH, 17 MEDIUM); deferred-unread 68;
+104 quote-locked cards 104/0 rejected; citation_audit PASS exit 0 (33/33 refs, 3 formatting WARNs).
+**Violations found:** none of the Supreme-rule type; Law 1 clean (33/33 refs match PubMed, NCT02915198 exists). Round-1 QA:
+12 FIX, no BLOCK — five substantive misreads (F1 stratum mislabel; F2 endpoint mismatch; F3 unsupported "chỉ"; F4 null CI read as
+absence + over-absolute steelman; F5 dropped direct comparison after the length cut) that all 104 green quote locks did not catch;
+F6 reader-facing process overclaim (R4-adjacent, corrected). Process defects (not breaches): prefilter sank key guidelines;
+supplementary pass hand-appended; agent-written text in `abstract`; machine text in source/ against the contract; stale map header.
+**Ratchet vs prior Case 1 (Entry #2 corrected 0.81: T1 0.70 · T2–T6 0.85; Entry #3 brief 0.81 is a 500-word case, not comparable):**
+T1 0.70→0.80 (+) · T2 0.85→0.80 (−0.05) · T3 0.85→0.80 (−0.05) · T4 0.85→0.80 (−0.05) · T5 0.85→0.90 (+) · T6 0.85→0.90 (+).
+On the rubric's own 0.2-step scale, 0.85 sits between 0.8 and 1.0 and anti-inflation rule 3 would assign 0.8, so no criterion
+dropped a band; the 0.05 moves are inside the stated self-scoring noise. Law/gate checks: Research Map gate fires and is
+receipted (Entry #2 violated it), scope confirmed, no check newly fails. **Judgement: KEEP — improvement on T1/T5/T6, no band
+regression, gates intact.** Caveats: (1) Entry #2 was self-scored by the lead, this run by an independent verifier with box
+counts — scoring regime tightened, so equal numbers are a stronger result than they look; (2) this run changed many things at
+once vs June (6-agent team, gates 2b/4b, P8 locks, L-044), so improvement cannot be attributed to a single edit; (3) length
+was amended and 33 sources vs ~7 in Entry #2, so depth is not like-for-like; (4) the remaining 0.8s are specific: T1 keywords not
+in Methods (length cap), T2 67% tiers 1–3 and 9/16 HIGH abstract-only, T3 mechanism barely discussed, T4 COI unflagged.
+**Lessons applied (fired correctly):** L-012, L-014, L-019, L-022, L-024, L-025, L-027, L-032, L-038, L-043, L-044.
+**Lessons learned → approved:** L-045 (known-item lane bypasses prefilter) · L-046 (supplementary = declared second pass, no hand-edit)
+· L-047 (efetch at Phase 2, labelled) · L-048 (verbatim abstract) · L-049 (length unit + protect rubric items) · L-050/L-051
+(writer self-checks; L-050 item (e) = former L-053, reader-facing process claims) · L-052 (appraiser inconsistency needs same endpoint) · edits E-1 (L-003), E-2 (L-019). E-3 (L-011 retag) not applied.
+**User decisions (2026-10-27, verbatim in 07 §7):** lessons "L-045–L-052, gộp L-053 (Recommended)" → accepted L-045…L-052, L-053 folded into L-050(e), E-1/E-2 applied. D1 machine-fetched text location "source/<folder>/_fetched/ (Recommended)" → harness backlog (CLAUDE.md contract edit + `verify_quotes.py` path check); this run's files stay in source/ (Gate 4b decision). D3 "Ghi backlog (Recommended)" → `extract_numbers.py` bare-CI regex branch and `prefilter_records.py --seed/--only-new` are backlog, not implemented. Persisted to this branch + `claude/lucid-brahmagupta-1ys4ne`; main untouched. No vi-terminology change.
+**Actions taken:** lessons L-045…L-052 appended; L-003 and L-019 edited; extract_numbers.py CI regex defect reproduced (not fixed); no constitution change.
+**New rules (role tags):** evidence-retriever (L-045–048), orchestrator+synthesis-writer (L-049), synthesis-writer (L-050, L-051), critical-appraiser (L-052); edits to citation-verifier (L-003) and orchestrator (L-019).
+═══════════════════════════════════════════════
