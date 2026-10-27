@@ -1,23 +1,29 @@
 {
   "exclusion_reasons": {
+    "Biopsy-proven NASH cohort (n=191), not hepatic impairment per se; the larger cirrhosis cohort (Yen 2021) is retained for this gap": 1,
     "Case report (excluded by protocol except as signal context)": 1,
     "Exposure not metformin-specific (micronutrient burden among all patients with T2D)": 1,
     "Fixed-dose combination with statin; lipid/glycaemic surrogate endpoints; metformin effect not isolated": 1,
     "Intervention is early insulin add-on; no metformin-vs-no-metformin contrast": 1,
     "Letter/comment, no primary data": 2,
+    "Letter/reply, no primary data": 2,
     "Narrative review/editorial without systematic method": 8,
     "No stable identifier verified (Consensus-only record; PMID/DOI not confirmed in PubMed) - not citable (L-009)": 2,
     "Other-drug question (SGLT2i/GLP-1 RA/DPP-4i/tirzepatide/insulin/other); metformin only background or absent; no metformin-specific outcome (L-013)": 51,
+    "Outcome (NAFLD) outside pre-registered clinical outcomes; drug-class review, not metformin-specific": 1,
+    "Outcome (liver fibrosis association) outside pre-registered clinical outcomes": 1,
     "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)": 21,
     "Outside 2015-2026 window / metformin comparator-only legacy trial (RECORD, start 2001; rosiglitazone question)": 1,
     "Pharmacokinetic/pharmacogenomic/biomarker-only": 1,
     "Population defined by pre-existing CVD irrespective of diabetes status; RCT and cohort data pooled": 1,
     "Population not adult type 2 diabetes (prediabetes, PCOS, GDM, children, obesity-only, other disease)": 18,
     "Prediabetes population (VA-IMPACT NCT02915198, ongoing, primary completion 2029-09); retained only as CVOT-gap context in the store": 1,
+    "Preprint on second-line agents in older adults; metformin only background, no metformin-specific outcome (L-013)": 1,
     "Protocol, design or baseline-characteristics report without results": 3,
     "Registry entry of the Lim 2025 RCT (verdict recorded on the publication record)": 1,
     "Surrogate heart-failure markers only; mixed diabetic/non-diabetic populations": 1,
     "Systematic review limited to newer agents; metformin not evaluated": 1,
+    "Systematic review of medication-induced hyperlactatemia across all drugs; not metformin/T2D-specific": 1,
     "excluded at Gate 2b by user decision": 7
   },
   "identified_other_breakdown": {},
@@ -30,19 +36,19 @@
     "doi:10.1371/journal.pone.0321032"
   ],
   "stages": {
-    "after_deduplication": 219,
+    "after_deduplication": 229,
     "deferred_not_screened": 68,
     "duplicates_removed": 31,
-    "eligible_for_screening": 218,
-    "excluded_title_abstract": 123,
-    "identified": 250,
-    "identified_databases_registers": 250,
+    "eligible_for_screening": 228,
+    "excluded_title_abstract": 130,
+    "identified": 260,
+    "identified_databases_registers": 260,
     "identified_other_methods": 0,
-    "included": 27,
+    "included": 30,
     "maybe_not_included": 0,
     "retracted_removed": 1,
-    "screened_title_abstract": 150,
-    "verdicts_recorded": 150
+    "screened_title_abstract": 160,
+    "verdicts_recorded": 160
   },
   "warnings": []
 }

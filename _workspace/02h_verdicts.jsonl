@@ -148,3 +148,13 @@
 {"study_id": "nct:NCT03627039", "verdict": "exclude", "reason": "excluded at Gate 2b by user decision"}
 {"study_id": "doi:10.2337/dc17-2231", "verdict": "include", "reason": "Meets protocol: SR/MA, major-body guideline, RCT or large cohort on metformin efficacy/safety in adult T2D; eligibility judged on title+abstract (full text for 6 HIGH records)"}
 {"study_id": "doi:10.3233/jad-180263", "verdict": "exclude", "reason": "Outcome/indication outside the pre-registered clinical outcomes (cancer, dementia/cognition, COVID, genetics, mechanism, MASLD, musculoskeletal)"}
+{"study_id": "doi:10.1101/2025.05.08.25327248", "verdict": "exclude", "reason": "Preprint on second-line agents in older adults; metformin only background, no metformin-specific outcome (L-013)"}
+{"study_id": "doi:10.1001/jamainternmed.2018.0292", "verdict": "include", "reason": "Phase 3 supplementary search (user decision), lactic-acidosis gap: large two-cohort study of metformin and acidosis by eGFR"}
+{"study_id": "doi:10.3121/cmr.2022.1759", "verdict": "include", "reason": "Phase 3 supplementary search (user decision), lactic-acidosis gap: SR/MA of peri-PCI metformin, incidence of lactic acidosis"}
+{"study_id": "doi:10.1002/phar.2316", "verdict": "exclude", "reason": "Systematic review of medication-induced hyperlactatemia across all drugs; not metformin/T2D-specific"}
+{"study_id": "doi:10.1001/jamainternmed.2018.4430", "verdict": "exclude", "reason": "Letter/reply, no primary data"}
+{"study_id": "doi:10.1001/jamainternmed.2018.8594", "verdict": "exclude", "reason": "Letter/reply, no primary data"}
+{"study_id": "doi:10.1111/bcp.14970", "verdict": "include", "reason": "Phase 3 supplementary search (user decision), hepatic-impairment gap: nationwide cohort of metformin in T2D with compensated/decompensated cirrhosis"}
+{"study_id": "doi:10.1016/j.cgh.2020.04.083", "verdict": "exclude", "reason": "Biopsy-proven NASH cohort (n=191), not hepatic impairment per se; the larger cirrhosis cohort (Yen 2021) is retained for this gap"}
+{"study_id": "doi:10.1186/s13643-019-1200-8", "verdict": "exclude", "reason": "Outcome (NAFLD) outside pre-registered clinical outcomes; drug-class review, not metformin-specific"}
+{"study_id": "doi:10.3748/wjg.v26.i23.3249", "verdict": "exclude", "reason": "Outcome (liver fibrosis association) outside pre-registered clinical outcomes"}

@@ -9,14 +9,14 @@
 
 ```mermaid
 flowchart TD
-  A["Records identified from databases and registers<br/>(n = 250)"]
+  A["Records identified from databases and registers<br/>(n = 260)"]
   B["Duplicate records removed<br/>(n = 31)"]
   R["Retracted records removed<br/>(n = 1)"]
-  C["Studies eligible for screening<br/>(n = 218)"]
+  C["Studies eligible for screening<br/>(n = 228)"]
   D["Deferred by automated relevance prioritisation<br/>NOT screened, not excluded (n = 68)"]
-  E["Studies screened on title and abstract<br/>(n = 150)"]
-  F["Excluded with reasons<br/>(n = 123)"]
-  I["Studies included in the synthesis<br/>(n = 27)"]
+  E["Studies screened on title and abstract<br/>(n = 160)"]
+  F["Excluded with reasons<br/>(n = 130)"]
+  I["Studies included in the synthesis<br/>(n = 30)"]
   A --> B
   B --> R
   R --> C
@@ -30,19 +30,19 @@ flowchart TD
 
 | Stage | n |
 |---|---|
-| identified | 250 |
-| identified databases registers | 250 |
+| identified | 260 |
+| identified databases registers | 260 |
 | identified other methods | 0 |
-| after deduplication | 219 |
+| after deduplication | 229 |
 | duplicates removed | 31 |
 | retracted removed | 1 |
-| eligible for screening | 218 |
-| screened title abstract | 150 |
+| eligible for screening | 228 |
+| screened title abstract | 160 |
 | deferred not screened | 68 |
-| verdicts recorded | 150 |
-| excluded title abstract | 123 |
+| verdicts recorded | 160 |
+| excluded title abstract | 130 |
 | maybe not included | 0 |
-| included | 27 |
+| included | 30 |
 
 ## Retracted, removed before screening
 Never eligible, and never folded into "duplicates" or the exclusion reasons.
@@ -59,18 +59,24 @@ Never eligible, and never folded into "duplicates" or the exclusion reasons.
 | excluded at Gate 2b by user decision | 7 |
 | Protocol, design or baseline-characteristics report without results | 3 |
 | Letter/comment, no primary data | 2 |
+| Letter/reply, no primary data | 2 |
 | No stable identifier verified (Consensus-only record; PMID/DOI not confirmed in PubMed) - not citable (L-009) | 2 |
+| Biopsy-proven NASH cohort (n=191), not hepatic impairment per se; the larger cirrhosis cohort (Yen 2021) is retained for this gap | 1 |
 | Case report (excluded by protocol except as signal context) | 1 |
 | Exposure not metformin-specific (micronutrient burden among all patients with T2D) | 1 |
 | Fixed-dose combination with statin; lipid/glycaemic surrogate endpoints; metformin effect not isolated | 1 |
 | Intervention is early insulin add-on; no metformin-vs-no-metformin contrast | 1 |
+| Outcome (NAFLD) outside pre-registered clinical outcomes; drug-class review, not metformin-specific | 1 |
+| Outcome (liver fibrosis association) outside pre-registered clinical outcomes | 1 |
 | Outside 2015-2026 window / metformin comparator-only legacy trial (RECORD, start 2001; rosiglitazone question) | 1 |
 | Pharmacokinetic/pharmacogenomic/biomarker-only | 1 |
 | Population defined by pre-existing CVD irrespective of diabetes status; RCT and cohort data pooled | 1 |
 | Prediabetes population (VA-IMPACT NCT02915198, ongoing, primary completion 2029-09); retained only as CVOT-gap context in the store | 1 |
+| Preprint on second-line agents in older adults; metformin only background, no metformin-specific outcome (L-013) | 1 |
 | Registry entry of the Lim 2025 RCT (verdict recorded on the publication record) | 1 |
 | Surrogate heart-failure markers only; mixed diabetic/non-diabetic populations | 1 |
 | Systematic review limited to newer agents; metformin not evaluated | 1 |
+| Systematic review of medication-induced hyperlactatemia across all drugs; not metformin/T2D-specific | 1 |
 
 ## Consistency check (0)
 - the stages add up

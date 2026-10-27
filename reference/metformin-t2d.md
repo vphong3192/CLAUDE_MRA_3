@@ -4,13 +4,14 @@
 > Every PMID/DOI below was confirmed against PubMed metadata (title + first author + year + journal) in this run (L-009). Titles are copied from PubMed metadata (L-035); where the PubMed export stripped the subscript "12" of vitamin B12 in two titles, the digits were restored from the Consensus/PubMed display.
 > Fulltext legend: `retrieved` = body text read; `available` = PMC record exists but the MCP returned abstract only; `unavailable` = no PMCID / paywalled.
 > `study_context` / `study_limitations` / `author_suggestions` are filled ONLY for records read in full text; otherwise `not captured (abstract-only)`.
-> **Gate 2b status:** user decisions on content applied (4 uncertain records included, 7 excluded); Gate 2b CLEARED 2026-10-27 (user: "Duyệt, tiếp tục"; see `_workspace/02a_search_log.md`).
+> **Gate 2b status:** user decisions on content applied (4 uncertain records included, 7 excluded); Gate 2b approval itself NOT yet given.
 > **Retraction screen:** Elicit `retracted` filter unavailable (account has no API access). Substitute check: PubMed publication-type query `metformin AND "type 2 diabetes" AND "Retracted Publication"[pt]` 2015-2026 returned 15 PMIDs; none is in this store; one retrieved record (Hasan 2025, PMID 40323973, title begins "RETRACTED:") was removed before screening. This substitute does not cover retractions not yet flagged in PubMed.
 
 ## Summary
-- Included in store: **33 studies** (HIGH 14 / MEDIUM 19); of which 27 passed the pipeline screening (23 initially + 4 uncertain records included at Gate 2b by the user) and 6 (MET-H02, H03, M12, M13, M14, M15) were DEFERRED by the automated prefilter (thin metadata/low concept score, i.e. unread by the pipeline) and were added by hand after known-item guideline/Vietnam/CKD searches - PRISMA 'included' (27 after Gate 2b) therefore does not count them; the Methods text must say so.
-- HIGH records with full text read: 6 of 14 (MET-H04, H05, H08, H10, H12, H13); abstract-only: 8 (MET-H01, H02, H03, H06, H07, H09, H11, H14) - unchanged after the Gate 2b full-text attempts (PMC bodies not served by the MCP; WebFetch DNS-blocked).
-- Evidence-hierarchy mix: guidelines/consensus 6 entries; SR/MA/NMA 18; primary RCT-derived/cohort/cross-sectional/PK/descriptive studies 8; Level III review 1 (MET-M18).
+- Included in store: **36 studies** (HIGH 16 / MEDIUM 20); of which 30 passed the pipeline screening (23 initially + 4 uncertain records included at Gate 2b + 3 from the Phase 3 supplementary search; 3 entries are flagged dropped) and 6 (MET-H02, H03, M12, M13, M14, M15) were DEFERRED by the automated prefilter (thin metadata/low concept score, i.e. unread by the pipeline) and were added by hand after known-item guideline/Vietnam/CKD searches - PRISMA 'included' (23) therefore does not count them; the Methods text must say so.
+- HIGH records after Research Map re-tiering (H09 -> MEDIUM, M03 -> HIGH, S01 and S02 added as HIGH): 16; full text read: 7 (MET-H04, H05, H08, H10, H12, H13, S02); **abstract-only: 9** (MET-H01, H02, H03, H06, H07, H11, H14, M03, S01) - PMC bodies not served by the MCP; WebFetch DNS-blocked.
+- Dropped at Research Map (kept for audit, NOT for citation): MET-M02, MET-M13, MET-M17.
+- Evidence-hierarchy mix: guidelines/consensus 6 entries; SR/MA/NMA 19; primary RCT-derived/cohort/cross-sectional/PK/descriptive studies 10; Level III review 1 (MET-M18).
 
 ## Entries
 
@@ -118,18 +119,18 @@
 - **author_suggestions:** Continuous (living) updating of guidelines; awaited tirzepatide CVOT.
 - **retriever note:** Metformin treated as "standard treatment add-on" in many trials - check network definition when citing.
 
-### MET-H09 - Nong K 2025 (HIGH)
+### MET-H09 - Nong K 2025 (MEDIUM)
 - **stable_id:** PMID 40813122 / DOI 10.1136/bmj-2024-083039
 - **title (verbatim, PubMed):** Medications for adults with type 2 diabetes: a living systematic review and network meta-analysis.
 - **authors / journal / year:** Nong K; Jeppesen BT; Shi Q; Agoritsas T; Guyatt GH; White H et al. - BMJ - 2025
 - **source_type:** peer-reviewed (living SR + NMA, GRADE; PROSPERO CRD42022325948)
 - **retrieved via:** PubMed (P11) | PMID verified (Nong K, BMJ 2025, DOI 10.1136/bmj-2024-083039)
-- **relevance_tier:** HIGH | **fulltext:** unavailable (no PMCID; MCP abstract only)
+- **relevance_tier:** MEDIUM | **fulltext:** unavailable (no PMCID; MCP abstract only)
 - **verified finding (captured 2026-10-27):** 869 trials, 493,168 participants, 13 classes (63 drugs), search to 2024-07-31. Moderate-high certainty: CV and kidney benefits of SGLT2i, GLP-1 RA, finerenone (CKD). Sulphonylureas, insulin, DPP-4i probably increase severe hypoglycaemia; tirzepatide/GLP-1 RA increase severe GI events. Abstract excerpt retrieved does not report metformin-specific estimates.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
 - **author_suggestions:** not captured (abstract-only)
-- **retriever note:** Metformin-specific numbers not in abstract.
+- **retriever note:** Metformin-specific numbers not in abstract. | RE-TIERED HIGH->MEDIUM at Research Map by user decision (stable ID unchanged).
 
 ### MET-H10 - Silverii GA 2026 (HIGH)
 - **stable_id:** PMID 42530338 / DOI 10.1111/dom.71128 ; PMCID PMC13538750
@@ -209,7 +210,7 @@
 - **author_suggestions:** not captured (abstract-only)
 - **retriever note:** provisional (abstract-derived)
 
-### MET-M02 - Qaseem A 2024 (MEDIUM)
+### MET-M02 - Qaseem A 2024 (MEDIUM) [DROPPED AT RESEARCH MAP - NOT FOR CITATION]
 - **stable_id:** PMID 38639546 / DOI 10.7326/M23-2788 ; PMCID PMC11614146
 - **title (verbatim, PubMed):** Newer Pharmacologic Treatments in Adults With Type 2 Diabetes: A Clinical Guideline From the American College of Physicians.
 - **authors / journal / year:** Qaseem A; Obley AJ; Shamliyan T; Hicks LA; Harrod CS; Crandall CJ et al. - Ann Intern Med - 2024
@@ -220,20 +221,20 @@
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
 - **author_suggestions:** not captured (abstract-only)
-- **retriever note:** recommendation text missing; full text needed if cited.
+- **retriever note:** **DROPPED AT RESEARCH MAP BY USER DECISION - NOT FOR CITATION (entry kept for audit).** recommendation text missing; full text needed if cited.
 
-### MET-M03 - Palmer SC 2016 (MEDIUM)
+### MET-M03 - Palmer SC 2016 (HIGH)
 - **stable_id:** PMID 27434443 / DOI 10.1001/jama.2016.9400
 - **title (verbatim, PubMed):** Comparison of Clinical Outcomes and Adverse Events Associated With Glucose-Lowering Drugs in Patients With Type 2 Diabetes: A Meta-analysis.
 - **authors / journal / year:** Palmer SC; Mavridis D; Nicolucci A; Johnson DW; Tonelli M; Craig JC et al. - JAMA - 2016
 - **source_type:** peer-reviewed (network MA, 301 RCTs)
 - **retrieved via:** PubMed (P9) | PMID verified (Palmer SC, JAMA 2016, DOI 10.1001/jama.2016.9400)
-- **relevance_tier:** MEDIUM | **fulltext:** abstract-only (provisional)
+- **relevance_tier:** HIGH | **fulltext:** abstract-only (provisional)
 - **verified finding (captured 2026-10-27):** Search to 2016-03-21; 301 trials. No significant differences between any of 9 drug classes (mono-, dual-, triple therapy) for CV or all-cause mortality. Versus metformin monotherapy, higher HbA1c with sulphonylurea (SMD 0.18), TZD (0.16), DPP-4i (0.33), alpha-glucosidase inhibitor (0.35). Hypoglycaemia highest with sulphonylurea (OR 3.13) and basal insulin (OR 17.9). Metformin associated with lower or no different HbA1c vs any class; consistent with ADA recommendations.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
 - **author_suggestions:** not captured (abstract-only)
-- **retriever note:** provisional (abstract-derived)
+- **retriever note:** provisional (abstract-derived) | RE-TIERED MEDIUM->HIGH at Research Map by user decision (stable ID unchanged); abstract-only.
 
 ### MET-M04 - Hu Y 2020 (MEDIUM)
 - **stable_id:** PMID 33117278 / DOI 10.3389/fendo.2020.559446 ; PMCID PMC7575818
@@ -352,7 +353,7 @@
 - **author_suggestions:** not captured (abstract-only)
 - **retriever note:** deferred by prefilter -> hand-added; abstract-only.
 
-### MET-M13 - Davies MJ 2022 (MEDIUM)
+### MET-M13 - Davies MJ 2022 (MEDIUM) [DROPPED AT RESEARCH MAP - NOT FOR CITATION]
 - **stable_id:** PMID 36148880 / DOI 10.2337/dci22-0034; PMID 36151309 / DOI 10.1007/s00125-022-05787-2 ; PMCID PMC10008140
 - **title (verbatim, PubMed):** Management of Hyperglycemia in Type 2 Diabetes, 2022. A Consensus Report by the American Diabetes Association (ADA) and the European Association for the Study of Diabetes (EASD).
 - **authors / journal / year:** Davies MJ; Aroda VR; Collins BS; Gabbay RA; Green J; Maruthur NM et al. - Diabetes Care - 2022
@@ -363,7 +364,7 @@
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
 - **author_suggestions:** not captured (abstract-only)
-- **retriever note:** superseded; cite only as historical context.
+- **retriever note:** **DROPPED AT RESEARCH MAP BY USER DECISION - NOT FOR CITATION (entry kept for audit).** superseded; cite only as historical context.
 
 ### MET-M14 - Phan HH 2025 (MEDIUM)
 - **stable_id:** PMID 40374214 / DOI 10.1136/bmjopen-2025-100672 ; PMCID PMC12185888
@@ -404,7 +405,7 @@
 - **author_suggestions:** not captured (abstract-only)
 - **retriever note:** Gate 2b include.
 
-### MET-M17 - Mohammadi D 2026 (MEDIUM)
+### MET-M17 - Mohammadi D 2026 (MEDIUM) [DROPPED AT RESEARCH MAP - NOT FOR CITATION]
 - **stable_id:** PMID 42365335 / DOI 10.1186/s13098-026-02226-9 ; PMCID PMC13573484
 - **title (verbatim, PubMed):** Comparative cardiovascular efficacy of antidiabetic therapies in type 2 diabetes: a systematic review and network meta-analysis of randomized trials.
 - **authors / journal / year:** Mohammadi D; Sadeghirad B; Rasouli MA; Saed L; Baradaran HR; Moradi Y - Diabetol Metab Syndr - 2026
@@ -415,7 +416,7 @@
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
 - **author_suggestions:** not captured (abstract-only)
-- **retriever note:** Gate 2b include; no metformin numbers in abstract.
+- **retriever note:** **DROPPED AT RESEARCH MAP BY USER DECISION - NOT FOR CITATION (entry kept for audit).** Gate 2b include; no metformin numbers in abstract.
 
 ### MET-M18 - Bin Hussain AK 2019 (MEDIUM)
 - **stable_id:** PMID 31235118 / DOI 10.1016/j.dsx.2019.04.028
@@ -443,6 +444,45 @@
 - **author_suggestions:** not captured (abstract-only)
 - **retriever note:** Gate 2b include; Vietnam context, descriptive.
 
+### MET-S01 - Lazarus B 2018 (HIGH)
+- **stable_id:** PMID 29868840 / DOI 10.1001/jamainternmed.2018.0292 ; PMCID PMC6145716
+- **title (verbatim, PubMed):** Association of Metformin Use With Risk of Lactic Acidosis Across the Range of Kidney Function: A Community-Based Cohort Study.
+- **authors / journal / year:** Lazarus B; Wu A; Shin JI; Sang Y; Alexander GC; Secora A et al. - JAMA Intern Med - 2018
+- **source_type:** peer-reviewed (two retrospective community-based cohorts, Geisinger n=75,413 + MarketScan replication)
+- **retrieved via:** PubMed (Phase 3 supplementary search S2, user decision) | PMID verified (Lazarus B, JAMA Intern Med 2018, DOI 10.1001/jamainternmed.2018.0292)
+- **relevance_tier:** HIGH | **fulltext:** available (PMC6145716) - MCP body empty, abstract only
+- **verified finding (captured 2026-10-27):** Hospitalization with acidosis: metformin not associated overall (adjusted HR 0.98, 0.89-1.08), nor at eGFR 45-59 (HR 1.16, 0.95-1.41) or 30-44 (HR 1.09, 0.83-1.44); associated at eGFR <30 (HR 2.07, 1.33-3.22). Results consistent vs new sulfonylurea users (eGFR 30-44 HR 0.77, 0.29-2.05), propensity-matched (0.71, 0.45-1.12) and in replication (0.86, 0.37-2.01). Authors support cautious use at eGFR >=30.
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **retriever note:** Lactic-acidosis gap (Phase 3 supplementary). Outcome is ICD acidosis code (276.2), not adjudicated lactic acidosis. NOTE: the search cited here is by title+year; PubMed returned PMID 29868840.
+
+### MET-S02 - Yen FS 2021 (HIGH)
+- **stable_id:** PMID 34198358 / DOI 10.1111/bcp.14970 ; PMCID PMC9292486
+- **title (verbatim, PubMed):** Metformin use and cirrhotic decompensation in patients with type 2 diabetes and liver cirrhosis.
+- **authors / journal / year:** Yen FS; Huang YH; Hou MC; Hwu CM; Lo YR; Shin SJ et al. - Br J Clin Pharmacol - 2021
+- **source_type:** peer-reviewed (nationwide cohort, Taiwan NHIRD, propensity-matched)
+- **retrieved via:** PubMed (Phase 3 supplementary search S3, user decision) | PMID verified (Yen FS, Br J Clin Pharmacol 2021, DOI 10.1111/bcp.14970)
+- **relevance_tier:** HIGH | **fulltext:** retrieved (PMC9292486)
+- **verified finding (captured 2026-10-27):** T2D with compensated cirrhosis (26,164; 8,612 matched pairs) and decompensated cirrhosis (15,056; 4,333 pairs), followed to 2010. Compensated: all-cause mortality aHR 1.13 (1.01-1.25), cirrhotic decompensation aHR 1.15 (1.04-1.27), dose-dependent (>1000 mg/d mortality aHR 1.42; cirrhotic decompensation 1.57); intention-to-treat/IPCW model mortality aHR 1.05 (0.96-1.14) ns but decompensation 1.24 (1.14-1.35). Metabolic acidosis not increased (compensated aHR 1.05, 0.67-1.64; decompensated 1.64, 0.90-3.01, ns). Decompensated: mortality aHR 1.15 (p=.03); IPCW model ns. No MACE or HCC difference.
+- **study_context:** No trial has targeted metformin in coexisting diabetes and cirrhosis; small observational studies conflict (Zhang, Nkontchou, Vilar-Gomez, Ampuero suggest benefit). Authors aimed to study outcomes of metformin in compensated and decompensated cirrhosis with T2D in a large population database.
+- **study_limitations:** No data on body weight, alcohol, smoking, activity or family history; no biochemistry so Child-Pugh/MELD not computable (compensated vs decompensated by diagnosis codes, possible underdiagnosis); residual unmeasured confounding; cohort 2000-2009 (older practice); diabetes duration short (~2 y).
+- **author_suggestions:** Prospective randomized study to verify; studies of portal pressure change after metformin in diabetes with cirrhosis.
+- **retriever note:** Hepatic-impairment gap. Observational; signals harm in cirrhosis (opposite of smaller benefit-suggesting cohorts) - confounding by indication possible.
+
+### MET-S03 - Sakellariou XM 2023 (MEDIUM)
+- **stable_id:** PMID 37130786 / DOI 10.3121/cmr.2022.1759 ; PMCID PMC10153679
+- **title (verbatim, PubMed):** Renal Complications after Percutaneous Coronary Interventions on Concurrent Metformin Therapy: A Systematic Review with Meta-Analysis.
+- **authors / journal / year:** Sakellariou XM; Kolettis TM; Nikas DN - Clin Med Res - 2023
+- **source_type:** peer-reviewed (SR/MA, 9 studies, 2,235 patients undergoing PCI)
+- **retrieved via:** PubMed (Phase 3 supplementary search S2, user decision) | PMID verified (Sakellariou XM, Clin Med Res 2023, DOI 10.3121/cmr.2022.1759)
+- **relevance_tier:** MEDIUM | **fulltext:** available (PMC10153679) - MCP body empty, abstract only
+- **verified finding (captured 2026-10-27):** 9 studies (RCT and observational), 1,076 continuing metformin peri-PCI, mostly eGFR >30: no lactic acidosis cases reported; post-procedural eGFR drop 6.81 (3.41-10.21) with vs 5.34 (2.98-7.70) mL/min/1.73m2 without metformin; contrast-induced nephropathy not affected (SMD 0.0007, -0.1007 to 0.1022). Authors: more data needed for severe renal disease.
+- **study_context:** not captured (abstract-only)
+- **study_limitations:** not captured (abstract-only)
+- **author_suggestions:** not captured (abstract-only)
+- **retriever note:** Lactic-acidosis gap, indirect (contrast/PCI setting; population not T2D-restricted in the abstract).
+
 ## Uncertain records - RESOLVED at Gate 2b (user: include 30672083, 42365335, 31235118, 39391521; the 7 below excluded)
 | year | stable_id | what it is | why uncertain |
 |---|---|---|---|
@@ -461,6 +501,9 @@
 
 ## Official-source fallback (Gate 2b item 2) - NICE NG28 and FDA 2016: NOT added to the store
 WebSearch (fallback) located NICE NG28 (secondary summaries of the Feb 2026 update; official URL https://www.nice.org.uk/guidance/ng28) and the FDA Drug Safety Communication of 2016-04-08 (official URL https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-revises-warnings-regarding-use-diabetes-medicine-metformin-certain). WebFetch to both official pages failed (getaddrinfo ENOTFOUND), so neither could be verified from the official page; per instruction they are NOT stored and carry no stable ID here. Unverified search-snippet content (do NOT cite): NG28 - modified-release metformin preferred, SGLT2i + metformin first-line dual therapy (Feb 2026), dose reduction to 1 g/day at eGFR<45; FDA - contraindicated eGFR<30, starting not recommended 30-45, reassess yearly, contrast-imaging rule. Likewise KDIGO 2022 metformin wording (eGFR>=30; 1000 mg/day at 30-44) is from a secondary summary only.
+
+## Phase 3 supplementary search (user decision at Research Map)
+Three gap queries, window 2015-01-01..2026-10-27: (a) older adults - NO metformin-specific, T2D-specific SR/MA/large cohort/TTE found in 3 query variants (yield dominated by add-on RCTs and GLP-1 studies; one medRxiv/PubMed preprint on second-line agents in older adults excluded as metformin-background); gap REMAINS OPEN, older-adult statements must rest on subgroup data in included records (e.g. Lambourg 2024 median age 77) or be labelled inference; (b) lactic acidosis - MET-S01, MET-S03; (c) hepatic impairment - MET-S02 (only large cohort; no SR/MA found). Pre-2015 Brietzke 2014 review ignored.
 
 ## Gaps recorded (do not paper over)
 - No source gave the text of metformin-specific guideline recommendations (ADA SOC 2026 s9, ADA/EASD 2026, KDIGO 2022): see HIGH abstract-only list.

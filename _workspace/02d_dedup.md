@@ -5,16 +5,16 @@
 > year guard second. Pairs outside the guard are REPORTED, never merged. Relevance and
 > quality are not decided here. No LLM, no network; identical output every run.
 
-- input: `_workspace/02b_records.jsonl`
+- input: `/home/user/CLAUDE_MRA_3/_workspace/02b_records.jsonl`
 - thresholds (hardcoded): fuzzy ≥ 0.92 · year guard ±1 · block prefix 12 chars
 
 ## Counts
-- records in: **250**
+- records in: **260**
   - consensus: 30
   - ctgov: 5
   - medrxiv: 1
-  - pubmed: 214
-- studies out: **219**
+  - pubmed: 224
+- studies out: **229**
 - duplicates removed: **31**
 
 ## Merges (60)

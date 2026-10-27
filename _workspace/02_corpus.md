@@ -2,7 +2,7 @@
 
 > One row per logical study. Source of record details: `reference/metformin-t2d.md`. Machine layer: `_workspace/02b_records.jsonl`. Eligibility judged on TITLE+ABSTRACT only (no full-text eligibility box). Verdicts are the retriever's, pending the user at Gate 2b.
 
-## A. Studies in the store (33) - tier and full-text status
+## A. Studies in the store (36; MET-M02, M13, M17 DROPPED at Research Map - not for citation) - tier and full-text status
 
 | store id | stable_id | first author, year | design / source type | source | tier | fulltext | pipeline path | relevance note |
 |---|---|---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@
 | MET-H06 | PMID 32501595 | Gnesin F, 2020 | peer-reviewed (Cochrane SR/MA, GRADE) | PubMed | HIGH | unavailable via tools (PMC7386876 exists; MCP body empty on 2 attempts; WebFetch DNS failure) | screened: include | Cochrane: no clear evidence on patient-important outcomes |
 | MET-H07 | PMID 27088241 | Maruthur NM, 2016 | peer-reviewed (AHRQ SR | PubMed | HIGH | unavailable (no PMCID; MCP abstract only) | screened: include | AHRQ: supports metformin first-line (CV mortality vs SU) |
 | MET-H08 | PMID 37024129 | Shi Q, 2023 | peer-reviewed (SR + network MA, GRADE | PubMed | HIGH | retrieved (PMC10077111) | screened: include | NMA: metformin low-certainty effects; SGLT2i/GLP-1 RA high |
-| MET-H09 | PMID 40813122 | Nong K, 2025 | peer-reviewed (living SR + NMA, GRADE | PubMed | HIGH | unavailable (no PMCID; MCP abstract only) | screened: include | Living NMA (2025); no metformin numbers in abstract |
+| MET-H09 | PMID 40813122 | Nong K, 2025 | peer-reviewed (living SR + NMA, GRADE | PubMed | MEDIUM | unavailable (no PMCID; MCP abstract only) | screened: include | Living NMA (2025); no metformin numbers in abstract |
 | MET-H10 | PMID 42530338 | Silverii GA, 2026 | peer-reviewed (pairwise + network MA | PubMed | HIGH | retrieved (PMC13538750) | screened: include | 2026 NMA: metformin MACE OR ~0.69, low certainty |
 | MET-H11 | PMID 41548682 | Patiño-Cardona S, 2026 | peer-reviewed (SR/MA of 12 observational studies | PubMed | HIGH | unavailable (no PMCID; MCP abstract only) | screened: include | Observational MA: metformin in CKD, stage 4 lactic acidosis trend |
 | MET-H12 | PMID 39521399 | Lambourg EJ, 2024 | peer-reviewed (nationwide target-trial emulation, observational) | PubMed | HIGH | retrieved (PMC12101959) | screened: include | Stopping vs continuing metformin at eGFR<30 |
@@ -22,7 +22,7 @@
 | MET-H14 | PMID 38837240 | El-Damanawi R, 2024 | peer-reviewed (Cochrane SR/MA, GRADE | PubMed | HIGH | unavailable via tools (PMC11152183 exists; MCP body empty on 2 attempts; WebFetch DNS failure) | screened: include | Cochrane: metformin in CKD (mixed T2D/ADPKD) |
 | MET-M01 | PMID 32598218 | Tsapas A, 2020 | peer-reviewed (SR/NMA, 453 RCTs) | PubMed | MEDIUM | abstract-only (provisional) | screened: include | Comparative effectiveness SR/NMA, metformin background |
 | MET-M02 | PMID 38639546 | Qaseem A, 2024 | peer-reviewed (ACP clinical guideline | PubMed | MEDIUM | abstract-only (provisional) | screened: include | ACP guideline on newer agents; recs not captured |
-| MET-M03 | PMID 27434443 | Palmer SC, 2016 | peer-reviewed (network MA, 301 RCTs) | PubMed | MEDIUM | abstract-only (provisional) | screened: include | JAMA NMA: no mortality difference between classes |
+| MET-M03 | PMID 27434443 | Palmer SC, 2016 | peer-reviewed (network MA, 301 RCTs) | PubMed | HIGH | abstract-only (provisional) | screened: include | JAMA NMA: no mortality difference between classes |
 | MET-M04 | PMID 33117278 | Hu Y, 2020 | peer-reviewed (SR/MA, 13 studies: 9 cohorts, 3 RCT post hoc, 1 nested  | PubMed | MEDIUM | abstract-only (provisional) | screened: include | Metformin in T2D+CKD, mortality/CV MA |
 | MET-M05 | PMID 31904444 | Zhang K, 2020 | peer-reviewed (SR/MA incl. observational | PubMed | MEDIUM | abstract-only (provisional) | screened: include | Observational pooled CV risk (contrast to RCTs) |
 | MET-M06 | PMID 29305402 | Lalau JD, 2018 | peer-reviewed (three complementary prospective studies: dose-finding,  | PubMed | MEDIUM | abstract-only (provisional) | screened: include | CKD 3A-4 dose regimen; lactate safety |
@@ -39,6 +39,9 @@
 | MET-M17 | PMID 42365335 | Mohammadi D, 2026 | peer-reviewed (SR/NMA of 133 RCTs, 289,558 participants | PubMed | MEDIUM | abstract-only (provisional) | uncertain -> include at Gate 2b (user) | 2026 CV NMA of 133 RCTs; no metformin numbers in abstract (Gate 2b include) |
 | MET-M18 | PMID 31235118 | Bin Hussain AK, 2019 | peer-reviewed narrative review (Level III | PubMed | MEDIUM | abstract-only (provisional) | uncertain -> include at Gate 2b (user) | Level III review on first-line status (Gate 2b include) |
 | MET-M19 | PMID 39391521 | Dang KD, 2024 | peer-reviewed (descriptive hospital study, VIETNAM - Can Tho) | PubMed | MEDIUM | abstract-only (provisional) | uncertain -> include at Gate 2b (user) | Vietnam (Can Tho) prescribing in kidney failure, descriptive (Gate 2b include) |
+| MET-S01 | PMID 29868840 | Lazarus B, 2018 | peer-reviewed (two retrospective community-based cohorts, Geisinger n= | PubMed | HIGH | available (PMC6145716) | Phase 3 supplementary search (user decision); hand-screened | Metformin and acidosis by eGFR (Phase 3 supplementary) |
+| MET-S02 | PMID 34198358 | Yen FS, 2021 | peer-reviewed (nationwide cohort, Taiwan NHIRD, propensity-matched) | PubMed | HIGH | retrieved (PMC9292486) | Phase 3 supplementary search (user decision); hand-screened | Metformin in T2D with cirrhosis: higher mortality/decompensation (Phase 3 supplementary) |
+| MET-S03 | PMID 37130786 | Sakellariou XM, 2023 | peer-reviewed (SR/MA, 9 studies, 2,235 patients undergoing PCI) | PubMed | MEDIUM | available (PMC10153679) | Phase 3 supplementary search (user decision); hand-screened | SR/MA peri-PCI metformin, no lactic acidosis (Phase 3 supplementary) |
 
 ## B. Uncertain records resolved at Gate 2b (user): 4 included (MET-M16..M19); 7 excluded - "excluded at Gate 2b by user decision"
 
@@ -54,9 +57,9 @@
 
 ## C. PRISMA numbers (from `02i_prisma.json`, script-derived)
 
-identified 250 -> duplicates removed 31 -> retracted removed 1 -> eligible 218 -> **deferred by prefilter, UNREAD (not excluded): 68** / screened on title+abstract 150 -> excluded 123 / uncertain 0 / included 27.
+identified 260 -> duplicates removed 31 -> retracted removed 1 -> eligible 228 -> **deferred by prefilter, UNREAD (not excluded): 68** / screened on title+abstract 160 -> excluded 130 / uncertain 0 / included 30.
 
-**Disclosure for the Methods section:** six studies in section A (MET-H02, H03, M12, M13, M14, M15) were among the 68 deferred by the automated prefilter (thin PubMed metadata -> low concept score) and were added by hand after targeted known-item searches; they are therefore NOT in the PRISMA "included" count of 27 (23 + 4 uncertain records the user included at Gate 2b). Screening was AI-assisted with a human at the gates; no second reviewer.
+**Disclosure for the Methods section:** six studies in section A (MET-H02, H03, M12, M13, M14, M15) were among the 68 deferred by the automated prefilter (thin PubMed metadata -> low concept score) and were added by hand after targeted known-item searches; they are therefore NOT in the PRISMA "included" count of 30 (23 + 4 Gate 2b + 3 Phase 3 supplementary). The 10 supplementary-search studies were appended to 02e_candidates.jsonl by hand after title/abstract reading (the prefilter was NOT re-run, to keep the original 150-candidate screening set and verdicts intact; a re-run would have displaced 6 earlier candidates to deferred). Screening was AI-assisted with a human at the gates; no second reviewer.
 
 ## D. Coverage by evidence tier (Law 3)
 
