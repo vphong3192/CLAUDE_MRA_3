@@ -102,3 +102,7 @@ Content decisions asked separately from the gate-closing question (L-044):
 2. Unavailable sources: user chose **"WebSearch NICE + FDA (Recommended)"** — WebSearch fallback for NICE NG28 and the FDA 2016 metformin/eGFR safety communication; Elicit (api_access_denied), Europe PMC / OpenAlex / Semantic Scholar (DNS) recorded as coverage gaps → Limitations.
 3. 11 uncertain records: user chose **"Nhận 4 bài có ích (Recommended)"** — include PMID 30672083 (TREAT post hoc, CKD), PMID 42365335 (2026 CV NMA), PMID 31235118 (first-line narrative review, Level III, controversy framing), PMID 39391521 (Can Tho, Vietnam context); exclude the other 7 (incl. the medRxiv dementia preprint).
 Gate 2b approval itself: NOT yet given — to be asked after these changes are applied (L-024).
+
+## Gate 2b — CLEARED (2026-10-27)
+Presented after supplementary retrieval (commit 3cadfeb): included 27 (store 33), HIGH abstract-only 8/14, NICE/FDA not stored, WebFetch DNS-blocked.
+Gate-closing question asked alone (L-044). User's answer (verbatim): **"Duyệt, tiếp tục"**.
