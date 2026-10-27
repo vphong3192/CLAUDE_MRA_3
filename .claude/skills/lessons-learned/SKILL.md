@@ -2,7 +2,7 @@
 name: lessons-learned
 description: >
   The learning-from-mistakes memory for the medical review harness. Loads the persistent lessons
-  store and injects role-tagged rules at the start of every review; collects defects (from QA) and
+  store and slices role-tagged rules for each agent at the start of every review; collects defects (from QA) and
   user feedback at the end, drafts generalized lessons, and — after human approval — appends them to
   the store. Used by the lessons-curator agent, and whenever the user wants to record a mistake,
   review proposed lessons, or see what the harness has learned.
@@ -11,7 +11,7 @@ description: >
 # Lessons Learned
 
 The mechanism that stops the team repeating mistakes. **Two tiers:**
-- `lessons.md` — distilled, role-tagged "When X → do Y" digest, injected every run.
+- `lessons.md` — distilled, role-tagged "When X → do Y" digest, sliced per role every run.
 - `evolution-log.md` — the full per-run archive (task, rubric result, violations, lessons, actions);
   NOT auto-loaded; read it to investigate patterns or to append a new entry.
 
@@ -21,11 +21,17 @@ behind it and the user approved it.
 
 ## Two phases
 
-### Inject (start of every run)
-1. Read `lessons.md`.
-2. Select lessons relevant to the current topic.
-3. Post a **role-tagged digest** to the team so each agent applies its own lessons. Format:
-   `[writer] L-002: hedge observational findings — associative verbs, not causal.`
+### Inject (start of every run) — a script, not an agent
+Each agent (and the lead, as `orchestrator`) loads only its own slice:
+```bash
+python3 .claude/skills/lessons-learned/scripts/lessons_digest.py --role synthesis-writer
+python3 .claude/skills/lessons-learned/scripts/lessons_digest.py --list-roles   # lessons per role
+```
+It prints Trigger + Rule for every lesson whose `Role:` names that agent (`--full` adds Why/Origin).
+Filtering by tag is mechanical, so it moved out of the LLM (L-039): no lesson is dropped by a
+relevance judgment, and no agent reads ~12K tokens of other roles' rules and incident narratives.
+Consequences for the store: the **Role tag is the routing**, and the **Rule must stand on its own**
+because agents do not see the Why.
 
 ### Capture (end of run)
 1. Read `_workspace/06a_verification_report.md` (QA defect categories + rubric/audit) + any user feedback relayed by the lead.
@@ -37,7 +43,7 @@ behind it and the user approved it.
 ## Lesson format
 ```
 ### L-<id>: <short title>
-- **Role:** strategist | retriever | appraiser | writer | verifier
+- **Role:** strategist | retriever | appraiser | writer | coach | verifier | orchestrator
 - **Trigger:** when this applies
 - **Rule:** what to do
 - **Why:** the rationale (so it transfers to new cases)

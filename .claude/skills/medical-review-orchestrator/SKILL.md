@@ -36,26 +36,32 @@ persistent lessons with human approval before saving.
 | `synthesis-writer` | Write the in-depth review, citing only from the provenance store | `_workspace/05_draft_review.md` |
 | `quality-coach` | Read-only "best-self" pass — raises the ceiling (depth/clarity/insight), one pass | `_workspace/05a_coach.md` |
 | `citation-verifier` (QA) | Cross-check claims↔sources; score rubric; run audit | `_workspace/06a_verification_report.md`, `06_final_review.md` |
-| `lessons-curator` | Inject prior lessons; propose new ones; maintain evolution-log | `_workspace/07_proposed_lessons.md` |
+| `lessons-curator` | Phase 7: propose new lessons + evolution-log entry (start-of-run injection is a script) | `_workspace/07_proposed_lessons.md` |
 
-**Model is set per agent in each agent's own frontmatter — do NOT override it on spawn.** Current
-allocation: `opus` for `critical-appraiser`, `synthesis-writer`, and `quality-coach` (deep reasoning /
-ceiling-raising); `sonnet` for `research-strategist`, `evidence-retriever`, `citation-verifier`, and
-`lessons-curator` (structured retrieval / checking). The lead runs as the orchestrator session's own
-model. Change an agent's model in its frontmatter, not here.
+**Model, effort, preloaded skill and tool limits are set in each agent's own frontmatter — do NOT
+override them on spawn.** Current allocation: `opus` for `critical-appraiser`, `synthesis-writer`, and
+`quality-coach` (deep reasoning / ceiling-raising); `sonnet` for `research-strategist`,
+`evidence-retriever`, `citation-verifier`, and `lessons-curator`. `effort: medium` for the retriever and
+curator (tool-heavy, mechanical), `high` for the rest. Each agent preloads its own skill via `skills:`,
+so its procedure is in context from the first turn instead of depending on the agent choosing to open
+it. `disallowedTools` removes web/MCP search from the writer, coach and curator — provenance-on-disk and
+the coach's read-only boundary are enforced by the harness, not by prompt. The lead runs as the
+orchestrator session's own model. Change any of these in the agent's frontmatter, not here.
 
 ## Directory contract
 - `reference/<topic>.md` — **persistent verified-citation store** (PMID/DOI/NCT + date). The writer
   cites ONLY from here, never from memory or a context summary (Law: provenance on disk). One topic =
   one file; check for a near-match before creating a new one.
 - `source/<folder>/` — **user-supplied full-text PDFs** (paywalled papers, guidelines). Checked every run.
-- `_workspace/` — per-run artifacts, named `NN_<agent>_<artifact>.md`. Preserved after the run.
+- `_workspace/` — per-run artifacts, named by the CLAUDE.md contract (`NN` = producing phase). Preserved after the run.
   Includes `06c_manifest.md` — the one-page proof package assembled at delivery (see Phase 6).
-- `.claude/skills/lessons-learned/lessons.md` — distilled digest, injected each run.
+- `.claude/skills/lessons-learned/lessons.md` — distilled digest; each agent loads only its role's slice via
+  `scripts/lessons_digest.py --role <agent>` (Trigger + Rule, no incident narrative).
 - `.claude/skills/lessons-learned/evolution-log.md` — full archive, NOT auto-loaded.
 
 ## Phase 0 — Context Check & Scope (always first)
-1. Read `.claude/constitution.md` and `.claude/skills/lessons-learned/lessons.md`.
+1. Read `.claude/constitution.md` and load your lessons:
+   `python3 .claude/skills/lessons-learned/scripts/lessons_digest.py --role orchestrator`.
 2. Determine run mode from `_workspace/`:
    - none → fresh review · exists + new topic → move to `_workspace_prev/`, start fresh · exists +
      partial-refine request → re-invoke only the affected agent(s), reuse upstream artifacts.
@@ -83,17 +89,42 @@ model. Change an agent's model in its frontmatter, not here.
    gate** — all four human gates run on every level, including `tiny` (constitution: Effort tag). When
    unsure, choose the more careful level.
 
-## Execution Mode: Agent Team
-`TeamCreate` the team, `TaskCreate` work with dependencies, members coordinate via `SendMessage`,
-artifacts flow through files. **Four stops** where the lead waits for the user: Phase 0 scope,
-Gate 2b (post-retrieval), Phase 3 Research Map (hard gate), and Gate 4b (post-appraisal).
+## Execution Mode: sequential subagents (default)
+The pipeline is a chain broken by four human gates, and every hand-off is already a file on disk — so
+run each phase as **one foreground `Agent` call** with `subagent_type` set to the specialist. A fresh
+subagent per phase starts clean, reads exactly the artifacts it needs, writes its artifact, and exits;
+nothing idles while the user is deciding at a gate. The writer⇄verifier loop is the lead re-invoking
+the writer with the verifier's FIX/BLOCK list, then re-invoking the verifier on the revised draft.
+
+**Spawn prompt = pointers, not content.** Pass the phase, the topic, the paths of the input artifacts,
+the confirmed scope line from `00_scope.md`, and any user decision from the last gate. Do NOT paste
+artifact text into the prompt — the subagent reads the file, which is both cheaper and the only way it
+sees the real artifact (R5).
+
+**Return contract — append it to every spawn prompt:** *"End with ≤150 words: artifact paths written,
+key counts, blocking issues, and anything the user must decide. Do not repeat artifact content."* The
+lead's context grows with every subagent report over a long review; the artifacts on disk are the
+record, the report is only a pointer. Read an artifact yourself when you need to present it at a gate.
+
+**Subagents cannot ask the user** — `AskUserQuestion` is removed from every subagent. Wherever an
+agent's instructions say "ask the user" (which `source/` folders to read, an unavailable source, a
+paywalled HIGH record, an Elicit credit spend), the agent puts the question in its report and stops;
+the lead asks, records the answer in the relevant artifact, and re-invokes the agent with it. This
+also keeps every gate with the lead, the only party that can quote the user's approval.
+
+**Agent Team mode (optional).** If `TeamCreate` is available and the user prefers it, the same seven
+agents can run as a team (`TaskCreate` with dependencies, `SendMessage` between members). It buys
+direct writer⇄verifier messaging at the cost of seven persistent contexts that stay open across every
+gate wait; the gates and artifacts are identical either way.
+
+**Four stops** where the lead waits for the user: Phase 0 scope, Gate 2b (post-retrieval), Phase 3
+Research Map (hard gate), and Gate 4b (post-appraisal).
 At every gate: if the user requests changes → fix → ask again. Never fix-then-proceed silently. (L-024)
 
 ```
 [lead]
-  ├── read constitution + lessons; lessons-curator posts role-tagged digest
+  ├── read constitution + lessons_digest.py --role orchestrator (each agent loads its own slice)
   ├── Phase 0  scope confirm ......................... STOP, await user  (L-015)
-  ├── TeamCreate(medical-review, [strategist,retriever,appraiser,writer,coach,verifier,curator])
   ├── Phase 1  protocol (+ curiosity budget gaps)
   ├── Phase 2  retrieval: live sources + source/ folder → reference/<topic>.md
   │            └── Gate 2b: present corpus + full-text status + source gaps .. STOP, await user OK  ← L-022/L-024
@@ -105,7 +136,7 @@ At every gate: if the user requests changes → fix → ask again. Never fix-the
   │            └── Phase 5b: quality-coach (read-only best-self pass) → ≤1 improvement pass  ← raises the ceiling
   ├── Phase 6  verification: claims↔sources + rubric score + audit  (writer⇄verifier loop)
   ├── assemble 06_final_review.md + 06c_manifest.md → deliver with audit report + manifest
-  └── Phase 7  lessons-curator proposes lessons + evolution-log entry → user approves → persist → TeamDelete
+  └── Phase 7  lessons-curator proposes lessons + evolution-log entry → user approves → persist (+ TeamDelete in team mode)
 ```
 
 ### Phase detail

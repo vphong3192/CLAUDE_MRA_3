@@ -12,7 +12,7 @@ mạng**, cho kết quả **giống hệt mỗi lần chạy** và phát **PASS/
 script chỉ **thêm một sàn**, không thay thế.
 
 > Luật vận hành đầy đủ: xem `CLAUDE.md` và `.claude/constitution.md`. Tầng tất định ghi ở change-log
-> `CLAUDE.md` (P1/P2/P3) và lesson **L-039**.
+> `.claude/CHANGELOG.md` (P1/P2/P3) và lesson **L-039**.
 
 ---
 

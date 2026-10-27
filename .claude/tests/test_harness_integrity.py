@@ -69,6 +69,25 @@ class Wiring(unittest.TestCase):
             with self.subTest(agent=path.name):
                 self.assertEqual(frontmatter_name(path), path.stem)
 
+    def test_preloaded_skills_exist(self):
+        """`skills:` in agent frontmatter is skipped silently when the name is wrong — the agent
+        would start without its procedure and nothing would say so."""
+        on_disk = {p.parent.name for p in SKILLS.glob("*/SKILL.md")}
+        for path in sorted(AGENTS.glob("*.md")):
+            block = path.read_text(encoding="utf-8").split("---", 2)[1]
+            m = re.search(r"^skills:\n((?:\s+- .+\n?)+)", block, re.MULTILINE)
+            listed = re.findall(r"-\s*(\S+)", m.group(1)) if m else []
+            with self.subTest(agent=path.name):
+                self.assertEqual(set(listed) - on_disk, set(),
+                                 f"{path.name} preloads skills that do not exist")
+
+    def test_orchestrator_skill_is_never_preloaded(self):
+        """The lead's playbook in a specialist's context would invite it to run the pipeline."""
+        for path in sorted(AGENTS.glob("*.md")):
+            block = path.read_text(encoding="utf-8").split("---", 2)[1]
+            with self.subTest(agent=path.name):
+                self.assertNotIn("medical-review-orchestrator", block)
+
     def test_skill_frontmatter_name_matches_directory(self):
         for path in sorted(SKILLS.glob("*/SKILL.md")):
             with self.subTest(skill=path.parent.name):
