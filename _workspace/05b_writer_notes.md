@@ -119,3 +119,39 @@ The terminology guide renders "Limitations" as "Giới hạn". The draft keeps "
    - Source: `/tmp/claude-0/-home-user-CLAUDE-MRA-3/ceb9658b-7fe5-5852-b670-3ed1cc5309d0/scratchpad/draft_src.md`
    - Script: `/tmp/claude-0/-home-user-CLAUDE-MRA-3/ceb9658b-7fe5-5852-b670-3ed1cc5309d0/scratchpad/build.py`
    - The reference list's MET-M14 and MET-H02 entries already matched the PubMed XML before the store was corrected.
+
+## Phase 6 fixes (round 1)
+
+Source: `06a_verification_report.md` §B (verdict FIX). Main text is now **1,996** tokens (title to SoF, same script), so there is no net increase. `citation_audit.py` gives **PASS**: 0 HARD-FAIL, 33/33 cited, 3 WARNs, all separator formatting ("1.000", "44,2").
+
+- **F1 — applied.** §3.3 no longer gives aHR 0.98 as an eGFR ≥30 value. The stratum values (45–59: 1.16; 30–44: 1.09) are now in the §3.4.1 bullets. The SoF row labels 0.98 as "toàn đoàn hệ (mọi mức eGFR)".
+- **F2 — applied.** §3.2 now says AHRQ found CV mortality lower and Cochrane found all-cause mortality similar, with [GRADE: thấp]. "Không nhất quán" was removed. In the SoF the Cochrane figure is labelled "tử vong chung (hai kết cục khác nhau)". I left out the words "chưa đủ kết luận" for length; the Low GRADE tag carries that meaning.
+- **F3 — applied.** "Chỉ" was removed. Discontinuation does not increase against pooled controls [3], but increases against placebo in CKD, which includes polycystic kidney disease [14].
+- **F4 — applied (a–d).**
+  - (a) The conclusion now says "ước tính điểm chỉ nghiêng về nhồi máu, không về đột quỵ hay tử vong tim mạch".
+  - (b) The steelman now reads "đơn trị so với đối chứng cho tử vong chung và nhồi máu", cited [4,5,11]. The 16% figure stays [4].
+  - (c) "Khoảng tin cậy của đột quỵ".
+  - (d) "Thành phần MACE theo Griffin".
+- **F5 — applied.**
+  - Abstract: "bằng chứng chủ yếu trên nền metformin [9]".
+  - §3.5: "Chưa có so sánh đối đầu ở người chưa dùng thuốc về kết cục cứng", followed by Silverii's direct comparison favouring metformin but inconsistent with the NMA [6] (card MET-H10-c6).
+  - The SoF row is now cited [6]. NMA is spelled out at its first use in §3.2.
+- **F6 — applied.** §2 now says "các ước tính hiệu ứng chính đã khoá…". The abstract says "Tổng quan có phương pháp (PRISMA, GRADE), đề cương lưu trước".
+- **F7 — applied.** HbA1c: "cao hơn [1]; AHRQ thấy tương tự, trừ nhóm DPP-4 kém hơn [2]". Weight: "chênh lệch tới 5 kg".
+- **F8 — applied.** (a) "…chưa xác định được vì chỉ đọc được tóm tắt". (b) "cân nhắc phối hợp". (c) Mortality is cited [5]; Nong [29] is cited only for "lợi ích tim–thận".
+- **F9 — applied.** (a) The NCT number was moved out of the [4,12] group and is now an inline ClinicalTrials.gov hyperlink. It is not a numbered reference; adding it as ref 34 is for the lead to decide. (b) The search-limitations bullet now says Consensus gave 10 results per query and medRxiv was one page of one category (`02a_search_log.md` rows C1–C3 and M1).
+- **F10 — applied.** The SoF row was split. RCT mortality RR 1.00 [14] keeps its own row. Clegg MACE HR 0.91 [23] is a new row labelled non-randomised, and its GRADE is **Rất thấp**, per `04_appraisal.md` §3 ("Mortality/CV benefit in CKD G1–3 (obs)" lists M15 as Very low). §3.4.1 text now says "so sánh không ngẫu nhiên" (advisory A3).
+- **F11 — applied.** The abstract conclusion is "dùng được khi eGFR ≥30 [GRADE: thấp]". §5 is "dùng được khi eGFR ≥30 (đồng thuận ADA/KDIGO 2022; không thấy tăng nhiễm toan) [GRADE: thấp]".
+- **F12 — applied now rather than left to finalisation.** I removed the "Bản nháp" subtitle, the italic reference-list header and the 33 `(MET-xx)` tags. Mapping from number to store ID: 1 M03 · 2 H07 · 3 H13 · 4 H04 · 5 H08 · 6 H10 · 7 S01 · 8 H12 · 9 M01 · 10 M18 · 11 H05 · 12 H06 · 13 M05 · 14 H14 · 15 M11 · 16 M10 · 17 M07 · 18 M09 · 19 M14 · 20 M08 · 21 S03 · 22 M12 · 23 M15 · 24 M04 · 25 M16 · 26 H11 · 27 S02 · 28 H01 · 29 H09 · 30 M06 · 31 H02 · 32 H03 · 33 M19.
+- **Advisories:**
+  - **A2 applied:** "phối hợp hợp lý ở bệnh thận mạn".
+  - **A3 applied:** see F10.
+  - **A1 not applied:** adding "(suy luận)" would have broken the token cap. The sentences already use hedged, associative wording.
+  - **A4 not applied:** same reason.
+  - **A5 not applied:** the COI note was optional, and it was left out for length.
+- **Offsets that keep the total at or below 1,996.** Nothing was added beyond accepted cards, and no reference was dropped, so the numbering did not change.
+  - Dropped from §2: the list of pre-registered subgroups. Each one keeps its labelled heading in §3.4, and the L-038 matrix is unchanged.
+  - Dropped from §4.3: the clause "UKPDS chi phối bằng chứng tim mạch" (still stated in §3.2), and "thử nghiệm đối đầu ở người chưa dùng thuốc" (now stated in §3.5).
+  - Dropped: "và cần RCT" in 4.2(2). The missing RCT is still listed in §4.3.
+  - §5: the practice items were folded into one sentence. Dosing is now "chỉnh liều theo eGFR [22]"; the exact doses are in §3.4.1.
+  - §3.5: the ASCVD statement is now "metformin thiếu dữ liệu theo nguy cơ tim mạch". It is still locatable for L-038.
