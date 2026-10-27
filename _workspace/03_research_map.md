@@ -83,3 +83,9 @@ FT = full text read; ABS = abstract only. Type: G = guideline/consensus; SR = SR
 2. Coverage holes (older adults, lactic acidosis, hepatic): run a short supplementary search, or proceed and declare them in Limitations?
 3. Keep all six axes (A1–A6)? Any axis to emphasise?
 4. Then, separately: is the Research Map gate approved?
+
+## Research Map — user content decisions (2026-10-27, verbatim structured answers; gate NOT yet approved)
+1. Source list: **"Đồng ý đề xuất (Recommended)"** → re-tier H09→MEDIUM, M03→HIGH; drop M02, M13, M17 → 30 sources.
+2. Coverage holes: **"Tìm bổ sung ngắn (Recommended)"** → short supplementary PubMed search (older adults; lactic acidosis; hepatic if yield) — new records to be shown to the user before appraisal.
+3. Axes: **"Giữ cả 6, cân bằng (Recommended)"** → A1–A6 balanced; controversy concentrated on A2/A5/A6.
+Gate-closing approval: pending — to be asked alone after the supplement (L-044/L-024).

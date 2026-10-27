@@ -70,4 +70,5 @@ See `_workspace/01a_concepts.json`.
 
 ## 8. Language & change log
 Output language: **Vietnamese** (00_scope.md: "Tiếng Việt (Recommended)").
-Change log: (none yet — any post-hoc change must be logged here with reason.)
+Change log:
+- 2026-10-27 (Phase 3, user decision at Research Map): supplementary PubMed search added for coverage holes found in the corpus — older adults (≥65), lactic acidosis incidence, hepatic impairment — same date window and inclusion criteria. Reason: no record covered these pre-registered subgroups/outcomes. Sources dropped by user: M02 (ACP 2024), M13 (ADA/EASD 2022), M17 (Mohammadi 2026).
