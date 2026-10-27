@@ -411,3 +411,20 @@ for which the ratchet table requires Case 3 + Case 4 + Case 2; only Case 1 ran. 
 and a true Case 4 run. Many changes since June → improvement not attributable to a single edit.
 **Approved by the user (verbatim):** "Duyệt addendum, ghi vào log rồi chạy Case 3".
 ═══════════════════════════════════════════════
+
+### Entry #11 — Addendum 2 (2026-10-27, Case 3 EDGE re-check, run in a separate session)
+**Result, as reported by the user (verbatim):** "Case 3 (EDGE) re-check, 2026-10-27: PASS on harness cdfffc4
+(claude/lucid-brahmagupta-1ys4ne) — 5/5 Phase-0 questions asked (+ language, external DBs, effort), no
+topic/depth/audience chosen, no search, no file written. A first attempt ran on a worktree created from `main`
+(older harness, no lessons_digest.py) and is discarded as evidence. Caveat: the agent read test-cases.md during
+the run. Remaining for ae90d62: Case 2 (HARD) full run + a true Case 4 run."
+**Weight of the evidence:** PASS stands but is weakened — the run read the case's own pass criteria. The Phase-0
+stop is mandated independently (orchestrator Phase 0, L-015), so the behaviour is unlikely to depend on it; the
+contamination would matter far more for Case 2, whose criteria name content the review must find.
+**Harness action (user-approved "ok"):** `test-cases.md` marked evaluator-only, with a matching rule in the
+orchestrator's Regression-safety section: never read it during a review; if read, declare it in the report.
+**Process note:** a regression run must start on the branch under test — the `main` worktree attempt tested the
+wrong harness. Case 2 must run on 9c0196a or later (first run with `rubric_total.py`); Case 1 baseline for
+future comparisons is the on-grid **0.80**, not the 0.82 recorded in Entry #11.
+**Remaining for the ratchet on 8382cc2/ae90d62:** Case 2 (HARD, effort `full`, baseline Entry #1) · a true Case 4 run.
+═══════════════════════════════════════════════

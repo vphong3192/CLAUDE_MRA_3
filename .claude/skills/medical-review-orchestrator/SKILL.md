@@ -309,6 +309,14 @@ gate + Law 2 in seconds). For edits touching retrieval/appraisal/synthesis, run 
 and have the verifier compare **per-criterion rubric + law/gate checks** to the prior run's evolution-log
 entry — keep only if no criterion or check regressed. One change at a time.
 
+**`test-cases.md` is for whoever grades a run, never for the run.** It contains each case's pass
+criteria — and for the HARD case, content the review is expected to find. A lead or agent that reads it
+while running a review is sitting an open-book exam, and the result stops being evidence. So: do **not**
+open `references/test-cases.md` during a review, even when the request looks like one of its cases.
+Grading happens afterwards, in the same or another session, by reading the run's artifacts. If it was
+opened during a run anyway, say so in the run's report and evolution-log entry (the 2026-10-27 Case 3
+re-check is the precedent).
+
 ## Why this design
 Generation and verification live in different agents, so the writer never clears its own citations —
 this catches hallucinated references that a self-grading single agent would protect. The read-only

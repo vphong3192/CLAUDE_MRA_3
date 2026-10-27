@@ -4,6 +4,10 @@ Purpose: catch quality **regressions** when the harness itself is edited (a new 
 a reworded constitution). The harness is built to evolve (Phase 7) — these cases are how an edit proves
 it didn't make things worse.
 
+> **⚠ Evaluator-only.** Do NOT read this file while running a review — not even when the request matches a
+> case below. It holds the pass criteria (and, for Case 2, content the review is expected to find); a run
+> that has read it is graded open-book and is no longer evidence. Read it only to grade a finished run.
+
 > **Keep these 3 cases FIXED.** Editing a case breaks comparability across versions. Add a 4th case
 > rather than changing an existing one. Load this file only when running a regression check, not on
 > every review.
