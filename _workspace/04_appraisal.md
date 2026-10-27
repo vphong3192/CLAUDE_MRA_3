@@ -353,3 +353,12 @@ regenerate 04a–04c; everything numbered above 04 becomes stale.
 - **Q3.** No qualifying landmark review exists in the approved set; proceed without one (current plan), or re-open the
   gate to add one?
 - **Q4.** Confirm ROBIS-lite as the SR risk-of-bias approach (the skill's tool table has no SR tool).
+
+---
+
+## 13. Gate 4b — user decisions (2026-10-27, lead-recorded verbatim; asked before and separately from the gate question, L-044)
+- Q1 machine-fetched NCBI files: **"Giữ ở source/ kèm nhãn (Recommended)"** → keep `source/metformin-t2d/` with `_PROVENANCE.md`; directory-contract tension goes to Phase 7 lesson proposals.
+- Q2 guideline PDFs: **"Không, dùng ADA/KDIGO 2022 (Recommended)"** → guideline section uses M12 full text + H01 abstract framing; declared in Limitations.
+- Q3 landmark review: **"Không cần (Recommended)"**.
+- Q4 SR risk-of-bias tool: **"Đồng ý ROBIS rút gọn (Recommended)"**.
+Gate 4b approval: pending (asked separately).
