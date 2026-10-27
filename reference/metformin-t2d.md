@@ -28,12 +28,12 @@
 - **author_suggestions:** not captured (abstract-only)
 - **retriever note:** HIGH abstract-only: metformin-specific recommendations unverified.
 
-### MET-H02 - Bajaj M 2026 (HIGH)
+### MET-H02 - ADA Professional Practice Committee 2026 (HIGH)
 - **stable_id:** PMID 41358900 / DOI 10.2337/dc26-S009 ; PMCID PMC12690185
 - **title (verbatim, PubMed):** 9. Pharmacologic Approaches to Glycemic Treatment: Standards of Care in Diabetes-2026.
-- **authors / journal / year:** Bajaj M; McCoy RG; Balapattabi K; et al. [authors per secondary web source; PubMed metadata gave no author list] - Diabetes Care - 2026
+- **authors / journal / year:** American Diabetes Association Professional Practice Committee for Diabetes [collective author, verbatim from PubMed XML `<CollectiveName>`; trailing footnote asterisk omitted] - Diabetes Care - 2026;49(Suppl 1):S183-S215 [PubMed XML JournalIssue PubDate 2026-01-01] (corrected Phase 5; see "Phase 5 corrections")
 - **source_type:** peer-reviewed (major-body guideline: ADA Standards of Care 2026, section 9)
-- **retrieved via:** PubMed | PMID/DOI verified by PubMed metadata (DOI 10.2337/dc26-S009; title as stored); authors/pages (Bajaj M, McCoy RG, Balapattabi K, et al.; Diabetes Care 2026;49(Suppl 1):S183-S215, published 2025-12-08) come from a secondary web source - PubMed metadata gave no author list; DEFERRED by prefilter, added by known-item guideline search
+- **retrieved via:** PubMed | PMID/DOI verified by PubMed metadata (DOI 10.2337/dc26-S009; title as stored); authors/pages originally from a secondary web source (Bajaj M, McCoy RG, Balapattabi K, et al. - author list SUPERSEDED in Phase 5 by the PubMed XML collective author; Diabetes Care 2026;49(Suppl 1):S183-S215, published 2025-12-08) come from a secondary web source - PubMed metadata gave no author list; DEFERRED by prefilter, added by known-item guideline search
 - **relevance_tier:** HIGH | **fulltext:** unavailable via tools (PMC12690185 exists, open access; MCP get_full_text returned abstract only on 2 attempts; WebFetch to pmc.ncbi.nlm.nih.gov failed: DNS)
 - **verified finding (captured 2026-10-27):** PubMed abstract is generic (annual update of ADA Standards of Care). Recommendation text on metformin NOT captured. A secondary web summary (not a citable source) reports 2026 changes on oral semaglutide/tirzepatide ASCVD data and HF recommendations; unverified.
 - **study_context:** not captured (abstract-only)
@@ -204,7 +204,7 @@
 - **source_type:** peer-reviewed (SR/NMA, 453 RCTs)
 - **retrieved via:** PubMed (P1/P9) | PMID verified (Tsapas A, Ann Intern Med 2020, DOI 10.7326/M20-0864)
 - **relevance_tier:** MEDIUM | **fulltext:** abstract-only (provisional)
-- **verified finding (captured 2026-10-27):** 453 trials, 21 interventions, search to 2019-12-18; background metformin in 296 trials. Low-CV-risk patients: no clinically meaningful differences between treatments for mortality/vascular outcomes. Increased CV risk on metformin-based background: oral semaglutide, empagliflozin, liraglutide, ER exenatide, dapagliflozin reduced all-cause mortality; SGLT2i reduced HF hospitalisation and ESRD.
+- **verified finding (captured 2026-10-27):** 453 trials, 21 interventions, search to 2019-12-18; add-on to metformin-based therapies in 296 trials (plus 134 monotherapy and 23 monotherapy-vs-add-on trials). Low-CV-risk patients on metformin-based background (298 trials): no clinically meaningful differences between treatments for mortality/vascular outcomes. Increased-CV-risk patients on metformin-based background: 21 trials. Increased CV risk on metformin-based background: oral semaglutide, empagliflozin, liraglutide, ER exenatide, dapagliflozin reduced all-cause mortality; SGLT2i reduced HF hospitalisation and ESRD.
 - **study_context:** not captured (abstract-only)
 - **study_limitations:** not captured (abstract-only)
 - **author_suggestions:** not captured (abstract-only)
@@ -368,7 +368,7 @@
 
 ### MET-M14 - Phan HH 2025 (MEDIUM)
 - **stable_id:** PMID 40374214 / DOI 10.1136/bmjopen-2025-100672 ; PMCID PMC12185888
-- **title (verbatim, PubMed):** Association between vitamin B12 deficiency and metformin use in type 2 diabetic patients: a cross-sectional study.
+- **title (verbatim, PubMed):** Association between vitamin B12 deficiency and metformin use in type 2 diabetic patients: a cross-sectional study in a South Vietnam tertiary hospital.
 - **authors / journal / year:** Phan HH; Nguyen ATT; Do MD - BMJ Open - 2025
 - **source_type:** peer-reviewed (cross-sectional; VIETNAM, Cho Ray Hospital)
 - **retrieved via:** PubMed (P7) | PMID verified (Phan HH, BMJ Open 2025, DOI 10.1136/bmjopen-2025-100672); DEFERRED by prefilter, added by Vietnam probe
@@ -511,3 +511,8 @@ Three gap queries, window 2015-01-01..2026-10-27: (a) older adults - NO metformi
 - Inzucchi JAMA 2014 (lactic acidosis in kidney disease) seen via Consensus; pre-2015, not stored.
 - SMARTEST main results (SGLT2i vs metformin first-line RCT) not found in PubMed; only a baseline-characteristics report (PMID 41311237) - excluded as baseline-only.
 - Vietnam: two Vietnamese B12 studies (MET-M09, MET-M14) and one descriptive prescribing study (Uncertain list); no Vietnamese efficacy/CV outcome data found. Asian-population proxy meta-analyses not separately identified.
+
+## Phase 5 corrections (2026-10-27, synthesis-writer; source = on-disk NCBI E-utilities PubMed XML in `source/metformin-t2d/`, machine-fetched, see `_PROVENANCE.md`)
+- **MET-M14 title** — was truncated ("...: a cross-sectional study."). Corrected to the full `<ArticleTitle>` of `MET-M14_40374214_pubmed.xml`: "Association between vitamin B12 deficiency and metformin use in type 2 diabetic patients: a cross-sectional study in a South Vietnam tertiary hospital." (`B<sub>12</sub>` rendered as "B12", per this store's header convention). L-035.
+- **MET-H02 author** — was "Bajaj M; McCoy RG; Balapattabi K; et al." from a secondary web source. `MET-H02_41358900_pubmed.xml` `<AuthorList CompleteYN="Y">` holds a single `<CollectiveName>`: "American Diabetes Association Professional Practice Committee for Diabetes*" (asterisk = footnote marker, omitted). Authors field and entry heading corrected; volume/issue/pages 49(Suppl 1):S183-S215 and PubDate 2026-01-01 confirmed from the same file. Upstream artifacts (`02_corpus.md`, `03_research_map.md`, `04_appraisal.md`, `04a_numbers.md`) still show the old "Bajaj" label; not edited (phase-owned).
+- **MET-M01 trial count** — the verified finding said "background metformin in 296 trials"; card MET-M01-c1 says 298. `MET-M01_32598218_pubmed.xml` abstract shows both are real and refer to different sets: "add-on to metformin-based therapies (296 trials)" and "patients at low cardiovascular risk receiving metformin-based background treatment (298 trials)"; increased-risk subset "(21 trials)". Verified finding rewritten to state each count with its denominator. Card and store now agree; no draft sentence uses either count.
